@@ -1,5 +1,8 @@
 # DP
 
+https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-questions-thread
+
+
 # binary search
 
 # hash
