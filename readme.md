@@ -2,7 +2,6 @@
 
 https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-questions-thread
 
-
 # binary search
 
 # hash
@@ -10,6 +9,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 # 2 pointer
 
 # str
+
+# backtrack
+
+- https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/180014/Backtracking-Thinking-Process
 
 # BST - DFS
 
