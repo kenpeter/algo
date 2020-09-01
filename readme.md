@@ -2,10 +2,11 @@
 
 https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-questions-thread
 
-## knapsack
-
 - Divide all numbers into two groups
 - what is the minimum difference between the sum of two groups.
+
+# knapsack half sum
+
 - last-stone-weight-ii
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
