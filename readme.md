@@ -4,6 +4,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## knapsack
 
+- Divide all numbers into two groups
+- what is the minimum difference between the sum of two groups.
+- last-stone-weight-ii
+
 # binary search
 
 # hash
