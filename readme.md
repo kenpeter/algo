@@ -25,6 +25,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
+### bottom fill tar
+
 #### pick repeated ele in arr, min # -> tar.
 
 - each tmp tar, 1d
