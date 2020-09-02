@@ -7,18 +7,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # knapsack half sum
 
-- last-stone-weight-ii
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 # knapsack
 
 - https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
 
+#### pick 2 ele, canncel out, 1 or 0 left, min
+
+- https://leetcode.com/problems/last-stone-weight-ii/
+
 #### Repeated pick ele in arr, min # -> tar.
 
 - each tmp tar, 1d
 - each ele
-- tmp tar too big, dp[i-n[j]], dp[n[j]]
+- tmp tar too big, i-n[j] + n[j]
 - equal
 - too small, +
 - mi(mi, tmp)
