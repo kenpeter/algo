@@ -5,19 +5,27 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - Divide all numbers into two groups
 - what is the minimum difference between the sum of two groups.
 
-# knapsack half sum
-
-- https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
-
 # knapsack
 
 - https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
 
-#### pick 2 ele, canncel out, 1 or 0 left, min
+### knapsack half sum
 
+#### pick 2 once ele, canncel out, 1 or 0 left, min
+
+- (a + b) - (c + d)
+- (totSum - aSum) - aSum === diff
+- loop ele
+- loop half sum
+- pick || not pick === true, can build sum
+- ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
-#### Repeated pick ele in arr, min # -> tar.
+#### arr, into 2 equal sum sets
+
+- https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
+
+#### pick repeated ele in arr, min # -> tar.
 
 - each tmp tar, 1d
 - each ele
