@@ -9,15 +9,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
 
+#### classic knapsack
+
+##### 01 as ele in arr, each ele consumes tar m, tar n, max#
+
+- loop ele
+- loop tar m, loop tar n
+- 3d dp
+- take vs non-take
+- non-take
+- https://leetcode.com/problems/ones-and-zeroes/
+
 #### knapsack half sum
 
-##### pick 2 once ele, canncel out, 1 or 0 left, min
+##### pick 2 once ele, canncel out, 1 or 0 left, min_diff
 
 - (a + b) - (c + d)
 - (totSum - aSum) - aSum === diff
 - loop ele
 - loop half sum
-- pick || not pick === true, can build sum
+- (pick || not pick) as condi, can build sum
 - ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
@@ -25,6 +36,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - same as above
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
+
+p
+p
+p
+p
 
 #### bottom up fill tar
 
