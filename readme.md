@@ -9,9 +9,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
 
-### knapsack half sum
+#### knapsack half sum
 
-#### pick 2 once ele, canncel out, 1 or 0 left, min
+##### pick 2 once ele, canncel out, 1 or 0 left, min
 
 - (a + b) - (c + d)
 - (totSum - aSum) - aSum === diff
@@ -21,13 +21,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
-#### arr, into 2 equal sum sets
+##### arr, into 2 equal sum sets
 
+- same as above
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
-### bottom up fill tar
+#### bottom up fill tar
 
-#### pick repeated ele in arr, min # -> tar.
+##### pick repeated ele in arr, min # -> tar.
 
 - each tmp tar, 1d
 - each ele
