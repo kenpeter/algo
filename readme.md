@@ -14,7 +14,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
 
-#### Repeated pick ele in arr, min # -> tar.
+##### Repeated pick ele in arr, min # -> tar.
 
 - each tmp tar, 1d
 - each ele
