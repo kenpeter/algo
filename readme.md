@@ -13,11 +13,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### 0,1 as ele in arr, each ele consumes tar m, tar n, max#
 
-- loop ele (so once)
-- loop tar m, loop tar n
-- 3d dp
-- take vs non-take
-- non-take
+- loop 1, ele (so once)
+- loop 2, m, tar
+- loop 3, n, tar
+- 3d dp (2d)
+- dp[k][i][j] === AT THIS ele, REACH step tar, max_combo
+- tmp = dp[k-1][i][j] without
+- tmp = val + dp[k-1][i-w0][j-w1] with
+- val === 1 combo
 - https://leetcode.com/problems/ones-and-zeroes/
 
 #### non-repeated ele, fill up half step tar
@@ -28,9 +31,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - (totTar - aTar) - aTar === diff
 - row ele (so non-repeated)
 - col half tar
-- dp[i][j] === at this ele, can reach step tar? condi, non_num
-- dp[i-1][j] === without ith || dp[i-1][j-w] === with ith (j>=w, at least cover)
-- ma(ma, j)
+- dp[i][j] === AT THIS ele, REACH step tar, Y/N
+- dp[i-1][j] without || dp[i-1][j-w] with (j>=w, at least cover)
+- j bigger bigger, ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
 ##### arr, into 2 equal sum sets
@@ -43,13 +46,13 @@ p
 p
 p
 
-#### repeated ele, up to tar
+#### repeated ele, fill up tar
 
 ##### pick repeated ele in arr, min # -> tar.
 
-- up to tar (i)
+- fill up tar (i)
 - loop ele (find min, j)
-- dp[step_tar] === # ?, yes not condi, min_step, 1d
+- dp[i] === AT THIS step tar, min_combo
 - dp[n[j]] with, dp[step_tar-n[j]] without, dp[i] = two
 - step_tar > n[j]
 - step_tar === n[j]
