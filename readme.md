@@ -48,17 +48,27 @@ p
 
 #### repeated ele, fill up tar
 
-##### pick repeated ele in arr, min # -> tar.
+##### pick repeated ele in arr, min # reach tar.
 
 - fill up tar (i)
 - loop ele (find min, j)
 - dp[i] === AT THIS step tar, min_combo
-- dp[n[j]] with, dp[step_tar-n[j]] without, dp[i] = two
-- step_tar > n[j]
-- step_tar === n[j]
-- step_tar > n[j], +
+- dp[n[j]] with, dp[i-n[j]] without (i>=n[j], threshold), dp[i] = two
+- i > n[j]
+- i === n[j]
+- i < n[j], +
 - mi(mi, tmp)
 - https://leetcode.com/problems/coin-change/
+
+##### pick repeated ele in arr, fill up to tar, how many way
+
+- fill up to tar (i)
+- loop ele (j)
+- dp[i][j] === AT THIS ele, REACH tar, num_way
+- dp[i-1][j] without, dp[i][j-w] with (j>=w, threshold), dp[i][j] = two
+- j>=w
+- j<w
+- https://leetcode.com/problems/coin-change-2/
 
 # binary search
 
