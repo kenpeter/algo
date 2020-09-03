@@ -20,15 +20,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - non-take
 - https://leetcode.com/problems/ones-and-zeroes/
 
-#### once ele, fill up to half step tar
+#### non-repeated ele, fill up half step tar
 
-##### pick 2 once ele, canncel out, 1 or 0 left, min_diff
+##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff
 
 - (a + b) - (c + d)
-- (totSum - aSum) - aSum === diff
-- loop ele 1st (so once)
-- loop half sum
-- (pick || not pick) as condi, can build sum
+- (totTar - aTar) - aTar === diff
+- row ele (so non-repeated)
+- col half tar
+- dp[i][j] === at this ele, can reach step tar? condi, non_num
+- dp[i-1][j] === without ith || dp[i-1][j-w] === with ith (j>=w, at least cover)
 - ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
@@ -42,13 +43,13 @@ p
 p
 p
 
-#### repeated ele, fill each step tar
+#### repeated ele, up to tar
 
 ##### pick repeated ele in arr, min # -> tar.
 
-- fill each step tar (i)
+- up to tar (i)
 - loop ele (find min, j)
-- dp[step_tar] === #, not condi, min_step, 1d
+- dp[step_tar] === # ?, yes not condi, min_step, 1d
 - dp[n[j]] with, dp[step_tar-n[j]] without, dp[i] = two
 - step_tar > n[j]
 - step_tar === n[j]
