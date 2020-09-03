@@ -9,24 +9,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
 
-#### classic knapsack
+#### once ele, fill multiple tars
 
-##### 01 as ele in arr, each ele consumes tar m, tar n, max#
+##### 0,1 as ele in arr, each ele consumes tar m, tar n, max#
 
-- loop ele
+- loop ele (so once)
 - loop tar m, loop tar n
 - 3d dp
 - take vs non-take
 - non-take
 - https://leetcode.com/problems/ones-and-zeroes/
 
-#### knapsack half sum
+#### once ele, fill up to half step tar
 
 ##### pick 2 once ele, canncel out, 1 or 0 left, min_diff
 
 - (a + b) - (c + d)
 - (totSum - aSum) - aSum === diff
-- loop ele
+- loop ele 1st (so once)
 - loop half sum
 - (pick || not pick) as condi, can build sum
 - ma(ma, j)
@@ -42,15 +42,17 @@ p
 p
 p
 
-#### bottom up fill tar
+#### repeated ele, fill each step tar
 
 ##### pick repeated ele in arr, min # -> tar.
 
-- each tmp tar, 1d
-- each ele
-- tmp tar too big, i-n[j] + n[j]
-- equal
-- too small, +
+- fill each step tar (i)
+- loop ele (find min, j)
+- dp[step_tar] === #, not condi, min_step, 1d
+- dp[n[j]] with, dp[step_tar-n[j]] without, dp[i] = two
+- step_tar > n[j]
+- step_tar === n[j]
+- step_tar > n[j], +
 - mi(mi, tmp)
 - https://leetcode.com/problems/coin-change/
 
