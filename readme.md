@@ -66,8 +66,9 @@ p
 - loop ele (j)
 - dp[i][j] === AT THIS ele, REACH tar, num_way
 - dp[i-1][j] without, dp[i][j-w] with (j>=w, threshold), dp[i][j] = two
-- j>=w
-- j<w
+- j > w
+- j == w
+- j < w
 - https://leetcode.com/problems/coin-change-2/
 
 # binary search
