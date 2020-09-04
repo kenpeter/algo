@@ -48,27 +48,36 @@ p
 
 #### repeated ele, fill up tar
 
-##### pick repeated ele in arr, min # reach tar.
+##### pick repeated ele in arr, min combo reach tar.
 
-- fill up tar (i)
-- loop ele (find min, j)
+- row tar
+- col ele (find min)
 - dp[i] === AT THIS step tar, min_combo
-- dp[n[j]] with, dp[i-n[j]] without (i>=n[j], threshold), dp[i] = two
-- i > n[j]
+- dp[n[j]] with, dp[i-n[j]] without (i>=w, threshold), dp[i] = two
+- i > n[j], dp_with + dp_without
 - i === n[j]
 - i < n[j], +
 - mi(mi, tmp)
 - https://leetcode.com/problems/coin-change/
 
+##### pick repeated ele in arr, min combo reach tar.
+
+- row ele
+- col tar
+- dp[i][j] === AT THIS ele, REACH step tar, min_combo
+- dp[i-1][j] without, dp[i][j-w] with
+- j >= w, mi(1_up, val(1) + to_left)
+- j < w, 1 up
+- https://leetcode.com/problems/coin-change/
+
 ##### pick repeated ele in arr, fill up to tar, how many way
 
-- fill up to tar (i)
-- loop ele (j)
+- row ele
+- col tar
 - dp[i][j] === AT THIS ele, REACH tar, num_way
-- dp[i-1][j] without, dp[i][j-w] with (j>=w, threshold), dp[i][j] = two
-- j > w
-- j == w
-- j < w
+- dp[i-1][j] without, dp[i][j-w] with
+- j >= w, 1_up + to_left
+- j < w, 1_up
 - https://leetcode.com/problems/coin-change-2/
 
 # binary search
