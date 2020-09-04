@@ -9,36 +9,35 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
 
-#### once ele, fill multiple tars
+#### non-repeated ele, fill multiple tars
 
-##### 0,1 as ele in arr, each ele consumes tar m, tar n, max#
+##### 0,1 as ele in arr, each ele consumes tar m, tar n, max_combo
 
-- loop 1, ele (so once)
-- loop 2, m, tar
-- loop 3, n, tar
-- 3d dp (2d)
+- row ele (non-repeated)
+- col tar_m, col tar_n, 3d => (2d)
 - dp[k][i][j] === AT THIS ele, REACH step tar, max_combo
-- tmp = dp[k-1][i][j] without
-- tmp = val + dp[k-1][i-w0][j-w1] with
-- val === 1 combo
+- i>=w0, j>=w1 => dp[k][i][j] = val(1) + to_up_left
+- else => to_up
 - https://leetcode.com/problems/ones-and-zeroes/
 
 #### non-repeated ele, fill up half step tar
 
 ##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff
 
-- (a + b) - (c + d)
-- (totTar - aTar) - aTar === diff
-- row ele (so non-repeated)
-- col half tar
-- dp[i][j] === AT THIS ele, REACH step tar, Y/N
-- dp[i-1][j] without || dp[i-1][j-w] with (j>=w, at least cover)
-- j bigger bigger, ma(ma, j)
+- (a + b) - (c + d), (totTar - aTar) - aTar === diff
+- row ele (non-repeated)
+- col tar (1/2)
+- dp[i][j] === AT THIS ele, REACH step tar, condi
+- 1_up || to_left_up => dp[i][j] = condi, ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
 ##### arr, into 2 equal sum sets
 
-- same as above
+- ha = sum / 2
+- row ele (non-repeated)
+- col tar (1/2)
+- dp[i][j] === AT THIS ele, REACH step tar, condi
+- 1_up || to_left_up => dp[i][j] = condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 p
@@ -51,33 +50,31 @@ p
 ##### pick repeated ele in arr, min combo reach tar.
 
 - row tar
-- col ele (find min)
+- col ele (repeated)
 - dp[i] === AT THIS step tar, min_combo
-- dp[n[j]] with, dp[i-n[j]] without (i>=w, threshold), dp[i] = two
-- i > n[j], dp_with + dp_without
-- i === n[j]
-- i < n[j], +
+- dp[n[j]] dp_with, dp[i-n[j]] dp_without (i>=w, threshold)
+- i > n[j], dp[i] = dp_with + dp_without
+- i === n[j], dp[i] = 1
+- i < n[j], dp[i] = +
 - mi(mi, tmp)
 - https://leetcode.com/problems/coin-change/
 
 ##### pick repeated ele in arr, min combo reach tar.
 
-- row ele
+- row ele (repeated)
 - col tar
 - dp[i][j] === AT THIS ele, REACH step tar, min_combo
-- dp[i-1][j] without, dp[i][j-w] with
-- j >= w, mi(1_up, val(1) + to_left)
-- j < w, 1 up
+- j >= w, dp[i][j] = mi(1_up, val(1) + to_left)
+- j < w, dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change/
 
-##### pick repeated ele in arr, fill up to tar, how many way
+##### pick repeated ele in arr, fill up to tar, num_combo
 
-- row ele
+- row ele (repeated)
 - col tar
-- dp[i][j] === AT THIS ele, REACH tar, num_way
-- dp[i-1][j] without, dp[i][j-w] with
-- j >= w, 1_up + to_left
-- j < w, 1_up
+- dp[i][j] === AT THIS ele, REACH tar, num_combo
+- j >= w, dp[i][j] = 1_up + to_left
+- j < w, dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change-2/
 
 # binary search
