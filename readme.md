@@ -18,9 +18,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - col tar_m, col tar_n, 3d => (2d)
 - left side === 0
 - dp[k][i][j] === AT THIS ele, REACH step tar, max_combo
-- loop
-- loop
-- loop
+- loop ele
+- loop reach tar_m
+- loop reach tar_n
 - i>=w0, j>=w1 => dp[k][i][j] = val(1) + to_up_left
 - else => to_up
 - https://leetcode.com/problems/ones-and-zeroes/
@@ -31,11 +31,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - transfer: (a + b) - (c + d), (totTar - aTar) - aTar === diff
 - row ele (non-repeated)
-- col tar (1/2)
+- col ha (1/2)
 - left side == true
 - dp[i][j] === AT THIS ele, REACH step tar, condi
-- loop
-- loop
+- loop ele
+- loop reach ha
 - 1_up || to_left_up => dp[i][j] = condi, ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
@@ -43,11 +43,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - transfer: ha = sum / 2
 - row ele (non-repeated)
-- col tar (1/2)
+- col ha (1/2)
 - left side == true
 - dp[i][j] === AT THIS ele, REACH step tar, condi
-- loop
-- loop
+- loop ele
+- loop reach ha
 - 1_up || to_left_up => dp[i][j] = condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
@@ -64,9 +64,9 @@ p
 - row tar
 - col ele (repeated)
 - dp[i] === AT THIS step tar, min_combo
-- loop
-- loop
-- dp[n[j]] dp_with, dp[i-n[j]] dp_without (i>=w, threshold)
+- loop ele
+- loop reach tar
+- dp[n[j]] with, dp[i-n[j]] without (i>=w, threshold)
 - i > n[j], dp[i] = dp_with + dp_without
 - i === n[j], dp[i] = 1
 - i < n[j], dp[i] = +
@@ -80,21 +80,21 @@ p
 - col tar
 - left side == 0
 - dp[i][j] === AT THIS ele, REACH step tar, min_combo
-- loop
-- loop
+- loop ele
+- loop reach tar
 - j >= w, dp[i][j] = mi(1_up, val(1) + to_left)
 - j < w, dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change/
 
-##### pick repeated ele in arr, fill up to tar, num_combo
+##### pick repeated ele in arr, fill up to tar, total_num_combo
 
 - transfer:
 - row ele (repeated)
 - col tar
 - left side == 1
-- dp[i][j] === AT THIS ele, REACH tar, num_combo
-- loop
-- loop
+- dp[i][j] === AT THIS ele, REACH tar, total_num_combo
+- loop ele
+- loop reach tar
 - j >= w, dp[i][j] = 1_up + to_left
 - j < w, dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change-2/
@@ -107,9 +107,9 @@ p
 - row step tar (1d)
 - left side dp[1] = 1
 - dp[i] === AT THIS ele, REACH max_product
-- loop ele, i<=n
-- loop what_left, j=0, j<i
-- f1 = ma(dp[j], j) dp_with, f2 = ma(dp[i-j], i-j) dp_without, f1\*f2
+- loop step tar, reach n
+- loop small_num, reach i
+- f1 = ma(dp[j], j) with, f2 = ma(dp[i-j], i-j) without, f1\*f2
 - https://leetcode.com/problems/integer-break/
 
 # binary search
