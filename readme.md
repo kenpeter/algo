@@ -9,9 +9,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
 
-#### non-repeated ele, fill multiple tars
+#### non-repeated ele, fill up multiple tars
 
-##### 0,1 as ele in arr, each ele consumes tar m, tar n, max_combo
+##### non-repeated ele (0, 1), ele fill up tar m, n, max_combo (3d->2d)
 
 - transfer:
 - row ele (non-repeated)
@@ -27,7 +27,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 #### non-repeated ele, fill up half step tar
 
-##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff
+##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff (2d)
 
 - transfer: (a + b) - (c + d), (totTar - aTar) - aTar === diff
 - row ele (non-repeated)
@@ -39,7 +39,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 1_up || to_left_up => dp[i][j] = condi, ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
-##### arr, into 2 equal sum sets
+##### non-repeated ele, into 2 sets, equal sum, true/false (2d)
 
 - transfer: ha = sum / 2
 - row ele (non-repeated)
@@ -58,59 +58,35 @@ p
 
 #### repeated ele, fill up tar
 
-##### pick repeated ele in arr, min combo reach tar.
-
-- transfer:
-- row tar
-- col ele (repeated)
-- dp[i] === AT THIS step tar, min_combo
-- loop ele
-- loop reach tar
-- dp[n[j]] with, dp[i-n[j]] without (i>=w, threshold)
-- i > n[j], dp[i] = dp_with + dp_without
-- i === n[j], dp[i] = 1
-- i < n[j], dp[i] = +
-- mi(mi, tmp)
-- https://leetcode.com/problems/coin-change/
-
-##### pick repeated ele in arr, min combo reach tar.
+##### pick repeated ele, fill up to tar, min_combo. (2d)
 
 - transfer:
 - row ele (repeated)
 - col tar
-- left side == 0
+- left side 0/1
 - dp[i][j] === AT THIS ele, REACH step tar, min_combo
 - loop ele
 - loop reach tar
-- j >= w, dp[i][j] = mi(1_up, val(1) + to_left)
+- j >= w, dp[i][j] = mi(1_up, val(1) + to_left(repeated))
 - j < w, dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change/
 
-##### pick repeated ele in arr, fill up to tar, total_num_combo
+##### pick repeated ele, fill up to tar, total_num_combo (2d)
 
 - transfer:
 - row ele (repeated)
 - col tar
-- left side == 1
+- left side 0/1
 - dp[i][j] === AT THIS ele, REACH tar, total_num_combo
 - loop ele
 - loop reach tar
-- j >= w, dp[i][j] = 1_up + to_left
+- j >= w, dp[i][j] = 1_up + to_left(repeated)
 - j < w, dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change-2/
 
-#### 1 num breaks into 2 nums, then break into 2 nums
+#### ?
 
-##### 1 num breaks into 2 nums, then break into 2 nums, max_product
-
-- transfer:
-- row step tar (1d)
-- left side dp[1] = 1
-- dp[i] === AT THIS ele, REACH max_product
-- loop step tar, reach n
-- loop small_num, reach i
-- f1 = ma(dp[j], j) with, f2 = ma(dp[i-j], i-j) without, f1\*f2
-- https://leetcode.com/problems/integer-break/
+##### 1 num breaks into 2 nums, then break into 2 nums, max_product (1d)
 
 # binary search
 
