@@ -14,14 +14,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### non-repeated ele (0, 1), ele fill up tar m, n, max_combo (3d->2d)
 
 - transfer:
-- row ele (non-repeated)
+- row ele
 - col tar_m, col tar_n, 3d => (2d)
 - left side === 0
 - dp[k][i][j] === AT THIS ele, REACH step tar, max_combo
 - loop ele
 - loop reach tar_m
 - loop reach tar_n
-- i>=w0, j>=w1 => dp[k][i][j] = val(1) + to_up_left
+- i>=w0, j>=w1 => dp[k][i][j] = val(1) + to_up_left (non-repeated)
 - else => to_up
 - https://leetcode.com/problems/ones-and-zeroes/
 
@@ -30,25 +30,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff (2d)
 
 - transfer: (a + b) - (c + d), (totTar - aTar) - aTar === diff
-- row ele (non-repeated)
+- row ele
 - col ha (1/2)
 - left side == true
 - dp[i][j] === AT THIS ele, REACH step tar, condi
 - loop ele
 - loop reach ha
-- 1_up || to_left_up => dp[i][j] = condi, ma(ma, j)
+- 1_up || to_left_up (non-repeated) => dp[i][j] = condi, ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
 ##### non-repeated ele, into 2 sets, equal sum, true/false (2d)
 
 - transfer: ha = sum / 2
-- row ele (non-repeated)
+- row ele
 - col ha (1/2)
 - left side == true
 - dp[i][j] === AT THIS ele, REACH step tar, condi
 - loop ele
 - loop reach ha
-- 1_up || to_left_up => dp[i][j] = condi
+- 1_up || to_left_up (non-repeated) => dp[i][j] = condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 p
@@ -58,10 +58,10 @@ p
 
 #### repeated ele, fill up tar
 
-##### pick repeated ele, fill up to tar, min_combo. (2d)
+##### repeated ele, fill up to tar, min_combo. (2d)
 
 - transfer:
-- row ele (repeated)
+- row ele
 - col tar
 - left side 0/1
 - dp[i][j] === AT THIS ele, REACH step tar, min_combo
@@ -71,10 +71,10 @@ p
 - j < w, dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change/
 
-##### pick repeated ele, fill up to tar, total_num_combo (2d)
+##### repeated ele, fill up to tar, total_num_combo (2d)
 
 - transfer:
-- row ele (repeated)
+- row ele
 - col tar
 - left side 0/1
 - dp[i][j] === AT THIS ele, REACH tar, total_num_combo
@@ -86,7 +86,25 @@ p
 
 #### ?
 
-##### 1 num breaks into 2 nums, then break into 2 nums, max_product (1d)
+##### repeated ele, fill up to tar, min_combo. (1d)
+
+- transfer:
+- row ele
+- left side 1/0
+- dp[i] === AT THIS tar, REACH min_combo, INF
+- loop ele
+- loop reach tar, loop dp, L(j=w..), dp[j-w]
+- dp[i] with, dp[j-w] + val(1) without
+
+##### 1 num breaks diff nums, max_product (1d)
+
+- transfer: repeated ele, fill up to tar, max_product (1d)
+- row ele
+- left side 1/0
+- dp[i] === AT THIS tar, REACH max_product, INF
+- loop ele
+- loop reach tar, loop dp, L(j=w..), dp[j-w]
+- dp[i] with, dp[j-w] \* val(w) without
 
 # binary search
 
