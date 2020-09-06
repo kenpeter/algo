@@ -25,7 +25,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - else => to_up
 - https://leetcode.com/problems/ones-and-zeroes/
 
-#### non-repeated ele, fill up half step tar
+#### non-repeated ele, fill up half tar
 
 ##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff (2d)
 
@@ -56,7 +56,7 @@ p
 p
 p
 
-#### repeated ele, fill up tar
+#### repeated ele, fill up tar (2d)
 
 ##### repeated ele, fill up to tar, min_combo. (2d)
 
@@ -84,7 +84,7 @@ p
 - j < w, dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change-2/
 
-#### ?
+#### repeated ele, fill up to tar (1d)
 
 ##### repeated ele, fill up to tar, min_combo. (1d)
 
@@ -96,7 +96,7 @@ p
 - loop reach tar, loop dp, L(j=w..), dp[j-w]
 - dp[i] with, dp[j-w] + val(1) without
 
-##### 1 num breaks diff nums, max_product (1d)
+##### 1 num breaks diff nums (repeated), max_product (1d)
 
 - transfer: repeated ele, fill up to tar, max_product (1d)
 - row ele
@@ -105,6 +105,7 @@ p
 - loop ele
 - loop reach tar, loop dp, L(j=w..), dp[j-w]
 - dp[i] with, dp[j-w] \* val(w) without
+- https://leetcode.com/problems/integer-break
 
 # binary search
 
@@ -123,6 +124,8 @@ p
 # b-tree, link
 
 # important questions
+
+https://aaronice.gitbook.io/lintcode/problem-solving-summary/
 
 Leetcode 前 400 重点 250 题 题号 题目名称 讲解链接
 1 Two Sum 视频讲解
