@@ -22,7 +22,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop reach tar_m
 - loop reach tar_n
 - i>=w0, j>=w1 => dp[k][i][j] = val(1) + to_up_left (non-repeated)
-- else => to_up
+- else => dp... = to_up
 - https://leetcode.com/problems/ones-and-zeroes/
 
 #### non-repeated ele, fill up half tar
@@ -36,7 +36,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i][j] === AT THIS ele, REACH step tar, condi
 - loop ele
 - loop reach ha
-- 1_up || to_left_up (non-repeated) => dp[i][j] = condi, ma(ma, j)
+- 1_up || to_left_up (non-repeated)
+- dp[i][j] = condi, ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
 ##### non-repeated ele, into 2 sets, equal sum, true/false (2d)
@@ -48,7 +49,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i][j] === AT THIS ele, REACH step tar, condi
 - loop ele
 - loop reach ha
-- 1_up || to_left_up (non-repeated) => dp[i][j] = condi
+- 1_up || to_left_up (non-repeated)
+- dp[i][j] = condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 p
@@ -93,8 +95,20 @@ p
 - left side 1/0
 - dp[i] === AT THIS tar, REACH min_combo, INF
 - loop ele
-- loop reach tar, loop dp, L(j=w..), dp[j-w]
+- loop reach tar, loop dp, L(j=w..), j>=w
 - dp[i] with, dp[j-w] + val(1) without
+- dp[i] = Math.min
+
+##### repeated ele, fill up to tar, total_num_combo. (1d)
+
+- transfer:
+- row ele
+- left side 1/0
+- dp[i] === AT THIS tar, REACH total_num_combo
+- loop ele
+- loop reach tar, loop dp, L(j=w..), j>=w
+- dp[i] with, dp[j-w] without
+- dp[i] = with + without
 
 ##### 1 num breaks diff nums (repeated), max_product (1d)
 
@@ -105,6 +119,7 @@ p
 - loop ele
 - loop reach tar, loop dp, L(j=w..), dp[j-w]
 - dp[i] with, dp[j-w] \* val(w) without
+- dp[i] = Math.max
 - https://leetcode.com/problems/integer-break
 
 # binary search
