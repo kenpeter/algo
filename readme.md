@@ -151,7 +151,7 @@ p
 - row ele
 - left side === 1 (no val below)
 - dp[i] === AT THIS tar, FINAL total_num_combo
-- loop tar (each tar use all #)
+- loop tar (each tar own #, outer forward)
 - loop ele
 - dp[i] = dp[i] + dp[i-w]
 - https://www.lintcode.com/problem/combination-sum-iv
@@ -162,7 +162,7 @@ p
 - row ele
 - left side === 1 (no val below)
 - dp[i] === AT THIS tar, FINAL total_num_combo
-- loop tar (each tar use all #)
+- loop tar (each tar own #, outer forward)
 - loop ele
 - dp[i] = dp[i] + dp[i-w]
 - https://leetcode.com/problems/combination-sum-iv/
