@@ -125,6 +125,11 @@ p
 - dp[i] = with + without
 - https://leetcode.com/problems/coin-change-2/
 
+##### repeated ele, fill up to tar, total_num_combo. (1d)
+
+- same as above
+- https://www.lintcode.com/problem/backpack-v
+
 ##### 1 num breaks diff nums (repeated), max_product (1d)
 
 - transfer: repeated ele, fill up to tar, max_product (1d)
