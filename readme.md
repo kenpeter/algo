@@ -86,7 +86,7 @@ p
 - without: dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change/
 
-##### repeated ele, fill up to tar, total_num_combo (2d)
+##### repeated no_posi ele, fill up to tar, total_num_combo (2d)
 
 - transfer:
 - row ele
