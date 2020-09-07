@@ -9,7 +9,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
 
-#### non-repeated ele, num_only, fill up multiple tars
+#### non-repeated ele, num_only, fill up multiple tars (3d)
 
 ##### non-repeated ele (0, 1), ele fill up tar m, n, max_combo (3d->2d)
 
@@ -17,7 +17,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - row ele
 - col tar_m, col tar_n, 3d => (2d)
 - left side === 0
-- dp[k][i][j] === AT THIS ele, REACH step tar, max_combo
+- dp[k][i][j] === AT THIS ele, REACH tar, FINAL max_combo
 - loop ele
 - loop tar_m
 - loop tar_n
@@ -25,21 +25,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - without: dp[][][] = to_up
 - https://leetcode.com/problems/ones-and-zeroes/
 
-#### non-repeated ele, weight/size, value, fill up tar
+#### non-repeated ele, weight/size, value, fill up tar (2d)
 
-##### non-repeated ele, weight, value, fill up tar
+##### non-repeated ele, weight, value, fill up tar (2d)
 
 - transfer:
 - row ele
 - col tar (weight)
-- dp[i][j] === AT THIS ele, REACH step tar, max_val
+- dp[i][j] === AT THIS ele, REACH tar, FINAL max_val
 - loop ele
 - loop tar
 - without: dp[i][j] = to_up
 - with: dp[i][j] = to_up_left(non-repeated) + val(ele)
 - https://www.lintcode.com/problem/backpack-ii
 
-#### non-repeated ele, num_only, fill up half tar
+#### non-repeated ele, num_only, fill up half tar (2d)
 
 ##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff (2d)
 
@@ -47,7 +47,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - row ele
 - col ha (1/2)
 - left side == true
-- dp[i][j] === AT THIS ele, REACH step tar, true/false
+- dp[i][j] === AT THIS ele, REACH step tar, FINAL true/false
 - loop ele
 - loop ha
 - 1_up || to_left_up(non-repeated) ==> dp[i][j] = true, ma(ma, j)
@@ -59,7 +59,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - row ele
 - col ha (1/2)
 - left side == true
-- dp[i][j] === AT THIS ele, REACH step tar, condi
+- dp[i][j] === AT THIS ele, REACH step tar, FINAL true/false
 - loop ele
 - loop ha
 - 1_up || to_left_up(non-repeated) ==> dp[i][j] = true
@@ -78,7 +78,7 @@ p
 - row ele
 - col tar
 - left side 0/1
-- dp[i][j] === AT THIS ele, REACH step tar, min_combo
+- dp[i][j] === AT THIS ele, REACH tar, FINAL min_combo
 - loop ele
 - loop tar
 - dp[i][j] = MIN(1_up, val(1) + to_left(repeated))
@@ -91,7 +91,7 @@ p
 - row ele
 - col tar
 - left side 0/1
-- dp[i][j] === AT THIS ele, REACH tar, total_num_combo
+- dp[i][j] === AT THIS ele, REACH tar, FINAL total_num_combo
 - loop ele
 - loop tar
 - dp[i][j] = 1_up **+** to_left(repeated)
@@ -105,18 +105,18 @@ p
 - transfer:
 - row ele
 - left side 1/0
-- dp[i] === AT THIS tar, REACH min_combo, INF
+- dp[i] === AT THIS tar, FINAL min_combo, INF
 - loop ele
-- loop reach tar, loop dp, L(j=w..), j>=w
-- dp[i] with, dp[j-w] + val(1) without
-- dp[i] = Math.min
+- loop tar, loop dp, L(j=w..)
+- dp[i] = MIN(dp[i], dp[j-w] + val(1))
+- https://leetcode.com/problems/coin-change/
 
 ##### repeated ele, fill up to tar, total_num_combo. (1d)
 
 - transfer:
 - row ele
 - left side 1/0
-- dp[i] === AT THIS tar, REACH total_num_combo
+- dp[i] === AT THIS tar, FINAL total_num_combo
 - loop ele
 - loop reach tar, loop dp, L(j=w..), j>=w
 - with: dp[i]
@@ -128,7 +128,7 @@ p
 - transfer: repeated ele, fill up to tar, max_product (1d)
 - row ele
 - left side 1/0
-- dp[i] === AT THIS tar, REACH max_product, INF
+- dp[i] === AT THIS tar, FINAL max_product
 - loop ele
 - loop reach tar, loop dp, L(j=w..), dp[j-w]
 - with: dp[i] = dp[i]
@@ -143,7 +143,7 @@ p
 - transfer: ha = sum / 2
 - row ele
 - left side == true
-- dp[i] === AT THIS ele, REACH ha, true/false
+- dp[i] === AT THIS ele, REACH ha, FINAL true/false
 - loop ele
 - loop backward ha (why? prev stable)
 - i>=w, dp[i] = dp[i] || dp[i-w]
@@ -154,7 +154,7 @@ p
 - transfer: ha = sum / 2
 - row ele
 - left side == true
-- dp[i] === AT THIS ele, REACH ha, true/false
+- dp[i] === AT THIS ele, REACH ha, FINAL true/false
 - loop ele
 - loop backward ha (why? prev stable)
 - i>=w, dp[i] = dp[i] || dp[i-w]
