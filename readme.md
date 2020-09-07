@@ -71,9 +71,9 @@ p
 p
 p
 
-#### repeated ele, num_only, fill up tar (2d)
+#### repeated no_posi ele, num_only, fill up tar (2d)
 
-##### repeated ele, fill up to tar, min_combo. (2d)
+##### repeated no_posi ele, fill up to tar, min_combo. (2d)
 
 - transfer:
 - row ele
@@ -112,7 +112,7 @@ p
 - dp[i] = MIN(dp[i], dp[j-w] + val(1))
 - https://leetcode.com/problems/coin-change/
 
-##### repeated ele, fill up to tar, total_num_combo. (1d)
+##### repeated no_posi ele, fill up to tar, total_num_combo. (1d)
 
 - transfer:
 - row ele
@@ -125,7 +125,7 @@ p
 - dp[i] = with + without
 - https://leetcode.com/problems/coin-change-2/
 
-##### repeated ele, fill up to tar, total_num_combo. (1d)
+##### repeated no_posi ele, fill up to tar, total_num_combo. (1d)
 
 - same as above
 - https://www.lintcode.com/problem/backpack-v
@@ -142,6 +142,30 @@ p
 - without: dp[i] = dp[j-w] \* val(w)
 - dp[i] = Math.max
 - https://leetcode.com/problems/integer-break
+
+#### repeated posi ele, fill up tar (1d)
+
+##### repeated posi ele, fill up to tar, total_num_combo. (1d)
+
+- transfer: no_posi -> posi
+- row ele
+- left side === 1 (no val below)
+- dp[i] === AT THIS tar, FINAL total_num_combo
+- loop tar (each tar use all #)
+- loop ele
+- dp[i] = dp[i] + dp[i-w]
+- https://www.lintcode.com/problem/combination-sum-iv
+
+##### repeated posi ele, fill up to tar, total_num_combo. (1d)
+
+- transfer: no_posi -> posi
+- row ele
+- left side === 1 (no val below)
+- dp[i] === AT THIS tar, FINAL total_num_combo
+- loop tar (each tar use all #)
+- loop ele
+- dp[i] = dp[i] + dp[i-w]
+- https://leetcode.com/problems/combination-sum-iv/
 
 #### non-repeated ele, num_only, half tar (1d)
 
