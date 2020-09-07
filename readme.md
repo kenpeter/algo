@@ -16,7 +16,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer:
 - row ele
 - col tar_m, col tar_n, 3d => (2d)
-- left side === 0
+- left side === 0 (val(1))
 - dp[k][i][j] === AT THIS ele, REACH tar, FINAL max_combo
 - loop ele
 - loop tar_m
@@ -32,7 +32,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer:
 - row ele
 - col tar (weight)
-- left side === 0 (put item)
+- left side === 0 (val(ele))
 - dp[i][j] === AT THIS ele, REACH tar, FINAL max_val
 - loop ele
 - loop tar
@@ -78,12 +78,12 @@ p
 - transfer:
 - row ele
 - col tar
-- left side 0
+- left side 0 (val(1))
 - dp[i][j] === AT THIS ele, REACH tar, FINAL min_combo
 - loop ele
 - loop tar
-- dp[i][j] = MIN(1_up, val(1) + to_left(repeated))
-- dp[i][j] = 1_up
+- with: dp[i][j] = MIN(1_up, val(1) + to_left(repeated))
+- without: dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change/
 
 ##### repeated ele, fill up to tar, total_num_combo (2d)
@@ -91,7 +91,7 @@ p
 - transfer:
 - row ele
 - col tar
-- left side 0/1
+- left side === 1 (no val below)
 - dp[i][j] === AT THIS ele, REACH tar, FINAL total_num_combo
 - loop ele
 - loop tar
@@ -116,19 +116,20 @@ p
 
 - transfer:
 - row ele
-- left side 1/0
+- left side === 1 (no val below)
 - dp[i] === AT THIS tar, FINAL total_num_combo
 - loop ele
 - loop tar (1d backward)
 - with: dp[i]
 - without: dp[j-w]
 - dp[i] = with + without
+- https://leetcode.com/problems/coin-change-2/
 
 ##### 1 num breaks diff nums (repeated), max_product (1d)
 
 - transfer: repeated ele, fill up to tar, max_product (1d)
 - row ele
-- left side 1/0
+- left side === 0 (multiply, so 1)
 - dp[i] === AT THIS tar, FINAL max_product
 - loop ele
 - loop tar (1d backward)
