@@ -122,6 +122,31 @@ p
 - dp[i] = Math.max
 - https://leetcode.com/problems/integer-break
 
+#### non-repeated ele, half tar (1d)
+
+##### non-repeated ele, into 2 sets, equal sum, true/false (1d)
+
+- transfer: ha = sum / 2
+- row ele
+- left side == true
+- dp[i] === AT THIS ele, REACH ha, true/false
+- loop ele
+- loop backward ha (why? prev stable)
+- i>=w, dp[i] = dp[i] || dp[i-w]
+- https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
+
+##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff (1d)
+
+- transfer: ha = sum / 2
+- row ele
+- left side == true
+- dp[i] === AT THIS ele, REACH ha, true/false
+- loop ele
+- loop backward ha (why? prev stable)
+- i>=w, dp[i] = dp[i] || dp[i-w]
+- ma(ma, j)
+- https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
+
 # binary search
 
 # hash
