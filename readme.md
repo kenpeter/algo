@@ -32,6 +32,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer:
 - row ele
 - col tar (weight)
+- left side === 0 (put item)
 - dp[i][j] === AT THIS ele, REACH tar, FINAL max_val
 - loop ele
 - loop tar
@@ -77,7 +78,7 @@ p
 - transfer:
 - row ele
 - col tar
-- left side 0/1
+- left side 0
 - dp[i][j] === AT THIS ele, REACH tar, FINAL min_combo
 - loop ele
 - loop tar
@@ -107,7 +108,7 @@ p
 - left side 1/0
 - dp[i] === AT THIS tar, FINAL min_combo, INF
 - loop ele
-- loop tar, loop dp, L(j=w..)
+- loop tar, loop dp, L(j=w..), j>=w
 - dp[i] = MIN(dp[i], dp[j-w] + val(1))
 - https://leetcode.com/problems/coin-change/
 
@@ -118,7 +119,7 @@ p
 - left side 1/0
 - dp[i] === AT THIS tar, FINAL total_num_combo
 - loop ele
-- loop reach tar, loop dp, L(j=w..), j>=w
+- loop tar (1d backward)
 - with: dp[i]
 - without: dp[j-w]
 - dp[i] = with + without
@@ -130,7 +131,7 @@ p
 - left side 1/0
 - dp[i] === AT THIS tar, FINAL max_product
 - loop ele
-- loop reach tar, loop dp, L(j=w..), dp[j-w]
+- loop tar (1d backward)
 - with: dp[i] = dp[i]
 - without: dp[i] = dp[j-w] \* val(w)
 - dp[i] = Math.max
@@ -145,7 +146,7 @@ p
 - left side == true
 - dp[i] === AT THIS ele, REACH ha, FINAL true/false
 - loop ele
-- loop backward ha (why? prev stable)
+- loop ha (backward, why? prev stable)
 - i>=w, dp[i] = dp[i] || dp[i-w]
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
@@ -156,7 +157,7 @@ p
 - left side == true
 - dp[i] === AT THIS ele, REACH ha, FINAL true/false
 - loop ele
-- loop backward ha (why? prev stable)
+- loop ha (backward, why? prev stable)
 - i>=w, dp[i] = dp[i] || dp[i-w]
 - ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
