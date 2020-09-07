@@ -9,7 +9,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
 
-#### non-repeated ele, fill up multiple tars
+#### non-repeated ele, num_only, fill up multiple tars
 
 ##### non-repeated ele (0, 1), ele fill up tar m, n, max_combo (3d->2d)
 
@@ -19,13 +19,27 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - left side === 0
 - dp[k][i][j] === AT THIS ele, REACH step tar, max_combo
 - loop ele
-- loop reach tar_m
-- loop reach tar_n
-- i>=w0, j>=w1 => dp[k][i][j] = val(1) + to_up_left (non-repeated)
-- else => dp... = to_up
+- loop tar_m
+- loop tar_n
+- with: dp[k][i][j] = ma(to_up, val(1) + to_up_left) (non-repeated)
+- without: dp[][][] = to_up
 - https://leetcode.com/problems/ones-and-zeroes/
 
-#### non-repeated ele, fill up half tar
+#### non-repeated ele, weight/size, value, fill up tar
+
+##### non-repeated ele, weight, value, fill up tar
+
+- transfer:
+- row ele
+- col tar (weight)
+- dp[i][j] === AT THIS ele, REACH step tar, max_val
+- loop ele
+- loop tar
+- without: dp[i][j] = to_up
+- with: dp[i][j] = to_up_left(non-repeated) + val(ele)
+- https://www.lintcode.com/problem/backpack-ii
+
+#### non-repeated ele, num_only, fill up half tar
 
 ##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff (2d)
 
@@ -33,11 +47,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - row ele
 - col ha (1/2)
 - left side == true
-- dp[i][j] === AT THIS ele, REACH step tar, condi
+- dp[i][j] === AT THIS ele, REACH step tar, true/false
 - loop ele
-- loop reach ha
-- 1_up || to_left_up (non-repeated)
-- dp[i][j] = condi, ma(ma, j)
+- loop ha
+- 1_up || to_left_up(non-repeated) ==> dp[i][j] = true, ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
 ##### non-repeated ele, into 2 sets, equal sum, true/false (2d)
@@ -48,9 +61,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - left side == true
 - dp[i][j] === AT THIS ele, REACH step tar, condi
 - loop ele
-- loop reach ha
-- 1_up || to_left_up (non-repeated)
-- dp[i][j] = condi
+- loop ha
+- 1_up || to_left_up(non-repeated) ==> dp[i][j] = true
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 p
@@ -58,7 +70,7 @@ p
 p
 p
 
-#### repeated ele, fill up tar (2d)
+#### repeated ele, num_only, fill up tar (2d)
 
 ##### repeated ele, fill up to tar, min_combo. (2d)
 
@@ -68,9 +80,9 @@ p
 - left side 0/1
 - dp[i][j] === AT THIS ele, REACH step tar, min_combo
 - loop ele
-- loop reach tar
-- j >= w, dp[i][j] = mi(1_up, val(1) + to_left(repeated))
-- j < w, dp[i][j] = 1_up
+- loop tar
+- dp[i][j] = MIN(1_up, val(1) + to_left(repeated))
+- dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change/
 
 ##### repeated ele, fill up to tar, total_num_combo (2d)
@@ -81,12 +93,12 @@ p
 - left side 0/1
 - dp[i][j] === AT THIS ele, REACH tar, total_num_combo
 - loop ele
-- loop reach tar
-- j >= w, dp[i][j] = 1_up + to_left(repeated)
-- j < w, dp[i][j] = 1_up
+- loop tar
+- dp[i][j] = 1_up **+** to_left(repeated)
+- dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change-2/
 
-#### repeated ele, fill up to tar (1d)
+#### repeated ele, num_only, fill up to tar (1d)
 
 ##### repeated ele, fill up to tar, min_combo. (1d)
 
@@ -107,7 +119,8 @@ p
 - dp[i] === AT THIS tar, REACH total_num_combo
 - loop ele
 - loop reach tar, loop dp, L(j=w..), j>=w
-- dp[i] with, dp[j-w] without
+- with: dp[i]
+- without: dp[j-w]
 - dp[i] = with + without
 
 ##### 1 num breaks diff nums (repeated), max_product (1d)
@@ -118,11 +131,12 @@ p
 - dp[i] === AT THIS tar, REACH max_product, INF
 - loop ele
 - loop reach tar, loop dp, L(j=w..), dp[j-w]
-- dp[i] with, dp[j-w] \* val(w) without
+- with: dp[i] = dp[i]
+- without: dp[i] = dp[j-w] \* val(w)
 - dp[i] = Math.max
 - https://leetcode.com/problems/integer-break
 
-#### non-repeated ele, half tar (1d)
+#### non-repeated ele, num_only, half tar (1d)
 
 ##### non-repeated ele, into 2 sets, equal sum, true/false (1d)
 
