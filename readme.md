@@ -192,6 +192,11 @@ p
 - ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
 
+##### cuttong a rod
+
+- https://www.lintcode.com/problem/cutting-a-rod
+- https://www.lintcode.com/discuss/1266/
+
 # binary search
 
 # hash
