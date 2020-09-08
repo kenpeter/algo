@@ -5,11 +5,32 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - Divide all numbers into two groups
 - what is the minimum difference between the sum of two groups.
 
-# knapsack
+# DP
 
-- https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
+## 2D
 
-## ele -> tar(forward), non-repeated ele, fill multiple tars (2d/3d)
+### ele -> tar (forward)
+
+### ele -> half tar, condi (forward)
+
+## 1D
+
+### ele -> tar (for)
+
+### ele -> half tar, condi (back)
+
+### ele -> tar (back)
+
+### tar(posi) -> ele (for)
+
+### tar() -> ele (ele again, for)
+
+p
+p
+p
+p
+
+#### ele -> tar(forward), non-repeated ele, fill multiple tars (2d/3d)
 
 ##### non-repeated ele (0, 1), ele fill tar_m, tar_n, max_combo (3d->2d)
 
@@ -22,7 +43,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - without: dp[][][] = to_up
 - https://leetcode.com/problems/ones-and-zeroes/
 
-## ele -> tar(forward), non-repeated ele, weight/size/x, value, fill up tar (2d)
+### ele -> tar(forward), non-repeated ele, weight/size/x, value, fill up tar (2d)
 
 ##### non-repeated ele, weight, value, fill up tar (2d)
 
@@ -34,7 +55,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - with: dp[i][j] = to_up_left(non-rep) + val(ele)
 - https://www.lintcode.com/problem/backpack-ii
 
-## ele -> tar(forward), non-repeated ele, fill half tar (2d)
+### ele -> tar(forward), non-repeated ele, fill half tar (2d)
 
 ##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff (2d)
 
@@ -158,14 +179,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = stay_orig + to_left(1d)
 - https://www.lintcode.com/problem/combination-sum-iv
 
-## tar(element again) -> ele(forward), ele, fill up to tar, max/min/total (1d)
+## tar() -> ele(ele again, forward), ele, fill up to tar, max/min/total (1d)
 
 ##### cut a rod, ele, fill up to tar, max_val (1d)
 
 - dp[i] === AT THIS tar, FINAL max_value
 - left side === 0 (no val below)
 - loop tar (forward)
-- loop ele (forward, j=1; j<=i; element again)
+- loop ele (forward, j=1; j<=i; ele again)
 - dp[i] = MAX(stay_orig, to_left + w)
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
