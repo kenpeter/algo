@@ -109,7 +109,9 @@ p
 - dp[i] === AT THIS tar, FINAL min_combo, INF
 - loop ele
 - loop tar, loop dp, L(j=w..), j>=w
-- dp[i] = MIN(dp[i], dp[j-w] + val(1))
+- dp[i] === stay_orig
+- dp[j-w] === to_left
+- dp[i] = MIN(stay_orig, to_left + val(1))
 - https://leetcode.com/problems/coin-change/
 
 ##### repeated no_posi ele, fill up to tar, total_num_combo. (1d)
@@ -119,10 +121,8 @@ p
 - left side === 1 (no val below)
 - dp[i] === AT THIS tar, FINAL total_num_combo
 - loop ele
-- loop tar (1d backward)
-- with: dp[i]
-- without: dp[j-w]
-- dp[i] = with + without
+- loop tar (1d backward, ?)
+- dp[i] = stay_orig + to_left
 - https://leetcode.com/problems/coin-change-2/
 
 ##### repeated no_posi ele, fill up to tar, total_num_combo. (1d)
@@ -138,22 +138,20 @@ p
 - dp[i] === AT THIS tar, FINAL max_product
 - loop ele
 - loop tar (forward, build up)
-- with: dp[i] = dp[i]
-- without: dp[i] = dp[j-w] \* val(w)
-- dp[i] = Math.max
+- dp[i] = MAX(stay_orig, to_left \* \* val(w))
 - https://leetcode.com/problems/integer-break
 
 #### repeated posi ele, fill up tar (1d)
 
 ##### repeated posi ele, fill up to tar, total_num_combo. (1d)
 
-- transfer: no_posi -> posi
+- transfer:
 - row ele
 - left side === 1 (no val below)
 - dp[i] === AT THIS tar, FINAL total_num_combo
 - loop tar (every tar walkthrough ele, forward)
 - loop ele
-- dp[i] = dp[i] + dp[i-w]
+- dp[i] = stay_orig + to_left
 - https://www.lintcode.com/problem/combination-sum-iv
 
 ##### repeated posi ele, fill up to tar, total_num_combo. (1d)
@@ -164,7 +162,7 @@ p
 - dp[i] === AT THIS tar, FINAL total_num_combo
 - loop tar (each tar own #, outer forward)
 - loop ele
-- dp[i] = dp[i] + dp[i-w]
+- dp[i] = stay_orig + to_left
 - https://leetcode.com/problems/combination-sum-iv/
 
 #### non-repeated ele, half tar (1d)
@@ -176,8 +174,8 @@ p
 - left side == true
 - dp[i] === AT THIS ele, REACH ha, FINAL true/false
 - loop ele
-- loop ha (backward, why? prev stable)
-- i>=w, dp[i] = dp[i] || dp[i-w]
+- loop ha (backward, ? prev stable)
+- dp[i] = stay_orig || to_left, condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 ##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff (1d)
@@ -188,7 +186,7 @@ p
 - dp[i] === AT THIS ele, REACH ha, FINAL true/false
 - loop ele
 - loop ha (backward, why? prev stable)
-- i>=w, dp[i] = dp[i] || dp[i-w]
+- dp[i] = stay_orig || to_left
 - ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
 
