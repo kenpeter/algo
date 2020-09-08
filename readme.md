@@ -9,16 +9,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
 
-## ele -> tar(forward), non-repeated ele, fill up multiple tars (2d/3d)
+## ele -> tar(forward), non-repeated ele, fill multiple tars (2d/3d)
 
-##### non-repeated ele (0, 1), ele fill up tar m, n, max_combo (3d->2d)
+##### non-repeated ele (0, 1), ele fill tar_m, tar_n, max_combo (3d->2d)
 
 - dp[k][i][j] === AT THIS ele, REACH tar_m, tar_n, FINAL max_combo
 - left side === 0 (val(1))
 - loop ele (forward)
 - loop tar_m (forward)
 - loop tar_n (forward)
-- with: dp[k][i][j] = ma( to_up, val(1) + to_up_left(non-repeated) )
+- with: dp[k][i][j] = ma( to_up, val(1) + to_up_left(non-rep) )
 - without: dp[][][] = to_up
 - https://leetcode.com/problems/ones-and-zeroes/
 
@@ -31,10 +31,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop ele (forward)
 - loop tar (forward)
 - without: dp[i][j] = to_up
-- with: dp[i][j] = to_up_left(non-repeated) + val(ele)
+- with: dp[i][j] = to_up_left(non-rep) + val(ele)
 - https://www.lintcode.com/problem/backpack-ii
 
-## ele -> tar(forward), non-repeated ele, fill up half tar (2d)
+## ele -> tar(forward), non-repeated ele, fill half tar (2d)
 
 ##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff (2d)
 
@@ -43,10 +43,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - left side == true
 - loop ele (forward)
 - loop ha (forward)
-- 1_up || to_left_up(non-repeated) ==> dp[i][j] = true, ma(ma, j)
+- 1_up || to_left_up(non-rep) ==> dp[i][j] = true, ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
-##### non-repeated ele, into 2 sets, equal sum, true/false (2d)
+##### non-repeated ele, into 2 sets, equal sum, condi (2d)
 
 - transfer: ha = sum / 2
 - row ele
@@ -58,7 +58,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 1_up || to_left_up(non-repeated) ==> dp[i][j] = true
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
-## ele -> tar(forward), repeated ele, fill up tar (2d)
+## ele -> tar(forward), repeated ele, fill up tar, min/max/total (2d)
 
 ##### repeated ele, fill up to tar, min_combo. (2d)
 
@@ -160,7 +160,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## tar(element again) -> ele(forward), ele, fill up to tar, max/min/total (1d)
 
-##### cut a rod, repeated ele, fill up to tar, max_val (1d)
+##### cut a rod, ele, fill up to tar, max_val (1d)
 
 - dp[i] === AT THIS tar, FINAL max_value
 - left side === 0 (no val below)
