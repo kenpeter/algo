@@ -16,9 +16,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer:
 - dp[k][i][j] === AT THIS ele, REACH tar_m, tar_n, FINAL max_combo
 - left side === 0 (val(1))
-- loop ele
-- loop tar_m
-- loop tar_n
+- loop ele (forward)
+- loop tar_m (forward)
+- loop tar_n (forward)
 - with: dp[k][i][j] = ma(to_up, val(1) + to_up_left) (non-repeated)
 - without: dp[][][] = to_up
 - https://leetcode.com/problems/ones-and-zeroes/
@@ -30,8 +30,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer:
 - dp[i][j] === AT THIS ele, REACH tar, FINAL max_val
 - left side === 0 (val(ele))
-- loop ele
-- loop tar
+- loop ele (forward)
+- loop tar (forward)
 - without: dp[i][j] = to_up
 - with: dp[i][j] = to_up_left(non-repeated) + val(ele)
 - https://www.lintcode.com/problem/backpack-ii
@@ -43,8 +43,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer: (a + b) - (c + d), (totTar - aTar) - aTar === diff
 - dp[i][j] === AT THIS ele, REACH step tar, FINAL true/false
 - left side == true
-- loop ele
-- loop ha
+- loop ele (forward)
+- loop ha (forward)
 - 1_up || to_left_up(non-repeated) ==> dp[i][j] = true, ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
@@ -55,8 +55,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - col ha (1/2)
 - left side == true
 - dp[i][j] === AT THIS ele, REACH step tar, FINAL true/false
-- loop ele
-- loop ha
+- loop ele (forward)
+- loop ha (forward)
 - 1_up || to_left_up(non-repeated) ==> dp[i][j] = true
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
@@ -72,8 +72,8 @@ p
 - transfer:
 - dp[i][j] === AT THIS ele, REACH tar, FINAL min_combo
 - left side 0 (val(1))
-- loop ele
-- loop tar
+- loop ele (forward)
+- loop tar (forward)
 - with: dp[i][j] = MIN(1_up, val(1) + to_left(repeated))
 - without: dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change/
@@ -83,8 +83,8 @@ p
 - transfer:
 - dp[i][j] === AT THIS ele, REACH tar, FINAL total_num_combo
 - left side === 1 (no val below)
-- loop ele
-- loop tar
+- loop ele (forward)
+- loop tar (forward)
 - with: dp[i][j] = 1_up + to_left(repeated)
 - without: dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change-2/
@@ -96,8 +96,8 @@ p
 - transfer:
 - dp[i] === AT THIS tar, FINAL min_combo, INF
 - left side === 0 (val(1))
-- loop ele
-- loop tar (forward, j=w; j<=tar)
+- loop ele (forward)
+- loop tar (forward, j=w; j<=tar; min)
 - dp[i] === stay_orig
 - dp[j-w] === to_left
 - dp[i] = MIN(stay_orig, to_left + val(1))
@@ -108,35 +108,29 @@ p
 - transfer:
 - dp[i] === AT THIS tar, FINAL total_num_combo
 - left side === 1 (no val below)
-- loop ele
-- loop tar (backward, acc)
+- loop ele (forward)
+- loop tar (forward, j=w; j<=tar; acc)
 - dp[i] = stay_orig + to_left
 - https://leetcode.com/problems/coin-change-2/
 
 ##### repeated no_posi ele, fill up to tar, total_num_combo. (1d)
 
-- same as above
+- dp[i] === AT THIS tar, FINAL total_num_combo
+- left side === 1 (no val below)
+- loop ele (forward)
+- loop tar (backward, j=tar; j>=w; ?)
+- dp[i] = stay_orig + to_left
 - https://www.lintcode.com/problem/backpack-v
 
-##### 1 num breaks diff nums (repeated), max_product (1d)
-
-- transfer: repeated ele, fill up to tar, max_product (1d)
-- dp[i] === AT THIS tar, FINAL max_product
-- left side === 1 (multiply, so 1)
-- loop ele
-- loop tar (forward, acc)
-- dp[i] = MAX(stay_orig, to_left \* val(w))
-- https://leetcode.com/problems/integer-break
-
-#### repeated posi ele, fill up tar (1d)
+#### repeated posi ele, fill up to tar (1d)
 
 ##### repeated posi ele, fill up to tar, total_num_combo. (1d)
 
 - transfer:
 - dp[i] === AT THIS tar, FINAL total_num_combo
 - left side === 1 (no val below)
-- loop tar (1 tar many ele)
-- loop ele
+- loop tar (forward)
+- loop ele (forward)
 - dp[i] = stay_orig + to_left
 - https://www.lintcode.com/problem/combination-sum-iv
 
@@ -145,8 +139,8 @@ p
 - transfer:
 - dp[i] === AT THIS tar, FINAL total_num_combo
 - left side === 1 (no val below)
-- loop tar (1 tar many ele)
-- loop ele
+- loop tar (forward)
+- loop ele (forward)
 - dp[i] = stay_orig + to_left
 - https://leetcode.com/problems/combination-sum-iv/
 
@@ -155,11 +149,21 @@ p
 - transfer: repeated ele, fill up to tar, max_val (1d)
 - dp[i] === AT THIS tar, FINAL max_value
 - left side === 0 (no val below)
-- loop tar (1 tar many ele)
-- loop ele (forward j<=i; dp[i-j])
+- loop tar (forward)
+- loop ele (forward, j=1; j<=i; dp[i-j])
 - dp[i] = MAX(stay_orig, to_left + w)
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
+
+##### 1 num breaks diff nums (repeated), max_product (1d)
+
+- transfer: repeated ele, fill up to tar, max_product (1d)
+- dp[i] === AT THIS tar, FINAL max_product
+- left side === 1 (multiply, so 1)
+- loop tar (forward)
+- loop ele (forward, j=i; i<=ns; )
+- dp[i] = MAX(stay_orig, to_left \* val(w))
+- https://leetcode.com/problems/integer-break
 
 #### non-repeated ele, half tar (1d)
 
@@ -168,7 +172,7 @@ p
 - transfer: ha = sum / 2
 - dp[i] === AT THIS ele, REACH ha, FINAL true/false
 - left side == true
-- loop ele
+- loop ele (forward)
 - loop ha (backward stable)
 - dp[i] = stay_orig || to_left, condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
@@ -178,7 +182,7 @@ p
 - transfer: ha = sum / 2
 - dp[i] === AT THIS ele, REACH ha, FINAL true/false
 - left side == true
-- loop ele
+- loop ele (forward)
 - loop ha (backward stable)
 - dp[i] = stay_orig || to_left
 - ma(ma, j)
