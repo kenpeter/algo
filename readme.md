@@ -9,7 +9,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/coin-change-2/discuss/99212/Knapsack-problem-Java-solution-with-thinking-process-O(nm)-Time-and-O(m)-Space
 
-#### non-repeated ele, num_only, fill up multiple tars (3d)
+#### non-repeated ele, fill up multiple tars (3d)
 
 ##### non-repeated ele (0, 1), ele fill up tar m, n, max_combo (3d->2d)
 
@@ -40,7 +40,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - with: dp[i][j] = to_up_left(non-repeated) + val(ele)
 - https://www.lintcode.com/problem/backpack-ii
 
-#### non-repeated ele, num_only, fill up half tar (2d)
+#### non-repeated ele, fill up half tar (2d)
 
 ##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff (2d)
 
@@ -71,7 +71,7 @@ p
 p
 p
 
-#### repeated no_posi ele, num_only, fill up tar (2d)
+#### repeated no_posi ele, fill up tar (2d)
 
 ##### repeated no_posi ele, fill up to tar, min_combo. (2d)
 
@@ -95,11 +95,11 @@ p
 - dp[i][j] === AT THIS ele, REACH tar, FINAL total_num_combo
 - loop ele
 - loop tar
-- dp[i][j] = 1_up **+** to_left(repeated)
-- dp[i][j] = 1_up
+- with: dp[i][j] = 1_up + to_left(repeated)
+- without: dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change-2/
 
-#### repeated ele, num_only, fill up to tar (1d)
+#### repeated ele, fill up to tar (1d)
 
 ##### repeated ele, fill up to tar, min_combo. (1d)
 
@@ -137,7 +137,7 @@ p
 - left side === 0 (multiply, so 1)
 - dp[i] === AT THIS tar, FINAL max_product
 - loop ele
-- loop tar (1d backward)
+- loop tar (forward, build up)
 - with: dp[i] = dp[i]
 - without: dp[i] = dp[j-w] \* val(w)
 - dp[i] = Math.max
@@ -151,7 +151,7 @@ p
 - row ele
 - left side === 1 (no val below)
 - dp[i] === AT THIS tar, FINAL total_num_combo
-- loop tar (each tar own #, outer forward)
+- loop tar (every tar walkthrough ele, forward)
 - loop ele
 - dp[i] = dp[i] + dp[i-w]
 - https://www.lintcode.com/problem/combination-sum-iv
@@ -167,7 +167,7 @@ p
 - dp[i] = dp[i] + dp[i-w]
 - https://leetcode.com/problems/combination-sum-iv/
 
-#### non-repeated ele, num_only, half tar (1d)
+#### non-repeated ele, half tar (1d)
 
 ##### non-repeated ele, into 2 sets, equal sum, true/false (1d)
 
