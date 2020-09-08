@@ -84,13 +84,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### repeated ele, fill up to tar, min_combo. (1d forward)
 
-- dp[i] === AT THIS tar, FINAL min_combo, INF
+- dp[i] === AT THIS tar, FINAL min_combo, -1
 - left side === 0 (val(1))
 - loop ele (forward)
-- loop tar (forward, j=w; j<=tar; guard)
+- loop tar (forward, j=w; j<=tar; init guard)
 - dp[i] === stay_orig
 - dp[j-w] === to_left
-- dp[i] = MIN(stay_orig, to_left + val(1))
+- dp[i] = MIN(stay_orig, to_left(repeated) + val(1))
 - https://leetcode.com/problems/coin-change/
 
 ## repeated ele, fill up to tar (1d forward)
@@ -101,7 +101,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - left side === 1 (no val below)
 - loop tar (forward)
 - loop ele (forward)
-- dp[i] = stay_orig + to_left
+- dp[i] = stay_orig + to_left(repeated)
 - https://www.lintcode.com/problem/combination-sum-iv
 
 ##### repeated ele, fill up to tar, total_num_combo. (1d forward)
@@ -110,7 +110,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - left side === 1 (no val below)
 - loop tar (forward)
 - loop ele (forward)
-- dp[i] = stay_orig + to_left
+- dp[i] = stay_orig + to_left(repeated)
 - https://leetcode.com/problems/combination-sum-iv/
 
 ## loop tar, loop ele, max/min (1d forward)
