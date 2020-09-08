@@ -138,7 +138,7 @@ p
 - dp[i] === AT THIS tar, FINAL max_product
 - loop ele
 - loop tar (forward, build up)
-- dp[i] = MAX(stay_orig, to_left \* \* val(w))
+- dp[i] = MAX(stay_orig, to_left \* val(w))
 - https://leetcode.com/problems/integer-break
 
 #### repeated posi ele, fill up tar (1d)
@@ -149,7 +149,7 @@ p
 - row ele
 - left side === 1 (no val below)
 - dp[i] === AT THIS tar, FINAL total_num_combo
-- loop tar (every tar walkthrough ele, forward)
+- loop tar (each tar loop #)
 - loop ele
 - dp[i] = stay_orig + to_left
 - https://www.lintcode.com/problem/combination-sum-iv
@@ -160,7 +160,7 @@ p
 - row ele
 - left side === 1 (no val below)
 - dp[i] === AT THIS tar, FINAL total_num_combo
-- loop tar (each tar own #, outer forward)
+- loop tar (each tar loop #)
 - loop ele
 - dp[i] = stay_orig + to_left
 - https://leetcode.com/problems/combination-sum-iv/
