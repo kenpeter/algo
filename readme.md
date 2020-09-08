@@ -30,7 +30,7 @@ p
 p
 p
 
-#### ele -> tar(forward), non-repeated ele, fill multiple tars (2d/3d)
+## ele -> tar(forward), non-repeated ele, fill multiple tars (2d/3d)
 
 ##### non-repeated ele (0, 1), ele fill tar_m, tar_n, max_combo (3d->2d)
 
@@ -43,7 +43,7 @@ p
 - without: dp[][][] = to_up
 - https://leetcode.com/problems/ones-and-zeroes/
 
-### ele -> tar(forward), non-repeated ele, weight/size/x, value, fill up tar (2d)
+## ele -> tar(forward), non-repeated ele, weight/size/x, value, fill up tar (2d)
 
 ##### non-repeated ele, weight, value, fill up tar (2d)
 
@@ -55,7 +55,7 @@ p
 - with: dp[i][j] = to_up_left(non-rep) + val(ele)
 - https://www.lintcode.com/problem/backpack-ii
 
-### ele -> tar(forward), non-repeated ele, fill half tar (2d)
+## ele -> tar(forward), non-repeated ele, fill half tar (2d)
 
 ##### pick 2 non-repeated ele, canncel out, 1 or 0 left, min_diff (2d)
 
