@@ -21,9 +21,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ### ele -> tar, total (1D backward)
 
-\
-\
-\
+<br/>
+<br/>
 
 ## ele -> tar(forward), non-rep ele, reach tar1 tar2 (2d/3d)
 
