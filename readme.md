@@ -165,29 +165,29 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### ele -> tar(backward), rep/non-rep ele, reach tar, num_combo (1d)
 
-- dp[i] === AT THIS tar, FINAL total_num_combo
+- dp[i] === AT tar, FINAL total_num_combo
 - left side === 1 (no val below)
 - loop ele (forward)
-- loop tar (backward? total)
+- loop tar (backward? full_tar)
 - dp[i] = stay_orig + to_left(1d)
 - https://www.lintcode.com/problem/backpack-v
 
-## tar(posi) -> ele(forward), ele, fill up to tar, max/min/total (1d)
+## tar(posi) -> ele(forward), POSI rep/non-rep ele, reach tar, num_combo/?/?/? (1d)
 
-##### POSI ele, fill up to tar, total_sum. (1d)
+##### tar(posi) -> ele(forward), POSI rep/non-rep ele, reach tar, num_combo (1d)
 
-- dp[i] === AT THIS tar, FINAL total_sum
+- dp[i] === AT tar, FINAL num_combo
 - left side === 1 (no val below)
 - loop tar (forward)
 - loop ele (forward)
 - dp[i] = stay_orig + to_left(1d)
 - https://www.lintcode.com/problem/combination-sum-iv
 
-## tar() -> ele(ele again, forward), ele, fill up to tar, max/min/total (1d)
+## tar() -> ele(ele again, forward), rep/non-rep ele, reach tar, max/?/?/? (1d)
 
-##### cut a rod, ele, fill up to tar, max_val (1d)
+##### cut a rod, tar() -> ele(ele again, forward), rep/non-rep ele, reach tar, max_val (1d)
 
-- dp[i] === AT THIS tar, FINAL max_value
+- dp[i] === AT tar, FINAL max_val
 - left side === 0 (no val below)
 - loop tar (forward)
 - loop ele (forward, j=1; j<=i; ele again)
