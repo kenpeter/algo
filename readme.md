@@ -5,13 +5,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - Divide all numbers into two groups
 - what is the minimum difference between the sum of two groups.
 
-# DP
+# 0/1 knapsack
 
 ## ele -> tar(forward), non-rep ele, reach tar/half_tar, min/max/num_combo/condi/product (2d)
 
 ## ele -> tar(forward), rep ele, reach tar/half_tar, min/max/num_combo/condi/product (2d)
 
-## classic knapsack (2d)
+## classic 0/1 knapsack (2d)
 
 ## ele -> tar(forward), rep/non-rep ele, reach tar, min/max/num_combo/product/condi (1d)
 
