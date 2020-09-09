@@ -7,23 +7,19 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # DP
 
-## 2D
+### ele -> tar (2D forward)
 
-### ele -> tar (forward)
+### ele -> tar, half_total, condi (2D forward)
 
-### ele -> tar, half_total, condi (forward)
+### ele -> tar (1D forward)
 
-## 1D
+### tar(posi) -> ele (1D forward)
 
-### ele -> tar (for)
+### tar() -> ele (ele again, 1D forward)
 
-### ele -> tar, half_total, condi (back)
+### ele -> tar, half_total, condi (1D backward)
 
-### ele -> tar, total (back)
-
-### tar(posi) -> ele (for)
-
-### tar() -> ele (ele again, for)
+### ele -> tar, total (1D backward)
 
 p
 p
