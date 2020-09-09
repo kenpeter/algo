@@ -26,11 +26,11 @@ p
 p
 p
 
-## ele -> tar(forward), non-repeated ele, fill multiple tars (2d/3d)
+## ele -> tar(forward), non-rep ele, reach tar1 tar2 (2d/3d)
 
-##### non-repeated ele (0, 1), ele fill tar_m, tar_n, max_combo (3d->2d)
+##### non-rep ele (0, 1), reach tar_m, tar_n, max_combo (3d->2d)
 
-- dp[k][i][j] === AT THIS ele, REACH tar_m, tar_n, FINAL max_combo
+- dp[k][i][j] === AT ele, REACH tar_m, tar_n, FINAL max_combo
 - left side === 0 (val(1))
 - loop ele (forward)
 - loop tar_m (forward)
@@ -39,9 +39,9 @@ p
 - without: dp[][][] = to_up
 - https://leetcode.com/problems/ones-and-zeroes/
 
-## ele -> tar(forward), non-repeated ele, weight/size/x, value, fill up tar (2d)
+## ele -> tar(forward), non-rep ele, weight, reacth tar, max_val (2d)
 
-##### non-repeated ele, weight, value, fill up tar (2d)
+##### non-rep ele, weight, reach tar, max_val (2d)
 
 - dp[i][j] === AT THIS ele, REACH tar, FINAL max_val
 - left side === 0 (val(ele))
