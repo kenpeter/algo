@@ -2,100 +2,53 @@
 
 https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-questions-thread
 
-- Divide all numbers into two groups
-- what is the minimum difference between the sum of two groups.
-
 # 0/1 knapsack
 
-## ele -> tar(forward), non-rep ele, reach tar/half_tar, min/max/condi/product (2d)
-
-## ele -> tar(forward), non-rep ele, reach tar/half_tar, num_combo (2d)
-
-## ele -> tar(forward), rep ele, reach tar/half_tar, min/max/num_combo/condi/product (2d)
-
-## ele -> tar(forward), rep ele, reach tar/half_tar, num_combo (2d)
-
-## ele -> tar(forward), rep/non-rep ele, reach tar, min/max/num_combo/product/condi (1d)
-
-## ele -> tar(forward), rep/non-rep ele, reach tar, num_combo (1d)
-
-## ele -> tar(backward), rep/non-rep ele, reach half_gen_tar(CONDI)/half_gen_tar/gen_tar, condi/min/num_combo (1d)
-
-## tar(posi) -> ele(forward), POSI rep/non-rep ele, reach tar, num_combo/?/?/? (1d)
-
-## tar() -> ele(ele again, forward), rep/non-rep ele, reach tar, max/?/?/? (1d)
-
 <br/>
 <br/>
 
-## ele -> tar(forward); non-rep ele; reach tar/half_tar; min/max/condi/max_product (2d)
-
-##### ele -> tar(forward); non-rep ele (0, 1); reach tar_m, tar_n; max_combo (3d->2d)
+##### ele -> tar(forward); non-rep ele (0, 1); with/out 2 condi; reach tar_m, tar_n; max_combo (3d->2d)
 
 - dp[k][i][j] === AT ele, REACH tar_m, tar_n, FINAL max_combo
 - left side === 0 (val(1))
 - loop ele (forward)
 - loop tar_m (forward)
 - loop tar_n (forward)
-- with(max): dp[k][i][j] = ma( to_up(max), val(1, max) + to_up_left(non-rep) )
-- without(max): dp[k][i][j] = to_up(max)
+- with(max): dp[k][i][j] = ma( 1_up(max), val(1, max) + to_up_left(non-rep) )
+- without(max): dp[k][i][j] = 1_up(max)
 - https://leetcode.com/problems/ones-and-zeroes/
 
-##### ele -> tar(forward); pick 2 non-rep ele; (canncel out, 1 or 0 left), reach half_tar; min_diff (2d)
+##### ele -> tar(forward); pick 2 non-rep ele (cancel out); with/out 2 condi; reach half_tar; min_diff(condi) (2d)
 
 - transfer: (a + b) - (c + d), (totTar - aTar) - aTar === diff
 - dp[i][j] === AT ele, REACH tar, FINAL condi
 - left side == true
 - loop ele (forward)
 - loop ha (forward)
-- to_up(min) || to_left_up(non-rep) ==> dp[i][j] = true, ma(ma, j)
+- 1_up(condi) || to_left_up(non-rep) ==> dp[i][j] = true, ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
-##### ele -> tar(forward), non-rep ele, (into 2 sets, equal sum), reach half_sum, condi (2d)
+##### ele -> tar(forward); non-rep ele, (into 2 sets, equal sum); with/out 2 condi; reach half_tar; condi (2d)
 
 - transfer: ha = sum / 2
 - dp[i][j] === AT ele, REACH tar, FINAL condi
 - left side == true
 - loop ele (forward)
 - loop ha (forward)
-- to_up(?) || to_left_up(non-rep) ==> dp[i][j] = true
+- 1_up(condi) || to_left_up(non-rep) ==> dp[i][j] = true
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
-##### ele -> tar(forward); non-rep ele; weight; reach tar; max_val (2d)
-
-- dp[i][j] === AT ele, REACH tar, FINAL max_val
-- left side === 0 (val(ele))
-- loop ele (forward)
-- loop tar (forward)
-- without(max): dp[i][j] = to_up(max)
-- with(max): dp[i][j] = to_up_left(non-rep) + val(ele)
-- https://www.lintcode.com/problem/backpack-ii
-
-## ele -> tar(forward), rep ele, reach tar/half_tar, min/max/condi/max_product (2d)
-
-##### ele -> tar(forward), rep ele, reach tar, min_combo. (2d)
+##### ele -> tar(forward); rep ele; with/out 2 condi; reach tar; min_combo. (2d)
 
 - dp[i][j] === AT ele, REACH tar, FINAL min_combo
 - left side 0 (val(1))
 - loop ele (forward)
 - loop tar (forward)
-- with(min): dp[i][j] = mi(to_up(min), val(1, min) + to_left(rep))
-- without(min): dp[i][j] = to_up(min)
+- with(min): dp[i][j] = mi(1_up(min), val(1, min) + to_left(rep))
+- without(min): dp[i][j] = 1_up(min)
 - https://leetcode.com/problems/coin-change/
 
-##### ele -> tar(forward); multi dices (non-rep ele); 1 dice with n face, reach tar (reach tar); num_combo. (2d)
-
-- dp[i][j] === AT THIS dice, REACH tar-face, FINAL num_combo
-- left side === dp[0][0] = 1
-- loop dice (forward, i)
-- loop tar (forward, j)
-- loop face (forward, j - k, face part of tar)
-- dp[i][j] = MIN(stay_orig(min), to_up_left(non-rep))
-- https://leetcode.com/problems/number-of-dice-rolls-with-target-sum
-
-## ele -> tar(forward), rep ele, reach tar/half_tar, num_combo (2d)
-
-##### ele -> tar(forward), rep ele, reach tar, num_combo (2d)
+##### ele -> tar(forward); rep ele; with/out 2 condi; reach tar; num_combo (2d)
 
 - dp[i][j] === AT ele, REACH tar, FINAL num_combo
 - left side === 1 (no val below)
@@ -104,6 +57,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - with(?): dp[i][j] = 1_up(?) + to_left(rep)
 - without(?): dp[i][j] = 1_up(?)
 - https://leetcode.com/problems/coin-change-2/
+
+##### ele -> tar(forward); multi dices (non-rep ele); 1 dice with n face, reach tar (reach tar); num_combo. (2d)
+
+- dp[i][j] === AT dice, REACH tar-face, FINAL num_combo
+- left side === dp[0][0] = 1?
+- loop dice (forward, i)
+- loop tar (forward, j)
+- loop face (forward, j - k, face part of tar)
+- dp[i][j] = MIN(stay_orig(min), to_up_left(non-rep))
+- https://leetcode.com/problems/number-of-dice-rolls-with-target-sum
 
 ## ele -> tar(forward), rep/non-rep ele, reach tar, min/max/max_product/condi (1d)
 
@@ -178,15 +141,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = stay_orig(1d) + to_left(1d)
 - https://medium.com/swlh/solving-the-target-sum-problem-with-dynamic-programming-and-more-b76bd2a661f9
 - https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
-
-##### ele -> tar(backward), rep/non-rep ele, reach gen_tar, num_combo (1d)
-
-- dp[i] === AT tar, FINAL num_combo
-- left side === 1 (no val below)
-- loop ele (forward)
-- loop tar (backward? full_tar)
-- dp[i] = stay_orig(1d) + to_left(1d)
-- https://www.lintcode.com/problem/backpack-v
 
 ## tar(posi) -> ele(forward), POSI rep/non-rep ele, reach tar, num_combo/?/?/? (1d)
 
