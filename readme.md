@@ -7,13 +7,17 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # 0/1 knapsack
 
-## ele -> tar(forward), non-rep ele, reach tar/half_tar, min/max/num_combo/condi/product (2d)
+## ele -> tar(forward), non-rep ele, reach tar/half_tar, min/max/condi/product (2d)
+
+## ele -> tar(forward), non-rep ele, reach tar/half_tar, num_combo (2d)
 
 ## ele -> tar(forward), rep ele, reach tar/half_tar, min/max/num_combo/condi/product (2d)
 
-## classic 0/1 knapsack (2d)
+## ele -> tar(forward), rep ele, reach tar/half_tar, num_combo (2d)
 
 ## ele -> tar(forward), rep/non-rep ele, reach tar, min/max/num_combo/product/condi (1d)
+
+## ele -> tar(forward), rep/non-rep ele, reach tar, num_combo (1d)
 
 ## ele -> tar(backward), rep/non-rep ele, reach half_gen_tar(CONDI)/half_gen_tar/gen_tar, condi/min/num_combo (1d)
 
@@ -24,7 +28,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## ele -> tar(forward), non-rep ele, reach tar/half_tar, min/max/num_combo/condi/product (2d)
+## ele -> tar(forward), non-rep ele, reach tar/half_tar, min/max/condi/product (2d)
 
 ##### ele -> tar(forward), non-rep ele (0, 1), reach tar_m, tar_n, max_combo (3d->2d)
 
@@ -59,7 +63,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 1_up || to_left_up(non-rep) ==> dp[i][j] = true
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
-## ele -> tar(forward), rep ele, reach tar/half_tar, min/max/num_combo/condi/product (2d)
+## ele -> tar(forward), rep ele, reach tar/half_tar, min/max/condi/max_product (2d)
 
 ##### ele -> tar(forward), rep ele, reach tar, min_combo. (2d)
 
@@ -71,18 +75,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - without: dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change/
 
-##### ele -> tar(forward), rep ele, reach tar, num_combo (2d)
-
-- dp[i][j] === AT ele, REACH tar, FINAL num_combo
-- left side === 1 (no val below)
-- loop ele (forward)
-- loop tar (forward)
-- with: dp[i][j] = 1_up + to_left(rep)
-- without: dp[i][j] = 1_up
-- https://leetcode.com/problems/coin-change-2/
-
-## classic knapsack (2d)
-
 ##### ele -> tar(forward), non-rep ele, weight, reach tar, max_val (2d)
 
 - dp[i][j] === AT ele, REACH tar, FINAL max_val
@@ -93,7 +85,19 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - with: dp[i][j] = to_up_left(non-rep) + val(ele)
 - https://www.lintcode.com/problem/backpack-ii
 
-## ele -> tar(forward), rep/non-rep ele, reach tar, min/max/num_combo/product/condi (1d)
+## ele -> tar(forward), rep ele, reach tar/half_tar, num_combo (2d)
+
+##### ele -> tar(forward), rep ele, reach tar, num_combo (2d)
+
+- dp[i][j] === AT ele, REACH tar, FINAL num_combo
+- left side === 1 (no val below)
+- loop ele (forward)
+- loop tar (forward)
+- with: dp[i][j] = 1_up + to_left(rep)
+- without: dp[i][j] = 1_up
+- https://leetcode.com/problems/coin-change-2/
+
+## ele -> tar(forward), rep/non-rep ele, reach tar, min/max/max_product/condi (1d)
 
 ##### ele -> tar(forward), rep/non-rep ele, reach tar, min_combo. (1d)
 
@@ -115,9 +119,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = MAX(stay_orig, to_left(1d) \* val(w))
 - https://leetcode.com/problems/integer-break
 
+## ele -> tar(forward), rep/non-rep ele, reach tar, num_combo (1d)
+
 ##### ele -> tar(forward), rep/non-rep ele, reach tar, num_combo. (1d)
 
-- dp[i] === AT tar, FINAL total_num_combo
+- dp[i] === AT tar, FINAL num_combo
 - left side === 1 (no val below)
 - loop ele (forward)
 - loop tar (forward, init guard)
