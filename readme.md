@@ -71,8 +71,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - left side 0 (val(1))
 - loop ele (forward)
 - loop tar (forward)
-- with(2d): dp[i][j] = MIN(1_up, val(1) + to_left(rep))
-- without(2d): dp[i][j] = 1_up
+- with(min): dp[i][j] = MIN(1_up, val(1) + to_left(rep))
+- without(min): dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change/
 
 ##### ele -> tar(forward), non-rep ele, weight, reach tar, max_val (2d)
@@ -81,8 +81,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - left side === 0 (val(ele))
 - loop ele (forward)
 - loop tar (forward)
-- without(2d): dp[i][j] = to_up
-- with(2d): dp[i][j] = to_up_left(non-rep) + val(ele)
+- without(max): dp[i][j] = to_up
+- with(max): dp[i][j] = to_up_left(non-rep) + val(ele)
 - https://www.lintcode.com/problem/backpack-ii
 
 ## ele -> tar(forward), rep ele, reach tar/half_tar, num_combo (2d)
@@ -93,8 +93,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - left side === 1 (no val below)
 - loop ele (forward)
 - loop tar (forward)
-- with(2d): dp[i][j] = 1_up + to_left(rep)
-- without(2d): dp[i][j] = 1_up
+- with(?): dp[i][j] = 1_up + to_left(rep)
+- without(?): dp[i][j] = 1_up
 - https://leetcode.com/problems/coin-change-2/
 
 ## ele -> tar(forward), rep/non-rep ele, reach tar, min/max/max_product/condi (1d)
