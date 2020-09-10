@@ -75,15 +75,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - without(min): dp[i][j] = to_up(min)
 - https://leetcode.com/problems/coin-change/
 
-##### ele -> tar(forward), non-rep ele, weight, reach tar, max_val (2d)
+##### ele -> tar(forward); non-rep ele; weight; reach tar; max_val (2d)
 
-- dp[i][j] === AT ele, REACH tar, FINAL max_val
+- dp[i][j] === AT THIS ele, REACH tar, FINAL max_val
 - left side === 0 (val(ele))
 - loop ele (forward)
 - loop tar (forward)
 - without(max): dp[i][j] = to_up(max)
 - with(max): dp[i][j] = to_up_left(non-rep) + val(ele)
 - https://www.lintcode.com/problem/backpack-ii
+
+##### ele -> tar(forward); multi dices (non-rep ele); 1 dice with n face, reach tar (reach tar); num_combo. (2d)
+
+- dp[i][j] === AT THIS dice, REACH tar-face, FINAL num_combo
+- left side === dp[0][0] = 1
+- loop dice (forward, i)
+- loop tar (forward, j)
+- loop face (forward, j - k, face part of tar)
+- dp[i][j] = MIN(stay_orig(min), to_up_left(non-rep))
+- https://leetcode.com/problems/number-of-dice-rolls-with-target-sum
 
 ## ele -> tar(forward), rep ele, reach tar/half_tar, num_combo (2d)
 
