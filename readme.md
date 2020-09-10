@@ -28,40 +28,48 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## ele -> tar(forward), non-rep ele, reach tar/half_tar, min/max/condi/product (2d)
+## ele -> tar(forward); non-rep ele; reach tar/half_tar; min/max/condi/max_product (2d)
 
-##### ele -> tar(forward), non-rep ele (0, 1), reach tar_m, tar_n, max_combo (3d->2d)
+##### ele -> tar(forward); non-rep ele (0, 1); reach tar_m, tar_n; max_combo (3d->2d)
 
 - dp[k][i][j] === AT ele, REACH tar_m, tar_n, FINAL max_combo
 - left side === 0 (val(1))
 - loop ele (forward)
 - loop tar_m (forward)
 - loop tar_n (forward)
-- with(max): dp[k][i][j] = ma( to_up(max), val(1) + to_up_left(non-rep) )
-- without(max): dp[][][] = to_up(max)
+- with(max): dp[k][i][j] = ma( to_up(max), val(1, max) + to_up_left(non-rep) )
+- without(max): dp[k][i][j] = to_up(max)
 - https://leetcode.com/problems/ones-and-zeroes/
 
-##### ele -> tar(forward), pick 2 non-rep ele, (canncel out, 1 or 0 left), reach half_tar, min_diff (2d)
+##### ele -> tar(forward); pick 2 non-rep ele; (canncel out, 1 or 0 left), reach half_tar; min_diff (2d)
 
 - transfer: (a + b) - (c + d), (totTar - aTar) - aTar === diff
 - dp[i][j] === AT ele, REACH tar, FINAL condi
 - left side == true
 - loop ele (forward)
 - loop ha (forward)
-- 1_up(min) || to_left_up(non-rep) ==> dp[i][j] = true, ma(ma, j)
+- to_up(min) || to_left_up(non-rep) ==> dp[i][j] = true, ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
 ##### ele -> tar(forward), non-rep ele, (into 2 sets, equal sum), reach half_sum, condi (2d)
 
 - transfer: ha = sum / 2
-- row ele
-- col ha (1/2)
-- left side == true
 - dp[i][j] === AT ele, REACH tar, FINAL condi
+- left side == true
 - loop ele (forward)
 - loop ha (forward)
-- to_up(condi) || to_left_up(non-rep) ==> dp[i][j] = true
+- to_up(?) || to_left_up(non-rep) ==> dp[i][j] = true
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
+
+##### ele -> tar(forward); non-rep ele; weight; reach tar; max_val (2d)
+
+- dp[i][j] === AT ele, REACH tar, FINAL max_val
+- left side === 0 (val(ele))
+- loop ele (forward)
+- loop tar (forward)
+- without(max): dp[i][j] = to_up(max)
+- with(max): dp[i][j] = to_up_left(non-rep) + val(ele)
+- https://www.lintcode.com/problem/backpack-ii
 
 ## ele -> tar(forward), rep ele, reach tar/half_tar, min/max/condi/max_product (2d)
 
@@ -71,19 +79,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - left side 0 (val(1))
 - loop ele (forward)
 - loop tar (forward)
-- with(min): dp[i][j] = MIN(to_up(min), val(1) + to_left(rep))
+- with(min): dp[i][j] = mi(to_up(min), val(1, min) + to_left(rep))
 - without(min): dp[i][j] = to_up(min)
 - https://leetcode.com/problems/coin-change/
-
-##### ele -> tar(forward); non-rep ele; weight; reach tar; max_val (2d)
-
-- dp[i][j] === AT THIS ele, REACH tar, FINAL max_val
-- left side === 0 (val(ele))
-- loop ele (forward)
-- loop tar (forward)
-- without(max): dp[i][j] = to_up(max)
-- with(max): dp[i][j] = to_up_left(non-rep) + val(ele)
-- https://www.lintcode.com/problem/backpack-ii
 
 ##### ele -> tar(forward); multi dices (non-rep ele); 1 dice with n face, reach tar (reach tar); num_combo. (2d)
 
@@ -117,7 +115,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop tar (forward, j=w; init guard)
 - dp[i] === stay_orig(1d)
 - dp[j-w] === to_left(1d)
-- dp[i] = MIN(stay_orig(1d), to_left(1d) + val(1))
+- dp[i] = MIN(stay_orig(1d), to_left(1d) + val(1, min))
 - https://leetcode.com/problems/coin-change/
 
 ##### ele -> tar(forward), 1 num breaks diff nums (rep/non-rep, reach tar), max_product (1d)
@@ -126,7 +124,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - left side === 1 (multiply, so 1)
 - loop ele (forward)
 - loop tar (forward, init guard)
-- dp[i] = MAX(stay_orig(1d), to_left(1d) \* val(w))
+- dp[i] = MAX(stay_orig(1d), to_left(1d) \* val(w, max))
 - https://leetcode.com/problems/integer-break
 
 ## ele -> tar(forward), rep/non-rep ele, reach tar, num_combo (1d)
@@ -209,7 +207,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - left side === 0 (no val below)
 - loop tar (forward)
 - loop ele (forward, j=1; j<=i; ele again)
-- dp[i] = MAX(stay_orig(1d), to_left(1d) + w)
+- dp[i] = MAX(stay_orig(1d), to_left(1d) + val(w, max))
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
 
