@@ -2,6 +2,27 @@
 
 https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-questions-thread
 
+# misc dp
+
+## ?
+
+##### 1D; 1,2,3 -> ABC (each digit as group), 12,3 -> KC (double digit as group); num_combo
+
+- dp[i] === AT THIS num_char (ele), FINAL num_combo
+- left side === 1 (num_combo; flow down)
+- loop num_char (ele, also loop dp)
+- get_1st_digit
+- 1st_digit in 1->9; dp[i] = dp[i-1](flow down)
+- double digit in 10->26; dp[i] = dp[i](acc) + i>=2 ? dp[i-2](flow down)
+- https://leetcode.com/problems/decode-ways
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 # 0/1 knapsack
 
 ## 2D/3D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar/gen_tar; max/min
@@ -18,7 +39,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 1D; e->t / t->e; rep/non-rep ele; reach tar; num_combo(add)
 
-## 1D; e->t / t->e; POSI rep/non-rep ele; reach tar; num_combo
+## 1D; e->t / t->e; POSI rep/non-rep ele; reach tar; num_combo(add)
 
 <br/>
 <br/>
@@ -210,9 +231,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 1D; e->t / t->e; POSI rep/non-rep ele; reach tar; num_combo
+## 1D; e->t / t->e; POSI rep/non-rep ele; reach tar; num_combo(add)
 
-##### 1D; x:e->t / t->e(for, posi); POSI rep/non-rep ele; reach tar; num_combo
+##### 1D; x:e->t / t->e(for, posi); POSI rep/non-rep ele; reach tar; num_combo(add)
 
 - dp[i] === AT tar, FINAL num_combo
 - left side === 1 (no val below)
