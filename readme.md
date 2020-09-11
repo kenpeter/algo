@@ -130,12 +130,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = MAX(stay_orig(1d), to_left(1d) \* val(w, max))
 - https://leetcode.com/problems/integer-break
 
-##### 1D; x:e->t / t->e(for, ele_again); cut a rod, rep/non-rep ele; reach tar; max_val
+##### 1D; x:e->t / t->e(for, ele_again_constraint); cut a rod, rep/non-rep ele; reach tar; max_val
 
 - dp[i] === AT tar, FINAL max_val
 - left side === 0 (no val below)
 - loop tar (forward)
-- loop ele (forward, j=1; j<=i; ele again)
+- loop ele (forward, j=1; j<=i; ele_again_constraint)
 - dp[i] = MAX(stay_orig(1d), to_left(1d) + val(w, max))
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
