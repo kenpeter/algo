@@ -11,9 +11,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] === AT THIS num_char (ele), FINAL num_combo
 - left side === 1 (num_combo; flow down)
 - loop num_char (ele, also loop dp)
-- get_1st_digit
-- 1st_digit in 1->9; dp[i] = dp[i-1](flow down)
-- double digit in 10->26; dp[i] = dp[i](acc) + i>=2 ? dp[i-2](flow down)
+- curr_digit -> 1_digit (0 skip; 1 good flow down)
+- 1_digit in 1->9; dp[i] = dp[i-1](flow down);
+- curr_digit, prev_digit -> 2_digit (und0 skip; und1 skip; 12 good flow)
+- 2_digit in 10->26; dp[i] = dp[i](acc) + i>=2 ? dp[i-2](flow down)
 - https://leetcode.com/problems/decode-ways
 
 <br/>
