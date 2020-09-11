@@ -4,34 +4,30 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # 0/1 knapsack
 
-## 2D/3D; ele -> tar(forward); non-rep/rep ele; with/out condi; reach tar; max/min/condi
+## 2D/3D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar/gen_tar; max/min
 
-## 2D; ele -> tar(forward); non-rep/rep ele; with/out condi; reach gen_tar; CONDI
+## 2D; e->t / t->e; non-rep/rep ele; with/out condi; reach gen_tar; CONDI
 
-## 2D; ele -> tar(forward); non-rep/rep ele; with/out condi; reach tar; num_combo(add)
+## 2D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar; num_combo(add)
 
-## 2D; ele -> tar(forward); non-rep/rep ele; part of tar, reach tar; num_combo(add)
+## 2D; e->t / t->e; non-rep/rep ele; part of tar, reach tar; num_combo(add)
 
-## 1D; ele -> tar(forward), rep/non-rep ele, reach tar, min/max
+## 1D; e->t / t->e; rep/non-rep ele; reach tar; min/max
 
-## 1D; ele -> tar(forward), rep/non-rep ele, reach tar, num_combo(add)
+## 1D; e->t / t->e; rep/non-rep ele; reach gen_tar; condi
 
-## 1D; ele -> tar(backward); rep/non-rep ele; reach gen_tar; condi
+## 1D; e->t / t->e; rep/non-rep ele; reach tar; num_combo(add)
 
-## 1D, ele -> tar(backward); rep/non-rep ele, reach gen_tar, num_combo(add)
-
-## 1D; tar -> ele(posi, forward); POSI rep/non-rep ele; reach tar; num_combo
-
-## 1D; tar -> ele(ele again, forward); rep/non-rep ele; reach tar; max
+## 1D; e->t / t->e; POSI rep/non-rep ele; reach tar; num_combo
 
 <br/>
 <br/>
 <br/>
 <br/>
 
-## 2D/3D; ele -> tar(forward); non-rep/rep ele; with/out condi; reach tar/gen_tar; max/min/condi
+## 2D/3D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar/gen_tar; max/min
 
-##### 2D/3D; ele -> tar(forward); non-rep ele (0, 1); with/out condi; reach multi tar; max_combo
+##### 2D/3D; e->t(for) / x:t->e; non-rep ele (0, 1); with/out condi; reach multi tar; max_combo
 
 - dp[k][i][j] === AT ele, REACH tar_m, tar_n, FINAL max_combo
 - left side === 0 (max, val(1))
@@ -42,7 +38,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - without(max): dp[k][i][j] = 1_up(max)
 - https://leetcode.com/problems/ones-and-zeroes/
 
-##### 2D; ele -> tar(forward); rep ele; with/out condi; reach tar; min_combo.
+##### 2D; e->t(for) / x:t->e; rep ele; with/out condi; reach tar; min_combo.
 
 - dp[i][j] === AT ele, REACH tar, FINAL min_combo
 - left side === 0 (min, val(1))
@@ -55,9 +51,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 2D; ele -> tar(forward); non-rep ele; with/out condi; reach gen_tar; CONDI
+## 2D; e->t / t->e; non-rep/rep ele; with/out condi; reach gen_tar; CONDI
 
-##### 2D; ele -> tar(forward); 2 non-rep ele (cancel out); with/out condi; reach half_tar; min_diff(condi)
+##### 2D; e->t(for) / x:t->e; 2 non-rep ele (cancel out); with/out condi; reach half_tar; min_diff(condi)
 
 - transfer: (a + b) - (c + d), (totTar - aTar) - aTar === diff; ha = sum / 2
 - dp[i][j] === AT ele, REACH tar, FINAL condi
@@ -67,7 +63,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 1_up(condi) || to_left_up(non-rep) ==> dp[i][j] = true, ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/
 
-##### 2D; ele -> tar(forward); non-rep ele, (2 equal sets); with/out condi; reach half_tar; condi
+##### 2D; e->t(for) / x:t->e; non-rep ele, (2 equal sets); with/out condi; reach half_tar; condi
 
 - transfer: ha = sum / 2
 - dp[i][j] === AT ele, REACH tar, FINAL condi
@@ -80,9 +76,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 2D; ele -> tar(forward); rep ele; with/out condi; reach tar; num_combo(add)
+## 2D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar; num_combo(add)
 
-##### 2D; ele -> tar(forward); rep ele; with/out condi; reach tar; num_combo(add)
+##### 2D; e->t(for) / x:t->e; rep ele; with/out condi; reach tar; num_combo(add)
 
 - dp[i][j] === AT ele, REACH tar, FINAL num_combo
 - left side === 1 (num_combo; no val below)
@@ -95,9 +91,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 2D; ele -> tar(forward); non-rep ele; part of tar, reach tar; num_combo(add).
+## 2D; e->t / t->e; non-rep/rep ele; part of tar, reach tar; num_combo(add).
 
-##### 2D; ele -> tar(forward); n dices (non-rep ele); n face (part of tar), reach tar; num_combo(add).
+##### 2D; e->t(for) / x:t->e; n dices (non-rep ele); n face (part of tar), reach tar; num_combo(add).
 
 - dp[i][j] === AT dice, REACH tar-face, FINAL num_combo
 - left side === dp[0][0] = 1 (? num_combo; no val below; dp[0][1,2,3,n] = 1 nonsense)
@@ -107,12 +103,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i][j] = stay_orig(min) + to_up_left(non-rep)
 - https://leetcode.com/problems/number-of-dice-rolls-with-target-sum
 
+##### classi knapsack
+
 <br/>
 <br/>
 
-## 1D; ele -> tar(forward), rep/non-rep ele, reach tar, min/max
+## 1D; e->t / t->e; rep/non-rep ele; reach tar; min/max
 
-##### 1D; ele -> tar(forward), rep/non-rep ele, reach tar, min_combo
+##### 1D; e->t(for) / x:t->e, rep/non-rep ele, reach tar, min_combo
 
 - dp[i] === AT tar, FINAL min_combo, -1
 - left side === 0 (val(1))
@@ -123,7 +121,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = MIN(stay_orig(1d), to_left(1d) + val(1, min))
 - https://leetcode.com/problems/coin-change/
 
-##### 1D; ele -> tar(forward); 1 num breaks diff nums (rep/non-rep, reach tar); max_product
+##### 1D; e->t / x:t->e; 1 num breaks diff nums (rep/non-rep, reach tar); max_product
 
 - dp[i] === AT tar, FINAL max_product
 - left side === 1 (multiply, so 1)
@@ -132,26 +130,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = MAX(stay_orig(1d), to_left(1d) \* val(w, max))
 - https://leetcode.com/problems/integer-break
 
-<br/>
-<br/>
+##### 1D; x:e->t / t->e(for, ele_again); cut a rod, rep/non-rep ele; reach tar; max_val
 
-## 1D; ele -> tar(forward), rep/non-rep ele, reach tar, num_combo(add)
-
-##### 1D; ele -> tar(forward); rep/non-rep ele; reach tar; num_combo(add)
-
-- dp[i] === AT tar, FINAL num_combo
-- left side === 1 (no val below)
-- loop ele (forward)
-- loop tar (forward, init guard)
-- dp[i] = stay_orig(1d) + to_left(1d)
-- https://leetcode.com/problems/coin-change-2/
+- dp[i] === AT tar, FINAL max_val
+- left side === 0 (no val below)
+- loop tar (forward)
+- loop ele (forward, j=1; j<=i; ele again)
+- dp[i] = MAX(stay_orig(1d), to_left(1d) + val(w, max))
+- https://www.lintcode.com/problem/cutting-a-rod
+- https://www.lintcode.com/discuss/1266/
 
 <br/>
 <br/>
 
-## 1D; ele -> tar(gen_tar, backward); rep/non-rep ele; reach gen_tar; condi
+## 1D; e->t / t->e; rep/non-rep ele; reach gen_tar; condi
 
-##### 1D; ele -> tar(gen_tar, backward); rep/non-rep ele; (2 equal sets), reach gen_tar; condi
+##### 1D; e->t(back, gen_tar) / x:t->e; rep/non-rep ele; (2 equal sets), reach gen_tar; condi
 
 - transfer: ha = sum / 2
 - dp[i] === AT ha, FINAL condi (avoid num_cal)
@@ -161,7 +155,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = stay_orig(1d) || to_left(1d), condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
-##### 1D; ele -> tar(gen_tar, backward); 2 rep/non-rep ele; (canncel out); reach gen_tar(CONDI); min_diff
+##### 1D; e->t(back, gen_tar) / x:t->e; 2 rep/non-rep ele; (canncel out); reach gen_tar(CONDI); min_diff
 
 - transfer: ha = sum / 2
 - dp[i] === AT ha; FINAL condi (avoid num_cal)
@@ -172,7 +166,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
 
-##### 1D; tar -> ele(ele again, forward); rep/non-rep ele (words); reach tar (word str); condi
+##### 1D; x:e->t / t->e(for, ele_again); rep/non-rep ele (words); reach tar (word str); condi
 
 - dp[i] === AT str posi; FINAL condi(so_far_contain? avoid num_cal)
 - left side === true
@@ -184,9 +178,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 1D; ele -> tar(gen_tar, backward); rep/non-rep ele; reach gen_tar; num_combo(add)
+## 1D; e->t / t->e; rep/non-rep ele; reach gen_tar; num_combo(add)
 
-##### 1D; ele -> tar(gen_tar, backward); rep/non-rep ele, add -/+; reach gen_tar; num_combo(add)
+##### 1D; e->t(back, gen_tar) / x:t->e; rep/non-rep ele, add -/+; reach gen_tar; num_combo(add)
 
 - transfer: s(#) = [1, 2, 3, 4, 5], tar = 3
 - (1+3+5) - (2+4) == 3 =====> s(+p) - s(+n) == tar
@@ -204,12 +198,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://medium.com/swlh/solving-the-target-sum-problem-with-dynamic-programming-and-more-b76bd2a661f9
 - https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
 
+##### 1D; e->t(for) / x:t->e; rep/non-rep ele; reach tar; num_combo(add)
+
+- dp[i] === AT tar, FINAL num_combo
+- left side === 1 (no val below)
+- loop ele (forward)
+- loop tar (forward, init guard)
+- dp[i] = stay_orig(1d) + to_left(1d)
+- https://leetcode.com/problems/coin-change-2/
+
 <br/>
 <br/>
 
-## 1D; tar -> ele(posi, forward); POSI rep/non-rep ele; reach tar; num_combo
+## 1D; e->t / t->e; POSI rep/non-rep ele; reach tar; num_combo
 
-##### 1D; tar -> ele(posi, forward); POSI rep/non-rep ele; reach tar; num_combo
+##### 1D; x:e->t / t->e(for, posi); POSI rep/non-rep ele; reach tar; num_combo
 
 - dp[i] === AT tar, FINAL num_combo
 - left side === 1 (no val below)
@@ -220,18 +223,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 <br/>
 <br/>
-
-## 1D; tar -> ele(ele again, forward); rep/non-rep ele; reach tar; max
-
-##### 1D, cut a rod; tar -> ele(ele again, forward); rep/non-rep ele; reach tar; max_val
-
-- dp[i] === AT tar, FINAL max_val
-- left side === 0 (no val below)
-- loop tar (forward)
-- loop ele (forward, j=1; j<=i; ele again)
-- dp[i] = MAX(stay_orig(1d), to_left(1d) + val(w, max))
-- https://www.lintcode.com/problem/cutting-a-rod
-- https://www.lintcode.com/discuss/1266/
 
 # binary search
 
