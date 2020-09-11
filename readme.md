@@ -146,22 +146,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = stay_orig(1d) + to_left(1d)
 - https://leetcode.com/problems/coin-change-2/
 
-## 1D; ele -> tar(backward); rep/non-rep ele; reach gen_tar; condi
+<br/>
+<br/>
 
-##### 1D; ele -> tar(backward); rep/non-rep ele; (2 equal sets), reach gen_tar; condi
+## 1D; ele -> tar(gen_tar, backward); rep/non-rep ele; reach gen_tar; condi
+
+##### 1D; ele -> tar(gen_tar, backward); rep/non-rep ele; (2 equal sets), reach gen_tar; condi
 
 - transfer: ha = sum / 2
-- dp[i] === AT ha, FINAL condi
+- dp[i] === AT ha, FINAL condi (avoid num_cal)
 - left side == true
 - loop ele (forward)
 - loop ha ( backward(gen_tar) )
 - dp[i] = stay_orig(1d) || to_left(1d), condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
-##### 1D; ele -> tar(backward); 2 rep/non-rep ele; (canncel out); reach gen_tar(CONDI); min_diff
+##### 1D; ele -> tar(gen_tar, backward); 2 rep/non-rep ele; (canncel out); reach gen_tar(CONDI); min_diff
 
 - transfer: ha = sum / 2
-- dp[i] === AT ha, FINAL condi
+- dp[i] === AT ha; FINAL condi (avoid num_cal)
 - left side == true
 - loop ele (forward)
 - loop ha ( backward(gen_tar) )
@@ -169,9 +172,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
 
-## 1D; ele -> tar(backward); rep/non-rep ele; reach gen_tar; num_combo(add)
+##### 1D; tar -> ele(ele again, forward); rep/non-rep ele (words); reach tar (word str); condi
 
-##### 1D; ele -> tar(backward); rep/non-rep ele, add -/+; reach gen_tar; num_combo(add)
+- dp[i] === AT str posi; FINAL condi(so_far_contain? avoid num_cal)
+- left side === true
+- loop tar (forward, str posi)
+- loop ele (forward)
+- dp[i] = ( dp[i] || (dp[i - w_l] && s.sub == w) ) (inject other condi)
+- https://leetcode.com/problems/word-break
+
+<br/>
+<br/>
+
+## 1D; ele -> tar(gen_tar, backward); rep/non-rep ele; reach gen_tar; num_combo(add)
+
+##### 1D; ele -> tar(gen_tar, backward); rep/non-rep ele, add -/+; reach gen_tar; num_combo(add)
 
 - transfer: s(#) = [1, 2, 3, 4, 5], tar = 3
 - (1+3+5) - (2+4) == 3 =====> s(+p) - s(+n) == tar
@@ -189,6 +204,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://medium.com/swlh/solving-the-target-sum-problem-with-dynamic-programming-and-more-b76bd2a661f9
 - https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
 
+<br/>
+<br/>
+
 ## 1D; tar -> ele(posi, forward); POSI rep/non-rep ele; reach tar; num_combo
 
 ##### 1D; tar -> ele(posi, forward); POSI rep/non-rep ele; reach tar; num_combo
@@ -199,6 +217,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop ele (forward)
 - dp[i] = stay_orig(1d) + to_left(1d)
 - https://www.lintcode.com/problem/combination-sum-iv
+
+<br/>
+<br/>
 
 ## 1D; tar -> ele(ele again, forward); rep/non-rep ele; reach tar; max
 
