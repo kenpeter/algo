@@ -179,7 +179,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - dp[i] === AT tar, FINAL max_product
 - left side === 1 (multiply, so 1)
-- loop ele (forward)
+- loop ele (forward; ? loop tar; loop ele, j<i, dp[i-j]*j, 2*2 never appear)
 - loop tar (forward, init guard)
 - dp[i] = MAX(stay_orig(1d), to_left(1d) \* val(w, max))
 - https://leetcode.com/problems/integer-break
