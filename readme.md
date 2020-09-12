@@ -25,6 +25,37 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+# Building matrix
+
+## 1D/2D; building matrix; num_combo
+
+###### 2D; top left, move down/right, reach bottom right (building matrix); num_combo
+
+- dp[i][j] === AT THIS row, AT THIS col, FINAL num_combo
+- left side ===> dp[0][1](top) = 1 OR dp[1][0](left) = 1 (num_combo, val(0))
+- loop row (n)
+- loop col (m)
+- dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
+- re dp[n][m]
+- https://leetcode.com/problems/unique-paths/
+
+###### 1D; top left, move down/right, reach bottom right (building matrix); num_combo
+
+- dp[i] === AT THIS col, FINAL num_combo
+- left side ===> dp[0] = 1 (num_combo, val(0))
+- loop row (n)
+- loop col (m)
+- dp[j] = dp[j](top) + dp[j-1](left)
+- re dp[m-1] (m too big, m-1 just right)
+- https://leetcode.com/problems/unique-paths/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 # 0/1 knapsack
 
 ## 2D/3D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar/gen_tar; max/min
