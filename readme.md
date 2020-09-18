@@ -27,47 +27,47 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # Building matrix
 
-## 1D/2D; move down/right; building matrix; num_combo
+## 1D/2D; start dp[1][1], move down/right; building matrix; num_combo
 
-###### 2D; top left, move down/right, reach bottom right (building matrix); num_combo
+###### 2D; start dp[1][1], move down/right, reach bottom right (building matrix); num_combo
 
 - dp[i][j] === AT THIS row, AT THIS col, FINAL num_combo
-- left side ===> dp[0][1](top) = 1 OR dp[1][0](left) = 1 (num_combo, val(0))
+- left side === dp[0][1] = 1 || dp[1][0] = 1 (left or top contrib, not dp[0][0])
 - loop row (n)
 - loop col (m)
 - dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
 - re dp[n][m]
 - https://leetcode.com/problems/unique-paths/
 
-###### 1D; top left, move down/right, reach bottom right (building matrix); num_combo
+###### 1D; start dp[1][1], move down/right, reach bottom right (building matrix); num_combo
 
 - dp[i] === AT THIS col, FINAL num_combo
-- left side ===> dp[0] = 1 (num_combo, val(0))
+- left side ===> dp[1] = 1 (left or top contrib, not dp[0])
 - loop row (n)
 - loop col (m)
 - dp[j] = dp[j](top) + dp[j-1](left)
-- re dp[m-1] (m too big, m-1 just right)
+- re dp[m]
 - https://leetcode.com/problems/unique-paths/
 
-###### 2D; top left, obstacle, move down/right, reach bottom right (building matrix); num_combo
+###### 2D; start dp[1][1], obstacle, move down/right, reach bottom right (building matrix); num_combo
 
 - dp[i][j] === AT THIS row, AT THIS col, FINAL num_combo
-- left side === 0 (dp[0][0] = 1, dp[1][1] no way get val)
+- left side === dp[0][0] = 0, dp[1][1] = 1 (start)
 - loop row (n)
 - loop col (m)
-- if obstacle, dp[i][j] = 0 (self has no value)
-- if no obstacle, dp[1][1] = 1 (dp[1][1] = 0, no val to start) OOOOOR dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
+- if obstacle, dp[i][j] = 0 (self no)
+- if no obstacle, dp[1][1] = 1 (start) || dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
 - re dp[n][m]
 - https://leetcode.com/problems/unique-paths-ii/
 
-###### 1D; top left, obstacle, move down/right, reach bottom right (building matrix); num_combo
+###### 1D; start dp[1][1], obstacle, move down/right, reach bottom right (building matrix); num_combo
 
 - dp[j] === AT THIS col, FINAL num_combo
-- left side === 0 (dp[0] = 1, 1st layer add to 2nd layer, dup)
+- left side === dp[0] = 0, dp[1] = 1 (start)
 - loop row (n)
 - loop col (m)
-- if obstacle, dp[j] = 0 (self has no value)
-- if no obstacle, dp[1] = 1 (dp[1] = 0, no val to start) OOOOOR dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
+- if obstacle, dp[j] = 0 (self no)
+- if no obstacle, dp[1] = 1 (start) || dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
 - re dp[m]
 - https://leetcode.com/problems/unique-paths-ii/
 
