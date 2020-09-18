@@ -9,7 +9,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; 1,2,3 -> ABC (each digit as group), 12,3 -> KC (double digit as group); num_combo
 
 - dp[i] === AT THIS ele (num_char), FINAL num_combo
-- left side === 1 (num_combo; flow down)
+- init side === 1 (num_combo; flow down)
 - loop ele (num_char)
 - 1_digit (0 skip; 1 good flow down)
 - 1_digit in 1->9; dp[i] = dp[i-1](1 digit flow down);
@@ -29,30 +29,30 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 1D/2D; start dp[1][1], move down/right; building matrix; num_combo
 
-###### 2D; start dp[1][1], move down/right, reach bottom right (building matrix); num_combo
+###### 2D; start dp[1][1], move down/right, reach bottom right; num_combo
 
-- dp[i][j] === AT THIS row, AT THIS col, FINAL num_combo
-- left side === dp[0][1] = 1 || dp[1][0] = 1 (left or top contrib, not dp[0][0])
+- dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
+- init side ==> dp[0][1] = 1 || dp[1][0] = 1 (left or top contrib, not dp[0][0])
 - loop row (n)
 - loop col (m)
 - dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
 - re dp[n][m]
 - https://leetcode.com/problems/unique-paths/
 
-###### 1D; start dp[1][1], move down/right, reach bottom right (building matrix); num_combo
+###### 1D; start dp[1][1], move down/right, reach bottom right; num_combo
 
-- dp[i] === AT THIS col, FINAL num_combo
-- left side ===> dp[1] = 1 (left or top contrib, not dp[0])
+- dp[i] ==> AT THIS col, FINAL num_combo
+- init side ===> dp[1] = 1 (left or top contrib, not dp[0])
 - loop row (n)
 - loop col (m)
 - dp[j] = dp[j](top) + dp[j-1](left)
 - re dp[m]
 - https://leetcode.com/problems/unique-paths/
 
-###### 2D; start dp[1][1], obstacle, move down/right, reach bottom right (building matrix); num_combo
+###### 2D; start dp[1][1], obstacle, move down/right, reach bottom right; num_combo
 
-- dp[i][j] === AT THIS row, AT THIS col, FINAL num_combo
-- left side === dp[0][0] = 0, dp[1][1] = 1 (start)
+- dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
+- init side ==> dp[0][0] = 0, dp[1][1] = 1 (start)
 - loop row (n)
 - loop col (m)
 - if obstacle, dp[i][j] = 0 (self no)
@@ -60,16 +60,34 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re dp[n][m]
 - https://leetcode.com/problems/unique-paths-ii/
 
-###### 1D; start dp[1][1], obstacle, move down/right, reach bottom right (building matrix); num_combo
+###### 1D; start dp[1][1], obstacle, move down/right, reach bottom right; num_combo
 
-- dp[j] === AT THIS col, FINAL num_combo
-- left side === dp[0] = 0, dp[1] = 1 (start)
+- dp[j] ==> AT THIS col, FINAL num_combo
+- init side ==> dp[0] = 0, dp[1] = 1 (start)
 - loop row (n)
 - loop col (m)
 - if obstacle, dp[j] = 0 (self no)
 - if no obstacle, dp[1] = 1 (start) || dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
 - re dp[m]
 - https://leetcode.com/problems/unique-paths-ii/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+###### 2D; parent chars; child chars; chop_char_subseq; condi
+
+- dp[i][j] ==> AT THIS char; AT THIS char; FINAL condi(chop_char_subseq);
+- init side ==> top_row = true (every diagnal to use)
+- loop child chars (smaller)
+- loop parent chars
+- CURR ==> char_match
+- PAST ==> top: dp[i-1][j](less_ele, no_this_char); left: dp[i][j-1](less_res, no_upto); diag: dp[i-1][j-1](less_ele + less_res, no_this_har + no_upto)
+- FORMU ==> dp[i][j-1](left) == true, dp[i][j] = true; dp[i-1][j-1](diag) && CURR(char_match), dp[i][j] = true
+- https://leetcode.com/problems/is-subsequence/
 
 <br/>
 <br/>
@@ -106,7 +124,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D/3D; e->t(for) / x:t->e; non-rep ele (0, 1); with/out condi; reach multi tar; max_combo
 
 - dp[k][i][j] === AT ele, REACH tar_m, tar_n, FINAL max_combo
-- left side === 0 (max, val(1))
+- init side === 0 (max, val(1))
 - loop ele (forward)
 - loop tar_m (forward)
 - loop tar_n (forward)
@@ -117,7 +135,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D; e->t(for) / x:t->e; rep ele; with/out condi; reach tar; min_combo.
 
 - dp[i][j] === AT ele, REACH tar, FINAL min_combo
-- left side === 0 (min, val(1))
+- init side === 0 (min, val(1))
 - loop ele (forward)
 - loop tar (forward)
 - with(min): dp[i][j] = mi( 1_up(min), val(1, min) + to_left(rep) )
@@ -133,7 +151,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - transfer: (a + b) - (c + d), (totTar - aTar) - aTar === diff; ha = sum / 2
 - dp[i][j] === AT ele, REACH tar, FINAL condi
-- left side == true
+- init side == true
 - loop ele (forward)
 - loop ha (forward)
 - 1_up(condi) || to_left_up(non-rep) ==> dp[i][j] = true, ma(ma, j)
@@ -143,7 +161,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - transfer: ha = sum / 2
 - dp[i][j] === AT ele, REACH tar, FINAL condi
-- left side == true
+- init side == true
 - loop ele (forward)
 - loop ha (forward)
 - 1_up(condi) || to_left_up(non-rep) ==> dp[i][j] = true
@@ -157,7 +175,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D; e->t(for) / x:t->e; rep ele; with/out condi; reach tar; num_combo(add)
 
 - dp[i][j] === AT ele, REACH tar, FINAL num_combo
-- left side === 1 (num_combo; no val below)
+- init side === 1 (num_combo; no val below)
 - loop ele (forward)
 - loop tar (forward)
 - with(?): dp[i][j] = 1_up(?) + to_left(rep)
@@ -172,7 +190,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D; e->t(for) / x:t->e; n dices (non-rep ele); n face (part of tar), reach tar; num_combo(add).
 
 - dp[i][j] === AT dice, REACH tar-face, FINAL num_combo
-- left side === dp[0][0] = 1 (? num_combo; no val below; dp[0][1,2,3,n] = 1 nonsense)
+- init side === dp[0][0] = 1 (? num_combo; no val below; dp[0][1,2,3,n] = 1 nonsense)
 - loop dice (forward, i)
 - loop tar (forward, j)
 - loop face (forward, j - k, face part of tar)
@@ -189,7 +207,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; e->t(for) / x:t->e, rep/non-rep ele, reach tar, min_combo
 
 - dp[i] === AT tar, FINAL min_combo, -1
-- left side === 0 (val(1))
+- init side === 0 (val(1))
 - loop ele (forward)
 - loop tar (forward, j=w; init guard)
 - dp[i] === stay_orig(1d)
@@ -200,7 +218,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; e->t / x:t->e; 1 num breaks diff nums (rep/non-rep, reach tar); max_product
 
 - dp[i] === AT tar, FINAL max_product
-- left side === 1 (multiply, so 1)
+- init side === 1 (multiply, so 1)
 - loop ele (forward; ? loop tar; loop ele, j<i, dp[i-j]*j, 2*2 never appear)
 - loop tar (forward, init guard)
 - dp[i] = MAX(stay_orig(1d), to_left(1d) \* val(w, max))
@@ -209,7 +227,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; x:e->t / t->e(for, ele_again_constraint); cut a rod, rep/non-rep ele; reach tar; max_val
 
 - dp[i] === AT tar, FINAL max_val
-- left side === 0 (no val below)
+- init side === 0 (no val below)
 - loop tar (forward)
 - loop ele (forward, j=1; j<=i; ele_again_constraint)
 - dp[i] = MAX(stay_orig(1d), to_left(1d) + val(w, max))
@@ -225,7 +243,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - transfer: ha = sum / 2
 - dp[i] === AT ha, FINAL condi (avoid num_cal)
-- left side == true
+- init side == true
 - loop ele (forward)
 - loop ha ( backward(gen_tar) )
 - dp[i] = stay_orig(1d) || to_left(1d), condi
@@ -235,7 +253,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - transfer: ha = sum / 2
 - dp[i] === AT ha; FINAL condi (avoid num_cal)
-- left side == true
+- init side == true
 - loop ele (forward)
 - loop ha ( backward(gen_tar) )
 - dp[i] = stay_orig(1d) || to_left(1d), condi
@@ -245,7 +263,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; x:e->t / t->e(for, ele_again); rep/non-rep ele (words); reach tar (word str); condi
 
 - dp[i] === AT str posi; FINAL condi(so_far_contain? avoid num_cal)
-- left side === true
+- init side === true
 - loop tar (forward, str posi)
 - loop ele (forward)
 - dp[i] = ( dp[i] || (dp[i - w_l] && s.sub == w) ) (inject other condi)
@@ -267,7 +285,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - x
 - x
 - dp[i] === AT ha, FINAL num_combo
-- left side == 1
+- init side == 1
 - loop ele (forward)
 - loop ha ( backward(gen_tar) )
 - dp[i] = stay_orig(1d) + to_left(1d)
@@ -277,7 +295,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; e->t(for) / x:t->e; rep/non-rep ele; reach tar; num_combo(add)
 
 - dp[i] === AT tar, FINAL num_combo
-- left side === 1 (no val below)
+- init side === 1 (no val below)
 - loop ele (forward)
 - loop tar (forward, init guard)
 - dp[i] = stay_orig(1d) + to_left(1d)
@@ -291,7 +309,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; x:e->t / t->e(for, posi); POSI rep/non-rep ele; reach tar; num_combo(add)
 
 - dp[i] === AT tar, FINAL num_combo
-- left side === 1 (no val below)
+- init side === 1 (no val below)
 - loop tar (forward)
 - loop ele (forward)
 - dp[i] = stay_orig(1d) + to_left(1d)
