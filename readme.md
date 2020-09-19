@@ -78,7 +78,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-##### 2D; parent chars; child chars; chop_char_subseq; condi
+##### 2D; child chars; parent chars; chop_char_subseq; condi
 
 - dp[i][j] ==> AT THIS ele (child_char); AT THIS tar (parent_char); FINAL condi(chop_char_subseq);
 - init side ==> top_row = true (every diagnal to use)
@@ -224,12 +224,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = MAX(stay_orig(compress), to_left(compress) \* val(w, max))
 - https://leetcode.com/problems/integer-break
 
-##### 1D; x:e->t / t->e(for, ele_build_tar); cut a rod, rep/non-rep ele; reach tar; max_val
+##### 1D; x:e->t / t->e(for, ele_again_constraint); cut a rod, rep/non-rep ele; reach tar; max_val
 
 - dp[i] === AT tar, FINAL max_val
 - init side === 0 (no val below)
 - loop tar (forward)
-- loop ele (forward, j=1; j<=i; ele_build_tar_constraint)
+- loop ele (forward, j=1; j<=i; ele_again_constraint)
 - dp[i] = MAX(stay_orig(compress), to_left(compress) + val(w, max))
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
@@ -260,11 +260,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
 
-##### 1D; x:e->t / t->e(for, ele_build_tar); rep/non-rep ele (words); reach tar (single str); condi
+##### 1D; x:e->t / t->e(for, ele_again); rep/non-rep ele (words); reach tar (single str); condi
 
 - dp[i] === AT str posi; FINAL condi(so_far_contain? avoid num_cal)
 - init side === true
-- loop tar (forward, ele_build_tar)
+- loop tar (forward, ele_again)
 - loop ele (forward)
 - dp[i] = ( dp[i] || (dp[i - w_l] && s.sub == w) ) (inject condi)
 - https://leetcode.com/problems/word-break
