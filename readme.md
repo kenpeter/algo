@@ -145,8 +145,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 2D/3D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar/gen_tar; max/min
 
-##### 2D/3D; e->t(for) / x:t->e; non-rep ele (0, 1); with/out condi; reach multi tar; max_combo
+##### 2D/3D; e->t(for) / x:t->e; non-rep ele (0, 1); with/out condi; reach tar_n, tar_m; max_combo
 
+- n+1, m+1, z+1 size
 - dp[k][i][j] === AT ele, REACH tar_m, tar_n, FINAL max_combo
 - init side === 0 (max, val(1))
 - loop ele (forward)
@@ -158,6 +159,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### 2D; e->t(for) / x:t->e; rep ele; with/out condi; reach tar; min_combo.
 
+- n+1, m+1 size
 - dp[i][j] === AT ele, REACH tar, FINAL min_combo
 - init side === 0 (min, val(1))
 - loop ele (forward)
@@ -174,6 +176,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D; e->t(for) / x:t->e; 2 non-rep ele (cancel out); with/out condi; reach half_tar; min_diff(condi)
 
 - transfer: (a + b) - (c + d), (totTar - aTar) - aTar === diff; ha = sum / 2
+- n+1, m+1 size
 - dp[i][j] === AT ele, REACH tar, FINAL condi
 - init side == true
 - loop ele (forward)
@@ -184,6 +187,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D; e->t(for) / x:t->e; non-rep ele, (2 equal sets); with/out condi; reach half_tar; condi
 
 - transfer: ha = sum / 2
+- n+1, m+1 size
 - dp[i][j] === AT ele, REACH tar, FINAL condi
 - init side == true
 - loop ele (forward)
@@ -198,6 +202,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### 2D; e->t(for) / x:t->e; rep ele; with/out condi; reach tar; num_combo(add)
 
+- n+1, m+1 size
 - dp[i][j] === AT ele, REACH tar, FINAL num_combo
 - init side === 1 (num_combo; no val below)
 - loop ele (forward)
@@ -213,6 +218,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### 2D; e->t(for) / x:t->e; n dices (non-rep ele); n face (part of tar), reach tar; num_combo(add).
 
+- n+1, m+1 size
 - dp[i][j] === AT dice, REACH tar-face, FINAL num_combo
 - init side === dp[0][0] = 1 (? num_combo; no val below; dp[0][1,2,3,n] = 1 nonsense)
 - loop dice (forward, i)
@@ -230,6 +236,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### 1D; e->t(for) / x:t->e, rep/non-rep ele, reach tar, min_combo
 
+- m+1 size
 - dp[i] === AT tar, FINAL min_combo, -1
 - init side === 0 (val(1))
 - loop ele (forward)
@@ -241,6 +248,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### 1D; e->t / x:t->e; 1 num breaks diff nums (rep/non-rep, reach tar); max_product
 
+- m+1 size
 - dp[i] === AT tar, FINAL max_product
 - init side === 1 (multiply, so 1)
 - loop ele (forward; ? loop tar; loop ele, j<i, dp[i-j]*j, 2*2 never appear)
@@ -250,6 +258,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### 1D; x:e->t / t->e(for, ele_recal_constrain); cut a rod, unit_len_value, n\*unit_len_value, rep/non-rep ele; reach tar; max_val
 
+- m+1 size
 - dp[i] === AT tar, FINAL max_val
 - init side === 0 (no val below)
 - loop tar (forward; tar_1st, ele_recal)
@@ -266,6 +275,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; e->t(back, gen_tar) / x:t->e; rep/non-rep ele; (2 equal sets), reach gen_tar; condi
 
 - transfer: ha = sum / 2
+- m+1 size
 - dp[i] === AT ha, FINAL condi (avoid num_cal)
 - init side == true
 - loop ele (forward)
@@ -276,6 +286,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; e->t(back, gen_tar) / x:t->e; 2 rep/non-rep ele; (canncel out); reach gen_tar(CONDI); min_diff
 
 - transfer: ha = sum / 2
+- m+1 size
 - dp[i] === AT ha; FINAL condi (avoid num_cal)
 - init side == true
 - loop ele (forward)
@@ -286,6 +297,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### 1D; x:e->t / t->e(for, tar_bigger_bigger); rep/non-rep ele (words); reach tar (single str); condi
 
+- m+1 size
 - dp[i] === AT str posi; FINAL condi(so_far_contain? avoid num_cal)
 - init side === true
 - loop tar (forward; tar_1st, tar_bigger_bigger, ele_recal)
@@ -308,6 +320,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - s(+p) == (tar + s(#)) / 2
 - x
 - x
+- m+1 size
 - dp[i] === AT ha, FINAL num_combo
 - init side == 1
 - loop ele (forward)
@@ -319,6 +332,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; e->t(for) / x:t->e; rep/non-rep ele; reach tar; num_combo(add)
 
 - dp[i] === AT tar, FINAL num_combo
+- m+1 size
 - init side === 1 (no val below)
 - loop ele (forward)
 - loop tar (forward, init guard)
@@ -332,9 +346,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### 1D; x:e->t / t->e(for, posi); POSI rep/non-rep ele; reach tar; num_combo(add)
 
+- m+1 size
 - dp[i] === AT tar, FINAL num_combo
 - init side === 1 (no val below)
-- loop tar (forward)
+- loop tar (forward; tar_1st, posi)
 - loop ele (forward)
 - dp[i] = stay_orig(compress) + to_left(compress)
 - https://www.lintcode.com/problem/combination-sum-iv
