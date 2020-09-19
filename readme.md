@@ -29,7 +29,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 1D/2D; start dp[1][1], move down/right; building matrix; num_combo
 
-###### 2D; start dp[1][1], move down/right, reach bottom right; num_combo
+##### 2D; start dp[1][1], move down/right, reach bottom right; num_combo
 
 - dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
 - init side ==> dp[0][1] = 1 || dp[1][0] = 1 (left or top contrib, not dp[0][0])
@@ -39,7 +39,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re dp[n][m]
 - https://leetcode.com/problems/unique-paths/
 
-###### 1D; start dp[1][1], move down/right, reach bottom right; num_combo
+##### 1D; start dp[1][1], move down/right, reach bottom right; num_combo
 
 - dp[i] ==> AT THIS col, FINAL num_combo
 - init side ===> dp[1] = 1 (left or top contrib, not dp[0])
@@ -49,7 +49,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re dp[m]
 - https://leetcode.com/problems/unique-paths/
 
-###### 2D; start dp[1][1], obstacle, move down/right, reach bottom right; num_combo
+##### 2D; start dp[1][1], obstacle, move down/right, reach bottom right; num_combo
 
 - dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
 - init side ==> dp[0][0] = 0, dp[1][1] = 1 (start)
@@ -60,7 +60,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re dp[n][m]
 - https://leetcode.com/problems/unique-paths-ii/
 
-###### 1D; start dp[1][1], obstacle, move down/right, reach bottom right; num_combo
+##### 1D; start dp[1][1], obstacle, move down/right, reach bottom right; num_combo
 
 - dp[j] ==> AT THIS col, FINAL num_combo
 - init side ==> dp[0] = 0, dp[1] = 1 (start)
@@ -78,15 +78,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-###### 2D; parent chars; child chars; chop_char_subseq; condi
+##### 2D; parent chars; child chars; chop_char_subseq; condi
 
-- dp[i][j] ==> AT THIS char; AT THIS char; FINAL condi(chop_char_subseq);
+- dp[i][j] ==> AT THIS ele (child_char); AT THIS tar (parent_char); FINAL condi(chop_char_subseq);
 - init side ==> top_row = true (every diagnal to use)
-- loop child chars (smaller)
-- loop parent chars
+- loop ele (child_char)
+- loop tar (parent_char)
 - CURR ==> char_match
 - PAST ==> top: dp[i-1][j](less_ele, no_this_char); left: dp[i][j-1](less_res, no_upto); diag: dp[i-1][j-1](less_ele + less_res, no_this_har + no_upto)
-- FORMU ==> dp[i][j-1](left) == true, dp[i][j] = true; dp[i-1][j-1](diag) && CURR(char_match), dp[i][j] = true
+- FORMU ==> dp[i][j-1](left) == true, dp[i][j] = true; dp[i-1][j-1](diag) && CURR(char_match), dp[i][j] = true (top, less_ele, no contrib)
 - https://leetcode.com/problems/is-subsequence/
 
 <br/>
@@ -210,9 +210,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side === 0 (val(1))
 - loop ele (forward)
 - loop tar (forward, j=w; init guard)
-- dp[i] === stay_orig(1d)
-- dp[j-w] === to_left(1d)
-- dp[i] = MIN(stay_orig(1d), to_left(1d) + val(1, min))
+- dp[i] === stay_orig(compress)
+- dp[j-w] === to_left(compress)
+- dp[i] = MIN(stay_orig(compress), to_left(compress) + val(1, min))
 - https://leetcode.com/problems/coin-change/
 
 ##### 1D; e->t / x:t->e; 1 num breaks diff nums (rep/non-rep, reach tar); max_product
@@ -221,16 +221,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side === 1 (multiply, so 1)
 - loop ele (forward; ? loop tar; loop ele, j<i, dp[i-j]*j, 2*2 never appear)
 - loop tar (forward, init guard)
-- dp[i] = MAX(stay_orig(1d), to_left(1d) \* val(w, max))
+- dp[i] = MAX(stay_orig(compress), to_left(compress) \* val(w, max))
 - https://leetcode.com/problems/integer-break
 
-##### 1D; x:e->t / t->e(for, ele_again_constraint); cut a rod, rep/non-rep ele; reach tar; max_val
+##### 1D; x:e->t / t->e(for, ele_build_tar); cut a rod, rep/non-rep ele; reach tar; max_val
 
 - dp[i] === AT tar, FINAL max_val
 - init side === 0 (no val below)
 - loop tar (forward)
-- loop ele (forward, j=1; j<=i; ele_again_constraint)
-- dp[i] = MAX(stay_orig(1d), to_left(1d) + val(w, max))
+- loop ele (forward, j=1; j<=i; ele_build_tar_constraint)
+- dp[i] = MAX(stay_orig(compress), to_left(compress) + val(w, max))
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
 
@@ -246,7 +246,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side == true
 - loop ele (forward)
 - loop ha ( backward(gen_tar) )
-- dp[i] = stay_orig(1d) || to_left(1d), condi
+- dp[i] = stay_orig(compress) || to_left(compress), condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 ##### 1D; e->t(back, gen_tar) / x:t->e; 2 rep/non-rep ele; (canncel out); reach gen_tar(CONDI); min_diff
@@ -256,17 +256,17 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side == true
 - loop ele (forward)
 - loop ha ( backward(gen_tar) )
-- dp[i] = stay_orig(1d) || to_left(1d), condi
+- dp[i] = stay_orig(compress) || to_left(compress), condi
 - ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
 
-##### 1D; x:e->t / t->e(for, ele_again); rep/non-rep ele (words); reach tar (word str); condi
+##### 1D; x:e->t / t->e(for, ele_build_tar); rep/non-rep ele (words); reach tar (single str); condi
 
 - dp[i] === AT str posi; FINAL condi(so_far_contain? avoid num_cal)
 - init side === true
-- loop tar (forward, str posi)
+- loop tar (forward, ele_build_tar)
 - loop ele (forward)
-- dp[i] = ( dp[i] || (dp[i - w_l] && s.sub == w) ) (inject other condi)
+- dp[i] = ( dp[i] || (dp[i - w_l] && s.sub == w) ) (inject condi)
 - https://leetcode.com/problems/word-break
 
 <br/>
@@ -288,7 +288,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side == 1
 - loop ele (forward)
 - loop ha ( backward(gen_tar) )
-- dp[i] = stay_orig(1d) + to_left(1d)
+- dp[i] = stay_orig(compress) + to_left(compress)
 - https://medium.com/swlh/solving-the-target-sum-problem-with-dynamic-programming-and-more-b76bd2a661f9
 - https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
 
@@ -298,7 +298,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side === 1 (no val below)
 - loop ele (forward)
 - loop tar (forward, init guard)
-- dp[i] = stay_orig(1d) + to_left(1d)
+- dp[i] = stay_orig(compress) + to_left(compress)
 - https://leetcode.com/problems/coin-change-2/
 
 <br/>
@@ -312,7 +312,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side === 1 (no val below)
 - loop tar (forward)
 - loop ele (forward)
-- dp[i] = stay_orig(1d) + to_left(1d)
+- dp[i] = stay_orig(compress) + to_left(compress)
 - https://www.lintcode.com/problem/combination-sum-iv
 
 <br/>
