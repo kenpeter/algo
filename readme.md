@@ -25,7 +25,73 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# Building matrix
+# building matrix
+
+## diff types of init side
+
+##### all empty
+
+00000
+0
+0
+0
+0
+
+##### top has val
+
+11111
+0
+0
+0
+0
+
+##### left has val
+
+10000
+1
+1
+1
+1
+
+##### dp[1][1] as start
+
+00000
+01
+0
+0
+0
+
+##### real top has val
+
+00000
+01111
+0
+0
+0
+
+##### real left has val
+
+00000
+01
+01
+01
+01
+
+##### top only 1 val
+
+01000
+0
+0
+0
+0
+
+##### left only 1 val
+
+00000
+1
+0
+0
+0
 
 ## 1D/2D; start dp[1][1], move down/right; building matrix; num_combo
 
@@ -70,6 +136,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - if no obstacle, dp[1] = 1 (start) || dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
 - re dp[m]
 - https://leetcode.com/problems/unique-paths-ii/
+
+##### 1D; start dp[1][1], obstacle, move down/right, reach bottom right; num_combo
+
+https://leetcode.com/problems/minimum-path-sum/
 
 <br/>
 <br/>
