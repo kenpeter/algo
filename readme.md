@@ -109,14 +109,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 01
 01
 
-## 1D/2D; physi_start_1_val; top_contrib, left_contrib; num_combo(add)
+## 1D/2D; physi_start_1_val; top_contrib, left_contrib; num_combo(add)/min/max
 
-##### 2D; physi_start_1_val; top_contrib, left_contrib; num_combo(add)
+##### 2D; physi_start_1_val; top_contrib, left_contrib; num_combo(add)/min/max
 
 - n+1, m+1 size
 - dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
 - init side ==> physi_start_1_val || fake_top_1_val || fake_left_1_val;
-- init side bonus ==> init in loop
+- init side init_in_loop ==> x
 - loop row (n)
 - loop col (m)
 - dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left); add
@@ -128,7 +128,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - m+1 size
 - dp[i] ==> AT THIS col, FINAL num_combo
 - init side ==> physi_start_1_val
-- init side bonus ==> init in loop
+- init side init_in_loop ==> x
 - loop row (n)
 - loop col (m)
 - dp[j] = dp[j](top) + dp[j-1](left); add
@@ -140,11 +140,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - n+1, m+1 size
 - dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
 - init side ==> physi_start_1_val; dp[1][1] == 1 || 0 (dep obstacle)
-- init side bonus ==> init in loop
+- init side init_in_loop ==> x
 - loop row (n)
 - loop col (m)
 - if obstacle, dp[i][j] = 0 (self no)
-- else no obstacle, dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
+- else no obstacle, dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left); add
 - re dp[n][m]
 - https://leetcode.com/problems/unique-paths-ii/
 
@@ -153,17 +153,39 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - m+1 size
 - dp[j] ==> AT THIS col, FINAL num_combo
 - init side ==> physi_start_1_val; dp[1] == 1 || 0 (dep obstacle)
-- init side bonus ==> init in loop
+- init side init_in_loop ==> x
 - loop row (n)
 - loop col (m)
 - if obstacle, dp[j] = 0 (self no)
-- else no obstacle, dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
+- else no obstacle, dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left); add
 - re dp[m]
 - https://leetcode.com/problems/unique-paths-ii/
 
-##### 1D; start dp[1][1], obstacle, move down/right, reach bottom right; num_combo
+##### 2D; physi_start_1_val; top_contrib, left_contrib; min_path
 
-https://leetcode.com/problems/minimum-path-sum/
+- n+1, m+1 size
+- dp[i][j] ==> AT THIS col, AT THIS row, FINAL min_path
+- init side ==> x
+- init side init_in_loop ==> \*
+- loop row (n)
+- loop col (m)
+- if 1st row, dp[i][j] = dp[i][j-1] + g[i-1][j-1] (grid)
+- if 1st col, dp[i][j] = dp[i-1][j] + g[i-1][j-1] (grid)
+- else dp[i][j] = MIN(dp[i][j-1], dp[i-1][j]) + g[i-1][j-1]
+- https://leetcode.com/problems/minimum-path-sum/
+
+##### 1D; physi_start_1_val; top_contrib, left_contrib; min_path
+
+- m+1 size
+- dp[i][j] ==> AT THIS col, AT THIS row, FINAL min_path
+- init side ==> x
+- init side init_in_loop ==> \*
+- loop row (n)
+- loop col (m)
+- if 1st row, dp[j] = dp[j-1] + g[i-1][j-1] (grid)
+- if 1st col, dp[j] = dp[j] + g[i-1][j-1] (grid)
+- else dp[j] = MIN(dp[j-1], dp[j]) + g[i-1][j-1]
+- https://leetcode.com/problems/minimum-path-sum/
 
 <br/>
 <br/>
