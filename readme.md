@@ -29,7 +29,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## diff types of init side
 
-##### fake-top-left all empty
+##### fake_top_left all empty
 
 00000
 0
@@ -37,7 +37,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 0
 0
 
-##### fake-top 1 val
+##### fake_top_1_val
 
 01000
 0
@@ -45,7 +45,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 0
 0
 
-##### fake-left 1 val
+##### fake_left_1_val
 
 00000
 1
@@ -53,7 +53,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 0
 0
 
-##### fake-top has vals
+##### fake_top_vals
 
 11111
 0
@@ -61,7 +61,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 0
 0
 
-##### fake-left has vals
+##### fake_left_vals
 
 10000
 1
@@ -69,7 +69,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 1
 1
 
-##### fake-top-left has vals
+##### fake_top_left_vals
 
 11111
 1
@@ -77,7 +77,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 1
 1
 
-##### physi-start 1 val
+##### physi_start_1_val
 
 00000
 01
@@ -85,71 +85,79 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 0
 0
 
-##### physi-top has vals
-
-00000
-01111
-0
-0
-0
-
-##### physi-left has vals
-
-00000
-01
-01
-01
-01
-
-##### physi-top-left has vals
+##### physi_top_vals
 
 00000
 01111
+0
+0
+0
+
+##### physi_left_vals
+
+00000
+01
 01
 01
 01
 
-## 1D/2D; physi-start; move down/right; building matrix; num_combo
+##### physi_top_left_vals
 
-##### 2D; physi-start; move down/right, reach bottom right; num_combo
+00000
+01111
+01
+01
+01
 
+## 1D/2D; physi_start_1_val; top_contrib, left_contrib; num_combo(add)
+
+##### 2D; physi_start_1_val; top_contrib, left_contrib; num_combo(add)
+
+- n+1, m+1 size
 - dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
-- init side ==> physi-start; top_only_1_val || left_only_1_val;
+- init side ==> physi_start_1_val || fake_top_1_val || fake_left_1_val;
+- init side bonus ==> init in loop
 - loop row (n)
 - loop col (m)
-- dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
+- dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left); add
 - re dp[n][m]
 - https://leetcode.com/problems/unique-paths/
 
-##### 1D; start dp[1][1], move down/right, reach bottom right; num_combo
+##### 1D; physi_start_1_val; top_contrib, left_contrib; num_combo(add)
 
+- m+1 size
 - dp[i] ==> AT THIS col, FINAL num_combo
-- init side ===> dp[1] = 1 (left or top contrib, not dp[0])
+- init side ==> physi_start_1_val
+- init side bonus ==> init in loop
 - loop row (n)
 - loop col (m)
-- dp[j] = dp[j](top) + dp[j-1](left)
+- dp[j] = dp[j](top) + dp[j-1](left); add
 - re dp[m]
 - https://leetcode.com/problems/unique-paths/
 
-##### 2D; start dp[1][1], obstacle, move down/right, reach bottom right; num_combo
+##### 2D; physi_start_1_val; top_contrib, left_contrib, obstacle; num_combo(add)
 
+- n+1, m+1 size
 - dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
-- init side ==> dp[0][0] = 0, dp[1][1] = 1 (start)
+- init side ==> physi_start_1_val; dp[1][1] == 1 || 0 (dep obstacle)
+- init side bonus ==> init in loop
 - loop row (n)
 - loop col (m)
 - if obstacle, dp[i][j] = 0 (self no)
-- if no obstacle, dp[1][1] = 1 (start) || dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
+- else no obstacle, dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
 - re dp[n][m]
 - https://leetcode.com/problems/unique-paths-ii/
 
-##### 1D; start dp[1][1], obstacle, move down/right, reach bottom right; num_combo
+##### 1D; physi_start_1_val; top_contrib, left_contrib, obstacle; num_combo(add)
 
+- m+1 size
 - dp[j] ==> AT THIS col, FINAL num_combo
-- init side ==> dp[0] = 0, dp[1] = 1 (start)
+- init side ==> physi_start_1_val; dp[1] == 1 || 0 (dep obstacle)
+- init side bonus ==> init in loop
 - loop row (n)
 - loop col (m)
 - if obstacle, dp[j] = 0 (self no)
-- if no obstacle, dp[1] = 1 (start) || dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
+- else no obstacle, dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
 - re dp[m]
 - https://leetcode.com/problems/unique-paths-ii/
 
