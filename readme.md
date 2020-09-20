@@ -78,17 +78,17 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-##
+## 2D; child chars; parent chars; chop_char_subseq; condi
 
-##### 2D; ele chars; target chars; chop_char_subseq; condi
+##### 2D; child chars; parent chars; chop_char_subseq; condi
 
-- n+1, m+1 size
-- dp[i][j] ==> AT THIS ele (child_char); AT THIS tar (parent_char); FINAL condi(chop_char_subseq);
+- n+1, m+1 size (diag)
+- dp[i][j] ==> AT THIS child_char; AT THIS parent_char; FINAL condi(chop_char_subseq);
 - init side ==> top_row = true (every diagnal to use)
 - loop ele (ele_first, subset)
 - loop tar
 - CURR ==> char_match
-- PAST ==> top, left, diag; top: dp[i-1][j](less_char); left: dp[i][j-1](less_res); diag: dp[i-1][j-1](less_char + less_res)
+- PAST ==> top, left, diag, else; top: dp[i-1][j](less_char); left: dp[i][j-1](less_res); diag: dp[i-1][j-1](less_char + less_res)
 - FORMU ==> dp[i][j-1](left) == true, dp[i][j] = true; dp[i-1][j-1](diag) && CURR(char_match, condi), dp[i][j] = true (top, less_char, no contrib)
 - https://leetcode.com/problems/is-subsequence/
 
@@ -99,9 +99,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-##
+## 2D; child chars; parent chars; head_tail_equal, sub_head_tail_equal; condi
 
-##### 2D; palindrom str; head_tail_equal; sub_head_tail_equal; condi
+##### 2D; child chars; parent chars; head_tail_equal, sub_head_tail_equal; condi
 
 - n, m size (str, dp match)
 - dp[i][j] ==> AT THIS end_char_index; AT THIS start_char_index; FINAL condi(is_palindrom);
@@ -110,7 +110,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop ele (start_char_index, ele_build_tar_constraint)
 - CURR ==> char_match
 - PAST ==> top, left, diag, else; only else; dp[i-1][j+1] sub_head_tail_equal
-- FORMU ==> CURR(s[i] == s[j]) && (i-j<=2 || dp[i-1][j+1]) dp[i][j] = true; mj = j, mi = i
+- FORMU ==> CURR(s[i] == s[j]) && (i-j<=2 || dp[i-1][j+1]) dp[i][j] = true; mj = j, mi = i (multi max var)
 - https://leetcode.com/problems/longest-palindromic-substring/
 
 <br/>
