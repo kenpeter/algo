@@ -53,14 +53,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 0
 0
 
-##### physi-start 1 val
-
-00000
-01
-0
-0
-0
-
 ##### fake-top has vals
 
 11111
@@ -76,6 +68,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 1
 1
 1
+
+##### fake-top-left has vals
+
+11111
+1
+1
+1
+1
+
+##### physi-start 1 val
+
+00000
+01
+0
+0
+0
 
 ##### physi-top has vals
 
