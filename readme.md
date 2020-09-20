@@ -29,7 +29,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## diff types of init side
 
-##### all empty
+##### fake-top-left all empty
 
 00000
 0
@@ -37,47 +37,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 0
 0
 
-##### top has val
-
-11111
-0
-0
-0
-0
-
-##### left has val
-
-10000
-1
-1
-1
-1
-
-##### dp[1][1] as start
-
-00000
-01
-0
-0
-0
-
-##### real top has val
-
-00000
-01111
-0
-0
-0
-
-##### real left has val
-
-00000
-01
-01
-01
-01
-
-##### top only 1 val
+##### fake-top 1 val
 
 01000
 0
@@ -85,7 +45,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 0
 0
 
-##### left only 1 val
+##### fake-left 1 val
 
 00000
 1
@@ -93,12 +53,60 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 0
 0
 
-## 1D/2D; start dp[1][1], move down/right; building matrix; num_combo
+##### physi-start 1 val
 
-##### 2D; start dp[1][1], move down/right, reach bottom right; num_combo
+00000
+01
+0
+0
+0
+
+##### fake-top has vals
+
+11111
+0
+0
+0
+0
+
+##### fake-left has vals
+
+10000
+1
+1
+1
+1
+
+##### physi-top has vals
+
+00000
+01111
+0
+0
+0
+
+##### physi-left has vals
+
+00000
+01
+01
+01
+01
+
+##### physi-top-left has vals
+
+00000
+01111
+01
+01
+01
+
+## 1D/2D; physi-start; move down/right; building matrix; num_combo
+
+##### 2D; physi-start; move down/right, reach bottom right; num_combo
 
 - dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
-- init side ==> dp[0][1] = 1 || dp[1][0] = 1 (left or top contrib, not dp[0][0])
+- init side ==> physi-start; top_only_1_val || left_only_1_val;
 - loop row (n)
 - loop col (m)
 - dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left)
