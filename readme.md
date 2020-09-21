@@ -285,27 +285,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 2D/3D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar/gen_tar; max/min
 
-## 2D; e->t / t->e; non-rep/rep ele; with/out condi; reach gen_tar; CONDI
-
-## 2D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar; num_combo(add)
-
-## 2D; e->t / t->e; non-rep/rep ele; part of tar, reach tar; num_combo(add)
-
-## 1D; e->t / t->e; rep/non-rep ele; reach tar; min/max
-
-## 1D; e->t / t->e; rep/non-rep ele; reach gen_tar; condi
-
-## 1D; e->t / t->e; rep/non-rep ele; reach tar; num_combo(add)
-
-## 1D; e->t / t->e; POSI rep/non-rep ele; reach tar; num_combo(add)
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-## 2D/3D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar/gen_tar; max/min
-
 ##### 2D/3D; e->t(for) / x:t->e; non-rep ele (0, 1); with/out condi; reach tar_n, tar_m; max_combo
 
 - n+1, m+1, z+1 size
@@ -417,14 +396,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = MAX(stay_orig(compress), to_left(compress) \* val(w, max))
 - https://leetcode.com/problems/integer-break
 
-##### 1D; x:e->t / t->e(for, ele_recal_constrain); cut a rod, unit_len_value, n\*unit_len_value, rep/non-rep ele; reach tar; max_val
+##### 1D; x:e->t / t->e(for, ele_recal_constraint); cut a rod, unit_len_value, n\*unit_len_value, rep/non-rep ele; reach tar; max_val
 
 - m+1 size
 - dp[i] === AT tar, FINAL max_val
-- init side === 0 (no val below)
-- loop tar (forward; tar_1st, ele_recal)
+- init side === 0 (val(w))
+- loop tar (forward; becau ele_recal)
 - loop ele (forward, j=1; j<=i; ele_recal_constraint)
-- dp[i] = MAX(stay_orig(compress), to_left(compress) + val(w, max))
+- dp[i] = MAX(stay_orig(compress), to_left(compress) + val(w))
+- https://www.lintcode.com/problem/cutting-a-rod
+- https://www.lintcode.com/discuss/1266/
+
+##### 1D; x:e->t / t->e(for, ele_recal_constraint); squares_addup_num, rep/non-rep ele; reach tar; min_val
+
+- m+1 size
+- dp[i] === AT tar, FINAL min_val
+- init side === 0 (val(1))
+- loop tar (forward; becau ele_recal)
+- loop ele (forward, while(i-j\*j>=0); ele_recal_constraint)
+- mi = mi(mi, dp[i-j*j] + val(1)); dp[i] = mi, end_loop
+- re dp[m]
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
 
