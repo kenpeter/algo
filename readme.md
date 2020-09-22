@@ -29,7 +29,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## diff types of init side
 
-##### fake_top_left all empty
+##### fake_top_left_all_empty
 
 00000
 0
@@ -412,19 +412,19 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re dp[m]
 - https://leetcode.com/problems/perfect-squares
 
-##### 1D; x:e->t / t->e(for, ele_bottom_constraint); cut a rod, unit_len_value, n\*unit_len_value, rep/non-rep ele; reach tar; max_val
+##### 1D; cut a rod, unit_len_value, n\*unit_len_value, rep/non-rep ele; reach tar; max_val
 
 - m+1 size
-- dp[i] === AT tar, FINAL max_val
-- init side === 0 (formu_has_val)
 - TAR ==> total_len; tar_bottom_up
-- ELE ==> sub_len; ele_bottom_up_constraint; j=1; j<=i
-- VAL ==> price_arr
 - loop tar (forward; becau ele_bottom_up is still tar_bottom_up)
+- ELE ==> sub_len; ele_upto_subtar; j=1; j<=i
 - loop ele (forward)
-- CURR ==> price[i-j], val(w)
-- PAST ==> top, left, diag, else; top dp[j](n-incl), left(x), diag dp[i-j](incl), else(x)
-- FORMU ==> dp[i] = MAX(dp[j](top), dp[i-j](compress) + price[i-j])
+- t->e
+- dp[i] ==> AT tar, FINAL max_val
+- init side ==> fake_top_left_all_empty (formu_has_val)
+- VAL/CURR ==> price_arr[i], val(w)
+- PAST ==> top, left, diag, else; dp[j](top), left(x), dp[i-j](diag), else(x)
+- FORMU ==> dp[i] = MAX(dp[j](top), dp[i-j](diag) + price_arr[i-j])
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
 
