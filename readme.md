@@ -386,28 +386,30 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = MIN(stay_orig(compress), to_left(compress) + val(1, min))
 - https://leetcode.com/problems/coin-change/
 
-##### 1D; e->t / x:t->e; 1 num breaks sub nums (rep/non-rep, reach tar); max_product
+##### 1D; 1 num breaks sub nums (rep/non-rep, reach tar); max_product
 
 - m+1 size
+- TAR ==> final_tar; sub_tar upto final_tar
+- SUB_TAR ==> small_sub_tar; small_sub_tar addup sub_tar;
+- t->e
 - dp[i] === AT tar, FINAL max_product
 - init side === 1 (multiply, so 1)
-- loop ele (forward; ele_start_small)
-- loop tar (forward, tar_start_small)
-- CURR ==> i
-- PAST ==> top, left, diag, else; 1D no top, diag; left dp[j-i] (tar - ele, dp_start_small)
-- FORMU ==> dp[j] = j>=i, MAX(dp[j](compress), dp[j-i](anything_left) \* i(curr_num))
+- VAL/CURR ==> i
+- PAST ==> top/left/diag/else; top dp[j], left(x), diag dp[j-i], else(x)
+- FORMU ==> dp[j] = j>=i, MAX(dp[j](top), dp[j-i](diag) \* i(curr_num))
 - https://leetcode.com/problems/integer-break
 
-##### 1D; x:e->t / t->e(for, ele_recal_constraint); squares_addup_num, rep/non-rep ele; reach tar; min_combo
+##### 1D; squares_addup_num, rep/non-rep ele; reach tar; min_combo
 
 - m+1 size
-- dp[i] === AT tar, FINAL min_combo
-- init side === 0 (formu_has_val)
-- loop tar (forward; tar_start_small)
-- loop ele (forward, ele_start_small)
-- CURR ==> 1 (no val(w), so 1)
-- PAST ==> top, left, diag, else; 1D no top, left; diag dp[i-j\*j] (tar - ele, dp_start_small)
-- FORMU ==> loop(i-j\*j>=0), mi = mi(mi, dp[i-j\*j](anything_left) + val(1));
+- TAR ==> final_tar; sub_tar upto final_tar
+- SUB_TAR ==> small_sub_tar; small_sub_tar addup sub_tar; loop(i-j\*j>=0)
+- t->e (becau use tmp_min)
+- dp[i] ==> AT THIS num, FINAL min_combo
+- init side ==> fake_left_1_val (formu_has_val)
+- VAL/CURR ==> val(1), no val(w)
+- PAST ==> top/left/diag/else; top(x, becau tmp_min), left(x), diag dp[i-j\*j], else(x)
+- FORMU ==> mi = mi(mi, dp[i-j\*j](anything_left) + val(1));
 - end_loop, dp[i] = mi,
 - re dp[m]
 - https://leetcode.com/problems/perfect-squares
@@ -415,15 +417,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; cut a rod, unit_len_value, n\*unit_len_value, rep/non-rep ele; reach tar; max_val
 
 - m+1 size
-- TAR ==> total_len; tar_bottom_up
-- loop tar (forward; becau ele_bottom_up is still tar_bottom_up)
-- ELE ==> sub_len; ele_upto_subtar; j=1; j<=i
-- loop ele (forward)
+- TAR ==> final_tar; sub_tar upto final_tar
+- SUB_TAR ==> small_sub_tar; small_sub_tar addup sub_tar; loop(j=1; j<=i) (ele_bottom_up still tar_bottom_up)
 - t->e
-- dp[i] ==> AT tar, FINAL max_val
-- init side ==> fake_top_left_all_empty (formu_has_val)
+- dp[i] ==> AT THIS len, FINAL max_val
+- init side ==> fake_left_no_val (formu_has_val)
 - VAL/CURR ==> price_arr[i], val(w)
-- PAST ==> top, left, diag, else; dp[j](top), left(x), dp[i-j](diag), else(x)
+- PAST ==> top/left/diag/else; dp[j](top), left(x), dp[i-j](diag), else(x)
 - FORMU ==> dp[i] = MAX(dp[j](top), dp[i-j](diag) + price_arr[i-j])
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
