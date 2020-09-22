@@ -389,12 +389,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; 1 num breaks sub nums (rep/non-rep, reach tar); max_product
 
 - m+1 size
-- TAR ==> final_tar; sub_tar upto final_tar
-- SUB_TAR ==> small_sub_tar; small_sub_tar addup sub_tar;
+- TAR ==> final_num; sub_num upto final_num
+- SUB_TAR ==> small_sub_num; small_sub_num addup sub_num;
 - t->e
-- dp[i] === AT tar, FINAL max_product
-- init side === 1 (multiply, so 1)
-- VAL/CURR ==> i
+- dp[i] === AT this num, FINAL max_product
+- init side === fake_left_1_val (multiply, so 1)
+- VAL/CURR ==> i (multiply)
 - PAST ==> top/left/diag/else; top dp[j], left(x), diag dp[j-i], else(x)
 - FORMU ==> dp[j] = j>=i, MAX(dp[j](top), dp[j-i](diag) \* i(curr_num))
 - https://leetcode.com/problems/integer-break
@@ -402,14 +402,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; squares_addup_num, rep/non-rep ele; reach tar; min_combo
 
 - m+1 size
-- TAR ==> final_tar; sub_tar upto final_tar
-- SUB_TAR ==> small_sub_tar; small_sub_tar addup sub_tar; loop(i-j\*j>=0)
-- t->e (becau use tmp_min)
+- TAR ==> final_num; sub_num upto final_num
+- SUB_TAR ==> small_sub_num; small_sub_num^2 addup sub_num; loop(i-j\*j>=0)
+- t->e
 - dp[i] ==> AT THIS num, FINAL min_combo
 - init side ==> fake_left_1_val (formu_has_val)
 - VAL/CURR ==> val(1), no val(w)
 - PAST ==> top/left/diag/else; top(x, becau tmp_min), left(x), diag dp[i-j\*j], else(x)
-- FORMU ==> mi = mi(mi, dp[i-j\*j](anything_left) + val(1));
+- FORMU ==> mi = mi(mi, dp[i-j\*j](diag) + val(1));
 - end_loop, dp[i] = mi,
 - re dp[m]
 - https://leetcode.com/problems/perfect-squares
@@ -417,8 +417,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; cut a rod, unit_len_value, n\*unit_len_value, rep/non-rep ele; reach tar; max_val
 
 - m+1 size
-- TAR ==> final_tar; sub_tar upto final_tar
-- SUB_TAR ==> small_sub_tar; small_sub_tar addup sub_tar; loop(j=1; j<=i) (ele_bottom_up still tar_bottom_up)
+- TAR ==> final_len; sub_len upto final_len
+- SUB_TAR ==> small_sub_len; small_sub_len addup sub_len; loop(j=1; j<=i) (ele_bottom_up still tar_bottom_up)
 - t->e
 - dp[i] ==> AT THIS len, FINAL max_val
 - init side ==> fake_left_no_val (formu_has_val)
