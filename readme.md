@@ -386,36 +386,45 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = MIN(stay_orig(compress), to_left(compress) + val(1, min))
 - https://leetcode.com/problems/coin-change/
 
-##### 1D; e->t / x:t->e; 1 num breaks diff nums (rep/non-rep, reach tar); max_product
+##### 1D; e->t / x:t->e; 1 num breaks sub nums (rep/non-rep, reach tar); max_product
 
 - m+1 size
 - dp[i] === AT tar, FINAL max_product
 - init side === 1 (multiply, so 1)
-- loop ele (forward; ? loop tar; loop ele, j<i, dp[i-j]*j, 2*2 never appear)
-- loop tar (forward, init guard)
-- dp[i] = MAX(stay_orig(compress), to_left(compress) \* val(w, max))
+- loop ele (forward; ele_start_small)
+- loop tar (forward, tar_start_small)
+- CURR ==> i
+- PAST ==> top, left, diag, else; 1D no top, diag; left dp[j-i] (tar - ele, dp_start_small)
+- FORMU ==> dp[j] = j>=i, MAX(dp[j](compress), dp[j-i](anything_left) \* i(curr_num))
 - https://leetcode.com/problems/integer-break
 
-##### 1D; x:e->t / t->e(for, ele_recal_constraint); cut a rod, unit_len_value, n\*unit_len_value, rep/non-rep ele; reach tar; max_val
+##### 1D; x:e->t / t->e(for, ele_recal_constraint); squares_addup_num, rep/non-rep ele; reach tar; min_combo
+
+- m+1 size
+- dp[i] === AT tar, FINAL min_combo
+- init side === 0 (formu_has_val)
+- loop tar (forward; tar_start_small)
+- loop ele (forward, ele_start_small)
+- CURR ==> 1 (no val(w), so 1)
+- PAST ==> top, left, diag, else; 1D no top, left; diag dp[i-j\*j] (tar - ele, dp_start_small)
+- FORMU ==> loop(i-j\*j>=0), mi = mi(mi, dp[i-j\*j](anything_left) + val(1));
+- end_loop, dp[i] = mi,
+- re dp[m]
+- https://leetcode.com/problems/perfect-squares
+
+##### 1D; x:e->t / t->e(for, ele_bottom_constraint); cut a rod, unit_len_value, n\*unit_len_value, rep/non-rep ele; reach tar; max_val
 
 - m+1 size
 - dp[i] === AT tar, FINAL max_val
-- init side === 0 (val(w))
-- loop tar (forward; becau ele_recal)
-- loop ele (forward, j=1; j<=i; ele_recal_constraint)
-- dp[i] = MAX(stay_orig(compress), to_left(compress) + val(w))
-- https://www.lintcode.com/problem/cutting-a-rod
-- https://www.lintcode.com/discuss/1266/
-
-##### 1D; x:e->t / t->e(for, ele_recal_constraint); squares_addup_num, rep/non-rep ele; reach tar; min_val
-
-- m+1 size
-- dp[i] === AT tar, FINAL min_val
-- init side === 0 (val(1))
-- loop tar (forward; becau ele_recal)
-- loop ele (forward, while(i-j\*j>=0); ele_recal_constraint)
-- mi = mi(mi, dp[i-j*j] + val(1)); dp[i] = mi, end_loop
-- re dp[m]
+- init side === 0 (formu_has_val)
+- TAR ==> total_len; tar_bottom_up
+- ELE ==> sub_len; ele_bottom_up_constraint; j=1; j<=i
+- VAL ==> price_arr
+- loop tar (forward; becau ele_bottom_up is still tar_bottom_up)
+- loop ele (forward)
+- CURR ==> price[i-j], val(w)
+- PAST ==> top, left, diag, else; top dp[j](n-incl), left(x), diag dp[i-j](incl), else(x)
+- FORMU ==> dp[i] = MAX(dp[j](top), dp[i-j](compress) + price[i-j])
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
 
