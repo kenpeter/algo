@@ -389,25 +389,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; 1 num breaks sub nums; no_order ele, reach tar; max_product
 
 - m+1 size
-- dp[j] === AT this num, FINAL max_product
-- init side === fake_left_1_val (multiply, so 1)
+- dp[j] ==> AT this num, FINAL max_product
+- init side ==> 1 (multiply 1)
 - loop ele (forward; NO_ORDER)
 - loop tar (forward)
-- CURR ==> ELE, i (x\*y = max_product)
-- PAST ==> top/diag/else; dp[j](top), dp[j-i](diag, x+y=z), else(x)
-- FORMU ==> dp[j] = j>=i, MAX(dp[j](top), dp[j-i](diag) \* i(curr_num));
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = MAX(dp[j](top), dp[j-i](diag, x+y=z) \* i(x\*y = max_product));
 - https://leetcode.com/problems/integer-break
 
 ##### 1D; squares_addup_num, order ele; reach tar; min_combo
 
 - m+1 size
 - dp[i] ==> AT this num, FINAL min_combo
-- init side ==> fake_left_0_val (formu_has_val)
-- loop tar (forward; ORDER)
+- init side ==> 0 (val(w) below)
+- loop tar (forward; ORDER?)
 - loop ele (forward)
-- CURR ==> val(1), no val(w)
-- PAST ==> top/diag/else; top(x, tmp_min), dp[i-j\*j](diag, x^2+y^2 = z), else(x)
-- FORMU ==> mi = mi(mi, dp[i-j\*j](diag) + val(1));
+- FORMU ==> top(\*)/diag(\*)/else; mi = mi( mi, dp[i-j\*j](diag, x^2+y^2 = z) + val(1, no val(w)) );
 - end_loop, dp[i] = mi,
 - re dp[m]
 - https://leetcode.com/problems/perfect-squares
@@ -416,12 +412,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - m+1 size
 - dp[i] ==> AT this len, FINAL max_val
-- init side ==> fake_left_0_val (formu_has_val)
+- init side ==> 0 (val(w) below)
 - loop tar (forward; ORDER)
 - loop ele (forward)
-- CURR ==> price_arr[i], val(w)
-- PAST ==> top/diag/else; dp[j](top), dp[i-j](diag, x+y=z), else(x)
-- FORMU ==> dp[i] = MAX(dp[j](top), dp[i-j](diag) + price_arr[i-j])
+- FORMU ==> top(\*)/diag(\*)/else; dp[i] = MAX(dp[j](top), dp[i-j](diag, x+y=z) + price_arr[i-j](<val(w)>) )
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
 
@@ -500,16 +494,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 1D; e->t / t->e; POSI rep/non-rep ele; reach tar; num_combo(add)
+## 1D; POSI order ele; reach tar; num_combo(add)
 
-##### 1D; x:e->t / t->e(for, posi); POSI rep/non-rep ele; reach tar; num_combo(add)
+##### 1D; POSI order ele; reach tar; num_combo(add)
 
 - m+1 size
 - dp[i] === AT tar, FINAL num_combo
-- init side === 1 (no val below)
-- loop tar (forward; tar_1st, posi)
+- init side === 1 (val(0) below)
+- loop tar (forward; order)
 - loop ele (forward)
-- dp[i] = stay_orig(compress) + to_left(compress)
+- FORMU ==> top(\*)/diag(\*)/else; dp[i] = dp[i](top) + dp[i-w](diag)
 - https://www.lintcode.com/problem/combination-sum-iv
 
 <br/>
