@@ -435,23 +435,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = stay_orig(compress) || to_left(compress), condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
-##### 1D; e->t(back, gen_tar) / x:t->e; 2 rep/non-rep ele; (canncel out); reach gen_tar(CONDI); min_diff
+##### 1D; NO_ORDER ele; (canncel out); reach gen_tar(backward_tar); min_diff
 
 - transfer: ha = sum / 2
 - m+1 size
-- dp[i] === AT ha; FINAL condi (avoid num_cal)
-- init side == true
+- dp[j] === AT this ha; FINAL condi (question min_diff; dp[j] == true, update_max)
+- init side == true (condi)
 - loop ele (forward)
-- loop ha ( backward(gen_tar) )
-- dp[i] = stay_orig(compress) || to_left(compress), condi
-- ma(ma, j)
+- loop ha (backward; gen_tar; dp_ind_constraint)
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) || dp[j-ele](diag); ma = ma(ma, j(sub_tar))
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
 
 ##### 1D; ORDER ele (words); reach tar (single str); condi
 
 - m+1 size
-- dp[i] === AT str posi; FINAL condi(so_far_contain? avoid num_cal)
-- init side === true (from questions)
+- dp[i] === AT str posi; FINAL condi(from question)
+- init side === true (from question)
 - loop tar (forward; ORDER)
 - loop ele (forward; dp_ind_constraint)
 - FORMU ==> top(\*)/diag(\*)/else; dp[i] = ( dp[i] || ( dp[i - w_l](diag) && s.sub == w(sub_word_match) ) )
