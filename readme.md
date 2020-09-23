@@ -447,14 +447,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - ma(ma, j)
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
 
-##### 1D; x:e->t / t->e(for, tar_bigger_bigger); rep/non-rep ele (words); reach tar (single str); condi
+##### 1D; ORDER ele (words); reach tar (single str); condi
 
 - m+1 size
 - dp[i] === AT str posi; FINAL condi(so_far_contain? avoid num_cal)
-- init side === true
-- loop tar (forward; tar_1st, tar_bigger_bigger, ele_recal)
-- loop ele (forward)
-- dp[i] = ( dp[i] || (dp[i - w_l] && s.sub == w) ) (inject condi)
+- init side === true (from questions)
+- loop tar (forward; ORDER)
+- loop ele (forward; dp_ind_constraint)
+- FORMU ==> top(\*)/diag(\*)/else; dp[i] = ( dp[i] || ( dp[i - w_l](diag) && s.sub == w(sub_word_match) ) )
 - https://leetcode.com/problems/word-break
 
 <br/>
