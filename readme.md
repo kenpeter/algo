@@ -460,11 +460,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 1D; e->t / t->e; rep/non-rep ele; reach gen_tar; num_combo(add)
+## 1D; NO_ORDER ele; reach gen_tar(backward_tar); num_combo(add)
 
-##### 1D; e->t(back, gen_tar) / x:t->e; rep/non-rep ele, add -/+; reach gen_tar; num_combo(add)
+##### 1D; NO_ORDER ele, add -/+; reach gen_tar(backward_tar); num_combo(add)
 
 - transfer: s(#) = [1, 2, 3, 4, 5], tar = 3
+- s(#) = [+1, -2, +3, -4, +5], tar = 3
 - (1+3+5) - (2+4) == 3 =====> s(+p) - s(+n) == tar
 - s(+p) - s(+n) + s(#) == tar + s(#)
 - s(+p) - s(+n) + s(+p) + s(+n) == tar + s(+p) + s(+n)
@@ -473,37 +474,37 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - x
 - x
 - m+1 size
-- dp[i] === AT ha, FINAL num_combo
-- init side == 1
-- loop ele (forward)
-- loop ha ( backward(gen_tar) )
-- dp[i] = stay_orig(compress) + to_left(compress)
+- dp[j] === AT ha, FINAL num_combo(add)
+- init side == 1 (val(0) below)
+- loop ele (forward; NO_ORDER)
+- loop ha (backward; gen_tar; dp_ind_constraint)
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) + dp[j-ele](diag)
 - https://medium.com/swlh/solving-the-target-sum-problem-with-dynamic-programming-and-more-b76bd2a661f9
 - https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
 
-##### 1D; e->t(for) / x:t->e; rep/non-rep ele; reach tar; num_combo(add)
+##### 1D; NO_ORDER ele; addup to tar; num_combo(add)
 
 - m+1 size
-- dp[i] === AT this tar, FINAL num_combo
+- dp[j] === AT this tar, FINAL num_combo
 - init side === 1 (val(1) below)
 - loop ele (forward; NO_ORDER)
 - loop tar (forward, dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[i] = dp[i](top) + dp[i-ele](diag)
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) + dp[j-ele](diag)
 - https://leetcode.com/problems/coin-change-2/
 
 <br/>
 <br/>
 
-## 1D; POSI order ele; reach tar; num_combo(permu_add)
+## 1D; ORDER ele; addup to tar; num_combo(add)
 
-##### 1D; POSI order ele; reach tar; permu_num_combo(permu_add)
+##### 1D; ORDER ele; addup to tar; permu_num_combo(add)
 
 - m+1 size
-- dp[i] === AT this tar, FINAL num_combo (permu_add)
+- dp[i] === AT this tar, FINAL num_combo (add)
 - init side === 1 (val(0) below)
 - loop tar (forward; ORDER)
 - loop ele (forward; dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[i] = dp[i](top) + dp[i-ele](diag); (permu_add)
+- FORMU ==> top(\*)/diag(\*)/else; dp[i] = dp[i](top) + dp[i-ele](diag); (add)
 - https://leetcode.com/problems/combination-sum-iv/
 - https://www.lintcode.com/problem/combination-sum-iv
 
