@@ -374,26 +374,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 1D; e->t / t->e; rep/non-rep ele; reach tar; min/max
 
-##### 1D; e->t(for) / x:t->e, rep/non-rep ele, reach tar, min_combo
+##### 1D; NO_ORDER ele, reach tar, min_num_combo (vs num_combo)
 
 - m+1 size
-- dp[i] === AT this num, FINAL min_combo, -1
-- init side === 0 (val(1))
-- loop ele (forward)
-- loop tar (forward, j=w; init guard)
-- dp[i] === stay_orig(compress)
-- dp[j-w] === to_left(compress)
-- dp[i] = MIN(stay_orig(compress), to_left(compress) + val(1, min))
+- dp[j] ==> AT this num, FINAL min_num_combo/-1
+- init side ==> 0 (val(1), below)
+- loop ele (forward; NO_ORDER, 1+2, 2+1, same)
+- loop tar (forward; dp_ind_constraint, j=w; j<=t)
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = MIN(dp[j](top), dp[j-i](diag, x+y=tar) + val(1, min))
 - https://leetcode.com/problems/coin-change/
 
-##### 1D; 1 num breaks sub nums; no_order ele, reach tar; max_product
+##### 1D; 1 num breaks sub nums; NO_ORDER ele, reach tar; max_product
 
 - m+1 size
 - dp[j] ==> AT this num, FINAL max_product
 - init side ==> 1 (multiply 1)
-- loop ele (forward; NO_ORDER)
+- loop ele (forward; NO_ORDER, 1*2, 2*1, same)
 - loop tar (forward; dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[j] = MAX(dp[j](top), dp[j-i](diag, x+y=z) \* i(x\*y = max_product));
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = MAX(dp[j](top), dp[j-i](diag, x+y=tar) \* i(x\*y = max_product));
 - https://leetcode.com/problems/integer-break
 
 ##### 1D; squares_addup_num, order ele; reach tar; min_combo
@@ -401,7 +399,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - m+1 size
 - dp[i] ==> AT this num, FINAL min_combo
 - init side ==> 0 (val(w) below)
-- loop tar (forward; ORDER?)
+- loop tar (forward; ORDER? 1^2 + 2^2, affect_next_diff)
 - loop ele (forward; dp_ind_constraint)
 - FORMU ==> top(\*)/diag(\*)/else; mi = mi( mi, dp[i-j\*j](diag, x^2+y^2 = tar) + val(1, no val(w)) );
 - end_loop, dp[i] = mi
@@ -413,7 +411,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - m+1 size
 - dp[i] ==> AT this len, FINAL max_val
 - init side ==> 0 (val(w) below)
-- loop tar (forward; ORDER; )
+- loop tar (forward; ORDER, len1*v, len2*v, order_diff)
 - loop ele (forward; dp_recal_constraint)
 - FORMU ==> top(\*)/diag(\*)/else; dp[i] = MAX(dp[j](top), dp[i-j](diag, x+y=sub_tar) + price_arr[i-j](<val(w)>) )
 - https://www.lintcode.com/problem/cutting-a-rod
@@ -432,18 +430,18 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side == true
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) || dp[j-ele](diag, x+y=tar); condi
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) || dp[j-i](diag, x+y=tar); condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 ##### 1D; NO_ORDER ele; (canncel out); reach gen_tar(backward_tar); min_diff
 
 - transfer: ha = sum / 2
 - ha+1 size
-- dp[i] === AT this ha; FINAL condi (question min_diff; dp[j] == true, to_update_max)
+- dp[j] === AT this ha; FINAL condi (question min_diff; dp[j] == true, to_update_max)
 - init side == true (to_update_max)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) || dp[j-ele](diag, x+y=ha); ma = ma(ma, j(sub_tar))
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) || dp[j-i](diag, x+y=ha); ma = ma(ma, j(sub_tar))
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
 
 ##### 1D; ORDER ele (words); reach tar (single str); condi
@@ -481,7 +479,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://medium.com/swlh/solving-the-target-sum-problem-with-dynamic-programming-and-more-b76bd2a661f9
 - https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
 
-##### 1D; NO_ORDER ele; addup to tar; num_combo(add)
+##### 1D; NO_ORDER ele; addup to tar; num_combo(add) (vs min_num_combo)
 
 - m+1 size
 - dp[j] === AT this tar, FINAL num_combo
