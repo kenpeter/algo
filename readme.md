@@ -354,15 +354,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 2D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar; num_combo(add)
 
-##### 2D; e->t(for) / x:t->e; rep ele; with/out condi; reach tar; num_combo(add)
+##### 2D; NO_ORDER ele; reach tar; num_combo(add)
 
 - n+1, m+1 size
 - dp[i][j] === AT this ele, REACH tar, FINAL num_combo
 - init side ==> fake_left_vals (1D compress, dp[0] = 1)
-- loop ele (forward; ORDER)
-- loop tar (forward)
-- with(?): dp[i][j] = 1_up(?) + to_left(rep)
-- without(?): dp[i][j] = 1_up(?)
+- loop ele (forward; NO_ORDER)
+- loop tar (forward;)
+- FORMU ==> top(\*)/diag/left(\*)/else;
+- j>=i(w), dp[i][j] = dp[i-1][j](top) + dp[i][j-i(w)](left, fake_left_vals)
+- j<i(w), dp[i][j] = dp[i-1][j](top)
 - https://leetcode.com/problems/coin-change-2/
 
 <br/>
