@@ -392,7 +392,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[j] ==> AT this num, FINAL max_product
 - init side ==> 1 (multiply 1)
 - loop ele (forward; NO_ORDER)
-- loop tar (forward; ind_constraint)
+- loop tar (forward; dp_ind_constraint)
 - FORMU ==> top(\*)/diag(\*)/else; dp[j] = MAX(dp[j](top), dp[j-i](diag, x+y=z) \* i(x\*y = max_product));
 - https://leetcode.com/problems/integer-break
 
@@ -402,8 +402,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] ==> AT this num, FINAL min_combo
 - init side ==> 0 (val(w) below)
 - loop tar (forward; ORDER?)
-- loop ele (forward; ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; mi = mi( mi, dp[i-j\*j](diag, x^2+y^2 = z) + val(1, no val(w)) );
+- loop ele (forward; dp_ind_constraint)
+- FORMU ==> top(\*)/diag(\*)/else; mi = mi( mi, dp[i-j\*j](diag, x^2+y^2 = tar) + val(1, no val(w)) );
 - end_loop, dp[i] = mi
 - re dp[m]
 - https://leetcode.com/problems/perfect-squares
@@ -413,9 +413,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - m+1 size
 - dp[i] ==> AT this len, FINAL max_val
 - init side ==> 0 (val(w) below)
-- loop tar (forward; ORDER)
-- loop ele (forward; ele_recal_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[i] = MAX(dp[j](top), dp[i-j](diag, x+y=z) + price_arr[i-j](<val(w)>) )
+- loop tar (forward; ORDER; )
+- loop ele (forward; dp_recal_constraint)
+- FORMU ==> top(\*)/diag(\*)/else; dp[i] = MAX(dp[j](top), dp[i-j](diag, x+y=sub_tar) + price_arr[i-j](<val(w)>) )
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
 
@@ -430,9 +430,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - ha+1 size
 - dp[i] === AT this ha, FINAL condi (question condi)
 - init side == true
-- loop ele (forward; NO_ORDER; 1+2, 2+1, same)
-- loop ha (backward; gen_tar; )
-- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) || dp[j-ele](diag); condi
+- loop ele (forward; NO_ORDER, 1+2, 2+1, same)
+- loop ha (backward; gen_tar; dp_ind_constraint)
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) || dp[j-ele](diag, x+y=tar); condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 ##### 1D; NO_ORDER ele; (canncel out); reach gen_tar(backward_tar); min_diff
@@ -443,7 +443,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side == true (to_update_max)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) || dp[j-ele](diag); ma = ma(ma, j(sub_tar))
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) || dp[j-ele](diag, x+y=ha); ma = ma(ma, j(sub_tar))
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
 
 ##### 1D; ORDER ele (words); reach tar (single str); condi
@@ -451,9 +451,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - m+1 size
 - dp[i] === AT str posi; FINAL condi(from question)
 - init side === true (from question)
-- loop tar (forward; ORDER)
+- loop tar (forward; ORDER, w1-w2, w2-w1, diff)
 - loop ele (forward; dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[i] = ( dp[i] || ( dp[i - w_l](diag) && s.sub == w(sub_word_match) ) )
+- FORMU ==> top(\*)/diag(\*)/else; dp[i] = ( dp[i] || ( dp[i - w_l](diag, w_l + rest = fw_l) && s.sub == w(sub_word_match) ) )
 - https://leetcode.com/problems/word-break
 
 <br/>
@@ -475,9 +475,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - m+1 size
 - dp[j] === AT ha, FINAL num_combo(add)
 - init side == 1 (val(0) below)
-- loop ele (forward; NO_ORDER)
+- loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) + dp[j-ele](diag)
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) + dp[j-ele](diag, x+y=tar); (num_combo_add)
 - https://medium.com/swlh/solving-the-target-sum-problem-with-dynamic-programming-and-more-b76bd2a661f9
 - https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
 
@@ -486,9 +486,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - m+1 size
 - dp[j] === AT this tar, FINAL num_combo
 - init side === 1 (val(1) below)
-- loop ele (forward; NO_ORDER)
+- loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward, dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) + dp[j-ele](diag)
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) + dp[j-ele](diag, x+y=tar); (num_combo_add)
 - https://leetcode.com/problems/coin-change-2/
 
 <br/>
@@ -501,9 +501,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - m+1 size
 - dp[i] === AT this tar, FINAL num_combo (add)
 - init side === 1 (val(0) below)
-- loop tar (forward; ORDER)
+- loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[i] = dp[i](top) + dp[i-ele](diag); (add)
+- FORMU ==> top(\*)/diag(\*)/else; dp[i] = dp[i](top) + dp[i-ele](diag, x+y=tar); (num_combo_add)
 - https://leetcode.com/problems/combination-sum-iv/
 - https://www.lintcode.com/problem/combination-sum-iv
 
