@@ -77,7 +77,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 1
 1
 
-##### physi_start_1_val
+##### physi_1_1_val
 
 00000
 01
@@ -109,7 +109,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 01
 01
 
-##### physi_no_fake
+##### fake_top_left_vals
 
 11111
 1
@@ -117,13 +117,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 1
 1
 
-## 1D/2D; physi_start_1_val; top_contrib, left_contrib; num_combo(add)/min/max
+## 1D/2D; physi_1_1_val; top_contrib, left_contrib; num_combo(add)/min/max
 
-##### 2D; physi_start_1_val; top_contrib, left_contrib; num_combo(add)/min/max
+##### 2D; physi_1_1_val; top_contrib, left_contrib; num_combo(add)/min/max
 
 - n+1, m+1 size
 - dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
-- init side ==> physi_start_1_val || fake_top_1_val || fake_left_1_val;
+- init side ==> physi_1_1_val || fake_top_1_val || fake_left_1_val;
 - init side init_in_loop ==> x
 - loop row (n)
 - loop col (m)
@@ -131,11 +131,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re dp[n][m]
 - https://leetcode.com/problems/unique-paths/
 
-##### 1D; physi_start_1_val; top_contrib, left_contrib; num_combo(add)
+##### 1D; physi_1_1_val; top_contrib, left_contrib; num_combo(add)
 
 - m+1 size
 - dp[i] ==> AT THIS col, FINAL num_combo
-- init side ==> physi_start_1_val
+- init side ==> physi_1_1_val
 - init side init_in_loop ==> x
 - loop row (n)
 - loop col (m)
@@ -143,11 +143,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re dp[m]
 - https://leetcode.com/problems/unique-paths/
 
-##### 2D; physi_start_1_val; top_contrib, left_contrib, obstacle; num_combo(add)
+##### 2D; physi_1_1_val; top_contrib, left_contrib, obstacle; num_combo(add)
 
 - n+1, m+1 size
 - dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
-- init side ==> physi_start_1_val; dp[1][1] == 1 || 0 (dep obstacle)
+- init side ==> physi_1_1_val; dp[1][1] == 1 || 0 (dep obstacle)
 - init side init_in_loop ==> x
 - loop row (n)
 - loop col (m)
@@ -156,11 +156,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re dp[n][m]
 - https://leetcode.com/problems/unique-paths-ii/
 
-##### 1D; physi_start_1_val; top_contrib, left_contrib, obstacle; num_combo(add)
+##### 1D; physi_1_1_val; top_contrib, left_contrib, obstacle; num_combo(add)
 
 - m+1 size
 - dp[j] ==> AT THIS col, FINAL num_combo
-- init side ==> physi_start_1_val; dp[1] == 1 || 0 (dep obstacle)
+- init side ==> physi_1_1_val; dp[1] == 1 || 0 (dep obstacle)
 - init side init_in_loop ==> x
 - loop row (n)
 - loop col (m)
@@ -169,7 +169,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re dp[m]
 - https://leetcode.com/problems/unique-paths-ii/
 
-##### 2D; physi_start_1_val; top_contrib, left_contrib; min_path
+##### 2D; physi_1_1_val; top_contrib, left_contrib; min_path
 
 - n+1, m+1 size
 - dp[i][j] ==> AT THIS col, AT THIS row, FINAL min_path
@@ -182,7 +182,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - else dp[i][j] = MIN(dp[i][j-1], dp[i-1][j]) + g[i-1][j-1]
 - https://leetcode.com/problems/minimum-path-sum/
 
-##### 1D; physi_start_1_val; top_contrib, left_contrib; min_path
+##### 1D; physi_1_1_val; top_contrib, left_contrib; min_path
 
 - m+1 size
 - dp[i][j] ==> AT THIS col, AT THIS row, FINAL min_path
@@ -195,7 +195,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - else dp[j] = MIN(dp[j-1], dp[j]) + g[i-1][j-1]
 - https://leetcode.com/problems/minimum-path-sum/
 
-##### 2D; physi_start_1_val; top_contrib, left_contrib; min_path
+##### 2D; physi_1_1_val; top_contrib, left_contrib; min_path
 
 - m+1 size
 - dp[i][j] ==> AT THIS col, AT THIS row, FINAL min_path
@@ -208,7 +208,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - else dp[j] = MIN(dp[j-1], dp[j]) + g[i-1][j-1]
 - https://leetcode.com/problems/minimum-path-sum/
 
-##### 2D; physi_no_fake; backward, bottom_contrib, bottom_right_contrib; min_path
+##### 2D; fake_top_left_vals; backward, bottom_contrib, bottom_right_contrib; min_path
 
 - n, m size
 - dp[i-1][j] ==> AT THIS col, AT THIS row, FINAL min_path
@@ -220,7 +220,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re dp[0][0]
 - https://leetcode.com/problems/triangle/
 
-##### 1D; physi_no_fake; backward, bottom_contrib, bottom_right_contrib; min_path
+##### 1D; fake_top_left_vals; backward, bottom_contrib, bottom_right_contrib; min_path
 
 - m size
 - dp[j] ==> AT THIS col FINAL min_path
@@ -356,10 +356,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 2D; e->t / t->e; non-rep/rep ele; part of tar, reach tar; num_combo(add).
 
-##### 2D; e->t(for) / x:t->e; n dices (non-rep ele); n face (part of tar), reach tar; num_combo(add).
+##### 2D; n dice (ele); n face (ele 1); reach tar; num_combo(add).
 
 - n+1, m+1 size
-- dp[i][j] === AT dice, REACH tar-face, FINAL num_combo
+- dp[i][j] === AT this dice, REACH sub_tar(tar-ele), FINAL num_combo
 - init side === dp[0][0] = 1 (? num_combo; no val below; dp[0][1,2,3,n] = 1 nonsense)
 - loop dice (forward, i)
 - loop tar (forward, j)
