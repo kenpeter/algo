@@ -356,13 +356,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 2D; e->t / t->e; non-rep/rep ele; part of tar, reach tar; num_combo(add).
 
-##### 2D; n dice (ele); n face (ele 1); reach tar; num_combo(add).
+##### 2D; n dice; n face (ORDER ele); reach tar; num_combo(add).
 
 - n+1, m+1 size
-- dp[i][j] === AT this dice, REACH sub_tar(tar-ele), FINAL num_combo
-- init side === dp[0][0] = 1 (? num_combo; no val below; dp[0][1,2,3,n] = 1 nonsense)
-- loop dice (forward, i)
-- loop tar (forward, j)
+- dp[dice][face][tar] ===
+- dp[i][j] === AT this dice, REACH tar(tar-ele), FINAL num_combo
+- init side === physi_1_1_val (val(0), build up start)
+- loop dice (forward)
+- loop tar (forward; ORDER)
 - loop face (forward, j - k, face part of tar)
 - dp[i][j] = stay_orig(min) + to_up_left(non-rep)
 - https://leetcode.com/problems/number-of-dice-rolls-with-target-sum
@@ -371,18 +372,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 <br/>
 <br/>
-
-## 1D; e->t / t->e; rep/non-rep ele; reach tar; min/max
-
-##### 1D; NO_ORDER ele, reach tar, min_num_combo (vs num_combo)
-
-- m+1 size
-- dp[j] ==> AT this num, FINAL min_num_combo/-1
-- init side ==> 0 (val(1), below)
-- loop ele (forward; NO_ORDER, 1+2, 2+1, same)
-- loop tar (forward; dp_ind_constraint, j=w; j<=t)
-- FORMU ==> top(\*)/diag(\*)/else; dp[j] = MIN(dp[j](top), dp[j-i](diag, x+y=tar) + val(1, min))
-- https://leetcode.com/problems/coin-change/
 
 ##### 1D; 1 num breaks sub nums; NO_ORDER ele, reach tar; max_product
 
@@ -394,7 +383,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - FORMU ==> top(\*)/diag(\*)/else; dp[j] = MAX(dp[j](top), dp[j-i](diag, x+y=tar) \* i(x\*y = max_product));
 - https://leetcode.com/problems/integer-break
 
-##### 1D; squares_addup_num, order ele; reach tar; min_combo
+##### 1D; squares_addup_num; ORDER ele; reach tar; min_combo
 
 - m+1 size
 - dp[i] ==> AT this num, FINAL min_combo
@@ -406,7 +395,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re dp[m]
 - https://leetcode.com/problems/perfect-squares
 
-##### 1D; cut a rod, unit_len_value, n\*unit_len_value, order ele; reach tar; max_val
+##### 1D; cut a rod, unit_len_value, n\*unit_len_value; ORDER ele; reach tar; max_val
 
 - m+1 size
 - dp[i] ==> AT this len, FINAL max_val
@@ -420,9 +409,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 1D; e->t / t->e; rep/non-rep ele; reach gen_tar; condi
-
-##### 1D; NO_ORDER ele; 2 equal set, reach gen_tar(backward_tar); condi
+##### 1D; NO_ORDER ele; (2 equal set); reach gen_tar(backward_tar); condi
 
 - transfer: ha = sum / 2
 - ha+1 size
@@ -444,22 +431,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) || dp[j-i](diag, x+y=ha); ma = ma(ma, j(sub_tar))
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
 
-##### 1D; ORDER ele (words); reach tar (single str); condi
-
-- m+1 size
-- dp[i] === AT str posi; FINAL condi(from question)
-- init side === true (from question)
-- loop tar (forward; ORDER, w1-w2, w2-w1, diff)
-- loop ele (forward; dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[i] = ( dp[i] || ( dp[i - w_l](diag, w_l + rest = fw_l) && s.sub == w(sub_word_match) ) )
-- https://leetcode.com/problems/word-break
-
-<br/>
-<br/>
-
-## 1D; NO_ORDER ele; reach gen_tar(backward_tar); num_combo(add)
-
-##### 1D; NO_ORDER ele, add -/+; reach gen_tar(backward_tar); num_combo(add)
+##### 1D; NO_ORDER ele; (add -/+); reach gen_tar(backward_tar); num_combo(add)
 
 - transfer: s(#) = [1, 2, 3, 4, 5], tar = 3
 - s(#) = [+1, -2, +3, -4, +5], tar = 3
@@ -479,6 +451,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://medium.com/swlh/solving-the-target-sum-problem-with-dynamic-programming-and-more-b76bd2a661f9
 - https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
 
+<br/>
+<br/>
+
+##### 1D; ORDER ele (words); reach tar (single str); condi
+
+- m+1 size
+- dp[i] === AT str posi; FINAL condi(from question)
+- init side === true (from question)
+- loop tar (forward; ORDER, w1-w2, w2-w1, diff)
+- loop ele (forward; dp_ind_constraint)
+- FORMU ==> top(\*)/diag(\*)/else; dp[i] = ( dp[i] || ( dp[i - w_l](diag, w_l + rest = fw_l) && s.sub == w(sub_word_match) ) )
+- https://leetcode.com/problems/word-break
+
+<br/>
+<br/>
+
 ##### 1D; NO_ORDER ele; addup to tar; num_combo(add) (vs min_num_combo)
 
 - m+1 size
@@ -489,10 +477,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) + dp[j-ele](diag, x+y=tar); (num_combo_add)
 - https://leetcode.com/problems/coin-change-2/
 
-<br/>
-<br/>
+##### 1D; NO_ORDER ele; addup to tar; min_num_combo (vs num_combo)
 
-## 1D; ORDER ele; addup to tar; num_combo(add)
+- m+1 size
+- dp[j] ==> AT this num, FINAL min_num_combo/-1
+- init side ==> 0 (val(1), below)
+- loop ele (forward; NO_ORDER, 1+2, 2+1, same)
+- loop tar (forward; dp_ind_constraint, j=w; j<=t)
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = MIN(dp[j](top), dp[j-i](diag, x+y=tar) + val(1, min))
+- https://leetcode.com/problems/coin-change/
 
 ##### 1D; ORDER ele; addup to tar; permu_num_combo(add)
 
