@@ -297,6 +297,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - without(max): dp[k][i][j] = 1_up(max)
 - https://leetcode.com/problems/ones-and-zeroes/
 
+##### 2D; n dice; n face (ORDER ele); reach tar; num_combo(add).
+
+- n+1, m+1 size
+- 3D; dp[dice][face][tar] ==> AT dice, AT face, REACH tar, FINAL num_combo(add)
+- COMPRESS face, 2D
+- 2D; dp[i][j] ==> AT dice, REACH tar, FINAL num_combo(add)
+- init side ==> physi_1_1_val (val(0), build up start)
+- loop dice (forward)
+- loop tar (forward; ORDER, 1+2, 2+1, diff_in_dice)
+- loop face (forward)
+- FORMU ==> top(\*)/diag(\*)/else; dp[i][j] = dp[i][j](top, face\_+_tar) + dp[i][j-k(face)](diag); (add)
+- SUMMA ==> loop items DIFF dp[i][k][j]; 3D compress 2D, ELE
+- https://leetcode.com/problems/number-of-dice-rolls-with-target-sum
+
 ##### 2D; e->t(for) / x:t->e; rep ele; with/out condi; reach tar; min_combo.
 
 - n+1, m+1 size
@@ -343,32 +357,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D; e->t(for) / x:t->e; rep ele; with/out condi; reach tar; num_combo(add)
 
 - n+1, m+1 size
-- dp[i][j] === AT ele, REACH tar, FINAL num_combo
-- init side === 1 (num_combo; no val below)
-- loop ele (forward)
+- dp[i][j] === AT this ele, REACH tar, FINAL num_combo
+- init side ==> fake_left_vals (1D compress, dp[0] = 1)
+- loop ele (forward; ORDER)
 - loop tar (forward)
 - with(?): dp[i][j] = 1_up(?) + to_left(rep)
 - without(?): dp[i][j] = 1_up(?)
 - https://leetcode.com/problems/coin-change-2/
-
-<br/>
-<br/>
-
-## 2D; e->t / t->e; non-rep/rep ele; part of tar, reach tar; num_combo(add).
-
-##### 2D; n dice; n face (ORDER ele); reach tar; num_combo(add).
-
-- n+1, m+1 size
-- dp[dice][face][tar] ===
-- dp[i][j] === AT this dice, REACH tar(tar-ele), FINAL num_combo
-- init side === physi_1_1_val (val(0), build up start)
-- loop dice (forward)
-- loop tar (forward; ORDER)
-- loop face (forward, j - k, face part of tar)
-- dp[i][j] = stay_orig(min) + to_up_left(non-rep)
-- https://leetcode.com/problems/number-of-dice-rolls-with-target-sum
-
-##### classi knapsack
 
 <br/>
 <br/>
@@ -474,7 +469,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side === 1 (val(1) below)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward, dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) + dp[j-ele](diag, x+y=tar); (num_combo_add)
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) + dp[j-ele](diag, x+y=tar); (add)
 - https://leetcode.com/problems/coin-change-2/
 
 ##### 1D; NO_ORDER ele; addup to tar; min_num_combo (vs num_combo)
@@ -494,7 +489,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side === 1 (val(0) below)
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[i] = dp[i](top) + dp[i-ele](diag, x+y=tar); (num_combo_add)
+- FORMU ==> top(\*)/diag(\*)/else; dp[i] = dp[i](top) + dp[i-ele](diag, x+y=tar); (add)
 - https://leetcode.com/problems/combination-sum-iv/
 - https://www.lintcode.com/problem/combination-sum-iv
 
