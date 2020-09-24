@@ -424,24 +424,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 1D; e->t / t->e; rep/non-rep ele; reach gen_tar; condi
 
-##### 1D; e->t(back, gen_tar) / x:t->e; rep/non-rep ele; (2 equal sets), reach gen_tar; condi
+##### 1D; NO_ORDER ele; 2 equal set, reach gen_tar(backward_tar); condi
 
 - transfer: ha = sum / 2
-- m+1 size
-- dp[i] === AT ha, FINAL condi (avoid num_cal)
+- ha+1 size
+- dp[i] === AT this ha, FINAL condi (question condi)
 - init side == true
-- loop ele (forward)
-- loop ha ( backward(gen_tar) )
-- dp[i] = stay_orig(compress) || to_left(compress), condi
+- loop ele (forward; NO_ORDER; 1+2, 2+1, same)
+- loop ha (backward; gen_tar; )
+- FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) || dp[j-ele](diag); condi
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 ##### 1D; NO_ORDER ele; (canncel out); reach gen_tar(backward_tar); min_diff
 
 - transfer: ha = sum / 2
-- m+1 size
-- dp[j] === AT this ha; FINAL condi (question min_diff; dp[j] == true, update_max)
-- init side == true (condi)
-- loop ele (forward)
+- ha+1 size
+- dp[i] === AT this ha; FINAL condi (question min_diff; dp[j] == true, to_update_max)
+- init side == true (to_update_max)
+- loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
 - FORMU ==> top(\*)/diag(\*)/else; dp[j] = dp[j](top) || dp[j-ele](diag); ma = ma(ma, j(sub_tar))
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
