@@ -412,42 +412,41 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## child chars; parent chars; action; condi
+## child chars(ele); parent chars(tar); action; condi
 
-##### 2D; child chars; parent chars; chop_char_subseq; condi
+##### 2D; child chars(ele); parent chars(tar); chop_char_subseq; condi
 
 - n+1, m+1 size
 - dp[i][j] ==> AT this child_char; AT this parent_char; FINAL condi(chop_char_subseq);
-- init side ==> top_row = true (every diagnal to use)
-- loop ele (ele_first, subset)
-- loop tar
-- CURR ==> char_match
-- PAST ==> top, left, diag, else; top: dp[i-1][j](less_char); left: dp[i][j-1](less_res); diag: dp[i-1][j-1](less_char + less_res)
-- FORMU ==> dp[i][j-1](left) == true, dp[i][j] = true; dp[i-1][j-1](diag) && CURR(char_match, condi), dp[i][j] = true (top, less_char, no contrib)
+- init side ==> fake_top_vals = true (each_child_use_diag)
+- loop child_ele (forward; each_child_use_diag)
+- loop parent_tar (forward)
+- top/diag(\*)/left(\*)/orig/else;
+- if, dp[i][j-1](left, each_child_use_diag) == true, dp[i][j] = true
+- if, dp[i-1][j-1](diag, each_child_use_diag) == true && c[i] == p[j](inject_condi), dp[i][j] = true
 - https://leetcode.com/problems/is-subsequence/
 
-## 2D; child chars; parent chars; head_tail_equal, sub_head_tail_equal; condi
+##### 2D; child chars(ele); parent chars(tar); head_tail_equal, sub_head_tail_equal; condi
 
-##### 2D; child chars; parent chars; head_tail_equal, sub_head_tail_equal; condi
-
-- n, m size (str, dp match)
-- dp[i][j] ==> AT THIS end_char_index; AT THIS start_char_index; FINAL condi(is_palindrom);
-- init side ==> nothing (n, m size)
-- loop tar (end_char_index, ele_build_tar)
-- loop ele (start_char_index, ele_build_tar_constraint)
-- CURR ==> char_match
-- PAST ==> top, left, diag, else; only else; dp[i-1][j+1] sub_head_tail_equal
-- FORMU ==> CURR(s[i] == s[j]) && (i-j<=2 || dp[i-1][j+1]) dp[i][j] = true; mj = j, mi = i (multi max var)
+- n, m size (dp size == str size, becau head tail)
+- dp[i][j] ==> AT this end_char_index; AT this start_char_index; FINAL condi(is_palindrom);
+- init side ==> nothing (becau dp size == str size)
+- loop parent_tar (forward, head_tail_compress)
+- loop child_ele (forward)
+- top/diag/left/orig/else;
+- if, p[i] == c[i], i-j<=2(shortcut), dp[i][j] = true
+- if, p[i] == c[i], dp[i-1][j+1](else) == true, dp[i][j] = true
 - https://leetcode.com/problems/longest-palindromic-substring/
 
-##### 1D; ORDER ele (words); reach tar (single str); condi
+##### 1D; child chars(ele); parent chars(tar); child_build_parent; condi
 
 - m+1 size
 - dp[i] === AT str posi; FINAL condi(from question)
 - init side === true (from question)
-- loop tar (forward; ORDER, w1-w2, w2-w1, diff)
-- loop ele (forward; dp_ind_constraint)
-- top/diag(\*)/left/orig(\*)else; dp[i] = ( dp[i](orig, tar_1st; press_j) || ( dp[i - w_l](diag, w_l + rest = fw_l; press_j) && s.sub == w(sub_word_match; inject_to_condi) ) )
+- loop parent_tar (forward, child_build_parent)
+- loop child_ele (forward)
+- top/diag(\*)/left/orig(\*)else;
+- dp[i] = ( dp[i](orig, press_j) || ( dp[i - w_l](diag, w_l + rest = fw_l; press_j) && s.sub == w(sub_word_match; inject_condi) ) )
 - https://leetcode.com/problems/word-break
 
 <br/>
