@@ -406,7 +406,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side == true
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
-- top(\*)/diag(\*)/left/orig/else; dp[j] = dp[j](top, press_i) || dp[j-i](diag; x+y=tar; press_i);
+- top(\*)/diag(\*)/left/orig/else;
+- dp[j] = dp[j](top, press_ele) || dp[j-i(ele)](diag; press_ele; x+y=tar);
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 <br/>
@@ -446,7 +447,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop parent (parent_1st, child_build_parent)
 - loop child
 - top/diag(\*)/left/orig(\*)else;
-- dp[i] = ( dp[i](orig, press_child_j) || ( dp[i - w_l](diag, press_child_j; w_l + rest = fw_l) && s.sub == w(sub_word_match) ) )
+- dp[i] = ( dp[i](orig, press_child_char) || ( dp[i - w_l](diag, press_child_char; w_l + rest = fw_l) && s.sub == w(sub_word_match) ) )
 - https://leetcode.com/problems/word-break
 
 <br/>
@@ -462,7 +463,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward, dp_ind_constraint)
 - top(\*)/diag(\*)/left/orig/else;
-- dp[j] = dp[j](top, press_i) + dp[j-i(ele)](diag, press_i; x+y=tar); (add)
+- dp[j] = dp[j](top, press_ele) + dp[j-i(ele)](diag, press_ele; x+y=tar); (add)
 - https://leetcode.com/problems/coin-change-2/
 
 ##### 1D; NO_ORDER ele; addup to tar; min_num_combo (vs num_combo)
@@ -473,7 +474,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward; dp_ind_constraint, j=w; j<=t)
 - top(\*)/diag(\*)/left/orig/else;
-- dp[j] = MIN(dp[j](top, press_i), dp[j-i(ele)](diag, press_i; x+y=tar) + val(1, min))
+- dp[j] = MIN(dp[j](top, press_ele), dp[j-i(ele)](diag, press_ele; x+y=tar) + val(1, min))
 - https://leetcode.com/problems/coin-change/
 
 ## ele; addup to tar; loop_tar, loop_ele; permu_num_combo
@@ -497,7 +498,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
 - top/diag(\*)/left/orig(\*)/else;
-- dp[i] = dp[i](orig, press_j, tar_1st) + dp[i-j(ele)](diag, press_j; x+y=tar) (add)
+- dp[i] = dp[i](orig, press_ele, tar_1st) + dp[i-j(ele)](diag, press_ele; x+y=tar) (add)
 - https://leetcode.com/problems/combination-sum-iv/
 
 <br/>
