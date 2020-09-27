@@ -342,7 +342,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer: (a + b) - (c + d), (totTar - aTar) - aTar === diff; ha = sum / 2
 - n+1, ha+1 size
 - dp[i][j] === AT this ele, AT this tar, FINAL condi
-- init side == fake_left_vals (condi_acc_below_noval)
+- init side == fake_left_vals (acc_below_noval)
 - loop ele (forward; NO_ORDER)
 - loop ha (forward)
 - top(\*)/diag(\*)/left/orig/else;
@@ -354,7 +354,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer: ha = sum / 2
 - ha+1 size
 - dp[j] === AT this ha; FINAL condi (question min_diff; dp[j] == true, to_update_max)
-- init side == true (condi_acc_below_noval)
+- init side == true (acc_below_noval)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
 - top(\*)/diag(\*)/left/orig/else;
@@ -387,7 +387,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer: ha = sum / 2
 - n+1, ha+1 size
 - dp[i][j] === AT this ele, AT this tar, FINAL condi
-- init side == fake_left_vals (condi_acc_below_noval)
+- init side == fake_left_vals (acc_below_noval)
 - loop ele (forward; NO_ORDER)
 - loop ha (forward)
 - top(\*)/diag(\*)/left/orig/else;
@@ -399,7 +399,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer: ha = sum / 2
 - ha+1 size
 - dp[i] === AT this ha, FINAL condi (question condi)
-- init side == true (condi_acc_below_noval)
+- init side == true (acc_below_noval)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
 - top(\*)/diag(\*)/left/orig/else;
@@ -415,7 +415,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - n+1, m+1 size
 - dp[i][j] ==> AT this child_char; AT this parent_char; FINAL condi(chop_char_subseq);
-- init side ==> fake_top_vals = true (each_child_use_diag; condi_acc_below_noval)
+- init side ==> fake_top_vals = true (each_child_use_diag; acc_below_noval)
 - loop child (child_1st, each_child_use_diag)
 - loop parent
 - top/diag(\*)/left(\*)/orig/else;
@@ -439,7 +439,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - m+1 size
 - dp[i] === AT str posi; FINAL condi(from question)
-- init side === true (condi_acc_below_noval)
+- init side === true (acc_below_noval)
 - loop parent (parent_1st, child_build_parent)
 - loop child
 - top/diag(\*)/left/orig(\*)else;
