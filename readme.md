@@ -246,8 +246,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# 0/1 knapsack
-
 ## 2D/3D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar/gen_tar; max/min
 
 ##### 2D/3D; e->t(for) / x:t->e; non-rep ele (0, 1); with/out condi; reach tar_n, tar_m; max_combo
@@ -300,7 +298,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop tar (forward; ORDER? 1^2 + 2^2, affect_next_diff)
 - loop ele (forward; dp_ind_constraint)
 - top(\*)/diag(\*)/left/orig/else;
-- mi = mi( mi, dp[i-j\*j](diag; press_ele; x^2+y^2 = tar) + val(1, num_combo) ), inject_vs
+- mi = mi( mi, dp[i-j\*j](diag, has_val; press_ele; x^2+y^2 = tar) + 1 ), inject_vs
 - end_loop_up_dp
 - https://leetcode.com/problems/perfect-squares
 
@@ -317,7 +315,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop tar (forward; ORDER, len1*v, len2*v, order_diff)
 - loop ele (forward; dp_recal_constraint)
 - top/diag(\*)/left/orig(\*)/else;
-- dp[i] = MAX(dp[i](orig, tar_1st; press_ele), dp[i-j(ele)](diag; press_ele; x+y=sub_tar) + price_arr[i-j](<val(w)>) )
+- dp[i] = MAX(dp[i](orig, tar_1st; press_ele), dp[i-j(ele)](diag, has_val; press_ele; x+y=sub_tar) + price_arr[i-j](<val(w)>) )
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
 
@@ -326,7 +324,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## (a+b) - (c+d)
 
-##### 2D; NO_ORDER ele (cancel out); reach gen_tar (2d_forward_tar); min_diff(condi)
+##### 2D; NO_ORDER ele (cancel out); reach gen_tar(2d_forward_tar); min_diff(condi)
 
 - transfer: (a + b) - (c + d), (totTar - aTar) - aTar === diff; ha = sum / 2
 - n+1, ha+1 size
@@ -334,8 +332,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side == fake_left_vals (acc_below_noval)
 - loop ele (forward; NO_ORDER)
 - loop ha (forward)
-- top(\*)/diag(\*)/left/orig/else;
-- dp[i][j] = dp[i-1][j](top, ele_1st) || dp[i-1][j-i](diag; x+y=ha); ma VS j(sub_tar), inject_vs
+- top(\*)/diag/left(\*)/orig/else;
+- dp[i][j] = dp[i-1][j](top, ele_1st) || dp[i-1][j-i](left, noval; x+y=ha); ma VS j(sub_tar), inject_vs
 - https://leetcode.com/problems/last-stone-weight-ii/
 
 ##### 1D; NO_ORDER ele; (canncel out); reach gen_tar(1d_backward_tar); min_diff
@@ -346,8 +344,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side == true (acc_below_noval)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
-- top(\*)/diag(\*)/left/orig/else;
-- dp[j] = dp[j](top, ele_1st; press_ele) || dp[j-i(ele)](diag; press_ele; x+y=ha); ma VS j(sub_tar), inject_vs
+- top(\*)/diag/left(\*)/orig/else;
+- dp[j] = dp[j](top, ele_1st; press_ele) || dp[j-i(ele)](left, noval; press_ele; x+y=ha); ma VS j(sub_tar), inject_vs
 - https://leetcode.com/problems/last-stone-weight-ii/discuss/635621/Dp-solution-with-explaination-(cpp)
 
 ##### 1D; NO_ORDER ele; (add -/+); reach gen_tar(1d_backward_tar); num_combo(add)
@@ -367,7 +365,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
 - top(\*)/diag(\*)/left/orig/else;
-- dp[j] = dp[j](top, ele_1st; press_ele) + dp[j-i(ele)](diag; press_ele; x+y=tar)
+- dp[j] = dp[j](top, ele_1st; press_ele) + dp[j-i(ele)](left, noval; press_ele; x+y=tar)
 - https://medium.com/swlh/solving-the-target-sum-problem-with-dynamic-programming-and-more-b76bd2a661f9
 - https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
 
@@ -483,7 +481,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward; dp_ind_constraint, j=w; j<=t)
 - top(\*)/diag/left(\*)/orig/else;
-- dp[j] = MIN(dp[j](top, ele_1st; press_ele), 1+ dp[j-i(ele)](diag, noval; press_ele; x+y=tar) )
+- dp[j] = MIN(dp[j](top, ele_1st; press_ele), 1 + dp[j-i(ele)](left, ?; press_ele; x+y=tar) )
 - https://leetcode.com/problems/coin-change/
 
 ## ele; addup to tar; loop_tar, loop_ele; permu_num_combo
