@@ -248,29 +248,30 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 2D/3D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar/gen_tar; max/min
 
-##### 2D/3D; e->t(for) / x:t->e; non-rep ele (0, 1); with/out condi; reach tar_n, tar_m; max_combo
+##### 3D; 3 loops; NO_ORDER ele, reach tar_n, tar_m; max_combo
 
 - n+1, m+1, z+1 size
 - dp[k][i][j] === AT ele, REACH tar_m, tar_n, FINAL max_combo
-- init side === 0 (max, val(1))
-- loop ele (forward)
+- init side === 0 (max_below_val)
+- loop ele (forward, NO_ORDER)
 - loop tar_m (forward)
 - loop tar_n (forward)
-- with(max): dp[k][i][j] = ma( 1_up(max), val(1, max) + to_up_left(non-rep) )
-- without(max): dp[k][i][j] = 1_up(max)
+- j >= zero && k >= one, dp[k][i][j] = ma( dp[i-1][j][k](top, ele_1st), 1 + dp[i-1][j-zero][k-one](diag, has_val) )
+- else, dp[k][i][j] = dp[i-1][j][k](top, ele_1st)
 - https://leetcode.com/problems/ones-and-zeroes/
 
 ##### 2D; n dice; n face (ORDER ele); reach tar; num_combo(add).
 
 - n+1, m+1 size
-- 3D; dp[dice][face][tar] ==> AT dice, AT face, REACH tar, FINAL num_combo(add)
+- 3D; dp[dice][face][tar] ==> AT this dice, AT this face, AT this tar, FINAL num_combo(add)
 - COMPRESS face, 2D
-- 2D; dp[i][j] ==> AT dice, REACH tar, FINAL num_combo(add)
-- init side ==> physi_1_1_val (val(0), build up start)
+- 2D; dp[i][j] ==> AT this dice, AT this tar, FINAL num_combo(add)
+- init side ==> physi_1_1_val (acc_below_noval)
 - loop dice (forward)
 - loop tar (forward; ORDER, 1+2, 2+1, diff_in_dice)
 - loop face (forward)
-- FORMU ==> top(\*)/diag(\*)/else; dp[i][j] = dp[i][j](top, face\_+_tar) + dp[i][j-k(face)](diag); (add)
+- top(\*)/diag/left(\*)/orig/else;
+- dp[i][j] = dp[i][j](orig, tar_1st) + dp[i][j-k(face)](left, noval);
 - SUMMA ==> loop items DIFF dp[i][k][j]; 3D compress 2D, ELE
 - https://leetcode.com/problems/number-of-dice-rolls-with-target-sum
 
