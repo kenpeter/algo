@@ -336,7 +336,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side ==> 0 (val(w) below)
 - loop tar (forward; ORDER, len1*v, len2*v, order_diff)
 - loop ele (forward; dp_recal_constraint)
-- FORMU ==> top(\*)/diag(\*)/else; dp[i] = MAX(dp[j](top), dp[i-j](diag, x+y=sub_tar) + price_arr[i-j](<val(w)>) )
+- top/diag(\*)/left/orig(\*)/else;
+- dp[i] = MAX(dp[i](orig, tar_1st; press_ele), dp[i-j(ele)](diag; press_ele; x+y=sub_tar) + price_arr[i-j](<val(w)>) )
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
 
@@ -390,7 +391,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://medium.com/swlh/solving-the-target-sum-problem-with-dynamic-programming-and-more-b76bd2a661f9
 - https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
 
-##### 2D; NO_ORDER ele; (2 equal set); reach gen_tar(backward_tar); condi
+##### 2D; NO_ORDER ele; (2 equal set); reach gen_tar(1d_backward); condi
 
 - transfer: ha = sum / 2
 - n+1, ha+1 size
@@ -402,7 +403,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i][j] = dp[i-1][j](top, ele_1st) || dp[i-1][j-i](diag; x+y=tar)
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
-##### 1D; NO_ORDER ele; (2 equal set); reach gen_tar(backward_tar); condi
+##### 1D; NO_ORDER ele; (2 equal set); reach gen_tar(1d_backward); condi
 
 - transfer: ha = sum / 2
 - ha+1 size
