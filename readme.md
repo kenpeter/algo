@@ -276,17 +276,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA ==> loop items DIFF dp[i][k][j]; 3D compress 2D, ELE
 - https://leetcode.com/problems/number-of-dice-rolls-with-target-sum
 
-##### 2D; e->t(for) / x:t->e; rep ele; with/out condi; reach tar; min_combo.
-
-- n+1, m+1 size
-- dp[i][j] === AT ele, REACH tar, FINAL min_combo
-- init side === 0 (min, val(1))
-- loop ele (forward)
-- loop tar (forward)
-- with(min): dp[i][j] = mi( 1_up(min), val(1, min) + to_left(rep) )
-- without(min): dp[i][j] = 1_up(min)
-- https://leetcode.com/problems/coin-change/
-
 <br/>
 <br/>
 
@@ -391,7 +380,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop ele (forward; NO_ORDER)
 - loop ha (forward)
 - top(\*)/diag(\*)/left/orig/else;
-- dp[i][j] = dp[i-1][j](top, ele_1st) || dp[i-1][j-i](diag; x+y=tar)
+- dp[i][j] = dp[i-1][j](top, ele_1st) || dp[i-1][j-i](diag, condi; x+y=tar)
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 ##### 1D; NO_ORDER ele; (2 equal set); reach gen_tar(1d_backward_tar); condi
@@ -403,7 +392,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
 - top(\*)/diag(\*)/left/orig/else;
-- dp[j] = dp[j](top, ele_1st; press_ele) || dp[j-i(ele)](diag; press_ele; x+y=tar);
+- dp[j] = dp[j](top, ele_1st; press_ele) || dp[j-i(ele)](diag, condi; press_ele; x+y=tar);
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
 <br/>
@@ -471,8 +460,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward, dp_ind_constraint)
 - top(\*)/diag/left(\*)/orig/else;
-- dp[j] = dp[j](top, ele_1st; press_ele) + dp[j-i(ele)](left; press_ele; x+y=tar);
+- dp[j] = dp[j](top, ele_1st; press_ele) + dp[j-i(ele)](left, noval; press_ele; x+y=tar);
 - https://leetcode.com/problems/coin-change-2/
+
+##### 2D; NO_ORDER ele; addup to tar; min_num_combo (vs num_combo)
+
+- n+1, m+1 size
+- dp[i][j] === AT this ele, AT this tar, FINAL min_num_combo
+- init side === 0 (min_below_val)
+- loop ele (forward)
+- loop tar (forward)
+- top(\*)/diag/left(\*)/orig/else;
+- j>=i(w): dp[i][j] = mi( dp[i-1][j](top, ele_1st), 1 + dp[i][j-i(ele)](left, ?) )
+- else: dp[i][j] = dp[i-1][j]
+- https://leetcode.com/problems/coin-change/
 
 ##### 1D; NO_ORDER ele; addup to tar; min_num_combo (vs num_combo)
 
@@ -481,8 +482,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side ==> 0 (min_below_val)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward; dp_ind_constraint, j=w; j<=t)
-- top(\*)/diag(\*)/left/orig/else;
-- dp[j] = MIN(dp[j](top, ele_1st; press_ele), dp[j-i(ele)](diag; press_ele; x+y=tar) + val(1, min))
+- top(\*)/diag/left(\*)/orig/else;
+- dp[j] = MIN(dp[j](top, ele_1st; press_ele), 1+ dp[j-i(ele)](diag, noval; press_ele; x+y=tar) )
 - https://leetcode.com/problems/coin-change/
 
 ## ele; addup to tar; loop_tar, loop_ele; permu_num_combo
@@ -495,7 +496,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
 - top/diag(\*)/left/orig(\*)/else;
-- dp[i][j] = dp[i][j](orig, tar_1st) + dp[i-j(ele)][ele.len](diag; x+y=tar; ele.len_last, tar_1st); (add)
+- dp[i][j] = dp[i][j](orig, tar_1st) + dp[i-j(ele)][ele.len](diag, noval; x+y=tar; ele.len_last, tar_1st); (add)
 - https://leetcode.com/problems/combination-sum-iv/discuss/702432/Java-or-1D-or-2D-or-Bottom-Up-or-Top-Down
 
 ##### 1D; ORDER ele; addup to tar; loop_tar, loop_ele; permu_num_combo(add)
@@ -506,7 +507,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
 - top/diag(\*)/left/orig(\*)/else;
-- dp[i] = dp[i](orig, tar_1st, press_ele) + dp[i-j(ele)](diag; press_ele; x+y=tar)
+- dp[i] = dp[i](orig, tar_1st, press_ele) + dp[i-j(ele)](diag, noval; press_ele; x+y=tar)
 - https://leetcode.com/problems/combination-sum-iv/
 
 <br/>
