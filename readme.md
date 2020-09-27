@@ -419,11 +419,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - n+1, m+1 size
 - dp[i][j] ==> AT this child_char; AT this parent_char; FINAL condi(chop_char_subseq);
 - init side ==> fake_top_vals = true (each_child_use_diag)
-- loop child_ele (forward; each_child_use_diag)
-- loop parent_tar (forward)
+- loop child (child_1st, each_child_use_diag)
+- loop parent
 - top/diag(\*)/left(\*)/orig/else;
 - if, dp[i][j-1](left, each_child_use_diag) == true, dp[i][j] = true
-- if, dp[i-1][j-1](diag, each_child_use_diag) == true && c[i] == p[j](inject_condi), dp[i][j] = true
+- if, dp[i-1][j-1](diag, each_child_use_diag) == true && c[i] == p[j](char_match), dp[i][j] = true
 - https://leetcode.com/problems/is-subsequence/
 
 ##### 2D; child chars(ele); parent chars(tar); head_tail_equal, sub_head_tail_equal; condi
@@ -431,11 +431,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - n, m size (dp size == str size, becau head tail)
 - dp[i][j] ==> AT this end_char_index; AT this start_char_index; FINAL condi(is_palindrom);
 - init side ==> nothing (becau dp size == str size)
-- loop parent_tar (forward, head_tail_compress)
-- loop child_ele (forward)
-- top/diag/left/orig/else;
-- if, p[i] == c[i], i-j<=2(shortcut), dp[i][j] = true
-- if, p[i] == c[i], dp[i-1][j+1](else) == true, dp[i][j] = true
+- loop parent (parent_1st, head_tail_compress)
+- loop child
+- top/diag/left/orig/else(\*);
+- if, p[i] == c[i](char_match), i-j<=2(shortcut), dp[i][j] = true
+- if, p[i] == c[i](char_match), dp[i-1][j+1](else) == true, dp[i][j] = true
 - https://leetcode.com/problems/longest-palindromic-substring/
 
 ##### 1D; child chars(ele); parent chars(tar); child_build_parent; condi
@@ -443,10 +443,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - m+1 size
 - dp[i] === AT str posi; FINAL condi(from question)
 - init side === true (from question)
-- loop parent_tar (forward, child_build_parent)
-- loop child_ele (forward)
+- loop parent (parent_1st, child_build_parent)
+- loop child
 - top/diag(\*)/left/orig(\*)else;
-- dp[i] = ( dp[i](orig, press_j) || ( dp[i - w_l](diag, w_l + rest = fw_l; press_j) && s.sub == w(sub_word_match; inject_condi) ) )
+- dp[i] = ( dp[i](orig, press_child_j) || ( dp[i - w_l](diag, press_child_j; w_l + rest = fw_l) && s.sub == w(sub_word_match) ) )
 - https://leetcode.com/problems/word-break
 
 <br/>
@@ -461,7 +461,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side === 1 (val(1) below)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward, dp_ind_constraint)
-- top(\*)/diag(\*)/else; dp[j] = dp[j](top) + dp[j-ele](diag, x+y=tar); (add)
+- top(\*)/diag(\*)/left/orig/else;
+- dp[j] = dp[j](top, press_i) + dp[j-i(ele)](diag, press_i; x+y=tar); (add)
 - https://leetcode.com/problems/coin-change-2/
 
 ##### 1D; NO_ORDER ele; addup to tar; min_num_combo (vs num_combo)
@@ -471,7 +472,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side ==> 0 (val(1), below)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward; dp_ind_constraint, j=w; j<=t)
-- top(\*)/diag(\*)/else; dp[j] = MIN(dp[j](top), dp[j-i](diag, x+y=tar) + val(1, min))
+- top(\*)/diag(\*)/left/orig/else;
+- dp[j] = MIN(dp[j](top, press_i), dp[j-i(ele)](diag, press_i; x+y=tar) + val(1, min))
 - https://leetcode.com/problems/coin-change/
 
 ## ele; addup to tar; loop_tar, loop_ele; permu_num_combo
@@ -483,7 +485,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side ==> fake_top_vals (becau, ele compress, val(0) below)
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
-- top/diag(\*)/left/orig(\*)/else; dp[i][j] = dp[i][j](orig, tar_1st) + dp[i-j(ele)][ele.len](diag; x+y=tar; ele.len, tar_1st, so last); (add)
+- top/diag(\*)/left/orig(\*)/else;
+- dp[i][j] = dp[i][j](orig, tar_1st) + dp[i-j(ele)][ele.len](diag; x+y=tar; ele.len_last, tar_1st); (add)
 - https://leetcode.com/problems/combination-sum-iv/discuss/702432/Java-or-1D-or-2D-or-Bottom-Up-or-Top-Down
 
 ##### 1D; ORDER ele; addup to tar; loop_tar, loop_ele; permu_num_combo(add)
@@ -493,7 +496,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side ==> 1 (val(0) below)
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
-- top/diag(\*)/left/orig(\*)/else; dp[i] = dp[i](orig, tar_1st; compress_j) + dp[i-j(ele)](diag; x+y=tar; compress_j) (add)
+- top/diag(\*)/left/orig(\*)/else;
+- dp[i] = dp[i](orig, press_j, tar_1st) + dp[i-j(ele)](diag, press_j; x+y=tar) (add)
 - https://leetcode.com/problems/combination-sum-iv/
 
 <br/>
