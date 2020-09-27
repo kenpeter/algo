@@ -502,7 +502,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
 - top/diag(\*)/left/orig(\*)/else;
-- dp[i] = dp[i](orig, tar_1st, press_ele) + dp[i-j(ele)](diag, press_ele; x+y=tar) (add)
+- dp[i] = dp[i](orig, tar_1st, press_ele) + dp[i-j(ele)](diag; press_ele; x+y=tar) (add)
 - https://leetcode.com/problems/combination-sum-iv/
 
 <br/>
