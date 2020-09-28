@@ -8,14 +8,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### 1D; 1,2,3 -> ABC (each digit as group), 12,3 -> KC (double digit as group); num_combo
 
-- dp[i] === AT THIS ele (num_char), FINAL num_combo
-- init side === 1 (num_combo; flow down)
+- dp[i] === AT this ele (num_char), FINAL num_combo
+- init side === 1 (num_combo_1D; flow down)
 - loop ele (num_char)
 - curr_digit (0 skip; 1 good flow down)
-- curr_digit in 1->9; dp[i] = dp[i-1](curr digit flow down);
+- curr_digit in 1->9(single_char); dp[i] = dp[i-1](curr digit flow down);
 - <br/>
-- p_digit, curr_digit (und0 skip; und1 skip; "12" good flow)
-- p_digit, curr_digit in 10->26; dp[i] = dp[i](acc) + i>=2 ? dp[i-2](2 digit flow down)
+- p_digit + curr_digit (undef_0 skip; undef_1 skip; "12" good flow)
+- p_digit + curr_digit in 10->26(double_char); dp[i] = dp[i](acc) + i>=2 ? dp[i-2](2 digit flow down)
+- SUMMRY
+- curr_digit, done; p_digit + curr_digit, done
 - https://leetcode.com/problems/decode-ways
 
 <br/>
