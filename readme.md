@@ -246,9 +246,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 3 loops, dp(3d, 2d, diff_order),
+## 3 loops; dp_3D; dimensions; multi_tar; max_combo
 
-##### 3D; 3 loops; NO_ORDER ele, reach tar_n, tar_m; max_combo
+##### 3 loops; dp_3D; NO_ORDER ele, reach tar_n, tar_m; max_combo
 
 - n+1, m+1, z+1 size
 - dp[k][i][j] === AT this ele, AT this tar_m, AT this tar_n, FINAL max_combo
@@ -256,12 +256,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop ele (forward, NO_ORDER)
 - loop tar_m (forward)
 - loop tar_n (forward)
-- top(\*)/diag(\*)/left/orig/else;
+- direction
 - j >= zero && k >= one, dp[k][i][j] = ma( dp[i-1][j][k](top, ele_1st), 1 + dp[i-1][j-zero][k-one](diag, init_noval_formu_val) )
 - else, dp[k][i][j] = dp[i-1][j][k](top, ele_1st)
 - https://leetcode.com/problems/ones-and-zeroes/
 
-##### 2D; n dice; n face (ORDER ele); reach tar; num_combo(add).
+## 3 loops; dp_2D, press_ele; dimensions; num_combo(add)
+
+##### 3 loops; dp_2D, press_ele; n dice, n face (ORDER ele), reach tar; num_combo(add)
 
 - n+1, m+1 size
 - 3D; dp[dice][face][tar] ==> AT this dice, AT this face, AT this tar, FINAL num_combo(add)
@@ -270,11 +272,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop dice (forward)
 - loop tar (forward; ORDER, 1+2, 2+1, diff)
 - loop face (forward; ele)
-- top/diag/left(\*)/orig(\*)/else;
-- j>=k, dp[i][j] = dp[i][j](orig, tar_1st) + dp[i][j-k(face)](left, num_combo) % module;
+- direction
+- j>=k, dp[i][j] = dp[i][j](orig, tar_1st; press_ele) + dp[i][j-k(face)](left, num_combo; press_ele) % module;
 - SUMMARY
 - loop1, loop2, loop3 ORDER_DIFF dp[3][2][1]
-- press_ele
 - https://leetcode.com/problems/number-of-dice-rolls-with-target-sum
 
 <br/>
