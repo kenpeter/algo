@@ -123,8 +123,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - n+1, m+1 size
 - dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
-- init side ==> physi_1_1_val || fake_top_1_val || fake_left_1_val;
-- init side init_in_loop ==> x
+- init side ==> physi_1_1_val(num_combo) || fake_top_1_val || fake_left_1_val;
 - loop row (n)
 - loop col (m)
 - dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left); add
@@ -135,20 +134,18 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - m+1 size
 - dp[i] ==> AT THIS col, FINAL num_combo
-- init side ==> physi_1_1_val
-- init side init_in_loop ==> x
+- init side ==> physi_1_1_val(num)combo
 - loop row (n)
 - loop col (m)
-- dp[j] = dp[j](top) + dp[j-1](left); add
+- dp[j] = dp[j](top; press_row) + dp[j-1](left, press_row)
 - re dp[m]
 - https://leetcode.com/problems/unique-paths/
 
 ##### 2D; physi_1_1_val; top_contrib, left_contrib, obstacle; num_combo(add)
 
 - n+1, m+1 size
-- dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
-- init side ==> physi_1_1_val; dp[1][1] == 1 || 0 (dep obstacle)
-- init side init_in_loop ==> x
+- dp[i][j] ==> AT this row, AT this col, FINAL num_combo
+- init side ==> physi_1_1_val(num_combo); dp[1][1] == 1 || 0 (dep obstacle); init_in_loop
 - loop row (n)
 - loop col (m)
 - if obstacle, dp[i][j] = 0 (self no)
@@ -160,12 +157,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - m+1 size
 - dp[j] ==> AT this col, FINAL num_combo
-- init side ==> physi_1_1_val; dp[1] == 1 || 0 (dep obstacle)
-- init side init_in_loop ==> x
+- init side ==> physi_1_1_val(num_combo); dp[1] == 1 || 0 (dep obstacle); init_in_loop
 - loop row (n)
 - loop col (m)
 - if obstacle, dp[j] = 0 (self no)
-- else no obstacle, dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left);
+- else no obstacle, dp[j] = dp[j](top; press_row) + dp[j-1](left; press_row);
 - re dp[m]
 - https://leetcode.com/problems/unique-paths-ii/
 
