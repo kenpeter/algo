@@ -246,7 +246,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## ?
+## 3 loops, dp(3d, 2d, diff_order),
 
 ##### 3D; 3 loops; NO_ORDER ele, reach tar_n, tar_m; max_combo
 
@@ -271,7 +271,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop tar (forward; ORDER, 1+2, 2+1, diff)
 - loop face (forward; ele)
 - top/diag/left(\*)/orig(\*)/else;
-- j>=k, dp[i][j] = dp[i][j](orig, tar_1st) + dp[i][j-k(face)](left, noval) % module;
+- j>=k, dp[i][j] = dp[i][j](orig, tar_1st) + dp[i][j-k(face)](left, num_combo) % module;
 - SUMMARY
 - loop1, loop2, loop3 ORDER_DIFF dp[3][2][1]
 - press_ele
