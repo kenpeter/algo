@@ -268,7 +268,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - n+1, m+1 size
 - 3D; dp[dice][face][tar] ==> AT this dice, AT this face, AT this tar, FINAL num_combo(add)
 - 2D, press_ele; dp[i][j] ==> AT this dice, AT this tar, FINAL num_combo(add)
-- init side ==> physi_1_1_val (acc_below_noval)
+- init side ==> physi_1_1_val (press_ele, so single 1)
 - loop dice (forward)
 - loop tar (forward; ORDER, 1+2, 2+1, diff)
 - loop face (forward; ele)
@@ -298,7 +298,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - m+1 size
 - dp[i] ==> AT this num, FINAL min_combo
-- init side ==> 0 (min_below_val)
+- init side ==> 0 (min, so 0; below_val)
 - loop tar (forward; ORDER? 1^2 + 2^2, affect_next_diff)
 - loop ele (forward; dp_ind_constraint)
 - direction
@@ -315,7 +315,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - m+1 size
 - dp[i] ==> AT this len, FINAL max_val
-- init side ==> 0 (max_below_val)
+- init side ==> 0 (max 1D, so 0; below_val)
 - loop tar (forward; ORDER, len1*v, len2*v, order_diff)
 - loop ele (forward; dp_recal_constraint)
 - direction
@@ -333,7 +333,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer: (a + b) - (c + d), (totTar - aTar) - aTar === diff; ha = sum / 2
 - n+1, ha+1 size
 - dp[i][j] === AT this ele, AT this tar, FINAL condi
-- init side == fake_left_vals (acc_below_noval)
+- init side == fake_left_vals (condi 2D, so trues; below_noval)
 - loop ele (forward; NO_ORDER)
 - loop ha (forward)
 - direction
@@ -345,7 +345,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer: ha = sum / 2
 - ha+1 size
 - dp[j] === AT this ha; FINAL condi (question min_diff; dp[j] == true, to_update_max)
-- init side == true (acc_below_noval)
+- init side == true (condi 1D, so true; below_noval)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
 - direction
@@ -365,7 +365,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - x
 - m+1 size
 - dp[j] === AT this ha, FINAL num_combo(add)
-- init side == 1 (acc_below_noval)
+- init side == 1 (num_combo 1D, so 1; below_noval)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
 - direction
@@ -378,7 +378,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer: ha = sum / 2
 - n+1, ha+1 size
 - dp[i][j] === AT this ele, AT this tar, FINAL condi
-- init side == fake_left_vals (acc_below_noval)
+- init side == fake_left_vals (condi 2D, so trues; below_noval)
 - loop ele (forward; NO_ORDER)
 - loop ha (forward)
 - direction
@@ -390,7 +390,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - transfer: ha = sum / 2
 - ha+1 size
 - dp[i] === AT this ha, FINAL condi (question condi)
-- init side == true (acc_below_noval)
+- init side == true (condi 1D, so true; below_noval)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
 - direction
@@ -406,7 +406,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - n+1, m+1 size
 - dp[i][j] ==> AT this child_char; AT this parent_char; FINAL condi(chop_char_subseq);
-- init side ==> fake_top_vals = true (each_child_use_diag; acc_below_noval)
+- init side ==> fake_top_vals (each_child_use_diag)
 - loop child (child_1st, each_child_use_diag)
 - loop parent
 - direction
@@ -418,7 +418,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - n, m size (dp size == str size, becau head tail)
 - dp[i][j] ==> AT this end_char_index; AT this start_char_index; FINAL condi(is_palindrom);
-- init side ==> nothing (becau dp size == str size)
+- init side ==> nothing (dp size == str size)
 - loop parent (parent_1st, head_tail_compress)
 - loop child
 - direction
@@ -430,11 +430,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - m+1 size
 - dp[i] === AT str posi; FINAL condi(from question)
-- init side === true (acc_below_noval)
+- init side === true (condi 1D, so true; below_noval)
 - loop parent (parent_1st, child_build_parent)
 - loop child
 - direction
-- dp[i] = ( dp[i](orig, tar_1st; press_child_char) || ( dp[i - w_l](left, p_w + c_w == f_w; press_child_char; w_l + rest = fw_l) && s.sub == w(word_match) ) )
+- dp[i] = ( dp[i](orig, tar_1st; press_child) || ( dp[i - w_l](left, p_w + c_w == f_w; press_child; w_l + rest = fw_l) && s.sub == w(word_match) ) )
 - https://leetcode.com/problems/word-break
 
 <br/>
@@ -446,7 +446,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - n+1, m+1 size
 - dp[i][j] === AT this ele, AT this tar, FINAL num_combo
-- init side ==> fake_left_vals (acc_below_noval)
+- init side ==> fake_left_vals (num_combo 2D, so 1s; below_noval)
 - loop ele (forward; NO_ORDER)
 - loop tar (forward)
 - direction
@@ -458,7 +458,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - m+1 size
 - dp[j] === AT this tar, FINAL num_combo
-- init side === 1 (acc_below_noval)
+- init side === 1 (num_combo 1D, so 1; below_noval)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward, dp_ind_constraint)
 - direction
@@ -469,7 +469,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - n+1, m+1 size
 - dp[i][j] === AT this ele, AT this tar, FINAL min_num_combo
-- init side === 0 (min_below_val)
+- init side === 0 (min 2D, so 0s; below_val)
 - loop ele (forward)
 - loop tar (forward)
 - top/diag, orig/left, else
@@ -481,7 +481,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - m+1 size
 - dp[j] ==> AT this num, FINAL min_num_combo/-1
-- init side ==> 0 (min_below_val)
+- init side ==> 0 (min 1D, so 0; below_val)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward; dp_ind_constraint, j=w; j<=t)
 - top/orig VS diag/left, else
@@ -494,7 +494,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - n+1, m+1 size
 - dp[i][j] === AT this tar, AT this ele, FINAL num_combo (add)
-- init side ==> fake_top_vals (press_ele; acc_below_noval)
+- init side ==> fake_top_vals (num_combo 2D, so 1s; below_noval)
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
 - top/orig VS diag/left, else
@@ -505,7 +505,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - m+1 size
 - dp[i] === AT this tar, FINAL num_combo (add)
-- init side ==> 1 (acc_below_noval)
+- init side ==> 1 (num_combo 1D, so 1; below_noval)
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
 - top/orig VS diag/left, else
