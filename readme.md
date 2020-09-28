@@ -380,7 +380,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side == fake_left_vals (acc_below_noval)
 - loop ele (forward; NO_ORDER)
 - loop ha (forward)
-- top(\*)/diag(\*)/left/orig/else;
+- direction
 - dp[i][j] = dp[i-1][j](top, ele_1st) || dp[i-1][j-i](diag, condi; x+y=tar)
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
@@ -392,7 +392,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side == true (acc_below_noval)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
-- top(\*)/diag(\*)/left/orig/else;
+- direction
 - dp[j] = dp[j](top, ele_1st; press_ele) || dp[j-i(ele)](diag, condi; press_ele; x+y=tar);
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
 
@@ -408,9 +408,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side ==> fake_top_vals = true (each_child_use_diag; acc_below_noval)
 - loop child (child_1st, each_child_use_diag)
 - loop parent
-- top/diag(\*)/left(\*)/orig/else;
+- direction
 - if, dp[i][j-1](left, each_child_use_diag) == true, dp[i][j](condi) = true
-- if, dp[i-1][j-1](diag, each_child_use_diag) == true && c[i] == p[j](char_match), dp[i][j](condi) = true
+- if, dp[i-1][j-1](diag, each_child_use_diag) == true && c[i] == p[j](char == char), dp[i][j](condi) = true
 - https://leetcode.com/problems/is-subsequence/
 
 ##### 2D; child chars(ele); parent chars(tar); head_tail_equal, sub_head_tail_equal; condi
@@ -420,9 +420,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side ==> nothing (becau dp size == str size)
 - loop parent (parent_1st, head_tail_compress)
 - loop child
-- top/diag/left/orig/else(\*);
-- if, p[i] == c[i](char_match), i-j<=2(shortcut), dp[i][j] = true
-- if, p[i] == c[i](char_match), dp[i-1][j+1](else) == true, dp[i][j] = true
+- direction
+- if, p[i] == c[i](char == char), i-j<=2(shortcut), dp[i][j] = true
+- if, p[i] == c[i](char == char), dp[i-1][j+1](else) == true, dp[i][j] = true
 - https://leetcode.com/problems/longest-palindromic-substring/
 
 ##### 1D; child chars(ele); parent chars(tar); child_build_parent; condi
@@ -432,8 +432,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side === true (acc_below_noval)
 - loop parent (parent_1st, child_build_parent)
 - loop child
-- top/diag(\*)/left/orig(\*)else;
-- dp[i] = ( dp[i](orig, tar_1st; press_child_char) || ( dp[i - w_l](diag; press_child_char; w_l + rest = fw_l) && s.sub == w(word_match) ) )
+- direction
+- dp[i] = ( dp[i](orig, tar_1st; press_child_char) || ( dp[i - w_l](left, p_w + c_w == f_w; press_child_char; w_l + rest = fw_l) && s.sub == w(word_match) ) )
 - https://leetcode.com/problems/word-break
 
 <br/>
@@ -448,8 +448,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side ==> fake_left_vals (acc_below_noval)
 - loop ele (forward; NO_ORDER)
 - loop tar (forward)
-- top(\*)/diag/left(\*)/orig/else;
-- j>=i(w), dp[i][j] = dp[i-1][j](top, ele_1st) + dp[i][j-i(ele)](left, noval)
+- direction
+- j>=i(w), dp[i][j] = dp[i-1][j](top, ele_1st) + dp[i][j-i(ele)](left, init_val_formu_noval)
 - else, dp[i][j] = dp[i-1][j](top)
 - https://leetcode.com/problems/coin-change-2/
 
@@ -460,8 +460,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side === 1 (acc_below_noval)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward, dp_ind_constraint)
-- top(\*)/diag/left(\*)/orig/else;
-- dp[j] = dp[j](top, ele_1st; press_ele) + dp[j-i(ele)](left, noval; press_ele; x+y=tar);
+- direction
+- dp[j] = dp[j](top, ele_1st; press_ele) + dp[j-i(ele)](left, init_val_formu_noval; press_ele; x+y=tar);
 - https://leetcode.com/problems/coin-change-2/
 
 ##### 2D; NO_ORDER ele; addup to tar; min_num_combo (vs num_combo)
@@ -471,8 +471,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side === 0 (min_below_val)
 - loop ele (forward)
 - loop tar (forward)
-- top(\*)/diag/left(\*)/orig/else;
-- j>=i(w): dp[i][j] = mi( dp[i-1][j](top, ele_1st), 1 + dp[i][j-i(ele)](left, ?) )
+- top/diag, orig/left, else
+- j>=i(w): dp[i][j] = mi( dp[i-1][j](top, ele_1st), 1 + dp[i][j-i(ele)](left?, num_left_more) )
 - else: dp[i][j] = dp[i-1][j]
 - https://leetcode.com/problems/coin-change/
 
@@ -483,8 +483,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side ==> 0 (min_below_val)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward; dp_ind_constraint, j=w; j<=t)
-- top(\*)/diag/left(\*)/orig/else;
-- dp[j] = MIN(dp[j](top, ele_1st; press_ele), 1 + dp[j-i(ele)](left, ?; press_ele; x+y=tar) )
+- top/orig VS diag/left, else
+- dp[j] = MIN(dp[j](top, ele_1st; press_ele), 1 + dp[j-i(ele)](left?, num_left_more; press_ele; x+y=tar) )
 - https://leetcode.com/problems/coin-change/
 
 ## ele; addup to tar; loop_tar, loop_ele; permu_num_combo
@@ -496,8 +496,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side ==> fake_top_vals (press_ele; acc_below_noval)
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
-- top/diag(\*)/left/orig(\*)/else;
-- dp[i][j] = dp[i][j](orig, tar_1st) + dp[i-j(ele)][ele.len](diag, noval; x+y=tar; ele.len_last, tar_1st); (add)
+- top/orig VS diag/left, else
+- dp[i][j] = dp[i][j](orig, tar_1st) + dp[i-j(ele)][ele.len](diag?, permu_last_len_max; x+y=tar; ele.len_last, tar_1st); (add)
 - https://leetcode.com/problems/combination-sum-iv/discuss/702432/Java-or-1D-or-2D-or-Bottom-Up-or-Top-Down
 
 ##### 1D; ORDER ele; addup to tar; loop_tar, loop_ele; permu_num_combo(add)
@@ -507,8 +507,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - init side ==> 1 (acc_below_noval)
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
-- top/diag(\*)/left/orig(\*)/else;
-- dp[i] = dp[i](orig, tar_1st, press_ele) + dp[i-j(ele)](diag, noval; press_ele; x+y=tar)
+- top/orig VS diag/left, else
+- dp[i] = dp[i](orig, tar_1st, press_ele) + dp[i-j(ele)](diag?, permu_last_len_max; press_ele; x+y=tar)
 - https://leetcode.com/problems/combination-sum-iv/
 
 <br/>
