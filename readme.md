@@ -246,17 +246,18 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 2D/3D; e->t / t->e; non-rep/rep ele; with/out condi; reach tar/gen_tar; max/min
+## ?
 
 ##### 3D; 3 loops; NO_ORDER ele, reach tar_n, tar_m; max_combo
 
 - n+1, m+1, z+1 size
-- dp[k][i][j] === AT ele, REACH tar_m, tar_n, FINAL max_combo
+- dp[k][i][j] === AT this ele, AT this tar_m, AT this tar_n, FINAL max_combo
 - init side === 0 (max_below_val)
 - loop ele (forward, NO_ORDER)
 - loop tar_m (forward)
 - loop tar_n (forward)
-- j >= zero && k >= one, dp[k][i][j] = ma( dp[i-1][j][k](top, ele_1st), 1 + dp[i-1][j-zero][k-one](diag, has_val) )
+- top(\*)/diag(\*)/left/orig/else;
+- j >= zero && k >= one, dp[k][i][j] = ma( dp[i-1][j][k](top, ele_1st), 1 + dp[i-1][j-zero][k-one](diag, init_noval_formu_val) )
 - else, dp[k][i][j] = dp[i-1][j][k](top, ele_1st)
 - https://leetcode.com/problems/ones-and-zeroes/
 
@@ -264,15 +265,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - n+1, m+1 size
 - 3D; dp[dice][face][tar] ==> AT this dice, AT this face, AT this tar, FINAL num_combo(add)
-- COMPRESS face, 2D
-- 2D; dp[i][j] ==> AT this dice, AT this tar, FINAL num_combo(add)
+- 2D, press_ele; dp[i][j] ==> AT this dice, AT this tar, FINAL num_combo(add)
 - init side ==> physi_1_1_val (acc_below_noval)
 - loop dice (forward)
-- loop tar (forward; ORDER, 1+2, 2+1, diff_in_dice)
-- loop face (forward)
-- top(\*)/diag/left(\*)/orig/else;
-- dp[i][j] = dp[i][j](orig, tar_1st) + dp[i][j-k(face)](left, noval);
-- SUMMA ==> loop items DIFF dp[i][k][j]; 3D compress 2D, ELE
+- loop tar (forward; ORDER, 1+2, 2+1, diff)
+- loop face (forward; ele)
+- top/diag/left(\*)/orig(\*)/else;
+- j>=k, dp[i][j] = dp[i][j](orig, tar_1st) + dp[i][j-k(face)](left, noval) % module;
+- SUMMARY
+- loop1, loop2, loop3 ORDER_DIFF dp[3][2][1]
+- press_ele
 - https://leetcode.com/problems/number-of-dice-rolls-with-target-sum
 
 <br/>
@@ -299,7 +301,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop tar (forward; ORDER? 1^2 + 2^2, affect_next_diff)
 - loop ele (forward; dp_ind_constraint)
 - top(\*)/diag(\*)/left/orig/else;
-- mi = mi( mi, dp[i-j\*j](diag, has_val; press_ele; x^2+y^2 = tar) + 1 ), inject_vs
+- mi = mi( mi, dp[i-j\*j](diag, init_noval_formu_val; press_ele; x^2+y^2 = tar) + 1 ), inject_vs
 - end_loop_up_dp
 - https://leetcode.com/problems/perfect-squares
 
@@ -316,7 +318,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop tar (forward; ORDER, len1*v, len2*v, order_diff)
 - loop ele (forward; dp_recal_constraint)
 - top/diag(\*)/left/orig(\*)/else;
-- dp[i] = MAX(dp[i](orig, tar_1st; press_ele), dp[i-j(ele)](diag, has_val; press_ele; x+y=sub_tar) + price_arr[i-j](<val(w)>) )
+- dp[i] = MAX(dp[i](orig, tar_1st; press_ele), dp[i-j(ele)](diag, init_noval_formu_val; press_ele; x+y=sub_tar) + price_arr[i-j](<val(w)>) )
 - https://www.lintcode.com/problem/cutting-a-rod
 - https://www.lintcode.com/discuss/1266/
 
