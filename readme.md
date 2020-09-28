@@ -152,83 +152,66 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop row (n)
 - loop col (m)
 - if obstacle, dp[i][j] = 0 (self no)
-- else no obstacle, dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left); add
+- else no obstacle, dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left);
 - re dp[n][m]
 - https://leetcode.com/problems/unique-paths-ii/
 
 ##### 1D; physi_1_1_val; top_contrib, left_contrib, obstacle; num_combo(add)
 
 - m+1 size
-- dp[j] ==> AT THIS col, FINAL num_combo
+- dp[j] ==> AT this col, FINAL num_combo
 - init side ==> physi_1_1_val; dp[1] == 1 || 0 (dep obstacle)
 - init side init_in_loop ==> x
 - loop row (n)
 - loop col (m)
 - if obstacle, dp[j] = 0 (self no)
-- else no obstacle, dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left); add
+- else no obstacle, dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left);
 - re dp[m]
 - https://leetcode.com/problems/unique-paths-ii/
 
 ##### 2D; physi_1_1_val; top_contrib, left_contrib; min_path
 
 - n+1, m+1 size
-- dp[i][j] ==> AT THIS col, AT THIS row, FINAL min_path
-- init side ==> x
-- init side init_in_loop ==> \*
+- dp[i][j] ==> AT this col, AT this row, FINAL min_path
+- init side ==> during_loop
 - loop row (n)
 - loop col (m)
-- if 1st row, dp[i][j] = dp[i][j-1] + g[i-1][j-1] (grid)
-- if 1st col, dp[i][j] = dp[i-1][j] + g[i-1][j-1] (grid)
-- else dp[i][j] = MIN(dp[i][j-1], dp[i-1][j]) + g[i-1][j-1]
+- if 1st row, dp[i][j] = dp[i][j-1](left) + grid[i-1][j-1]
+- if 1st col, dp[i][j] = dp[i-1][j](top) + grid[i-1][j-1]
+- else dp[j] = MIN(dp[i][j-1](left), dp[i-1][j](top)) + grid[i-1][j-1]
 - https://leetcode.com/problems/minimum-path-sum/
 
 ##### 1D; physi_1_1_val; top_contrib, left_contrib; min_path
 
 - m+1 size
-- dp[i][j] ==> AT THIS col, AT THIS row, FINAL min_path
-- init side ==> x
-- init side init_in_loop ==> \*
+- dp[i][j] ==> AT this col, AT this row, FINAL min_path
+- init side ==> during_loop
 - loop row (n)
 - loop col (m)
-- if 1st row, dp[j] = dp[j-1] + g[i-1][j-1] (grid)
-- if 1st col, dp[j] = dp[j] + g[i-1][j-1] (grid)
-- else dp[j] = MIN(dp[j-1], dp[j]) + g[i-1][j-1]
+- if 1st row, dp[j] = dp[j-1](left; press_row) + grid[i-1][j-1]
+- if 1st col, dp[j] = dp[j](top; press_row) + grid[i-1][j-1]
+- else dp[j] = MIN(dp[j-1](left; press_row), dp[j](top; press_row)) + grid[i-1][j-1]
 - https://leetcode.com/problems/minimum-path-sum/
 
-##### 2D; physi_1_1_val; top_contrib, left_contrib; min_path
+##### 2D; fake_top_left_vals; bottom_up, bottom_contrib, bottom_right_contrib; min_path
 
-- m+1 size
-- dp[i][j] ==> AT THIS col, AT THIS row, FINAL min_path
-- init side ==> x
-- init side init_in_loop ==> \*
-- loop row (n)
-- loop col (m)
-- if 1st row, dp[j] = dp[j-1] + g[i-1][j-1] (grid)
-- if 1st col, dp[j] = dp[j] + g[i-1][j-1] (grid)
-- else dp[j] = MIN(dp[j-1], dp[j]) + g[i-1][j-1]
-- https://leetcode.com/problems/minimum-path-sum/
-
-##### 2D; fake_top_left_vals; backward, bottom_contrib, bottom_right_contrib; min_path
-
-- n, m size
-- dp[i-1][j] ==> AT THIS col, AT THIS row, FINAL min_path
+- n, m size (dp_size == ma_size)
+- dp[i-1][j] ==> AT this col, AT this row, FINAL min_path
 - init side ==> fill_bottom_row
-- init side init_in_loop ==> \*
-- loop row (backward; i=n-1; i>=0; index)
-- loop col (forward; j=0; j>=i; because j+1)
-- dp[i-1][j] = MIN(dp[i-1][j], dp[i-1][j+1]) + grid[i-1][j]
+- loop row (bottom_up; i=n-1(ele); i>=0(ele))
+- loop col (bottom_forward; j=0; j>=i(j+1))
+- dp[i-1][j] = MIN(dp[i-1][j], dp[i-1][j+1]) + grid[i-1][j](dp_use_i)
 - re dp[0][0]
 - https://leetcode.com/problems/triangle/
 
-##### 1D; fake_top_left_vals; backward, bottom_contrib, bottom_right_contrib; min_path
+##### 1D; fake_top_left_vals; bottom_up, bottom_contrib, bottom_right_contrib; min_path
 
 - m size
-- dp[j] ==> AT THIS col FINAL min_path
+- dp[j] ==> AT this col, FINAL min_path
 - init side ==> fill_bottom_row
-- init side init_in_loop ==> \*
-- loop row (backward; i=n-1; i>=0; index)
-- loop col (forward; j=0; j>=i; because j+1)
-- dp[j] = MIN(dp[j], dp[j+1]) + grid[i-1][j]
+- loop row (bottom_up; i=n-1(ele); i>=0(ele))
+- loop col (bottom_forward; j=0; j>=i(j+1))
+- dp[j] = MIN(dp[j](press_row), dp[j+1](press_row)) + grid[i-1][j]
 - re dp[0]
 - https://leetcode.com/problems/triangle/
 
