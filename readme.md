@@ -1,15 +1,29 @@
 # str
 
+## ?
+
+##### hello(parent), ll(child); forward_char_match(half_way)
+
+- EG
+- SUMMA
+- parent_empty; child_empty; both_empty
+- loop parent ( p[i+j] )
+- loop child ( p[i+j] == c[j], forward_char_match(half_way) )
+- https://leetcode.com/problems/implement-strstr
+
+<br/>
+<br/>
+
 ## a VS b -> res, res VS c
 
-##### [flower, flow, fl]; a VS b -> res, res VS c; forward_char_match
+##### [flower, flow, fl]; a VS b -> res, res VS c; forward_char_match(start)
 
 - EG
 - SUMMA
 - empty; 1_item
 - res = 1st_item
 - loop tar (str_in_arr), at 2nd_item
-- loop ele (char_in_str), forward_char_match; at_start, no_good_out; half_way, no_good_out;
+- loop ele (char_in_str), forward_same_start_match; at_start, no_good_out; half_way, no_good_out;
 - a VS b -> res; then res VS c
 - https://leetcode.com/problems/longest-common-prefix
 
@@ -24,9 +38,12 @@
 - a VS b -> res; then res VS c
 - https://leetcode.com/problems/longest-common-prefix
 
-## min_len, each_str_match
+<br/>
+<br/>
 
-##### [flower, flow, fl]; min_len, each_str_match
+## min_len, a VS b VS c VS d -> res (same_time)
+
+##### [flower, flow, fl]; min_len, a VS b VS c VS d -> res (same_time)
 
 - EG
 - SUMMA
