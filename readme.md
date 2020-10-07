@@ -1,6 +1,33 @@
 # str
 
-## HASH allow more info; look_ahead
+## ?
+
+##### [flower, flow, fl]; a VS b -> res; then res VS c; forward_char_match
+
+- EG
+- SUMMA
+- empty, 1_item
+- res = 1st_item
+- loop arr, at 2nd_item
+- loop, forward_char_match; at_start, no_good_out; half_way, no_good_out;
+- a VS b -> res; then res VS c
+- https://leetcode.com/problems/longest-common-prefix
+
+##### [flower, flow, fl]; a VS b -> res; then res VS c; backward_indexOf_0, substr_reducing
+
+- EG
+- SUMMA
+- empty, 1_item
+- res = 1st_item
+- loop arr, at 2nd_item
+- loop, backward_indexOf_0; substr_reducing;
+- a VS b -> res; then res VS c
+- https://leetcode.com/problems/longest-common-prefix
+
+<br/>
+<br/>
+
+## build HASH easier info; look_ahead
 
 ##### IVIV -> (sb)(sb) -> (IV)(IV) -> 44
 
@@ -10,7 +37,7 @@
 - IVMI -> (sb)(b)(b, end) -> (IV)(M)(I)
 - VII -> (b)(b)(b, end) -> (V)(I)(I)
 - SUMMA ==> sb (small, big as 1 group), the_end_char
-- build HASH (from Q)
+- build HASH (from Q, has all combo)
 - loop char
 - curr=h[char], next=h[char+1] (LOOK_AHEAD)
 - if curr >= next, b as 1 group
@@ -26,7 +53,7 @@
 - IVMI -> (in_h)(in_h)(in_h) -> (IV)(M)(I)
 - VII -> (in_h)(in_h)(in_h) -> (V)(I)(I)
 - SUMMA ==> h[curr+next]
-- build HASH (from Q)
+- build HASH (from Q, has all combo)
 - loop char
 - h[curr+next] (LOOK_AHEAD)
 - if h[curr+next], acc, fast_forward
