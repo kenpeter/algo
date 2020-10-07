@@ -31,7 +31,7 @@
 - EG
 - SUMMA
 - empty; 1_item
-- find_min_len
+- find_min_len (s.reduce((acc, curr) => {}, 0))
 - loop ele (char_in_str; min_len)
 - loop tar (str_in_arr), at 2nd_item
 - if strs[str_ind][char_ind] == curr, con
