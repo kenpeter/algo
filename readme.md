@@ -1,3 +1,54 @@
+# str
+
+## HASH allow more info; look_ahead
+
+##### IVIV -> (sb)(sb) -> (IV)(IV) -> 44
+
+- EG
+- IVIV -> (sb)(sb) -> (IV)(IV)
+- VIVI -> (b)(sb)(b, end) -> (V)(IV)(I)
+- IVMI -> (sb)(b)(b, end) -> (IV)(M)(I)
+- VII -> (b)(b)(b, end) -> (V)(I)(I)
+- SUMMA ==> sb (small, big as 1 group), the_end_char
+- build HASH (from Q)
+- loop char
+- curr=h[char], next=h[char+1] (LOOK_AHEAD)
+- if curr >= next, b as 1 group
+- else next < curr, s b as 1 group
+- else the_end_char
+- https://leetcode.com/problems/roman-to-integer
+
+##### IVIV -> (in_h)(in_h) -> (IV)(IV) -> 44
+
+- EG
+- IVIV -> (in_h)(in_h) -> (IV)(IV)
+- VIVI -> (in_h)(in_h)(in_h) -> (V)(IV)(I)
+- IVMI -> (in_h)(in_h)(in_h) -> (IV)(M)(I)
+- VII -> (in_h)(in_h)(in_h) -> (V)(I)(I)
+- SUMMA ==> h[curr+next]
+- build HASH (from Q)
+- loop char
+- h[curr+next] (LOOK_AHEAD)
+- if h[curr+next], acc, fast_forward
+- else 1_char_acc
+- https://leetcode.com/problems/roman-to-integer
+
+<br/>
+<br/>
+
+## loop ele, tar full consume 1 ele, then next ele
+
+##### 3999 -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
+
+- EG
+- 3999 -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
+- SUMMA ==> tar full consume 1 ele, next ele
+- build HASH (from Q, hash no order, arr.reverse() has order)
+- loop ele
+- loop tar (full consume 1 ele, then next ele)
+- resStr = resStr + curr
+- https://leetcode.com/problems/integer-to-roman
+
 # DP
 
 https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-questions-thread
