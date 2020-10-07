@@ -1,28 +1,42 @@
 # str
 
-## a VS b -> res, then res VS c
+## a VS b -> res, res VS c
 
-##### [flower, flow, fl]; a VS b -> res; then res VS c; forward_char_match
-
-- EG
-- SUMMA
-- empty, 1_item
-- res = 1st_item
-- loop arr, at 2nd_item
-- loop, forward_char_match; at_start, no_good_out; half_way, no_good_out;
-- a VS b -> res; then res VS c
-- https://leetcode.com/problems/longest-common-prefix
-
-##### [flower, flow, fl]; a VS b -> res; then res VS c; backward_indexOf_0, substr_reducing
+##### [flower, flow, fl]; a VS b -> res, res VS c; forward_char_match
 
 - EG
 - SUMMA
-- empty, 1_item
+- empty; 1_item
 - res = 1st_item
-- loop arr, at 2nd_item
-- loop, backward_indexOf_0; substr_reducing;
+- loop tar (str_in_arr), at 2nd_item
+- loop ele (char_in_str), forward_char_match; at_start, no_good_out; half_way, no_good_out;
 - a VS b -> res; then res VS c
 - https://leetcode.com/problems/longest-common-prefix
+
+##### [flower, flow, fl]; a VS b -> res, res VS c; backward_indexOf_0, substr_reducing
+
+- EG
+- SUMMA
+- empty; 1_item
+- res = 1st_item
+- loop tar (str_in_arr), at 2nd_item
+- loop ele (char_in_str), backward_indexOf_0; substr_reducing;
+- a VS b -> res; then res VS c
+- https://leetcode.com/problems/longest-common-prefix
+
+## min_len, each_str_match
+
+##### [flower, flow, fl]; min_len, each_str_match
+
+- EG
+- SUMMA
+- empty; 1_item
+- find_min_len
+- loop ele (char_in_str; min_len)
+- loop tar (str_in_arr), at 2nd_item
+- if strs[str_ind][char_ind] == curr, con
+- else return res (no_break)
+- https://www.geeksforgeeks.org/longest-common-prefix-using-character-by-character-matching
 
 <br/>
 <br/>
