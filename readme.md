@@ -1,6 +1,6 @@
 # str
 
-## ?
+## a VS b -> res, then res VS c
 
 ##### [flower, flow, fl]; a VS b -> res; then res VS c; forward_char_match
 
