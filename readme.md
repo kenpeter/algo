@@ -1,19 +1,18 @@
 # str
 
-## pattern(s -> b), match_potential
+## pattern(s -> b), potential_next_sibiling
 
-##### abc|abc, pattern(s -> b), match_potential
+##### abc|abc, pattern(s -> b), potential_next_sibiling
 
 - EG
 - abc|abc -> (a)(b)cabc (x) -> (ab)(ca)bc (x) -> (abc)(abc) (y)
-- ab|ab -> (a)(b)ab (x) -> (ab)(ab) (y)
 - a|b|c -> (a)(b)(c) (len == 1, low down)
-- SUMMA => pattern(s -> b), match_potential
+- SUMMA => pattern(s -> b), potential_next_sibiling
 - edge_case
-- halfLen, len/2 (low down) (setup)
-- loop halfLen (small -> big)
+- len/2 (low down) (setup)
+- loop pattern (small -> big)
 - pattern = s.sub(0, len)
-- loop patential_match_substr
+- loop potential_next_sibiling
 - sub = s.sub(i, j+1)
 - (a)(b)cabc (x, loop1) -> (ab)(ca)bc (x, loop2) -> (abc)(abc) (y, loop3)
 - https://leetcode.com/problems/repeated-substring-pattern
@@ -27,7 +26,7 @@
 - parent_empty; child_empty; both_empty (edge_case)
 - setup
 - loop parent ( p[i+j] )
-- loop child ( p[i+j] == c[j], forward_char_match(half_way) )
+- loop child ( p[i+j] == c[j], forward_char_match(ind+range) )
 - https://leetcode.com/problems/implement-strstr
 
 <br/>
@@ -41,8 +40,8 @@
 - SUMMA
 - empty; 1_item (edge_case)
 - res = 1st_item (setup)
-- loop tar (str_in_arr), at 2nd_item
-- loop ele (char_in_str), forward_same_start_match; at_start, no_good_out; half_way, no_good_out;
+- loop strs, at 2nd_item
+- loop str, forward_char_match; at_start, no_good_out; half_way, no_good_out;
 - a VS b -> res; then res VS c
 - https://leetcode.com/problems/longest-common-prefix
 
@@ -52,8 +51,8 @@
 - SUMMA
 - empty; 1_item (edge_case)
 - res = 1st_item (setup)
-- loop tar (str_in_arr), at 2nd_item
-- loop ele (char_in_str), backward_indexOf_0; substr_reducing;
+- loop strs, at 2nd_item
+- loop str, backward_indexOf_0; substr_reducing;
 - a VS b -> res; then res VS c
 - https://leetcode.com/problems/longest-common-prefix
 
@@ -68,8 +67,8 @@
 - SUMMA
 - empty; 1_item (edge_case)
 - find_min_len (s.reduce((acc, curr) => {}, 0)) (setup)
-- loop ele (char_in_str; min_len)
-- loop tar (str_in_arr), at 2nd_item
+- loop str (min_len)
+- loop strs, at 2nd_item
 - if strs[str_ind][char_ind] == curr, con
 - else return res (no_break)
 - https://www.geeksforgeeks.org/longest-common-prefix-using-character-by-character-matching
