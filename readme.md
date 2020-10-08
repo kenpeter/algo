@@ -40,7 +40,10 @@
 - loop
 - https://leetcode.com/problems/length-of-last-word
 
-## str_cut_half, pattern(s -> b), potential_match_sibiling
+<br/>
+<br/>
+
+## potential_match_sibiling
 
 ##### str_cut_half, pattern(s -> b), potential_match_sibiling
 
