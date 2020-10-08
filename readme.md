@@ -1,12 +1,31 @@
 # str
 
-## forward_char_match(same_start / half_way)
+## pattern(s -> b), match_potential
 
-##### hello(parent), ll(child); forward_char_match(half_way)
+##### abc|abc, pattern(s -> b), match_potential
+
+- EG
+- abc|abc -> (a)(b)cabc (x) -> (ab)(ca)bc (x) -> (abc)(abc) (y)
+- ab|ab -> (a)(b)ab (x) -> (ab)(ab) (y)
+- a|b|c -> (a)(b)(c) (len == 1, low down)
+- SUMMA => pattern(s -> b), match_potential
+- edge_case
+- halfLen, len/2 (low down) (setup)
+- loop halfLen (small -> big)
+- pattern = s.sub(0, len)
+- loop patential_match_substr
+- sub = s.sub(i, j+1)
+- (a)(b)cabc (x, loop1) -> (ab)(ca)bc (x, loop2) -> (abc)(abc) (y, loop3)
+- https://leetcode.com/problems/repeated-substring-pattern
+
+## forward_char_match(same_start / ind+range)
+
+##### hello(parent), ll(child); forward_char_match(ind+range)
 
 - EG
 - SUMMA
-- parent_empty; child_empty; both_empty
+- parent_empty; child_empty; both_empty (edge_case)
+- setup
 - loop parent ( p[i+j] )
 - loop child ( p[i+j] == c[j], forward_char_match(half_way) )
 - https://leetcode.com/problems/implement-strstr
@@ -16,12 +35,12 @@
 
 ## a VS b -> res, res VS c
 
-##### [flower, flow, fl]; a VS b -> res, res VS c; forward_char_match(same_start)
+##### [flower, flow, fl]; a VS b -> res, res VS c; forward_char_match(ind+range)
 
 - EG
 - SUMMA
-- empty; 1_item
-- res = 1st_item
+- empty; 1_item (edge_case)
+- res = 1st_item (setup)
 - loop tar (str_in_arr), at 2nd_item
 - loop ele (char_in_str), forward_same_start_match; at_start, no_good_out; half_way, no_good_out;
 - a VS b -> res; then res VS c
@@ -31,8 +50,8 @@
 
 - EG
 - SUMMA
-- empty; 1_item
-- res = 1st_item
+- empty; 1_item (edge_case)
+- res = 1st_item (setup)
 - loop tar (str_in_arr), at 2nd_item
 - loop ele (char_in_str), backward_indexOf_0; substr_reducing;
 - a VS b -> res; then res VS c
@@ -47,8 +66,8 @@
 
 - EG
 - SUMMA
-- empty; 1_item
-- find_min_len (s.reduce((acc, curr) => {}, 0))
+- empty; 1_item (edge_case)
+- find_min_len (s.reduce((acc, curr) => {}, 0)) (setup)
 - loop ele (char_in_str; min_len)
 - loop tar (str_in_arr), at 2nd_item
 - if strs[str_ind][char_ind] == curr, con
@@ -67,7 +86,7 @@
 - VIVI -> (b)(sb)(b, end) -> (V)(IV)(I)
 - IVMI -> (sb)(b)(b, end) -> (IV)(M)(I)
 - VII -> (b)(b)(b, end) -> (V)(I)(I)
-- SUMMA ==> sb (small, big as 1 group), the_end_char
+- SUMMA => sb (small, big as 1 group), the_end_char
 - build HASH (from Q, has all combo)
 - loop char
 - curr=h[char], next=h[char+1] (LOOK_AHEAD)
@@ -83,7 +102,7 @@
 - VIVI -> (in_h)(in_h)(in_h) -> (V)(IV)(I)
 - IVMI -> (in_h)(in_h)(in_h) -> (IV)(M)(I)
 - VII -> (in_h)(in_h)(in_h) -> (V)(I)(I)
-- SUMMA ==> h[curr+next]
+- SUMMA => h[curr+next]
 - build HASH (from Q, has all combo)
 - loop char
 - h[curr+next] (LOOK_AHEAD)
@@ -100,7 +119,7 @@
 
 - EG
 - 3999 -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
-- SUMMA ==> tar full consume 1 ele, next ele
+- SUMMA => tar full consume 1 ele, next ele
 - build HASH (from Q, hash no order, arr.reverse() has order)
 - loop ele
 - loop tar (full consume 1 ele, then next ele)
@@ -233,8 +252,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D; physi_1_1_val; top_contrib, left_contrib; num_combo(add)/min/max
 
 - n+1, m+1 size
-- dp[i][j] ==> AT THIS row, AT THIS col, FINAL num_combo
-- init side ==> physi_1_1_val(num_combo) || fake_top_1_val || fake_left_1_val;
+- dp[i][j] => AT THIS row, AT THIS col, FINAL num_combo
+- init side => physi_1_1_val(num_combo) || fake_top_1_val || fake_left_1_val;
 - loop row (n)
 - loop col (m)
 - dp[i][j] = dp[i-1][j](top) + dp[i][j-1](left); add
@@ -244,8 +263,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; physi_1_1_val; top_contrib, left_contrib; num_combo(add)
 
 - m+1 size
-- dp[i] ==> AT THIS col, FINAL num_combo
-- init side ==> physi_1_1_val(num)combo
+- dp[i] => AT THIS col, FINAL num_combo
+- init side => physi_1_1_val(num)combo
 - loop row (n)
 - loop col (m)
 - dp[j] = dp[j](top; press_row) + dp[j-1](left, press_row)
@@ -255,8 +274,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D; physi_1_1_val; top_contrib, left_contrib, obstacle; num_combo(add)
 
 - n+1, m+1 size
-- dp[i][j] ==> AT this row, AT this col, FINAL num_combo
-- init side ==> physi_1_1_val(num_combo); dp[1][1] == 1 || 0 (dep obstacle); init_in_loop
+- dp[i][j] => AT this row, AT this col, FINAL num_combo
+- init side => physi_1_1_val(num_combo); dp[1][1] == 1 || 0 (dep obstacle); init_in_loop
 - loop row (n)
 - loop col (m)
 - if obstacle, dp[i][j] = 0 (self no)
@@ -267,8 +286,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; physi_1_1_val; top_contrib, left_contrib, obstacle; num_combo(add)
 
 - m+1 size
-- dp[j] ==> AT this col, FINAL num_combo
-- init side ==> physi_1_1_val(num_combo); dp[1] == 1 || 0 (dep obstacle); init_in_loop
+- dp[j] => AT this col, FINAL num_combo
+- init side => physi_1_1_val(num_combo); dp[1] == 1 || 0 (dep obstacle); init_in_loop
 - loop row (n)
 - loop col (m)
 - if obstacle, dp[j] = 0 (self no)
@@ -279,8 +298,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D; physi_1_1_val; top_contrib, left_contrib; min_path
 
 - n+1, m+1 size
-- dp[i][j] ==> AT this col, AT this row, FINAL min_path
-- init side ==> during_loop
+- dp[i][j] => AT this col, AT this row, FINAL min_path
+- init side => during_loop
 - loop row (n)
 - loop col (m)
 - if 1st row, dp[i][j] = dp[i][j-1](left) + grid[i-1][j-1]
@@ -291,8 +310,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; physi_1_1_val; top_contrib, left_contrib; min_path
 
 - m+1 size
-- dp[i][j] ==> AT this col, AT this row, FINAL min_path
-- init side ==> during_loop
+- dp[i][j] => AT this col, AT this row, FINAL min_path
+- init side => during_loop
 - loop row (n)
 - loop col (m)
 - if 1st row, dp[j] = dp[j-1](left; press_row) + grid[i-1][j-1]
@@ -303,8 +322,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D; fake_top_left_vals; bottom_up, bottom_contrib, bottom_right_contrib; min_path
 
 - n, m size (dp_size == ma_size)
-- dp[i-1][j] ==> AT this col, AT this row, FINAL min_path
-- init side ==> fill_bottom_row
+- dp[i-1][j] => AT this col, AT this row, FINAL min_path
+- init side => fill_bottom_row
 - loop row (bottom_up; i=n-1(ele); i>=0(ele))
 - loop col (bottom_forward; j=0; j>=i(j+1))
 - dp[i-1][j] = MIN(dp[i-1][j], dp[i-1][j+1]) + grid[i-1][j](dp_use_i)
@@ -314,8 +333,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; fake_top_left_vals; bottom_up, bottom_contrib, bottom_right_contrib; min_path
 
 - m size
-- dp[j] ==> AT this col, FINAL min_path
-- init side ==> fill_bottom_row
+- dp[j] => AT this col, FINAL min_path
+- init side => fill_bottom_row
 - loop row (bottom_up; i=n-1(ele); i>=0(ele))
 - loop col (bottom_forward; j=0; j>=i(j+1))
 - dp[j] = MIN(dp[j](press_row), dp[j+1](press_row)) + grid[i-1][j]
@@ -356,9 +375,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 3 loops; dp_2D, press_ele; n dice, n face (ORDER ele), reach tar; num_combo(add)
 
 - n+1, m+1 size
-- 3D; dp[dice][face][tar] ==> AT this dice, AT this face, AT this tar, FINAL num_combo(add)
-- 2D, press_ele; dp[i][j] ==> AT this dice, AT this tar, FINAL num_combo(add)
-- init side ==> physi_1_1_val (num_combo_press, so 1; below_noval)
+- 3D; dp[dice][face][tar] => AT this dice, AT this face, AT this tar, FINAL num_combo(add)
+- 2D, press_ele; dp[i][j] => AT this dice, AT this tar, FINAL num_combo(add)
+- init side => physi_1_1_val (num_combo_press, so 1; below_noval)
 - loop dice (forward)
 - loop tar (forward; ORDER, 1+2, 2+1, diff)
 - loop face (forward; ele)
@@ -376,8 +395,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; 1 num breaks sub nums; NO_ORDER ele, reach tar; max_product
 
 - m+1 size
-- dp[j] ==> AT this num, FINAL max_product
-- init side ==> 1 (multiply 1)
+- dp[j] => AT this num, FINAL max_product
+- init side => 1 (multiply 1)
 - loop ele (forward; NO_ORDER, 1*2, 2*1, same)
 - loop tar (forward; dp_ind_constraint)
 - direction
@@ -387,8 +406,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; squares_addup_num; ORDER ele; reach tar; min_combo
 
 - m+1 size
-- dp[i] ==> AT this num, FINAL min_combo
-- init side ==> 0 (min_press, so 0; below_val)
+- dp[i] => AT this num, FINAL min_combo
+- init side => 0 (min_press, so 0; below_val)
 - loop tar (forward; ORDER? 1^2 + 2^2, affect_next_diff)
 - loop ele (forward; dp_ind_constraint)
 - direction
@@ -404,8 +423,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; cut a rod, unit_len_value, n\*unit_len_value; ORDER ele; reach tar; max_val
 
 - m+1 size
-- dp[i] ==> AT this len, FINAL max_val
-- init side ==> 0 (max_press, so 0; below_val)
+- dp[i] => AT this len, FINAL max_val
+- init side => 0 (max_press, so 0; below_val)
 - loop tar (forward; ORDER, len1*v, len2*v, order_diff)
 - loop ele (forward; dp_recal_constraint)
 - direction
@@ -446,7 +465,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - transfer: s(#) = [1, 2, 3, 4, 5], tar = 3
 - s(#) = [+1, -2, +3, -4, +5], tar = 3
-- (1+3+5) - (2+4) == 3 =====> s(+p) - s(+n) == tar
+- (1+3+5) - (2+4) == 3 ====> s(+p) - s(+n) == tar
 - s(+p) - s(+n) + s(#) == tar + s(#)
 - s(+p) - s(+n) + s(+p) + s(+n) == tar + s(+p) + s(+n)
 - 2 \* s(+p) == tar + s(#)
@@ -495,8 +514,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D; child chars(ele); parent chars(tar); chop_char_subseq; condi
 
 - n+1, m+1 size
-- dp[i][j] ==> AT this child_char; AT this parent_char; FINAL condi(chop_char_subseq);
-- init side ==> fake_top_vals (each_child_use_diag)
+- dp[i][j] => AT this child_char; AT this parent_char; FINAL condi(chop_char_subseq);
+- init side => fake_top_vals (each_child_use_diag)
 - loop child (child_1st, each_child_use_diag)
 - loop parent
 - direction
@@ -507,8 +526,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 2D; child chars(ele); parent chars(tar); head_tail_equal, sub_head_tail_equal; condi
 
 - n, m size (dp size == str size, becau head tail)
-- dp[i][j] ==> AT this end_char_index; AT this start_char_index; FINAL condi(is_palindrom);
-- init side ==> nothing (dp size == str size)
+- dp[i][j] => AT this end_char_index; AT this start_char_index; FINAL condi(is_palindrom);
+- init side => nothing (dp size == str size)
 - loop parent (parent_1st, head_tail_compress)
 - loop child
 - direction
@@ -536,7 +555,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - n+1, m+1 size
 - dp[i][j] === AT this ele, AT this tar, FINAL num_combo
-- init side ==> fake_left_vals (num_combo_nopress, so 1s; below_noval)
+- init side => fake_left_vals (num_combo_nopress, so 1s; below_noval)
 - loop ele (forward; NO_ORDER)
 - loop tar (forward)
 - direction
@@ -570,8 +589,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### 1D; NO_ORDER ele; addup to tar; min_num_combo (vs num_combo)
 
 - m+1 size
-- dp[j] ==> AT this num, FINAL min_num_combo/-1
-- init side ==> 0 (min_press, so 0; below_val)
+- dp[j] => AT this num, FINAL min_num_combo/-1
+- init side => 0 (min_press, so 0; below_val)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop tar (forward; dp_ind_constraint, j=w; j<=t)
 - direction
@@ -584,7 +603,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - n+1, m+1 size
 - dp[i][j] === AT this tar, AT this ele, FINAL num_combo (add)
-- init side ==> fake_top_vals (num_combo_nopress, so 1s; below_noval)
+- init side => fake_top_vals (num_combo_nopress, so 1s; below_noval)
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
 - direction
@@ -595,7 +614,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - m+1 size
 - dp[i] === AT this tar, FINAL num_combo (add)
-- init side ==> 1 (num_combo_press, so 1; below_noval)
+- init side => 1 (num_combo_press, so 1; below_noval)
 - loop tar (forward; ORDER, question said permu)
 - loop ele (forward; dp_ind_constraint)
 - direction
