@@ -2,7 +2,7 @@
 
 ## pattern(s -> b), potential_next_sibiling
 
-##### abc|abc, pattern(s -> b), potential_next_sibiling
+##### str_cut_half, pattern(s -> b), potential_next_sibiling
 
 - EG
 - abc|abc -> (a)(b)cabc (x) -> (ab)(ca)bc (x) -> (abc)(abc) (y)
@@ -19,7 +19,7 @@
 
 ## forward_char_match(same_start / ind+range)
 
-##### hello(parent), ll(child); forward_char_match(ind+range)
+##### search_in_parent, needle; forward_char_match(ind+range)
 
 - EG
 - SUMMA
@@ -34,7 +34,7 @@
 
 ## a VS b -> res, res VS c
 
-##### [flower, flow, fl]; a VS b -> res, res VS c; forward_char_match(ind+range)
+##### each_str_prefix; a VS b -> res, res VS c; forward_char_match(ind+range)
 
 - EG
 - SUMMA
@@ -45,7 +45,7 @@
 - a VS b -> res; then res VS c
 - https://leetcode.com/problems/longest-common-prefix
 
-##### [flower, flow, fl]; a VS b -> res, res VS c; backward_indexOf_0, substr_reducing
+##### each_str_prefix; a VS b -> res, res VS c; backward_indexOf_0, substr_reducing
 
 - EG
 - SUMMA
@@ -61,7 +61,7 @@
 
 ## min_len, a VS b VS c VS d -> res (same_time)
 
-##### [flower, flow, fl]; min_len, a VS b VS c VS d -> res (same_time)
+##### each_str_prefix; min_len, a VS b VS c VS d -> res (same_time)
 
 - EG
 - SUMMA
@@ -76,9 +76,9 @@
 <br/>
 <br/>
 
-## build HASH easier info; look_ahead
+## access_hash; look_ahead
 
-##### IVIV -> (sb)(sb) -> (IV)(IV) -> 44
+##### IVIV(roman) -> (sb)(sb) (access_hash; look_ahead)-> (IV)(IV) -> 44
 
 - EG
 - IVIV -> (sb)(sb) -> (IV)(IV)
@@ -87,14 +87,14 @@
 - VII -> (b)(b)(b, end) -> (V)(I)(I)
 - SUMMA => sb (small, big as 1 group), the_end_char
 - build HASH (from Q, has all combo)
-- loop char
-- curr=h[char], next=h[char+1] (LOOK_AHEAD)
+- loop each_roman
+- curr=hash[char], next=hash[char+1] (LOOK_AHEAD)
 - if curr >= next, b as 1 group
 - else next < curr, s b as 1 group
 - else the_end_char
 - https://leetcode.com/problems/roman-to-integer
 
-##### IVIV -> (in_h)(in_h) -> (IV)(IV) -> 44
+##### IVIV(roman) -> (in_h)(in_h) (access_hash; look ahead) -> (IV)(IV) -> 44;
 
 - EG
 - IVIV -> (in_h)(in_h) -> (IV)(IV)
@@ -103,25 +103,25 @@
 - VII -> (in_h)(in_h)(in_h) -> (V)(I)(I)
 - SUMMA => h[curr+next]
 - build HASH (from Q, has all combo)
-- loop char
-- h[curr+next] (LOOK_AHEAD)
-- if h[curr+next], acc, fast_forward
+- loop each_roman
+- hash[curr+next] (LOOK_AHEAD)
+- if hash[curr+next], acc, fast_forward
 - else 1_char_acc
 - https://leetcode.com/problems/roman-to-integer
 
 <br/>
 <br/>
 
-## loop ele, tar full consume 1 ele, then next ele
+## access_hash, full_consume_1_hash
 
-##### 3999 -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
+##### 3999(int) -> (3000)(900)(90)(9) (access_hash, full_consume_1_hash) -> (MMM)(CM)(?)(?)
 
 - EG
 - 3999 -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
 - SUMMA => tar full consume 1 ele, next ele
 - build HASH (from Q, hash no order, arr.reverse() has order)
-- loop ele
-- loop tar (full consume 1 ele, then next ele)
+- loop ele_in_hash
+- loop tar (full_consume_1_hash)
 - resStr = resStr + curr
 - https://leetcode.com/problems/integer-to-roman
 
