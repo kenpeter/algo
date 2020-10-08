@@ -1,18 +1,34 @@
 # str
 
-## pattern(s -> b), potential_next_sibiling
+## i stays j moving
 
-##### str_cut_half, pattern(s -> b), potential_next_sibiling
+##### count (#) and say (def); i stays, j moving
+
+- EG
+- 1 -> one 1;
+- 11 -> two 1;
+- 21 -> one 2 one 1;
+- 1211 -> one 1 one 2 two 1;
+- SUMMA => two 2, def + count_num
+- edge_case (1 -> "1")
+- SETUP => none
+- loop input_num; res = say(res), updating
+- say: loop diff kind; loop same kind; i stays, j moving;
+- https://leetcode.com/problems/count-and-say
+
+## str_cut_half, pattern(s -> b), potential_match_sibiling
+
+##### str_cut_half, pattern(s -> b), potential_match_sibiling
 
 - EG
 - abc|abc -> (a)(b)cabc (x) -> (ab)(ca)bc (x) -> (abc)(abc) (y)
 - a|b|c -> (a)(b)(c) (len == 1, low down)
-- SUMMA => pattern(s -> b), potential_next_sibiling
-- edge_case
-- len/2 (low down) (setup)
+- SUMMA => pattern(s -> b), potential_match_sibiling
+- edge_case ("")
+- len/2 (low down) (SETUP)
 - loop pattern (small -> big)
 - pattern = s.sub(0, len)
-- loop potential_next_sibiling
+- loop potential_match_sibiling
 - sub = s.sub(i, j+1)
 - (a)(b)cabc (x, loop1) -> (ab)(ca)bc (x, loop2) -> (abc)(abc) (y, loop3)
 - https://leetcode.com/problems/repeated-substring-pattern
@@ -24,7 +40,7 @@
 - EG
 - SUMMA
 - parent_empty; child_empty; both_empty (edge_case)
-- setup
+- SETUP
 - loop parent ( p[i+j] )
 - loop child ( p[i+j] == c[j], forward_char_match(ind+range) )
 - https://leetcode.com/problems/implement-strstr
@@ -39,7 +55,7 @@
 - EG
 - SUMMA
 - empty; 1_item (edge_case)
-- res = 1st_item (setup)
+- res = 1st_item (SETUP)
 - loop strs, at 2nd_item
 - loop str, forward_char_match; at_start, no_good_out; half_way, no_good_out;
 - a VS b -> res; then res VS c
@@ -50,7 +66,7 @@
 - EG
 - SUMMA
 - empty; 1_item (edge_case)
-- res = 1st_item (setup)
+- res = 1st_item (SETUP)
 - loop strs, at 2nd_item
 - loop str, backward_indexOf_0; substr_reducing;
 - a VS b -> res; then res VS c
@@ -66,7 +82,7 @@
 - EG
 - SUMMA
 - empty; 1_item (edge_case)
-- find_min_len (s.reduce((acc, curr) => {}, 0)) (setup)
+- find_min_len (s.reduce((acc, curr) => {}, 0)) (SETUP)
 - loop str (min_len)
 - loop strs, at 2nd_item
 - if strs[str_ind][char_ind] == curr, con
