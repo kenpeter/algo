@@ -1,5 +1,19 @@
 # str
 
+## mod(equal_chunk)
+
+##### 12|345|678 -> 12.345.678, mod(equal_chunk)
+
+- EG
+- SUMMA => equal_chunk
+- edge_case (i = 0)
+- SETUP (none)
+- loop char (forward)
+- if i > 0 (avoid .1); (s.len - i) % 3 == 0, s.len-i == actual_len_left, mod (equal_chunk)
+- res = res + "." (add .)
+- res = res + s[i] (append char)
+- https://leetcode.com/problems/thousand-separator
+
 ## i stays j moving
 
 ##### count (#) and say (def); i stays, j moving
@@ -11,10 +25,20 @@
 - 1211 -> one 1 one 2 two 1;
 - SUMMA => two 2, def + count_num
 - edge_case (1 -> "1")
-- SETUP => none
+- SETUP (none)
 - loop input_num; res = say(res), updating
 - say: loop diff kind; loop same kind; i stays, j moving;
 - https://leetcode.com/problems/count-and-say
+
+##### count_last_word_len; i stays, j moving
+
+- EG
+- \_ab\_\_ab_bc\_\_
+- SUMMA => backward, i stays, j moving
+- edge# \_case ("")
+- SETUP => none
+- loop
+- https://leetcode.com/problems/length-of-last-word
 
 ## str_cut_half, pattern(s -> b), potential_match_sibiling
 
