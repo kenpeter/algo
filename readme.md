@@ -35,10 +35,22 @@
 - EG
 - \_ab\_\_ab_bc\_\_
 - SUMMA => backward, i stays, j moving
-- edge# \_case ("")
+- edge_case ("")
 - SETUP => none
-- loop
+- loop, backward, i stays, j moving
 - https://leetcode.com/problems/length-of-last-word
+
+##### 1|234|567 -> 1.234.567; j moving
+
+- EG
+- \_ab\_\_ab_bc\_\_
+- SUMMA => backward, j moving
+- edge_case (none)
+- SETUP => none
+- loop, backward, j moving;
+- 1234567 -> 1.234.567 (1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
+- insert => sub(0, ind) + val + sub(ind)
+- https://leetcode.com/problems/thousand-separator
 
 <br/>
 <br/>
