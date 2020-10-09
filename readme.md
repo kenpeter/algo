@@ -7,12 +7,33 @@
 - EG
 - SUMMA => equal_chunk
 - edge_case (i = 0)
-- SETUP (none)
+- SETUP
 - loop char (forward)
 - if i > 0 (avoid .1); (s.len - i) % 3 == 0, s.len-i == actual_len_left, mod (equal_chunk)
 - res = res + "." (add .)
 - res = res + s[i] (append char)
 - https://leetcode.com/problems/thousand-separator
+
+<br/>
+<br/>
+
+## multiple i moving/stay, multiple j moving/stay
+
+##### del_left_palindrome || del_right_palindrome; multiple i moving/stay, multiple j moving/stay
+
+- EG
+- c|abba -> c(CL)a(AL)bb(BR)a(CR) -> del left -> AL VS CR, move closer
+- abba|c -> a(CL)b(AL)ba(BR)c(CR) -> del right -> CL VS BR, move closer
+- SUMMA
+- edge_case
+- SETUP => LC (left_copy, i=0); RC (right_copy, j=s.len-1); AL (after_left); BR (before_right)
+- loop char (i, j; conid; ++i, --j) (combine ind)
+- sub_loop, del left, move closer
+- sub_loop, del right, moce closer
+- https://leetcode.com/problems/valid-palindrome-ii
+
+<br/>
+<br/>
 
 ## i moving/stay j moving/stay
 
@@ -23,11 +44,11 @@
 - 11 -> two 1;
 - 21 -> one 2 one 1;
 - 1211 -> one 1 one 2 two 1;
-- SUMMA => two 2, def + count_num
+- SUMMA => def + count_num
 - edge_case (1 -> "1")
-- SETUP (none)
+- SETUP
 - loop input_num; res = say(res), updating
-- say: loop diff kind; loop same kind; i stays, j moving;
+- sub_loop diff kind; subsub_loop same kind; i stays, j moving;
 - https://leetcode.com/problems/count-and-say
 
 ##### count_last_word_len; i stays, j moving
@@ -36,7 +57,7 @@
 - \_ab\_\_ab_bc\_\_
 - SUMMA => backward, i stays, j moving
 - edge_case ("")
-- SETUP (none)
+- SETUP
 - loop, backward, i stays, j moving
 - https://leetcode.com/problems/length-of-last-word
 
@@ -45,8 +66,8 @@
 - EG
 - \_ab\_\_ab_bc\_\_
 - SUMMA => backward, j moving
-- edge_case (none)
-- SETUP (none)
+- edge_case
+- SETUP
 - loop, backward, j moving;
 - 1234567 -> 1.234.567 (1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
 - insert => sub(0, ind) + val + sub(ind)
@@ -56,10 +77,11 @@
 
 - EG
 - SUMMA
-- edge_case (none)
-- SETUP (none)
+- edge_case
+- SETUP
 - loop; i, j diff end, i moving, j moving; i>=j (will cross over)
-- skip non_alpha_num
+- sub_loop(skip_alph#) ++i
+- sub_loop(skip_alph#) --j
 - https://leetcode.com/problems/valid-palindrome
 
 <br/>
@@ -74,10 +96,10 @@
 - a|b|c -> (a)(b)(c) (len == 1, low down)
 - SUMMA => pattern(s -> b), potential_match_sibiling
 - edge_case ("")
-- len/2 (low down) (SETUP)
+- SETUP => len/2 (low down)
 - loop pattern (small -> big)
 - pattern = s.sub(0, len)
-- loop potential_match_sibiling
+- sub_loop potential_match_sibiling
 - sub = s.sub(i, j+1)
 - (a)(b)cabc (x, loop1) -> (ab)(ca)bc (x, loop2) -> (abc)(abc) (y, loop3)
 - https://leetcode.com/problems/repeated-substring-pattern
@@ -106,7 +128,7 @@
 - empty; 1_item (edge_case)
 - res = 1st_item (SETUP)
 - loop strs, at 2nd_item
-- loop str, forward_char_match; at_start, no_good_out; half_way, no_good_out;
+- sub_loop str, forward_char_match; at_start, no_good_out; half_way, no_good_out;
 - a VS b -> res; then res VS c
 - https://leetcode.com/problems/longest-common-prefix
 
@@ -117,7 +139,7 @@
 - empty; 1_item (edge_case)
 - res = 1st_item (SETUP)
 - loop strs, at 2nd_item
-- loop str, backward_indexOf_0; substr_reducing;
+- sub_loop str, backward_indexOf_0; substr_reducing;
 - a VS b -> res; then res VS c
 - https://leetcode.com/problems/longest-common-prefix
 
@@ -133,7 +155,7 @@
 - empty; 1_item (edge_case)
 - find_min_len (s.reduce((acc, curr) => {}, 0)) (SETUP)
 - loop str (min_len)
-- loop strs, at 2nd_item
+- sub_loop strs, at 2nd_item
 - if strs[str_ind][char_ind] == curr, con
 - else return res (no_break)
 - https://www.geeksforgeeks.org/longest-common-prefix-using-character-by-character-matching
@@ -186,7 +208,7 @@
 - SUMMA => tar full consume 1 ele, next ele
 - build HASH (from Q, hash no order, arr.reverse() has order)
 - loop ele_in_hash
-- loop tar (full_consume_1_hash)
+- sub_loop tar (full_consume_1_hash)
 - resStr = resStr + curr
 - https://leetcode.com/problems/integer-to-roman
 
