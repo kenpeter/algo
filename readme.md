@@ -114,9 +114,9 @@
 <br/>
 <br/>
 
-## min_len, a VS b VS c VS d -> res (same_time)
+## min_len_match, a VS b VS c VS d -> res (same_time_match)
 
-##### each_str_prefix; min_len, a VS b VS c VS d -> res (same_time)
+##### each_str_prefix; min_len_match, a VS b VS c VS d -> res (same_time_match)
 
 - EG
 - SUMMA
