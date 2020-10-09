@@ -14,7 +14,7 @@
 - res = res + s[i] (append char)
 - https://leetcode.com/problems/thousand-separator
 
-## i stays j moving
+## i moving/stay j moving/stay
 
 ##### count (#) and say (def); i stays, j moving
 
@@ -36,7 +36,7 @@
 - \_ab\_\_ab_bc\_\_
 - SUMMA => backward, i stays, j moving
 - edge_case ("")
-- SETUP => none
+- SETUP (none)
 - loop, backward, i stays, j moving
 - https://leetcode.com/problems/length-of-last-word
 
@@ -46,11 +46,21 @@
 - \_ab\_\_ab_bc\_\_
 - SUMMA => backward, j moving
 - edge_case (none)
-- SETUP => none
+- SETUP (none)
 - loop, backward, j moving;
 - 1234567 -> 1.234.567 (1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
 - insert => sub(0, ind) + val + sub(ind)
 - https://leetcode.com/problems/thousand-separator
+
+##### is palindrome; i, j diff end, i moving, j moving (will cross over)
+
+- EG
+- SUMMA
+- edge_case (none)
+- SETUP (none)
+- loop; i, j diff end, i moving, j moving; i>=j (will cross over)
+- skip non_alpha_num
+- https://leetcode.com/problems/valid-palindrome
 
 <br/>
 <br/>
