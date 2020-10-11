@@ -1,5 +1,24 @@
 # str
 
+## i, j cross over; 2 portions; i write, j write
+
+##### rev str by word; sky is blue -> blue is sky; rev_str (group stay), rev each word, clean space
+
+- EG
+- SUMMA => rev str; rev each word (group stay); clean_space (i write, j read)
+- edge_case
+- SETUP
+- (1) rev str
+- i, j will cross over;
+- swap;
+- (2) rev each word (group stay)
+- 2 portions: 1. find start_posi; 2. i skip space
+- 2 portions: 1. j find end_posi; 2. j skip char
+- (3) clean_space (i write, j read)
+- i write, j read
+- skip_front_space, copy, skip_end_space, 1 space;
+- https://leetcode.com/problems/reverse-words-in-a-string
+
 ## mod(equal_chunk)
 
 ##### 12|345|678 -> 12.345.678, mod(equal_chunk)
