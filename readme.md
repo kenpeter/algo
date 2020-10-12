@@ -204,17 +204,16 @@
 <br/>
 <br/>
 
-## access_hash, full_consume_1_hash
+## loop hash, loop tar(full_consume_1_hash)
 
-##### 3999(int) -> (3000)(900)(90)(9) (access_hash, full_consume_1_hash) -> (MMM)(CM)(?)(?)
+##### 3999(int) -> (3000)(900)(90)(9) (full_consume_1_hash) -> (MMM)(CM)(?)(?)
 
 - EG
 - 3999 -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
 - SUMMA => tar full consume 1 ele, next ele
 - build HASH (from Q, hash no order, arr.reverse() has order)
-- loop ele_in_hash
-- sub_loop tar (full_consume_1_hash)
-- resStr = resStr + curr
+- loop hash
+- loop tar (full_consume_1_hash)
 - https://leetcode.com/problems/integer-to-roman
 
 # DP
