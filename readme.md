@@ -18,7 +18,7 @@
 - skip_front_space, copy, skip_end_space, 1 space;
 - https://leetcode.com/problems/reverse-words-in-a-string
 
-##### rev str by word; sky is blue -> blue is sky; no_leadin_ending_space, word_separate_1_space; rev_str (group stay), rev each word, clean space;
+##### rev str by word; sky is blue -> blue is sky; no_lead_end_space, word_separate_1_space; rev_str (group stay), rev each word, clean space;
 
 - SUMMA => same as above;
 - or diff (1) clean_space (2) rev each word (3) rev whole str
@@ -104,28 +104,28 @@
 <br/>
 <br/>
 
-## ??
+## pattern(inc)\_match_sibiling(inc)
 
-##### subpattern_form_whole, max_pattern_len; pattern(s -> b); potential_match_next_chunk
+##### pattern_form_whole, cut_half, max_pattern_len; pattern(inc)\_match_sibiling(inc)
 
 - EG
 - abc|abc(max_p_len==6/2==3) -> (a)(b)cabc (len_1, x) -> (ab)(ca)bc (len_2, x) -> (abc)(abc) (len_3, y)
 - a|b|c(max_p_len==3/2==1.5==1, 2\*2 too big) -> (a)(b)(c) (len_1, x)
-- SUMMA => str_cut_half, max_pattern_len; pattern(s -> b); potential_match_next_chunk
+- SUMMA => pattern_form_whole, cut_half, max_pattern_len; pattern(inc)\_match_sibiling(inc)
 - edge_case
 - loop max_pattern_len (small -> big)
 - sub_loop s.sub(0, i) == s.sub(i, i + len - 1)
 - https://leetcode.com/problems/repeated-substring-pattern
 
-## forward_char_match(same_start / ind+range)
+## ind + range match
 
-##### search_in_parent, needle; forward_char_match(ind+range)
+##### search_needle_in_parent; i(start), j(sub_start); i, j move right; ind + range match
 
 - EG
 - SUMMA
 - edge_case => parent_empty; child_empty; both_empty
-- loop parent ( p[i+j] )
-- loop child ( p[i+j] == c[j], forward_char_match(ind+range) )
+- loop parent ( p[i] )
+- loop child ( p[i+j(sub)] == c[j(sub)]; ind + range match)
 - https://leetcode.com/problems/implement-strstr
 
 <br/>
