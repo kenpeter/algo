@@ -1,6 +1,6 @@
 # str
 
-## i, j cross over; 2 portions; i write, j write
+## i, j cross over; 2 portions; i write, j read
 
 ##### rev str by word; sky is blue -> blue is sky; rev_str (group stay), rev each word, clean space
 
@@ -18,6 +18,11 @@
 - i write, j read
 - skip_front_space, copy, skip_end_space, 1 space;
 - https://leetcode.com/problems/reverse-words-in-a-string
+
+##### rev str by word; sky is blue -> blue is sky; no_leadin_ending_space, word_separate_1_space; rev_str (group stay), rev each word, clean space;
+
+- SUMMA => same as above
+- https://www.lintcode.com/problem/reverse-words-in-a-string-ii
 
 ## mod(equal_chunk)
 
