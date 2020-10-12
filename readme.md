@@ -49,7 +49,8 @@
 - c|abba -> c(s)a(s+1)bb(e-1)a(e) -> (s+1 <-> e) -> del_left
 - abba|c -> a(s)b(s+1)ba(e-1)c(e) -> (s <-> e-1) -> del_right
 - SUMMA
-- loop char (i, j; conid; ++i, --j) (combine ind, cross over)
+- loop input_str
+- (i, j; conid; ++i, --j) (combine ind, cross over)
 - sub_loop; s+1 <-> e (del_left); i, j cross over
 - sub_loop, s <-> e-1 (del_right); i, j cross over
 - https://leetcode.com/problems/valid-palindrome-ii
@@ -57,7 +58,7 @@
 <br/>
 <br/>
 
-## i, j posi; i stay/moving, j stay/moving
+## i(start), j(end), word_len
 
 ##### count(#) and say(def); i(start), j(start); i stay, j move right; loop_same_kind
 
@@ -68,8 +69,10 @@
 - 1211 -> one 1 one 2 two 1;
 - SUMMA => count(#) + say(def)
 - edge_case (1 -> "1")
-- loop input_num; res = say(res), updating
-- sub_loop diff kind; subsub_loop same kind; i stays, j moving;
+- loop input_num
+- res = say(res) (update_res)
+- sub_loop diff kind
+- subsub_loop same kind (i stays, j moving)
 - https://leetcode.com/problems/count-and-say
 
 ##### count_last_word_len; i(end), j(end); i stay, j move right; none
@@ -77,15 +80,17 @@
 - EG
 - \_ab\_\_ab_bc\_\_
 - SUMMA => i(end), j(end); i stay, j move right
-- loop; i stays, j move right
+- loop input_str;
+- i stays, j move right
 - https://leetcode.com/problems/length-of-last-word
 
-##### 1|234|567 -> 1.234.567; i(no), j(end); i(no), j move left; sub(0, i) + val + sub(i)
+##### 1|234|567 -> 1.234.567; i(no), j(end); i(no), j move left; insert: sub(0, i) + val + sub(i)
 
 - EG
 - SUMMA => i(no), j(end); i(no), j move left
-- loop; i(no), j(end); i(no), j move left
-- 1234567 -> 1.234.567 (1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
+- loop input_str;
+- i(no), j(end); i(no), j move left
+- 1234567 -> 1.234.567 (backward; 1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
 - insert => sub(0, ind) + val + sub(ind)
 - https://leetcode.com/problems/thousand-separator
 
@@ -93,10 +98,20 @@
 
 - EG
 - SUMMA
-- loop; i(start), j(end); i move right, j move left
+- loop input_str;
+- i(start), j(end)
 - sub_loop(skip_alph#) ++i
 - sub_loop(skip_alph#) --j
 - https://leetcode.com/problems/valid-palindrome
+
+##### rev str by word; sky is blue -> blue is sky; no_lead_end_space, word_separate_1_space; word_len
+
+- EG
+- SUMMA
+- loop str (until j hit space)
+- rev_word
+- end_loop, rev_last_word, rev_entire
+- https://www.lintcode.com/problem/reverse-words-in-a-string-ii
 
 <br/>
 <br/>
@@ -132,13 +147,14 @@
 
 ## a VS b -> res, res VS c
 
-##### each_str_prefix; a VS b -> res, res VS c; ind + range match
+##### each_str_prefix; a VS b -> res, res VS c;
 
 - EG
 - SUMMA
 - SETUP => res = 1st_item
-- loop strs, at 2nd_item
-- sub_loop str, forward_char_match; at_start, no_good_out; half_way, no_good_out;
+- loop strs (at 2nd_item)
+- sub_loop str
+- char match; not_match_break
 - a VS b -> res; then res VS c
 - https://leetcode.com/problems/longest-common-prefix
 
@@ -147,8 +163,9 @@
 - EG
 - SUMMA
 - SETUP => res = 1st_item
-- loop strs, at 2nd_item
-- sub_loop str, backward_indexOf_0; substr_reducing;
+- loop strs (at 2nd_item)
+- sub_loop str
+- backward_indexOf_0; substr_reducing;
 - a VS b -> res; then res VS c
 - https://leetcode.com/problems/longest-common-prefix
 
@@ -163,7 +180,7 @@
 - SUMMA
 - find_min_len (s.reduce((acc, curr) => {}, 0)) (SETUP)
 - loop str (min_len)
-- sub_loop strs, at 2nd_item
+- sub_loop strs (at 2nd_item)
 - if strs[str_ind][char_ind] == curr, con
 - else return res (no_break)
 - https://www.geeksforgeeks.org/longest-common-prefix-using-character-by-character-matching
