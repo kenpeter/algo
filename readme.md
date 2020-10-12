@@ -8,7 +8,7 @@
 - SUMMA => rev str; rev each word (group stay); clean_space (i write, j read)
 - edge_case
 - SETUP
-- (1) rev str
+- (1) rev whole str
 - i, j will cross over;
 - swap;
 - (2) rev each word (group stay)
@@ -21,7 +21,8 @@
 
 ##### rev str by word; sky is blue -> blue is sky; no_leadin_ending_space, word_separate_1_space; rev_str (group stay), rev each word, clean space;
 
-- SUMMA => same as above
+- SUMMA => same as above;
+- or diff (1) clean_space (2) rev each word (3) rev whole str
 - https://www.lintcode.com/problem/reverse-words-in-a-string-ii
 
 ## mod(equal_chunk)
@@ -41,9 +42,9 @@
 <br/>
 <br/>
 
-## multiple i moving/stay, multiple j moving/stay
+## 4 pointers; LC, RC; LC+1, RC-1
 
-##### del_left_palindrome || del_right_palindrome; multiple i moving/stay, multiple j moving/stay
+##### LC(start), RC(end); AL(start+1), BR(end-1); 4 pointers; del_left_palindrome || del_right_palindrome;
 
 - EG
 - c|abba -> c(CL)a(AL)bb(BR)a(CR) -> del left -> AL VS CR, move closer
@@ -59,51 +60,50 @@
 <br/>
 <br/>
 
-## i moving/stay j moving/stay
+## i, j posi; i stay/moving, j stay/moving
 
-##### count (#) and say (def); i stays, j moving
+##### count(#) and say(def); i(start), j(start); i stay, j move right
 
 - EG
 - 1 -> one 1;
 - 11 -> two 1;
 - 21 -> one 2 one 1;
 - 1211 -> one 1 one 2 two 1;
-- SUMMA => def + count_num
+- SUMMA => count(#) + say(def)
 - edge_case (1 -> "1")
 - SETUP
 - loop input_num; res = say(res), updating
 - sub_loop diff kind; subsub_loop same kind; i stays, j moving;
 - https://leetcode.com/problems/count-and-say
 
-##### count_last_word_len; i stays, j moving
+##### count_last_word_len; i(end), j(end); i stay, j move right
 
 - EG
 - \_ab\_\_ab_bc\_\_
-- SUMMA => backward, i stays, j moving
+- SUMMA => i(end), j(end); i stay, j move right
 - edge_case ("")
 - SETUP
 - loop, backward, i stays, j moving
 - https://leetcode.com/problems/length-of-last-word
 
-##### 1|234|567 -> 1.234.567; j moving
+##### 1|234|567 -> 1.234.567; i(no), j(end); i(no), j move left
 
 - EG
-- \_ab\_\_ab_bc\_\_
-- SUMMA => backward, j moving
+- SUMMA => i(no), j(end); i(no), j move left
 - edge_case
 - SETUP
-- loop, backward, j moving;
+- loop, i(no), j(end); i(no), j move left
 - 1234567 -> 1.234.567 (1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
 - insert => sub(0, ind) + val + sub(ind)
 - https://leetcode.com/problems/thousand-separator
 
-##### is palindrome; i, j diff end, i moving, j moving (will cross over)
+##### is palindrome; i(start), j(end); i move right, j move left
 
 - EG
 - SUMMA
 - edge_case
 - SETUP
-- loop; i, j diff end, i moving, j moving; i>=j (will cross over)
+- loop; i(start), j(end); i move right, j move left
 - sub_loop(skip_alph#) ++i
 - sub_loop(skip_alph#) --j
 - https://leetcode.com/problems/valid-palindrome
