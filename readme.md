@@ -103,17 +103,20 @@
 <br/>
 <br/>
 
-## pattern(inc)\_match_sibiling(inc)
+## pattern(inc)\_match_neighbour(inc)
 
-##### pattern_form_whole, cut_half, max_pattern_len; pattern(inc)\_match_sibiling(inc)
+##### pattern_form_whole, cut_half, max_pattern_len; pattern(inc)\_match_neighbour(inc)
 
 - EG
 - abc|abc(max_p_len==6/2==3) -> (a)(b)cabc (len_1, x) -> (ab)(ca)bc (len_2, x) -> (abc)(abc) (len_3, y)
 - a|b|c(max_p_len==3/2==1.5==1, 2\*2 too big) -> (a)(b)(c) (len_1, x)
-- SUMMA => pattern_form_whole, cut_half, max_pattern_len; pattern(inc)\_match_sibiling(inc)
+- SUMMA => pattern_form_whole, cut_half, max_pattern_len; pattern(inc)\_match_neighbour(inc)
 - loop max_pattern_len (small -> big)
 - sub_loop s.sub(0, i) == s.sub(i, i + len - 1)
 - https://leetcode.com/problems/repeated-substring-pattern
+
+<br/>
+<br/>
 
 ## ind + range match
 
@@ -172,34 +175,29 @@
 
 ## access_hash; look_ahead
 
-##### IVIV(roman) -> (sb)(sb) (access_hash; look_ahead)-> (IV)(IV) -> 44
+##### IVIV(roman) -> IV(s, s+1) -> compare(sb 1 group || b 1 group); i(start), i(start+1), j(x, end), j(x, end-1); i move right; access_hash
 
 - EG
 - IVIV -> (sb)(sb) -> (IV)(IV)
 - VIVI -> (b)(sb)(b, end) -> (V)(IV)(I)
-- IVMI -> (sb)(b)(b, end) -> (IV)(M)(I)
-- VII -> (b)(b)(b, end) -> (V)(I)(I)
-- SUMMA => sb (small, big as 1 group), the_end_char
+- SUMMA => sb 1 group, b 1 group
 - build HASH (from Q, has all combo)
-- loop each_roman
-- curr=hash[char], next=hash[char+1] (LOOK_AHEAD)
-- if curr >= next, b as 1 group
-- else next < curr, s b as 1 group
+- loop input_str
+- curr = h[i], next = h[i+1]
+- if curr >= next, b 1 group
+- else next < curr, sb 1 group, fast_forward
 - else the_end_char
 - https://leetcode.com/problems/roman-to-integer
 
-##### IVIV(roman) -> (in_h)(in_h) (access_hash; look ahead) -> (IV)(IV) -> 44;
+##### IVIV(roman) -> IV(s, s+1) -> in_hash(sb 1 group || b 1 group); i(start), i(start+1), j(x, end), j(x, end-1); i move right; access_hash
 
 - EG
 - IVIV -> (in_h)(in_h) -> (IV)(IV)
 - VIVI -> (in_h)(in_h)(in_h) -> (V)(IV)(I)
-- IVMI -> (in_h)(in_h)(in_h) -> (IV)(M)(I)
-- VII -> (in_h)(in_h)(in_h) -> (V)(I)(I)
-- SUMMA => h[curr+next]
+- SUMMA => h[ s[i] + s[i+1] ]
 - build HASH (from Q, has all combo)
-- loop each_roman
-- hash[curr+next] (LOOK_AHEAD)
-- if hash[curr+next], acc, fast_forward
+- loop input_str
+- if h[ s[i] + s[i+1] ], fast_forward
 - else 1_char_acc
 - https://leetcode.com/problems/roman-to-integer
 
