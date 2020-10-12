@@ -173,7 +173,7 @@
 <br/>
 <br/>
 
-## access_hash; look_ahead
+## compare(sb 1 group || b 1 group) / in_hash(sb 1 group || b 1 group)
 
 ##### IVIV(roman) -> IV(s, s+1) -> compare(sb 1 group || b 1 group); i(start), i(start+1), j(x, end), j(x, end-1); i move right; access_hash
 
