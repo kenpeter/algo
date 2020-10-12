@@ -83,7 +83,7 @@
 - SUMMA => i(end), j(end); i stay, j move right
 - edge_case ("")
 - SETUP
-- loop, backward, i stays, j moving
+- loop; i stays, j move right
 - https://leetcode.com/problems/length-of-last-word
 
 ##### 1|234|567 -> 1.234.567; i(no), j(end); i(no), j move left
@@ -92,7 +92,7 @@
 - SUMMA => i(no), j(end); i(no), j move left
 - edge_case
 - SETUP
-- loop, i(no), j(end); i(no), j move left
+- loop; i(no), j(end); i(no), j move left
 - 1234567 -> 1.234.567 (1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
 - insert => sub(0, ind) + val + sub(ind)
 - https://leetcode.com/problems/thousand-separator
