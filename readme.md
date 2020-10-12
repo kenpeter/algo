@@ -7,7 +7,6 @@
 - EG
 - SUMMA => rev str; rev each word (group stay); clean_space (i write, j read)
 - edge_case
-- SETUP
 - (1) rev whole str
 - i, j will cross over;
 - swap;
@@ -32,7 +31,6 @@
 - EG
 - SUMMA => equal_chunk
 - edge_case (i = 0)
-- SETUP
 - loop char (forward)
 - if i > 0 (avoid .1); (s.len - i) % 3 == 0, s.len-i == actual_len_left, mod (equal_chunk)
 - res = res + "." (add .)
@@ -51,7 +49,6 @@
 - abba|c -> a(CL)b(AL)ba(BR)c(CR) -> del right -> CL VS BR, move closer
 - SUMMA
 - edge_case
-- SETUP => LC (left_copy, i=0); RC (right_copy, j=s.len-1); AL (after_left); BR (before_right)
 - loop char (i, j; conid; ++i, --j) (combine ind)
 - sub_loop, del left, move closer
 - sub_loop, del right, moce closer
@@ -71,7 +68,6 @@
 - 1211 -> one 1 one 2 two 1;
 - SUMMA => count(#) + say(def)
 - edge_case (1 -> "1")
-- SETUP
 - loop input_num; res = say(res), updating
 - sub_loop diff kind; subsub_loop same kind; i stays, j moving;
 - https://leetcode.com/problems/count-and-say
@@ -81,8 +77,7 @@
 - EG
 - \_ab\_\_ab_bc\_\_
 - SUMMA => i(end), j(end); i stay, j move right
-- edge_case ("")
-- SETUP
+- edge_case
 - loop; i stays, j move right
 - https://leetcode.com/problems/length-of-last-word
 
@@ -91,7 +86,6 @@
 - EG
 - SUMMA => i(no), j(end); i(no), j move left
 - edge_case
-- SETUP
 - loop; i(no), j(end); i(no), j move left
 - 1234567 -> 1.234.567 (1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
 - insert => sub(0, ind) + val + sub(ind)
@@ -102,7 +96,6 @@
 - EG
 - SUMMA
 - edge_case
-- SETUP
 - loop; i(start), j(end); i move right, j move left
 - sub_loop(skip_alph#) ++i
 - sub_loop(skip_alph#) --j
@@ -111,21 +104,17 @@
 <br/>
 <br/>
 
-## potential_match_sibiling
+## ??
 
-##### str_cut_half, pattern(s -> b), potential_match_sibiling
+##### subpattern_form_whole, max_pattern_len; pattern(s -> b); potential_match_next_chunk
 
 - EG
-- abc|abc -> (a)(b)cabc (x) -> (ab)(ca)bc (x) -> (abc)(abc) (y)
-- a|b|c -> (a)(b)(c) (len == 1, low down)
-- SUMMA => pattern(s -> b), potential_match_sibiling
-- edge_case ("")
-- SETUP => len/2 (low down)
-- loop pattern (small -> big)
-- pattern = s.sub(0, len)
-- sub_loop potential_match_sibiling
-- sub = s.sub(i, j+1)
-- (a)(b)cabc (x, loop1) -> (ab)(ca)bc (x, loop2) -> (abc)(abc) (y, loop3)
+- abc|abc(max_p_len==6/2==3) -> (a)(b)cabc (len_1, x) -> (ab)(ca)bc (len_2, x) -> (abc)(abc) (len_3, y)
+- a|b|c(max_p_len==3/2==1.5==1, 2\*2 too big) -> (a)(b)(c) (len_1, x)
+- SUMMA => str_cut_half, max_pattern_len; pattern(s -> b); potential_match_next_chunk
+- edge_case
+- loop max_pattern_len (small -> big)
+- sub_loop s.sub(0, i) == s.sub(i, i + len - 1)
 - https://leetcode.com/problems/repeated-substring-pattern
 
 ## forward_char_match(same_start / ind+range)
@@ -134,8 +123,7 @@
 
 - EG
 - SUMMA
-- parent_empty; child_empty; both_empty (edge_case)
-- SETUP
+- edge_case => parent_empty; child_empty; both_empty
 - loop parent ( p[i+j] )
 - loop child ( p[i+j] == c[j], forward_char_match(ind+range) )
 - https://leetcode.com/problems/implement-strstr
