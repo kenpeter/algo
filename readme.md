@@ -26,7 +26,7 @@
 <br/>
 <br/>
 
-## i(start); s.len - i == any_left; mod(equal_chunk)
+## s.len - i == any_left; mod(equal_chunk)
 
 ##### 12|345|678 -> 12.345.678; i(start), j(no); i move right, j(no); s.len - i == any_left; mod(equal_chunk)
 
@@ -59,7 +59,7 @@
 
 ## i, j posi; i stay/moving, j stay/moving
 
-##### count(#) and say(def); i(start), j(start); i stay, j move right
+##### count(#) and say(def); i(start), j(start); i stay, j move right; loop_same_kind
 
 - EG
 - 1 -> one 1;
@@ -72,26 +72,24 @@
 - sub_loop diff kind; subsub_loop same kind; i stays, j moving;
 - https://leetcode.com/problems/count-and-say
 
-##### count_last_word_len; i(end), j(end); i stay, j move right
+##### count_last_word_len; i(end), j(end); i stay, j move right; none
 
 - EG
 - \_ab\_\_ab_bc\_\_
 - SUMMA => i(end), j(end); i stay, j move right
-- edge_case
 - loop; i stays, j move right
 - https://leetcode.com/problems/length-of-last-word
 
-##### 1|234|567 -> 1.234.567; i(no), j(end); i(no), j move left
+##### 1|234|567 -> 1.234.567; i(no), j(end); i(no), j move left; sub(0, i) + val + sub(i)
 
 - EG
 - SUMMA => i(no), j(end); i(no), j move left
-- edge_case
 - loop; i(no), j(end); i(no), j move left
 - 1234567 -> 1.234.567 (1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
 - insert => sub(0, ind) + val + sub(ind)
 - https://leetcode.com/problems/thousand-separator
 
-##### is palindrome; i(start), j(end); i move right, j move left
+##### is palindrome; i(start), j(end); i move right, j move left; loop_skip_alph#
 
 - EG
 - SUMMA
