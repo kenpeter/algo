@@ -6,7 +6,6 @@
 
 - EG
 - SUMMA => rev str; rev each word (group stay); clean_space (i write, j read)
-- edge_case
 - (1) rev whole str
 - i, j will cross over;
 - swap;
@@ -96,7 +95,6 @@
 
 - EG
 - SUMMA
-- edge_case
 - loop; i(start), j(end); i move right, j move left
 - sub_loop(skip_alph#) ++i
 - sub_loop(skip_alph#) --j
@@ -137,8 +135,7 @@
 
 - EG
 - SUMMA
-- empty; 1_item (edge_case)
-- res = 1st_item (SETUP)
+- SETUP => res = 1st_item
 - loop strs, at 2nd_item
 - sub_loop str, forward_char_match; at_start, no_good_out; half_way, no_good_out;
 - a VS b -> res; then res VS c
@@ -148,8 +145,7 @@
 
 - EG
 - SUMMA
-- empty; 1_item (edge_case)
-- res = 1st_item (SETUP)
+- SETUP => res = 1st_item
 - loop strs, at 2nd_item
 - sub_loop str, backward_indexOf_0; substr_reducing;
 - a VS b -> res; then res VS c
@@ -164,7 +160,6 @@
 
 - EG
 - SUMMA
-- empty; 1_item (edge_case)
 - find_min_len (s.reduce((acc, curr) => {}, 0)) (SETUP)
 - loop str (min_len)
 - sub_loop strs, at 2nd_item
