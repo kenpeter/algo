@@ -24,13 +24,15 @@
 - or diff (1) clean_space (2) rev each word (3) rev whole str
 - https://www.lintcode.com/problem/reverse-words-in-a-string-ii
 
-## mod(equal_chunk)
+<br/>
+<br/>
 
-##### 12|345|678 -> 12.345.678, mod(equal_chunk)
+## i(start); s.len - i == any_left; mod(equal_chunk)
+
+##### 12|345|678 -> 12.345.678; i(start), j(no); i move right, j(no); s.len - i == any_left; mod(equal_chunk)
 
 - EG
 - SUMMA => equal_chunk
-- edge_case (i = 0)
 - loop char (forward)
 - if i > 0 (avoid .1); (s.len - i) % 3 == 0, s.len-i == actual_len_left, mod (equal_chunk)
 - res = res + "." (add .)
@@ -40,18 +42,17 @@
 <br/>
 <br/>
 
-## 4 pointers; LC, RC; LC+1, RC-1
+## 4 pointers; start, end, start+1, end-1; start <-> end-1 || start+1 <-> end; i move right, j move left
 
-##### LC(start), RC(end); AL(start+1), BR(end-1); 4 pointers; del_left_palindrome || del_right_palindrome;
+##### 4 pointers; start, end, start+1, end-1; start <-> end-1 (del_right) || start+1 <-> end (del_left); i move right, j move left
 
 - EG
-- c|abba -> c(CL)a(AL)bb(BR)a(CR) -> del left -> AL VS CR, move closer
-- abba|c -> a(CL)b(AL)ba(BR)c(CR) -> del right -> CL VS BR, move closer
+- c|abba -> c(s)a(s+1)bb(e-1)a(e) -> (s+1 <-> e) -> del_left
+- abba|c -> a(s)b(s+1)ba(e-1)c(e) -> (s <-> e-1) -> del_right
 - SUMMA
-- edge_case
-- loop char (i, j; conid; ++i, --j) (combine ind)
-- sub_loop, del left, move closer
-- sub_loop, del right, moce closer
+- loop char (i, j; conid; ++i, --j) (combine ind, cross over)
+- sub_loop; s+1 <-> e (del_left); i, j cross over
+- sub_loop, s <-> e-1 (del_right); i, j cross over
 - https://leetcode.com/problems/valid-palindrome-ii
 
 <br/>
