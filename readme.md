@@ -210,7 +210,7 @@
 
 - EG
 - 3999 -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
-- SUMMA => tar full consume 1 ele, next ele
+- SUMMA => tar full consume 1 ele
 - build HASH (from Q, hash no order, arr.reverse() has order)
 - loop hash
 - loop tar (full_consume_1_hash)
