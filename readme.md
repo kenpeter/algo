@@ -2,7 +2,7 @@
 
 ## i, j cross over; 2 portions; i write, j read
 
-##### rev str by word; sky is blue -> blue is sky; rev_str (group stay), rev each word, clean space
+##### rev word in str; rev_str (group stay), rev each word, clean space
 
 - EG
 - SUMMA => rev str; rev each word (group stay); clean_space (i write, j read)
@@ -17,7 +17,7 @@
 - skip_front_space, copy, skip_end_space, 1 space;
 - https://leetcode.com/problems/reverse-words-in-a-string
 
-##### rev str by word; sky is blue -> blue is sky; no_lead_end_space, word_separate_1_space; rev_str (group stay), rev each word, clean space;
+##### rev word in str; no_lead_end_space, word_separate_1_space; rev_str (group stay), rev each word, clean space;
 
 - SUMMA => same as above;
 - or diff (1) clean_space (2) rev each word (3) rev whole str
@@ -106,7 +106,7 @@
 - sub_loop(skip_alph#) --j
 - https://leetcode.com/problems/valid-palindrome
 
-##### rev str by word; sky is blue -> blue is sky; no_lead_end_space, word_separate_1_space; word_len
+##### rev str by word; no_lead_end_space, word_separate_1_space; word_len
 
 - EG
 - SUMMA
@@ -138,6 +138,35 @@
 - i=1(LOOK_BACK); s.sub(0, i-1, i_look_back) + "--" + s.sub(i+1, 2_char)
 - arr.push
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
+
+<br/>
+<br/>
+
+## skip_loop(condi)
+
+##### reverse a, e, i, o, u; i(start), j(end); i, j cross over; skip_loop(b_cross_over, in_vowel?)
+
+- EG
+- SUMMA
+- loop str
+- i(start), j(end); i, j cross over
+- skip_loop(i<j(b_cross_over), in_vowel?) ++i
+- skip_loop(i<j(b_cross_over), in_vowel?) --j
+- rev
+- https://leetcode.com/problems/reverse-vowels-of-a-string/
+
+##### skip_loop(i, j bound || inbound || skip_space || skip_char)
+
+- ..
+- ..
+- FUNC reverseWord:
+- skip_loop(i < j(i_start, j_end) || (i_inbound, i_skip_space)) ++i;
+- skip_loop(j < i(i_start, j_end) || (j_inbound, j_skip_char)) ++j;
+- FUNC cleanSpace:
+- skip_loop(j_inbound, j_skip_space) ++j;
+- skip_loop(j_inbound, j_skip_char) copy;
+- skip_loop(j_inblound, j_skip_space) ++j;
+- https://leetcode.com/problems/reverse-words-in-a-string/
 
 <br/>
 <br/>
