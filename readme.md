@@ -171,6 +171,19 @@
 <br/>
 <br/>
 
+## arr size change in motion
+
+##### rm vowel in str; rm_item, a.len, next_item_move_left, next_item_move_left
+
+- EG
+- SUMMA
+- loop str
+- rm_item, next_item_move_left, a.len reduce; --i, ++i (back_to_top);
+- https://www.geeksforgeeks.org/program-remove-vowels-string/
+
+<br/>
+<br/>
+
 ## pattern(inc)\_match_neighbour(inc)
 
 ##### pattern_form_whole, cut_half, max_pattern_len; pattern(inc)\_match_neighbour(inc)
