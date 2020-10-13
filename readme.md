@@ -53,9 +53,9 @@
 - copy char
 - https://evelynn.gitbooks.io/google-interview/content/read_n_characters_given_read4.html
 
-## 4 pointers; start, end, start+1, end-1; start <-> end-1 || start+1 <-> end; i move right, j move left
+## start, end, start+1(LOOK_AHEAD), end-1(LOOK_BACK); start <-> end-1 || start+1 <-> end; i move right, j move left
 
-##### 4 pointers; start, end, start+1, end-1; start <-> end-1 (del_right) || start+1 <-> end (del_left); i move right, j move left
+##### start, end, start+1(LOOK_AHEAD), end-1(LOOK_BACK); start <-> end-1 (del_right) || start+1 <-> end (del_left); i move right, j move left
 
 - EG
 - c|abba -> c(s)a(s+1)bb(e-1)a(e) -> (s+1 <-> e) -> del_left
