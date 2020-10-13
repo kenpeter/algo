@@ -173,7 +173,7 @@
 
 ## arr size change in motion
 
-##### rm vowel in str; rm_item, a.len, next_item_move_left, next_item_move_left
+##### rm vowel in str; rm_item, a.len, next_item_move_left, next_item_move_left; --i, ++i(back_to_top)
 
 - EG
 - SUMMA
