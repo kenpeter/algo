@@ -96,16 +96,6 @@
 - i stays, j move right
 - https://leetcode.com/problems/length-of-last-word
 
-##### 1|234|567 -> 1.234.567; i(no), j(end); i(no), j move left; insert: sub(0, i) + val + sub(i)
-
-- EG
-- SUMMA => i(no), j(end); i(no), j move left
-- loop input_str;
-- i(no), j(end); i(no), j move left
-- 1234567 -> 1.234.567 (backward; 1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
-- insert => sub(0, ind) + val + sub(ind)
-- https://leetcode.com/problems/thousand-separator
-
 ##### is palindrome; i(start), j(end); i move right, j move left; loop_skip_alph#
 
 - EG
@@ -124,6 +114,30 @@
 - rev_word
 - end_loop, rev_last_word, rev_entire
 - https://www.lintcode.com/problem/reverse-words-in-a-string-ii
+
+<br/>
+<br/>
+
+## insert: s.s(0, i) + val + s.s(i+1)
+
+##### 1|234|567 -> 1.234.567; i(no), j(end); i(no), j move left; insert: sub(0, i) + val + sub(i)
+
+- EG
+- SUMMA => i(no), j(end); i(no), j move left
+- loop input_str;
+- i(no), j(end); i(no), j move left
+- 1234567 -> 1.234.567 (backward; 1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
+- insert => sub(0, ind) + val + sub(ind)
+- https://leetcode.com/problems/thousand-separator
+
+##### ++++ -> [--++, +--+, ++--]; i=1(LOOK_BACK), insert
+
+- EG
+- SUMMA
+- loop input_str
+- i=1(LOOK_BACK); s.sub(0, i-1, i_look_back) + "--" + s.sub(i+1, 2_char)
+- arr.push
+- https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
 <br/>
 <br/>
@@ -210,7 +224,7 @@
 - SUMMA => sb 1 group, b 1 group
 - build HASH (from Q, has all combo)
 - loop input_str
-- curr = h[i], next = h[i+1]
+- curr = h[i], next = h[i+1] (LOOK_AHEAD)
 - if curr >= next, b 1 group
 - else next < curr, sb 1 group, fast_forward
 - else the_end_char
@@ -221,7 +235,7 @@
 - EG
 - IVIV -> (in_h)(in_h) -> (IV)(IV)
 - VIVI -> (in_h)(in_h)(in_h) -> (V)(IV)(I)
-- SUMMA => h[ s[i] + s[i+1] ]
+- SUMMA => h[ s[i] + s[i+1] ] (LOOK_AHEAD)
 - build HASH (from Q, has all combo)
 - loop input_str
 - if h[ s[i] + s[i+1] ], fast_forward
