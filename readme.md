@@ -41,6 +41,18 @@
 <br/>
 <br/>
 
+## ?
+
+##### read_4_char is api func; outside_req read_n_char; count(interal_file_eof); left == outside_req_n - total(acc);
+
+- EG
+- SUMMA
+- loop !eof(when small) && total < outside_req_n (when small)
+- count(internal_left) = read_4_char
+- count(internal_left) = mi( count(interal_left, when small), n - total(outside_req_left, when small) )
+- copy char
+- https://evelynn.gitbooks.io/google-interview/content/read_n_characters_given_read4.html
+
 ## 4 pointers; start, end, start+1, end-1; start <-> end-1 || start+1 <-> end; i move right, j move left
 
 ##### 4 pointers; start, end, start+1, end-1; start <-> end-1 (del_right) || start+1 <-> end (del_left); i move right, j move left
