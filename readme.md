@@ -13,7 +13,7 @@
 - 2 portions: 1. find start_posi; 2. i skip space
 - 2 portions: 1. j find end_posi; 2. j skip char
 - (3) clean_space (i write, j read)
-- i write, j read
+- a.join('').substring(0, i), use copy_left, right waste
 - skip_front_space, copy, skip_end_space, 1 space;
 - https://leetcode.com/problems/reverse-words-in-a-string
 
