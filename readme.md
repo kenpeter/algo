@@ -41,15 +41,15 @@
 <br/>
 <br/>
 
-## count(full || b_eof) VS (out_req_n_char - total_acc)
+## count(full || b_eof) VS out_req_left
 
-##### read_4_char api func; count(full || b_eof); left == out_req_n_char - total_acc;
+##### read_4_char api func; count(full || b_eof); out_req_left == out_req_n_char - total_acc;
 
 - EG
 - SUMMA
 - loop !eof(when small) && total < out_req_n_char (when small)
 - count(full || mod_left) = read_4_char
-- count = mi( count(full || mod_left), when_small; out_req_n_char - total_acc, when_small )
+- count = mi( count(full || mod_left), when_small; out_req_left, when_small )
 - copy char
 - https://evelynn.gitbooks.io/google-interview/content/read_n_characters_given_read4.html
 
