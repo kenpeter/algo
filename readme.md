@@ -52,6 +52,9 @@
 - copy char
 - https://evelynn.gitbooks.io/google-interview/content/read_n_characters_given_read4.html
 
+<br/>
+<br/>
+
 ## start, end, start+1(LOOK_AHEAD), end-1(LOOK_BACK); start <-> end-1 || start+1 <-> end; i move right, j move left
 
 ##### start, end, start+1(LOOK_AHEAD), end-1(LOOK_BACK); start <-> end-1 (del_right) || start+1 <-> end (del_left); i move right, j move left
@@ -69,7 +72,7 @@
 <br/>
 <br/>
 
-## i(start), j(end), word_len
+## i(start), j(end); j - i === word_len / same_kind
 
 ##### count(#) and say(def); i(start), j(start); i stay, j move right; loop_same_kind
 
@@ -99,20 +102,11 @@
 
 - EG
 - SUMMA
-- loop input_str;
+- loop chars;
 - i(start), j(end)
 - sub_loop(skip_alph#) ++i
 - sub_loop(skip_alph#) --j
 - https://leetcode.com/problems/valid-palindrome
-
-##### rev str by word; no_lead_end_space, word_separate_1_space; word_len
-
-- EG
-- SUMMA
-- loop str (until j hit space)
-- rev_word
-- end_loop, rev_last_word, rev_entire
-- https://www.lintcode.com/problem/reverse-words-in-a-string-ii
 
 <br/>
 <br/>
