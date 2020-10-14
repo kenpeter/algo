@@ -289,12 +289,12 @@
 
 ## build_hash, access_hash, consume_hash
 
-##### 3999(int) -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
+##### build_roman_hash -> 3999 - 1000, 2999 - 1000, 1999 - 1000, etc; access_hash, consume_hash -> (MMM)(CM)(?)(?)
 
 - EG
 - 3999 -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
 - SUMMA
-- build_hash (from Q; hash no order, arr.reverse())
+- build_hash (single_double_roman_hash; hash no order, arr.reverse())
 - loop roman_hash
 - loop tar (consume_hash)
 - https://leetcode.com/problems/integer-to-roman
@@ -307,6 +307,15 @@
 - loop child_str
 - if(parent_pool_hash[child] !== undef, access_hash && --parent_pool_hash[child] >= 0, consume_hash)
 - https://leetcode.com/problems/ransom-note
+
+##### build_str_hash, meet first hash (access_hash, consume_hash) === 1;
+
+- EG
+- SUMMA
+- build_hash (str)
+- loop str
+- meet first hash === 1
+- https://leetcode.com/problems/first-unique-character-in-a-string
 
 # DP
 
