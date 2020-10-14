@@ -355,7 +355,9 @@
 
 - EG
 - SUMMA
-- rm chars after symbol; s.sub(0, s.indexOf('+')) === stuff before +
+- loop mail_arr
+- mail, split('@'), split('+'), replace dot;
+- set.add (unique), set.size
 - https://leetcode.com/problems/unique-email-addresses
 
 <br/>
