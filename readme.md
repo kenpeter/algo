@@ -349,6 +349,15 @@
 - indexOf === lastIndexOf, only_1_no_repeat
 - https://leetcode.com/problems/first-unique-character-in-a-string
 
+## rm chars after symbol
+
+##### mails_in_arr; rm dot, rm chars after '+'
+
+- EG
+- SUMMA
+- rm chars after symbol; s.sub(0, s.indexOf('+')) === stuff before +
+- https://leetcode.com/problems/unique-email-addresses
+
 <br/>
 <br/>
 <br/>
