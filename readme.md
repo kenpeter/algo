@@ -55,23 +55,6 @@
 <br/>
 <br/>
 
-## start, end, start+1(LOOK_AHEAD), end-1(LOOK_BACK); start <-> end-1 || start+1 <-> end; i move right, j move left
-
-##### start, end, start+1(LOOK_AHEAD), end-1(LOOK_BACK); start <-> end-1 (del_right) || start+1 <-> end (del_left); i move right, j move left
-
-- EG
-- c|abba -> c(s)a(s+1)bb(e-1)a(e) -> (s+1 <-> e) -> del_left
-- abba|c -> a(s)b(s+1)ba(e-1)c(e) -> (s <-> e-1) -> del_right
-- SUMMA
-- loop input_str
-- (i, j; conid; ++i, --j) (combine ind, cross over)
-- sub_loop; s+1 <-> e (del_left); i, j cross over
-- sub_loop, s <-> e-1 (del_right); i, j cross over
-- https://leetcode.com/problems/valid-palindrome-ii
-
-<br/>
-<br/>
-
 ## i(start), j(end); j - i === word_len / same_kind
 
 ##### count(#) and say(def); i(start), j(start); i stay, j move right; j - i === same_kind
@@ -94,7 +77,7 @@
 - EG
 - \_ab\_\_ab_bc\_\_
 - SUMMA => i(end), j(end); i stay, j move right
-- loop input_str;
+- loop chars;
 - i stays, j move right
 - https://leetcode.com/problems/length-of-last-word
 
@@ -117,18 +100,18 @@
 
 - EG
 - SUMMA => i(no), j(end); i(no), j move left
-- loop input_str;
+- loop chars;
 - i(no), j(end); i(no), j move left
 - 1234567 -> 1.234.567 (backward; 1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
 - insert => sub(0, ind) + val + sub(ind)
 - https://leetcode.com/problems/thousand-separator
 
-##### ++++ -> [--++, +--+, ++--]; i=1(LOOK_BACK), insert
+##### ++++ -> [--++, +--+, ++--]; i=1(LOOK_BACK); insert: sub(0, i) + val + sub(i)
 
 - EG
 - SUMMA
-- loop input_str
-- i=1(LOOK_BACK); s.sub(0, i-1, i_look_back) + "--" + s.sub(i+1, 2_char)
+- loop chars
+- i=1(LOOK_BACK); s.sub(0, i-1, i_LOOK_BACK) + "--" + s.sub(i+1, 2_char)
 - arr.push
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
@@ -277,6 +260,43 @@
 - if h[ s[i] + s[i+1] ], fast_forward
 - else 1_char_acc
 - https://leetcode.com/problems/roman-to-integer
+
+<br/>
+<br/>
+
+## start, end, start+1(LOOK_AHEAD), end-1(LOOK_BACK); start <-> end-1 || start+1 <-> end; i move right, j move left
+
+##### start, end, start+1(LOOK_AHEAD), end-1(LOOK_BACK); start <-> end-1 (del_right) || start+1 <-> end (del_left); i move right, j move left
+
+- EG
+- c|abba -> c(s)a(s+1)bb(e-1)a(e) -> (s+1 <-> e) -> del_left
+- abba|c -> a(s)b(s+1)ba(e-1)c(e) -> (s <-> e-1) -> del_right
+- SUMMA
+- loop chars
+- (i, j; conid; ++i, --j) (combine ind, cross over)
+- sub_loop; s+1 <-> e (del_left); i, j cross over
+- sub_loop, s <-> e-1 (del_right); i, j cross over
+- https://leetcode.com/problems/valid-palindrome-ii
+
+## LOOK_BACK
+
+##### ++++ -> [--++, +--+, ++--]; i-1, i(LOOK_BACK); insert: sub(0, i) + val + sub(i)
+
+- EG
+- SUMMA
+- loop chars
+- i-1, i(LOOK_BACK); s.sub(0, i-1) + "--" + s.sub(i+1, 2_char)
+- arr.push
+- https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
+
+##### find_word_segment; letter space == word_segment; i-1, i(LOOK_BACK);
+
+- EG
+- ab\_\_\_cd\_\_efg\_\_; b\_, d\_, g\_ means 3 word_segment
+- SUMMA => letter space == word_segment
+- loop chars
+- i-1, i(LOOK_BACK); if(s[i-1] == ' ', s[i] == letter), word_segment++
+- https://leetcode.com/problems/number-of-segments-in-a-string
 
 <br/>
 <br/>
