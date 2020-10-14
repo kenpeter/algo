@@ -287,28 +287,23 @@
 <br/>
 <br/>
 
-## loop hash, loop tar(full_consume_1_hash)
+## build_hash, access_hash, consume_hash
 
-##### 3999(int) -> (3000)(900)(90)(9) (full_consume_1_hash) -> (MMM)(CM)(?)(?)
+##### 3999(int) -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
 
 - EG
 - 3999 -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
-- SUMMA => tar full consume 1 ele
-- build HASH (from Q, hash no order, arr.reverse() has order)
+- SUMMA
+- build_hash (from Q; hash no order, arr.reverse())
 - loop roman_hash
-- loop tar (full_consume_1_hash)
+- loop tar (consume_hash, full consume 1 hash)
 - https://leetcode.com/problems/integer-to-roman
-
-<br/>
-<br/>
-
-## build_hash, access_hash, consume_hash
 
 ##### parent_pool >> child_str, build_hash; parent_pool_hash[child_str], access_hash; --parent_pool_hash[child_str], consume_hash
 
 - EG
 - SUMMA
-- parent_pool >> child_str, build_hash
+- build_hash (parent_pool >> child_str)
 - loop child_str
 - if(parent_pool_hash[child] !== undef, access_hash && --parent_pool_hash[child] >= 0, consume_hash)
 - https://leetcode.com/problems/ransom-note
