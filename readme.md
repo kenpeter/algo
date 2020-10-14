@@ -265,7 +265,7 @@
 - VIVI -> (b)(sb)(b, end) -> (V)(IV)(I)
 - SUMMA => sb 1 group, b 1 group
 - build HASH (from Q, has all combo)
-- loop input_str
+- loop chars
 - curr = h[i], next = h[i+1] (LOOK_AHEAD)
 - if curr >= next, b 1 group
 - else next < curr, sb 1 group, fast_forward
@@ -279,7 +279,7 @@
 - VIVI -> (in_h)(in_h)(in_h) -> (V)(IV)(I)
 - SUMMA => h[ s[i] + s[i+1] ] (LOOK_AHEAD)
 - build HASH (from Q, has all combo)
-- loop input_str
+- loop chars
 - if h[ s[i] + s[i+1] ], fast_forward
 - else 1_char_acc
 - https://leetcode.com/problems/roman-to-integer
@@ -308,14 +308,37 @@
 - if(parent_pool_hash[child] !== undef, access_hash && --parent_pool_hash[child] >= 0, consume_hash)
 - https://leetcode.com/problems/ransom-note
 
-##### build_str_hash, meet first hash (access_hash, consume_hash) === 1;
+<br/>
+<br/>
+
+## build_hash, loop_item_in_order
+
+##### 1st unique char in str; build_hash; loop_item_in_order
 
 - EG
 - SUMMA
-- build_hash (str)
-- loop str
-- meet first hash === 1
+- build_hash (char frequency)
+- loop char (loop_char_in_order)
+- meet frequency 1
 - https://leetcode.com/problems/first-unique-character-in-a-string
+
+<br/>
+<br/>
+
+## indexOf === lastIndexOf, only_1_no_repeat
+
+##### 1st unique char in str; indexOf === lastIndexOf, only_1_no_repeat
+
+- EG
+- SUMMA
+- loop chars
+- indexOf === lastIndexOf, only_1_no_repeat
+- https://leetcode.com/problems/first-unique-character-in-a-string
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 # DP
 
