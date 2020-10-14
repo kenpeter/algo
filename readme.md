@@ -296,7 +296,7 @@
 - SUMMA
 - build_hash (from Q; hash no order, arr.reverse())
 - loop roman_hash
-- loop tar (consume_hash, full consume 1 hash)
+- loop tar (consume_hash)
 - https://leetcode.com/problems/integer-to-roman
 
 ##### parent_pool >> child_str, build_hash; parent_pool_hash[child_str], access_hash; --parent_pool_hash[child_str], consume_hash
