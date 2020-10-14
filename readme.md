@@ -2,16 +2,15 @@
 
 ## i, j cross over; 2 portions; i write, j read
 
-##### rev word in str; rev_str (group stay), rev each word, clean space
+##### rev word in str; rev_whole_str (group stay), rev_each_word (final), clean space(i write, j read)
 
 - EG
-- SUMMA => rev str; rev each word (group stay); clean_space (i write, j read)
-- (1) rev whole str
+- SUMMA => rev_whole_str (group_stay); rev_each_word (final); clean_space (i write, j read)
+- (1) rev_whole_str (group_stay)
 - i, j will cross over;
-- swap;
-- (2) rev each word (group stay)
-- 2 portions: 1. find start_posi; 2. i skip space
-- 2 portions: 1. j find end_posi; 2. j skip char
+- (2) rev_each_word (final)
+- 2 portions: i find start_posi + i skip space
+- 2 portions: j find end_posi + j skip char
 - (3) clean_space (i write, j read)
 - a.join('').substring(0, i), use copy_left, right waste
 - skip_front_space, copy, skip_end_space, 1 space;
@@ -20,7 +19,7 @@
 ##### rev word in str; no_lead_end_space, word_separate_1_space; rev_str (group stay), rev each word, clean space;
 
 - SUMMA => same as above;
-- or diff (1) clean_space (2) rev each word (3) rev whole str
+- or diff (1) clean_space (2) rev_each_word (group_stay) (3) rev_whole_str (final)
 - https://www.lintcode.com/problem/reverse-words-in-a-string-ii
 
 <br/>
@@ -157,8 +156,8 @@
 
 ##### skip_loop(i, j bound || inbound || skip_space || skip_char)
 
-- ..
-- ..
+- EG
+- SUMMA
 - FUNC reverseWord:
 - skip_loop(i < j(i_start, j_end) || (i_inbound, i_skip_space)) ++i;
 - skip_loop(j < i(i_start, j_end) || (j_inbound, j_skip_char)) ++j;
@@ -166,6 +165,7 @@
 - skip_loop(j_inbound, j_skip_space) ++j;
 - skip_loop(j_inbound, j_skip_char) copy;
 - skip_loop(j_inblound, j_skip_space) ++j;
+- last_add_space
 - https://leetcode.com/problems/reverse-words-in-a-string/
 
 <br/>
