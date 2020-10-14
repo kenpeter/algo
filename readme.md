@@ -74,7 +74,7 @@
 
 ## i(start), j(end); j - i === word_len / same_kind
 
-##### count(#) and say(def); i(start), j(start); i stay, j move right; loop_same_kind
+##### count(#) and say(def); i(start), j(start); i stay, j move right; j - i === same_kind
 
 - EG
 - 1 -> one 1;
@@ -89,7 +89,7 @@
 - subsub_loop same kind (i stays, j moving)
 - https://leetcode.com/problems/count-and-say
 
-##### count_last_word_len; i(end), j(end); i stay, j move right; none
+##### count_last_word_len; i(end), j(end); i stay, j move right; j - i === word_len
 
 - EG
 - \_ab\_\_ab_bc\_\_
