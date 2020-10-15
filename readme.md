@@ -370,6 +370,7 @@
 
 - EG
 - SUMMA
+- edge_case (1_word)
 - word_arr = str.match(/\b(\w+)\b/g); match, word_bound
 - space_segment = space_len / (word_len - 1), round down
 - remain = space_len % (word_len - 1)
