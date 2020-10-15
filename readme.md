@@ -166,11 +166,12 @@
 ##### pattern_form_whole, cut_half, max_pattern_len; pattern(inc)\_match_neighbour(inc)
 
 - EG
-- abc|abc(max_p_len==6/2==3) -> (a)(b)cabc (len_1, x) -> (ab)(ca)bc (len_2, x) -> (abc)(abc) (len_3, y)
-- a|b|c(max_p_len==3/2==1.5==1, 2\*2 too big) -> (a)(b)(c) (len_1, x)
-- SUMMA => pattern_form_whole, cut_half, max_pattern_len; pattern(inc)\_match_neighbour(inc)
-- loop max_pattern_len (small -> big)
-- sub_loop s.sub(0, i) == s.sub(i, i + len - 1)
+- abc|abc(max_pattern_len == 6/2 == 3); (a)(b)cabc (len_1, x) -> (ab)(ca)bc (len_2, x) -> (abc)(abc) (len_3, y)
+- a|b|c(max_p_len == 3/2 == 1.5 == 1, 2\*2 too big); (a)(b)(c) (len_1, x)
+- SUMMA
+- loop max_pattern_len (s -> b), pattern stay subloop
+- sub_loop; j <s.len; i(start), j(end), VS_same_pattern; next_neighbour i = i+len, j = j+len
+- if i === s.len, all_neighbour_match
 - https://leetcode.com/problems/repeated-substring-pattern
 
 <br/>
