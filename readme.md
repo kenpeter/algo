@@ -366,6 +366,22 @@
 <br/>
 <br/>
 
+# greatest common divisor
+
+##### s1 = AAAA, s2 = AAA; gcd = A
+
+- EG
+- AAAA(3) - AAA(1) = A(2);
+- AAA(3) - A(1) = AA(2);
+- AA(3) - A(1) = AA(2);
+- AA(3) - A(1) = A(2);
+- A - A = 0 (done)
+- SUMMA
+- long - short, keep going
+- recur
+- (1) long > short; (2) false_case(not_prefix); (3) good_case(short.empty); (4) con(rm_prefix)
+- https://leetcode.com/problems/greatest-common-divisor-of-strings
+
 # DP
 
 https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-questions-thread
