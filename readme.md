@@ -366,14 +366,16 @@
 
 ##
 
-#####
+##### \_\_a\_\_b_c\_\_\_,
 
 - EG
 - SUMMA
 - edge_case (1_word)
-- word_arr = str.match(/\b(\w+)\b/g); match, word_bound
-- space_segment = space_len / (word_len - 1), round down
-- remain = space_len % (word_len - 1)
+- how_many_word
+- how_many_space
+- space_segment = how_many_space / (how_many_word - 1); 4 words, 3 spaces
+- remain = how_many_space % (how_many_word - 1)
+- join
 - https://leetcode.com/problems/rearrange-spaces-between-words/
 
 <br/>
@@ -383,7 +385,7 @@
 
 ## greatest common divisor (gcd)
 
-##### s1 = AAAA, s2 = AAA; AAAA - AAA(gcd) = A; (AAA)A, rm_prefix
+##### AAAA - AAA(rm_prefix) = A, (gcd); AAA - A(rm_prefix) = A, (gcd)
 
 - EG
 - AAAA(3) - AAA(1) = A(2);
@@ -396,6 +398,18 @@
 - recur
 - (1) long > short; (2) false_case(not_prefix); (3) good_case(short.empty); (4) con(rm_prefix)
 - https://leetcode.com/problems/greatest-common-divisor-of-strings
+
+## const_var && variable_var in loop
+
+##### USA, Cap, cap; const_var && variable_var in loop
+
+- EG
+- SUMMA
+- loop chars (i=1)
+- in_loop, const_var && variable_var;
+- if 1st up/low, not matter; 2nd !same rest, re false
+- if 1st_low && rest_up, re false
+- https://leetcode.com/problems/detect-capital
 
 # DP
 
