@@ -363,12 +363,26 @@
 
 <br/>
 <br/>
+
+##
+
+#####
+
+- EG
+- SUMMA
+- word_arr = str.match(/\b(\w+)\b/g); match, word_bound
+- space_segment = space_len / (word_len - 1), round down
+- remain = space_len % (word_len - 1)
+- https://leetcode.com/problems/rearrange-spaces-between-words/
+
+<br/>
+<br/>
 <br/>
 <br/>
 
-## greatest common divisor
+## greatest common divisor (gcd)
 
-##### s1 = AAAA, s2 = AAA; AAAA - AAA = A => (AAA)A, rm_prefix
+##### s1 = AAAA, s2 = AAA; AAAA - AAA(gcd) = A; (AAA)A, rm_prefix
 
 - EG
 - AAAA(3) - AAA(1) = A(2);
