@@ -366,9 +366,9 @@
 <br/>
 <br/>
 
-# greatest common divisor
+## greatest common divisor
 
-##### s1 = AAAA, s2 = AAA; gcd = A
+##### s1 = AAAA, s2 = AAA; AAAA - AAA = A => (AAA)A, rm_prefix
 
 - EG
 - AAAA(3) - AAA(1) = A(2);
