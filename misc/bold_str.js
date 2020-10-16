@@ -36,17 +36,35 @@ const bold_str = (s, d) => {
     }
   }
 
-  //test
-  console.log("++++ res", res);
   return res;
 };
 
-const s = "aabc";
-const d = ["ab", "bc"];
-const expect = "a<b>abc</b>";
+// const s = "aabc";
+// const d = ["ab", "bc"];
+// const expect = "a<b>abc</b>";
+// const out = bold_str(s, d);
+// if (out === expect) {
+//   console.log("good");
+// } else {
+//   console.log("bad");
+// }
+
+// const s = "abcxyz123";
+// const d = ["abc", "123"];
+// const expect = "<b>abc</b>xyz<b>123</b>";
+// const out = bold_str(s, d);
+// if (out === expect) {
+//   console.log("good");
+// } else {
+//   console.log("bad");
+// }
+
+const s = "aaabbcc";
+const d = ["aaa", "aab", "bc"];
+const expect = "<b>aaabbc</b>c";
 const out = bold_str(s, d);
 if (out === expect) {
   console.log("good");
 } else {
-  console.log("good");
+  console.log("bad");
 }
