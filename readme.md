@@ -403,7 +403,7 @@
 - loop ele (words)
 - loop tar (str)
 - dynamic loop_len
-- slide word (j, j+w.len) in str (s.len - w.len, dynamic_loop), find its match
+- slide word (j, j+len) in str (s.len - w.len, dynamic_loop)
 - loop mind_map
 - start_loop, <b>
 - mid_loop: greedy
