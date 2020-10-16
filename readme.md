@@ -177,15 +177,15 @@
 <br/>
 <br/>
 
-## ind + range match
+## ind + len match
 
-##### search_needle_in_parent; i(start), j(sub_start); i, j move right; ind + range match
+##### search_needle_in_parent; i(start), j(sub_start); i, j move right; ind + len match
 
 - EG
 - SUMMA
 - edge_case => parent_empty; child_empty; both_empty
 - loop parent ( p[i] )
-- loop child ( p[i+j(sub)] == c[j(sub)]; ind + range match)
+- loop child ( p[i+j(sub)] == c[j(sub)]; ind + len match)
 - https://leetcode.com/problems/implement-strstr
 
 <br/>
@@ -395,7 +395,7 @@
 
 ## slide_word_in_str
 
-##### "aabc", [ab, bc]; a<b>abc</b>; slide_word_in_str
+##### "aabc", [ab, bc]; a<b>abc</b>; slide_word_in_str(i, i+len)
 
 - EG
 - SUMMA
@@ -403,11 +403,11 @@
 - loop ele (words)
 - loop tar (str)
 - dynamic loop_len
-- slide word sub(j, j+w.len) in str (s.len - w.len), find its match
+- slide word (j, j+w.len) in str (s.len - w.len, dynamic_loop), find its match
 - loop mind_map
-- start_loop, tag
+- start_loop, <b>
 - mid_loop: greedy
-- end_loop, tag
+- end_loop, </b>
 - https://massivealgorithms.blogspot.com/2017/06/leetcode-616-add-bold-tag-in-string.html
 
 <br/>
