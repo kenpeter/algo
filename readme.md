@@ -378,6 +378,38 @@
 - join
 - https://leetcode.com/problems/rearrange-spaces-between-words/
 
+## const_var && variable_var in loop
+
+##### USA, Cap, cap; const_var && variable_var in loop
+
+- EG
+- SUMMA
+- loop chars (i=1)
+- in_loop, const_var && variable_var;
+- if 1st up/low, not matter; 2nd !same rest, re false
+- if 1st_low && rest_up, re false
+- https://leetcode.com/problems/detect-capital
+
+<br/>
+<br/>
+
+## slide_word_in_str
+
+##### "aabc", [ab, bc]; a<b>abc</b>; slide_word_in_str
+
+- EG
+- SUMMA
+- build_mind_map, easier_do_stuff
+- loop ele (words)
+- loop tar (str)
+- dynamic loop_len
+- slide word sub(j, j+w.len) in str (s.len - w.len), find its match
+- loop mind_map
+- start_loop, tag
+- mid_loop: greedy
+- end_loop, tag
+- https://massivealgorithms.blogspot.com/2017/06/leetcode-616-add-bold-tag-in-string.html
+
 <br/>
 <br/>
 <br/>
@@ -399,17 +431,10 @@
 - (1) long > short; (2) false_case(not_prefix); (3) good_case(short.empty); (4) con(rm_prefix)
 - https://leetcode.com/problems/greatest-common-divisor-of-strings
 
-## const_var && variable_var in loop
-
-##### USA, Cap, cap; const_var && variable_var in loop
-
-- EG
-- SUMMA
-- loop chars (i=1)
-- in_loop, const_var && variable_var;
-- if 1st up/low, not matter; 2nd !same rest, re false
-- if 1st_low && rest_up, re false
-- https://leetcode.com/problems/detect-capital
+<br/>
+<br/>
+<br/>
+<br/>
 
 # DP
 

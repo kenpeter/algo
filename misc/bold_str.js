@@ -9,10 +9,9 @@ const bold_str = (s, d) => {
   for (let i = 0; i < d.length; i++) {
     const w = d[i];
     // * loop tar
-    // * loop_len = s.len - w.len
-    // * sub(j, j+w.len) <= s.len - w.len
+    // * dynamic loop_len
     for (j = 0; j <= s.length - w.length; j++) {
-      // slide needle word in str, find its match
+      // slide word sub(j, j+w.len) in str (s.len - w.len), find its match
       if (s.substring(j, j + w.length) === w) {
         // loop mind_map
         for (let k = j; k < j + w.length; k++) {
@@ -27,7 +26,7 @@ const bold_str = (s, d) => {
     if (b[i]) {
       // start_loop, tag
       res = res + "<b>";
-      // loop: greedy
+      // mid_loop: greedy
       while (i < s.length && b[i]) {
         res = res + s[i++];
       }
