@@ -1,17 +1,20 @@
 // https://massivealgorithms.blogspot.com/2017/06/leetcode-616-add-bold-tag-in-string.html
 
-// build_mem (mind_map), do_stuff
+// build_mind_map, easier_do_stuff
 const bold_str = (s, d) => {
   let res = "";
+  // build_mind_map
   const b = new Array(s.length).fill(false);
-  // loop each word
+  // loop ele
   for (let i = 0; i < d.length; i++) {
     const w = d[i];
-    // * "aabc" (s.l == 4), [ab] (w.l == 2), i(0)<=(4-2=2); 3 times, aa == ab(x), ab == ab(*), bc == ab(x)
-    // * loop_len changed by parent_len
+    // * loop tar
+    // * loop_len = s.len - w.len
+    // * sub(j, j+w.len) <= s.len - w.len
     for (j = 0; j <= s.length - w.length; j++) {
+      // slide needle word in str, find its match
       if (s.substring(j, j + w.length) === w) {
-        // mark bold arr
+        // loop mind_map
         for (let k = j; k < j + w.length; k++) {
           b[k] = true;
         }
@@ -19,17 +22,16 @@ const bold_str = (s, d) => {
     }
   } // end loop
 
-  // loop bold arr
+  // loop mind_map
   for (let i = 0; i < b.length; ) {
     if (b[i]) {
-      // start_loop
+      // start_loop, tag
       res = res + "<b>";
-      // loop: loop 1 bold or loop >= 1 bold
+      // loop: greedy
       while (i < s.length && b[i]) {
-        // append and ++
         res = res + s[i++];
       }
-      // end_llop
+      // end_loop, tag
       res = res + "</b>";
     } else {
       res = res + s[i++];
