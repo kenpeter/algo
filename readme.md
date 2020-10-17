@@ -440,6 +440,17 @@
 - e.g. abcde..... z VS abc, largest, uncommon
 - https://leetcode.com/problems/longest-uncommon-subsequence-i
 
+## get_all_substring
+
+##### get_all_substring
+
+- EG
+- SUMMA
+- e.g. "abc"
+- loop (i start; small)
+- subloop (j end; big; i j cross over)
+- sub(i, j)
+
 <br/>
 <br/>
 <br/>
