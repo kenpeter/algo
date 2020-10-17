@@ -302,33 +302,28 @@
 <br/>
 <br/>
 
-## build_hash, access_hash, consume_hash
+## build_hash, use_hash
 
-##### build_roman_hash -> 3999 - 1000, 2999 - 1000, 1999 - 1000, etc; access_hash, consume_hash -> (MMM)(CM)(?)(?)
+##### build_hash; 3999 - 1000(use_hash), 2999 - 1000(use_hash), 1999 - 1000, .. -> (MMM)(CM)(?)(?)
 
 - EG
 - 3999 -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
 - SUMMA
-- build_hash (single_double_roman_hash; hash no order, arr.reverse())
-- loop roman_hash
-- loop tar (consume_hash)
+- build_hash (single_double_roman; hash no order)
+- loop hash
+- loop tar (use_hash)
 - https://leetcode.com/problems/integer-to-roman
 
-##### parent_pool >> child_str, build_hash; parent_pool_hash[child_str], access_hash; --parent_pool_hash[child_str], consume_hash
+##### build_hash(parent); --parent_pool_hash[child_str] (use_hash)
 
 - EG
 - SUMMA
-- build_hash (parent_pool >> child_str)
+- build_hash (parent)
 - loop child_str
-- if(parent_pool_hash[child] !== undef, access_hash && --parent_pool_hash[child] >= 0, consume_hash)
+- if(parent_pool_hash[child] !== undef && --parent_pool_hash[child] >= 0, use_hash)
 - https://leetcode.com/problems/ransom-note
 
-<br/>
-<br/>
-
-## build_hash, loop_item_in_order
-
-##### 1st unique char in str; build_hash; loop_item_in_order
+##### build_hash; use_hash(loop_up_in_order); 1st unique char in str;
 
 - EG
 - SUMMA
