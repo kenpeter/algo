@@ -406,16 +406,13 @@
 <br/>
 <br/>
 
-<br/>
-<br/>
-
 ## slide_word_in_str
 
 ##### "aabc", [ab, bc]; a<b>abc</b>; slide_word_in_str(i, i+len)
 
 - EG
 - SUMMA
-- build_mind_map, easier_do_stuff
+- build_mind_map, do_stuff
 - loop ele (words)
 - loop tar (str)
 - dynamic loop_len
@@ -425,6 +422,16 @@
 - mid_loop: greedy
 - end_loop, </b>
 - https://massivealgorithms.blogspot.com/2017/06/leetcode-616-add-bold-tag-in-string.html
+
+## largest is uncommon
+
+###### largest uncommon, abcde..... z VS abc, largest
+
+- EG
+- SUMMA
+- e.g. abc === abc, re -1, no uncommon
+- e.g. abcde..... z VS abc, largest, uncommon
+- https://leetcode.com/problems/longest-uncommon-subsequence-i
 
 <br/>
 <br/>
