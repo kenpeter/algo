@@ -350,9 +350,9 @@
 - indexOf === lastIndexOf, only_1_no_repeat
 - https://leetcode.com/problems/first-unique-character-in-a-string
 
-## rm chars after symbol
+## use_split, use_set
 
-##### mails_in_arr; rm dot, rm chars after '+'
+##### mails_in_arr (use_split, use_set); rm dot, rm chars after '+'
 
 - EG
 - SUMMA
@@ -364,9 +364,9 @@
 <br/>
 <br/>
 
-##
+## use divide, use_remain
 
-##### \_\_a\_\_b_c\_\_\_,
+##### \_\_a\_\_b_c\_\_\_; distibute space (use_divide, use_remain), extra at end
 
 - EG
 - SUMMA
@@ -377,6 +377,9 @@
 - remain = how_many_space % (how_many_word - 1)
 - join
 - https://leetcode.com/problems/rearrange-spaces-between-words/
+
+<br/>
+<br/>
 
 ## const_var && variable_var in loop
 
@@ -389,6 +392,19 @@
 - if 1st up/low, not matter; 2nd !same rest, re false
 - if 1st_low && rest_up, re false
 - https://leetcode.com/problems/detect-capital
+
+##### pattern_form_whole, cut_half, max_pattern_len; const_pattern VS variable_neighbour
+
+- EG
+- ..
+- SUMMA
+- loop max_pattern_len (s -> b), const_pattern (in_subloop)
+- sub_loop; const_pattern VS sub(i, j) - variable_neighbour
+- ..
+- https://leetcode.com/problems/repeated-substring-pattern
+
+<br/>
+<br/>
 
 <br/>
 <br/>
