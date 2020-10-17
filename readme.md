@@ -323,7 +323,7 @@
 - if(parent_pool_hash[child] !== undef && --parent_pool_hash[child] >= 0, use_hash)
 - https://leetcode.com/problems/ransom-note
 
-##### build_hash; use_hash(loop_up_in_order); 1st unique char in str;
+##### 1st unique char in str; build_hash; use_hash(loop_up_in_order);
 
 - EG
 - SUMMA
@@ -331,6 +331,18 @@
 - loop char (loop_char_in_order)
 - meet frequency 1
 - https://leetcode.com/problems/first-unique-character-in-a-string
+
+##### "aabc", [ab, bc]; a<b>abc</b>; build_mem, slide_word(i, i+len);
+
+- ..
+- ..
+- build_mem
+- ..
+- ..
+- slide word (j, j+len), (s.len - w.len, dynamic_loop)
+- ..
+- ..
+- https://massivealgorithms.blogspot.com/2017/06/leetcode-616-add-bold-tag-in-string.html
 
 <br/>
 <br/>
@@ -403,15 +415,15 @@
 
 ## slide_word_in_str
 
-##### "aabc", [ab, bc]; a<b>abc</b>; slide_word_in_str(i, i+len)
+##### "aabc", [ab, bc]; a<b>abc</b>; build_mem, slide_word(i, i+len)
 
 - EG
 - SUMMA
-- build_mind_map, do_stuff
+- build_mem
 - loop ele (words)
 - loop tar (str)
 - dynamic loop_len
-- slide word (j, j+len) in str (s.len - w.len, dynamic_loop)
+- slide word (j, j+len), (s.len - w.len, dynamic_loop)
 - loop mind_map
 - start_loop, <b>
 - mid_loop: greedy
