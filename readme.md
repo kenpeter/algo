@@ -177,25 +177,48 @@
 <br/>
 <br/>
 
-## ind + range (substr)
+## substr
 
-##### search_needle_in_parent; i_start, j_sub_start; i, j move right; ind + range (substr)
+##### search_needle_in_parent; i_start, j_sub_start; i, j move right; substr
 
 - EG
 - SUMMA
 - edge_case => parent_empty; child_empty; both_empty
 - loop parent ( p[i] )
-- loop child ( p[i+j(sub)] == c[j(sub)]; ind + range (substr) )
+- loop child ( p[i+j(sub)] == c[j(sub)]; substr )
 - https://leetcode.com/problems/implement-strstr
 
-##### i=0, j=(range OR s.limit), rev; i=2\*k, j=(range OR s.limit), rev
+##### i=0, j=(substr OR s.limit), rev; i=2\*k, j=(substr OR s.limit), rev
 
 - EG
 - k = 2, ab(k)ab(k)|ab(k)a; i=0, j=k OR, rev; i=2\*k, j=i+k OR, rev
 - SUMMA
 - loop chars (i < s.len, i move)
-- i=0, j=(range OR s.limit), rev; i = 2\*k, j=(range or s.limit), rev
+- i=0, j=(substr OR s.limit), rev; i = 2\*k, j=(substr or s.limit), rev
 - https://leetcode.com/problems/reverse-string-ii
+
+##### LLL, substr
+
+- EG
+- e.g. 'PPALLP', 1_A(\*), 2_con_L(\*), still good; 'PPALLL', 1_A(\*), 3_con_L(x), bad
+- SUMMA
+- loop chars
+- LLL, substr (skip_loop)
+- https://leetcode.com/problems/student-attendance-record-i
+
+<br/>
+<br/>
+
+## if consecutive, either acc or reset = 0
+
+##### if consecutive, either acc or reset = 0
+
+- EG
+- e.g. 'PPALLP', 1_A(\*), 2_con_L(\*), still good; 'PPALLL', 1_A(\*), 3_con_L(x), bad
+- SUMMA
+- loop chars
+- if consecutive, either acc or reset = 0
+- https://leetcode.com/problems/student-attendance-record-i
 
 <br/>
 <br/>
