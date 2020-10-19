@@ -333,6 +333,20 @@
 <br/>
 <br/>
 
+## find_word_segment; feature represent entire;
+
+##### find_word_segment; feature represent entire (letter space == word_segment);
+
+- EG
+- ..
+- SUMMA => feature represent entire (letter space == word_segment)
+- ..
+- ..
+- https://leetcode.com/problems/number-of-segments-in-a-string
+
+<br/>
+<br/>
+
 ## build_hash, use_hash
 
 ##### build_hash; 3999 - 1000(use_hash), 2999 - 1000(use_hash), 1999 - 1000, .. -> (MMM)(CM)(?)(?)
