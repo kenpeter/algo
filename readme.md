@@ -549,7 +549,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # misc dp
 
-## ?
+## each digit as group; double digit as group
 
 ##### 1D; 1,2,3 -> ABC (each digit as group), 12,3 -> KC (double digit as group); num_combo
 
@@ -567,6 +567,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 <br/>
 <br/>
+
+## digit 180 degree rotate
+
+##### 14 -> 1(1)4(x) -> 0 (1 bad, 0); 20 -> 2(1)0(0) -> 1 (some rotate, 1); 22 -> 2(1)2(1) -> 1 (every rotate, 1)
+
+- EG
+- 0 1 2 3 4 5 6 7 8 9 (input_num)
+- 0 1 5 x x 2 9 x 8 6 (digit rotate 180 degree)
+- 0 0 1 0 0 1 1 0 0 1 (can rotate give 1)
+-
+- 14 -> 1(1)4(x) -> 0 (1 bad, 0)
+- 20 -> 2(1)0(0) -> 1 (some rotate, 1)
+- 22 -> 2(1)2(1) -> 1 (every rotate, 1)
+- SUMMA
+- 3, 4, 7 need to out early
+- 2, 5, 6, 9 sure give 1; combo with 0, 1, 8 give 1
+- loop input_num
+- dp[i] = dp[i-1] + mycount_above(input_num)
+- https://leetcode.com/problems/rotated-digits
+
 <br/>
 <br/>
 <br/>
