@@ -205,6 +205,15 @@
 - LLL, substr (skip_loop)
 - https://leetcode.com/problems/student-attendance-record-i
 
+##### aaabcc, a has 3 (substr), so max
+
+- EG
+- e.g. aaabcc, a has 3, so max
+- SUMMA
+- loop chars
+- aaa, substr (skip_loop)
+- https://leetcode.com/problems/consecutive-characters/
+
 <br/>
 <br/>
 
