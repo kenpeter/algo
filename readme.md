@@ -196,10 +196,10 @@
 - i=0, j=(substr OR s.limit), rev; i = 2\*k, j=(substr or s.limit), rev
 - https://leetcode.com/problems/reverse-string-ii
 
-##### LLL, substr
+##### LLL, substr, false_student_record
 
 - EG
-- e.g. 'PPALLP', 1_A(\*), 2_con_L(\*), still good; 'PPALLL', 1_A(\*), 3_con_L(x), bad
+- e.g. 'PPALLP', 1_A(\*), 2_con_L(\*), good; 'PPALLL', 1_A(\*), 3_con_L(x), bad
 - SUMMA
 - loop chars
 - LLL, substr (skip_loop)
@@ -217,16 +217,28 @@
 <br/>
 <br/>
 
-## if consecutive, either acc or reset = 0
+## each cycle; either finish_curr OR finish_prev, restart
 
-##### if consecutive, either acc or reset = 0
+##### each cycle; if consecutive, either finish_curr OR finish_prev, restart
 
 - EG
-- e.g. 'PPALLP', 1_A(\*), 2_con_L(\*), still good; 'PPALLL', 1_A(\*), 3_con_L(x), bad
+- e.g. 'PPALLP', 1_A(\*), 2_con_L(\*), good; 'PPALLL', 1_A(\*), 3_con_L(x), bad
 - SUMMA
 - loop chars
-- if consecutive, either acc or reset = 0
+- if consecutive, either finish_curr(acc) OR finish_prev, restart(counter = 0)
 - https://leetcode.com/problems/student-attendance-record-i
+
+##### aaabcc, 3 consecutive; i-1, i(LOOK_BACK); either finish_curr or (finish_prev, restart)
+
+- EG
+- aaabcc, a 3, so max
+- SUMMA
+- ma = 1, c(counter) = 1 (SETUP)
+- loop chars
+- i-1, i(LOOK_BACK); if equal char, c++, finish_curr;
+- else finish_prev( ma(ma, c) ); restart(c = 1)
+- aaab(cc), last_c use
+- https://leetcode.com/problems/consecutive-characters
 
 <br/>
 <br/>
@@ -338,18 +350,6 @@
 - loop chars
 - i-1, i(LOOK_BACK); if(s[i-1] == ' ', s[i] == letter), word_segment++
 - https://leetcode.com/problems/number-of-segments-in-a-string
-
-##### aaabcc, a has 3 (substr), so max; i-1, i(LOOK_BACK); either finish_curr or (finish_prev, restart)
-
-- EG
-- aaabcc, a 3, so max
-- SUMMA
-- ma = 1, c(counter) = 1 (SETUP)
-- loop chars
-- i-1, i(LOOK_BACK); if equal char, c++, finish_curr;
-- else finish_prev, ma(ma, c); restart, c = 1
-- aaab(cc), last_c use
-- https://leetcode.com/problems/consecutive-characters
 
 <br/>
 <br/>
