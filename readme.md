@@ -2,18 +2,17 @@
 
 ## i, j cross over; 2 portions; i write, j read
 
-##### rev word in str; rev_whole_str (group stay), rev_each_word (final), clean space(i write, j read)
+##### rev word in str; rev_whole_str (group stay), rev_each_word(i_start, j_end), clean space(i write, j read)
 
 - EG
-- SUMMA => rev_whole_str (group_stay); rev_each_word (final); clean_space (i write, j read)
+- SUMMA => rev_whole (group_stay); rev_each_word; clean_space (i write, j read)
 - (1) rev_whole_str (group_stay)
-- i, j will cross over;
-- (2) rev_each_word (final)
-- 2 portions: i find start_posi + i skip space
-- 2 portions: j find end_posi + j skip char
+- i, j cross over;
+- (2) rev_each_word(i_start, j_end)
+- i_start, j_end, i=new_cycle
 - (3) clean_space (i write, j read)
-- a.join('').substring(0, i), use copy_left, right waste
-- skip_front_space, copy, skip_end_space, 1 space;
+- letf_good, right_waste
+- front_space, copy, end_space, 1 space;
 - https://leetcode.com/problems/reverse-words-in-a-string
 
 ##### rev word in str; no_lead_end_space, word_separate_1_space; rev_str (group stay), rev each word, clean space;
