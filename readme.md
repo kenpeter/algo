@@ -339,6 +339,18 @@
 - i-1, i(LOOK_BACK); if(s[i-1] == ' ', s[i] == letter), word_segment++
 - https://leetcode.com/problems/number-of-segments-in-a-string
 
+##### aaabcc, a has 3 (substr), so max; i-1, i(LOOK_BACK); either finish_curr or (finish_prev, restart)
+
+- EG
+- aaabcc, a 3, so max
+- SUMMA
+- ma = 1, c(counter) = 1 (SETUP)
+- loop chars
+- i-1, i(LOOK_BACK); if equal char, c++, finish_curr;
+- else finish_prev, ma(ma, c); restart, c = 1
+- aaab(cc), last_c use
+- https://leetcode.com/problems/consecutive-characters
+
 <br/>
 <br/>
 
