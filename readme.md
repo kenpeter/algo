@@ -479,6 +479,28 @@
 <br/>
 <br/>
 
+## ++var, --var
+
+##### ++parent(++var), --child(--var)
+
+- EG
+- SUMMA
+- parent_pool_hash
+- loop child_str
+- if(parent_pool_hash[child] !== undef && --parent_pool_hash[child] >= 0, use_hash)
+- https://leetcode.com/problems/ransom-note
+
+##### ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
+
+- EG
+- SUMMA
+- loop chars (e.g. LLRRUD, robot move)
+- ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
+- https://leetcode.com/problems/robot-return-to-origin
+
+<br/>
+<br/>
+
 ## slide_word_in_str
 
 ##### "aabc", [ab, bc]; a<b>abc</b>; build_mem, slide_word(i, i+len)
@@ -496,6 +518,9 @@
 - end_loop, </b>
 - https://massivealgorithms.blogspot.com/2017/06/leetcode-616-add-bold-tag-in-string.html
 
+<br/>
+<br/>
+
 ## largest is uncommon
 
 ###### largest uncommon, abcde..... z VS abc, largest
@@ -505,6 +530,9 @@
 - e.g. abc === abc, re -1, no uncommon
 - e.g. abcde..... z VS abc, largest, uncommon
 - https://leetcode.com/problems/longest-uncommon-subsequence-i
+
+<br/>
+<br/>
 
 ## get_all_substring
 
