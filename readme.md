@@ -423,9 +423,12 @@
 - indexOf === lastIndexOf, only_1_no_repeat
 - https://leetcode.com/problems/first-unique-character-in-a-string
 
-## use_split, use_set
+<br/>
+<br/>
 
-##### mails_in_arr (use_split, use_set); rm dot, rm chars after '+'
+## split(/+s/), set
+
+##### mails_in_arr (split, set); rm dot, rm chars after '+'
 
 - EG
 - SUMMA
@@ -433,6 +436,16 @@
 - mail, split('@'), split('+'), replace dot;
 - set.add (unique), set.size
 - https://leetcode.com/problems/unique-email-addresses
+
+##### , -> \_ (maintain segment); trim_head_tail, split(/+s/)
+
+- EG
+- \_abc_d,e,f_g\_ -> \_abc_d_e_f_g\_(maintain segment) -> abc_d_e_f_g(trim_head_tail, split(/+s/)) -> [abc, d, e, f, g]
+- SUMMA
+- , -> \_ (maintain segment)
+- trim_head_tail, split(/+s/)
+- build_hash
+- https://leetcode.com/problems/most-common-word/
 
 <br/>
 <br/>
