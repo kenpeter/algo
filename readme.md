@@ -24,9 +24,9 @@
 <br/>
 <br/>
 
-## skip_not_char; rev char
+## rev non_x; i, j cross over; skip_loop(when_x)
 
-##### rev non_vowel; i_start, j_end; i, j cross over; skip_loop(when_vowel)
+##### rev non_vowel (rev position, rev word); i_start, j_end; i, j cross over; skip_loop(when_vowel)
 
 - EG
 - SUMMA
@@ -37,7 +37,7 @@
 - rev
 - https://leetcode.com/problems/reverse-vowels-of-a-string/
 
-##### rev non_symbol; i_start, j_end; i, j cross over; skip_loop(when_symbol)
+##### rev non_symbol (rev position, rev word); i_start, j_end; i, j cross over; skip_loop(when_symbol)
 
 - EG
 - SUMMA
@@ -173,43 +173,33 @@
 <br/>
 <br/>
 
-## substr
+## i_start, j_start -> i_start, j_end(formular)
 
-##### search_needle_in_parent; i_start, j_sub_start; i, j move right; substr
+##### search_needle_in_parent; i_start, j_start -> i_start, j_end(w_len)
 
 - EG
 - SUMMA
 - edge_case => parent_empty; child_empty; both_empty
 - loop parent ( p[i] )
-- loop child ( p[i+j(sub)] == c[j(sub)]; substr )
+- loop child ( p[i+j(w_len)] == c[j(w_len)] )
 - https://leetcode.com/problems/implement-strstr
 
-##### i=0, j=(substr OR s.limit), rev; i=2\*k, j=(substr OR s.limit), rev
+##### keep position, rev word; i_start, j_start -> i_start, j_end(w_len)
 
 - EG
-- k = 2, ab(k)ab(k)|ab(k)a; i=0, j=k OR, rev; i=2\*k, j=i+k OR, rev
+- SUMMA
+- loop chars
+- i_start, j_start -> i_start, j_end(w_len), rev
+- https://leetcode.com/problems/reverse-words-in-a-string-iii/
+
+##### i op_k, i skip_k; i_start, j_start -> i_start, j_end(i+k || s.len)
+
+- EG
+- k = 2, ab(op_k)ab(skip_k)|ab(op_k)a; i_start=0, j_end(i+k || s.len); i_start=2\*k, j_end(i+k || s.len)
 - SUMMA
 - loop chars (i < s.len, i move)
-- i=0, j=(substr OR s.limit), rev; i = 2\*k, j=(substr or s.limit), rev
+- i_start=0, j_end(i+k || s.len); i_start=2\*k, j_end(i+k || s.len)
 - https://leetcode.com/problems/reverse-string-ii
-
-##### LLL, substr, false_student_record
-
-- EG
-- e.g. 'PPALLP', 1_A(\*), 2_con_L(\*), good; 'PPALLL', 1_A(\*), 3_con_L(x), bad
-- SUMMA
-- loop chars
-- LLL, substr (skip_loop)
-- https://leetcode.com/problems/student-attendance-record-i
-
-##### aaabcc, a has 3 (substr), so max
-
-- EG
-- e.g. aaabcc, a has 3, so max
-- SUMMA
-- loop chars
-- aaa, substr (skip_loop)
-- https://leetcode.com/problems/consecutive-characters/
 
 <br/>
 <br/>
