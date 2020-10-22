@@ -463,14 +463,15 @@
 
 ## const_var && variable_var in loop
 
-##### USA, Cap, cap; const_var && variable_var in loop
+##### CHINA || China || china; const_var && variable_var in loop
 
 - EG
 - SUMMA
-- loop chars (i=1)
-- in_loop, const_var && variable_var;
-- if 1st up/low, not matter; 2nd !same rest, re false
-- if 1st_low && rest_up, re false
+- re CHINA || China || china
+- re up_ups(w) || up_lows(w) || low_lows(w);
+- up_ups == up?(w[0]) && up?(w[i])
+- up_lows == up?(w[0]) && low?(w[i])
+- low_lows == low?(w[0]) && low?(w[i])
 - https://leetcode.com/problems/detect-capital
 
 ##### pattern_form_whole, cut_half, max_pattern_len; const_pattern VS variable_neighbour
