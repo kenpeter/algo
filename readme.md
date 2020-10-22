@@ -583,6 +583,17 @@
 - arr.pop_end()
 - https://leetcode.com/problems/reformat-the-string
 
+## to_num VS to_char
+
+##### Hello -> hello
+
+- EG
+- SUMMA
+- loop chars
+- if cap; 'a'.charCodeAt(0) + (s[i] - 'A'.charCodeAt(0)), to_num; fromCharCode, to_char
+- distance(c - a) === distance(C - A)
+- https://leetcode.com/problems/to-lower-case
+
 <br/>
 <br/>
 <br/>
