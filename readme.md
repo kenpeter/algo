@@ -24,9 +24,9 @@
 <br/>
 <br/>
 
-## ?
+## skip_not_char; rev char
 
-##### reverse non_vowel; i_start, j_end; i, j cross over; skip_loop(when_vowel)
+##### rev non_vowel; i_start, j_end; i, j cross over; skip_loop(when_vowel)
 
 - EG
 - SUMMA
@@ -37,7 +37,7 @@
 - rev
 - https://leetcode.com/problems/reverse-vowels-of-a-string/
 
-##### reverse non_letter; i_start, j_end; i, j cross over; skip_loop(when_letter)
+##### rev non_symbol; i_start, j_end; i, j cross over; skip_loop(when_symbol)
 
 - EG
 - SUMMA
