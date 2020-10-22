@@ -447,7 +447,7 @@
 - build_hash
 - https://leetcode.com/problems/most-common-word/
 
-#####
+##### morse code hash, use_set
 
 - EG
 - SUMMA
@@ -567,6 +567,36 @@
 
 <br/>
 <br/>
+
+## small_var (maintain meaning), big_var (maintain meaning)
+
+##### AAAA - AAA(rm_prefix) = A, (gcd); AAA - A(rm_prefix) = A, (gcd)
+
+- EG
+- AAAA - AAA = A;
+- AAA - A = AA;
+- AA - A = AA;
+- AA - A = A;
+- A - A = 0 (done)
+- SUMMA
+- long - short, keep going
+- recur
+- (1) long_var (maintain meaning) > short_var (maintain meaning); (2) false_case(not_prefix); (3) good_case(short.empty); (4) con(rm_prefix)
+- https://leetcode.com/problems/greatest-common-divisor-of-strings
+
+##### (bs)(bs)(b) or (bs)(bs)
+
+- EG
+- SUMMA
+- get_letter_arr(split, filter, isNaN), get_num_arr(split, filter, isNaN)
+- big_var (maintain meaning) > small_var (maintain meaning)
+- (bs)(bs)(b), bs + bs + extra
+- (bs)(bs), bs + bs + no_extra
+- arr.pop_end()
+- https://leetcode.com/problems/reformat-the-string
+
+<br/>
+<br/>
 <br/>
 <br/>
 
@@ -575,10 +605,10 @@
 ##### AAAA - AAA(rm_prefix) = A, (gcd); AAA - A(rm_prefix) = A, (gcd)
 
 - EG
-- AAAA(3) - AAA(1) = A(2);
-- AAA(3) - A(1) = AA(2);
-- AA(3) - A(1) = AA(2);
-- AA(3) - A(1) = A(2);
+- AAAA - AAA = A;
+- AAA - A = AA;
+- AA - A = AA;
+- AA - A = A;
 - A - A = 0 (done)
 - SUMMA
 - long - short, keep going
