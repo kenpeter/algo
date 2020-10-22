@@ -1,25 +1,52 @@
 # str
 
-## i, j cross over; 2 portions; i write, j read
+## rev_entire, rev_word, clean_space(i write, j read)
 
-##### rev word in str; rev_whole_str (group stay), rev_each_word(i_start, j_end), clean space(i write, j read)
+##### rev position, but no rev word; rev_entire(group_stay), rev_word(i_start, j_end), clean_space(i write, j read)
 
 - EG
-- SUMMA => rev_whole (group_stay); rev_each_word; clean_space (i write, j read)
-- (1) rev_whole_str (group_stay)
+- SUMMA => rev_entire (group_stay); rev_word; clean_space (i write, j read)
+- (1) rev_entire (group_stay)
 - i, j cross over;
-- (2) rev_each_word(i_start, j_end)
+- (2) rev_word(i_start, j_end)
 - i_start, j_end, i=new_cycle
 - (3) clean_space (i write, j read)
 - letf_good, right_waste
 - front_space, copy, end_space, 1 space;
 - https://leetcode.com/problems/reverse-words-in-a-string
 
-##### rev word in str; no_lead_end_space, word_separate_1_space; rev_str (group stay), rev each word, clean space;
+##### rev position, but no rev word; rev_entire(group_stay), rev_word(i_start, j_end), clean_space(i write, j read)
 
-- SUMMA => same as above;
-- or diff (1) clean_space (2) rev_each_word (group_stay) (3) rev_whole_str (final)
-- https://www.lintcode.com/problem/reverse-words-in-a-string-ii
+- same as above
+- except no extra space
+- https://leetcode.com/problems/reverse-words-in-a-string-ii/
+
+<br/>
+<br/>
+
+## ?
+
+##### reverse non_vowel; i_start, j_end; i, j cross over; skip_loop(when_vowel)
+
+- EG
+- SUMMA
+- loop chars
+- i_start, j_end; i, j cross over
+- skip_loop(i<j, when_vowel) ++i; no i<=s.len-1
+- skip_loop(i<j, when_vowel) --j; no j>=0
+- rev
+- https://leetcode.com/problems/reverse-vowels-of-a-string/
+
+##### reverse non_letter; i_start, j_end; i, j cross over; skip_loop(when_letter)
+
+- EG
+- SUMMA
+- loop chars
+- i_start, j_end; i, j cross over
+- skip_loop(i<j, when_letter) ++i; no i<=s.len-1
+- skip_loop(i<j, when_letter) --j; no j>=0
+- rev
+- https://leetcode.com/problems/reverse-only-letters
 
 <br/>
 <br/>
@@ -113,36 +140,6 @@
 - i=1(LOOK_BACK); s.sub(0, i-1, i_LOOK_BACK) + "--" + s.sub(i+1, 2_char)
 - arr.push
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
-
-<br/>
-<br/>
-
-## skip_loop(condi)
-
-##### reverse a, e, i, o, u; i(start), j(end); i, j cross over; skip_loop(b_cross_over, in_vowel?)
-
-- EG
-- SUMMA
-- loop str
-- i(start), j(end); i, j cross over
-- skip_loop(i<j(b_cross_over), in_vowel?) ++i
-- skip_loop(i<j(b_cross_over), in_vowel?) --j
-- rev
-- https://leetcode.com/problems/reverse-vowels-of-a-string/
-
-##### skip_loop(i, j bound || inbound || skip_space || skip_char)
-
-- EG
-- SUMMA
-- FUNC reverseWord:
-- skip_loop(i < j(i_start, j_end) || (i_inbound, i_skip_space)) ++i;
-- skip_loop(j < i(i_start, j_end) || (j_inbound, j_skip_char)) ++j;
-- FUNC cleanSpace:
-- skip_loop(j_inbound, j_skip_space) ++j;
-- skip_loop(j_inbound, j_skip_char) copy;
-- skip_loop(j_inblound, j_skip_space) ++j;
-- last_add_space
-- https://leetcode.com/problems/reverse-words-in-a-string/
 
 <br/>
 <br/>
