@@ -218,13 +218,27 @@
 ##### aaabcc, 3 consecutive; i-1, i(LOOK_BACK); either finish_curr or (finish_prev, restart)
 
 - EG
-- aaabcc, a 3, so max
+- aaabcc, consecutive 3a, so max
 - SUMMA
-- ma = 1, c(counter) = 1 (SETUP)
+- 0th item, count 1; ma = 1 (SETUP)
 - loop chars
-- i-1, i(LOOK_BACK); if equal char, c++, finish_curr;
+- i-1, i(LOOK_BACK); if s[i-1]==s[i], c++(consecutive_count), finish_curr;
 - else finish_prev( ma(ma, c) ); restart(c = 1)
-- aaab(cc), last_c use
+- e.g. aaab(cc), Math.max(ma, c), consecutive_miss
+- https://leetcode.com/problems/consecutive-characters
+
+##### 000111, 3 consecutive; i-1, i(LOOK_BACK); either finish_curr or (finish_prev, restart)
+
+- EG
+- 001 -> 01(same_kind, same_count) -> [2(0), 1(1)] -> min(2, 1) = 1
+- 110 -> 10 -> [2(0), 0(1)] -> min(2, 1) = 1
+- 0011 -> 01 or 0011 -> [2(0), 2(1)] -> min(2, 2) = 2
+- SUMMA
+- 0th item, count 1 (SETUP)
+- loop chars
+- i-1, i(LOOK_BACK); if s[i-1]==s[i], c++(consecutive_count), finish_curr;
+- else finish_prev( a.push(c) ); restart(c = 1)
+- a.push(c), consecutive_miss
 - https://leetcode.com/problems/consecutive-characters
 
 <br/>
