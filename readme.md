@@ -204,6 +204,47 @@
 <br/>
 <br/>
 
+## 2 pt; i pt some_part, j pt some_part (LOOK_BACK / do_action)
+
+##### abc, abc (match); abc, aabbcc (ext_match); abc, aabbccd (false)
+
+- EG
+- abc
+- abc (match)
+-
+- abc
+- aabbcc (ext_match)
+-
+- abc
+- aabbcd (false)
+- SUMMA
+- i pt short (abc); j pt long (aaabbbccc)
+- if match, both move; if ext_match(LOOK_BACK), j move; if !match, !ext_match, re false
+- https://leetcode.com/problems/long-pressed-name
+
+##### search_needle_in_parent; i pt long_str, j pt short_str (do_action);
+
+- EG
+- SUMMA
+- loop parent ( p[i] )
+- loop child ( p[i+j(w_len)] == c[j(w_len)] )
+- https://leetcode.com/problems/implement-strstr
+
+##### swap_2_char only; i pt some_part, j pt some_part (do_action);
+
+- EG
+- abc -> ab; diff len, no swap
+- abab -> a(swap)ba(swap)b; abab == abab, duplicated char, can swap
+- abbc -> abc(swap)b(swap);
+- SUMMA
+- (1) diff len, no swap
+- (2) A == B, duplicated char, can swap
+- (3) A != B, vertical compare; found_remember
+- https://leetcode.com/problems/buddy-strings
+
+<br/>
+<br/>
+
 ## each cycle; either finish_curr OR finish_prev, restart
 
 ##### each cycle; if consecutive, either finish_curr OR finish_prev, restart
