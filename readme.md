@@ -611,6 +611,20 @@
 <br/>
 <br/>
 
+##
+
+##### ["mass","as","hero","superhero"], inside_ele substring ["as","hero"]; loop ele, subloop eles
+
+- EG
+- SUMMA
+- loop ele
+- subloop eles
+- if not_same, not_in_res, substring, res.push
+- https://leetcode.com/problems/string-matching-in-an-array
+
+<br/>
+<br/>
+
 ## small_var (maintain meaning), big_var (maintain meaning)
 
 ##### AAAA - AAA(rm_prefix) = A, (gcd); AAA - A(rm_prefix) = A, (gcd)
