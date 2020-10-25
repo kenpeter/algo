@@ -132,12 +132,12 @@
 - insert => sub(0, ind) + val + sub(ind)
 - https://leetcode.com/problems/thousand-separator
 
-##### ++++ -> [--++, +--+, ++--]; i=1(LOOK_BACK); insert: sub(0, i) + val + sub(i)
+##### ++++ -> [--++, +--+, ++--]; i=1(LOOK_BACK); insert: sub(0, i) + val + sub(i), BUILD_STR_PHILOSOPY
 
 - EG
 - SUMMA
 - loop chars
-- i=1(LOOK_BACK); s.sub(0, i-1, i_LOOK_BACK) + "--" + s.sub(i+1, 2_char)
+- i=1(LOOK_BACK); s.sub(0, i-1, i_LOOK_BACK) + "--" + s.sub(i+1, 2_char), BUILD_STR_PHILOSOPY
 - arr.push
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
@@ -375,12 +375,12 @@
 
 ## LOOK_BACK
 
-##### ++++ -> [--++, +--+, ++--]; i-1, i(LOOK_BACK); insert: sub(0, i) + val + sub(i)
+##### ++++ -> [--++, +--+, ++--]; i-1, i(LOOK_BACK); insert: sub(0, i) + val + sub(i), BUILD_STR_PHILOSOPY
 
 - EG
 - SUMMA
 - loop chars
-- i-1, i(LOOK_BACK); s.sub(0, i-1) + "--" + s.sub(i+1, 2_char)
+- i-1, i(LOOK_BACK); s.sub(0, i-1) + "--" + s.sub(i+1, 2_char), BUILD_STR_PHILOSOPY
 - arr.push
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
