@@ -625,17 +625,22 @@
 <br/>
 <br/>
 
-## content same, start VS; content !same, content VS
+## 2 same, 1 same, 0 same
 
-##### w_log(lexico_order), d_log(orig_order); content same, start VS; content !same, content VS;
+##### w_log(lexico_order), d_log(orig_order); 2 same, 1 same, 0 same
 
 - EG
+- (a, a), c VS (a, a); [2 same]
+- (a), b, c VS (a), c, b; [1 same]
+- c, a, c VS a, b, c; [0 same]
+-
 - w_log (lexico_order, localeCompare), d_log (orig_order) -> ["w1 b", "w2 a", "d1 5", "d2 1"] -> ["w1 a", "w2 b", "d1 5", "d2 1"]
 - SUMMA
 - w_log (lexico_order, localeCompare), d_log(orig_order)
 - combine indexOf + substring, get 1st_content
-- content same, start VS; ["ab1 abc", "ac1 abc"] -> ["ab1 abc", "ac1 abc"]
-- content !same, content VS; ["ab1 abd", "ac1 abc"] -> ["ab1 abc", "ac1 abd"]
+- (a, a), c VS (a, a); [2 same]
+- (a), b, c VS (a), c, b; [1 same]
+- c, a, c VS a, b, c; [0 same]
 - https://leetcode.com/problems/reorder-data-in-log-files
 
 <br/>
