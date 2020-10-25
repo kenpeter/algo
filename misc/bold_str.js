@@ -13,7 +13,7 @@ const bold_str = (s, d) => {
     for (j = 0; j <= s.length - w.length; j++) {
       // slide word sub(j, j+w.len) in str (s.len - w.len), find its match
       if (s.substring(j, j + w.length) === w) {
-        // loop mind_map
+        // fill substring
         for (let k = j; k < j + w.length; k++) {
           b[k] = true;
         }

@@ -440,21 +440,6 @@
 - meet frequency 1
 - https://leetcode.com/problems/first-unique-character-in-a-string
 
-##### "aabc", [ab, bc]; a<b>abc</b>; build_mem, slide_word(i, i+len);
-
-- ..
-- ..
-- build_mem
-- ..
-- ..
-- slide word (j, j+len), (s.len - w.len, dynamic_loop)
-- ..
-- ..
-- https://massivealgorithms.blogspot.com/2017/06/leetcode-616-add-bold-tag-in-string.html
-
-<br/>
-<br/>
-
 ## indexOf === lastIndexOf, only_1_no_repeat
 
 ##### 1st unique char in str; indexOf === lastIndexOf, only_1_no_repeat
@@ -564,18 +549,16 @@
 <br/>
 <br/>
 
-## slide_word_in_str
+## slide_word (loop_word, slide_word, substring_equal)
 
-##### "aabc", [ab, bc]; a<b>abc</b>; build_mem, slide_word(i, i+len)
+##### "aabc", [ab, bc]; a<b>abc</b>; slide_word (loop_word, slide_word, substring_equal)
 
 - EG
 - SUMMA
-- build_mem
-- loop ele (words)
-- loop tar (str)
-- dynamic loop_len
-- slide word (j, j+len), (s.len - w.len, dynamic_loop)
-- loop mind_map
+- loop words
+- slide_word (j, j+len), (s.len - w.len, dynamic_loop)
+- substring_equal
+- fill_substring
 - start_loop, <b>
 - mid_loop: greedy
 - end_loop, </b>
@@ -625,9 +608,9 @@
 <br/>
 <br/>
 
-## 2 same, 1 same, 0 same
+## sort, 2 same, 1 same, 0 same
 
-##### w_log(lexico_order), d_log(orig_order); 2 same, 1 same, 0 same
+##### w_log(lexico_order), d_log(orig_order); sort 2 same, 1 same, 0 same
 
 - EG
 - (a, a), c VS (a, a); [2 same]
