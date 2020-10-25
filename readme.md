@@ -556,13 +556,23 @@
 - EG
 - SUMMA
 - loop words
-- slide_word (j, j+len), (s.len - w.len, dynamic_loop)
+- slide_word (j, j+len), (s.len - w.len, dynamic_len)
 - substring_equal
 - fill_substring
 - start_loop, <b>
 - mid_loop: greedy
 - end_loop, </b>
 - https://massivealgorithms.blogspot.com/2017/06/leetcode-616-add-bold-tag-in-string.html
+
+##### ababa, [aba, ab] -> [(0, 2), (2, 4)...]; slide_word (loop_word, slide_word, substring_equal)
+
+- EG
+- SUMMA
+- loop words
+- slide_word (j, j+len), (s.len - w.len, dynamic_len)
+- substring_equal
+- res.sort
+- https://medium.com/algorithm-and-datastructure/index-pairs-of-a-string-7b7c8306ead0
 
 <br/>
 <br/>
@@ -610,7 +620,7 @@
 
 ## sort, 2 same, 1 same, 0 same
 
-##### w_log(lexico_order), d_log(orig_order); sort 2 same, 1 same, 0 same
+##### w_log(lexico_order), d_log(orig_order); sort, 2 same, 1 same, 0 same
 
 - EG
 - (a, a), c VS (a, a); [2 same]
@@ -625,6 +635,16 @@
 - (a), b, c VS (a), c, b; [1 same]
 - c, a, c VS a, b, c; [0 same]
 - https://leetcode.com/problems/reorder-data-in-log-files
+
+##### ababa, [aba, ab] -> [(0, 2), (2, 4)...]; slide_word (loop_word, slide_word, substring_equal)
+
+- EG
+- SUMMA
+- ..
+- ..
+- ..
+- res.sort, [(0, 3), (0, 1), (1, 2), (1, 1)] -> [(0, 1), (0, 3), (1, 1), (1, 2)]
+- https://medium.com/algorithm-and-datastructure/index-pairs-of-a-string-7b7c8306ead0
 
 <br/>
 <br/>
