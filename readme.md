@@ -144,15 +144,16 @@
 <br/>
 <br/>
 
-## arr size change in motion
+## rm_1_item, other_shift_left; len reduce; --i, ++i (back_to_top)
 
-##### rm vowel in str; rm_item, a.len, next_item_move_left, next_item_move_left; --i, ++i(back_to_top)
+##### rm vowel in str; splice, other_shift_left; len reduce; --i, ++i (back_to_top)
 
 - EG
 - SUMMA
-- loop str
-- rm_item, next_item_move_left, a.len reduce; --i, ++i (back_to_top);
-- https://www.geeksforgeeks.org/program-remove-vowels-string/
+- loop chars
+- arr.splice(i, len), remove_in_place
+- splice, other_shift_left; len reduce; --i, ++i (back_to_top)
+- https://www.geeksforgeeks.org/program-remove-vowels-string
 
 <br/>
 <br/>
