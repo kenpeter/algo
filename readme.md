@@ -205,7 +205,7 @@
 <br/>
 <br/>
 
-## 2 pt; i pt some_part, j pt some_part (LOOK_BACK / do_action)
+## 2 pt; i pt some_part, j pt some_part (LOOK_BACK / do_action); move sync / async
 
 ##### abc, abc (match); abc, aabbcc (ext_match); abc, aabbccd (false)
 
@@ -223,7 +223,7 @@
 - if match, both move; if ext_match(LOOK_BACK), j move; if !match, !ext_match, re false
 - https://leetcode.com/problems/long-pressed-name
 
-##### search_needle_in_parent; i pt long_str, j pt short_str (do_action);
+##### search_needle_in_parent; i pt long_str, j pt short_str (do_action); move sync / async
 
 - EG
 - SUMMA
@@ -231,7 +231,7 @@
 - loop child ( p[i+j(w_len)] == c[j(w_len)] )
 - https://leetcode.com/problems/implement-strstr
 
-##### swap_2_char only; i pt some_part, j pt some_part (do_action);
+##### swap_2_char only; i pt some_part, j pt some_part (do_action); move sync / async
 
 - EG
 - abc -> ab; diff len, no swap
