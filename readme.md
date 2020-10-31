@@ -652,21 +652,19 @@
 
 ## small_var (maintain meaning), big_var (maintain meaning)
 
-##### AAAA - AAA(rm_prefix) = A, (gcd); AAA - A(rm_prefix) = A, (gcd)
+##### ABABAB(3\*AB), ABAB(2\*AB), gcd = AB; AAAA - AAA(rm_prefix) = A; AAA - A(rm_prefix) = A
 
 - EG
-- AAAA - AAA = A;
-- AAA - A = AA;
-- AA - A = AA;
-- AA - A = A;
-- A - A = 0 (done)
+- (ab)abab vs ab, ababab.sub(ab.len) == abab; abab vs ab
+- (ab)ab vs ab, abab.sub(ab.len) == ab; ab vs ab
+- ab vs ab, ab.sub(ab.len) == ''; gcd
 - SUMMA
 - long - short, keep going
 - recur
-- (1) long_var (maintain meaning) > short_var (maintain meaning); (2) false_case(not_prefix); (3) good_case(short.empty); (4) con(rm_prefix)
+- (1) long_var (maintain meaning) > short_var (maintain meaning); (2) false_case( !abab.sub(ab) ); (3) good_case( s1 there, s2 == '' ); (4) con( (ab)ab, ab )
 - https://leetcode.com/problems/greatest-common-divisor-of-strings
 
-##### (bs)(bs)(b) or (bs)(bs)
+##### abc12; abc long, 12 short; (bs)(bs)(b) -> (a1)(b1)c
 
 - EG
 - SUMMA
