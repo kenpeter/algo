@@ -1,3 +1,7 @@
+# similar problems
+
+- https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4
+
 # str
 
 ## rev_entire, rev_word, clean_space(i write, j read)
@@ -685,6 +689,11 @@
 - if cap; 'a'.charCodeAt(0) + (s[i] - 'A'.charCodeAt(0)), to_num; fromCharCode, to_char
 - distance(c - a) === distance(C - A)
 - https://leetcode.com/problems/to-lower-case
+
+#####
+
+-
+- https://code.dennyzhang.com/single-row-keyboard
 
 <br/>
 <br/>
