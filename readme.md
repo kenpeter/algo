@@ -209,7 +209,7 @@
 <br/>
 <br/>
 
-## 2 pt; i pt some_part, j pt some_part; move sync / async
+## 2 pt; i pt some, j pt some; move (sync + async) / (async + sync)
 
 ##### abc, aabbcc (a long press, b long press, c long press); i pt short, j pt long; move sync, then async
 
