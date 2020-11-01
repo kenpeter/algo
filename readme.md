@@ -300,13 +300,6 @@
 - 0011 -> 2(0), 2(1) -> min(2, 2) -> 2
 - https://leetcode.com/problems/count-binary-substrings/
 
-##### aaabc -> ( aaa(3_char), aa(2_char), a(1_char); b(1_char); c(1_char) ) -> 3+2+1+1+1=8
-
-- EG
-- SUMMA
-- aaabc -> dp: [1(init), 1, 1, 1(init), 1(init)]; s[i] == s[i-1], dp[i] = dp[i-1] + 1; each_col, dp add up
-- https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms/
-
 <br/>
 <br/>
 
@@ -789,6 +782,19 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop input_num
 - dp[i] = dp[i-1] + mycount_above(input_num)
 - https://leetcode.com/problems/rotated-digits
+
+<br/>
+<br/>
+
+## ??
+
+##### aaabc -> ( aaa(3_char), aa(2_char), a(1_char); b(1_char); c(1_char) ) -> 3+2+1+1+1=8
+
+- EG
+- SUMMA
+- loop chars
+- aaabc -> dp: [1(init), 1, 1, 1(init), 1(init)]; s[i] == s[i-1], dp[i] = dp[i-1] + 1; each_col, dp add up
+- https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms/
 
 <br/>
 <br/>
