@@ -85,9 +85,9 @@
 <br/>
 <br/>
 
-## i(start), j(end); j - i === word_len / same_kind
+## i(start), j(end); j - i === word_len / same_kind / consecutive
 
-##### count(#) and say(def); i(start), j(start); i stay, j move right; j - i === same_kind
+##### count(#) and say(def); i(start), j(start); i stay, j move right, j - i === same_kind
 
 - EG
 - 1 -> one 1;
@@ -102,7 +102,7 @@
 - subsub_loop same kind (i stays, j moving)
 - https://leetcode.com/problems/count-and-say
 
-##### count_last_word_len; i(end), j(end); i stay, j move right; j - i === word_len
+##### count_last_word_len; i(end), j(end); i stay, j move right, j - i === word_len
 
 - EG
 - \_ab\_\_ab_bc\_\_
@@ -110,6 +110,14 @@
 - loop chars;
 - i stays, j move right
 - https://leetcode.com/problems/length-of-last-word
+
+##### aaabc -> i pt a, j move right, !(j-i == consecutive); i pt b, j move right, !(j-i == consecutive)
+
+- EG
+- SUMMA
+- loop chars (i stay)
+- loop j, move until !consecutive
+- https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms/
 
 ##### is palindrome; i(start), j(end); i move right, j move left; loop_skip_alph#
 
@@ -255,9 +263,9 @@
 <br/>
 <br/>
 
-## each cycle; if consecutive (LOOK_BACK), keep going; sudden !consecutive (LOOK_BACK), finish_prev, restart
+## each cycle; if consecutive (1pt_look_back / 2 pt no_look_back), keep going; sudden !consecutive (LOOK_BACK), finish_prev, restart
 
-##### each cycle; if consecutive (LOOK_BACK), keep going; sudden !consecutive (LOOK_BACK), finish_prev, restart
+##### each cycle; if consecutive, keep going; sudden !consecutive, finish_prev, restart
 
 - EG
 - e.g. 'PPALLP', 1_A(\*), 2_con_L(\*), good; 'PPALLL', 1_A(\*), 3_con_L(x), bad
@@ -266,31 +274,38 @@
 - if consecutive, either finish_curr(acc) OR finish_prev, restart(counter = 0)
 - https://leetcode.com/problems/student-attendance-record-i
 
-##### aaabcc, 3 consecutive (LOOK_BACK); if consecutive (LOOK_BACK), keep going; sudden !consecutive, finish_prev, restart
+##### aaabcc, 3 consecutive (1pt_look_back); if consecutive (1pt_look_back), keep going; sudden !consecutive, finish_prev, restart
 
 - EG
 - aaabcc, consecutive 3a, so max
 - SUMMA
 - 0th item, count 1; ma = 1 (SETUP)
 - loop chars
-- i-1, i(LOOK_BACK); if s[i-1]==s[i], c++(consecutive_count), finish_curr;
+- if s[i-1]==s[i], c++(consecutive_count), finish_curr;
 - else finish_prev( ma(ma, c) ); restart(c = 1)
 - e.g. aaab(cc), Math.max(ma, c), consecutive_miss
 - https://leetcode.com/problems/consecutive-characters
 
-##### 000111, 3 consecutive (LOOK_BACK); if consecutive (LOOK_BACK), keep going; sudden !consecutive, finish_prev, restart
+##### 000111, 3(0), 3(1); min(3, 3) -> 3; 01, 0011, 000111; if consecutive (1pt_look_back), keep going; sudden !consecutive, finish_prev, restart
 
 - EG
-- 001 -> 01(same_kind, same_count) -> [2(0), 1(1)] -> min(2, 1) = 1
-- 110 -> 10 -> [2(0), 0(1)] -> min(2, 1) = 1
-- 0011 -> 01 or 0011 -> [2(0), 2(1)] -> min(2, 2) = 2
+- 001 -> 2(0), 1(1) -> [2(0), 1(1)] -> min(2, 1) = 1; "01"
+- 110 -> 2(1), 1(0) -> [2(0), 0(1)] -> min(2, 1) = 1; "10"
+- 0011 -> 2(0), 2(1) -> [2(0), 2(1)] -> min(2, 2) = 2; "01" + "0011"
 - SUMMA
-- 0th item, count 1 (SETUP)
 - loop chars
-- i-1, i(LOOK_BACK); if s[i-1]==s[i], c++(consecutive_count), finish_curr;
+- if s[i-1]==s[i], c++(consecutive_count), finish_curr;
 - else finish_prev( a.push(c) ); restart(c = 1)
 - a.push(c), consecutive_miss
-- https://leetcode.com/problems/consecutive-characters
+- 0011 -> 2(0), 2(1) -> min(2, 2) -> 2
+- https://leetcode.com/problems/count-binary-substrings/
+
+##### aaabc -> ( aaa(3_char), aa(2_char), a(1_char); b(1_char); c(1_char) ) -> 3+2+1+1+1=8
+
+- EG
+- SUMMA
+- aaabc -> dp: [1(init), 1, 1, 1(init), 1(init)]; s[i] == s[i-1], dp[i] = dp[i-1] + 1; each_col, dp add up
+- https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms/
 
 <br/>
 <br/>
