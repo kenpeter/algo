@@ -209,33 +209,26 @@
 <br/>
 <br/>
 
-## 2 pt; i pt some_part, j pt some_part (LOOK_BACK / do_action); move sync / async
+## 2 pt; i pt some_part, j pt some_part; move sync / async
 
-##### abc, abc (match); abc, aabbcc (ext_match); abc, aabbccd (false)
+##### abc, aabbcc (a long press, b long press, c long press); i pt short, j pt long; move sync, then async
 
 - EG
-- abc
-- abc (match)
--
-- abc
-- aabbcc (ext_match)
--
-- abc
-- aabbcd (false)
+- abc, aabbcc (a long press, b long press, c long press)
 - SUMMA
-- i pt short (abc); j pt long (aaabbbccc)
-- if match, both move; if ext_match(LOOK_BACK), j move; if !match, !ext_match, re false
+- i pt short (abc); j pt long (aabbcc)
+- if match, move sync; if not_match, LOOK_BACK, move async
 - https://leetcode.com/problems/long-pressed-name
 
-##### search_needle_in_parent; i pt long_str, j pt short_str (do_action); move sync / async
+##### search_needle_in_parent; i pt long_str, j pt short_str; move async, then sync
 
 - EG
 - SUMMA
-- loop parent ( p[i] )
-- loop child ( p[i+j(w_len)] == c[j(w_len)] )
+- loop parent ( p[i] ), move async
+- loop child ( p[i+j(w_len)] == c[j(w_len)] ), move sync
 - https://leetcode.com/problems/implement-strstr
 
-##### swap_2_char only; i pt some_part, j pt some_part (do_action); move sync / async
+##### swap_2_char only; i pt some_part, j pt some_part; move sync
 
 - EG
 - abc -> ab; diff len, no swap
