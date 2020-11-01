@@ -243,9 +243,9 @@
 <br/>
 <br/>
 
-## each cycle; either finish_curr OR finish_prev, restart
+## each cycle; if consecutive, keep going; sudden !consecutive, finish_prev, restart
 
-##### each cycle; if consecutive, either finish_curr OR finish_prev, restart
+##### each cycle; if consecutive, keep going; sudden !consecutive, finish_prev, restart
 
 - EG
 - e.g. 'PPALLP', 1_A(\*), 2_con_L(\*), good; 'PPALLL', 1_A(\*), 3_con_L(x), bad
@@ -254,7 +254,7 @@
 - if consecutive, either finish_curr(acc) OR finish_prev, restart(counter = 0)
 - https://leetcode.com/problems/student-attendance-record-i
 
-##### aaabcc, 3 consecutive; i-1, i(LOOK_BACK); either finish_curr or (finish_prev, restart)
+##### aaabcc, 3 consecutive; i-1, i(LOOK_BACK); if consecutive, keep going; sudden !consecutive, finish_prev, restart
 
 - EG
 - aaabcc, consecutive 3a, so max
@@ -266,7 +266,7 @@
 - e.g. aaab(cc), Math.max(ma, c), consecutive_miss
 - https://leetcode.com/problems/consecutive-characters
 
-##### 000111, 3 consecutive; i-1, i(LOOK_BACK); either finish_curr or (finish_prev, restart)
+##### 000111, 3 consecutive; i-1, i(LOOK_BACK); if consecutive, keep going; sudden !consecutive, finish_prev, restart
 
 - EG
 - 001 -> 01(same_kind, same_count) -> [2(0), 1(1)] -> min(2, 1) = 1
