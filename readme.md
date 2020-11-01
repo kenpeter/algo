@@ -209,7 +209,7 @@
 <br/>
 <br/>
 
-## 2 pt; i pt some, j pt some; move (sync + async) / (async + sync)
+## 2 pt; i pt diff/same, j pt diff/same; move (sync + async) / (async + sync)
 
 ##### abc, aabbcc (a long press, b long press, c long press); i pt short, j pt long; move sync, then async
 
@@ -228,7 +228,19 @@
 - loop child ( p[i+j(w_len)] == c[j(w_len)] ), move sync
 - https://leetcode.com/problems/implement-strstr
 
-##### swap_2_char only; i pt some_part, j pt some_part; move sync
+##### swap_2_char only; i pt diff, j pt diff; move sync
+
+- EG
+- abc -> ab; diff len, no swap
+- abab -> a(swap)ba(swap)b; abab == abab, duplicated char, can swap
+- abbc -> abc(swap)b(swap);
+- SUMMA
+- (1) diff len, no swap
+- (2) A == B, duplicated char, can swap
+- (3) A != B, vertical compare; found_remember
+- https://leetcode.com/problems/buddy-strings
+
+##### aaabc; i pt same, j pt same; move sync
 
 - EG
 - abc -> ab; diff len, no swap
