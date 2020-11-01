@@ -679,7 +679,7 @@
 - arr.pop_end()
 - https://leetcode.com/problems/reformat-the-string
 
-## to_num VS to_char
+## to_num VS to_char, get distance
 
 ##### Hello -> hello
 
@@ -692,8 +692,13 @@
 
 #####
 
--
-- https://code.dennyzhang.com/single-row-keyboard
+- EG
+- SUMMA
+- abcdefghijklmnopqrstuvwxyz, that is 1 position
+- pqrstuvwxyzabcdefghijklmno, that is another position
+- build hash
+- distance
+- https://codedestine.com/single-row-keyboard-string-problem/
 
 <br/>
 <br/>
