@@ -555,24 +555,32 @@
 <br/>
 <br/>
 
-## ++var, --var
+## ++var, --var; ONE / MULTI_TAKE_TURN / MULTI_ONE_GO
 
-##### ++parent(++var), --child(--var)
+##### ++parent, --child(--var); ONE --VAR
 
 - EG
 - SUMMA
-- parent_pool_hash
-- loop child_str
-- if(parent_pool_hash[child] !== undef && --parent_pool_hash[child] >= 0, use_hash)
+- parent_hash ( h[e] = (h[e] || 0) + 1 )
+- loop child_chars
+- if(parent_hash[child] && --parent_hash[child] (ONE --VAR) >= 0)
 - https://leetcode.com/problems/ransom-note
 
-##### ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
+##### ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var); MULTI_TAKE_TURN ++VAR, --VAR,
 
 - EG
 - SUMMA
 - loop chars (e.g. LLRRUD, robot move)
-- ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
+- MULTI_TAKE_TURN ++VAR,--VAR; ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
 - https://leetcode.com/problems/robot-return-to-origin
+
+##### ????, MULTI_ONE_GO --VAR
+
+- EG
+- SUMMA
+- build_hash
+- MULTI_ONE_GO --VAR
+- https://leetcode.com/problems/maximum-number-of-balloons/
 
 <br/>
 <br/>
