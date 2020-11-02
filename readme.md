@@ -571,8 +571,19 @@
 - EG
 - SUMMA
 - loop chars (e.g. LLRRUD, robot move)
-- MULTI_TAKE_TURN ++VAR,--VAR; ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
+- MULTI_CANCEL ++VAR,--VAR; ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
 - https://leetcode.com/problems/robot-return-to-origin
+
+##### LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1), res == 1; MULTI_CANCEL ++VAR, --VAR
+
+- EG
+- LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1)|, res == 1; split when 0
+- RLLLRR, (+1)(-1)|(-1)(-1)(+1)(+1), res == 2; split when 0
+- SUMMA
+- loop chars
+- MULTI_CANCEL ++VAR, --VAR
+- split when 0
+- https://leetcode.com/problems/split-a-string-in-balanced-strings
 
 ##### bbaalloooonn, balloon, 2\*balloon; MULTI_ONE_GO --VAR
 
