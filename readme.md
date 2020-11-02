@@ -555,7 +555,7 @@
 <br/>
 <br/>
 
-## ++var, --var; ONE / MULTI_TAKE_TURN / MULTI_ONE_GO
+## ++var, --var; ONE / MULTI_CANCEL/ MULTI_ONE_GO
 
 ##### ++parent, --child(--var); ONE --VAR
 
@@ -566,7 +566,7 @@
 - if(parent_hash[child] && --parent_hash[child] (ONE --VAR) >= 0)
 - https://leetcode.com/problems/ransom-note
 
-##### ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var); MULTI_TAKE_TURN ++VAR, --VAR,
+##### ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var); MULTI_CANCEL ++VAR, --VAR,
 
 - EG
 - SUMMA
@@ -574,7 +574,7 @@
 - MULTI_TAKE_TURN ++VAR,--VAR; ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
 - https://leetcode.com/problems/robot-return-to-origin
 
-##### ????, MULTI_ONE_GO --VAR
+##### bbaalloooonn, balloon, 2\*balloon; MULTI_ONE_GO --VAR
 
 - EG
 - SUMMA
