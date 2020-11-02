@@ -1,6 +1,7 @@
-# similar problems
+# woth looking at
 
 - https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4
+  https://code.dennyzhang.com/hexspeak
 
 # str
 
@@ -163,9 +164,18 @@
 - EG
 - SUMMA
 - loop chars
-- arr.splice(i, len), remove_in_place
+- arr.splice(i, how_many), remove_in_place
 - splice, other_shift_left; len reduce; --i, ++i (back_to_top)
 - https://www.geeksforgeeks.org/program-remove-vowels-string
+
+##### ip addr, 123.41.51.61 -> 123[.]41[.]51[.]61; insert "[" start, insert "]" end
+
+- EG
+- SUMMA
+- loop chars
+- arr.splice(ind, 0, "["), insert at ind front
+- extra: arr.splice(ind, 1), remove 1 ele at ind
+- https://leetcode.com/problems/defanging-an-ip-address
 
 <br/>
 <br/>
