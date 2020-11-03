@@ -579,9 +579,9 @@
 <br/>
 <br/>
 
-## ++var, --var; ONE / MULTI_CANCEL/ MULTI_ONE_GO
+## back_to_zero, ++var, --var; ONE / MULTI_CANCEL / MULTI_ONE_GO
 
-##### ++parent, --child(--var); ONE --VAR
+##### ++parent, --child(--var); back_to_zero(TWO, ++var, --var)
 
 - EG
 - SUMMA
@@ -590,15 +590,7 @@
 - if(parent_hash[child] && --parent_hash[child] (ONE --VAR) >= 0)
 - https://leetcode.com/problems/ransom-note
 
-##### ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var); MULTI_CANCEL ++VAR, --VAR,
-
-- EG
-- SUMMA
-- loop chars (e.g. LLRRUD, robot move)
-- MULTI_CANCEL ++VAR,--VAR; ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
-- https://leetcode.com/problems/robot-return-to-origin
-
-##### LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1), res == 1; MULTI_CANCEL ++VAR, --VAR
+##### LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1), res == 1; back_to_zero(TWO, ++var, --var)
 
 - EG
 - LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1)|, res == 1; split when 0
@@ -609,7 +601,15 @@
 - split when 0
 - https://leetcode.com/problems/split-a-string-in-balanced-strings
 
-##### bbaalloooonn, balloon, 2\*balloon; MULTI_ONE_GO --VAR
+##### ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var); back_to_zero(MULTI, ++var, --var)
+
+- EG
+- SUMMA
+- loop chars (e.g. LLRRUD, robot move)
+- MULTI_CANCEL ++VAR,--VAR; ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
+- https://leetcode.com/problems/robot-return-to-origin
+
+##### bbaalloooonn, balloon, 2\*balloon; back)to_zero(MULTI_ONE_GO, ++var, --var)
 
 - EG
 - SUMMA
