@@ -579,7 +579,7 @@
 <br/>
 <br/>
 
-## back_to_zero, ++var, --var; ONE / MULTI_CANCEL / MULTI_ONE_GO
+## back_to_zero, ++var, --var; TWO / MULTI_CANCEL / MULTI_ONE_GO
 
 ##### ++parent, --child(--var); back_to_zero(TWO, ++var, --var)
 
@@ -587,7 +587,7 @@
 - SUMMA
 - parent_hash ( h[e] = (h[e] || 0) + 1 )
 - loop child_chars
-- if(parent_hash[child] && --parent_hash[child] (ONE --VAR) >= 0)
+- if(parent_hash[child] && --parent_hash[child] back_to_zero(TWO, ++var, --var) >= 0)
 - https://leetcode.com/problems/ransom-note
 
 ##### LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1), res == 1; back_to_zero(TWO, ++var, --var)
@@ -597,25 +597,35 @@
 - RLLLRR, (+1)(-1)|(-1)(-1)(+1)(+1), res == 2; split when 0
 - SUMMA
 - loop chars
-- MULTI_CANCEL ++VAR, --VAR
+- back_to_zero(TWO, ++var, --var)
 - split when 0
 - https://leetcode.com/problems/split-a-string-in-balanced-strings
+
+#####
+
+- EG
+- SUMMA
+- loop paths
+- back_to_zero(TWO, ++var, --var)
+- h[start] === undef ? 1 : 0; see again; end_set, met here
+- h[end] === undef ? -1 : 0; see again; start_set, met here
+- https://leetcode.com/problems/destination-city
 
 ##### ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var); back_to_zero(MULTI, ++var, --var)
 
 - EG
 - SUMMA
 - loop chars (e.g. LLRRUD, robot move)
-- MULTI_CANCEL ++VAR,--VAR; ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
+- back_to_zero(MULTI, ++var,--var); ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
 - https://leetcode.com/problems/robot-return-to-origin
 
-##### bbaalloooonn, balloon, 2\*balloon; back)to_zero(MULTI_ONE_GO, ++var, --var)
+##### bbaalloooonn, balloon, 2\*balloon; back_to_zero(MULTI_ONE_GO, ++var, --var)
 
 - EG
 - SUMMA
 - build_hash
-- MULTI_ONE_GO --VAR
-- https://leetcode.com/problems/maximum-number-of-balloons/
+- back_to_zero(MULTI_ONE_GO, ++var, --var)
+- https://leetcode.com/problems/maximum-number-of-balloons
 
 <br/>
 <br/>
