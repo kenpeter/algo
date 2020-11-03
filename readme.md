@@ -387,6 +387,17 @@
 <br/>
 <br/>
 
+##### build posi_hash along the way
+
+- EG
+- SUMMA
+- build posi_hash along the way
+- store farthest(orig) posi
+- https://leetcode.com/problems/largest-substring-between-two-equal-characters
+
+<br/>
+<br/>
+
 ## start, end, start+1(LOOK_AHEAD), end-1(LOOK_BACK); start <-> end-1 || start+1 <-> end; i move right, j move left
 
 ##### start, end, start+1(LOOK_AHEAD), end-1(LOOK_BACK); start <-> end-1 (del_right) || start+1 <-> end (del_left); i move right, j move left
@@ -420,6 +431,19 @@
 - loop chars
 - i-1, i(LOOK_BACK); if(s[i-1] == ' ', s[i] == letter), word_segment++
 - https://leetcode.com/problems/number-of-segments-in-a-string
+
+<br/>
+<br/>
+
+## rewind
+
+##### 110#11#12# -> (1)(10#)(11#)(12#) -> ajkl
+
+- EG
+- SUMMA
+- loop chars
+- move along, keep replacing, move back 2 chars
+- https://leetcode.com/problems/decrypt-string-from-alphabet-to-integer-mapping
 
 <br/>
 <br/>
