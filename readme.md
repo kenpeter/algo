@@ -523,7 +523,7 @@
 - SUMMA
 - , -> \_ (maintain segment)
 - trim_head_tail, split(/+s/)
-- build_hash
+- build_hash, to freq
 - https://leetcode.com/problems/most-common-word/
 
 ##### morse code hash, use_set
@@ -756,15 +756,27 @@
 - distance(c - a) === distance(C - A)
 - https://leetcode.com/problems/to-lower-case
 
-#####
+##### letter distance
 
 - EG
 - SUMMA
-- abcdefghijklmnopqrstuvwxyz, that is 1 position
-- pqrstuvwxyzabcdefghijklmno, that is another position
+- abcdefghijklmnopqrstuvwxyz, that is 1 position (a-z)
+- pqrstuvwxyzabcdefghijklmno, that is another position (p-o)
 - build hash
 - distance
 - https://codedestine.com/single-row-keyboard-string-problem/
+
+<br/>
+<br/>
+
+## special case 1st, then normal case
+
+##### 110#11#12# -> (1)(10#)(11#)(12#) -> s.replace(/10#/) -> special 1st, (1)jkl -> ajkl
+
+- EG
+- SUMMA
+- special case 1st, then normal case; s.replace(/10#/)
+- https://leetcode.com/problems/decrypt-string-from-alphabet-to-integer-mapping
 
 <br/>
 <br/>
