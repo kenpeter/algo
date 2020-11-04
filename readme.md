@@ -579,18 +579,18 @@
 <br/>
 <br/>
 
-## back_to_zero, ++var, --var; TWO / MULTI_CANCEL / MULTI_ONE_GO
+## back_to_zero, TWO / MULTI_CANCEL / MULTI_ONE_GO
 
-##### ++parent, --child(--var); back_to_zero(TWO, ++var, --var)
+##### ++parent, --child; back_to_zero(TWO)
 
 - EG
 - SUMMA
 - parent_hash ( h[e] = (h[e] || 0) + 1 )
 - loop child_chars
-- if(parent_hash[child] && --parent_hash[child] back_to_zero(TWO, ++var, --var) >= 0)
+- if(parent_hash[child] && --parent_hash[child] back_to_zero(TWO) >= 0)
 - https://leetcode.com/problems/ransom-note
 
-##### LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1), res == 1; back_to_zero(TWO, ++var, --var)
+##### LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1), res == 1; back_to_zero(TWO)
 
 - EG
 - LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1)|, res == 1; greedy split when 0
@@ -601,29 +601,39 @@
 - greedy split when 0
 - https://leetcode.com/problems/split-a-string-in-balanced-strings
 
-##### [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero), c(-1), c(+1, back_to_zero), d(-1)
+##### [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero(TWO)), c(-1), c(+1, back_to_zero(TWO)), d(-1);
 
 - EG
 - SUMMA
 - loop paths
-- [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero), c(-1), c(+1, back_to_zero), d(-1)
+- [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero(TWO)), c(-1), c(+1, back_to_zero(TWO)), d(-1)
 - h[b] = +1, h[b] = +1 + (-1) == 0
 - https://leetcode.com/problems/destination-city
 
-##### ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var); back_to_zero(MULTI, ++var, --var)
+##### ++vertical, --vertical; ++horizontal, --horizontal; back_to_zero(MULTI)
 
 - EG
 - SUMMA
 - loop chars (e.g. LLRRUD, robot move)
-- back_to_zero(MULTI, ++var,--var); ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var)
+- back_to_zero(MULTI); ++vertical, --vertical; ++horizontal, --horizontal
 - https://leetcode.com/problems/robot-return-to-origin
 
-##### bbaalloooonn, balloon, 2\*balloon; back_to_zero(MULTI_ONE_GO, ++var, --var)
+##### ++vertical, --vertical; ++horizontal, --horizontal; meet_old_point(MULTI)
+
+- EG
+- NNS (north, north, south); (0, 0) -> @(0, 1) -> (0, 2) -> @(0, 1); coord = old_coord + path
+- SUMMA
+- loop chars
+- ++vertical, --vertical; ++horizontal, --horizontal; meet_old_point(MULTI);
+- coord = old_coord + path
+- https://leetcode.com/problems/path-crossing
+
+##### bbaalloooonn, balloon, 2\*balloon; back_to_zero(MULTI_ONE_GO)
 
 - EG
 - SUMMA
 - build_hash
-- back_to_zero(MULTI_ONE_GO, ++var, --var)
+- back_to_zero(MULTI_ONE_GO)
 - https://leetcode.com/problems/maximum-number-of-balloons
 
 <br/>
