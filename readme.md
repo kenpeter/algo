@@ -593,22 +593,21 @@
 ##### LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1), res == 1; back_to_zero(TWO, ++var, --var)
 
 - EG
-- LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1)|, res == 1; split when 0
-- RLLLRR, (+1)(-1)|(-1)(-1)(+1)(+1), res == 2; split when 0
+- LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1)|, res == 1; greedy split when 0
+- RLLLRR, (+1)(-1)|(-1)(-1)(+1)(+1), res == 2; greedy split when 0
 - SUMMA
 - loop chars
 - back_to_zero(TWO, ++var, --var)
-- split when 0
+- greedy split when 0
 - https://leetcode.com/problems/split-a-string-in-balanced-strings
 
-#####
+##### [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero), c(-1), c(+1, back_to_zero), d(-1)
 
 - EG
 - SUMMA
 - loop paths
-- back_to_zero(TWO, ++var, --var)
-- h[start] === undef ? 1 : 0; see again; end_set, met here
-- h[end] === undef ? -1 : 0; see again; start_set, met here
+- [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero), c(-1), c(+1, back_to_zero), d(-1)
+- h[b] = +1, h[b] = +1 + (-1) == 0
 - https://leetcode.com/problems/destination-city
 
 ##### ++vertical(++var), --vertical(--var); ++horizontal(++var), --horizontal(--var); back_to_zero(MULTI, ++var, --var)
