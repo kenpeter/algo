@@ -553,28 +553,38 @@
 <br/>
 <br/>
 
-## const_var && variable_var in loop
+## stable, outloop, repeat VS change, inloop, once
 
-##### CHINA || China || china; const_var && variable_var in loop
+##### CHINA || China || china; ( stable, outloop, repeat VS change, inloop, once )
 
 - EG
 - SUMMA
 - re CHINA || China || china
+- loop chars
 - re up_ups(w) || up_lows(w) || low_lows(w);
-- up_ups == up?(w[0]) && up?(w[i])
-- up_lows == up?(w[0]) && low?(w[i])
-- low_lows == low?(w[0]) && low?(w[i])
+- up_ups == up?(w[0], stable) && up?(w[i], change, inloop, once)
+- up_lows == up?(w[0], stable) && low?(w[i], change, inloop, once)
+- low_lows == low?(w[0], stable) && low?(w[i], change, inloop, once)
 - https://leetcode.com/problems/detect-capital
 
-##### pattern_form_whole, cut_half, max_pattern_len; const_pattern VS variable_neighbour
+##### abcabc -> a VS b(len_1) -> ab VS ca(len_2) -> abc VS abc(len_3);
 
 - EG
 - ..
 - SUMMA
-- loop max_pattern_len (s -> b), const_pattern (in_subloop)
-- sub_loop; const_pattern VS sub(i, j) - variable_neighbour
-- ..
+- len = 6, half_len = 3
+- abcabc -> a VS b (len_1, slide_char, stop) -> ab VS ca (len_2, slide_char, stop) -> abc VS abc(len_3, slide_char, match)
+-
 - https://leetcode.com/problems/repeated-substring-pattern
+
+##### aaAaA -> aaA -> a;
+
+- EG
+- SUMMA
+- outloop (prev_len != curr_len, len_eventually_same; prev_len stable, outloop, repeat)
+- inloop (s.len change, inloop, once)
+- A - a = 32, B - b = 32...
+- https://leetcode.com/problems/make-the-string-great
 
 <br/>
 <br/>
