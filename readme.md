@@ -639,6 +639,37 @@
 <br/>
 <br/>
 
+## orig structure -> new structure
+
+##### "aabc", [ab, bc]; a<b>abc</b>; (orig ab -> new 11; orig bc -> new 11)
+
+- EG
+- SUMMA
+- loop words
+- ..
+- aabc, [ab, bc] -> [0, 1, 1, 1] (orig ab -> 11; orig bc -> 11)
+- ..
+- https://massivealgorithms.blogspot.com/2017/06/leetcode-616-add-bold-tag-in-string.html
+
+##### LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1); (orig L, R -> new -1, +1)
+
+- EG
+- SUMMA
+- loop chars
+- RLLLRR, (+1)(-1)|(-1)(-1)(+1)(+1), res == 2; (orig, L, R -> -1, +1)
+- https://leetcode.com/problems/split-a-string-in-balanced-strings
+
+##### ++vertical, --vertical; ++horizontal, --horizontal; (orig v -> new +1, -1; orig h -> new +1, -1)
+
+- EG
+- SUMMA
+- loop chars (e.g. LLRRUD, robot move)
+- back_to_zero(MULTI); ++vertical, --vertical; ++horizontal, --horizontal
+- https://leetcode.com/problems/robot-return-to-origin
+
+<br/>
+<br/>
+
 ## slide_word (loop_word, slide_word, substring_equal)
 
 ##### "aabc", [ab, bc]; a<b>abc</b>; slide_word (loop_word, slide_word, substring_equal)
