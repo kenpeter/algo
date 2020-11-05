@@ -297,6 +297,30 @@
 <br/>
 <br/>
 
+##
+
+##### k?a -> kaa(wrong, no_repeat); k?a -> kba
+
+- EG
+- ? -> s[i-1] == undef, s[i+1] == undef
+- ?a -> s[i-1] == undef, s[i+1](a) !== b -> ba
+- a? -> s[i-1](a) !== b, s[i+1] == undef -> ab
+- k?a -> s[i-1](k) !== b, s[i+1](a) !== b -> kba
+-
+- SUMMA
+- loop chars
+- loop (a, b, c)
+- if c == '?'
+- if i > 0 (a[i-1]); a[i-1] == 'a'+j; prev_char? == a,b,c yes, next_char
+-
+- if i+1 < s.len (a[i+1]); a[i+1] == 'a'+j; prev_char? == a,b,c yes, next_char
+-
+- a[i] = 'a'+j
+- https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters
+
+<br/>
+<br/>
+
 ## a VS b -> res, res VS c
 
 ##### each_str_prefix; a VS b -> res, res VS c;
@@ -551,6 +575,23 @@
 - low_lows == low?(w[0], stable) && low?(w[i], change, inloop, once)
 - https://leetcode.com/problems/detect-capital
 
+<br/>
+<br/>
+
+##### aaAaA -> aaA -> a;
+
+- EG
+- SUMMA
+- outloop (prev_len != curr_len, len_eventually_same; prev_len stable, outloop, repeat)
+- inloop (s.len change, inloop, once)
+- A - a = 32, B - b = 32...
+- https://leetcode.com/problems/make-the-string-great
+
+<br/>
+<br/>
+
+## outloop repeat (change_len), inloop slide_word
+
 ##### abcabc -> a VS b(len_1) -> ab VS ca(len_2) -> abc VS abc(len_3);
 
 - EG
@@ -565,16 +606,8 @@
 -
 - abcabc (len_3(stable), outloop, repeat)
 - abc VS abc (slide_char)
+-
 - https://leetcode.com/problems/repeated-substring-pattern
-
-##### aaAaA -> aaA -> a;
-
-- EG
-- SUMMA
-- outloop (prev_len != curr_len, len_eventually_same; prev_len stable, outloop, repeat)
-- inloop (s.len change, inloop, once)
-- A - a = 32, B - b = 32...
-- https://leetcode.com/problems/make-the-string-great
 
 <br/>
 <br/>
