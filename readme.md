@@ -180,22 +180,6 @@
 <br/>
 <br/>
 
-## pattern(inc)\_match_neighbour(inc)
-
-##### pattern_form_whole, cut_half, max_pattern_len; pattern(inc)\_match_neighbour(inc)
-
-- EG
-- abc|abc(max_pattern_len == 6/2 == 3); (a)(b)cabc (len_1, x) -> (ab)(ca)bc (len_2, x) -> (abc)(abc) (len_3, y)
-- a|b|c(max_p_len == 3/2 == 1.5 == 1, 2\*2 too big); (a)(b)(c) (len_1, x)
-- SUMMA
-- loop max_pattern_len (s -> b), pattern stay subloop
-- sub_loop; j <s.len; i(start), j(end), VS_same_pattern; next_neighbour i = i+len, j = j+len
-- if i === s.len, all_neighbour_match
-- https://leetcode.com/problems/repeated-substring-pattern
-
-<br/>
-<br/>
-
 ## i_start, j_start -> i_start, j_end(formular)
 
 ##### search_needle_in_parent; i_start, j_start -> i_start, j_end(w_len)
@@ -573,8 +557,14 @@
 - ..
 - SUMMA
 - len = 6, half_len = 3
-- abcabc -> a VS b (len_1, slide_char, stop) -> ab VS ca (len_2, slide_char, stop) -> abc VS abc(len_3, slide_char, match)
+- abcabc (len_1(stable), outloop, repeat)
+- a VS b, a VS c, a VS a, a VS b, a VS c (slide_char)
 -
+- abcabc (len_2(stable), outloop, repeat)
+- ab VS ca, ab VS bc (slide_char)
+-
+- abcabc (len_3(stable), outloop, repeat)
+- abc VS abc (slide_char)
 - https://leetcode.com/problems/repeated-substring-pattern
 
 ##### aaAaA -> aaA -> a;
