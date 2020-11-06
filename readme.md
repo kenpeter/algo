@@ -133,6 +133,20 @@
 <br/>
 <br/>
 
+## subarray consecutive, subsequence !consecutive
+
+##### baabb (only a, b); subseq palin == bbb, subseq palin == aa
+
+- EG
+- SUMMA
+- s.len == 0, re 0
+- s is palin, re 1 (remove 1 sebseq palin)
+- s is not palin, rm a, rm b; re 2
+- https://leetcode.com/problems/remove-palindromic-subsequences
+
+<br/>
+<br/>
+
 ## insert: s.s(0, i) + val + s.s(i+1)
 
 ##### 1|234|567 -> 1.234.567; i(no), j(end); i(no), j move left; insert: sub(0, i) + val + sub(i)
@@ -1349,7 +1363,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - direction
 - if, p[i] == c[i](char == char), i-j<=2(shortcut), dp[i][j] = true
 - if, p[i] == c[i](char == char), dp[i-1][j+1](else) == true, dp[i][j] = true
-- https://leetcode.com/problems/longest-palindromic-substring/
+- https://leetcode.com/problems/longest-palindromic-substring
 
 ##### 1D; child chars(ele); parent chars(tar); child_build_parent; condi
 
