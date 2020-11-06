@@ -297,9 +297,9 @@
 <br/>
 <br/>
 
-##
+## prev_bound, prev_char; next_bound, next_char
 
-##### k?a -> kaa(wrong, no_repeat); k?a -> kba
+##### k?a -> kba (!k, !a); prev_bound, prev_char; next_bound, next_char
 
 - EG
 - ? -> s[i-1] == undef, s[i+1] == undef
@@ -311,11 +311,10 @@
 - loop chars
 - loop (a, b, c)
 - if c == '?'
-- if i > 0 (a[i-1]); a[i-1] == 'a'+j; prev_char? == a,b,c yes, next_char
+- if ( i > 0 (prev_bound) && a[i-1] == 'a'+j ) con; prev == 'a'+? (perv_char), collide, con
 -
-- if i+1 < s.len (a[i+1]); a[i+1] == 'a'+j; prev_char? == a,b,c yes, next_char
--
-- a[i] = 'a'+j
+- if ( i+1 < s.len (next_bound) && a[i+1] == 'a'+j ) con; next == 'a'+?, (next_char), collide, con
+- a[i] = 'a'+j, final
 - https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters
 
 <br/>
