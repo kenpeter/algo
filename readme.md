@@ -499,6 +499,29 @@
 - meet frequency 1
 - https://leetcode.com/problems/first-unique-character-in-a-string
 
+<br/>
+<br/>
+
+## hash, sort_hash, rev_sort_hash
+
+##### aaabbbccc -> (abc)(cba)(abc)(cba) -> (inc)(desc)(inc)(desc); hash, sort_hash, rev_sort_hash
+
+- EG
+- SUMMA
+- hash (no order)
+- loop (res.len < s.len)
+- sort_hash
+- hash_key_arr -> ascending -> copy new sort_hash
+-
+- rev_sort_hash
+- hash_key_arr -> descending -> copy new rev_sort_hash
+-
+- repeat
+- https://leetcode.com/problems/increasing-decreasing-string
+
+<br/>
+<br/>
+
 ## indexOf === lastIndexOf, only_1_no_repeat
 
 ##### 1st unique char in str; indexOf === lastIndexOf, only_1_no_repeat
