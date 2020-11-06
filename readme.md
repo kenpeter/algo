@@ -433,6 +433,28 @@
 - sub_loop, s <-> e-1 (del_right); i, j cross over
 - https://leetcode.com/problems/valid-palindrome-ii
 
+<br/>
+<br/>
+
+## is_palindrome,
+
+##### aba -> a(end) + b(mid) + a(start), rebuild_palin; 121 -> 1(end) + 2(mid) + 1(start), rebuild_palin
+
+- EG
+- SUMMA
+- 121 -> 1(end) + 2(mid) + 1(start)
+- loop(input > 0); floor(input/10) -> less and less -> single_num -> 0
+- a single num === xxxxlast_digit
+- xxxx === left_digits, last_digit === last_digit
+-
+- last_digit = input % 10
+- input = input / 10 (left_digits)
+- res = res\*10 + last_digit
+- https://leetcode.com/problems/palindrome-number
+
+<br/>
+<br/>
+
 ## LOOK_BACK
 
 ##### ++++ -> [--++, +--+, ++--]; i-1, i(LOOK_BACK); insert: sub(0, i) + val + sub(i), BUILD_STR_PHILOSOPY
