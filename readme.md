@@ -120,7 +120,7 @@
 - loop j, move until !consecutive
 - https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms/
 
-##### is palindrome; i(start), j(end); i move right, j move left; loop_skip_alph#
+##### is palindrome; i(start), j(end); loop_skip_alph#
 
 - EG
 - SUMMA
@@ -436,7 +436,7 @@
 <br/>
 <br/>
 
-## is_palindrome,
+## is_palindrome; rebuild / i_start, j_end
 
 ##### aba -> a(end) + b(mid) + a(start), rebuild_palin; 121 -> 1(end) + 2(mid) + 1(start), rebuild_palin
 
@@ -451,6 +451,16 @@
 - input = input / 10 (left_digits)
 - res = res\*10 + last_digit
 - https://leetcode.com/problems/palindrome-number
+
+##### is palindrome; i_start, j_end; loop_skip_alph#
+
+- EG
+- SUMMA
+- loop chars;
+- i_start, j_end
+- sub_loop(skip_alph#) ++i
+- sub_loop(skip_alph#) --j
+- https://leetcode.com/problems/valid-palindrome
 
 <br/>
 <br/>
