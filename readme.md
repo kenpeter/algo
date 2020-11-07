@@ -545,6 +545,16 @@
 - meet frequency 1
 - https://leetcode.com/problems/first-unique-character-in-a-string
 
+##### aaabb, build_palindrome; a:3 (odd), b:2 (even)
+
+- EG
+- SUMMA
+- build_hash
+- e.g. a:3 (even), can use all
+- e.g. b:2 (odd), can use 3-1=2; later add 1
+- ba a ab
+- https://leetcode.com/problems/longest-palindrome
+
 <br/>
 <br/>
 
