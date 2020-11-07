@@ -436,7 +436,7 @@
 <br/>
 <br/>
 
-## is_palindrome; rebuild / i_start, j_end
+## is_palindrome; hash / rebuild / i_start, j_end
 
 ##### aba -> a(end) + b(mid) + a(start), rebuild_palin; 121 -> 1(end) + 2(mid) + 1(start), rebuild_palin
 
@@ -690,7 +690,7 @@
 <br/>
 <br/>
 
-## back_to_zero, TWO / MULTI_CANCEL / MULTI_ONE_GO
+## back_to_zero, TWO / +1|-1 / MULTI_CANCEL / MULTI_ONE_GO
 
 ##### ++parent, --child; back_to_zero(TWO)
 
@@ -701,7 +701,7 @@
 - if(parent_hash[child] && --parent_hash[child] back_to_zero(TWO) >= 0)
 - https://leetcode.com/problems/ransom-note
 
-##### LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1), res == 1; back_to_zero(TWO)
+##### LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1), res == 1; back_to_zero(+1|-1)
 
 - EG
 - LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1)|, res == 1; greedy split when 0
@@ -712,14 +712,26 @@
 - greedy split when 0
 - https://leetcode.com/problems/split-a-string-in-balanced-strings
 
-##### [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero(TWO)), c(-1), c(+1, back_to_zero(TWO)), d(-1);
+##### [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero(+1|-1)), c(-1), c(+1, back_to_zero(TWO)), d(-1);
 
 - EG
 - SUMMA
 - loop paths
-- [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero(TWO)), c(-1), c(+1, back_to_zero(TWO)), d(-1)
+- [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero(+1|-1)), c(-1), c(+1, back_to_zero(+1|-1)), d(-1)
 - h[b] = +1, h[b] = +1 + (-1) == 0
 - https://leetcode.com/problems/destination-city
+
+##### aabbb, build_palin? back_to_zero(+1|-1)
+
+- EG
+- aabbb, build_palin?; a(+1)a(-1) b(+1)b(-1)b(+1); b:1 (left), can; back_to_zero(+1|-1)
+- aabb, build_palin?; a(+1)a(-1) b(+1)b(-1)b; nothing (left), can; back_to_zero(+1|-1)
+- ab, build_palin?; a(+1) b(+1); a:1, b:1 (left), no; back_to_zero(+1|-1)
+- SUMMA
+- loop chars
+- if not exist, set.add; if exist, set.delete; back_to_zero(+1|-1)
+- set.size === 1 || set.size === 0
+- https://medium.com/swlh/palindrome-permutations-9752d8e71c7f
 
 ##### ++vertical, --vertical; ++horizontal, --horizontal; back_to_zero(MULTI)
 
