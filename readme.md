@@ -3,6 +3,31 @@
 - https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4
   https://code.dennyzhang.com/hexspeak
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# array
+
+## hash_self, hash_complementary_self;
+
+##### [0, 3, 4, 0], tar = 0; hash[val] = ind (posi); re [ ind, hash[tar - val] ]
+
+- EG
+- SUMMA
+- loop eles
+- if (hash[tar - val]) re [ ind, hash[tar - val]]
+- hash[val] = ind (posi)
+- https://leetcode.com/problems/two-sum
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 # str
 
 ## rev_entire, rev_word, clean_space(i write, j read)
