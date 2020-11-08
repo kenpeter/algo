@@ -9,25 +9,6 @@
 <br/>
 <br/>
 
-# array
-
-## hash_self, hash_complementary_self;
-
-##### [0, 3, 4, 0], tar = 0; hash[val] = ind (posi); re [ ind, hash[tar - val] ]
-
-- EG
-- SUMMA
-- loop eles
-- if (hash[tar - val]) re [ ind, hash[tar - val]]
-- hash[val] = ind (posi)
-- https://leetcode.com/problems/two-sum
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 # str
 
 ## rev_entire, rev_word, clean_space(i write, j read)
@@ -429,17 +410,6 @@
 - if h[ s[i] + s[i+1] ], fast_forward
 - else 1_char_acc
 - https://leetcode.com/problems/roman-to-integer
-
-<br/>
-<br/>
-
-##### build posi_hash along the way
-
-- EG
-- SUMMA
-- build posi_hash along the way
-- store farthest(orig) posi
-- https://leetcode.com/problems/largest-substring-between-two-equal-characters
 
 <br/>
 <br/>
@@ -954,15 +924,44 @@
 - distance(c - a) === distance(C - A)
 - https://leetcode.com/problems/to-lower-case
 
-##### letter distance
+<br/>
+<br/>
+
+## build HASH_POSI, self_first / self_inloop / complementary_inloop
+
+##### letter distance; build HASH_POSI (self_first)
+
+- EG
+- keyboard: abcdefghijklmnopqrstuvwxyz, word: cba, that is 1 position (a-z)
+- keyboard: pqrstuvwxyzabcdefghijklmno, word: pom, that is another position (p-o)
+- SUMMA
+- build HASH_POSI (self_first)
+- loop chars (word)
+- i=1, look_back, distance = hash[i] - hash[i-1]
+- https://codedestine.com/single-row-keyboard-string-problem
+
+##### letter distance; build HASH_POSI (self_inloop)
 
 - EG
 - SUMMA
-- abcdefghijklmnopqrstuvwxyz, that is 1 position (a-z)
-- pqrstuvwxyzabcdefghijklmno, that is another position (p-o)
-- build hash
-- distance
-- https://codedestine.com/single-row-keyboard-string-problem/
+- loop chars; build HASH_POSI (self_inloop)
+- store start_char_posi; met again get_distance
+- https://leetcode.com/problems/largest-substring-between-two-equal-characters
+
+##### [0, 3, 4, 0], tar = 0; build HASH_POSI (complementary_inloop); hash[tar - val](complementary); hash[val] = POSI;
+
+- EG
+- SUMMA
+- loop eles; build HASH_POSI (complementary_inloop)
+- if (hash[tar - val])(complementary), re [ ind, hash[tar - val] ]
+- hash[val] = posi
+- https://leetcode.com/problems/two-sum
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 <br/>
 <br/>
