@@ -9,6 +9,26 @@
 <br/>
 <br/>
 
+# arr
+
+## sort; i_start, j_end; ++i_lookfor_bigger; --j_lookfor_smaller
+
+##### two sum less than k; sort; i_start, j_end; if a[i] + a[j] < k, ++i_lookfor_bigger; if a[i] + a[j] >= k, --j_lookfor_smaller
+
+- EG
+- SUMMA
+- sort
+- i_start, j_end
+- if a[i] + a[j] < k, ++i_lookfor_bigger
+- if a[i] + a[j] >= k, --j_lookfor_smaller
+- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 # str
 
 ## rev_entire, rev_word, clean_space(i write, j read)
@@ -634,38 +654,36 @@
 <br/>
 <br/>
 
-## stable, outloop, repeat VS change, inloop, once
+## up_ups || up_lows || low_lows
 
-##### CHINA || China || china; ( stable, outloop, repeat VS change, inloop, once )
+##### CHINA || China || china -> up_ups, up_lows, low_lows
 
 - EG
 - SUMMA
 - re CHINA || China || china
 - loop chars
 - re up_ups(w) || up_lows(w) || low_lows(w);
-- up_ups == up?(w[0], stable) && up?(w[i], change, inloop, once)
-- up_lows == up?(w[0], stable) && low?(w[i], change, inloop, once)
-- low_lows == low?(w[0], stable) && low?(w[i], change, inloop, once)
+- up_ups == up?(w[0]) && up?(w[i], loop)
+- up_lows == up?(w[0]) && low?(w[i], loop)
+- low_lows == low?(w[0]) && low?(w[i], loop)
 - https://leetcode.com/problems/detect-capital
 
 <br/>
 <br/>
 
-##### aaAaA -> aaA -> a;
+## pick sth stable, rest change / move
+
+##### aaAaA (rm Aa) -> aaA (rm aA) -> a (rm nothing);
 
 - EG
 - SUMMA
-- outloop (prev_len != curr_len, len_eventually_same; prev_len stable, outloop, repeat)
-- inloop (s.len change, inloop, once)
+- outloop (prev_s.len == curr_s.len, rm nothing, stop)
+- inloop (i=0, i+1<s.len, look_forward); pick prev_s.len stable, rest str change
+-
 - A - a = 32, B - b = 32...
 - https://leetcode.com/problems/make-the-string-great
 
-<br/>
-<br/>
-
-## outloop repeat (change_len), inloop slide_word
-
-##### abcabc -> a VS b(len_1) -> ab VS ca(len_2) -> abc VS abc(len_3);
+##### abcabc -> a VS b(len_1) -> ab VS ca(len_2) -> abc VS abc(len_3); pick pattern_len stable, rest move
 
 - EG
 - ..
@@ -681,6 +699,15 @@
 - abc VS abc (slide_char)
 -
 - https://leetcode.com/problems/repeated-substring-pattern
+
+##### two sum less than k; i=0, i+1 < a.len (save_for_j); j=i+1 (start_behind), j < a.len; pick ele stable, rest ele move
+
+- EG
+- SUMMA
+- loop eles; i=0, i+1 < a.len (save_for_j); pick ele stable
+- loop eles; j=i+1 (start_behind), j < a.len; rest ele move
+- a[i] + a[j] < k
+- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
 <br/>
 <br/>
@@ -960,9 +987,6 @@
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-
 <br/>
 <br/>
 
