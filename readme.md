@@ -23,6 +23,22 @@
 - if a[i] + a[j] >= k, --j_lookfor_smaller
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
+##
+
+##### [2, 5, 3, 1, 1] (missing 4) -> ind = ele - 1 -> [2-1, 5-1, 3-1, 1-1, 1-1] -> [1(ind), 4(ind), 2(ind), 0(ind), 0(ind)]; [-2, -5, -3, x, -1]; ele = ind + 1
+
+- EG
+- SUMMA
+- loop eles
+- if pure - or +, ind info lost; num val has to stay; can mark -
+- ind needs +
+- because 1 -> n, so index - 1
+-
+- access ele; meet again or brand new ele
+- make it always -
+- if sth not mark, someone else has dup and they occupy the position.
+- https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array
+
 <br/>
 <br/>
 <br/>
