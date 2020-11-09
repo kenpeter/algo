@@ -210,15 +210,24 @@
 <br/>
 <br/>
 
-## rm_1_item, other_shift_left; len reduce; --i, ++i (back_to_top)
+## rm\*1_item; (len_reduce, --i && ++i_back_to_top)
 
-##### rm vowel in str; splice, other_shift_left; len reduce; --i, ++i (back_to_top)
+##### rm vowel in str; splice; (len_reduce, --i && ++i_back_to_top)
 
 - EG
 - SUMMA
 - loop chars
-- arr.splice(i, how_many), remove_in_place
-- splice, other_shift_left; len reduce; --i, ++i (back_to_top)
+- arr.splice(i, 1_delete_count), remove_in_place
+- splice; (len_reduce, --i && ++i_back_to_top)
+- https://www.geeksforgeeks.org/program-remove-vowels-string
+
+##### [-1, -1, 0, 1, 1, 2, 2] -> [-1, 0, 1, 2];
+
+- EG
+- SUMMA
+- loop eles
+- i=1, i<a.len
+- if a[i] == a[i-1], a.splice(i-1, 1_delete_count); (len_reduce, --i && ++i_back_to_top)
 - https://www.geeksforgeeks.org/program-remove-vowels-string
 
 ##### ip addr, 123.41.51.61 -> 123[.]41[.]51[.]61; insert "[" start, insert "]" end
@@ -226,8 +235,9 @@
 - EG
 - SUMMA
 - loop chars
-- arr.splice(ind, 0, "["), insert at ind front
-- extra: arr.splice(ind, 1), remove 1 ele at ind
+- arr.splice(ind, 0_delete_count, "["), insert at ind front
+- i = i+2; 123.(i)41.xxxx -> 123[.4(i)1
+- arr.splice(ind, 0_delete_count, "]"), insert at ind front
 - https://leetcode.com/problems/defanging-an-ip-address
 
 <br/>
