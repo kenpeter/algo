@@ -31,12 +31,12 @@
 
 # str
 
-## rev_entire, rev_word, clean_space(i write, j read)
+## rev_entire, rev_word, clean_space(i_write, j_read)
 
 ##### rev position, but no rev word; rev_entire(group_stay), rev_word(i_start, j_end), clean_space(i write, j read)
 
 - EG
-- SUMMA => rev_entire (group_stay); rev_word; clean_space (i write, j read)
+- SUMMA => rev_entire (group_stay); rev_word; clean_space (i_write, j_read)
 - (1) rev_entire (group_stay)
 - i, j cross over;
 - (2) rev_word(i_start, j_end)
@@ -46,11 +46,24 @@
 - front_space, copy, end_space, 1 space;
 - https://leetcode.com/problems/reverse-words-in-a-string
 
-##### rev position, but no rev word; rev_entire(group_stay), rev_word(i_start, j_end), clean_space(i write, j read)
+##### rev position, but no rev word; rev_entire(group_stay), rev_word(i_start, j_end), clean_space(i_write, j_read)
 
 - same as above
 - except no extra space
-- https://leetcode.com/problems/reverse-words-in-a-string-ii/
+- https://leetcode.com/problems/reverse-words-in-a-string-ii
+
+##### i_prev_write, j_curr_read;
+
+- EG
+- i=0 (prev_write), j=0 (curr_read)
+- [-1, -1, 0, 1, 1, 2, 2], sort;
+- i pt -1(ind_0), j pt -1(ind_0); i pt -1(0), j pt -1(1); i pt -1(0), j pt 0(2), a[++i] = a[j]
+- SUMMA
+- loop eles
+- if a[i_prev_write] === a[j_curr_read], ++j_curr_read;
+- if a[i_prev_write] !== a[j_curr_read], a[++i] = a[j_curr_read]
+- end_loop re ++i;
+- https://leetcode.com/problems/remove-duplicates-from-sorted-array
 
 <br/>
 <br/>
