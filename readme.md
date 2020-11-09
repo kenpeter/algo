@@ -52,18 +52,27 @@
 - except no extra space
 - https://leetcode.com/problems/reverse-words-in-a-string-ii
 
-##### i_prev_write, j_curr_read;
+##### rm duplicated ele; i_write, j_read;
 
 - EG
-- i=0 (prev_write), j=0 (curr_read)
-- [-1, -1, 0, 1, 1, 2, 2], sort;
-- i pt -1(ind_0), j pt -1(ind_0); i pt -1(0), j pt -1(1); i pt -1(0), j pt 0(2), a[++i] = a[j]
+- i=0 (write), j=0 (read)
+- [1, 1, 2, 2, 3, 3], sort;
+- e.g. i pt 1(ind_0), j pt 2(ind_2)
 - SUMMA
-- loop eles
-- if a[i_prev_write] === a[j_curr_read], ++j_curr_read;
-- if a[i_prev_write] !== a[j_curr_read], a[++i] = a[j_curr_read]
+- loop eles (j)
+- if a[i_write] === a[j_read]; ++j (because !want dup);
+- if a[i_write] !== a[j_read], a[++i] = a[j] (because want !dup);
 - end_loop re ++i;
 - https://leetcode.com/problems/remove-duplicates-from-sorted-array
+
+##### rm particular ele; i_write, j_read;
+
+- EG
+- SUMMA
+- loop eles (j)
+- if a[j_read] === v, continue (because !want v);
+- if a[j_read] !== v, a[i++] = a[j] (because want ele);
+- https://leetcode.com/problems/remove-element
 
 <br/>
 <br/>
