@@ -23,9 +23,12 @@
 - if a[i] + a[j] >= k, --j_lookfor_smaller
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
-##
+<br/>
+<br/>
 
-##### [2, 5, 3, 1, 1] (missing 4) -> ind = ele - 1 -> [2-1, 5-1, 3-1, 1-1, 1-1] -> [1(ind), 4(ind), 2(ind), 0(ind), 0(ind)]; [-2, -5, -3, x, -1]; ele = ind + 1
+## num <-> index; mark_num
+
+##### [2, 5, 3, 1, 1] (missing 4) -> ind = ele - 1 -> [2-1, 5-1, 3-1, 1-1, 1-1] -> [1(ind), 4(ind), 2(ind), 0(ind), 0(ind)]; [-2, -5, -3, x, -1]; ele = ind + 1; num <-> ind; mark_num
 
 - EG
 - SUMMA
@@ -38,6 +41,16 @@
 - make it always -
 - if sth not mark, someone else has dup and they occupy the position.
 - https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array
+
+#####
+
+- EG
+- SUMMA
+- ns has zero
+- ns = [3, 0, 1] -> [0, 1, 3] -> [1, 3] (missing 2)
+- full: [1, 2, 3]
+- diff = [1, 2, 3] - [1, 3]
+- https://leetcode.com/problems/missing-number
 
 <br/>
 <br/>
