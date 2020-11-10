@@ -28,7 +28,7 @@
 
 ## num <-> index; mark_num
 
-##### [2, 5, 3, 1, 1] (missing 4) -> ind = ele - 1 -> [2-1, 5-1, 3-1, 1-1, 1-1] -> [1(ind), 4(ind), 2(ind), 0(ind), 0(ind)]; [-2, -5, -3, x, -1]; ele = ind + 1; num <-> ind; mark_num
+##### [2, 5, 3, 1, 1] (missing 4); ind = ele - 1; [2-1(ind), 5-1(ind), 3-1(ind), 1-1(ind), 1-1(ind)]; [-2, -5, -3, x, -1]; ele = ind + 1; num <-> ind; mark_num
 
 - EG
 - SUMMA
@@ -42,15 +42,33 @@
 - if sth not mark, someone else has dup and they occupy the position.
 - https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array
 
-#####
+<br/>
+<br/>
+
+## arr_full_sum - arr_actual_sum
+
+##### [3, 0, 1] -> [0, 1, 3] (2 missing) -> [0, 1, 2, 3] (full); diff = [0, 1, 2, 3](full_sum) - [0, 1, 3](actual_sum)
 
 - EG
 - SUMMA
 - ns has zero
-- ns = [3, 0, 1] -> [0, 1, 3] -> [1, 3] (missing 2)
-- full: [1, 2, 3]
-- diff = [1, 2, 3] - [1, 3]
+- ns = [3, 0, 1] -> [0, 1, 3] -> [0, 1, 3] (missing 2)
+- full: [0, 1, 2, 3]
+- diff = [0, 1, 2, 3] - [0, 1, 3]
 - https://leetcode.com/problems/missing-number
+
+<br/>
+<br/>
+
+## arr.sort, len/2 major index
+
+##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3] -> 1: 3 times -> 1 majority
+
+- EG
+- SUMMA
+- arr.sort
+- arr[floor(arr.len/2)] (arr.sort, len/2 major index)
+- https://leetcode.com/problems/majority-element
 
 <br/>
 <br/>
