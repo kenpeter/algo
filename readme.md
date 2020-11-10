@@ -60,7 +60,7 @@
 <br/>
 <br/>
 
-## arr.sort, len/2 major index
+## arr.sort, len/2 major conver, index
 
 ##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3] -> 1: 3 times -> 1 majority
 
@@ -69,6 +69,30 @@
 - arr.sort
 - arr[floor(arr.len/2)] (arr.sort, len/2 major index)
 - https://leetcode.com/problems/majority-element
+
+<br/>
+<br/>
+
+## big to small, flow down; smallest_backup, largest_update
+
+##### [1, 1, 1, 2, 2, 3, 3, 3] -> m2, m1, m0; find 3rd largest; big to small, flow down; smallest_backup, largest_update
+
+- EG
+- SUMMA
+- hash[n], skip dup num
+-
+- big to small, flow down
+- if n > m2
+- else if n > m1
+- else if n > m0
+-
+- if n > m2
+- m0 = m1, smallest_backup
+- m1 = m2, smallest_backup
+- m2 = n, largest_update
+-
+- if m0 not set, re m2
+- https://leetcode.com/problems/third-maximum-number
 
 <br/>
 <br/>
