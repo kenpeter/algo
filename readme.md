@@ -96,6 +96,28 @@
 
 <br/>
 <br/>
+
+## UP_SHAPE, DOWN_SHAP; UP_RANGE, DOWN_RANGE
+
+##### [1, -1, 3], change 1 ele, [1, 2, 3]; UP_RANGE, DOWN_RANGE
+
+- EG
+- SUMMA
+- loop eles
+- orig count = 1;
+- ns[i] < ns[i-1], DOWN_RANGE, ++count, ind = i
+- count == 1, re true;
+-
+- count == 2, edge re ture;
+-
+- count == 2, 3 dots UP_RANGE;
+- UP_SHAPE, far_end, ns[i] >= ns[i-2], change_mid;
+- DOWN_SHAPE, mid, ns[i+1] >= ns[i-1], change_mid
+-
+- https://leetcode.com/problems/non-decreasing-array
+
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
