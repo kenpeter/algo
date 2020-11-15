@@ -163,9 +163,19 @@
 - EG
 - SUMMA
 - loop eles (j)
-- if a[j_read] === v, continue (because !want v);
-- if a[j_read] !== v, a[i++] = a[j] (because want ele);
+- if a[j_read] === v, ++j
+- if a[j_read] !== v, a[i++] = a[j++]
 - https://leetcode.com/problems/remove-element
+
+##### move zeros to the end; i_write, j_read;
+
+- EG
+- SUMMA
+- loop eles (j)
+- if a[j_read] === 0, ++j
+- if a[j_read] !== 0, a[i++] = a[j++]
+- fill rest of i_read, 0
+- https://leetcode.com/problems/move-zeroes
 
 <br/>
 <br/>
