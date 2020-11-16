@@ -1089,34 +1089,35 @@
 <br/>
 <br/>
 
-## build HASH_POSI, self_first / self_inloop / complementary_inloop
+## build HASH_POSI, prebuild_posi(self_ele) / build_posi_along(self_ele) / build_posi_along(complementary_ele)
 
-##### letter distance; build HASH_POSI (self_first)
+##### letter distance; build HASH_POSI (prebuild_posi, self_ele)
 
 - EG
-- keyboard: abcdefghijklmnopqrstuvwxyz, word: cba, that is 1 position (a-z)
-- keyboard: pqrstuvwxyzabcdefghijklmno, word: pom, that is another position (p-o)
+- keyboard: abcdefghijklmnopqrstuvwxyz, word: cba, that is 1 keyboard position (a-z)
+- keyboard: pqrstuvwxyzabcdefghijklmno, word: pom, that is another keyboard position (p-o)
 - SUMMA
-- build HASH_POSI (self_first)
-- loop chars (word)
+- build HASH_POSI (prebuild_posi)
+- loop chars
 - i=1, look_back, distance = hash[i] - hash[i-1]
 - https://codedestine.com/single-row-keyboard-string-problem
 
-##### letter distance; build HASH_POSI (self_inloop)
+##### letter distance; build HASH_POSI (build_posi_along, self_ele)
 
 - EG
 - SUMMA
-- loop chars; build HASH_POSI (self_inloop)
-- store start_char_posi; met again get_distance
+- loop chars;
+- if met, cal max distance
+- if !met, build_posi_along
 - https://leetcode.com/problems/largest-substring-between-two-equal-characters
 
-##### [0, 3, 4, 0], tar = 0; build HASH_POSI (complementary_inloop); hash[tar - val](complementary); hash[val] = POSI;
+##### two_sum, [0, 3, 4, 0], tar = 0; build HASH_POSI (build_posi_along, complementary_ele)
 
 - EG
 - SUMMA
-- loop eles; build HASH_POSI (complementary_inloop)
-- if (hash[tar - val])(complementary), re [ ind, hash[tar - val] ]
-- hash[val] = posi
+- loop eles;
+- if met complementary_ele, re [ ind, hash[tar - val] ]
+- if !met, build_posi_along
 - https://leetcode.com/problems/two-sum
 
 <br/>
