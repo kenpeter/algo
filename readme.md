@@ -153,8 +153,8 @@
 - e.g. i pt 1(ind_0), j pt 2(ind_2)
 - SUMMA
 - loop eles (j)
-- if a[i_write] === a[j_read]; ++j (because !want dup);
-- if a[i_write] !== a[j_read], a[++i] = a[j] (because want !dup);
+- if a[i_write] === a[j_read], ++j (equal val; j move only);
+- if a[i_write] !== a[j_read], a[++i] = a[j] (!equal val; i next, overwrite, j move);
 - end_loop re ++i;
 - https://leetcode.com/problems/remove-duplicates-from-sorted-array
 
@@ -163,8 +163,8 @@
 - EG
 - SUMMA
 - loop eles (j)
-- if a[j_read] === v, ++j
-- if a[j_read] !== v, a[i++] = a[j++]
+- if a[j_read] === v, ++j (equal val; j move only)
+- if a[j_read] !== v, a[i++] = a[j++] (!equal val; overwrite, i j move)
 - https://leetcode.com/problems/remove-element
 
 ##### move zeros to the end; i_write, j_read;
@@ -172,8 +172,8 @@
 - EG
 - SUMMA
 - loop eles (j)
-- if a[j_read] === 0, ++j
-- if a[j_read] !== 0, a[i++] = a[j++]
+- if a[j_read] === 0, ++j (equal val; j move only)
+- if a[j_read] !== 0, a[i++] = a[j++] (!equal val; overwrite, i j move)
 - fill rest of i_read, 0
 - https://leetcode.com/problems/move-zeroes
 
