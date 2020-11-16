@@ -11,17 +11,28 @@
 
 # arr
 
-## sort; i_start, j_end; ++i_lookfor_bigger; --j_lookfor_smaller
+## sort_arr, shrink i j. ++i_big, --j_small
 
-##### two sum less than k; sort; i_start, j_end; if a[i] + a[j] < k, ++i_lookfor_bigger; if a[i] + a[j] >= k, --j_lookfor_smaller
+##### two sum < k; sort_arr, shrink i j, find_max; if < k, ++i_for_big; if >= k, --j_for_small
 
 - EG
 - SUMMA
-- sort
-- i_start, j_end
-- if a[i] + a[j] < k, ++i_lookfor_bigger
-- if a[i] + a[j] >= k, --j_lookfor_smaller
+- sort_arr
+- while loop; i_start, j_end
+- if a[i] + a[j] < k, ++i_big
+- if a[i] + a[j] >= k, --j_small
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
+
+##### two sum == k; sort_arr, shrink i j; if < k, ++i_for_big; if > k, --j_for_small; if == k, return
+
+- EG
+- SUMMA
+- sort_arr
+- loop eles;
+- if a[i] + a[j] < k, ++i_big
+- if a[i] + a[j] > k, --j_small
+- if a[i] + a[j] == k, return
+- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
 <br/>
 <br/>
