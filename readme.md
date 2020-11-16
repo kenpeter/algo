@@ -1127,9 +1127,10 @@
 - EG
 - SUMMA
 - loop eles;
-- if met complementary_ele, re [ ind, hash[tar - val] ]
+- if met complementary_ele, re [ hash[tar - val], ind ]
 - if !met, build_posi_along
 - https://leetcode.com/problems/two-sum
+- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
 <br/>
 <br/>
