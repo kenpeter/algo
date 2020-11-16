@@ -1177,6 +1177,22 @@
 
 https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-questions-thread
 
+<br/>
+<br/>
+<br/>
+<br/>
+
+# some kind of mem
+
+- max/min
+- hash
+- dp ( dp[i] = dp[i-1] + val; dp[i] = max/min(dp[i-1]) )
+
+<br/>
+<br/>
+<br/>
+<br/>
+
 # misc dp
 
 ## each digit as group; double digit as group
