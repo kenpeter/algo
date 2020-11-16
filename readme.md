@@ -154,7 +154,7 @@
 - SUMMA
 - loop eles (j)
 - if a[i_write] === a[j_read], ++j (equal val; j move only);
-- if a[i_write] !== a[j_read], a[++i] = a[j] (!equal val; i next, overwrite, j move);
+- if a[i_write] !== a[j_read], a[++i] = a[j] (!equal val; i pt good stuff, overwrite, j move);
 - end_loop re ++i;
 - https://leetcode.com/problems/remove-duplicates-from-sorted-array
 
