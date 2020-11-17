@@ -903,8 +903,7 @@
 - outloop: i=0, i+1 < a.len (save_for_j)
 - inloop: j=i+1 (start_behind), j < a.len
 - sort
-- a[i] + a[j] < k, keep max, ++i_small
-- a[i] + a[j] >= k, --j_big
+- a[i] + a[j] < k && a[i] + a[j] > max, max = a[i] + a[j]
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
 <br/>
