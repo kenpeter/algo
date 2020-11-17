@@ -844,7 +844,7 @@
 
 ## outloop, inloop
 
-##### outloop, inloop; use_up single def_num, 3999 -> 2999 -> 1999 -> 999 -> 99 -> 9 -> 0 -> (MMM)(CM)(?)(?)
+##### outloop, inloop; use_up single def_num, 3999 -> 2999 -> 1999 -> 999 -> 99 -> 9 -> 0 === (MMM)(CM)(?)(?)
 
 - EG
 - 3999 -> 2999 -> 1999 -> 999 -> 99 -> 9 -> 0
@@ -867,7 +867,7 @@
 - num -> roman, build str
 - https://leetcode.com/problems/integer-to-roman
 
-##### aaAaA (rm Aa) -> aaA (rm aA) -> a (rm nothing);
+##### aaAaA (rm Aa) -> aaA (rm aA) -> a (rm nothing, stop);
 
 - EG
 - SUMMA
