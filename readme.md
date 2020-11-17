@@ -678,16 +678,6 @@
 
 ## build_hash, use_hash
 
-##### build_hash; 3999 - 1000(use_hash), 2999 - 1000(use_hash), 1999 - 1000, .. -> (MMM)(CM)(?)(?)
-
-- EG
-- 3999 -> (3000)(900)(90)(9) -> (MMM)(CM)(?)(?)
-- SUMMA
-- build_hash (single_double_roman; hash no order)
-- loop hash
-- loop tar (use_hash)
-- https://leetcode.com/problems/integer-to-roman
-
 ##### build_hash(parent); --parent_pool_hash[child_str] (use_hash)
 
 - EG
@@ -715,6 +705,41 @@
 - e.g. b:2 (odd), can use 3-1=2; later add 1
 - ba a ab
 - https://leetcode.com/problems/longest-palindrome
+
+<br/>
+<br/>
+
+## build HASH_POSI, prebuild_posi(self_ele) / build_posi_along(self_ele) / build_posi_along(complementary_ele)
+
+##### letter distance; build HASH_POSI (prebuild_posi, self_ele)
+
+- EG
+- keyboard: abcdefghijklmnopqrstuvwxyz, word: cba, that is 1 keyboard position (a-z)
+- keyboard: pqrstuvwxyzabcdefghijklmno, word: pom, that is another keyboard position (p-o)
+- SUMMA
+- build HASH_POSI (prebuild_posi)
+- loop chars
+- i=1, look_back, distance = hash[i] - hash[i-1]
+- https://codedestine.com/single-row-keyboard-string-problem
+
+##### letter distance; build HASH_POSI (build_posi_along, self_ele)
+
+- EG
+- SUMMA
+- loop chars;
+- if met, cal max distance
+- if !met, build_posi_along
+- https://leetcode.com/problems/largest-substring-between-two-equal-characters
+
+##### two_sum, [0, 3, 4, 0], tar = 0; build HASH_POSI (build_posi_along, complementary_ele)
+
+- EG
+- SUMMA
+- loop eles;
+- if met complementary_ele, re [ hash[tar - val], ind ]
+- if !met, build_posi_along
+- https://leetcode.com/problems/two-sum
+- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
 <br/>
 <br/>
@@ -817,14 +842,37 @@
 <br/>
 <br/>
 
-## pick sth stable, rest change / move
+## outloop, inloop
+
+##### outloop, inloop; use_up single def_num, 3999 -> 2999 -> 1999 -> 999 -> 99 -> 9 -> 0 -> (MMM)(CM)(?)(?)
+
+- EG
+- 3999 -> 2999 -> 1999 -> 999 -> 99 -> 9 -> 0
+- SUMMA
+- def_num (hash)
+- const h = {
+  1: "I",
+  4: "IV",
+  ..
+  9: "IX",
+  ..
+  90: "XC",
+  ...
+  900: "CM"
+  1000: "M"
+  }
+- hash -> arr -> rev
+- outloop: loop each def_num
+- inloop: use_up single def_num, move next
+- num -> roman, build str
+- https://leetcode.com/problems/integer-to-roman
 
 ##### aaAaA (rm Aa) -> aaA (rm aA) -> a (rm nothing);
 
 - EG
 - SUMMA
-- outloop (prev_s.len == curr_s.len, rm nothing, stop)
-- inloop (i=0, i+1<s.len, look_forward); pick prev_s.len stable, rest str change
+- outloop: (prev_s.len == curr_s.len, rm nothing, stop)
+- inloop: (i=0, i+1<s.len, look_forward); pick prev_s.len stable, rest str change
 -
 - A - a = 32, B - b = 32...
 - https://leetcode.com/problems/make-the-string-great
@@ -835,23 +883,25 @@
 - ..
 - SUMMA
 - len = 6, half_len = 3
-- abcabc (len_1(stable), outloop, repeat)
-- a VS b, a VS c, a VS a, a VS b, a VS c (slide_char)
+- abcabc (len_1(stable), OUTLOOP)
+- a VS b, a VS c, a VS a, a VS b, a VS c (slide_char, INLOOP)
 -
-- abcabc (len_2(stable), outloop, repeat)
-- ab VS ca, ab VS bc (slide_char)
+- abcabc (len_2(stable), OUTLOOP)
+- ab VS ca, ab VS bc (slide_char, INLOOP)
 -
-- abcabc (len_3(stable), outloop, repeat)
-- abc VS abc (slide_char)
+- abcabc (len_3(stable), OUTLOOP)
+- abc VS abc (slide_char, INLOOP)
 -
+- outloop: pattern
+- inloop: move pattern
 - https://leetcode.com/problems/repeated-substring-pattern
 
 ##### two sum less than k; i=0, i+1 < a.len (save_for_j); j=i+1 (start_behind), j < a.len; pick ele stable, rest ele move
 
 - EG
 - SUMMA
-- loop eles; i=0, i+1 < a.len (save_for_j); pick ele stable
-- loop eles; j=i+1 (start_behind), j < a.len; rest ele move
+- outloop: i=0, i+1 < a.len (save_for_j); pick ele stable
+- inloop: j=i+1 (start_behind), j < a.len; rest ele move
 - a[i] + a[j] < k
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
@@ -1099,41 +1149,6 @@
 
 <br/>
 <br/>
-
-## build HASH_POSI, prebuild_posi(self_ele) / build_posi_along(self_ele) / build_posi_along(complementary_ele)
-
-##### letter distance; build HASH_POSI (prebuild_posi, self_ele)
-
-- EG
-- keyboard: abcdefghijklmnopqrstuvwxyz, word: cba, that is 1 keyboard position (a-z)
-- keyboard: pqrstuvwxyzabcdefghijklmno, word: pom, that is another keyboard position (p-o)
-- SUMMA
-- build HASH_POSI (prebuild_posi)
-- loop chars
-- i=1, look_back, distance = hash[i] - hash[i-1]
-- https://codedestine.com/single-row-keyboard-string-problem
-
-##### letter distance; build HASH_POSI (build_posi_along, self_ele)
-
-- EG
-- SUMMA
-- loop chars;
-- if met, cal max distance
-- if !met, build_posi_along
-- https://leetcode.com/problems/largest-substring-between-two-equal-characters
-
-##### two_sum, [0, 3, 4, 0], tar = 0; build HASH_POSI (build_posi_along, complementary_ele)
-
-- EG
-- SUMMA
-- loop eles;
-- if met complementary_ele, re [ hash[tar - val], ind ]
-- if !met, build_posi_along
-- https://leetcode.com/problems/two-sum
-- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
-
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
@@ -1186,7 +1201,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - max/min
 - hash
-- dp ( dp[i] = dp[i-1] + val; dp[i] = max/min(dp[i-1]) )
+- dp ( dp[i] = dp[i-x] + val; dp[i] = max/min(dp[i-x]) )
 
 <br/>
 <br/>
@@ -1245,6 +1260,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop chars
 - aaabc -> dp: [1(init), 1, 1, 1(init), 1(init)]; s[i] == s[i-1], dp[i] = dp[i-1] + 1; each_col, dp add up
 - https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms/
+
+<br/>
+<br/>
+
+## continue max eles, dp and reset
+
+##### [-2,1,-3,4,-1,2,1,-5,4]; continue max eles, dp and reset
+
+- EG
+- SUMMA
+- arr.len+1 size
+- dp[i] => AT this ind, FINAL max_val
+- loop eles
+- dp[i] = (dp[i-1] || 0) + ns[i-1]; why reset? !want less more
+- https://leetcode.com/problems/maximum-subarray
 
 <br/>
 <br/>
