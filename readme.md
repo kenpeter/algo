@@ -676,31 +676,31 @@
 <br/>
 <br/>
 
-## build_hash, use_hash
+## hash_frequency, xxxx
 
-##### build_hash(parent); --parent_pool_hash[child_str] (use_hash)
+##### hash_frequency; --hash_frequency[input_char]
 
 - EG
 - SUMMA
-- build_hash (parent)
-- loop child_str
-- if(parent_pool_hash[child] !== undef && --parent_pool_hash[child] >= 0, use_hash)
+- hash_freq
+- loop input_chars
+- if(hash_freq[input_char] !== undef && --hash_freq[input_char] >= 0)
 - https://leetcode.com/problems/ransom-note
 
-##### 1st unique char in str; build_hash; use_hash(loop_up_in_order);
+##### 1st unique char in str; hash_frequency, lookup_in_order
 
 - EG
 - SUMMA
-- build_hash (char frequency)
-- loop char (loop_char_in_order)
+- hash_freq
+- loop chars (lookup_in_order)
 - meet frequency 1
 - https://leetcode.com/problems/first-unique-character-in-a-string
 
-##### aaabb, build_palindrome; a:3 (odd), b:2 (even)
+##### aaabb, build_palindrome; a:3 (odd), b:2 (even); hash_freq, take_all_even
 
 - EG
 - SUMMA
-- build_hash
+- hash_freq
 - e.g. a:3 (even), can use all
 - e.g. b:2 (odd), can use 3-1=2; later add 1
 - ba a ab
