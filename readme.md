@@ -871,8 +871,8 @@
 
 - EG
 - SUMMA
-- outloop: (prev_s.len == curr_s.len, rm nothing, stop)
-- inloop: (i=0, i+1<s.len, look_forward); pick prev_s.len stable, rest str change
+- outloop: while(prev_s.len !== curr_s.len)
+- inloop: (i=0, i+1<s.len); s[i+1] - s[i] == 32, s.rm('Aa')
 -
 - A - a = 32, B - b = 32...
 - https://leetcode.com/problems/make-the-string-great
@@ -900,9 +900,11 @@
 
 - EG
 - SUMMA
-- outloop: i=0, i+1 < a.len (save_for_j); pick ele stable
-- inloop: j=i+1 (start_behind), j < a.len; rest ele move
-- a[i] + a[j] < k
+- outloop: i=0, i+1 < a.len (save_for_j)
+- inloop: j=i+1 (start_behind), j < a.len
+- sort
+- a[i] + a[j] < k, keep max, ++i_small
+- a[i] + a[j] >= k, --j_big
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
 <br/>
