@@ -108,24 +108,42 @@
 <br/>
 <br/>
 
-## UP_SHAPE, DOWN_SHAP; UP_RANGE, DOWN_RANGE
+## UP, DOWN; 3pt_up_shape, 3pt_down_shape
 
-##### [1, -1, 3], change 1 ele, [1, 2, 3]; UP_RANGE, DOWN_RANGE
+##### [1, -1, 3], change 1 ele, [1, 2, 3]; UP, DOWN; 3pt_up_shape, 3pt_down_shape
 
 - EG
 - SUMMA
 - loop eles
 - orig count = 1;
-- ns[i] < ns[i-1], DOWN_RANGE, ++count, ind = i
-- count == 1, re true;
+- ns[i] < ns[i-1], DOWN, ++count, ind = i
+- count == 1, increasing, re true;
 -
-- count == 2, edge re ture;
+- count == 2, edge_case, re ture;
 -
-- count == 2, 3 dots UP_RANGE;
-- UP_SHAPE, far_end, ns[i] >= ns[i-2], change_mid;
-- DOWN_SHAPE, mid, ns[i+1] >= ns[i-1], change_mid
+- count == 2, 3 dots UP;
+- 3pt_up_shape, far_end, ns[i] >= ns[i-2], change_mid;
+- 3pt_down_shape, mid, ns[i+1] >= ns[i-1], change_mid
 -
 - https://leetcode.com/problems/non-decreasing-array
+
+<br/>
+<br/>
+
+## UP_LOOP, DOWN_LOOP;
+
+##### [4, 3, 2, 1, 2, 3, 4]; 4->3->2->1(DOWN_LOOP), 1->2->3->4(UP_LOOp); buy at 1, sell at 4
+
+- EG
+- SUMMA
+- while(i < a.len-1), look_ahead, last_ind
+- loop eles
+- DOWN_LOOP(p[i] <= p[i+1]); end_of_DOWN, start_of_UP;
+- can't mv i, because look_ahead fail; UP_LOOP can mv i
+-
+- UP_LOOP(p[i] > p[i+1]); end_of_UP, start_of_DOWN;
+- can't mv i, because look_ahead fail; DOWN_LOOP can mv i
+- https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii
 
 <br/>
 <br/>
