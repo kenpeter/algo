@@ -132,17 +132,17 @@
 
 ## UP_LOOP, DOWN_LOOP;
 
-##### [4, 3, 2, 1, 2, 3, 4]; 4->3->2->1(DOWN_LOOP), 1->2->3->4(UP_LOOp); buy at 1, sell at 4
+##### [4, 3, 2, 1, 2, 3, 4]; 4->3->2->1(DOWN_LOOP), 1->2->3->4(UP_LOOP); buy at 1, sell at 4
 
 - EG
 - SUMMA
-- while(i < a.len-1), look_ahead, last_ind
+- while(i < a.len-1), look_ahead(i_stay), last_ind
 - loop eles
 - DOWN_LOOP(p[i] <= p[i+1]); end_of_DOWN, start_of_UP;
-- can't mv i, because look_ahead fail; UP_LOOP can mv i
+- can't mv i, because look_ahead(i_stay) fail; UP_LOOP can mv i
 -
 - UP_LOOP(p[i] > p[i+1]); end_of_UP, start_of_DOWN;
-- can't mv i, because look_ahead fail; DOWN_LOOP can mv i
+- can't mv i, because look_ahead(i_stay) fail; DOWN_LOOP can mv i
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii
 
 <br/>
@@ -339,12 +339,12 @@
 - insert => sub(0, ind) + val + sub(ind)
 - https://leetcode.com/problems/thousand-separator
 
-##### ++++ -> [--++, +--+, ++--]; i=1(LOOK_BACK); insert: sub(0, i) + val + sub(i), BUILD_STR_PHILOSOPY
+##### ++++ -> [--++, +--+, ++--]; i=1(LOOK_BACK, i_move); insert: sub(0, i) + val + sub(i), BUILD_STR_PHILOSOPY
 
 - EG
 - SUMMA
 - loop chars
-- i=1(LOOK_BACK); s.sub(0, i-1, i_LOOK_BACK) + "--" + s.sub(i+1, 2_char), BUILD_STR_PHILOSOPY
+- i=1(LOOK_BACK, i_move); s.sub(0, i-1, i_LOOK_BACK, i_move) + "--" + s.sub(i+1, 2_char), BUILD_STR_PHILOSOPY
 - arr.push
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
@@ -423,7 +423,7 @@
 - abc, aabbcc (a long press, b long press, c long press)
 - SUMMA
 - i pt short (abc); j pt long (aabbcc)
-- if match, move sync; if not_match, LOOK_BACK, move async
+- if match, move sync; if not_match, LOOK_BACK(i_move), move async
 - https://leetcode.com/problems/long-pressed-name
 
 ##### search_needle_in_parent; i pt long_str, j pt short_str; move async, then sync
@@ -577,7 +577,7 @@
 - SUMMA => sb 1 group, b 1 group
 - build HASH (from Q, has all combo)
 - loop chars
-- curr = h[i], next = h[i+1] (LOOK_AHEAD)
+- curr = h[i], next = h[i+1] (LOOK_AHEAD, i_stay)
 - if curr >= next, b 1 group
 - else next < curr, sb 1 group, fast_forward
 - else the_end_char
@@ -588,7 +588,7 @@
 - EG
 - IVIV -> (in_h)(in_h) -> (IV)(IV)
 - VIVI -> (in_h)(in_h)(in_h) -> (V)(IV)(I)
-- SUMMA => h[ s[i] + s[i+1] ] (LOOK_AHEAD)
+- SUMMA => h[ s[i] + s[i+1] ] (LOOK_AHEAD, i_stay)
 - build HASH (from Q, has all combo)
 - loop chars
 - if h[ s[i] + s[i+1] ], fast_forward
@@ -598,9 +598,9 @@
 <br/>
 <br/>
 
-## start, end, start+1(LOOK_AHEAD), end-1(LOOK_BACK); start <-> end-1 || start+1 <-> end; i move right, j move left
+## start, end, start+1(LOOK_AHEAD, i_stay), end-1(LOOK_BACK, i_move); start <-> end-1 || start+1 <-> end; i move right, j move left
 
-##### start, end, start+1(LOOK_AHEAD), end-1(LOOK_BACK); start <-> end-1 (del_right) || start+1 <-> end (del_left); i move right, j move left
+##### start, end, start+1(LOOK_AHEAD, i_stay), end-1(LOOK_BACK, i_move); start <-> end-1 (del_right) || start+1 <-> end (del_left); i move right, j move left
 
 - EG
 - c|abba -> c(s)a(s+1)bb(e-1)a(e) -> (s+1 <-> e) -> del_left
@@ -644,9 +644,9 @@
 <br/>
 <br/>
 
-## LOOK_BACK
+## LOOK_BACK(i_move)
 
-##### ++++ -> [--++, +--+, ++--]; i-1, i(LOOK_BACK); insert: sub(0, i) + val + sub(i), BUILD_STR_PHILOSOPY
+##### ++++ -> [--++, +--+, ++--]; i-1, i(LOOK_BACK, i_move); insert: sub(0, i) + val + sub(i), BUILD_STR_PHILOSOPY
 
 - EG
 - SUMMA
@@ -655,13 +655,13 @@
 - arr.push
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
-##### find_word_segment; letter space == word_segment; i-1, i(LOOK_BACK);
+##### find_word_segment; letter space == word_segment; i-1, i(LOOK_BACK, i_move);
 
 - EG
 - ab\_\_\_cd\_\_efg\_\_; b\_, d\_, g\_ means 3 word_segment
 - SUMMA => letter space == word_segment
 - loop chars
-- i-1, i(LOOK_BACK); if(s[i-1] == ' ', s[i] == letter), word_segment++
+- i-1, i(LOOK_BACK, i_move); if(s[i-1] == ' ', s[i] == letter), word_segment++
 - https://leetcode.com/problems/number-of-segments-in-a-string
 
 <br/>
@@ -737,7 +737,7 @@
 - SUMMA
 - build HASH_POSI (prebuild_posi)
 - loop chars
-- i=1, look_back, distance = hash[i] - hash[i-1]
+- i=1, look_back(i_move), distance = hash[i] - hash[i-1]
 - https://codedestine.com/single-row-keyboard-string-problem
 
 ##### letter distance; build HASH_POSI (build_posi_along, self_ele)
