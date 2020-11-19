@@ -727,7 +727,7 @@
 <br/>
 <br/>
 
-## build HASH_POSI, prebuild_posi(self_ele) / build_posi_along(self_ele) / build_posi_along(complementary_ele)
+## build HASH_POSI, prebuild_posi(self_ele) / build_posi_along(self_ele, update_ele) / build_posi_along(complementary_ele)
 
 ##### letter distance; build HASH_POSI (prebuild_posi, self_ele)
 
@@ -748,6 +748,15 @@
 - if met, cal max distance
 - if !met, build_posi_along
 - https://leetcode.com/problems/largest-substring-between-two-equal-characters
+
+##### 2 same num distance <= k; build HASH_POSI (build_posi_along, update_ele)
+
+- EG
+- SUMMA
+- loop eles
+- build_posi_along(update_ele)
+- remember latest_posi
+- https://leetcode.com/problems/contains-duplicate-ii
 
 ##### two_sum, [0, 3, 4, 0], tar = 0; build HASH_POSI (build_posi_along, complementary_ele)
 
