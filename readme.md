@@ -1,7 +1,13 @@
+# same solution
+
+- https://github.com/lxztju/leetcode-algorithm
+- https://my.oschina.net/znfang/blog/4314950
+- https://darktiantian.github.io/%E7%AE%97%E6%B3%95%E7%AF%87%E7%9B%AE%E5%BD%95%E6%B1%87%E6%80%BB/
+
 # woth looking at
 
 - https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4
-  https://code.dennyzhang.com/hexspeak
+- https://code.dennyzhang.com/hexspeak
 
 <br/>
 <br/>
