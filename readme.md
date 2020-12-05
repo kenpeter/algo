@@ -62,9 +62,9 @@
 <br/>
 <br/>
 
-## arr_full_sum - arr_actual_sum
+## arr_full_sum(sort) - arr_actual_sum(sort)
 
-##### [3, 0, 1] -> [0, 1, 3] (2 missing) -> [0, 1, 2, 3] (full); diff = [0, 1, 2, 3](full_sum) - [0, 1, 3](actual_sum)
+##### missing_1_num; [3, 0, 1] -> [0, 1, 3] (2 missing) -> [0, 1, 2, 3] (full); diff = [0, 1, 2, 3](full_sum) - [0, 1, 3](actual_sum)
 
 - EG
 - SUMMA
@@ -150,6 +150,29 @@
 - UP_LOOP(p[i] > p[i+1]); end_of_UP, start_of_DOWN;
 - can't mv i, because look_ahead(i_stay) fail; DOWN_LOOP can mv i
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii
+
+<br/>
+<br/>
+
+## ?
+
+##### find missing range num; p_s > c_n (not_form); p_s == c_n (not_form); p_s < c_n (form), print; p_s < high, print
+
+- EG
+- [1, 10, 100, 1000], low=10, high=100; --> [11->999]
+- [1, 10, 100, 1000], low=-1, high=1001; --> [-1->0, 11->99, 101->999, 1001]
+- SUMMA
+- loop eles
+- s(miss) === potential_start
+- curr_n(exist) === curr_num
+- p_s = low
+- p_s > c_n, not form range, c_n next
+- p_s == c_n, p_s++
+- p_s < c_n, form range, print(p_s, c_n-1); p_s = c_n+1
+-
+- end_loop, p_s < high, print(p_s, high)
+- https://leetcode.com/problems/missing-ranges/
+- https://medium.com/@rebeccahezhang/leetcode-163-missing-ranges-6ac21b477e96
 
 <br/>
 <br/>

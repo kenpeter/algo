@@ -39,8 +39,14 @@ const missRange = (arr, low, high) => {
   return res;
 };
 
-const low = 10;
-const high = 100;
+// const low = 10;
+// const high = 100;
+// const arr = [1, 10, 100, 1000];
+// const out = missRange(arr, low, high);
+// console.log("+++ out", out);
+
+const low = -1;
+const high = 1001;
 const arr = [1, 10, 100, 1000];
 const out = missRange(arr, low, high);
 console.log("+++ out", out);
