@@ -43,9 +43,9 @@
 <br/>
 <br/>
 
-## num <-> index; mark_num
+## ele === index; mark_num
 
-##### [2, 5, 3, 1, 1] (missing 4); ind = ele - 1; [2-1(ind), 5-1(ind), 3-1(ind), 1-1(ind), 1-1(ind)]; [-2, -5, -3, x, -1]; ele = ind + 1; num <-> ind; mark_num
+##### [2, 5, 3, 1, 1] (missing 4); ind = ele - 1; [2-1(ind), 5-1(ind), 3-1(ind), 1-1(ind), 1-1(ind)]; [-2, -5, -3, x, -1]; ele = ind + 1; ele === ind; mark_num
 
 - EG
 - SUMMA
@@ -773,6 +773,13 @@
 - if !met, build_posi_along
 - https://leetcode.com/problems/two-sum
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
+
+<br/>
+<br/>
+
+##### ?
+
+- https://medium.com/@rebeccahezhang/leetcode-163-missing-ranges-6ac21b477e96
 
 <br/>
 <br/>
