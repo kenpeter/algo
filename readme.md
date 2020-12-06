@@ -114,22 +114,22 @@
 <br/>
 <br/>
 
-## UP, DOWN; 3pt_up_shape, 3pt_down_shape
+## TREND; TREND NO GOOD, BUT >= PREV
 
-##### [1, -1, 3], change 1 ele, [1, 2, 3]; UP, DOWN; 3pt_up_shape, 3pt_down_shape
+##### loop eles 1st, build mem, counter >= 2; [1(i-2), 2(i-1), -100(i, DROP), 2(i+1)], TREND; [-1(i-2), 2(i-1), 1(i, DROP), 1(i+1)], TREND NO GOOD, BUT >= PREV
 
 - EG
 - SUMMA
-- loop eles
-- orig count = 1;
-- ns[i] < ns[i-1], DOWN, ++count, ind = i
+- counter = 1
+- loop eles, ns[i] < ns[i-1], build mem (DROP); remeber last drop ind
+-
 - count == 1, increasing, re true;
 -
-- count == 2, edge_case, re ture;
+- count == 2, edge, re ture;
 -
-- count == 2, 3 dots UP;
-- 3pt_up_shape, far_end, ns[i] >= ns[i-2], change_mid;
-- 3pt_down_shape, mid, ns[i+1] >= ns[i-1], change_mid
+- count == 2, not_edge
+- e.g. [ 1(i-2), 2(i-1), -100(i, DROP), 2(i+1) ]; ns[i+1] >= ns[i-1], TREND
+- e.g. [ -1(i-2), 2(i-1), 1(i, DROP), 1(i+1) ]; ns[i] >= ns[i-2], TREND NO GOOD, BUT >= PREV;
 -
 - https://leetcode.com/problems/non-decreasing-array
 
