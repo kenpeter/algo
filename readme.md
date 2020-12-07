@@ -154,7 +154,7 @@
 <br/>
 <br/>
 
-## ?
+## num(exist), num(miss), potential_start
 
 ##### find missing range num; p_s > c_n (not_form); p_s == c_n (not_form); p_s < c_n (form), print; p_s < high, print
 
@@ -234,6 +234,17 @@
 - if a[j_read] !== 0, a[i++] = a[j++] (!equal val; overwrite, i j move)
 - fill rest of i_read, 0
 - https://leetcode.com/problems/move-zeroes
+
+###### n1: [1, 2, 3, 4(m_r), 0, 0(end_w)]; n2: [2, 2(n_r)]; end_write, 2 reads
+
+- EG
+- SUMMA
+- end_write, m_read, n_read
+- end_write, 2 reads
+- while(n>=0)
+- n1[end_w--] = n1[m_r] > n2[n_r] ? n1[m_r--]
+- n1[end_w--] = n1[m_r] <= n2[n_r] ? n2[n_r--]
+- https://leetcode.com/problems/merge-sorted-array/
 
 <br/>
 <br/>
