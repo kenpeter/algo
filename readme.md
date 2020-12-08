@@ -176,6 +176,21 @@
 
 <br/>
 <br/>
+
+## backward, IGNORE_CARRY (9) or ADD_ONE (0, 1, 2..8)
+
+###### backward, IGNORE_CARRY (9) or ADD_ONE (0, 1, 2..8)
+
+- EG
+- SUMMA
+- backward loop eles
+- if ds[i] === IGNORE_CARRY (9); ds[i] = 0; con_loop
+- if ds[i] === ADD_ONE (0, 1, 2..8); ds[i]++; return
+- end_loop, prepend 1; e.g. 999, con_loop
+- https://leetcode.com/problems/plus-one
+
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
