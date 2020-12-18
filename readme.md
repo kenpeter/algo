@@ -1,4 +1,4 @@
-# same solution
+# same solutions
 
 - https://github.com/lxztju/leetcode-algorithm
 - https://my.oschina.net/znfang/blog/4314950
