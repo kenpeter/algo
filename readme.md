@@ -1,4 +1,4 @@
-# same solutions
+# same solution
 
 - https://github.com/lxztju/leetcode-algorithm
 - https://my.oschina.net/znfang/blog/4314950
@@ -114,9 +114,9 @@
 <br/>
 <br/>
 
-## TREND; TREND NO GOOD, BUT >= PREV
+## 4 pt region, 3pt_trend; 2nd_last_too_low; 2nd_too_high
 
-##### loop eles 1st, build mem, counter >= 2; [1(i-2), 2(i-1), -100(i, DROP), 2(i+1)], TREND; [-1(i-2), 2(i-1), 1(i, DROP), 1(i+1)], TREND NO GOOD, BUT >= PREV
+##### loop eles, build mem, counter >= 2; 4pt_region, 3pt_trend; [1, 2, -100(i, 2nd_last_too_low), 2]; [-10, 100( 2nd_too_high), 1(i), 2]
 
 - EG
 - SUMMA
@@ -128,8 +128,8 @@
 - count == 2, edge, re ture;
 -
 - count == 2, not_edge
-- e.g. [ 1(i-2), 2(i-1), -100(i, DROP), 2(i+1) ]; ns[i+1] >= ns[i-1], TREND
-- e.g. [ -1(i-2), 2(i-1), 1(i, DROP), 1(i+1) ]; ns[i] >= ns[i-2], TREND NO GOOD, BUT >= PREV;
+- e.g. [ 1(i-2), 2(i-1), -100(i, DROP), 2(i+1) ]; ns[i+1] >= ns[i-1]; 4pt_regision, 3pt_trend, 2nd_last_too_low
+- e.g. [ -1(i-2), 2(i-1), 1(i, DROP), 1(i+1) ]; ns[i] >= ns[i-2]; 4pt_regision, 3pt_trend 2nd_too_high
 -
 - https://leetcode.com/problems/non-decreasing-array
 
