@@ -1535,6 +1535,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - else dp[j] = MIN(dp[j-1](left; press_row), dp[j](top; press_row)) + grid[i-1][j-1]
 - https://leetcode.com/problems/minimum-path-sum/
 
+###### 2D; trangle to square DP
+
+- EG
+- rowNum = 4, so [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]
+- SUMMA
+- dp[i][j] => i at this rowNum, i=0, i<=rowNum-1;
+- dp[i][j] => j at this content, j=1(avoid head), j<i(avoid tail);
+- dp[i][j] => res
+-
+- out_loop rowNum
+- pa = [] (build_1D)
+- in_loop content (avoid head / tail)
+- pa[i] = [] (build_2D); pa[i][0] = 1(start)
+- pa[i][j] = pa[i-1][j-1](diag) + pa[i-1][j](top)
+- pa[i][i] = 1(end)
+- https://leetcode.com/problems/pascals-triangle
+
 ##### 2D; fake_top_left_vals; bottom_up, bottom_contrib, bottom_right_contrib; min_path
 
 - n, m size (dp_size == ma_size)
@@ -1544,7 +1561,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop col (bottom_forward; j=0; j>=i(j+1))
 - dp[i-1][j] = MIN(dp[i-1][j], dp[i-1][j+1]) + grid[i-1][j](dp_use_i)
 - re dp[0][0]
-- https://leetcode.com/problems/triangle/
+- https://leetcode.com/problems/triangle
 
 ##### 1D; fake_top_left_vals; bottom_up, bottom_contrib, bottom_right_contrib; min_path
 
