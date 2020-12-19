@@ -1731,13 +1731,29 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - transfer: ha = sum / 2
 - ha+1 size
-- dp[i] === AT this ha, FINAL condi (question condi)
+- dp[j] === AT this ha, FINAL condi (question condi)
 - init side == true (condi_press, so true; below_noval)
 - loop ele (forward; NO_ORDER, 1+2, 2+1, same)
 - loop ha (backward; gen_tar; dp_ind_constraint)
 - direction
 - dp[j] = dp[j](top, ele_1st; press_ele) || dp[j-i(ele)](diag, condi; press_ele; x+y=tar);
 - https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
+
+##### 1D; backward, curr_overwrite, prev_nochange
+
+- EG
+- SUMMA
+- dp[0] = 1 (start)
+- dp[i+1] = 1 (push_new_end)
+- dp[j] => j at this num; j=i(backward, 2nd_last), j>0(avoid_head)
+- dp[j] => res
+-
+- out_loop numRow (top -> bottom)
+- dp[0] = 1 (start)
+- dp[i+1] = 1 (push_new_end)
+- in_loop #; j=i(backward, curr_overwrite, prev_nochange; 2nd_last), j>0(avoid_head)
+- dp[j] = dp[j-1](prev) + dp[j](curr)
+- https://leetcode.com/problems/pascals-triangle-ii
 
 <br/>
 <br/>
