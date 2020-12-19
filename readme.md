@@ -1535,7 +1535,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - else dp[j] = MIN(dp[j-1](left; press_row), dp[j](top; press_row)) + grid[i-1][j-1]
 - https://leetcode.com/problems/minimum-path-sum/
 
-###### 2D; trangle to square DP
+###### 2D; trangle to square DP; head + content + tail
 
 - EG
 - rowNum = 4, so [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]
