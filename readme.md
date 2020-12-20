@@ -90,15 +90,15 @@
 <br/>
 <br/>
 
-## big to small, flow down; smallest_backup, largest_update
+## min -> big; max -> small; flow_backup; replace
 
 ##### [1, 1, 1, 2, 2, 3, 3, 3](distinct #) -> m1(largest), m2, m3; 3rd largest; min -> big; flow_backup + replace
 
 - EG
 - SUMMA
-- hash[n] to skip num (3rd # means distinct num)
+- hash[n] to skip num (by question)
 -
-- m1 = max; m2 = max; m3 = max
+- m1(largest) = max; m2 = max; m3 = max
 -
 - min to big
 - if n > m1(largest)
@@ -113,8 +113,42 @@
 - if n > m3
 - m3 = n (replace)
 
-- if m3 not set, re m2 (required by question)
+- if m3 not set, re m2 (by question)
 - https://leetcode.com/problems/third-maximum-number
+
+##### [-4, -3, -2, 1]; 3 positive VS 1_max \* (-) \* (-)
+
+- EG
+- SUMMA
+-
+- m1(largest) = max; m2 = max; m3 = max;
+- mi1(smallest) = min; mi2 = min;
+-
+- min -> big
+- if n > m1
+- m3 = m2 (flow_backup)
+- m2 = m1 (flow_backup)
+- m1 = n (replace)
+-
+- if n > m2
+- m3 = m2 (flow_backup)
+- m2 = n (replace)
+-
+- if n > m3
+- m3 = n (replace)
+-
+-
+-
+- max -> small
+- if n < mi1
+- mi2 = mi1 (flow_backup)
+- mi1 = n (replace)
+-
+- if n < mi2
+- mi2 = n (replace)
+-
+- return 3 positive VS 1_max _ (-) _ (-)
+- https://leetcode.com/problems/maximum-product-of-three-numbers
 
 <br/>
 <br/>
