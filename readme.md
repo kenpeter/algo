@@ -92,23 +92,28 @@
 
 ## big to small, flow down; smallest_backup, largest_update
 
-##### [1, 1, 1, 2, 2, 3, 3, 3] -> m2, m1, m0; find 3rd largest; big to small, flow down; smallest_backup, largest_update
+##### [1, 1, 1, 2, 2, 3, 3, 3](distinct #) -> m1(largest), m2, m3; 3rd largest; min -> big; flow_backup + replace
 
 - EG
 - SUMMA
-- hash[n], skip dup num
+- hash[n] to skip num (3rd # means distinct num)
 -
-- big to small, flow down
+- m1 = max; m2 = max; m3 = max
+-
+- min to big
+- if n > m1(largest)
+- m3 = m2 (flow_backup)
+- m2 = m1 (flow_backup)
+- m1 = n (replace)
+-
 - if n > m2
-- else if n > m1
-- else if n > m0
+- m3 = m2 (flow_backup)
+- m2 = n (replace)
 -
-- if n > m2
-- m0 = m1, smallest_backup
-- m1 = m2, smallest_backup
-- m2 = n, largest_update
--
-- if m0 not set, re m2
+- if n > m3
+- m3 = n (replace)
+
+- if m3 not set, re m2 (required by question)
 - https://leetcode.com/problems/third-maximum-number
 
 <br/>
