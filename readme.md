@@ -17,6 +17,14 @@
 
 # arr
 
+##### greedy, sort, group_2
+
+- EG
+- SUMMA
+- [4, 3, 2, 1] -> [1, 2, 3, 4] (greedy, sort)
+- max = min(1, 2) + min(3, 4) (group_2)
+- https://leetcode.com/problems/array-partition-i/
+
 ## sort_arr, shrink i j. ++i_big, --j_small
 
 ##### two sum < k; sort_arr, shrink i j, find_max; if < k, ++i_for_big; if >= k, --j_for_small
@@ -147,7 +155,7 @@
 - if n < mi2
 - mi2 = n (replace)
 -
-- return 3 positive VS 1_max _ (-) _ (-)
+- return 3 positive VS 1*max * (-) \_ (-)
 - https://leetcode.com/problems/maximum-product-of-three-numbers
 
 <br/>
