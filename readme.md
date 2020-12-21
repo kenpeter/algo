@@ -306,7 +306,7 @@
 - while(n>=0)
 - n1[end_w--] = n1[m_r] > n2[n_r] ? n1[m_r--]
 - n1[end_w--] = n1[m_r] <= n2[n_r] ? n2[n_r--]
-- https://leetcode.com/problems/merge-sorted-array/
+- https://leetcode.com/problems/merge-sorted-array
 
 <br/>
 <br/>
@@ -322,7 +322,7 @@
 - skip_loop(i<j, when_vowel) ++i; no i<=s.len-1
 - skip_loop(i<j, when_vowel) --j; no j>=0
 - rev
-- https://leetcode.com/problems/reverse-vowels-of-a-string/
+- https://leetcode.com/problems/reverse-vowels-of-a-string
 
 ##### rev non_symbol (rev position, rev word); i_start, j_end; i, j cross over; skip_loop(when_symbol)
 
@@ -334,6 +334,16 @@
 - skip_loop(i<j, when_letter) --j; no j>=0
 - rev
 - https://leetcode.com/problems/reverse-only-letters
+
+##### aaaabbb -> [[0, 3], [4, 6]]; loop_char; i_start, j_end; skip_loop; reset
+
+- EG
+- SUMMA
+- out_loop (loop_char)
+- i, j (i_start, j_end)
+- in_loop (skip_loop)
+- i=j (reset)
+- https://leetcode.com/problems/positions-of-large-groups
 
 <br/>
 <br/>
