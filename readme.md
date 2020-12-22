@@ -17,7 +17,7 @@
 
 # arr
 
-##### slide_window, rm_head, add_tail
+##### slide_window; acc; acc_end, rm_head, add_tail
 
 - EG
 - SUMMA
