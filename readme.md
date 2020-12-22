@@ -4,7 +4,7 @@
 - https://my.oschina.net/znfang/blog/4314950
 - https://darktiantian.github.io/%E7%AE%97%E6%B3%95%E7%AF%87%E7%9B%AE%E5%BD%95%E6%B1%87%E6%80%BB/
 
-# woth looking at
+# worth looking at
 
 - https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4
 - https://code.dennyzhang.com/hexspeak
@@ -16,6 +16,21 @@
 <br/>
 
 # arr
+
+##### slide_window, rm_head, add_tail
+
+- EG
+- SUMMA
+- [2, 3, 4, 1, 5], k = 3;
+- out_loop #
+- acc
+-
+- acc_end? (end_ind == start_ind + k - 1)
+- ops
+- rm_head, add_tail
+- ++start
+- ++end
+- https://leetcode.com/problems/maximum-average-subarray-i
 
 ##### greedy, sort, group_2
 
