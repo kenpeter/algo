@@ -885,13 +885,13 @@
 - remember latest_posi
 - https://leetcode.com/problems/contains-duplicate-ii
 
-##### two_sum, [0, 3, 4, 0], tar = 0; build HASH_POSI (build_posi_along, complementary_ele)
+##### two_sum, [0, 3, 4, 0], tar = 7; not_ele_directly, but_the_other_side
 
 - EG
 - SUMMA
 - loop eles;
-- if met complementary_ele, re [ hash[tar - val], ind ]
-- if !met, build_posi_along
+- not_ele_directly, but_the_other_side; if hash[tar - val](the_other_side), re [ hash[tar - val], ind ]
+- if !hash[tar - val], build hash[val](ele_directly) = posi
 - https://leetcode.com/problems/two-sum
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
@@ -907,7 +907,7 @@
 
 ## multi_hash, multi_tracking_var
 
-##### [1,2,2,3,1]; freq_hash, start_posi_hash; maxF (freq), minD (distance);
+##### [1,2,2,3,1]; freq_hash, posi_hash; maxF (freq), minD (distance);
 
 - EG
 - SUMMA
@@ -917,7 +917,7 @@
 -
 - maxF can do in loop. (minD not easy)
 - freq_hash[n] > maxF, force up minD
-- freq_hash[n] === maxF, min(minD, end - start +1)
+- freq_hash[n] === maxF, min(minD, end - start(posi_hash) +1)
 - https://leetcode.com/problems/degree-of-an-array
 
 <br/>
