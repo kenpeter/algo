@@ -590,13 +590,19 @@
 
 ## each cycle; if consecutive (1pt_look_back / 2 pt no_look_back), keep going; sudden !consecutive (LOOK_BACK), finish_prev, restart
 
-##### each cycle; if consecutive, keep going; sudden !consecutive, finish_prev, restart
+##### absent_counter; late_counter, 'LLA' (continue; non_continue_reset_counter)
 
 - EG
-- e.g. 'PPALLP', 1_A(\*), 2_con_L(\*), good; 'PPALLL', 1_A(\*), 3_con_L(x), bad
+- A (absent); L (late); P (present)
+- e.g. 'APA'; 1_A, 1_P, 1_A; >= 2_A, so bad
+- e.g. 'PPALLP'; 2_P, 1_A, 2_L, 1_P; < 2_A, <= 2_L, so good
+- e.g. 'PPALLL'; 2_P, 1_A, 3_L; >= 3_L, so bad
 - SUMMA
 - loop chars
-- if consecutive, either finish_curr(acc) OR finish_prev, restart(counter = 0)
+- if absent_counter > 1, re false
+- if late_counter;
+- e.g. 'LLL', 3_L (continue)
+- e.g. 'LLP', 2_L -> 0_L (non_continue_reset_counter)
 - https://leetcode.com/problems/student-attendance-record-i
 
 ##### aaabcc, 3 consecutive (1pt_look_back); if consecutive (1pt_look_back), keep going; sudden !consecutive, finish_prev, restart
