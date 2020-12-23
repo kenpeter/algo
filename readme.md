@@ -590,7 +590,7 @@
 
 ## each cycle; if consecutive (1pt_look_back / 2 pt no_look_back), keep going; sudden !consecutive (LOOK_BACK), finish_prev, restart
 
-##### absent_counter; late_counter, 'LLA' (continue; non_continue_reset_counter)
+##### absent_counter; late_counter, 'LLA' (continue VS non_continue_reset_counter)
 
 - EG
 - A (absent); L (late); P (present)
@@ -598,23 +598,28 @@
 - e.g. 'PPALLP'; 2_P, 1_A, 2_L, 1_P; < 2_A, <= 2_L, so good
 - e.g. 'PPALLL'; 2_P, 1_A, 3_L; >= 3_L, so bad
 - SUMMA
+-
+- absent_counter
+- late_counter
+-
 - loop chars
 - if absent_counter > 1, re false
-- if late_counter;
+- if late_counter
 - e.g. 'LLL', 3_L (continue)
 - e.g. 'LLP', 2_L -> 0_L (non_continue_reset_counter)
 - https://leetcode.com/problems/student-attendance-record-i
 
-##### aaabcc, 3 consecutive (1pt_look_back); if consecutive (1pt_look_back), keep going; sudden !consecutive, finish_prev, restart
+##### aaabcc, 3a; continue VS non_continue_reset_counter
 
 - EG
 - aaabcc, consecutive 3a, so max
 - SUMMA
-- 0th item, count 1; ma = 1 (SETUP)
+- ma
+- counter
+-
 - loop chars
-- if s[i-1]==s[i], c++(consecutive_count), finish_curr;
-- else finish_prev( ma(ma, c) ); restart(c = 1)
-- e.g. aaab(cc), Math.max(ma, c), consecutive_miss
+- if s[i-1](look_back) === s[i], c++ (continue)
+- else c = 0 (non_continue_reset_counter)
 - https://leetcode.com/problems/consecutive-characters
 
 ##### 000111, 3(0), 3(1); min(3, 3) -> 3; 01, 0011, 000111; if consecutive (1pt_look_back), keep going; sudden !consecutive, finish_prev, restart
