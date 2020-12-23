@@ -588,9 +588,9 @@
 <br/>
 <br/>
 
-## each cycle; if consecutive (1pt_look_back / 2 pt no_look_back), keep going; sudden !consecutive (LOOK_BACK), finish_prev, restart
+## continue VS non_continue_reset_counter (with ops)
 
-##### absent_counter; late_counter, 'LLA' (continue VS non_continue_reset_counter)
+##### absent_counter; late_counter, 'LLA', continue VS non_continue_reset_counter (with ops)
 
 - EG
 - A (absent); L (late); P (present)
@@ -609,7 +609,7 @@
 - e.g. 'LLP', 2_L -> 0_L (non_continue_reset_counter)
 - https://leetcode.com/problems/student-attendance-record-i
 
-##### aaabcc, 3a; continue VS non_continue_reset_counter
+##### aaabcc, 3a; continue VS non_continue_reset_counter (with ops)
 
 - EG
 - aaabcc, consecutive 3a, so max
@@ -622,19 +622,21 @@
 - else c = 0 (non_continue_reset_counter)
 - https://leetcode.com/problems/consecutive-characters
 
-##### 000111, 3(0), 3(1); min(3, 3) -> 3; 01, 0011, 000111; if consecutive (1pt_look_back), keep going; sudden !consecutive, finish_prev, restart
+##### 000111, 3(0), 3(1); min(3, 3) -> 3; 01, 0011, 000111; continue VS non_continue_reset_counter
 
 - EG
-- 001 -> 2(0), 1(1) -> [2(0), 1(1)] -> min(2, 1) = 1; "01"
-- 110 -> 2(1), 1(0) -> [2(0), 0(1)] -> min(2, 1) = 1; "10"
-- 0011 -> 2(0), 2(1) -> [2(0), 2(1)] -> min(2, 2) = 2; "01" + "0011"
+- BUILD_MEM
+- 001 -> [2, 1]; min(2, 1)
+- 00011100 -> [3, 3, 2]; min(3, 3), min(3, 2); add_up
+- 0101100 -> [1, 1, 1, 2, 2]; min(1, 1), min(1, 1), min(1, 2), min(2, 2); add_up
 - SUMMA
+-
 - loop chars
-- if s[i-1]==s[i], c++(consecutive_count), finish_curr;
-- else finish_prev( a.push(c) ); restart(c = 1)
-- a.push(c), consecutive_miss
-- 0011 -> 2(0), 2(1) -> min(2, 2) -> 2
-- https://leetcode.com/problems/count-binary-substrings/
+- BUILD_MEM
+- if s[i-1](look_back)==s[i], c++ (continue)
+- else arr.push(c), c = 0 (non_continue_reset_counter)
+- use_mem, loop arr
+- https://leetcode.com/problems/count-binary-substrings
 
 <br/>
 <br/>
