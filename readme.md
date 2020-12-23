@@ -17,6 +17,8 @@
 
 # arr
 
+## slide_window; acc; acc_end, rm_head, add_tail
+
 ##### slide_window; acc; acc_end, rm_head, add_tail
 
 - EG
@@ -31,6 +33,26 @@
 - ++start
 - ++end
 - https://leetcode.com/problems/maximum-average-subarray-i
+
+##### l_res Pivot r_res; pivot_move, l_res_expand, r_res_shrink; arr_left_right_has_0
+
+- EG
+- a little bit like slide_window
+- 0(l_res) [0(p), 0, 3(r_res)] 0 --> L: 0 | 0(p) | R: 0,3,0 (0 VS 3, bad)
+- 0 [0(l_res), 0(p), 3(r_res)] 0 --> L: 0,0 | 0(p) | R: 3,0 (0 VS 3, bad)
+- 0 [0, 0(l_res), 3(p)] 0(r_res) --> L: 0,0,0 | 3(p) | R: 0 (0 VS 0, good)
+- SUMMA
+- loop #
+- pivot
+- right_shrink, left_already_done
+- l_res VS r_res
+- left_ahead_expand
+- https://leetcode.com/problems/find-pivot-index
+
+<br/>
+<br/>
+
+## ?
 
 ##### greedy, sort, group_2
 
