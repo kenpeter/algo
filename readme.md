@@ -905,6 +905,24 @@
 <br/>
 <br/>
 
+## multi_hash, multi_tracking_var
+
+##### [1,2,2,3,1]; freq_hash, start_posi_hash; maxF (freq), minD (distance);
+
+- EG
+- SUMMA
+- loop eles (const [ind, n] = arr.entries())
+- build freq_hash
+- build start_posi_hash (if 1st time)
+-
+- maxF can do in loop. (minD not easy)
+- freq_hash[n] > maxF, force up minD
+- freq_hash[n] === maxF, min(minD, end - start +1)
+- https://leetcode.com/problems/degree-of-an-array
+
+<br/>
+<br/>
+
 ## hash, sort_hash, rev_sort_hash
 
 ##### aaabbbccc -> (abc)(cba)(abc)(cba) -> (inc)(desc)(inc)(desc); hash, sort_hash, rev_sort_hash
