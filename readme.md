@@ -614,11 +614,12 @@
 - EG
 - aaabcc, consecutive 3a, so max
 - SUMMA
-- ma
+-
+- max
 - counter
 -
 - loop chars
-- if s[i-1](look_back) === s[i], c++ (continue)
+- if s[i-1](look_back) === s[i], update_max, ++c (continue)
 - else c = 0 (non_continue_reset_counter)
 - https://leetcode.com/problems/consecutive-characters
 
@@ -631,12 +632,27 @@
 - 0101100 -> [1, 1, 1, 2, 2]; min(1, 1), min(1, 1), min(1, 2), min(2, 2); add_up
 - SUMMA
 -
+- counter
+-
 - loop chars
 - BUILD_MEM
-- if s[i-1](look_back)==s[i], c++ (continue)
+- if s[i-1](look_back)==s[i], ++c (continue)
 - else arr.push(c), c = 0 (non_continue_reset_counter)
 - use_mem, loop arr
 - https://leetcode.com/problems/count-binary-substrings
+
+##### [1, 3, 5, 4, 7], continue VS non_continue_reset_counter
+
+- EG
+- SUMMA
+-
+- max
+- counter
+-
+- loop chars
+- if ns[i] > ns[i-1], update_max, ++c (continue)
+- else c = 1 (non_continue_reset_counter); non c=0, because cannot enter above
+- https://leetcode.com/problems/longest-continuous-increasing-subsequence
 
 <br/>
 <br/>
