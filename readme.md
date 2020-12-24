@@ -2014,6 +2014,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## 2_start, 2_ending
+
+#####
+
+- EG
+- SUMMA
+- dp[i] => i, at each index
+- dp[i] => dp[i], cost so far
+- dp[i-1] => prev_step_1, acc_cost
+- dp[i-2] => prev_step_2, acc_cost
+- dp[x-y] => none
+- dp[0] => init, start_0 (2_start)
+- dp[1] => init, start_1 (2_start)
+- ns[i] => ele, curr_cost
+-
+- loop eles (i=2, i<len)
+- dp[i] = mi(dp[i-1], dp[i-2])(2_start) + ns[i]
+- re mi(dp[len-1], dp[len-2]) (2_ending)
+- https://leetcode.com/problems/min-cost-climbing-stairs
+
 # binary search
 
 # hash
