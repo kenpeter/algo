@@ -2016,7 +2016,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 2_start, 2_ending
 
-#####
+##### 1D; min_cost_climb; 2_start, 2_ending
 
 - EG
 - SUMMA
