@@ -987,7 +987,21 @@
 - if(item === w0), w0_ind = i
 - if(item === w1), w1_ind = i
 - if(w0_ind >= 0 && w0_ind >= 0), minD = mi(minD, abs(w0_ind - w1_ind))
+- why abs(w0_ind - w1_ind) min?
+- https://leetcode.com/problems/shortest-word-distance/
 - https://tenderleo.gitbooks.io/leetcode-solutions-/content/GoogleEasy/243.html
+
+###### 2_tracking_var, minFreq, minDistance
+
+- https://leetcode.com/problems/third-maximum-number
+
+###### 3_tracking_var, m0, m1, m2
+
+- https://leetcode.com/problems/third-maximum-number
+
+###### 5_tracking_var, ma0, ma1, ma2, mi0, mi2
+
+- https://leetcode.com/problems/maximum-product-of-three-numbers
 
 <br/>
 <br/>
