@@ -279,6 +279,27 @@
 <br/>
 <br/>
 
+# matrix
+
+## INVERSE_QUESTION; most re_fail, else re_true; 2_ele_diag, upto_2nd_last
+
+##### INVERSE_QUESTION; most re_fail, else re_true; 2_ele_diag, upto_2nd_last
+
+- EG
+- SUMMA
+- INVERSE_QUESTION; most re_fail, else re_true
+- loop(i=0; i<=len-2; ..) (2_ele_diag, upto_2nd_last)
+- loop(j=0; j<=len-2; ..) (2_ele_diag, upto_2nd_last)
+- if ma[i][j] !== ma[i+1][j+1] re_fail (INVERSE_QUESTION, most re_fail)
+-
+- https://leetcode.com/problems/toeplitz-matrix
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 # str
 
 ## rev_entire, rev_word, clean_space(i_write, j_read)
