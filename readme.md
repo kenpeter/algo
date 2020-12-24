@@ -974,6 +974,24 @@
 <br/>
 <br/>
 
+## 1_tracking_var, 2_tracking_var, 3_tracking_var, etc
+
+##### ns: [a, b, c, d, b]; w0=b, w1=d
+
+- EG
+- SUMMA
+- 1st_tracking_var: w0_ind = -1
+- 2nd_tracking_var: w1_ind = -1
+-
+- loop eles
+- if(item === w0), w0_ind = i
+- if(item === w1), w1_ind = i
+- if(w0_ind >= 0 && w0_ind >= 0), minD = mi(minD, abs(w0_ind - w1_ind))
+- https://tenderleo.gitbooks.io/leetcode-solutions-/content/GoogleEasy/243.html
+
+<br/>
+<br/>
+
 ## hash, sort_hash, rev_sort_hash
 
 ##### aaabbbccc -> (abc)(cba)(abc)(cba) -> (inc)(desc)(inc)(desc); hash, sort_hash, rev_sort_hash
