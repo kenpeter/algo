@@ -288,8 +288,8 @@
 - EG
 - SUMMA
 - INVERSE_QUESTION; most re_fail, else re_true
-- loop(i=0; i<=len-2; ..) (2_ele_diag, upto_2nd_last)
-- loop(j=0; j<=len-2; ..) (2_ele_diag, upto_2nd_last)
+- loop(i=0; i<=len-2; ..) (normal_scan_loop, 2_ele_diag, upto_2nd_last)
+- loop(j=0; j<=len-2; ..) (normal_scan_loop, 2_ele_diag, upto_2nd_last)
 - if ma[i][j] !== ma[i+1][j+1] re_fail (INVERSE_QUESTION, most re_fail)
 -
 - https://leetcode.com/problems/toeplitz-matrix
