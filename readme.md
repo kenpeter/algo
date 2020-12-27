@@ -369,7 +369,7 @@
 <br/>
 <br/>
 
-##
+## when_same_flip_both, when_diff_do_nothing
 
 ##### [1, 0](when_diff) -> [0, 1](rev) -> [1, 0](flip) -> when_diff_do_nothing; [1, 1](when_same) -> [1, 1](rev) -> [0, 0](flip) -> when_same_flip_both;
 
