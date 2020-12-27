@@ -369,6 +369,22 @@
 <br/>
 <br/>
 
+##
+
+##### [1, 0](when_diff) -> [0, 1](rev) -> [1, 0](flip) -> when_diff_do_nothing; [1, 1](when_same) -> [1, 1](rev) -> [0, 0](flip) -> when_same_flip_both;
+
+- EG
+- SUMMA
+- loop_rows (2D)
+- loop_cols (2D)
+- start_i, end_j
+- if(ma[k][i] == ma[k][j]), when_same_flip_both
+- if(ma[k][i] != ma[k][j]), when_diff_do_nothing
+- https://leetcode.com/problems/flipping-an-image
+
+<br/>
+<br/>
+
 ## rev non_x; i, j cross over; skip_loop(when_x)
 
 ##### rev non_vowel (rev position, rev word); i_start, j_end; i, j cross over; skip_loop(when_vowel)
