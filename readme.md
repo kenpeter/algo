@@ -452,6 +452,38 @@
 <br/>
 <br/>
 
+## flat_arr -> fill_new_shap_arr; row_ind = floor(i_total / width), col_ind = i_total % width;
+
+###### flat_arr -> fill_new_shap_arr; row_ind = floor(i_total / w), col_ind = i_total % width;
+
+- EG
+- SUMMA
+- row \* col === new_w \* new_h
+- i_total, flat_arr -> fill_new_shape_arr
+-
+- loop_row
+- loop_col
+- row_ind = floor(i_total / width), when_overflow_new_row
+- if !res[row_ind] -> res[row_ind] = [];
+- else res[row_ind].push( ns[r][c] );
+- https://leetcode.com/problems/reshape-the-matrix
+
+###### flat_arr -> fill_new_shap_arr; row = floor(i_total / w), col = i_total % width;
+
+- EG
+- SUMMA
+- row \* col === new_w \* new_h
+- i_total, flat_arr -> fill_new_shape_arr
+-
+- loop row \* col (all_eles)
+- row_ind = floor(i_total / width)
+- if !res[row_ind], res[row_ind] = [];
+- else res[row_ind].push( ns[i/n][i%n] ); (i/n, row; i%n, col)
+- https://leetcode.com/problems/reshape-the-matrix
+
+<br/>
+<br/>
+
 ## i(start), j(end); j - i === word_len / same_kind / consecutive
 
 ##### count(#) and say(def); i(start), j(start); i stay, j move right, j - i === same_kind
