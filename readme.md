@@ -422,6 +422,32 @@
 <br/>
 <br/>
 
+## transpose matrix -> (i, j) swap (j, i)
+
+##### transpose matrix -> (i, j) swap (j, i)
+
+- EG
+  1 2 3
+  4 5 6
+  =>
+  1 4
+  2 5
+  3 6
+- (0, 0) -> (0, 0)
+- (0, 1) -> (1, 0)
+- (0, 2) -> (2, 0)
+- ...
+- SUMMA
+-
+- build res matrix
+- loop_row
+- loop_col
+- res[j][i] = ns[i][j]
+- https://leetcode.com/problems/transpose-matrix
+
+<br/>
+<br/>
+
 ## anything_left( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
 
 ##### 12345678 -> 12.345.678; anything_left( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
