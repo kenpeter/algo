@@ -439,9 +439,9 @@
 <br/>
 <br/>
 
-## flat_arr -> fill_new_shap_arr; row_ind = floor(i_total / width), col_ind = i_total % width;
+## flat_arr -> fill_new_shap_arr; row_ind = floor(i_dynamic_total_width / new_col_width); col_ind = i_dy_total_width % width;
 
-###### flat_arr -> fill_new_shap_arr; row_ind = floor(i_total / w), col_ind = i_total % width;
+###### flat_arr -> fill_new_shap_arr; row_ind = floor(i_dy_total_width / new_col_width); col_ind = i_dy_total_width % new_col_width;
 
 - EG
 - SUMMA
@@ -450,12 +450,12 @@
 -
 - loop_row
 - loop_col
-- row_ind = floor(i_total / width), when_overflow_new_row
+- row_ind = floor(i_dy_total_width / new_col_width); keep_it_same_row
 - if !res[row_ind] -> res[row_ind] = [];
 - else res[row_ind].push( ns[r][c] );
 - https://leetcode.com/problems/reshape-the-matrix
 
-###### flat_arr -> fill_new_shap_arr; row = floor(i_total / w), col = i_total % width;
+###### flat_arr -> fill_new_shap_arr; row_ind = floor(i_dy_total_width / new_col_width); col_ind = i_dy_total_width % new_col_width;
 
 - EG
 - SUMMA
@@ -463,9 +463,13 @@
 - i_total, flat_arr -> fill_new_shape_arr
 -
 - loop row \* col (all_eles)
-- row_ind = floor(i_total / width)
+- row_ind = floor(i_dy_total_width / new_col_width); keep_it_same_row;
+- similar, anything_left = floor(num / 10)
+-
 - if !res[row_ind], res[row_ind] = [];
-- else res[row_ind].push( ns[i/n][i%n] ); (i/n, row; i%n, col)
+- else res[row_ind].push( ns[i_dy_total_width / new_col_width][i % new_col_width] );
+- similar, anything_elft = floor(num / 10); last_digit = num % 10;
+-
 - https://leetcode.com/problems/reshape-the-matrix
 
 <br/>
