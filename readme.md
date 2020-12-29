@@ -422,32 +422,19 @@
 <br/>
 <br/>
 
-## s.len - i == any_left; mod(equal_chunk)
+## total_len(s.len) - how_many(ind) == new_total_len
 
-##### 12|345|678 -> 12.345.678; i(start), j(no); i move right, j(no); s.len - i == any_left; mod(equal_chunk)
-
-- EG
-- SUMMA => equal_chunk
-- loop char (forward)
-- if i > 0 (avoid .1); (s.len - i) % 3 == 0, s.len-i == actual_len_left, mod (equal_chunk)
-- res = res + "." (add .)
-- res = res + s[i] (append char)
-- https://leetcode.com/problems/thousand-separator
-
-<br/>
-<br/>
-
-## count(full || b_eof) VS out_req_left
-
-##### read_4_char api func; count(full || b_eof); out_req_left == out_req_n_char - total_acc;
+##### 12345678 -> 12.345.678; total_len(s.len) - how_many(ind) == new_total_len(%3)
 
 - EG
 - SUMMA
-- loop !eof(when small) && total < out_req_n_char (when small)
-- count(full || mod_left) = read_4_char
-- count = mi( count(full || mod_left), when_small; out_req_left, when_small )
-- copy char
-- https://evelynn.gitbooks.io/google-interview/content/read_n_characters_given_read4.html
+- loop eles (forward)
+- if i > 0, (s.len - i) % 3 == 0
+- i>0, skip_1st_num; .1 == nono
+- total_len(s.len) - how_many(ind) == new_total_len(%3)
+- res = res + '.'
+- res = res + ns[i]
+- https://leetcode.com/problems/thousand-separator
 
 <br/>
 <br/>
@@ -467,6 +454,24 @@
 - if !res[row_ind] -> res[row_ind] = [];
 - else res[row_ind].push( ns[r][c] );
 - https://leetcode.com/problems/reshape-the-matrix
+
+<br/>
+<br/>
+
+## count(full || b_eof) VS out_req_left
+
+##### read_4_char api func; count(full || b_eof); out_req_left == out_req_n_char - total_acc;
+
+- EG
+- SUMMA
+- loop !eof(when small) && total < out_req_n_char (when small)
+- count(full || mod_left) = read_4_char
+- count = mi( count(full || mod_left), when_small; out_req_left, when_small )
+- copy char
+- https://evelynn.gitbooks.io/google-interview/content/read_n_characters_given_read4.html
+
+<br/>
+<br/>
 
 ###### flat_arr -> fill_new_shap_arr; row = floor(i_total / w), col = i_total % width;
 
