@@ -866,18 +866,14 @@
 
 ## is_palindrome; hash / rebuild / i_start, j_end
 
-##### aba -> a(end) + b(mid) + a(start), rebuild_palin; 121 -> 1(end) + 2(mid) + 1(start), rebuild_palin
+##### is_palindrome; 121 -> 121(able_rebuild), 123 -> 321(not_able_rebuild); last_digit = input % 10; anything_left = floor(input / 10)
 
 - EG
 - SUMMA
-- 121 -> 1(end) + 2(mid) + 1(start)
-- loop(input > 0); floor(input/10) -> less and less -> single_num -> 0
-- a single num === xxxxlast_digit
-- xxxx === left_digits, last_digit === last_digit
--
-- last_digit = input % 10
-- input = input / 10 (left_digits)
-- res = res\*10 + last_digit
+- loop eles
+- last_digit = input % 10 (last_digit)
+- input = floor(input / 10) (anything_left)
+- res = res\*10 + last_digit (rebuild)
 - https://leetcode.com/problems/palindrome-number
 
 ##### is palindrome; i_start, j_end; loop_skip_alph#
