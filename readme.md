@@ -422,9 +422,9 @@
 <br/>
 <br/>
 
-## total_len(s.len) - how_many(ind) == new_total_len
+## anything_left( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
 
-##### 12345678 -> 12.345.678; total_len(s.len) - how_many(ind) == new_total_len(%3)
+##### 12345678 -> 12.345.678; anything_left( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
 
 - EG
 - SUMMA
@@ -439,7 +439,7 @@
 <br/>
 <br/>
 
-## flat_arr -> fill_new_shap_arr; row_ind = floor(i_dynamic_total_width / new_col_width); col_ind = i_dy_total_width % width;
+## row_ind = floor(i_dynamic_total_width / new_col_width); col_ind = i_dy_total_width % width;
 
 ###### flat_arr -> fill_new_shap_arr; row_ind = floor(i_dy_total_width / new_col_width); col_ind = i_dy_total_width % new_col_width;
 
@@ -471,6 +471,33 @@
 - similar, anything_elft = floor(num / 10); last_digit = num % 10;
 -
 - https://leetcode.com/problems/reshape-the-matrix
+
+<br/>
+<br/>
+
+## full_length == floor(s_len / width)\*width + (s_len % width)
+
+##### \_a_b_c\_\_ -> a\_\_b\_\_c\_; 3 words, 5 spaces; full_length == floor(s_len / width)\*width + (s_len % width); full_length = floor(5 / 2)\*2 + (5 % 2)
+
+- EG
+- SUMMA
+- edge_case (1_word)
+- how_many_word
+- how_many_space
+- full_length = floor(s_len / width)\*width + (s_len % width)
+- width = 3_words - 1; (3 words, use 2 spaces to separate)
+- join
+- https://leetcode.com/problems/rearrange-spaces-between-words
+
+##### is_palindrome; 121 -> 121(able_rebuild), 123 -> 321(not_able_rebuild); full_num = floor(full_num / 10)\*10 + (full_num % 10)
+
+- EG
+- SUMMA
+- loop eles
+- last_digit = input % 10 (last_digit)
+- input = floor(input / 10) (anything_left)
+- res = res\*10 + last_digit (rebuild)
+- https://leetcode.com/problems/palindrome-number
 
 <br/>
 <br/>
@@ -1137,23 +1164,6 @@
 - SUMMA
 - set.add(ele), set.size
 - https://leetcode.com/problems/unique-morse-code-words
-
-<br/>
-<br/>
-
-## full_length == floor(s_len / width)\*width + (s_len % width)
-
-##### \_a_b_c\_\_ -> a\_\_b\_\_c\_; 3 words, 5 spaces; full_length = floor(5 / 2)\*2 + (5 % 2)
-
-- EG
-- SUMMA
-- edge_case (1_word)
-- how_many_word
-- how_many_space
-- full_length = floor(s_len / width)\*width + (s_len % width)
-- width = 3_words - 1; (3 words, use 2 spaces to separate)
-- join
-- https://leetcode.com/problems/rearrange-spaces-between-words
 
 <br/>
 <br/>
