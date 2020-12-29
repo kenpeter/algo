@@ -1,8 +1,8 @@
-# same solution
+# some solution
 
 - https://github.com/lxztju/leetcode-algorithm
 - https://my.oschina.net/znfang/blog/4314950
-- https://darktiantian.github.io/%E7%AE%97%E6%B3%95%E7%AF%87%E7%9B%AE%E5%BD%95%E6%B1%87%E6%80%BB/
+- https://darktiantian.github.io
 
 # worth looking at
 
@@ -455,6 +455,19 @@
 - else res[row_ind].push( ns[r][c] );
 - https://leetcode.com/problems/reshape-the-matrix
 
+###### flat_arr -> fill_new_shap_arr; row = floor(i_total / w), col = i_total % width;
+
+- EG
+- SUMMA
+- row \* col === new_w \* new_h
+- i_total, flat_arr -> fill_new_shape_arr
+-
+- loop row \* col (all_eles)
+- row_ind = floor(i_total / width)
+- if !res[row_ind], res[row_ind] = [];
+- else res[row_ind].push( ns[i/n][i%n] ); (i/n, row; i%n, col)
+- https://leetcode.com/problems/reshape-the-matrix
+
 <br/>
 <br/>
 
@@ -469,22 +482,6 @@
 - count = mi( count(full || mod_left), when_small; out_req_left, when_small )
 - copy char
 - https://evelynn.gitbooks.io/google-interview/content/read_n_characters_given_read4.html
-
-<br/>
-<br/>
-
-###### flat_arr -> fill_new_shap_arr; row = floor(i_total / w), col = i_total % width;
-
-- EG
-- SUMMA
-- row \* col === new_w \* new_h
-- i_total, flat_arr -> fill_new_shape_arr
--
-- loop row \* col (all_eles)
-- row_ind = floor(i_total / width)
-- if !res[row_ind], res[row_ind] = [];
-- else res[row_ind].push( ns[i/n][i%n] ); (i/n, row; i%n, col)
-- https://leetcode.com/problems/reshape-the-matrix
 
 <br/>
 <br/>
