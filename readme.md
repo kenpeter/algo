@@ -122,14 +122,23 @@
 <br/>
 <br/>
 
-## arr.sort, len/2 major conver, index
+## loop_eles + build hash / sort_then_middle
 
-##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3] -> 1: 3 times -> 1 majority
+##### [2, 3, 1, 1, 1]; loop_eles, build_hash, when > len/2, out
 
 - EG
 - SUMMA
-- arr.sort
-- arr[floor(arr.len/2)] (arr.sort, len/2 major index)
+- num = even_len / 2 + 1 OR ceil(odd_len / 2); (more_than_half)
+- loop eles
+- build_hash, if h[n] > num (more_than_half), out
+- https://leetcode.com/problems/majority-element
+
+##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3] -> 1: 3 times -> 1 majority; sort_then_middle
+
+- EG
+- SUMMA
+- a.sort (majority_always_there; i.e. cover lots of spaces; middle_kind_of_there)
+- a[floor(len/2)]; e.g. [3, 3, 4], ceil(3/2=1.5) = 2, so nono, so floor(len/2)
 - https://leetcode.com/problems/majority-element
 
 <br/>
