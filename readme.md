@@ -297,9 +297,9 @@
 <br/>
 <br/>
 
-##
+## backward_count_seq_1s
 
-##### 1 bit char(A), 2 bit char(B), decode
+##### 1 bit char(A), 2 bit char(B); backward_count_seq_1s
 
 - EG
 - 10 -> B or 11 -> B; 0 -> A; 0_ending
