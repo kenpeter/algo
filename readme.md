@@ -296,6 +296,39 @@
 
 <br/>
 <br/>
+
+##
+
+##### 1 bit char(A), 2 bit char(B), decode
+
+- EG
+- 10 -> B or 11 -> B; 0 -> A; 0_ending
+-
+- single
+- [0], t
+-
+- [0, 0], t
+- [1, 0], f
+-
+- [0, 0, 0], t; (0 like joker; double_0s)
+- [0, 1, 0], f; (odd_sequence_1s)
+- [1, 0, 0], t; (dboule_0s)
+- [1, 1, 0], t; (even_seq_1s)
+-
+- [0, 0, 0, 0], t; (double_0s)
+- [0, 0, 1, 0], f; (odd_seq_1s)
+- [0, 1, 0, 0], t; (double_0s)
+- [1, 0, 0, 0], t; (double_0s)
+- [0, 1, 1, 0], t; (even_seq_1s)
+-
+- SUMMA
+- loop(i=len-1; ns[i]!==0 && i>=0; --i)
+- backward; count_seq_1s; odd_seq_1s false; even_seq_1s true;
+-
+- https://leetcode.com/problems/1-bit-and-2-bit-characters
+
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
