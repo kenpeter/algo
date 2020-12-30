@@ -304,7 +304,6 @@
 - EG
 - 10 -> B or 11 -> B; 0 -> A; 0_ending
 -
-- single
 - [0], t
 -
 - [0, 0], t
@@ -322,7 +321,7 @@
 - [0, 1, 1, 0], t; (even_seq_1s)
 -
 - SUMMA
-- loop(i=len-1; ns[i]!==0 && i>=0; --i)
+- loop(i=len-2; ns[i]!==0 && i>=0; --i); ignore_ending_0
 - backward; count_seq_1s; odd_seq_1s false; even_seq_1s true;
 -
 - https://leetcode.com/problems/1-bit-and-2-bit-characters
