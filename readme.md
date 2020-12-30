@@ -776,9 +776,9 @@
 <br/>
 <br/>
 
-## continue VS non_continue_reset_counter (with ops)
+## continue VS discontinue_reset_counter (with ops)
 
-##### absent_counter; late_counter, 'LLA', continue VS non_continue_reset_counter (with ops)
+##### LLL(continue, count); absent_counter; late_counter, 'LLA', continue VS discontinue_reset_counter (with ops)
 
 - EG
 - A (absent); L (late); P (present)
@@ -794,10 +794,10 @@
 - if absent_counter > 1, re false
 - if late_counter
 - e.g. 'LLL', 3_L (continue)
-- e.g. 'LLP', 2_L -> 0_L (non_continue_reset_counter)
+- e.g. 'LLP', 2_L -> 0_L (discontinue_reset_counter)
 - https://leetcode.com/problems/student-attendance-record-i
 
-##### aaabcc, 3a; continue VS non_continue_reset_counter (with ops)
+##### consecutive(continue, count), characters; aaabcc, 3a; continue VS discontinue_reset_counter (with ops)
 
 - EG
 - aaabcc, consecutive 3a, so max
@@ -811,7 +811,7 @@
 - else c = 0 (non_continue_reset_counter)
 - https://leetcode.com/problems/consecutive-characters
 
-##### 000111, 3(0), 3(1); min(3, 3) -> 3; 01, 0011, 000111; continue VS non_continue_reset_counter
+##### count(count) binary substrings(continue, count); 000111, 3(0), 3(1); min(3, 3) -> 3; 01, 0011, 000111; continue VS discontinue_reset_counter
 
 - EG
 - BUILD_MEM
@@ -829,17 +829,17 @@
 - use_mem, loop arr
 - https://leetcode.com/problems/count-binary-substrings
 
-##### [1, 3, 5, 4, 7], continue VS non_continue_reset_counter
+##### longest(max) continuous(counter) increasing subarray (continue); continue VS discontinue_reset_counter
 
 - EG
 - SUMMA
 -
-- max
-- counter
+- max = 0
+- counter = 1 (look_back, 2 eles)
 -
 - loop chars
-- if ns[i] > ns[i-1], update_max, ++c (continue)
-- else c = 1 (non_continue_reset_counter); non c=0, because cannot enter above
+- if ns[i] > ns[i-1](look_back, 2 eles); ++c; ma = ma(ma, c)
+- else c = 1 (discontinue_reset_counter); if(ma == 0) ma = 1 (incase not enter)
 - https://leetcode.com/problems/longest-continuous-increasing-subsequence
 
 <br/>
