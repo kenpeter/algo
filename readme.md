@@ -135,33 +135,33 @@
 <br/>
 <br/>
 
-## min -> big; max -> small; flow_backup; replace
+## ask_for_n_max; m0, m1, m2; flow_backup + replace
 
-##### [1, 1, 1, 2, 2, 3, 3, 3](distinct #) -> m1(largest), m2, m3; 3rd largest; min -> big; flow_backup + replace
+##### ask_for_3_max; m0, m1, m2; [1, 1, 1, 2, 2, 3, 3, 3](distinct #); flow_backup + replace; 3rd largest;
 
 - EG
 - SUMMA
 - hash[n] to skip num (by question)
 -
-- m1(largest) = max; m2 = max; m3 = max
+- m0 (largest); m1 = 2nd_large; m2 = 3rd_large
 -
 - min to big
-- if n > m1(largest)
-- m3 = m2 (flow_backup)
+- if n > m0 (largest)
 - m2 = m1 (flow_backup)
-- m1 = n (replace)
+- m1 = m0 (flow_backup)
+- m0 = n (replace)
+-
+- if n > m1
+- m1 = m2 (flow_backup)
+- m0 = n (replace)
 -
 - if n > m2
-- m3 = m2 (flow_backup)
 - m2 = n (replace)
--
-- if n > m3
-- m3 = n (replace)
 
-- if m3 not set, re m2 (by question)
+- if m2 not set, re m1 (by question)
 - https://leetcode.com/problems/third-maximum-number
 
-##### [-4, -3, -2, 1]; 3 positive VS 1_max \* (-) \* (-)
+##### ask_for_3_max; m1, m2, m3; [-4, -3, -2, 1]; flow_backup + replace; 3 positive VS 1_max \* (-) \* (-)
 
 - EG
 - SUMMA
@@ -194,6 +194,13 @@
 -
 - return 3 positive VS 1*max * (-) \_ (-)
 - https://leetcode.com/problems/maximum-product-of-three-numbers
+
+##### ask_for_2_max; ma1, ma2; [3, 6, 1, 0], ma0 = 6, ma1 = 3; flow_backup + replace
+
+- EG
+- SUMMA
+-
+- https://leetcode.com/problems/largest-number-at-least-twice-of-others
 
 <br/>
 <br/>
