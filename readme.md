@@ -161,45 +161,44 @@
 - if m2 not set, re m1 (by question)
 - https://leetcode.com/problems/third-maximum-number
 
-##### ask_for_3_max; m1, m2, m3; [-4, -3, -2, 1]; flow_backup + replace; 3 positive VS 1_max \* (-) \* (-)
+##### ask_for_3_max; m0, m1, m2; [-4, -3, -2, 1]; flow_backup + replace; m0(+) \* m1(+) \* m2(+) VS m0 \* (-) \* (-)
 
 - EG
 - SUMMA
 -
-- m1(largest) = max; m2 = max; m3 = max;
-- mi1(smallest) = min; mi2 = min;
+- m0(largest), m1, m2;
+- mi0(smallest) = min, mi2 = min;
 -
-- min -> big
+- if n > m0
+- m2 = m1 (flow_backup)
+- m1 = m0 (flow_backup)
+- m0 = n (replace)
+-
 - if n > m1
-- m3 = m2 (flow_backup)
 - m2 = m1 (flow_backup)
 - m1 = n (replace)
 -
 - if n > m2
-- m3 = m2 (flow_backup)
 - m2 = n (replace)
 -
-- if n > m3
-- m3 = n (replace)
--
--
--
 - max -> small
+- if n < mi0
+- mi1 = mi0 (flow_backup)
+- mi0 = n (replace)
+-
 - if n < mi1
-- mi2 = mi1 (flow_backup)
 - mi1 = n (replace)
 -
-- if n < mi2
-- mi2 = n (replace)
--
-- return 3 positive VS 1*max * (-) \_ (-)
+- return m0 \* m1 \* m2 VS m0 \* (-) \_ (-)
 - https://leetcode.com/problems/maximum-product-of-three-numbers
 
-##### ask_for_2_max; ma1, ma2; [3, 6, 1, 0], ma0 = 6, ma1 = 3; flow_backup + replace
+##### ask_for_2_max; m1, m2; [3, 6, 1, 0], m0 = 6, m1 = 3; flow_backup + replace
 
 - EG
 - SUMMA
--
+- flow_backup + replace
+- if m0 !== MIN, m1 !== MIN, m0 >= 2\*m1, re true
+- else re false
 - https://leetcode.com/problems/largest-number-at-least-twice-of-others
 
 <br/>
