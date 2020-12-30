@@ -1249,9 +1249,9 @@
 <br/>
 <br/>
 
-##
+## query_arr(like_2D), words_arr(like_2D); query_smallest_dist_arr, word_smallest_dist_arr; in_loop, out_loop
 
-#####
+##### query_arr(like_2D), words_arr(like_2D); query_smallest_dist_arr, word_smallest_dist_arr; in_loop, out_loop
 
 - EG
 - qs -> [aza, bab]; ws -> [czzc, ddz]
@@ -1265,7 +1265,7 @@
 - ws_sort, find_smallest, a[0]
 - dist = lastInd(a[0]) - ind(a[0]) + 1
 - qs1 -> [3_a_dist, 1_a_dist]; ws1 -> [4_c_dist, 2_d_dist]
-- in_loop, out_loop; qs1[0], qs1[1] stay
+- out_loop, in_loop; qs1[0], qs1[1] stay
 - https://leetcode.com/problems/compare-strings-by-frequency-of-the-smallest-character
 
 <br/>
