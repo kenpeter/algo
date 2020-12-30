@@ -1249,6 +1249,28 @@
 <br/>
 <br/>
 
+##
+
+#####
+
+- EG
+- qs -> [aza, bab]; ws -> [czzc, ddz]
+- qs1 -> [3_a_dist, 1_a_dist]; ws1 -> [4_c_dist, 2_d_dist]
+- res -> [1, 2]
+- 3_a_dist < 4_c_dist(\*), 3_a_dist > 2_d_dist(x), so 1)
+- 1_a_dist < 4_c_dist(\*), 1_a_dist < 2_d_dist(\*), so 2)
+- SUMMA
+-
+- qs_sort, find_smallest, a[0]
+- ws_sort, find_smallest, a[0]
+- dist = lastInd(a[0]) - ind(a[0]) + 1
+- qs1 -> [3_a_dist, 1_a_dist]; ws1 -> [4_c_dist, 2_d_dist]
+- in_loop, out_loop; qs1[0], qs1[1] stay
+- https://leetcode.com/problems/compare-strings-by-frequency-of-the-smallest-character
+
+<br/>
+<br/>
+
 ## outloop, inloop
 
 ##### outloop, inloop; use_up single def_num, 3999 -> 2999 -> 1999 -> 999 -> 99 -> 9 -> 0 === (MMM)(CM)(?)(?)
