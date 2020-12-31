@@ -1006,15 +1006,17 @@
 <br/>
 <br/>
 
-## LOOK_BACK(i_move)
+## LOOK_BACK
 
-##### ++++ -> [--++, +--+, ++--]; i-1, i(LOOK_BACK, i_move); insert: sub(0, i) + val + sub(i), BUILD_STR_PHILOSOPY
+##### ++++ -> [--++, +--+, ++--] how_many_combo; if s[i-1], s[i], LOOK_BACK, build_from_ground (sub(0, i-1), sub(i+1))
 
 - EG
 - SUMMA
-- loop chars
-- i-1, i(LOOK_BACK); s.sub(0, i-1) + "--" + s.sub(i+1, 2_char), BUILD_STR_PHILOSOPY
-- arr.push
+- loop char
+- loop(i=1, i<len, ++i) (LOOK_BACK)
+- if s[i-1] == '+' && s[i] == '+'; (LOOK_BACK)
+- build_from_ground == before + '--' (s[i-1], s[i]) + rest (build_from_ground)
+- build_from_ground == sub(0, i-1)(exclude) + '--' + sub(i+1) (build_from_ground)
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
 ##### find_word_segment; letter space == word_segment; i-1, i(LOOK_BACK, i_move);
