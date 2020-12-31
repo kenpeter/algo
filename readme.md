@@ -17,7 +17,24 @@
 
 # arr
 
-## what is slide_window; acc curr_sum; s + range === e; operations; s_add, e_rm; ++s, ++e
+## what is slide_window; when s + range === e; operations; s_add, e_rm; ++s, ++e
+
+##### what is slide_window; when s + range === e; max(max_sum, curr_sum); s_add, e_rm; ++s, ++e
+
+- EG
+- SUMMA
+- [2, 3, 4, 1, 5], k = 3; e.g. [2, 3, 4], range = k = 3
+-
+- win_s
+- win_e
+- curr_sum
+- max_sum
+-
+- loop eles
+- curr_sum = curr_sum + ns[i]
+- if(win_s + range === win_e); max(max_sum, sum); win_s_add, win_e_rm;
+- ++win_s, ++win_e
+- https://leetcode.com/problems/maximum-average-subarray-i
 
 ##### what is slide_window; acc curr_sum; s + range === e; max(max_sum, curr_sum); s_add, e_rm; ++s, ++e
 
