@@ -964,23 +964,6 @@
 <br/>
 <br/>
 
-## start, end, start+1(LOOK_AHEAD, i_stay), end-1(LOOK_BACK, i_move); start <-> end-1 || start+1 <-> end; i move right, j move left
-
-##### start, end, start+1(LOOK_AHEAD, i_stay), end-1(LOOK_BACK, i_move); start <-> end-1 (del_right) || start+1 <-> end (del_left); i move right, j move left
-
-- EG
-- c|abba -> c(s)a(s+1)bb(e-1)a(e) -> (s+1 <-> e) -> del_left
-- abba|c -> a(s)b(s+1)ba(e-1)c(e) -> (s <-> e-1) -> del_right
-- SUMMA
-- loop chars
-- (i, j; conid; ++i, --j) (combine ind, cross over)
-- sub_loop; s+1 <-> e (del_left); i, j cross over
-- sub_loop, s <-> e-1 (del_right); i, j cross over
-- https://leetcode.com/problems/valid-palindrome-ii
-
-<br/>
-<br/>
-
 ## is_palindrome; hash / rebuild / i_start, j_end
 
 ##### is_palindrome; 121 -> 121(able_rebuild), 123 -> 321(not_able_rebuild); last_digit = input % 10; anything_left = floor(input / 10)
@@ -1002,6 +985,23 @@
 - sub_loop(skip_alph#) ++i
 - sub_loop(skip_alph#) --j
 - https://leetcode.com/problems/valid-palindrome
+
+<br/>
+<br/>
+
+## LOOK_BACK, LOOK_AHEAD
+
+##### (L, R-1) VS (L+1, R) ====> a(L)bba(R-1)c(skip) -> abba(palindrome); c(skip)a(L+1)bba(R) -> abba(palindrome);
+
+- EG
+- SUMMA
+- loop char (i_start, j_end, will meet)
+- if s[i] !== s[j] (not palindrome, try del 1 char)
+- skip_loop(L, R-1), will meet; (L, R-1) VS (L+1, R)
+- skip_loop(L+1, R), will meet; (L, R-1) VS (L+1, R)
+- if L > R-1 || L+1 > R, re true
+- else re false
+- https://leetcode.com/problems/valid-palindrome-ii
 
 <br/>
 <br/>
