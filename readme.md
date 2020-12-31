@@ -1032,7 +1032,7 @@
 - SUMMA
 - copy_arr
 - sort_arr
-- LOOK_BACK, so init = 1 (rank)
+- LOOK_BACK_need_init, so init = 1 (rank)
 -
 - loop_sort_arr;
 - LOOK_BACK, when_same_rank_stay, when_diff_rank_inc;
