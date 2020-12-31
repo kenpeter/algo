@@ -17,21 +17,23 @@
 
 # arr
 
-## slide_window; acc; acc_end, rm_head, add_tail
+## what is slide_window; acc curr_sum; s + range === e; operations; s_add, e_rm; ++s, ++e
 
-##### slide_window; acc; acc_end, rm_head, add_tail
+##### what is slide_window; acc curr_sum; s + range === e; max(max_sum, curr_sum); s_add, e_rm; ++s, ++e
 
 - EG
 - SUMMA
-- [2, 3, 4, 1, 5], k = 3;
-- out_loop #
-- acc
+- [2, 3, 4, 1, 5], k = 3; e.g. [2, 3, 4], range = k = 3
 -
-- acc_end? (end_ind == start_ind + k - 1)
-- ops
-- rm_head, add_tail
-- ++start
-- ++end
+- win_start
+- win_end
+- curr_sum
+- max_sum
+-
+- loop eles
+- curr_sum = curr_sum + ns[i]
+- if(win_start + range === win_end); max(max_sum, sum); rm_win_start, add_win_end;
+- ++win_start, ++win_end
 - https://leetcode.com/problems/maximum-average-subarray-i
 
 ##### l_res Pivot r_res; pivot_move, l_res_expand, r_res_shrink; arr_left_right_has_0
