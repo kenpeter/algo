@@ -1026,6 +1026,20 @@
 - i-1, i(LOOK_BACK, i_move); if(s[i-1] == ' ', s[i] == letter), word_segment++
 - https://leetcode.com/problems/number-of-segments-in-a-string
 
+##### [5, 37, 12, 5] -> rank: [1, 3, 2, 1]; LOOK_BACK, when_same_rank_stay, when_diff_rank_inc
+
+- EG
+- SUMMA
+- copy_arr
+- sort_arr
+- LOOK_BACK, so init = 1 (rank)
+-
+- loop_sort_arr;
+- LOOK_BACK, when_same_rank_stay, when_diff_rank_inc;
+-
+- loop_orig_arr, assign_rank
+- https://leetcode.com/problems/number-of-segments-in-a-string
+
 <br/>
 <br/>
 
