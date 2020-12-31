@@ -40,6 +40,7 @@
 
 - EG
 - [1, 1, 1, 2, 2], len = 5, quarter_len = 5/4 -> floor(1.25) -> 1
+- e.g [1] ceil(1/4=0.25) = 1, so nono
 - SUMMA
 -
 - loop(i=0; i<len - quarter_len; ..) ( together i < len - q_len and a[i + q_len] )
