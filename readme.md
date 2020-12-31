@@ -17,9 +17,9 @@
 
 # arr
 
-## what is slide_window; when s + range === e; operations; s_add, e_rm; ++s, ++e
+## slide_window; grow_to_fixed_width_slide / fixed_width_slide
 
-##### what is slide_window; when s + range === e; max(max_sum, curr_sum); s_add, e_rm; ++s, ++e
+##### grow_to_fixed_width_slide; acc until, s + range === e; max(max_sum, curr_sum); s_add, e_rm; ++s, ++e
 
 - EG
 - SUMMA
@@ -36,22 +36,15 @@
 - ++win_s, ++win_e
 - https://leetcode.com/problems/maximum-average-subarray-i
 
-##### what is slide_window; acc curr_sum; s + range === e; max(max_sum, curr_sum); s_add, e_rm; ++s, ++e
+##### fixed_width_slide + ( together i < len - x and a[i + x] )
 
 - EG
+- [1, 1, 1, 2, 2], len = 5, quarter_len = 5/4 -> floor(1.25) -> 1
 - SUMMA
-- [2, 3, 4, 1, 5], k = 3; e.g. [2, 3, 4], range = k = 3
 -
-- win_start
-- win_end
-- curr_sum
-- max_sum
--
-- loop eles
-- curr_sum = curr_sum + ns[i]
-- if(win_start + range === win_end); max(max_sum, sum); rm_win_start, add_win_end;
-- ++win_start, ++win_end
-- https://leetcode.com/problems/maximum-average-subarray-i
+- loop(i=0; i<len - quarter_len; ..) ( together i < len - q_len and a[i + q_len] )
+- if a[i] == a[i + q_len], re a[i] (fixed_width_slide)
+- https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
 
 ##### l_res Pivot r_res; pivot_move, l_res_expand, r_res_shrink; arr_left_right_has_0
 
