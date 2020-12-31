@@ -1056,18 +1056,29 @@
 <br/>
 <br/>
 
-## hash_frequency, xxxx
+## build_hash_freq, --hash_freq[n]
 
-##### hash_frequency; --hash_frequency[input_char]
+##### build_hash_freq; --hash_freq[char]
 
 - EG
 - SUMMA
-- hash_freq
-- loop input_chars
-- if(hash_freq[input_char] !== undef && --hash_freq[input_char] >= 0)
+- build_hash_freq
+- loop chars
+- if(hash_freq[char] !== undef && --hash_freq[char] >= 0)
 - https://leetcode.com/problems/ransom-note
 
-##### 1st unique char in str; hash_frequency, lookup_in_order
+##### chars build words; can "atach" build "cat", "dog", "xxxxx" each time?
+
+- EG
+- ws = ["cat", "dog", "xxxx"]; chars = "atach"
+- SUMMA
+- build_hash_freq
+- loop ws
+- loop ws[i] (char)
+- if hash_freq[n] === undef || --hash_freq[n] < 0, skip this
+- https://leetcode.com/problems/find-words-that-can-be-formed-by-characters
+
+##### 1st unique char in str; hash_freq, lookup_in_order
 
 - EG
 - SUMMA
