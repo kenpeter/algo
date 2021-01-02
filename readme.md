@@ -743,7 +743,7 @@
 <br/>
 <br/>
 
-## ??????
+## (1) i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); (2) i_same_spd_pt_diff, j_same_spd_pt_diff(act_like_len); (3) i_same_spd_pt_diff, j_same_spd_pt_diff(tracking_var);
 
 ##### i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); abc VS abc (normal, good); abc VS aabbcc (long press, good); abc VS aabbd (both fail)
 
@@ -775,7 +775,7 @@
 - ++j, if j == short_str.len, re posi;
 - https://leetcode.com/problems/implement-strstr
 
-##### ?
+##### i_same_spd_pt_diff, j_same_spd_pt_diff(tracking_var); "ab" VS "ba" (A_can_swap)
 
 - EG
 - abc VS ab; diff_len, A_cannot_swap
@@ -789,18 +789,6 @@
 - e.g. ab VS ba; var1 = [a, b], var2 = [b, a]
 -
 - if var1[0] == var2[1] && var1[1] == var2[0]
-- https://leetcode.com/problems/buddy-strings
-
-##### aaabc; i pt same, j pt same; move sync
-
-- EG
-- abc -> ab; diff len, no swap
-- abab -> a(swap)ba(swap)b; abab == abab, duplicated char, can swap
-- abbc -> abc(swap)b(swap);
-- SUMMA
-- (1) diff len, no swap
-- (2) A == B, duplicated char, can swap
-- (3) A != B, vertical compare; found_remember
 - https://leetcode.com/problems/buddy-strings
 
 <br/>
