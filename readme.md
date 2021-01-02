@@ -676,15 +676,6 @@
 - insert => sub(0, ind) + val + sub(ind)
 - https://leetcode.com/problems/thousand-separator
 
-##### ++++ -> [--++, +--+, ++--]; i=1(LOOK_BACK, i_move); insert: sub(0, i) + val + sub(i), BUILD_STR_PHILOSOPY
-
-- EG
-- SUMMA
-- loop chars
-- i=1(LOOK_BACK, i_move); s.sub(0, i-1, i_LOOK_BACK, i_move) + "--" + s.sub(i+1, 2_char), BUILD_STR_PHILOSOPY
-- arr.push
-- https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
-
 <br/>
 <br/>
 
@@ -752,15 +743,24 @@
 <br/>
 <br/>
 
-## 2 pt; i pt diff/same, j pt diff/same; move (sync + async) / (async + sync)
+## ??????
 
-##### abc, aabbcc (a long press, b long press, c long press); i pt short, j pt long; move sync, then async
+##### i_slow_pt, j_fast_pt(LOOK_BACK); abc VS abc (normal, good); abc VS aabbcc (long press, good); abc VS aabbd (both fail)
 
 - EG
-- abc, aabbcc (a long press, b long press, c long press)
+- abc VS abc (normal typing, good)
+- abc VS aabbcc (long press, good)
+- abc VS aabbd (both fail, bad)
 - SUMMA
-- i pt short (abc); j pt long (aabbcc)
-- if match, move sync; if not_match, LOOK_BACK(i_move), move async
+-
+- i pt to one (i_slow_pt)
+- j pt to another (j_fast_pt, LOOK_BACK)
+- loop chars (long_str)
+- if normal typing, ++i, ++j
+- if long press, ++j (j_fast_pt, LOOK_BACK)
+- if both fail, re fail
+-
+- re i === short.len (i must to end)
 - https://leetcode.com/problems/long-pressed-name
 
 ##### search_needle_in_parent; i pt long_str, j pt short_str; move async, then sync
@@ -989,7 +989,7 @@
 <br/>
 <br/>
 
-## LOOK_BACK, LOOK_AHEAD
+## LOOK_BACK(extend, long press), LOOK_AHEAD
 
 ##### (L, R-1) VS (L+1, R) ====> a(L)bba(R-1)c(skip) -> abba(palindrome); c(skip)a(L+1)bba(R) -> abba(palindrome);
 
@@ -1006,7 +1006,7 @@
 <br/>
 <br/>
 
-## LOOK_BACK
+## LOOK_BACK(extend, long press)
 
 ##### ++++ -> [--++, +--+, ++--] how_many_combo; if s[i-1], s[i], LOOK_BACK, build_from_ground (sub(0, i-1), sub(i+1))
 
