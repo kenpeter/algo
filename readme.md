@@ -745,7 +745,7 @@
 
 ## ??????
 
-##### i_slow_pt, j_fast_pt(LOOK_BACK); abc VS abc (normal, good); abc VS aabbcc (long press, good); abc VS aabbd (both fail)
+##### i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); abc VS abc (normal, good); abc VS aabbcc (long press, good); abc VS aabbd (both fail)
 
 - EG
 - abc VS abc (normal typing, good)
@@ -753,22 +753,26 @@
 - abc VS aabbd (both fail, bad)
 - SUMMA
 -
-- i pt to one (i_slow_pt)
-- j pt to another (j_fast_pt, LOOK_BACK)
+- i pt to one (i_slow_pt_diff)
+- j pt to another (j_fast_pt_diff, LOOK_BACK)
+-
 - loop chars (long_str)
 - if normal typing, ++i, ++j
-- if long press, ++j (j_fast_pt, LOOK_BACK)
+- if long press, ++j (j_fast_pt_diff, LOOK_BACK)
 - if both fail, re fail
 -
 - re i === short.len (i must to end)
 - https://leetcode.com/problems/long-pressed-name
 
-##### search_needle_in_parent; i pt long_str, j pt short_str; move async, then sync
+##### i_same_spd_pt_diff, j_same_spd_pt_diff(act_like_len); search "def" in "abcdef"
 
 - EG
+- i_same_spd_pt_diff, j_same_spd_pt_diff(act_like_len); "abcdef" VS "def";
 - SUMMA
-- loop parent ( p[i] ), move async
-- loop child ( p[i+j(w_len)] == c[j(w_len)] ), move sync
+- loop chars (long_str)
+- long chars (short_str)
+- i_same_spd_pt_diff, j_same_spd_pt_diff(act_like_len);
+- ++j, if j == short_str.len, re posi;
 - https://leetcode.com/problems/implement-strstr
 
 ##### swap_2_char only; i pt diff, j pt diff; move sync
