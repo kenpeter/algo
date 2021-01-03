@@ -991,6 +991,21 @@
 <br/>
 <br/>
 
+## LOOK_BACK, LOOK_SELF, LOOK_AHEAD
+
+#####
+
+- EG
+- [1,0,0,0,0,0,1], k = 2 -> [1,0,0(1),0,0(1),0,1]
+- SUMMA
+- if fb[i-1] = 1, skip (LOOK_BACK)
+- if fb[i] = 1, skip (LOOK_SELF)
+- if fb[i+1] = 1, skip (LOOK_AHEAD)
+- after_all, ++counter
+-
+- end_loop, counter >= k?
+- https://leetcode.com/problems/can-place-flowers
+
 ## LOOK_BACK(same OR inc; i=1), LOOK_AHEAD
 
 ##### (L, R-1) VS (L+1, R) ====> a(L)bba(R-1)c(skip) -> abba(palindrome); c(skip)a(L+1)bba(R) -> abba(palindrome);
