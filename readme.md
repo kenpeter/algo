@@ -331,7 +331,7 @@
 <br/>
 <br/>
 
-## backward_scan
+## scan_from_right
 
 ##### 10 -> B or 11 -> B; 0 -> A; 0_end; backward_scan + seq_1s
 
@@ -359,6 +359,16 @@
 - backward; count_seq_1s; odd_seq_1s false; even_seq_1s true;
 -
 - https://leetcode.com/problems/1-bit-and-2-bit-characters
+
+###### n1: [1, 2, 3, 4(end_m_r), 0, 0(end_w)]; n2: [2, 2(end_n_r)]; scan_from_right, 1_write, 2_reads
+
+- EG
+- SUMMA
+- end_write, end_m_read, end_n_read (1_write, 2_reads)
+- while(n>=0) (scan_from_right)
+- n1[end_w--] = n1[end_m_r] > n2[end_n_r] ? n1[end_m_r--] (1_write, 2_reads)
+- n1[end_w--] = n1[end_m_r] <= n2[end_n_r] ? n2[end_n_r--] (1_write, 2_reads)
+- https://leetcode.com/problems/merge-sorted-array
 
 <br/>
 <br/>
@@ -421,15 +431,14 @@
 - fill rest of i_read, 0
 - https://leetcode.com/problems/move-zeroes
 
-###### n1: [1, 2, 3, 4(m_r), 0, 0(end_w)]; n2: [2, 2(n_r)]; end_write, 2 reads
+###### n1: [1, 2, 3, 4(end_m_r), 0, 0(end_w)]; n2: [2, 2(end_n_r)]; 1_write, 2_reads
 
 - EG
 - SUMMA
-- end_write, m_read, n_read
-- end_write, 2 reads
-- while(n>=0)
-- n1[end_w--] = n1[m_r] > n2[n_r] ? n1[m_r--]
-- n1[end_w--] = n1[m_r] <= n2[n_r] ? n2[n_r--]
+- end_write, end_m_read, end_n_read (1_write, 2_reads)
+- while(n>=0) (scan_from_right)
+- n1[end_w--] = n1[end_m_r] > n2[end_n_r] ? n1[end_m_r--] (1_write, 2_reads)
+- n1[end_w--] = n1[end_m_r] <= n2[end_n_r] ? n2[end_n_r--] (1_write, 2_reads)
 - https://leetcode.com/problems/merge-sorted-array
 
 <br/>
