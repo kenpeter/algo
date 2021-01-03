@@ -266,7 +266,7 @@
 <br/>
 <br/>
 
-## curr_print > ns[i]; curr_print == ns[i]; curr_print < ns[i]; end_loop, curr_print <= input_range
+## 2pts, curr VS arr_ind; curr > ns[i]; curr == ns[i]; curr < ns[i]; end_loop, curr_print <= input_range
 
 ##### find missing range num; curr_print > ns[i]; curr_print == ns[i]; curr_print < ns[i]; end_loop, curr_print <= input_range
 
