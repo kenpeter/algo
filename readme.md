@@ -1120,9 +1120,10 @@
 - keyboard: abcdefghijklmnopqrstuvwxyz, word: cba, that is 1 keyboard position (a-z)
 - keyboard: pqrstuvwxyzabcdefghijklmno, word: pom, that is another keyboard position (p-o)
 - SUMMA
-- build HASH_POSI (prebuild_posi)
+-
+- hash posi
 - loop chars
-- i=1, look_back(i_move), distance = hash[i] - hash[i-1]
+- LOOK_BACK(i=1); dist = h[i] - h[i-1]; res = res + dist
 - https://codedestine.com/single-row-keyboard-string-problem
 
 ##### letter distance; build HASH_POSI (build_posi_along, self_ele)
