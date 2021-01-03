@@ -1030,10 +1030,10 @@
 - SUMMA
 - copy_arr
 - sort_arr
-- LOOK_BACK_need_init, so init = 1 (rank)
+- LOOK_BACK(same; i=1)
 -
 - loop_sort_arr;
-- LOOK_BACK, when_same_rank_stay, when_diff_rank_inc;
+- LOOK_BACK(same; i=1), when_same_rank_stay, when_diff_rank_inc;
 -
 - loop_orig_arr, assign_rank
 - https://leetcode.com/problems/number-of-segments-in-a-string
