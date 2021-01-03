@@ -794,9 +794,9 @@
 <br/>
 <br/>
 
-## continue VS discontinue_reset_counter (with ops)
+## LOOK_BACK(continue; same_char OR inc #) VS RESET(discontinue)
 
-##### LLL(continue, count); absent_counter; late_counter, 'LLA', continue VS discontinue_reset_counter (with ops)
+##### LLL(continue); absent_counter; late_counter, 'LLA'; LOOK_BACK(continue) VS RESET(discontinue)
 
 - EG
 - A (absent); L (late); P (present)
@@ -811,11 +811,11 @@
 - loop chars
 - if absent_counter > 1, re false
 - if late_counter
-- e.g. 'LLL', 3_L (continue)
-- e.g. 'LLP', 2_L -> 0_L (discontinue_reset_counter)
+- e.g. 'LLL', 3_L; LOOK_BACK(continue)
+- e.g. 'LLP', 2_L -> 0_L; RESET(discontinue)
 - https://leetcode.com/problems/student-attendance-record-i
 
-##### consecutive(continue, count), characters; aaabcc, 3a; continue VS discontinue_reset_counter (with ops)
+##### consecutive(continue), characters; aaabcc, 3a; LOOK_BACK(continue) VS RESET(discontinue)
 
 - EG
 - aaabcc, consecutive 3a, so max
@@ -825,11 +825,11 @@
 - counter
 -
 - loop chars
-- if s[i-1](look_back) === s[i], update_max, ++c (continue)
-- else c = 0 (non_continue_reset_counter)
+- if s[i-1](look_back) === s[i], update_max, ++c; LOOK_BACK(continue)
+- else c = 0; RESET(discontinue)
 - https://leetcode.com/problems/consecutive-characters
 
-##### count(count) binary substrings(continue, count); 000111, 3(0), 3(1); min(3, 3) -> 3; 01, 0011, 000111; continue VS discontinue_reset_counter
+##### count(count) binary substrings(continue, count); 000111, 3(0), 3(1); min(3, 3) -> 3; 01, 0011, 000111; LOOK_BACK(continue) VS RESET(discontinue)
 
 - EG
 - BUILD_MEM
@@ -842,12 +842,12 @@
 -
 - loop chars
 - BUILD_MEM
-- if s[i-1](look_back)==s[i], ++c (continue)
-- else arr.push(c), c = 0 (non_continue_reset_counter)
+- if s[i-1](look_back)==s[i], ++c; LOOK_BACK(continue)
+- else arr.push(c), c = 0; RESET(discontinue)
 - use_mem, loop arr
 - https://leetcode.com/problems/count-binary-substrings
 
-##### longest(max) continuous(counter) increasing subarray (continue); continue VS discontinue_reset_counter
+##### longest(max) continuous(counter) increasing subarray (continue); LOOK_BACK(continue) VS RESET(discontinue)
 
 - EG
 - SUMMA
@@ -856,8 +856,8 @@
 - counter = 1 (look_back, 2 eles)
 -
 - loop chars
-- if ns[i] > ns[i-1](look_back, 2 eles); ++c; ma = ma(ma, c)
-- else c = 1 (discontinue_reset_counter); if(ma == 0) ma = 1 (incase not enter)
+- if ns[i] > ns[i-1] LOOK_BACK(continue); ++c; ma = ma(ma, c)
+- else c = 1 RESET(discontinue); if(ma == 0) ma = 1 (incase not enter)
 - https://leetcode.com/problems/longest-continuous-increasing-subsequence
 
 <br/>
