@@ -1112,7 +1112,7 @@
 <br/>
 <br/>
 
-## prebuild hash_init_posi / build hash_init_posi along (met / !met) / update hash_init_posi along (met / !met)
+## prebuild hash_init_posi / build hash_init_posi along (met / !met) / update hash_init_posi along (met / !met) / build hash_init_posi along (met_the_other / !met_the_other)
 
 ##### cal total distance; prebuild hash_init_posi;
 
@@ -1144,13 +1144,13 @@
 - if !met; h[n] = init_posi; (build hash_init_posi along)
 - https://leetcode.com/problems/contains-duplicate-ii
 
-##### two_sum, [0, 3, 4, 0], tar = 7; build hash_init_posi along (met / !met)
+##### two_sum, [0, 3, 4, 0], tar = 7; build hash_init_posi along (met_the_other / !met_the_other)
 
 - EG
 - SUMMA
 - loop eles;
-- if met(the_other_side), hash[tar - val], re [ hash[tar - val], ind ]
-- if !met(the_other_side), hash[val] = posi (build hash_init_posi along)
+- if met_the_other, hash[tar - val], re [ hash[tar - val], ind ]
+- if !met_the_other, hash[val] = posi (build hash_init_posi along)
 - https://leetcode.com/problems/two-sum
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
