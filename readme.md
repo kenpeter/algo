@@ -331,28 +331,28 @@
 <br/>
 <br/>
 
-## backward_count_seq_1s
+## backward_scan
 
-##### 1 bit char(A), 2 bit char(B); backward_count_seq_1s
+##### 10 -> B or 11 -> B; 0 -> A; 0_end; backward_scan + seq_1s
 
 - EG
-- 10 -> B or 11 -> B; 0 -> A; 0_ending
+- 10 -> B or 11 -> B; 0 -> A; 0_end
 -
-- [0], t
+- [0(end)], t
 -
-- [0, 0], t
-- [1, 0], f
+- [0, 0(end)], t
+- [1, 0(end)], f
 -
-- [0, 0, 0], t; (0 like joker; double_0s)
-- [0, 1, 0], f; (odd_sequence_1s)
-- [1, 0, 0], t; (dboule_0s)
-- [1, 1, 0], t; (even_seq_1s)
+- [0, 0, 0(end)], t; (0 + 0_end, because 1 uses 1st 0)
+- [0, 1, 0(end)], f; (odd_sequence_1s)
+- [1, 0, 0(end)], t; (0 + 0_end)
+- [1, 1, 0(end)], t; (even_seq_1s)
 -
-- [0, 0, 0, 0], t; (double_0s)
-- [0, 0, 1, 0], f; (odd_seq_1s)
-- [0, 1, 0, 0], t; (double_0s)
-- [1, 0, 0, 0], t; (double_0s)
-- [0, 1, 1, 0], t; (even_seq_1s)
+- [0, 0, 0, 0(end)], t; (0 + 0_end)
+- [0, 0, 1, 0(end)], f; (odd_seq_1s)
+- [0, 1, 0, 0(end)], t; (0 + 0_end)
+- [1, 0, 0, 0(end)], t; (0 + 0_end)
+- [0, 1, 1, 0(end)], t; (even_seq_1s)
 -
 - SUMMA
 - loop(i=len-2; ns[i]!==0 && i>=0; --i); ignore_ending_0
