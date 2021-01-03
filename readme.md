@@ -266,24 +266,29 @@
 <br/>
 <br/>
 
-## num(exist), num(miss), potential_start
+## curr_print > ns[i]; curr_print == ns[i]; curr_print < ns[i]; end_loop, curr_print <= input_range
 
-##### find missing range num; p_s > c_n (not_form); p_s == c_n (not_form); p_s < c_n (form), print; p_s < high, print
+##### find missing range num; curr_print > ns[i]; curr_print == ns[i]; curr_print < ns[i]; end_loop, curr_print <= input_range
 
 - EG
-- [1, 10, 100, 1000]; low=10, high=100 (input_range); --> [11->999]
-- [1, 10, 100, 1000]; low=-1, high=1001 (input_range); --> [-1->0, 11->99, 101->999, 1001]
 - SUMMA
 -
 - loop arr
-- s(miss) === potential_start
-- curr_n(exist) === curr_num
-- p_s = low
-- p_s > c_n, not form range, c_n next
-- p_s == c_n, p_s++
-- p_s < c_n, form range, print(p_s, c_n-1); p_s = c_n+1
 -
-- end_loop, p_s < high, print(p_s, high)
+- if curr_print > ns[i]
+- e.g. [1, 2, 3, 4, 5, 10, 100, 1000]; low=10, high=100 (input_range);
+- 1, 2, 3, 4, 5 skip;
+-
+- if curr_print == ns[i]
+- e.g. [1, 2, 3, 4, 5, 10, 100, 1000]; low=10, high=100 (input_range);
+- 10 aready there, curr_print + 1 (avoid_ns[i]);
+-
+- if curr_print < ns[i]
+- e.g. [1, 2, 3, 4, 5, 10, 100, 1000]; low=10, high=100 (input_range);
+- curr_print == 11, ns[i]-1 (avoid_ns[i])
+-
+- end_loop, curr_print <= input_range, print rest
+-
 - https://leetcode.com/problems/missing-ranges/
 - https://medium.com/@rebeccahezhang/leetcode-163-missing-ranges-6ac21b477e96
 
