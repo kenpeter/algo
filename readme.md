@@ -1112,36 +1112,36 @@
 <br/>
 <br/>
 
-## build HASH_POSI, prebuild_posi(self_ele) / build_posi_along(self_ele, update_ele) / build_posi_along(complementary_ele)
+## prebuild hash_init_posi / build hash_init_posi along (met / !met) / build hash_update_posi along (met / !met)
 
-##### letter distance; build HASH_POSI (prebuild_posi, self_ele)
+##### cal total distance; prebuild hash_init_posi;
 
 - EG
 - keyboard: abcdefghijklmnopqrstuvwxyz, word: cba, that is 1 keyboard position (a-z)
 - keyboard: pqrstuvwxyzabcdefghijklmno, word: pom, that is another keyboard position (p-o)
 - SUMMA
 -
-- hash posi
-- loop chars
+- prebuild hash posi
+- loop chars (e.g. cba)
 - LOOK_BACK(i=1); dist = h[i] - h[i-1]; res = res + dist
 - https://codedestine.com/single-row-keyboard-string-problem
 
-##### letter distance; build HASH_POSI (build_posi_along, self_ele)
+##### max distance; build hash_init_posi along (met / !met);
 
 - EG
 - SUMMA
 - loop chars;
-- if met, cal max distance
-- if !met, build_posi_along
+- if met, dist = i - h[n](init_posi) - 1;
+- if !met, build hash_init_posi
 - https://leetcode.com/problems/largest-substring-between-two-equal-characters
 
-##### 2 same num distance <= k; build HASH_POSI (build_posi_along, update_ele)
+##### 2 same num distance <= k; build hash_update_posi along (met / !met)
 
 - EG
 - SUMMA
 - loop eles
-- build_posi_along(update_ele)
-- remember latest_posi
+- if met; if i - h[n] <= k, re t; else h[n] = update_posi
+- if !met; h[n] = init_posi
 - https://leetcode.com/problems/contains-duplicate-ii
 
 ##### two_sum, [0, 3, 4, 0], tar = 7; not_ele_directly, but_the_other_side
