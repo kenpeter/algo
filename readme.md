@@ -794,7 +794,7 @@
 <br/>
 <br/>
 
-## LOOK_BACK(continue; same_char OR inc #) VS RESET(discontinue)
+## LOOK_BACK(continue; same OR inc) VS RESET(discontinue)
 
 ##### LLL(continue); absent_counter; late_counter, 'LLA'; LOOK_BACK(continue) VS RESET(discontinue)
 
@@ -985,7 +985,7 @@
 <br/>
 <br/>
 
-## LOOK_BACK(extend, long press), LOOK_AHEAD
+## LOOK_BACK(same OR inc; i=1), LOOK_AHEAD
 
 ##### (L, R-1) VS (L+1, R) ====> a(L)bba(R-1)c(skip) -> abba(palindrome); c(skip)a(L+1)bba(R) -> abba(palindrome);
 
@@ -1002,7 +1002,7 @@
 <br/>
 <br/>
 
-## LOOK_BACK(extend, long press)
+## LOOK_BACK(same OR inc; i=1)
 
 ##### ++++ -> [--++, +--+, ++--] how_many_combo; if s[i-1], s[i], LOOK_BACK, build_from_ground (sub(0, i-1), sub(i+1))
 
