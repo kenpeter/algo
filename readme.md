@@ -271,10 +271,11 @@
 ##### find missing range num; p_s > c_n (not_form); p_s == c_n (not_form); p_s < c_n (form), print; p_s < high, print
 
 - EG
-- [1, 10, 100, 1000], low=10, high=100; --> [11->999]
-- [1, 10, 100, 1000], low=-1, high=1001; --> [-1->0, 11->99, 101->999, 1001]
+- [1, 10, 100, 1000]; low=10, high=100 (input_range); --> [11->999]
+- [1, 10, 100, 1000]; low=-1, high=1001 (input_range); --> [-1->0, 11->99, 101->999, 1001]
 - SUMMA
-- loop eles
+-
+- loop arr
 - s(miss) === potential_start
 - curr_n(exist) === curr_num
 - p_s = low
@@ -1153,13 +1154,6 @@
 - if !met_the_other, hash[val] = posi (build hash_init_posi along)
 - https://leetcode.com/problems/two-sum
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
-
-<br/>
-<br/>
-
-##### ?
-
-- https://medium.com/@rebeccahezhang/leetcode-163-missing-ranges-6ac21b477e96
 
 <br/>
 <br/>
