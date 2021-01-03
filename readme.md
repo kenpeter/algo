@@ -1112,7 +1112,7 @@
 <br/>
 <br/>
 
-## prebuild hash_init_posi / build hash_init_posi along (met / !met) / build hash_update_posi along (met / !met)
+## prebuild hash_init_posi / build hash_init_posi along (met / !met) / update hash_init_posi along (met / !met)
 
 ##### cal total distance; prebuild hash_init_posi;
 
@@ -1132,25 +1132,25 @@
 - SUMMA
 - loop chars;
 - if met, dist = i - h[n](init_posi) - 1;
-- if !met, build hash_init_posi
+- if !met, (build hash_init_posi along)
 - https://leetcode.com/problems/largest-substring-between-two-equal-characters
 
-##### 2 same num distance <= k; build hash_update_posi along (met / !met)
+##### 2 same num distance <= k; update hash_init_posi along (met / !met)
 
 - EG
 - SUMMA
 - loop eles
-- if met; if i - h[n] <= k, re t; else h[n] = update_posi
-- if !met; h[n] = init_posi
+- if met; if i - h[n] <= k, re t; else h[n] = update_posi (update hash_init_posi along)
+- if !met; h[n] = init_posi; (build hash_init_posi along)
 - https://leetcode.com/problems/contains-duplicate-ii
 
-##### two_sum, [0, 3, 4, 0], tar = 7; not_ele_directly, but_the_other_side
+##### two_sum, [0, 3, 4, 0], tar = 7; build hash_init_posi along (met / !met)
 
 - EG
 - SUMMA
 - loop eles;
-- not_ele_directly, but_the_other_side; if hash[tar - val](the_other_side), re [ hash[tar - val], ind ]
-- if !hash[tar - val], build hash[val](ele_directly) = posi
+- if met(the_other_side), hash[tar - val], re [ hash[tar - val], ind ]
+- if !met(the_other_side), hash[val] = posi (build hash_init_posi along)
 - https://leetcode.com/problems/two-sum
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
