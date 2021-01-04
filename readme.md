@@ -323,9 +323,9 @@
 <br/>
 <br/>
 
-## backward_scan
+## backward
 
-##### 10 -> B or 11 -> B; 0 -> A; 0_end; backward_scan + seq_1s
+##### 10 -> B or 11 -> B; 0 -> A; 0_end; backward + seq_1s
 
 - EG
 - 10 -> B or 11 -> B; 0 -> A; 0_end
@@ -352,7 +352,7 @@
 -
 - https://leetcode.com/problems/1-bit-and-2-bit-characters
 
-###### n1: [1, 2, 3, 4(end_m_r), 0, 0(end_w)]; n2: [2, 2(end_n_r)]; backward_scan, 1_write, 2_reads
+###### n1: [1, 2, 3, 4(end_m_r), 0, 0(end_w)]; n2: [2, 2(end_n_r)]; backward, 1_write, 2_reads
 
 - EG
 - SUMMA
@@ -362,7 +362,7 @@
 - n1[end_w--] = n1[end_m_r] <= n2[end_n_r] ? n2[end_n_r--] (1_write, 2_reads)
 - https://leetcode.com/problems/merge-sorted-array
 
-###### backward_scan, IGNORE_CARRY (9) or ADD_ONE (0, 1, 2..8)
+###### backward, IGNORE_CARRY (9) or ADD_ONE (0, 1, 2..8)
 
 - EG
 - SUMMA
@@ -1595,18 +1595,18 @@
 <br/>
 <br/>
 
-## build_knowledge_first, then work
+## build_knowledge_first
 
-#####
+##### build_knowledge_first(# shift); backward; i_read, i_write_almost;
 
 - EG
 - SUMMA
 - [0(0, sh=0), 0(1, sh=1), 0(2, sh=2), 0(3), 1(4)], len = 5;
-- shift(prev_0s) + ind < len ===> 2 + 2 = 4 < 5 (build_knowledge_first, cal_how_many_shift)
+- shift(prev_0s) + ind < len ===> 2 + 2 = 4 < 5 (build_knowledge_first, # shift)
 -
-- loop(i=i-1; sh>0 ..) (backward_scan)
-- read i, write i+sh (normal, read_write_copy)
-- if a[i] == 0, read i, write i+(--sh) (dup 0, read_write_copy)
+- loop(i=i-1; sh>0 ..) (backward)
+- read i, write i+sh (normal, i_read, i_write_almost)
+- if a[i] == 0, read i, write i+(--sh) (dup 0, i_read, i_write_almost)
 -
 - https://leetcode.com/problems/duplicate-zeros/discuss/312743/JavaC%2B%2B-O(n)-or-O(1)
 
