@@ -301,21 +301,6 @@
 
 <br/>
 <br/>
-
-## backward, IGNORE_CARRY (9) or ADD_ONE (0, 1, 2..8)
-
-###### backward, IGNORE_CARRY (9) or ADD_ONE (0, 1, 2..8)
-
-- EG
-- SUMMA
-- backward loop eles
-- if ds[i] === IGNORE_CARRY (9); ds[i] = 0; con_loop
-- if ds[i] === ADD_ONE (0, 1, 2..8); ds[i]++; return
-- end_loop, prepend 1; e.g. 999, con_loop
-- https://leetcode.com/problems/plus-one
-
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
@@ -338,7 +323,7 @@
 <br/>
 <br/>
 
-## scan_from_right
+## backward_scan
 
 ##### 10 -> B or 11 -> B; 0 -> A; 0_end; backward_scan + seq_1s
 
@@ -367,7 +352,7 @@
 -
 - https://leetcode.com/problems/1-bit-and-2-bit-characters
 
-###### n1: [1, 2, 3, 4(end_m_r), 0, 0(end_w)]; n2: [2, 2(end_n_r)]; scan_from_right, 1_write, 2_reads
+###### n1: [1, 2, 3, 4(end_m_r), 0, 0(end_w)]; n2: [2, 2(end_n_r)]; backward_scan, 1_write, 2_reads
 
 - EG
 - SUMMA
@@ -376,6 +361,16 @@
 - n1[end_w--] = n1[end_m_r] > n2[end_n_r] ? n1[end_m_r--] (1_write, 2_reads)
 - n1[end_w--] = n1[end_m_r] <= n2[end_n_r] ? n2[end_n_r--] (1_write, 2_reads)
 - https://leetcode.com/problems/merge-sorted-array
+
+###### backward_scan, IGNORE_CARRY (9) or ADD_ONE (0, 1, 2..8)
+
+- EG
+- SUMMA
+- backward loop eles
+- if ds[i] === IGNORE_CARRY (9); ds[i] = 0; con_loop
+- if ds[i] === ADD_ONE (0, 1, 2..8); ds[i]++; return
+- end_loop, prepend 1; e.g. 999, con_loop
+- https://leetcode.com/problems/plus-one
 
 <br/>
 <br/>
