@@ -920,28 +920,21 @@
 <br/>
 <br/>
 
-## a VS b -> res, res VS c
+## 1st_item_prefix, prefix match each_word, next_word
 
-##### each_str_prefix; a VS b -> res, res VS c;
-
-- EG
-- SUMMA
-- SETUP => res = 1st_item
-- loop strs (at 2nd_item)
-- sub_loop str
-- char match; not_match_break
-- a VS b -> res; then res VS c
-- https://leetcode.com/problems/longest-common-prefix
-
-##### each_str_prefix; a VS b -> res, res VS c; backward_indexOf_0, substr_reducing
+##### ["flower","flow","flight"]; 1st_item_prefix, prefix match each_word, prefix_reducing, next_word
 
 - EG
+- flower(prefix); match flow ==> flower, flowe, flow(yes);
+- flow(prefix); match flight ==> flow, flo, fl(yes)
 - SUMMA
-- SETUP => res = 1st_item
-- loop strs (at 2nd_item)
-- sub_loop str
-- backward_indexOf_0; substr_reducing;
-- a VS b -> res; then res VS c
+
+- 1st item as prefix
+- loop word_arr
+- loop(w.indexOf(prefix) === 0), prefix.reducing;
+- if prefix empty, re empty
+- end_loop, re prefix
+-
 - https://leetcode.com/problems/longest-common-prefix
 
 <br/>
