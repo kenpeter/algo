@@ -1601,12 +1601,14 @@
 
 - EG
 - SUMMA
-- [0(0, sh=0), 0(1, sh=1), 0(2, sh=2), 0(3), 1(4)], len = 5;
-- shift(prev_0s) + ind < len ===> 2 + 2 = 4 < 5 (build_knowledge_first, # shift)
+- [0(0, sh=0), 0(1, sh=1), 0(2, sh=2), 0(3, sh=3), 1(4)], len = 5;
+- shift(prev_0s) + ind < len ===> 2 + 2 = 4 < 5
+- shift(prev_0s) + ind < len ===> 3 + 3 = 6 > 5 (build_knowledge_first, # shift)
+- loop_stop, sh == 3 (1 extra)
 -
 - loop(i=i-1; sh>0 ..) (backward)
-- read i, write i+sh (normal, i_read, i_write_almost)
-- if a[i] == 0, read i, write i+(--sh) (dup 0, i_read, i_write_almost)
+- if i+sh < len (avoid 1 extra); read i, write i+sh (normal, i_read, i_write_almost)
+- if a[i] == 0; read i, write i+(--sh) (dup 0, i_read, i_write_almost)
 -
 - https://leetcode.com/problems/duplicate-zeros/discuss/312743/JavaC%2B%2B-O(n)-or-O(1)
 
