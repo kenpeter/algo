@@ -1029,7 +1029,7 @@
 
 ## LOOK_BACK, LOOK_SELF, LOOK_AHEAD
 
-#####
+##### place flower in pot_array
 
 - EG
 - [1,0,0,0,0,0,1], k = 2 -> [1,0,0(1),0,0(1),0,1]
