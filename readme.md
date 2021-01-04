@@ -377,9 +377,12 @@
 - n1[end_w--] = n1[end_m_r] <= n2[end_n_r] ? n2[end_n_r--] (1_write, 2_reads)
 - https://leetcode.com/problems/merge-sorted-array
 
-## ?
+<br/>
+<br/>
 
-#####
+## i, then i+1 rest max
+
+##### i, then i+1 rest max
 
 - EG
 - SUMMA
@@ -390,6 +393,32 @@
 - end_loop a[a.len-1] = -1
 -
 - https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side
+
+<br/>
+<br/>
+
+## ?
+
+##### a2 in a1; a1 follows a2 order
+
+- EG
+- a1: [3, 4, 1, 1, 2, 2]
+- a2: [1, 2]
+- h: {3:1, 4:1, 1:2, 2:2}
+- out: [1, 1, 2, 2, 3, 4]
+- SUMMA
+- a1 freq
+-
+- loop a2 (a1 follows a2 order)
+- use all freq
+- build_from_ground
+- end_loop, reset freq
+-
+- loop 0->1000 (rest a1 #)
+- use all freq
+- build_from_ground
+-
+- https://leetcode.com/problems/relative-sort-array
 
 <br/>
 <br/>
