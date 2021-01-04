@@ -370,6 +370,20 @@
 - n1[end_w--] = n1[end_m_r] <= n2[end_n_r] ? n2[end_n_r--] (1_write, 2_reads)
 - https://leetcode.com/problems/merge-sorted-array
 
+## ?
+
+#####
+
+- EG
+- SUMMA
+- [4(i), 3, 2, 1] -> [3(i), 3, 2, 1] ===> [3, 3(i), 2, 1] -> [3, 2(i), 2, 1] ===> [3, 2, 2(i), 1] -> [3, 2, 1(i), 1] ===> [3, 2, 2, -1(i)]
+-
+- loop eles
+- a[i] = i+1 rest max
+- end_loop a[a.len-1] = -1
+-
+- https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side
+
 <br/>
 <br/>
 <br/>
