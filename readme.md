@@ -214,7 +214,7 @@
 - return m0 \* m1 \* m2 VS m0 \* (-) \_ (-)
 - https://leetcode.com/problems/maximum-product-of-three-numbers
 
-##### ask_for_2_max; m1, m2; [3, 6, 1, 0], m0 = 6, m1 = 3; flow_backup + replace
+##### largest # >=1 others ===> largest >= 2\*2nd_largest; ask_for_2_max; m0, m1; [4, 3, 2, 1], m0 = 4, m1 = 3; flow_backup + replace
 
 - EG
 - SUMMA
@@ -222,6 +222,13 @@
 - if m0 !== MIN, m1 !== MIN, m0 >= 2\*m1, re true
 - else re false
 - https://leetcode.com/problems/largest-number-at-least-twice-of-others
+
+##### ask_for_2_max; m0, m1; [4, 3, 2, 1]; m0 = 4, m1 = 3
+
+- EG
+- SUMMA
+- flow_backup + replace
+- https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array
 
 <br/>
 <br/>
