@@ -391,9 +391,6 @@
 
 <br/>
 <br/>
-
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
@@ -1594,6 +1591,24 @@
 - substring_equal
 - res.sort
 - https://medium.com/algorithm-and-datastructure/index-pairs-of-a-string-7b7c8306ead0
+
+<br/>
+<br/>
+
+## build_knowledge_first, then work
+
+#####
+
+- EG
+- SUMMA
+- [0(0, sh=0), 0(1, sh=1), 0(2, sh=2), 0(3), 1(4)], len = 5;
+- shift(prev_0s) + ind < len ===> 2 + 2 = 4 < 5 (build_knowledge_first, cal_how_many_shift)
+-
+- loop(i=i-1; sh>0 ..) (backward_scan)
+- read i, write i+sh (normal, read_write_copy)
+- if a[i] == 0, read i, write i+(--sh) (dup 0, read_write_copy)
+-
+- https://leetcode.com/problems/duplicate-zeros/discuss/312743/JavaC%2B%2B-O(n)-or-O(1)
 
 <br/>
 <br/>
