@@ -397,29 +397,6 @@
 <br/>
 <br/>
 
-## ?
-
-##### a2 in a1; a1 follows a2 order
-
-- EG
-- a1: [3, 4, 1, 1, 2, 2]
-- a2: [1, 2]
-- h: {3:1, 4:1, 1:2, 2:2}
-- out: [1, 1, 2, 2, 3, 4]
-- SUMMA
-- a1 freq
--
-- loop a2 (a1 follows a2 order)
-- use all freq
-- build_from_ground
-- end_loop, reset freq
--
-- loop 0->1000 (rest a1 #)
-- use all freq
-- build_from_ground
--
-- https://leetcode.com/problems/relative-sort-array
-
 <br/>
 <br/>
 <br/>
@@ -1117,6 +1094,44 @@
 -
 - loop_orig_arr, assign_rank
 - https://leetcode.com/problems/number-of-segments-in-a-string
+
+<br/>
+<br/>
+
+## build_from_ground
+
+##### a2 in a1; a1 follows a2 order; res build_from_ground
+
+- EG
+- a1: [3, 4, 1, 1, 2, 2]
+- a2: [1, 2]
+- h: {3:1, 4:1, 1:2, 2:2}
+- out: [1, 1, 2, 2, 3, 4]
+- SUMMA
+-
+- a1 freq
+-
+- loop a2 (a1 follows a2 order)
+- use all freq
+- res.push (build_from_ground)
+- end_loop, reset freq
+-
+- loop 0->1000 (rest a1 #)
+- use all freq
+- res.push( build_from_ground)
+-
+- https://leetcode.com/problems/relative-sort-array
+
+##### ++++ -> [--++, +--+, ++--] how_many_combo; if s[i-1], s[i], LOOK_BACK, build_from_ground (sub(0, i-1), sub(i+1))
+
+- EG
+- SUMMA
+- loop char
+- loop(i=1, i<len, ++i) (LOOK_BACK)
+- if s[i-1] == '+' && s[i] == '+'; (LOOK_BACK)
+- build_from_ground == before + '--' (s[i-1], s[i]) + rest (build_from_ground)
+- build_from_ground == sub(0, i-1)(exclude) + '--' + sub(i+1) (build_from_ground)
+- https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
 <br/>
 <br/>
