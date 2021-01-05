@@ -17,19 +17,19 @@
 
 # arr
 
-## loop doing stuff; sudden reach condi, reset / max / count / etc
+## doing stuff, sudden reach condi, reset / max / count / etc
 
-##### [-1, 1, -1, 1, -1, 1], 3_equal_parts; loop doing stuff; sudden reach condi, reset / count
+##### [-1, 1, -1, 1, -1, 1], 3_equal_parts; doing stuff, sudden reach condi; reset / count
 
 - EG
 - SUMMA
 - loop eles
-- s = s + ns[i] (loop doing stuff)
+- s = s + ns[i] (doing stuff)
 - if s === sum / 3, ++count, s=0 (sudden reach condi, reset / count);
 - re count >= 3 (edge case, [-1, 1, -1, 1, -1, 1, -1, 1], sum=0, each_s=0, 4 times)
 - https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
 
-##### grow_to_fixed_width_slide; acc until, s + range === e; max(max_sum, curr_sum); s_add, e_rm; ++s, ++e
+##### slide_the_window; loop doing stuff, sudden reach condi; slide_the_window (add_head, rm_tail); max / etc
 
 - EG
 - SUMMA
@@ -50,11 +50,9 @@
 <br/>
 <br/>
 
-## slide_window (maintain_window_width)
+## slide_the_window (1. add_head / rm_tail; 2. a[i] -> a[i+len])
 
-##### slide\*window (maintain_window_width); loop doding stuff; sudden reach condi, max / add_head, rm_tail
-
-##### grow_to_fixed_width_slide; acc until, s + range === e; max(max_sum, curr_sum); s_add, e_rm; ++s, ++e
+##### slide_the_window (add_head / rm_tail); loop doing stuff, sudden reach condi; slide_the_window(add_head, rm_tail); max / etc
 
 - EG
 - SUMMA
@@ -68,19 +66,19 @@
 - loop eles
 - curr = curr + ns[i] (loop doing stuff)
 - if(head + range === tail) (sudden reach condi)
-- max; add_head, rm_tail; (max / etc)
+- max; add_head, rm_tail; (slide_the_window; max / etc)
 - ++head, ++tail
 - https://leetcode.com/problems/maximum-average-subarray-i
 
-##### fixed_width_slide + ( together i < len - x and a[i + x] )
+##### slide_the_window (a[i] -> a[i+len]); rm_quarter_len in loop condi, but use in arr ind;
 
 - EG
 - [1, 1, 1, 2, 2], len = 5, quarter_len = 5/4 -> floor(1.25) -> 1
-- e.g [1] ceil(1/4=0.25) = 1, so nono
+- e.g [1] ceil(1/4=0.25) = 1, outbound, so nono
 - SUMMA
 -
-- loop(i=0; i<len - quarter_len; ..) ( together i < len - q_len and a[i + q_len] )
-- if a[i] == a[i + q_len], re a[i] (fixed_width_slide)
+- loop(i=0; i<len - quarter_len; ..) (rm_quarter_len in loop condi, but use in arr ind)
+- if a[i] == a[i + q_len], re a[i] (slide_the_window)
 - https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
 
 ##### l_res Pivot r_res; pivot_move, l_res_expand, r_res_shrink; arr_left_right_has_0
