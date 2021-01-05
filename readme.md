@@ -938,6 +938,7 @@
 - if prefix empty, re empty
 - end_loop, re prefix
 - https://leetcode.com/problems/longest-common-prefix
+- https://www.geeksforgeeks.org/longest-common-prefix-using-character-by-character-matching (vertical w by w matching char)
 
 ##### ["cool", "lock", "cook"]; cook as common; cool vs lock -> co (reduce non_useful) vs lk (reduce already_scan); co vs cook
 
@@ -960,22 +961,6 @@
 - w, reduce already_scan
 - common, reduce non_useful
 - https://leetcode.com/problems/find-common-characters
-
-<br/>
-<br/>
-
-## min_len_match, a VS b VS c VS d -> res (same_time_match)
-
-##### each_str_prefix; min_len_match, a VS b VS c VS d -> res (same_time_match)
-
-- EG
-- SUMMA
-- find_min_len (s.reduce((acc, curr) => {}, 0)) (SETUP)
-- loop str (min_len)
-- sub_loop strs (at 2nd_item)
-- if strs[str_ind][char_ind] == curr, con
-- else return res (no_break)
-- https://www.geeksforgeeks.org/longest-common-prefix-using-character-by-character-matching
 
 <br/>
 <br/>
