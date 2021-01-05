@@ -1021,6 +1021,28 @@
 <br/>
 <br/>
 
+## loop 1 -> 1000; loop a -> b; xxxx; (natual_bottom_up)
+
+##### a2 in a1; a1 follows a2 order; res build_from_ground
+
+- EG
+- a1: [3, 4, 1, 1, 2, 2]
+- a2: [1, 2]
+- h: {3:1, 4:1, 1:2, 2:2} (build_knowledge)
+- out: [1, 1, 2, 2, 3, 4]
+- SUMMA
+-
+- ..
+- ..
+- loop 0->1000 (e.g. loop 1 -> 1000 or loop a -> z, natual_bottom_up)
+- use all freq
+- res.push(build_from_ground)
+-
+- https://leetcode.com/problems/relative-sort-array
+
+<br/>
+<br/>
+
 ## LOOK_BACK, LOOK_SELF, LOOK_AHEAD
 
 ##### place flower in pot_array
@@ -1110,7 +1132,7 @@
 - res.push (build_from_ground)
 - end_loop, reset freq
 -
-- loop 0->1000 (e.g. loop 1 -> 1000 or loop a -> z)
+- loop 0->1000 (e.g. loop 1 -> 1000 or loop a -> z, natual_bottom_up)
 - use all freq
 - res.push(build_from_ground)
 -
