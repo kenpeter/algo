@@ -1092,7 +1092,7 @@
 <br/>
 <br/>
 
-## build_from_ground
+## build_from_ground (when something new need)
 
 ##### a2 in a1; a1 follows a2 order; res build_from_ground
 
@@ -1112,7 +1112,7 @@
 -
 - loop 0->1000 (rest a1 #)
 - use all freq
-- res.push( build_from_ground)
+- res.push(build_from_ground)
 -
 - https://leetcode.com/problems/relative-sort-array
 
