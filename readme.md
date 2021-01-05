@@ -1092,7 +1092,7 @@
 <br/>
 <br/>
 
-## build_from_ground (when something new need)
+## build_from_ground (e.g. []; part_a, part_b, part_c, insert it)
 
 ##### a2 in a1; a1 follows a2 order; res build_from_ground
 
