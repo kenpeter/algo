@@ -1092,25 +1092,25 @@
 <br/>
 <br/>
 
-## build_from_ground (e.g. []; part_a, part_b, part_c, insert it)
+## build_from_ground (e.g. [] with insert_ind; part_a, part_b, part_c, insert it)
 
 ##### a2 in a1; a1 follows a2 order; res build_from_ground
 
 - EG
 - a1: [3, 4, 1, 1, 2, 2]
 - a2: [1, 2]
-- h: {3:1, 4:1, 1:2, 2:2}
+- h: {3:1, 4:1, 1:2, 2:2} (build_knowledge)
 - out: [1, 1, 2, 2, 3, 4]
 - SUMMA
 -
 - a1 freq
 -
 - loop a2 (a1 follows a2 order)
-- use all freq
+- use all freq (build_knowledge)
 - res.push (build_from_ground)
 - end_loop, reset freq
 -
-- loop 0->1000 (rest a1 #)
+- loop 0->1000 (e.g. loop 1 -> 1000 or loop a -> z)
 - use all freq
 - res.push(build_from_ground)
 -
@@ -1597,15 +1597,15 @@
 <br/>
 <br/>
 
-## build_knowledge_first
+## build_knowledge
 
-##### build_knowledge_first(# shift); backward; i_read, i_write_almost;
+##### build_knowledge(# shift); backward; i_read, i_write_almost;
 
 - EG
 - SUMMA
 - [0(0, sh=0), 0(1, sh=1), 0(2, sh=2), 0(3, sh=3), 1(4)], len = 5;
 - shift(prev_0s) + ind < len ===> 2 + 2 = 4 < 5
-- shift(prev_0s) + ind < len ===> 3 + 3 = 6 > 5 (build_knowledge_first, # shift)
+- shift(prev_0s) + ind < len ===> 3 + 3 = 6 > 5 (build_knowledge, # shift)
 - loop_stop, sh == 3 (1 extra)
 -
 - loop(i=i-1; sh>0 ..) (backward)
@@ -1613,6 +1613,18 @@
 - if a[i] == 0; read i, write i+(--sh) (dup 0, i_read, i_write_almost)
 -
 - https://leetcode.com/problems/duplicate-zeros/discuss/312743/JavaC%2B%2B-O(n)-or-O(1)
+
+##### a2 in a1; a1 follows a2 order; res build_from_ground
+
+- EG
+- a1: [3, 4, 1, 1, 2, 2]
+- a2: [1, 2]
+- h: {3:1, 4:1, 1:2, 2:2} (build_knowledge)
+- out: [1, 1, 2, 2, 3, 4]
+- SUMMA
+- ..
+- ..
+- https://leetcode.com/problems/relative-sort-array
 
 <br/>
 <br/>
