@@ -920,7 +920,7 @@
 <br/>
 <br/>
 
-## prefix (reduce non_useful); common (reduce non_useful), w (reduce already_scan)
+## a vs b -> res, res vs c -> res; prefix (reduce non_useful); common (reduce non_useful), w (reduce already_scan)
 
 ##### ["flower","flow","flight"]; flower as prefix; flower vs flow -> flow (reduce non_useful) vs flow; flow vs flight -> fl (reduce non_useful) vs fl
 
