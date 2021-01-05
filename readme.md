@@ -17,6 +17,21 @@
 
 # arr
 
+## loop doing stuff; suddenlty reach condi, reset / max / count / etc
+
+##### [-1, 1, -1, 1, -1, 1], 3_equal_parts; loop doing stuff; suddenlty reach condi, reset / count
+
+- EG
+- SUMMA
+- loop eles
+- s = s + ns[i] (loop doing stuff)
+- if s === sum / 3, ++count, s=0 (reset / count);
+- re count >= 3 (edge case, [-1, 1, -1, 1, -1, 1, -1, 1], sum=0, each_s=0, 4 times)
+- https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
+
+<br/>
+<br/>
+
 ## slide_window; grow_to_fixed_width_slide / fixed_width_slide
 
 ##### grow_to_fixed_width_slide; acc until, s + range === e; max(max_sum, curr_sum); s_add, e_rm; ++s, ++e
