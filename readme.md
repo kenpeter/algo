@@ -937,6 +937,25 @@
 -
 - https://leetcode.com/problems/longest-common-prefix
 
+##### ["cool", "lock", "cook"]; cool vs lock -> co (reduce non_useful) vs lk (reduce already_scan); co vs cook
+
+- EG
+- SUMMA
+-
+- com = a[0] (first as common, "cool")
+- loop w
+
+- loop char ("cool")
+- "c"; keep in "cool", rm in "lock" ==> "cool" vs "lok" (reduce already_scan)
+- "o"; keep in "cool", rm in "lok" ==> "cool" vs "lk" (reduce already_scan)
+- "o"; rm in "cool" (reduce non_useful), none in "lk" ==> "col" vs "lk"
+- "l"; rm in "col" (reduce non_useful), none in "lk" ==> "co" vs "lk"
+-
+- now loop char ("co")
+- "co" vs "cook"
+- ...
+- https://leetcode.com/problems/find-common-characters
+
 <br/>
 <br/>
 
