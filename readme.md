@@ -920,33 +920,35 @@
 <br/>
 <br/>
 
-## 1st_item_prefix, prefix match each_word, next_word
+## prefix (reduce non_useful); common (reduce non_useful), w (reduce already_scan)
 
-##### ["flower","flow","flight"]; 1st_item_prefix, prefix match each_word, prefix_reducing, next_word
-
-- EG
-- flower(prefix); match flow ==> flower, flowe, flow(yes);
-- flow(prefix); match flight ==> flow, flo, fl(yes)
-- SUMMA
-
-- 1st item as prefix
-- loop word_arr
-- loop(w.indexOf(prefix) === 0), prefix.reducing;
-- if prefix empty, re empty
-- end_loop, re prefix
--
-- https://leetcode.com/problems/longest-common-prefix
-
-##### ["cool", "lock", "cook"]; cool vs lock -> co (reduce non_useful) vs lk (reduce already_scan); co vs cook
+##### ["flower","flow","flight"]; flower as prefix; flower vs flow -> flow (reduce non_useful) vs flow; flow vs flight -> fl (reduce non_useful) vs fl
 
 - EG
 - SUMMA
 -
-- com = a[0] (first as common, "cool")
+- prefix = a[0]
 - loop w
 
-- loop char ("cool")
-- "c"; keep in "cool", rm in "lock" ==> "cool" vs "lok" (reduce already_scan)
+- loop prefix ("flower")
+- flower.prefix(flow) -> flowe.prefix(flow) -> flow.prefix(flow); (reduce non_useful)
+- flow.prefix(flight) -> .... (reduce non_useful)
+-
+- loop(w.indexOf(prefix) !==0); s.sub(0, prefix-1); (reduce non_useful)
+- if prefix empty, re empty
+- end_loop, re prefix
+- https://leetcode.com/problems/longest-common-prefix
+
+##### ["cool", "lock", "cook"]; cook as common; cool vs lock -> co (reduce non_useful) vs lk (reduce already_scan); co vs cook
+
+- EG
+- SUMMA
+-
+- common = a[0]
+- loop w
+
+- loop common ("cool")
+- "c"; keep in "cool" (common), rm in "lock" (w) ==> "cool" vs "lok" (reduce already_scan)
 - "o"; keep in "cool", rm in "lok" ==> "cool" vs "lk" (reduce already_scan)
 - "o"; rm in "cool" (reduce non_useful), none in "lk" ==> "col" vs "lk"
 - "l"; rm in "col" (reduce non_useful), none in "lk" ==> "co" vs "lk"
@@ -954,6 +956,9 @@
 - now loop char ("co")
 - "co" vs "cook"
 - ...
+-
+- w, reduce already_scan
+- common, reduce non_useful
 - https://leetcode.com/problems/find-common-characters
 
 <br/>
