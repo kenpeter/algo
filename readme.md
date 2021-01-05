@@ -1138,7 +1138,7 @@
 -
 - https://leetcode.com/problems/relative-sort-array
 
-##### ++++ -> [--++, +--+, ++--] how_many_combo; if s[i-1], s[i], LOOK_BACK, build_from_ground (sub(0, i-1), sub(i+1))
+##### ++++ -> [--++, +--+, ++--] how_many_combo; if s[i-1], s[i], LOOK_BACK, build_from_ground, (sub(0, i-1), sub(i+1))
 
 - EG
 - SUMMA
@@ -1148,6 +1148,31 @@
 - build_from_ground == before + '--' (s[i-1], s[i]) + rest (build_from_ground)
 - build_from_ground == sub(0, i-1)(exclude) + '--' + sub(i+1) (build_from_ground)
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
+
+##### build_from_ground; [-4(i_start), -3, 1, 2(j_big)]; sort + -; big^2 either end
+
+- EG
+- sort + -?
+- big^2 either end
+-
+- why big -> small?
+- if small to big, e.g. [-4(i_small), -3, 1, 2(j_big)] -> [2^2, 1^2, -3^2, ..] (wrong)
+- [-4(i_small), -3, 1, 2(j_big)], big^2 either end
+-
+- big -> small
+- [1(i_small), 2, 3, 4(j_big)] -> j_big goes to left
+- [-4(i_small), -3, -2, -1(j_big)] -> i_small goes to right
+- [-4(i_small), -3, 1, 2(j_big)] -> i_small corss j_big
+-
+- SUMMA
+- [-4(i_small), -3, 1, 2(j_big)]; sort + -; big^2 either end
+-
+- res = [] (build_from_ground), ind = j_end;
+- i_small, j_big
+- loop(i <= j)
+- if ns[i]^2 > ns[j]^2, res[ind--](can be arr / hash) = ns[i]^2; (build_from_ground)
+- if ns[i]^2 <=> ns[j]^2, res[ind--](can be arr / hash) = ns[j]^2 (build_from_ground)
+- https://leetcode.com/problems/squares-of-a-sorted-array
 
 <br/>
 <br/>
