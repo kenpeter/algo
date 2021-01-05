@@ -1155,11 +1155,11 @@
 - sort + -?
 - big^2 either end
 -
-- why big -> small?
+- why push big -> small?
 - if small to big, e.g. [-4(i_small), -3, 1, 2(j_big)] -> [2^2, 1^2, -3^2, ..] (wrong)
 - [-4(i_small), -3, 1, 2(j_big)], big^2 either end
 -
-- big -> small
+- push big -> small
 - [1(i_small), 2, 3, 4(j_big)] -> j_big goes to left
 - [-4(i_small), -3, -2, -1(j_big)] -> i_small goes to right
 - [-4(i_small), -3, 1, 2(j_big)] -> i_small corss j_big
