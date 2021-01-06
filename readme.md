@@ -1874,6 +1874,12 @@
 - (1) long > short; (2) false_case(not_prefix); (3) good_case(short.empty); (4) con(rm_prefix)
 - https://leetcode.com/problems/greatest-common-divisor-of-strings
 
+##### another gcd, [1,1,2,2,2,2] -> [1, 1], [2, 2], [2, 2]
+
+- EG
+- SUMMA
+- https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/discuss/248225/JavaScript-O(N)-Buckets-and-GCD-wExplanation
+
 <br/>
 <br/>
 <br/>
