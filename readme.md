@@ -17,6 +17,24 @@
 
 # arr
 
+## 1 pass, 2 same kind condi check
+
+##### [1, 2, 3], good; [3, 2, 1], good; [2, 2, 2], good; [1, 2, -100, 100], bad
+
+- EG
+- [1, 2, 3](asc), pure
+- [3, 2, 1](desc), prue
+- [2, 2, 2](equal), pure
+- [1, 2, -100, 100], !pure
+-
+- SUMMA
+- loop eles (1 pass, 2 same kind condi check)
+- if asc + desc set, !pure
+- if asc set, pure
+- if desc set, pure
+- if asc + desc !set, !touch, equal
+- https://leetcode.com/problems/monotonic-array
+
 ## doing stuff, sudden reach condi, reset / max / count / etc
 
 ##### [-1, 1, -1, 1, -1, 1], 3_equal_parts; doing stuff, sudden reach condi; reset / count
@@ -355,15 +373,10 @@
 
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
 
-# matrix
+## INVERSE_QUESTION; matrix; most re_fail, else re_true; 2_ele_diag, upto_2nd_last
 
-## INVERSE_QUESTION; most re_fail, else re_true; 2_ele_diag, upto_2nd_last
-
-##### INVERSE_QUESTION; most re_fail, else re_true; 2_ele_diag, upto_2nd_last
+##### INVERSE_QUESTION; matrix; most re_fail, else re_true; 2_ele_diag, upto_2nd_last
 
 - EG
 - SUMMA
@@ -1853,6 +1866,7 @@
 - special case 1st, then normal case; s.replace(/10#/)
 - https://leetcode.com/problems/decrypt-string-from-alphabet-to-integer-mapping
 
+<br/>
 <br/>
 <br/>
 <br/>
