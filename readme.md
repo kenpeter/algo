@@ -842,7 +842,7 @@
 <br/>
 <br/>
 
-## i_start, j_start -> i_start, j_end(formular)
+## when 2, position / end / fast_slow / xxxx, use 2_pts; i_start, j_start -> i_start, j_end(formular)
 
 ##### search_needle_in_parent; i_start, j_start -> i_start, j_end(w_len)
 
