@@ -335,6 +335,26 @@
 
 <br/>
 <br/>
+
+## take_concept_diff, not thinking big/small
+
+##### take_concept_diff, not thinking big/small
+
+- EG
+- [2, 4] VS [1, 2, 5]
+- [2, 4] + x - y VS [1, 2, 5] - x + y (make both sum equal)
+- 6 + x - y === 8 - x + y
+- 2x - 2y === diff(2), so x - y = diff/2 (take_concept_diff, not thinking big/small)
+- SUMMA
+-
+- loop A arr
+- loop B arr
+- if diff/2 === A[i] - B[i] (take_concept_diff, not thinking big/small)
+- re [A[i], B[i]]
+- https://leetcode.com/problems/fair-candy-swap
+
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
