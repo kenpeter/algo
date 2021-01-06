@@ -309,7 +309,7 @@
 
 ## skip_loop_up_highest, skip_loop_down_lowest;
 
-##### [4, 3, 2, 1, 2, 3, 4]; 4->3->2->1 (skip_loop_down), 1->2->3->4 (skip_loop_up); buy at 1, sell at 4
+##### [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest; skip_loop_down_lowest; buy at 0, sell at 4
 
 - EG
 - SUMMA
@@ -322,6 +322,21 @@
 - end_loop, ps[i] (highest)
 -
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii
+
+##### [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest; skip_loop_down_lowest;
+
+- EG
+- SUMMA
+- loop(i < ps.length-1) (loop_condi_reduce, arr_ind_inc; vice versa)
+-
+- skip_loop_down_lowest(i < a.length - 1 && a[i] >= a[i+1]), ++i, is_up=true
+- end_loop, a[i] (lowest)
+-
+- skip_loop_up_highest( i < a.length - 1 && a[i] < a[i+1]), ++i, is_down=true
+- end_loop, a[i] (highest)
+-
+- re is_up && is_down && a.len-1 == i
+- https://leetcode.com/problems/valid-mountain-array
 
 <br/>
 <br/>
