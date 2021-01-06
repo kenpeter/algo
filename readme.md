@@ -17,22 +17,22 @@
 
 # arr
 
-## 1 pass, 2 same kind condi check
+## 1 pass, 2 var track pureness
 
 ##### [1, 2, 3], good; [3, 2, 1], good; [2, 2, 2], good; [1, 2, -100, 100], bad
 
 - EG
-- [1, 2, 3](asc), pure
-- [3, 2, 1](desc), prue
-- [2, 2, 2](equal), pure
-- [1, 2, -100, 100], !pure
+- [1, 2, 3](asc), pure (1 pass, 2 var track pureness)
+- [3, 2, 1](desc), prue (..)
+- [2, 2, 2](equal), pure (..)
+- [1, 2, -100, 100], !pure (..)
 -
 - SUMMA
-- loop eles (1 pass, 2 same kind condi check)
-- if asc + desc set, !pure
-- if asc set, pure
-- if desc set, pure
-- if asc + desc !set, !touch, equal
+- loop eles
+- if asc + desc set, !pure (1 pass, 2 var track pureness)
+- if asc set, pure (..)
+- if desc set, pure (..)
+- if asc + desc !set, !touch, equal (..)
 - https://leetcode.com/problems/monotonic-array
 
 ## doing stuff, sudden reach condi, reset / max / count / etc
