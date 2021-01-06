@@ -842,15 +842,20 @@
 <br/>
 <br/>
 
-## when 2, position / end / fast_slow / xxxx, use 2_pts; i_start, j_start -> i_start, j_end(formular)
+## when 2, position / end / part / fast_slow / xxx; use 2_pts, i_pt, j_pt
 
-##### search_needle_in_parent; i_start, j_start -> i_start, j_end(w_len)
+##### search_in_parent; i_same_spd_pt_diff; j_same_spd_pt_diff(as_len); sudden_reach_condi
 
 - EG
 - SUMMA
 - edge_case => parent_empty; child_empty; both_empty
-- loop parent ( p[i] )
-- loop child ( p[i+j(w_len)] == c[j(w_len)] )
+-
+- loop parent_char ( p[i] )
+-
+- j = 0 (reset)
+- loop child_char ( p[i+j(len)] == c[j(len)] )
+- sudden_reach_condi, re ind
+-
 - https://leetcode.com/problems/implement-strstr
 
 ##### keep position, rev word; i_start, j_start -> i_start, j_end(w_len)
