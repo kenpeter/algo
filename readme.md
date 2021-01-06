@@ -870,6 +870,19 @@
 - i_start=0, j_end(i+k || s.len); i_start=2\*k, j_end(i+k || s.len)
 - https://leetcode.com/problems/reverse-string-ii
 
+##### when_2_end; [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest(forward); skip_loop_up_highest(backward);
+
+- EG
+- SUMMA
+-
+- when_2_end; skip_loop_up_highest(forward); skip_loop_up_highest(backward)
+-
+- skip_loop_up_highest(forward) (i < a.len - 1 && a[i] < a[i+1]), ++i;
+- skip_loop_up_highest(backward) (j > 1 && a[j] < a[j-1]), --j;
+-
+- re i > 0 (i_use) && j < a.len-1 (j_use) && i === j (meet)
+- https://leetcode.com/problems/valid-mountain-array
+
 <br/>
 <br/>
 
