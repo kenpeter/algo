@@ -842,14 +842,16 @@
 <br/>
 <br/>
 
-## when 2, position / end / part / fast_slow / xxx; use 2_pts, i_pt, j_pt
+## use_2_pts; 2 ends / 2 parts / palindrome / reverse / cross_over / i_start + j_end / j_as_len / fast_slow / xxxx
 
-##### search_in_parent; i_same_spd_pt_diff; j_same_spd_pt_diff(as_len); sudden_reach_condi
+##### search_in_parent; i_same_spd_pt_diff; j_same_spd_pt_diff(j_as_len); sudden_reach_condi
 
 - EG
 - SUMMA
 - edge_case => parent_empty; child_empty; both_empty
 -
+- i_same_spd_pt_diff
+- j_same_spd_pt_diff(j_as_len)
 - loop parent_char ( p[i] )
 -
 - j = 0 (reset)
@@ -858,13 +860,20 @@
 -
 - https://leetcode.com/problems/implement-strstr
 
-##### keep position, rev word; i_start, j_start -> i_start, j_end(w_len)
+##### " abc abc " -> " cba cba "; i_slow_pt_same (i_start); j_fast_pt_same (j_end)
 
 - EG
 - SUMMA
-- loop chars
-- i_start, j_start -> i_start, j_end(w_len), rev
-- https://leetcode.com/problems/reverse-words-in-a-string-iii/
+-
+- i_slow_pt_same (j_start)
+- j_fast_pt_same (j_end)
+-
+- loop eles
+- skip_loop_space (i_start)
+- skip_loop_non_space (j_end)
+- rev(i_start, j_end)
+- i = j; j = j+1 (inc)
+- https://leetcode.com/problems/reverse-words-in-a-string-iii
 
 ##### i op_k, i skip_k; i_start, j_start -> i_start, j_end(i+k || s.len)
 
