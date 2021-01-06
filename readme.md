@@ -873,7 +873,7 @@
 <br/>
 <br/>
 
-## (1) i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); (2) i_same_spd_pt_diff, j_same_spd_pt_diff(act_like_len); (3) i_same_spd_pt_diff, j_same_spd_pt_diff(tracking_var); (4) i_slow_spd_pt_same, j_fast_spd_pt_diff;
+## (1) i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); (2) i_same_spd_pt_diff, j_same_spd_pt_diff(act_like_len); (3) i_same_spd_pt_diff, j_same_spd_pt_diff(tracking_var); (4) i_slow_spd_pt_same, j_fast_spd_pt_diff(...);
 
 ##### i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); abc VS abc (normal, good); abc VS aabbcc (long press, good); abc VS aabbd (both fail)
 
