@@ -313,12 +313,12 @@
 
 - EG
 - SUMMA
-- loop(i < ps.length-1) (loop_condi_reduce, arr_ind_inc; vice versa)
+- loop(i < ps.len-1) (loop_condi_reduce, arr_ind_inc; vice versa)
 -
-- skip_loop_down_lowest(i < ps.length - 1 && ps[i] >= ps[i+1]) (LOOK_AHEAD, i_stay; LOOK_BACK, i_already_move)
+- skip_loop_down_lowest(i < ps.len - 1 && ps[i] >= ps[i+1]) (LOOK_AHEAD, i_stay; LOOK_BACK, i_already_move)
 - end_loop, ps[i] (lowest)
 -
-- skip_loop_up_highest( i < ps.length - 1 && ps[i] < ps[i+1]) (LOOK_AHEAD, i_stay; LOOK_BACK, i_already_move)
+- skip_loop_up_highest(i < ps.len - 1 && ps[i] < ps[i+1]) (LOOK_AHEAD, i_stay; LOOK_BACK, i_already_move)
 - end_loop, ps[i] (highest)
 -
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii
@@ -327,15 +327,28 @@
 
 - EG
 - SUMMA
-- loop(i < ps.length-1) (loop_condi_reduce, arr_ind_inc; vice versa)
+- loop(i < ps.len-1) (loop_condi_reduce, arr_ind_inc; vice versa)
 -
-- skip_loop_down_lowest(i < a.length - 1 && a[i] >= a[i+1]), ++i, is_up=true
+- skip_loop_down_lowest(i < a.len - 1 && a[i] > a[i+1]), ++i, is_up=true
 - end_loop, a[i] (lowest)
 -
-- skip_loop_up_highest( i < a.length - 1 && a[i] < a[i+1]), ++i, is_down=true
+- skip_loop_up_highest( i < a.len - 1 && a[i] < a[i+1]), ++i, is_down=true
 - end_loop, a[i] (highest)
 -
 - re is_up && is_down && a.len-1 == i
+- https://leetcode.com/problems/valid-mountain-array
+
+##### [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest(forward); skip_loop_up_highest(backward);
+
+- EG
+- SUMMA
+-
+- 2_pts_meet; skip_loop_up_highest(forward); skip_loop_up_highest(backward)
+-
+- skip_loop_up_highest(forward) (i < a.len - 1 && a[i] < a[i+1]), ++i;
+- skip_loop_up_highest(backward) (j > 1 && a[j] < a[j-1]), --j;
+-
+- re i > 0 (i_use) && j < a.len-1 (j_use) && i === j (meet)
 - https://leetcode.com/problems/valid-mountain-array
 
 <br/>
