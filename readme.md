@@ -88,14 +88,14 @@
 - ++head, ++tail
 - https://leetcode.com/problems/maximum-average-subarray-i
 
-##### slide_the_window (a[i] -> a[i+len]); rm_quarter_len in loop condi, but use in arr ind;
+##### slide_the_window (a[i] -> a[i+len]); (loop_condi_reduce, arr_ind_inc; vice versa)
 
 - EG
 - [1, 1, 1, 2, 2], len = 5, quarter_len = 5/4 -> floor(1.25) -> 1
 - e.g [1] ceil(1/4=0.25) = 1, outbound, so nono
 - SUMMA
 -
-- loop(i=0; i<len - quarter_len; ..) (rm_quarter_len in loop condi, but use in arr ind)
+- loop(i=0; i<len - quarter_len; ..) (loop_condi_reduce, arr_ind_inc; vice versa)
 - if a[i] == a[i + q_len], re a[i] (slide_the_window)
 - https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
 
@@ -307,19 +307,20 @@
 <br/>
 <br/>
 
-## UP_LOOP, DOWN_LOOP;
+## skip_loop_up_highest, skip_loop_down_lowest;
 
-##### [4, 3, 2, 1, 2, 3, 4]; 4->3->2->1(DOWN_LOOP), 1->2->3->4(UP_LOOP); buy at 1, sell at 4
+##### [4, 3, 2, 1, 2, 3, 4]; 4->3->2->1 (skip_loop_down), 1->2->3->4 (skip_loop_up); buy at 1, sell at 4
 
 - EG
 - SUMMA
-- while(i < a.len-1), look_ahead(i_stay), last_ind
-- loop eles
-- DOWN_LOOP(p[i] <= p[i+1]); end_of_DOWN, start_of_UP;
-- can't mv i, because look_ahead(i_stay) fail; UP_LOOP can mv i
+- loop(i < ps.length-1) (loop_condi_reduce, arr_ind_inc; vice versa)
 -
-- UP_LOOP(p[i] > p[i+1]); end_of_UP, start_of_DOWN;
-- can't mv i, because look_ahead(i_stay) fail; DOWN_LOOP can mv i
+- skip_loop_down_lowest(i < ps.length - 1 && ps[i] >= ps[i+1]) (LOOK_AHEAD, i_stay; LOOK_BACK, i_already_move)
+- end_loop, ps[i] (lowest)
+-
+- skip_loop_up_highest( i < ps.length - 1 && ps[i] < ps[i+1]) (LOOK_AHEAD, i_stay; LOOK_BACK, i_already_move)
+- end_loop, ps[i] (highest)
+-
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii
 
 <br/>
