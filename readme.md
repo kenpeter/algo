@@ -842,7 +842,7 @@
 <br/>
 <br/>
 
-## use_2_pts; 2 ends / 2 parts / palindrome / reverse / cross_over / i_start + j_end / j_as_len / fast_slow / xxxx
+## use_2_pts; 2 ends / 2 parts / palindrome / reverse / cross_over / i_start -> j_end / i_start + len = j_end / j_as_len / fast_slow / xxxx
 
 ##### search_in_parent; i_same_spd_pt_diff; j_same_spd_pt_diff(j_as_len); sudden_reach_condi
 
@@ -875,13 +875,23 @@
 - i = j; j = j+1 (inc)
 - https://leetcode.com/problems/reverse-words-in-a-string-iii
 
-##### i op_k, i skip_k; i_start, j_start -> i_start, j_end(i+k || s.len)
+##### i_slow_pt_same, j_fast_pt_same(i_start + len = j_end); i = i+2k(segment), j = i+k(i_start + len = j_end)
 
 - EG
-- k = 2, ab(op_k)ab(skip_k)|ab(op_k)a; i_start=0, j_end(i+k || s.len); i_start=2\*k, j_end(i+k || s.len)
+- k=2(rev), 2k=4(segment)
+- ab(op),ab(stay)|ab(op),a -> ba,ab|ba,a
+-
+- k=3(rev), 2k=6(segment)
+- abc(op),def|abc(op),def|ab(op) -> cba,def|cba,def|ba
 - SUMMA
-- loop chars (i < s.len, i move)
-- i_start=0, j_end(i+k || s.len); i_start=2\*k, j_end(i+k || s.len)
+-
+- i_start (k_is_rev + rest_k_stay = 2k_is_segment; so next i=i+2k)
+- j_end (i_start + k VS what_left = s.len)
+-
+- loop(i < s.len)
+- rev(i_start, j_end-1)
+- i_start = i_start + 2k (segment)
+- j_end = i+k VS what_left (i_start + len = j_end)
 - https://leetcode.com/problems/reverse-string-ii
 
 ##### when_2_end; [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest(forward); skip_loop_up_highest(backward);
