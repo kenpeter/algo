@@ -1188,7 +1188,7 @@
 <br/>
 <br/>
 
-## loop 1 -> 1000; loop a -> b; xxxx; (natual_bottom_up)
+## loop 1 -> 1000; loop a -> b; xxxx; (bottom_up)
 
 ##### a2 in a1; a1 follows a2 order; res build_from_ground
 
@@ -1201,7 +1201,7 @@
 -
 - ..
 - ..
-- loop 0->1000 (e.g. loop 1 -> 1000 or loop a -> z, natual_bottom_up)
+- loop 0->1000 (e.g. loop 1 -> 1000 or loop a -> z, bottom_up)
 - use all freq
 - res.push(build_from_ground)
 -
@@ -1281,64 +1281,64 @@
 <br/>
 <br/>
 
-## build_from_ground (when_use, rearrange, empty; 1pt, 2pt)
+## build_from_ground (when_use, rearrange / empty)
 
-##### a2 in a1; a1 follows a2 order; res build_from_ground (rearrange, 1pt)
+##### a2 in a1; a1 follows a2 order; res build_from_ground (rearrange; i_hash_fill_res; j_bottom_up_fill_res)
 
 - EG
 - a1: [3, 4, 1, 1, 2, 2]
 - a2: [1, 2]
-- h: {3:1, 4:1, 1:2, 2:2} (build_knowledge)
+- h_a1: {3:1, 4:1, 1:2, 2:2}
 - out: [1, 1, 2, 2, 3, 4]
 - SUMMA
 -
-- a1 freq
+- h_a1
 -
 - loop a2 (a1 follows a2 order)
-- use all freq (build_knowledge)
-- res.push (build_from_ground)
+- use h_a1 to print freq (i_hash_fill_res)
+- res.push
 - end_loop, reset freq
 -
-- loop 0->1000 (e.g. loop 1 -> 1000 or loop a -> z, natual_bottom_up)
+- loop 0->1000 (e.g. loop 1 -> 1000 or loop a -> z; j_bottom_up_fill_res)
 - use all freq
-- res.push(build_from_ground)
+- res.push
 -
 - https://leetcode.com/problems/relative-sort-array
 
-##### ++++ -> [--++, +--+, ++--] how_many_combo; if s[i-1], s[i], LOOK_BACK, build_from_ground(rearrange, 1pt), (sub(0, i-1), sub(i+1))
+##### ++++ -> [--++, +--+, ++--] how_many; if s[i-1], s[i], LOOK_BACK, build_from_ground(rearrange; i-1_fill_res, i_fill_res)
 
 - EG
 - SUMMA
 - loop char
-- loop(i=1, i<len, ++i) (LOOK_BACK)
+- loop(i=1, i<len, ++i)
 - if s[i-1] == '+' && s[i] == '+'; (LOOK_BACK)
-- build_from_ground == before + '--' (s[i-1], s[i]) + rest (build_from_ground)
-- build_from_ground == sub(0, i-1)(exclude) + '--' + sub(i+1) (build_from_ground)
+- ++++ (i-1=0, i=1)
+- res == sub(0, i-1)(exclude) + '--' + sub(i+1)(rest)
+-
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
-##### build_from_ground(rearrange, 1pt); [-4(i_start), -3, 1, 2(j_big)]; sort + -; big^2 either end
+##### build_from_ground(rearrange; i_big_fill_res; i_small_fill_res); [-4(i_start), -3, 1, 2(j_big)] -> [1, 4, 9, 16]; sort + -; big head? big tail?
 
 - EG
 - sort + -?
-- big^2 either end
+- big head?, big tail?
 -
 - why push big -> small?
 - if small to big, e.g. [-4(i_small), -3, 1, 2(j_big)] -> [2^2, 1^2, -3^2, ..] (wrong)
 - [-4(i_small), -3, 1, 2(j_big)], big^2 either end
 -
 - push big -> small
-- [1(i_small), 2, 3, 4(j_big)] -> j_big goes to left
-- [-4(i_small), -3, -2, -1(j_big)] -> i_small goes to right
-- [-4(i_small), -3, 1, 2(j_big)] -> i_small corss j_big
+- [1(i_small), 2, 3, 4(j_big)] -> [1, 4, 9, 16];
+- [-4(i_small), -3, -2, -1(j_big)] -> [1, 4, 9, 16];
+- [-4(i_small), -3, 1, 2(j_big)] -> [1, 4, 9, 16];
 -
 - SUMMA
-- [-4(i_small), -3, 1, 2(j_big)]; sort + -; big^2 either end
 -
 - res = [] (build_from_ground), ind = j_end;
 - i_small, j_big
 - loop(i <= j)
-- if ns[i]^2 > ns[j]^2, res[ind--](can be arr / hash) = ns[i]^2; (build_from_ground)
-- if ns[i]^2 <=> ns[j]^2, res[ind--](can be arr / hash) = ns[j]^2 (build_from_ground)
+- if ns[i]^2 > ns[j]^2, res[ind--](can be arr / hash) = ns[i]^2; (build_from_ground, 1pt)
+- if ns[i]^2 <=> ns[j]^2, res[ind--](can be arr / hash) = ns[j]^2 (build_from_ground, 1pt)
 - https://leetcode.com/problems/squares-of-a-sorted-array
 
 <br/>
