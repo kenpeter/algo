@@ -1281,9 +1281,9 @@
 <br/>
 <br/>
 
-## build_from_ground (when_use, rearrange / empty)
+## build_from_ground_rearrange (a_i + a_j VS res_i + res_j)
 
-##### a2 in a1; a1 follows a2 order; res build_from_ground (rearrange; i_hash_fill_res; j_bottom_up_fill_res)
+##### a2 in a1; a1 follows a2 order; res build_from_ground_rearrange(i_hash_fill_res + j_bottom_up_fill_res VS res_ind )
 
 - EG
 - a1: [3, 4, 1, 1, 2, 2]
@@ -1305,7 +1305,7 @@
 -
 - https://leetcode.com/problems/relative-sort-array
 
-##### ++++ -> [--++, +--+, ++--] how_many; if s[i-1], s[i], LOOK_BACK, build_from_ground(rearrange; i-1_fill_res; i_fill_res; res_ind)
+##### ++++ -> [--++, +--+, ++--] how_many; if s[i-1], s[i], LOOK_BACK, build_from_ground_rearrange( i-1_fill_res + i_fill_res VS res_ind)
 
 - EG
 - SUMMA
@@ -1317,7 +1317,7 @@
 -
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
-##### build_from_ground(rearrange; i_big_fill_res; i_small_fill_res; res_ind); [-4(i_start), -3, 1, 2(j_big)] -> [1, 4, 9, 16];
+##### build_from_ground_rearrange(i_big_fill_res, i_small_fill_res VS res_ind); [-4(i_start), -3, 1, 2(j_big)] -> [1, 4, 9, 16];
 
 - EG
 - sort + -; big head?, big tail?
@@ -1336,6 +1336,17 @@
 - if ns[i]^2 > ns[j]^2, res[ind--](can be arr / hash) = ns[i]^2; (i_big_fill_res; res_ind)
 - if ns[i]^2 <= ns[j]^2, res[ind--](can be arr / hash) = ns[j]^2 (i_small_fill_res; res_ind)
 - https://leetcode.com/problems/squares-of-a-sorted-array
+
+##### build_from_ground_rearrange(i_orig_arr VS even_ind_pt_res + odd_ind_pt_res)
+
+- EG
+- [1, 2, 3, 4] -> [x(e), x(o), x, x] -> [x(e), 1, x, x(o)] -> [2, 1, x(e), x(o)] -> [2, 1, x(e), 3] -> [2, 1, 4, 3]
+- SUMMA
+- loop eles (i_orig_arr)
+- if a[i] % 2 === 0, res[even] = a[i] (even_ind_pt_res)
+- if a[i] % 2 !== 0, res[odd] = a[i] (odd_ind_pt_res)
+- https://leetcode.com/problems/sort-array-by-parity-ii
+-
 
 <br/>
 <br/>
