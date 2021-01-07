@@ -864,9 +864,9 @@
 <br/>
 <br/>
 
-## use_2_pts; 2 ends / 2 parts / palindrome / reverse / cross_over / i_start -> j_end / i_start + len = j_end / j_as_len / fast_slow / xxxx
+## use_2_pts; palindrome / reverse / cross_over / i_start -> j_end / i_start + len = j_end / j_as_len / fast_slow / xxxx
 
-##### search_in_parent; i_same_spd_pt_diff; j_same_spd_pt_diff(j_as_len); sudden_reach_condi
+##### 2pts(j_as_len); search_in_parent; i_same_spd_pt_diff; j_same_spd_pt_diff(j_as_len); sudden_reach_condi
 
 - EG
 - SUMMA
@@ -882,7 +882,7 @@
 -
 - https://leetcode.com/problems/implement-strstr
 
-##### " abc abc " -> " cba cba "; i_slow_pt_same (i_start); j_fast_pt_same (j_end)
+##### 2pts(fast_slow); " abc abc " -> " cba cba "; i_slow_pt_same (i_start); j_fast_pt_same (j_end)
 
 - EG
 - SUMMA
@@ -897,7 +897,7 @@
 - i = j; j = j+1 (inc)
 - https://leetcode.com/problems/reverse-words-in-a-string-iii
 
-##### i_slow_pt_same, j_fast_pt_same(i_start + len = j_end); i = i+2k(segment), j = i+k(i_start + len = j_end)
+##### 2pts(i_start + k = j_end); i_slow_pt_same, j_fast_pt_same(i_start + len = j_end); i = i+2k(segment), j = i+k(i_start + len = j_end)
 
 - EG
 - k=2(rev), 2k=4(segment)
@@ -916,7 +916,7 @@
 - j_end = i+k VS what_left (i_start + len = j_end)
 - https://leetcode.com/problems/reverse-string-ii
 
-##### when_2_end; [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest(forward); skip_loop_up_highest(backward);
+##### 2pts(cross_over); [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest(forward); skip_loop_up_highest(backward);
 
 - EG
 - SUMMA
@@ -928,6 +928,18 @@
 -
 - re i > 0 (i_use) && j < a.len-1 (j_use) && i === j (meet)
 - https://leetcode.com/problems/valid-mountain-array
+
+##### 2pts(cross_over); [3(i_odd),1,2,4(j_even)] -> [4, 1(i_odd), 2(j_even), 3] -> [4, 2, 1, 3]
+
+- EG
+- SUMMA
+- i_odd
+- j_even
+- loop(i<j) (cross_over)
+- skip_loop_even, stop_is_odd
+- skip_loop_odd, stop_is_even
+- swap(i, j)
+- https://leetcode.com/problems/sort-array-by-parity
 
 <br/>
 <br/>
