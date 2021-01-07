@@ -864,7 +864,7 @@
 <br/>
 <br/>
 
-## use_2_pts; palindrome / reverse / cross_over / i_start -> j_end / i_start + len = j_end / j_as_len / fast_slow / xxxx
+## use_2_pts; palindrome / reverse / swap / cross_over / i_start -> j_end / i_start + len = j_end / j_as_len / fast_slow / xxxx
 
 ##### 2pts(j_as_len); search_in_parent; i_same_spd_pt_diff; j_same_spd_pt_diff(j_as_len); sudden_reach_condi
 
