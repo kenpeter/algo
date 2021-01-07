@@ -17,19 +17,42 @@
 
 # arr
 
-## 1 pass, 2 var track pureness
+##
+
+#####
+
+- EG
+- SUMMA
+-
+- even_sum
+-
+- loop ele
+- ele even?
+- sum rm ele (add back, if need)
+-
+- recal new_ele; new_ele = ele + val
+-
+- new_ele even?
+- sum add ele (add back, if need)
+-
+- https://leetcode.com/problems/sum-of-even-numbers-after-queries
+
+<br/>
+<br/>
+
+## 1 loop, 2_same_kind_var track pureness
 
 ##### [1, 2, 3], good; [3, 2, 1], good; [2, 2, 2], good; [1, 2, -100, 100], bad
 
 - EG
-- [1, 2, 3](asc), pure (1 pass, 2 var track pureness)
+- [1, 2, 3](asc), pure (1 loop, 2_same_kind_var track pureness)
 - [3, 2, 1](desc), prue (..)
 - [2, 2, 2](equal), pure (..)
 - [1, 2, -100, 100], !pure (..)
 -
 - SUMMA
 - loop eles
-- if asc + desc set, !pure (1 pass, 2 var track pureness)
+- if asc + desc set, !pure (1 loop, 2_same_kind_var track pureness)
 - if asc set, pure (..)
 - if desc set, pure (..)
 - if asc + desc !set, !touch, equal (..)
