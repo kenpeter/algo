@@ -1283,7 +1283,7 @@
 
 ## build_from_ground (rearrange / start_empty)
 
-##### a2 in a1; a1 follows a2 order; res build_from_ground
+##### a2 in a1; a1 follows a2 order; res build_from_ground (rearrange)
 
 - EG
 - a1: [3, 4, 1, 1, 2, 2]
@@ -1305,7 +1305,7 @@
 -
 - https://leetcode.com/problems/relative-sort-array
 
-##### ++++ -> [--++, +--+, ++--] how_many_combo; if s[i-1], s[i], LOOK_BACK, build_from_ground, (sub(0, i-1), sub(i+1))
+##### ++++ -> [--++, +--+, ++--] how_many_combo; if s[i-1], s[i], LOOK_BACK, build_from_ground(rearrange), (sub(0, i-1), sub(i+1))
 
 - EG
 - SUMMA
@@ -1316,7 +1316,7 @@
 - build_from_ground == sub(0, i-1)(exclude) + '--' + sub(i+1) (build_from_ground)
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
-##### build_from_ground; [-4(i_start), -3, 1, 2(j_big)]; sort + -; big^2 either end
+##### build_from_ground(rearrange); [-4(i_start), -3, 1, 2(j_big)]; sort + -; big^2 either end
 
 - EG
 - sort + -?
