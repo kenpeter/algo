@@ -1281,7 +1281,7 @@
 <br/>
 <br/>
 
-## build_from_ground (e.g. [] with insert_ind; part_a, part_b, part_c, insert it)
+## build_from_ground (start_from_empty, then insert it)
 
 ##### a2 in a1; a1 follows a2 order; res build_from_ground
 
