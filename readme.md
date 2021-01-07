@@ -17,23 +17,23 @@
 
 # arr
 
-## ele independent (update_no_matter_even_odd); even_sum independent, (only_even, even_sum update)
+## ele independent (update_no_matter_what); sum independent, (conditional_update)
 
-##### ele independent (update_no_matter_even_odd); even_sum independent, (only_even, even_sum update)
+##### ele independent (update_no_matter_what, even/odd); sum independent, (conditional_update, even)
 
 - EG
 - SUMMA
 - cal total_even_sum
-- ele independent; ele (update_no_matter_even_odd)
-- even_sum independent; (only_even, even_sum update)
+- ele independent; ele (update_no_matter_what, even/odd)
+- sum independent; (conditional_update, even)
 -
 - loop ele
 -
-- if ele even, even_sum = even_sum - ele (only_even, if not minus, ele dup)
+- if ele even, sum = sum - ele (conditional_update, even; if !minus, ele dup)
 -
-- new_ele = ele + val (update_no_matter_even_odd)
-- if new_ele even, even_sum = even_sum + new_ele; (only_even, even_sum update)
-- res.push(even_sum)
+- new_ele = ele + val (update_no_matter_what, even/odd)
+- if new_ele even, sum = sum + new_ele; (conditional_update, even)
+- res.push(sum)
 - https://leetcode.com/problems/sum-of-even-numbers-after-queries
 
 <br/>
