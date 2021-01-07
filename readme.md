@@ -1281,7 +1281,7 @@
 <br/>
 <br/>
 
-## build_from_ground (a_chance_to_rebuid, build_from_ground)
+## build_from_ground (rearrange / start_empty)
 
 ##### a2 in a1; a1 follows a2 order; res build_from_ground
 
