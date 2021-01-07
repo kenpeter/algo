@@ -1305,7 +1305,7 @@
 -
 - https://leetcode.com/problems/relative-sort-array
 
-##### ++++ -> [--++, +--+, ++--] how_many; if s[i-1], s[i], LOOK_BACK, build_from_ground(rearrange; i-1_fill_res, i_fill_res)
+##### ++++ -> [--++, +--+, ++--] how_many; if s[i-1], s[i], LOOK_BACK, build_from_ground(rearrange; i-1_fill_res; i_fill_res; res_ind)
 
 - EG
 - SUMMA
@@ -1317,28 +1317,24 @@
 -
 - https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
-##### build_from_ground(rearrange; i_big_fill_res; i_small_fill_res); [-4(i_start), -3, 1, 2(j_big)] -> [1, 4, 9, 16]; sort + -; big head? big tail?
+##### build_from_ground(rearrange; i_big_fill_res; i_small_fill_res; res_ind); [-4(i_start), -3, 1, 2(j_big)] -> [1, 4, 9, 16];
 
 - EG
-- sort + -?
-- big head?, big tail?
+- sort + -; big head?, big tail?
 -
 - why push big -> small?
 - if small to big, e.g. [-4(i_small), -3, 1, 2(j_big)] -> [2^2, 1^2, -3^2, ..] (wrong)
-- [-4(i_small), -3, 1, 2(j_big)], big^2 either end
 -
 - push big -> small
-- [1(i_small), 2, 3, 4(j_big)] -> [1, 4, 9, 16];
-- [-4(i_small), -3, -2, -1(j_big)] -> [1, 4, 9, 16];
 - [-4(i_small), -3, 1, 2(j_big)] -> [1, 4, 9, 16];
 -
 - SUMMA
 -
-- res = [] (build_from_ground), ind = j_end;
+- res = [], ind = j_end;
 - i_small, j_big
 - loop(i <= j)
-- if ns[i]^2 > ns[j]^2, res[ind--](can be arr / hash) = ns[i]^2; (build_from_ground, 1pt)
-- if ns[i]^2 <=> ns[j]^2, res[ind--](can be arr / hash) = ns[j]^2 (build_from_ground, 1pt)
+- if ns[i]^2 > ns[j]^2, res[ind--](can be arr / hash) = ns[i]^2; (i_big_fill_res; res_ind)
+- if ns[i]^2 <= ns[j]^2, res[ind--](can be arr / hash) = ns[j]^2 (i_small_fill_res; res_ind)
 - https://leetcode.com/problems/squares-of-a-sorted-array
 
 <br/>
