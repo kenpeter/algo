@@ -962,9 +962,9 @@
 ##### i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); abc VS abc (normal, good); abc VS aabbcc (long press, good); abc VS aabbd (both fail)
 
 - EG
-- abc VS abc (normal typing, good)
-- abc VS aabbcc (long press, good)
-- abc VS aabbd (both fail, bad)
+- abc VS abc (normal typing, true_same)
+- abc VS aabbcc (long press, true_same)
+- abc VS aabbd (both fail, fail_diff)
 - SUMMA
 -
 - i pt to one (i_slow_pt_diff)
