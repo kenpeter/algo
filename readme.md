@@ -916,7 +916,7 @@
 - j_end = i+k VS what_left (i_start + len = j_end)
 - https://leetcode.com/problems/reverse-string-ii
 
-##### 2pts(cross_over); [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest(forward); skip_loop_up_highest(backward);
+##### 2pts(cross_over); [0, 1, 2, 3, 4, 3, 2, 1, 0]; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_up_highest(forward); skip_loop_up_highest(backward);
 
 - EG
 - SUMMA
@@ -929,17 +929,30 @@
 - re i > 0 (i_use) && j < a.len-1 (j_use) && i === j (meet)
 - https://leetcode.com/problems/valid-mountain-array
 
-##### 2pts(cross_over); [3(i_odd),1,2,4(j_even)] -> [4, 1(i_odd), 2(j_even), 3] -> [4, 2, 1, 3]
+##### 2pts(cross_over); [3(i_odd),1,2,4(j_even)] -> [4, 1(i_odd), 2(j_even), 3] -> [4, 2, 1, 3]; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_even(stop_is_odd); skip_loop_odd(stop_is_even)
 
 - EG
 - SUMMA
 - i_odd
 - j_even
 - loop(i<j) (cross_over)
-- skip_loop_even, stop_is_odd
-- skip_loop_odd, stop_is_even
+- skip_loop_even(stop_is_odd)
+- skip_loop_odd(stop_is_even)
 - swap(i, j)
 - https://leetcode.com/problems/sort-array-by-parity
+
+##### 2pts(cross_over); is palindrome; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_non_alph# (stop_is_alph#)
+
+- EG
+- SUMMA
+- loop chars;
+- i_same_spd_pt_same_start
+- j_same_spd_pt_same_end
+
+- skip_loop_non_alph# (stop_is_alph#)
+- skip_loop_non_alphskip_loop_non_alph# (stop_is_alph#)
+- check i_start, j_end
+- https://leetcode.com/problems/valid-palindrome
 
 <br/>
 <br/>
@@ -1175,16 +1188,6 @@
 - res = res\*10 + last_digit (rebuild)
 - https://leetcode.com/problems/palindrome-number
 
-##### is palindrome; i_start, j_end; loop_skip_alph#
-
-- EG
-- SUMMA
-- loop chars;
-- i_start, j_end
-- sub_loop(skip_alph#) ++i
-- sub_loop(skip_alph#) --j
-- https://leetcode.com/problems/valid-palindrome
-
 <br/>
 <br/>
 
@@ -1418,6 +1421,29 @@
 - e.g. b:2 (odd), can use 3-1=2; later add 1
 - ba a ab
 - https://leetcode.com/problems/longest-palindrome
+
+<br/>
+<br/>
+
+## hash[ str(complex_ele) ]; dp(same_var_curr) = dp(same_var_prev) + x
+
+##### [[1,2],[2,1],[3,4],[5,6]] -> [[1,2],[1, 2],[3,4],[5,6]] 1 pair; hash[ str(complex_ele) ]; dp(same_var_curr) = dp(same_var_prev) + x
+
+- EG
+- n=1, a -> 0
+- n=2, aa -> a(a) -> 1 pair (0_dp + 1_last_few_num)
+- n=3, aaa -> a(aa) -> 3 pairs (1_dp + 2_last_few_num)
+- n=4, aaaa -> a(aaa) -> 6 pairs (3 + 3)
+- n=5, aaaaa -> a(aaaa) -> 10 pairs (6 + 4)
+- so dp[n] = dp[n-1] + (n-1) ==> dp(same_var_curr) = dp(same_var_prev) + (n-1)
+- SUMMA
+-
+- e.g. [[1,2],[2,1],[3,4],[5,6]]
+- loop ele
+- hash[str(ele)] (stringify_for_complex_ele)
+- if hash[n] > 1, use dp(same_var_curr) = dp(same_var_prev) + (n-1)
+-
+- https://leetcode.com/problems/number-of-equivalent-domino-pairs
 
 <br/>
 <br/>
