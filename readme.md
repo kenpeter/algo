@@ -110,7 +110,7 @@
 - ++head, ++tail
 - https://leetcode.com/problems/maximum-average-subarray-i
 
-##### i_start + len (a[i] -> a[i+len]); (loop_condi_reduce, arr_ind_inc; vice versa)
+##### slide_the_window; i_start + len (a[i] -> a[i+len]); (loop_condi_reduce, arr_ind_inc; vice versa)
 
 - EG
 - [1, 1, 1, 2, 2], len = 5, quarter_len = 5/4 -> floor(1.25) -> 1
@@ -120,6 +120,17 @@
 - loop(i=0; i<len - quarter_len; ..) (loop_condi_reduce, arr_ind_inc; vice versa)
 - if a[i] == a[i + q_len], re a[i] (i_start + len)
 - https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
+
+##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; slide_the_window; major_len (i_start + len)
+
+- EG
+- SUMMA
+- major_len => 5_odd / 2 = 2.5, major_len >= 3 (half)
+- major_len => 4_even / 2 = 2, major_len > 2 (half)
+- loop(i=0; i < major; ++i)
+- if a[i] == input && a[i + major_len] == input, re true (i_start + len)
+- end_loop, re false
+- https://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array
 
 ##### l_res Pivot r_res; pivot_move, l_res_expand, r_res_shrink; arr_left_right_has_0
 
@@ -215,13 +226,13 @@
 
 - EG
 - SUMMA
-- major => 5_odd / 2 = 2.5, major >= 3 (half)
-- major => 4_even / 2 = 2, major > 2 (half)
+- major_len => 5_odd / 2 = 2.5, major_len >= 3 (half)
+- major_len => 4_even / 2 = 2, major_len > 2 (half)
 - loop eles
 - hash[n] = freq; if freq > major, re num (sudden_reach_condi)
 - https://leetcode.com/problems/majority-element
 
-##### [2, 3, 1, 1, 1] -> [1, 1, 1(cover posi), 2, 3] a.sort; return a[floor(len/2)]
+##### [2, 3, 1, 1, 1] -> [1, 1, 1(cover posi), 2, 3]; a.sort, return a[floor(len/2)]
 
 - EG
 - SUMMA
@@ -229,7 +240,7 @@
 - re a[floor(len/2)]; e.g. [3, 3, 4], ceil(3/2=1.5) = 2, wrong ind, so floor(len/2)
 - https://leetcode.com/problems/majority-element
 
-##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; vote_cancel; vote_all_cancel_out, new_major
+##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; vote_algo; same_ele_vote, diff_ele_vote_cancel, vote_exhaust_new_major
 
 - EG
 - SUMMA
@@ -237,10 +248,21 @@
 - major = ns[0]; counter = 1; (1st_ele major)
 -
 - loop ele (i=1)
-- if c === 0; major = n[i], c=1 (vote_all_cancel_out, new_major)
-- if major === ns[i]; ++c (same_ele, ++major)
-- else --c (vote_cancel)
+- if c === 0; major = n[i], c=1 (vote_exhaust_new_major)
+- if major === ns[i]; ++c (same_ele_vote)
+- else --c (diff_ele_vote_cancel)
 - https://leetcode.com/problems/majority-element
+
+##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; major_len (i_start + len)
+
+- EG
+- SUMMA
+- major_len => 5_odd / 2 = 2.5, major_len >= 3 (half)
+- major_len => 4_even / 2 = 2, major_len > 2 (half)
+- loop(i=0; i < major; ++i)
+- if a[i] == input && a[i + major_len] == input, re true (i_start + len)
+- end_loop, re false
+- https://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array
 
 <br/>
 <br/>
@@ -999,7 +1021,7 @@
 - SUMMA
 - loop chars (long_str)
 - long chars (short_str)
-- i_same_spd_pt_diff, j_same_spd_pt_diff(act_like_len);
+- i_same_spd_pt_diff, j_same_spd_pt_diff(i_start + len);
 - ++j, if j == short_str.len, re posi;
 - https://leetcode.com/problems/implement-strstr
 
