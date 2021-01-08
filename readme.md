@@ -211,21 +211,22 @@
 
 ## loop_eles + build hash / sort_then_middle
 
-##### [2, 3, 1, 1, 1]; loop_eles, build_hash, when > len/2, out
+##### [2, 3, 1, 1, 1]; hash[n] = freq, sudden_reach_condi, return
 
 - EG
 - SUMMA
-- num = even_len / 2 + 1 OR ceil(odd_len / 2); (more_than_half)
+- major => 5_odd / 2 = 2.5, major >= 3 (half)
+- major => 4_even / 2 = 2, major > 2 (half)
 - loop eles
-- build_hash, if h[n] > num (more_than_half), out
+- hash[n] = freq; if freq > major, re num (sudden_reach_condi)
 - https://leetcode.com/problems/majority-element
 
 ##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3] -> 1: 3 times -> 1 majority; sort_then_middle
 
 - EG
 - SUMMA
-- a.sort (majority_always_there; i.e. cover lots of spaces; middle_kind_of_there)
-- a[floor(len/2)]; e.g. [3, 3, 4], ceil(3/2=1.5) = 2, so nono, so floor(len/2)
+- a.sort (major cover lots of positions)
+- re a[floor(len/2)]; e.g. [3, 3, 4], ceil(3/2=1.5) = 2, wrong ind, so floor(len/2)
 - https://leetcode.com/problems/majority-element
 
 <br/>
