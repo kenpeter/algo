@@ -221,12 +221,25 @@
 - hash[n] = freq; if freq > major, re num (sudden_reach_condi)
 - https://leetcode.com/problems/majority-element
 
-##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3] -> 1: 3 times -> 1 majority; sort_then_middle
+##### [2, 3, 1, 1, 1] -> [1, 1, 1(cover posi), 2, 3] a.sort; return a[floor(len/2)]
 
 - EG
 - SUMMA
 - a.sort (major cover lots of positions)
 - re a[floor(len/2)]; e.g. [3, 3, 4], ceil(3/2=1.5) = 2, wrong ind, so floor(len/2)
+- https://leetcode.com/problems/majority-element
+
+##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; vote_algo
+
+- EG
+- SUMMA
+- vote_algo
+- major = ns[0]; counter = 1; (1st ele as major)
+-
+- loop ele (i=1)
+- if c === 0; major = n[i], c=1 (vote_all_cancel_out, new_major appearing)
+- if major === ns[i]; ++c (same_ele, ++major)
+- else --c (vote_cancel)
 - https://leetcode.com/problems/majority-element
 
 <br/>
