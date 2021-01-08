@@ -110,7 +110,7 @@
 - ++head, ++tail
 - https://leetcode.com/problems/maximum-average-subarray-i
 
-##### slide_the_window (a[i] -> a[i+len]); (loop_condi_reduce, arr_ind_inc; vice versa)
+##### i_start + len (a[i] -> a[i+len]); (loop_condi_reduce, arr_ind_inc; vice versa)
 
 - EG
 - [1, 1, 1, 2, 2], len = 5, quarter_len = 5/4 -> floor(1.25) -> 1
@@ -118,7 +118,7 @@
 - SUMMA
 -
 - loop(i=0; i<len - quarter_len; ..) (loop_condi_reduce, arr_ind_inc; vice versa)
-- if a[i] == a[i + q_len], re a[i] (slide_the_window)
+- if a[i] == a[i + q_len], re a[i] (i_start + len)
 - https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
 
 ##### l_res Pivot r_res; pivot_move, l_res_expand, r_res_shrink; arr_left_right_has_0
