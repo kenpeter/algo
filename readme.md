@@ -229,15 +229,15 @@
 - re a[floor(len/2)]; e.g. [3, 3, 4], ceil(3/2=1.5) = 2, wrong ind, so floor(len/2)
 - https://leetcode.com/problems/majority-element
 
-##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; vote_algo
+##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; vote_cancel; vote_all_cancel_out, new_major
 
 - EG
 - SUMMA
 - vote_algo
-- major = ns[0]; counter = 1; (1st ele as major)
+- major = ns[0]; counter = 1; (1st_ele major)
 -
 - loop ele (i=1)
-- if c === 0; major = n[i], c=1 (vote_all_cancel_out, new_major appearing)
+- if c === 0; major = n[i], c=1 (vote_all_cancel_out, new_major)
 - if major === ns[i]; ++c (same_ele, ++major)
 - else --c (vote_cancel)
 - https://leetcode.com/problems/majority-element
