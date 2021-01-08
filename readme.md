@@ -864,9 +864,9 @@
 <br/>
 <br/>
 
-## use_2_pts; palindrome / reverse / swap / cross_over / i_j_strlen / i_start + len = j_end / j_as_len / fast_slow / xxxx
+## when_use_2_pts? palindrome / reverse / swap / cross_over / i_start_j_end_form_str / i_start + len / fast_slow / xxxx
 
-##### 2pts(j_as_len); search_in_parent; i_same_spd_pt_diff; j_same_spd_pt_diff(j_as_len); sudden_reach_condi
+##### 2pts(i_start + len); search_in_parent; i_same_spd_pt_diff; j_same_spd_pt_diff(i_start + len); sudden_reach_condi
 
 - EG
 - SUMMA
@@ -882,7 +882,7 @@
 -
 - https://leetcode.com/problems/implement-strstr
 
-##### 2pts(fast_slow); " abc abc " -> " cba cba "; i_slow_pt_same (i_j_strlen); j_fast_pt_same (i_j_strlen); skip_loop_space(stop_is_non_space); skip_loop_non_space(stop_is_space)
+##### 2pts(fast_slow); " abc abc " -> " cba cba "; i_slow_pt_same (i_start_j_end_form_str); j_fast_pt_same (i_start_j_end_form_str); skip_loop_space(stop_is_non_space); skip_loop_non_space(stop_is_space)
 
 - EG
 - SUMMA
@@ -897,7 +897,7 @@
 - i = j; j = j+1 (inc)
 - https://leetcode.com/problems/reverse-words-in-a-string-iii
 
-##### 2pts(i_start + k = j_end); i_slow_pt_same, j_fast_pt_same(i_start + len = j_end); i = i+2k(segment), j = i+k(i_start + len = j_end)
+##### 2pts(i_start + k = j_end); i_slow_pt_same, j_fast_pt_same(i_start + len); i = i+2k(segment), j = i+k(i_start + len)
 
 - EG
 - k=2(rev), 2k=4(segment)
@@ -957,7 +957,7 @@
 <br/>
 <br/>
 
-## (1) i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); (2) i_same_spd_pt_diff, j_same_spd_pt_diff(act_like_len); (3) i_same_spd_pt_diff, j_same_spd_pt_diff(tracking_var); (4) i_slow_spd_pt_same, j_fast_spd_pt_diff(...);
+## what_diff_type_pt? (1) i_slow_pt_diff, j_fast_pt_diff; (2) i_same_spd_pt_diff, j_same_spd_pt_diff; (3) i_same_spd_pt_diff, j_same_spd_pt_diff; (4) i_slow_spd_pt_same, j_fast_spd_pt_same;
 
 ##### i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); abc VS abc (normal, good); abc VS aabbcc (long press, good); abc VS aabbd (both fail)
 
@@ -978,10 +978,10 @@
 - re i === short.len (i must to end)
 - https://leetcode.com/problems/long-pressed-name
 
-##### i_same_spd_pt_diff, j_same_spd_pt_diff(act_like_len); search "def" in "abcdef"
+##### i_same_spd_pt_diff, j_same_spd_pt_diff(i_start + len); search "def" in "abcdef"
 
 - EG
-- i_same_spd_pt_diff, j_same_spd_pt_diff(act_like_len); "abcdef" VS "def";
+- i_same_spd_pt_diff, j_same_spd_pt_diff(i_start + len); "abcdef" VS "def";
 - SUMMA
 - loop chars (long_str)
 - long chars (short_str)
