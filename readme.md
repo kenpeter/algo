@@ -864,7 +864,7 @@
 <br/>
 <br/>
 
-## use_2_pts; palindrome / reverse / swap / cross_over / i_start -> j_end / i_start + len = j_end / j_as_len / fast_slow / xxxx
+## use_2_pts; palindrome / reverse / swap / cross_over / i_j_strlen / i_start + len = j_end / j_as_len / fast_slow / xxxx
 
 ##### 2pts(j_as_len); search_in_parent; i_same_spd_pt_diff; j_same_spd_pt_diff(j_as_len); sudden_reach_condi
 
@@ -882,18 +882,18 @@
 -
 - https://leetcode.com/problems/implement-strstr
 
-##### 2pts(fast_slow); " abc abc " -> " cba cba "; i_slow_pt_same (i_start); j_fast_pt_same (j_end)
+##### 2pts(fast_slow); " abc abc " -> " cba cba "; i_slow_pt_same (i_j_strlen); j_fast_pt_same (i_j_strlen); skip_loop_space(stop_is_non_space); skip_loop_non_space(stop_is_space)
 
 - EG
 - SUMMA
 -
-- i_slow_pt_same (j_start)
-- j_fast_pt_same (j_end)
+- i_slow_pt_same (i_j_strlen)
+- j_fast_pt_same (i_j_strlen)
 -
 - loop eles
-- skip_loop_space (i_start)
-- skip_loop_non_space (j_end)
-- rev(i_start, j_end)
+- skip_loop_space(stop_is_non_space)
+- skip_loop_non_space(stop_is_space)
+- rev(i_start, j_end-1)
 - i = j; j = j+1 (inc)
 - https://leetcode.com/problems/reverse-words-in-a-string-iii
 
@@ -916,7 +916,7 @@
 - j_end = i+k VS what_left (i_start + len = j_end)
 - https://leetcode.com/problems/reverse-string-ii
 
-##### 2pts(cross_over); [0, 1, 2, 3, 4, 3, 2, 1, 0]; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_up_highest(forward); skip_loop_up_highest(backward);
+##### 2pts(cross_over); [0, 1, 2, 3, 4, 3, 2, 1, 0]; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_up_highest(stop_same_posi); skip_loop_up_highest(stop_same_posi);
 
 - EG
 - SUMMA
