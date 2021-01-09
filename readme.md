@@ -160,29 +160,6 @@
 - max = min(1, 2) + min(3, 4) (group_2)
 - https://leetcode.com/problems/array-partition-i/
 
-## sort_arr, shrink i j. ++i_big, --j_small
-
-##### two sum < k; sort_arr, shrink i j, find_max; if < k, ++i_for_big; if >= k, --j_for_small
-
-- EG
-- SUMMA
-- sort_arr
-- while loop; i_start, j_end
-- if a[i] + a[j] < k, ++i_big
-- if a[i] + a[j] >= k, --j_small
-- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
-
-##### two sum == k; sort_arr, shrink i j; if < k, ++i_for_big; if > k, --j_for_small; if == k, return
-
-- EG
-- SUMMA
-- sort_arr
-- loop eles;
-- if a[i] + a[j] < k, ++i_big
-- if a[i] + a[j] > k, --j_small
-- if a[i] + a[j] == k, return
-- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
-
 <br/>
 <br/>
 
@@ -900,7 +877,7 @@
 <br/>
 <br/>
 
-## when_use_2_pts? palindrome / reverse / swap / cross_over / i_start_j_end_form_str / i_start + len / fast_slow / xxxx
+## when_use_2_pts? palindrome / reverse / swap / sort / cross_over / i_start_j_end_form_str / i_start + len / fast_slow / xxxx
 
 ##### 2pts(i_start + len); search_in_parent; i_same_spd_pt_diff; j_same_spd_pt_diff(i_start + len); sudden_reach_condi
 
@@ -933,7 +910,7 @@
 - i = j; j = j+1 (inc)
 - https://leetcode.com/problems/reverse-words-in-a-string-iii
 
-##### 2pts(i_start + k = j_end); i_slow_pt_same, j_fast_pt_same(i_start + len); i = i+2k(segment), j = i+k(i_start + len)
+##### 2pts(i_start + len); i_slow_pt_same, j_fast_pt_same(i_start + len); i = i+2k(segment), j = i+k(i_start + len)
 
 - EG
 - k=2(rev), 2k=4(segment)
@@ -989,6 +966,27 @@
 - skip_loop_non_alphskip_loop_non_alph# (stop_is_alph#)
 - check i_start, j_end
 - https://leetcode.com/problems/valid-palindrome
+
+##### 2pts(sort, cross_over); a[i] + a[j] < k; corss_over_only_1_direction; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
+
+- EG
+- SUMMA
+- sort
+- loop(i < j) (sort, cross_over)
+- if a[i] + a[j] < k, ++i_same_spd_pt_same_small (corss_over_only_1_direction)
+- if a[i] + a[j] >= k, --j_same_spd_pt_same_big (corss_over_only_1_direction)
+- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
+
+##### 2pts(sort, cross_over); a[i] + a[j] == k; corss_over_only_1_direction; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
+
+- EG
+- SUMMA
+- sort
+- loop (i < j>) (sort, corss_over)
+- if a[i] + a[j] < k, ++i_same_spd_pt_same_small (corss_over_only_1_direction)
+- if a[i] + a[j] > k, --j_same_spd_pt_same_big (corss_over_only_1_direction)
+- if a[i] + a[j] == k, return
+- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
 <br/>
 <br/>
