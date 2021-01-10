@@ -734,6 +734,16 @@
 -
 - https://leetcode.com/problems/reshape-the-matrix
 
+##### is_palindrome; 121 -> 121(able_rebuild), 123 -> 321(not_able_rebuild); last_digit = input % 10; anything_left = input / 10
+
+- EG
+- SUMMA
+- loop eles
+- last_digit = input % 10 (last_digit)
+- input = floor(input / 10) (anything_left)
+- res = res\*10 + last_digit (rebuild)
+- https://leetcode.com/problems/palindrome-number
+
 <br/>
 <br/>
 
@@ -1217,21 +1227,6 @@
 - if h[ s[i] + s[i+1] ], fast_forward
 - else 1_char_acc
 - https://leetcode.com/problems/roman-to-integer
-
-<br/>
-<br/>
-
-## is_palindrome; hash / rebuild / i_start, j_end
-
-##### is_palindrome; 121 -> 121(able_rebuild), 123 -> 321(not_able_rebuild); last_digit = input % 10; anything_left = floor(input / 10)
-
-- EG
-- SUMMA
-- loop eles
-- last_digit = input % 10 (last_digit)
-- input = floor(input / 10) (anything_left)
-- res = res\*10 + last_digit (rebuild)
-- https://leetcode.com/problems/palindrome-number
 
 <br/>
 <br/>
@@ -2693,12 +2688,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/min-cost-climbing-stairs
 
 # binary search
-
-# hash
-
-# 2 pointer
-
-# str
 
 # backtrack
 
