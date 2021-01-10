@@ -310,12 +310,23 @@
 - else re false
 - https://leetcode.com/problems/largest-number-at-least-twice-of-others
 
-##### ask_for_2_max; m0, m1; [4, 3, 2, 1]; m0 = 4, m1 = 3
+##### ask_for_2_max; m0, m1; [4, 3, 2, 1]; m0 = 4, m1 = 3; flow_backup + replace
 
 - EG
 - SUMMA
 - flow_backup + replace
 - https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array
+
+##### top 5 subject scores for each student; [1, 91], [1, 92], [2, 81], [1, 60];
+
+- EG
+- SUMMA
+- loop arr
+- hash[student_1] = [m0, m1, m2, m3, m4]
+- hash[student_2] = [m0, m1, m2, m3, m4]
+- [m0, m1, m2, m3, m4] (flow_backup + replace)
+- https://www.cnblogs.com/cnoodle/p/13722300.html
+- https://leetcode.com/problems/high-five
 
 <br/>
 <br/>
