@@ -2687,6 +2687,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re mi(dp[len-1], dp[len-2]) (2_ending)
 - https://leetcode.com/problems/min-cost-climbing-stairs
 
+# when_hash: ele spreads out + has own position
+
+# when_knowledge: can simplify a problem
+
+# when_2_pts: 2 parts
+
+# when_invert_question: true, false; can simplify
+
 # binary search
 
 # backtrack
