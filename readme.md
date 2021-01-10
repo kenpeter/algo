@@ -684,9 +684,9 @@
 <br/>
 <br/>
 
-## anything_left( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
+## prev_num( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
 
-##### 12345678 -> 12.345.678; anything_left( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
+##### 12345678 -> 12.345.678; prev_num( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
 
 - EG
 - SUMMA
@@ -726,7 +726,7 @@
 -
 - loop row \* col (all_eles)
 - row_ind = floor(i_dy_total_width / new_col_width); keep_it_same_row;
-- similar, anything_left = floor(num / 10)
+- similar, prev_num = floor(num / 10)
 -
 - if !res[row_ind], res[row_ind] = [];
 - else res[row_ind].push( ns[i_dy_total_width / new_col_width][i % new_col_width] );
@@ -734,13 +734,13 @@
 -
 - https://leetcode.com/problems/reshape-the-matrix
 
-##### is_palindrome; 121 -> 121(able_rebuild), 123 -> 321(not_able_rebuild); last_digit = input % 10; anything_left = input / 10
+##### is_palindrome; 121 -> 121(able_rebuild), 123 -> 321(not_able_rebuild); last_digit = input % 10; prev_num = input / 10
 
 - EG
 - SUMMA
 - loop eles
 - last_digit = input % 10 (last_digit)
-- input = floor(input / 10) (anything_left)
+- input = floor(input / 10) (prev_num)
 - res = res\*10 + last_digit (rebuild)
 - https://leetcode.com/problems/palindrome-number
 
@@ -767,7 +767,7 @@
 - SUMMA
 - loop eles
 - last_digit = input % 10 (last_digit)
-- input = floor(input / 10) (anything_left)
+- input = floor(input / 10) (prev_num)
 - res = res\*10 + last_digit (rebuild)
 - https://leetcode.com/problems/palindrome-number
 
