@@ -9,6 +9,10 @@
 - https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4
 - https://code.dennyzhang.com/hexspeak
 
+# similar question sets
+
+- https://zhuanlan.zhihu.com/p/341176507
+
 <br/>
 <br/>
 <br/>
