@@ -2441,13 +2441,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 ## 3 loops; dp_3D; dimensions; multi_tar; max_combo
 
 ##### 3 loops; dp_3D; NO_ORDER ele, reach tar_n, tar_m; max_combo
@@ -2762,6 +2755,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 # when_invert_question: true, false; can simplify
 
 # when_build_from_ground: fresh; rearrange
+
+# when_bottom_up: 0->1000, a-z; natual_bottom_up
 
 # binary search
 
