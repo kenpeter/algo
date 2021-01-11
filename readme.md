@@ -2746,6 +2746,31 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re mi(dp[len-1], dp[len-2]) (2_ending)
 - https://leetcode.com/problems/min-cost-climbing-stairs
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# math
+
+## straight line slope; dy / dx = (y1 - y) / (x1 - x)
+
+##### straight line slope; dy / dx = (y1 - y) / (x1 - x)
+
+- EG
+- SUMMA
+- loop ele (x, y)
+- (dy / dx) == (y1 - y) / (x1 - x) (dy = y1-y0)
+- dy \* (x1 - x) !== dx \* (y1 - y) (not straight line)
+- https://leetcode.com/problems/check-if-it-is-a-straight-line
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 # when_hash: ele spreads out + has own position
 
 # when_knowledge: can simplify a problem
