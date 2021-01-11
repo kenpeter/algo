@@ -21,13 +21,49 @@
 
 # arr
 
+## out_loop (many cycles); in_loop (1 cycle); big 2 side, down; small 2 side, up
+
+##### out_loop (many cycles); in_loop (1 cycle); big 2 side, down; small 2 side, up
+
+- EG
+- 1st cycle
+- [1, 6(i), 3, 4, 3, 5](a_no_chg) -> [1, 5, 3, 4, 3, 5](t_chg)
+- [1, 6, 3(i), 4, 3, 5](a_no_chg) -> [1, 5, 4, 4, 3, 5](t_chg)
+- [1, 6, 3, 4(i), 3, 5](..) -> [1, 4, 4, 3, 3, 5](..)
+- [1, 6, 3, 4, 3(i), 5](..) -> [1, 4, 4, 3, 4, 5](..)
+-
+- 2nd cycle
+- [1, 4(i), 4, 3, 4, 5](a_no_chg) -> [1, 4, 4, 3, 4, 5](t_chg)
+- [1, 4, 4(i), 3, 4, 5](..) -> [1, 4, 4, 3, 4, 5](..)
+- [1, 4, 4, 3(i), 4, 5](..) -> [1, 4, 4, 4, 4, 5](..)
+- [1, 4, 4, 3, 4(i), 5](..) -> [1, 4, 4, 4, 4, 5](..)
+-
+- 3rd cycle
+- [1, 4(i), 4(i), 4(i), 4(i), 5](i_exhaust, no more)
+- SUMMA
+-
+- out_loop (many cycles)
+-
+- tmp = arr (clone)
+- in_loop (1 cycle)
+- big 2 side, down; op=true;
+- small 2 side, up; op=true;
+- if op == false, break
+- end_in_loop, arr = tmp (revert);
+-
+- https://leetcode.com/problems/array-transformation
+- https://www.programmersought.com/article/74733416873
+
+<br/>
+<br/>
+
 ## ele independent (update_no_matter_what); sum independent, (conditional_update)
 
 ##### ele independent (update_no_matter_what, even/odd); sum independent, (conditional_update, even)
 
 - EG
 - SUMMA
-- cal total_even_sum
+- cal total_even_sum (with input_query)
 - ele independent; ele (update_no_matter_what, even/odd)
 - sum independent; (conditional_update, even)
 -
@@ -2713,6 +2749,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 # when_2_pts: 2 parts
 
 # when_invert_question: true, false; can simplify
+
+# when_build_from_ground: fresh; rearrange
 
 # binary search
 
