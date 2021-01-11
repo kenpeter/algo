@@ -1005,6 +1005,17 @@
 - j_end = i+k VS what_left (i_start + len = j_end)
 - https://leetcode.com/problems/reverse-string-ii
 
+##### [1, 2, 3, 4] -> one 2, three 4 -> [2, 4, 4, 4]; i=i+2(segment)
+
+- EG
+- [1, 2, 3, 4] -> one 2, three 4 -> [2, 4, 4, 4];
+- SUMMA
+- loop(i=1; i<len; i=i+2) (segment)
+- a[i-1] == #
+- a[i] == val
+- res.push, new Array(#).fill(val)
+- https://leetcode.com/problems/decompress-run-length-encoded-list
+
 ##### 2pts(cross_over); [0, 1, 2, 3, 4, 3, 2, 1, 0]; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_up_highest(stop_same_posi); skip_loop_up_highest(stop_same_posi);
 
 - EG
