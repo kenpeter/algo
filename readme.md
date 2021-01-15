@@ -371,22 +371,31 @@
 <br/>
 <br/>
 
-## 4 pt region, 3pt_trend; 2nd_last_too_low; 2nd_too_high
+## ?
 
-##### loop eles, build mem, counter >= 2; 4pt_region, 3pt_trend; [1, 2, -100(i, 2nd_last_too_low), 2]; [-10, 100( 2nd_too_high), 1(i), 2]
+##### non_decrease_arr
 
 - EG
 - SUMMA
-- counter = 1
-- loop eles, ns[i] < ns[i-1], build mem (DROP); remeber last drop ind
 -
-- count == 1, increasing, re true;
+- i=0
+- [0(i_no_i-1), 1, 2, 3, 4], 5pt
 -
-- count == 2, edge, re ture;
+- i=1
+- [1, -100(i_look_back, drop, out_of_trend_low), 2, 3, 4], 5pt
 -
-- count == 2, not_edge
-- e.g. [ 1(i-2), 2(i-1), -100(i, DROP), 2(i+1) ]; ns[i+1] >= ns[i-1]; 4pt_regision, 3pt_trend, 2nd_last_too_low
-- e.g. [ -1(i-2), 2(i-1), 1(i, DROP), 1(i+1) ]; ns[i] >= ns[i-2]; 4pt_regision, 3pt_trend 2nd_too_high
+- i=2
+- [1, 2, -100(i, drop, out_of_trend_low), 3, 4], 5pt
+-
+- i=3
+- [1, 2, 100(out_of_trend_high), 3(i, drop), 4], 5pt
+- .....
+-
+- i=len-2
+- [1, 2, 3, -100(i, drop, out_of_trend_high), 4], 5pt
+-
+- i=len-1
+- [1, 2, 3, 4, -100(i, drop, i_last)], 5pt
 -
 - https://leetcode.com/problems/non-decreasing-array
 
