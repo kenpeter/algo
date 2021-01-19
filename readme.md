@@ -357,7 +357,7 @@
 - flow_backup + replace
 - https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array
 
-##### top 5 subject scores for each student; [1, 91], [1, 92], [2, 81], [1, 60];
+##### top 5 subject scores for each student; [[1, 91], [1, 92], [2, 81], [1, 60]] (mixed up);
 
 - EG
 - SUMMA
@@ -579,6 +579,27 @@
 - end_loop a[a.len-1] = -1
 -
 - https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side
+
+<br/>
+<br/>
+
+## parity (2_things)
+
+##### parity (2_things); [2, 2, 2, 3, 3]; even_to_even; odd_to_odd; even_to_odd; odd_to_even
+
+- EG
+- posi = [2, 2, 2, 3, 3]; posi 1 == 0 chip; posi 2 == 3 chips; posi 3 == 2 chips
+- odd_to_odd, even_to_even, cost 0; odd_to_even, even_to_odd, cost 1
+- SUMMA
+- loop eles
+- if odd, ++odd
+- if even, ++even
+-
+- end_loop;
+- if odd == arr.len, re 0; (odd_to_odd, cost 0)
+- if even == arr.len, re 0; (even_to_even, cost 0)
+- else re min(odd, even) (e.g. [2, 2, 2, 3, 3], 3 less moves)
+- https://leetcode.com/problems/minimum-cost-to-move-chips-to-the-same-position
 
 <br/>
 <br/>
