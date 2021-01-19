@@ -1419,6 +1419,28 @@
 
 <br/>
 <br/>
+ 
+## sorted, shortest_distance == neightbours; reset_mi similar reset_arr
+
+##### [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist = (2-1) = 1; sorted, shortest_dist == neighbours; reset_mi similar reset_arr
+
+- EG
+- [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist = a[i+1] - a[i] (sorted, shortest_dist == neighbours)
+- SUMMA
+-
+- sorted; shortest_dist = a[i+1] - a[i] (sorted, shortest_dist == neighbours)
+- loop(i=0; i < len-1) (LOOK_AHEAD)
+- dist = a[i+1] - a[i]
+- if dist < mi
+- reset_mi
+- reset_arr (reset_mi similar reset_arr)
+- res.p(a[i], a[i+1])
+-
+- if dist == mi, res.p(..)
+- https://leetcode.com/problems/minimum-absolute-difference
+
+<br/>
+<br/>
 
 ## build_from_ground_rearrange (a_i + a_j VS res_i + res_j)
 
