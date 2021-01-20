@@ -1146,9 +1146,10 @@
 - EG
 - SUMMA
 - loop eles
-- s = s + ns[i] (doing stuff)
-- if s === sum / 3, ++count, s=0 (sudden_reach_condi, reset / count);
-- re count >= 3 (edge case, [-1, 1, -1, 1, -1, 1, -1, 1], sum=0, each_s=0, 4 times)
+- count = 0 (want 3 times)
+- s = s + ns[i]; consecutive(keep_doing)
+- if s === sum / 3, ++count, s=0; inconsecutive(sudden_hit_condi, reset)
+- re count >= 3 (edge_case, more than 3 times)
 - https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
 
 ##### consecutive(continue), characters; aaabcc, 3a; LOOK_BACK(continue) VS RESET(discontinue)
