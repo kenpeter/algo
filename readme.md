@@ -97,9 +97,9 @@
 - if asc + desc !set, !touch, equal (..)
 - https://leetcode.com/problems/monotonic-array
 
-## doing stuff, sudden reach condi, reset / max / count / etc
+## loop, sudden_reach_condi
 
-##### [-1, 1, -1, 1, -1, 1], 3_equal_parts; doing stuff, sudden reach condi; reset / count
+##### [-1, 1, -1, 1, -1, 1], 3_equal_parts; doing stuff, sudden_reach_condi; reset / count
 
 - EG
 - SUMMA
@@ -109,7 +109,12 @@
 - re count >= 3 (edge case, [-1, 1, -1, 1, -1, 1, -1, 1], sum=0, each_s=0, 4 times)
 - https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
 
-##### slide_the_window; loop doing stuff, sudden reach condi; slide_the_window (add_head, rm_tail); max / etc
+<br/>
+<br/>
+
+## slide_window (1. add_head / rm_tail; 2. a[i] -> a[i+len])
+
+##### slide_window (add_head / rm_tail); loop doing stuff, sudden reach condi; slide_window(add_head, rm_tail); max / etc
 
 - EG
 - SUMMA
@@ -123,34 +128,11 @@
 - loop eles
 - curr = curr + ns[i] (loop doing stuff)
 - if(head + range === tail) (sudden reach condi)
-- max; add_head, rm_tail; (max / etc)
+- max; add_head, rm_tail; (slide_window; max / etc)
 - ++head, ++tail
 - https://leetcode.com/problems/maximum-average-subarray-i
 
-<br/>
-<br/>
-
-## slide_the_window (1. add_head / rm_tail; 2. a[i] -> a[i+len])
-
-##### slide_the_window (add_head / rm_tail); loop doing stuff, sudden reach condi; slide_the_window(add_head, rm_tail); max / etc
-
-- EG
-- SUMMA
-- [2, 3, 4, 1, 5], k = 3; e.g. [2, 3, 4], range = k = 3
--
-- head
-- tail
-- curr
-- max
--
-- loop eles
-- curr = curr + ns[i] (loop doing stuff)
-- if(head + range === tail) (sudden reach condi)
-- max; add_head, rm_tail; (slide_the_window; max / etc)
-- ++head, ++tail
-- https://leetcode.com/problems/maximum-average-subarray-i
-
-##### slide_the_window; i_start + len (a[i] -> a[i+len]); (loop_condi_reduce, arr_ind_inc; vice versa)
+##### slide_window; i_start + len (a[i] -> a[i+len]); (loop_condi_reduce, arr_ind_inc; vice versa)
 
 - EG
 - [1, 1, 1, 2, 2], len = 5, quarter_len = 5/4 -> floor(1.25) -> 1
@@ -161,7 +143,7 @@
 - if a[i] == a[i + q_len], re a[i] (i_start + len)
 - https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
 
-##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; slide_the_window; major_len (i_start + len)
+##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; slide_window; major_len (i_start + len)
 
 - EG
 - SUMMA
@@ -186,6 +168,25 @@
 - l_res VS r_res
 - left_ahead_expand
 - https://leetcode.com/problems/find-pivot-index
+
+##### slide_window; i_loop_ele, win_start, win_end; equal_win_len(sudden_reach_condi), update_win_status; win_start_slide_with_hit; win_end_slide_with_loop;
+
+- EG
+- SUMMA
+- [2, 3, 4, 1, 5], k = 3; e.g. [2, 3, 4], range = k = 3
+-
+- i (i_loop_ele)
+- win_start
+- win_end
+-
+- loop eles (i_loop_ele)
+- sum = sum + ns[i] (equal_win_len, update_win_status)
+-
+- if win_end == win_start + k - 1 (equal_win_len, update_win_status)
+- sum = sum - ns[i]; (equal_win_len, update_win_status)
+- ++win_start (win_start_slide_with_hit)
+- end_if, ++win_end (win_end_slide_with_loop)
+- https://leetcode.com/problems/maximum-average-subarray-i
 
 <br/>
 <br/>
