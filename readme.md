@@ -1209,7 +1209,7 @@
 - else c = 1 RESET(discontinue); if(ma == 0) ma = 1 (incase not enter)
 - https://leetcode.com/problems/longest-continuous-increasing-subsequence
 
-##### [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]; can_consecutive, keep_doing; cannot_consecutive, reset
+##### [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]; consecutive(keep_doing); consecutive(sudden_reach_condi, reset)
 
 - EG
 - [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]; consecutive(keep_doing); inconsecutive(sudden_reach_condi, reset)
@@ -1227,7 +1227,7 @@
 - if dist == mi, res.p(..) consecutive(keep_doing)
 - https://leetcode.com/problems/minimum-absolute-difference
 
-##### [2, 3, 3, 5, 6] -> [2, 3(conse), 3(conse), 5(conse), 6]; consecutive(keep_doing); inconsecutive(sudden_reach_condi, reset)
+##### [2, 3, 3, 5, 6] -> [2, 3(odd), 3(odd), 5(odd), 6]; consecutive(keep_doing); inconsecutive(sudden_reach_condi, reset)
 
 - EG
 - [2, 3, 3, 5, 6] -> [2, 3(odd), 3(odd), 5(odd), 6]; re true
