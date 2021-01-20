@@ -1164,22 +1164,25 @@
 - else counter = 1; inconsecutive(sudden_hit_condi, reset)
 - https://leetcode.com/problems/consecutive-characters
 
-##### count(count) binary substrings(continue, count); 000111, 3(0), 3(1); min(3, 3) -> 3; 01, 0011, 000111; LOOK_BACK(continue) VS RESET(discontinue)
+##### 00011100 -> [3, 3, 2]; min(3, 3) -> 3; min(3, 2) -> 2; 3+2 = 5; build_consecutive_arr;consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset); loop_and_min;
 
 - EG
-- BUILD_MEM
-- 001 -> [2, 1]; min(2, 1)
-- 00011100 -> [3, 3, 2]; min(3, 3), min(3, 2); add_up
-- 0101100 -> [1, 1, 1, 2, 2]; min(1, 1), min(1, 1), min(1, 2), min(2, 2); add_up
+- build_consecutive_arr (build_knowledge)
+- 00011100 -> [3, 3, 2]; min(3, 3) -> 3; min(3, 2) -> 2;
+- 3+2=5
+-
+- 0101100 -> [1, 1, 1, 2, 2]; min(1, 1) -> 1; min(1, 1) -> 1, min(1, 2) -> 1, min(2, 2) -> 2;
+- 1 + 1 + 1 + 2 = 5
 - SUMMA
 -
-- counter
--
 - loop chars
-- BUILD_MEM
-- if s[i-1](look_back)==s[i], ++c; LOOK_BACK(continue)
-- else arr.push(c), c = 0; RESET(discontinue)
-- use_mem, loop arr
+- build_consecutive_arr
+- counter = 1
+- if s[i-1](LOOK_BACK) == s[i], ++c; consecutive(keep_doing)
+- else a.push(prev_result); c=1; inconsecutive(sudden_hit_condi, reset)
+-
+-
+- loop_and_min; e.g. [3, 3, 2] -> min(3, 3) + min(3, 2
 - https://leetcode.com/problems/count-binary-substrings
 
 ##### longest(max) continuous(counter) increasing subarray (continue); LOOK_BACK(continue) VS RESET(discontinue)
