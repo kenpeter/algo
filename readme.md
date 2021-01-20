@@ -921,7 +921,7 @@
 <br/>
 <br/>
 
-## subarray consecutive, subsequence !consecutive
+## subarray consecutive; subsequence !consecutive
 
 ##### baabb (only a, b); subseq palin == bbb, subseq palin == aa
 
@@ -1225,6 +1225,27 @@
 - else c = 1 RESET(discontinue); if(ma == 0) ma = 1 (incase not enter)
 - https://leetcode.com/problems/longest-continuous-increasing-subsequence
 
+##### [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]; can_consecutive, keep_doing; cannot_consecutive, reset
+
+- EG
+- [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]; can_consecutive, keep_doing; cannot_consecutive, reset
+- SUMMA
+-
+- shortest_dist(neighbours) = a[i+1] - a[i]
+- loop(i=0; i < len-1; ) (LOOK_AHEAD)
+- dist = a[i+1] - a[i]
+-
+- if dist < mi
+- reset_mi (cannot_consecutive, reset)
+- reset_arr (cannot_consecutive, reset)
+- res.p(a[i], a[i+1])
+-
+- if dist == mi, res.p(..) (can_consecutive, keep_doing)
+- https://leetcode.com/problems/minimum-absolute-difference
+
+<br/>
+<br/>
+
 <br/>
 <br/>
 
@@ -1416,28 +1437,6 @@
 -
 - loop_orig_arr, assign_rank
 - https://leetcode.com/problems/number-of-segments-in-a-string
-
-<br/>
-<br/>
- 
-## shortest_dist(sort_neighbour)
-
-##### [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = (2-1) = 1; can_consecutive, keep_doing; cannot_consecutive, reset
-
-- EG
-- [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]
-- SUMMA
--
-- shortest_dist(neighbours) = a[i+1] - a[i]
-- loop(i=0; i < len-1; ) (LOOK_AHEAD)
-- dist = a[i+1] - a[i]
-- if dist < mi
-- reset_mi (cannot_consecutive, reset)
-- reset_arr (cannot_consecutive, reset)
-- res.p(a[i], a[i+1])
--
-- if dist == mi, res.p(..) (can_consecutive, keep_doing)
-- https://leetcode.com/problems/minimum-absolute-difference
 
 <br/>
 <br/>
