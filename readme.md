@@ -1243,8 +1243,15 @@
 - if dist == mi, res.p(..) (can_consecutive, keep_doing)
 - https://leetcode.com/problems/minimum-absolute-difference
 
-<br/>
-<br/>
+##### [2, 3, 3, 5, 6] -> [2, 3(conse), 3(conse), 5(conse), 6]; can_consecutive, keep_doing; cannot_consecutive, reset
+
+- EG
+- [2, 3, 3, 5, 6] -> [2, 3(conse), 3(conse), 5(conse), 6]; re true
+- SUMMA
+- loop eles
+- if even, res.push (can_consecutive, keep_doing)
+- if odd, res = [] (cannot_consecutive, reset)
+- https://leetcode.com/problems/three-consecutive-odds/submissions
 
 <br/>
 <br/>
