@@ -1420,23 +1420,23 @@
 <br/>
 <br/>
  
-## sorted, shortest_distance == neightbours; reset_mi similar reset_arr
+## shortest_dist(sort_neighbour)
 
-##### [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist = (2-1) = 1; sorted, shortest_dist == neighbours; reset_mi similar reset_arr
+##### [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = (2-1) = 1; can_consecutive, keep_doing; cannot_consecutive, reset
 
 - EG
-- [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist = a[i+1] - a[i] (sorted, shortest_dist == neighbours)
+- [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]
 - SUMMA
 -
-- sorted; shortest_dist = a[i+1] - a[i] (sorted, shortest_dist == neighbours)
-- loop(i=0; i < len-1) (LOOK_AHEAD)
+- shortest_dist(neighbours) = a[i+1] - a[i]
+- loop(i=0; i < len-1; ) (LOOK_AHEAD)
 - dist = a[i+1] - a[i]
 - if dist < mi
-- reset_mi
-- reset_arr (reset_mi similar reset_arr)
+- reset_mi (cannot_consecutive, reset)
+- reset_arr (cannot_consecutive, reset)
 - res.p(a[i], a[i+1])
 -
-- if dist == mi, res.p(..)
+- if dist == mi, res.p(..) (can_consecutive, keep_doing)
 - https://leetcode.com/problems/minimum-absolute-difference
 
 <br/>
