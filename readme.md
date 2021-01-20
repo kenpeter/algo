@@ -1152,18 +1152,16 @@
 - re count >= 3 (edge_case, more than 3 times)
 - https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
 
-##### consecutive(continue), characters; aaabcc, 3a; LOOK_BACK(continue) VS RESET(discontinue)
+##### aaabcc; 3_a, 1_b, 2_c; max=3;
 
 - EG
 - aaabcc, consecutive 3a, so max
 - SUMMA
 -
-- max
-- counter
--
+- counter = 1
 - loop chars
-- if s[i-1](look_back) === s[i], update_max, ++c; LOOK_BACK(continue)
-- else c = 0; RESET(discontinue)
+- if s[i-1](look_back) == s[i]; ++counter; consecutive(keep_doing)
+- else counter = 1; inconsecutive(sudden_hit_condi, reset)
 - https://leetcode.com/problems/consecutive-characters
 
 ##### count(count) binary substrings(continue, count); 000111, 3(0), 3(1); min(3, 3) -> 3; 01, 0011, 000111; LOOK_BACK(continue) VS RESET(discontinue)
