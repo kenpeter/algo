@@ -1185,17 +1185,17 @@
 - loop_and_min; e.g. [3, 3, 2] -> min(3, 3) + min(3, 2
 - https://leetcode.com/problems/count-binary-substrings
 
-##### longest(max) continuous(counter) increasing subarray (continue); LOOK_BACK(continue) VS RESET(discontinue)
+##### [3, 2, 1, 2, 3, 4] -> 1, 2, 3, 4; counter == 4; consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset)
 
 - EG
 - SUMMA
 -
-- max = 0
-- counter = 1 (look_back, 2 eles)
--
+- counter = 1
 - loop chars
-- if ns[i] > ns[i-1] LOOK_BACK(continue); ++c; ma = ma(ma, c)
-- else c = 1 RESET(discontinue); if(ma == 0) ma = 1 (incase not enter)
+- if ns[i] > ns[i-1]; ++counter; update_max; consecutive(keep_doing)
+- else c = 1; inconsecutive(sudden_hit_condi, reset)
+-
+- if ma ==0, not_set, ma = 1 (edge_case, not enter)
 - https://leetcode.com/problems/longest-continuous-increasing-subsequence
 
 ##### [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]; consecutive(keep_doing); consecutive(sudden_reach_condi, reset)
