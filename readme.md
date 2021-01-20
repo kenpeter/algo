@@ -100,25 +100,7 @@
 <br/>
 <br/>
 
-## slide_window (1. add_head / rm_tail; 2. a[i] -> a[i+len])
-
-##### slide_window (add_head / rm_tail); loop doing stuff, sudden reach condi; slide_window(add_head, rm_tail); max / etc
-
-- EG
-- SUMMA
-- [2, 3, 4, 1, 5], k = 3; e.g. [2, 3, 4], range = k = 3
--
-- head
-- tail
-- curr
-- max
--
-- loop eles
-- curr = curr + ns[i] (loop doing stuff)
-- if(head + range === tail) (sudden reach condi)
-- max; add_head, rm_tail; (slide_window; max / etc)
-- ++head, ++tail
-- https://leetcode.com/problems/maximum-average-subarray-i
+## slide_window
 
 ##### slide_window; i_start + len (a[i] -> a[i+len]); (loop_condi_reduce, arr_ind_inc; vice versa)
 
@@ -1133,25 +1115,30 @@
 <br/>
 <br/>
 
-## LOOK_BACK(consecutive; same OR inc) VS RESET(inconsecutive)
+## consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset)
 
-##### LLL(consecutive); absent_counter; late_counter, 'LLA'; LOOK_BACK(consecutive) VS RESET(inconsecutive)
+##### ++absent; ++late; consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset)
 
 - EG
 - A (absent); L (late); P (present)
-- e.g. 'APA'; 1_A, 1_P, 1_A; >= 2_A, so bad
-- e.g. 'PPALLP'; 2_P, 1_A, 2_L, 1_P; < 2_A, <= 2_L, so good
-- e.g. 'PPALLL'; 2_P, 1_A, 3_L; >= 3_L, so bad
+- 'APA'; 1_A, 1_P, 1_A
+- 2_absent; bad
+-
+- 'PPALLP'; 2_P, 1_A, 2_L, 1_P
+- inconsecutive_3_late, no_2_absent; good
+-
+- 'PPALLL'; 2_P, 1_A, 3_L
+- consecutive_3_l; bad
 - SUMMA
 -
-- absent_counter
-- late_counter
--
 - loop chars
-- if absent_counter > 1, re false
-- if late_counter
-- e.g. 'LLL', 3_L; LOOK_BACK(continue)
-- e.g. 'LLP', 2_L -> 0_L; RESET(discontinue)
+- if s[i] === 'A', ++absent
+-
+- if s[i] === 'L'; ++late; consecutive(keep_doing)
+- else s[i] !== 'L'; late = 0; inconsecutive(sudden_hit_condi, reset)
+-
+- absent >= 2, re f;
+- late >= 3, re f;
 - https://leetcode.com/problems/student-attendance-record-i
 
 ##### [-1, 1, -1, 1, -1, 1]; sum / 3 = equal_part; consecutive(keep_doing); inconsecutive(sudden_reach_condi, reset)
