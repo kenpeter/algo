@@ -97,18 +97,6 @@
 - if asc + desc !set, !touch, equal (..)
 - https://leetcode.com/problems/monotonic-array
 
-## loop, sudden_reach_condi
-
-##### [-1, 1, -1, 1, -1, 1], 3_equal_parts; doing stuff, sudden_reach_condi; reset / count
-
-- EG
-- SUMMA
-- loop eles
-- s = s + ns[i] (doing stuff)
-- if s === sum / 3, ++count, s=0 (sudden reach condi, reset / count);
-- re count >= 3 (edge case, [-1, 1, -1, 1, -1, 1, -1, 1], sum=0, each_s=0, 4 times)
-- https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
-
 <br/>
 <br/>
 
@@ -169,23 +157,23 @@
 - left_ahead_expand
 - https://leetcode.com/problems/find-pivot-index
 
-##### slide_window; i_loop_ele, win_start, win_end; equal_win_len(sudden_reach_condi), update_win_status; win_start_slide_with_hit; win_end_slide_with_loop;
+##### slide_window; i_loop_ele, win_start_with_hit, win_end_with_loop; equal_win_len, update_win_status;
 
 - EG
 - SUMMA
 - [2, 3, 4, 1, 5], k = 3; e.g. [2, 3, 4], range = k = 3
 -
-- i (i_loop_ele)
-- win_start
-- win_end
+- i_loop_ele
+- win_start_with_hit
+- win_end_with_loop
 -
 - loop eles (i_loop_ele)
-- sum = sum + ns[i] (equal_win_len, update_win_status)
+- sum = sum + ns[i] (update_win_status)
 -
 - if win_end == win_start + k - 1 (equal_win_len, update_win_status)
-- sum = sum - ns[i]; (equal_win_len, update_win_status)
-- ++win_start (win_start_slide_with_hit)
-- end_if, ++win_end (win_end_slide_with_loop)
+- sum = sum - ns[i]; (update_win_status)
+- ++win_start (win_start_with_hit)
+- end_if, ++win_end (win_end_with_loop)
 - https://leetcode.com/problems/maximum-average-subarray-i
 
 <br/>
@@ -936,22 +924,7 @@
 <br/>
 <br/>
 
-## insert: s.s(0, i) + val + s.s(i+1)
-
-##### 1|234|567 -> 1.234.567; i(no), j(end); i(no), j move left; insert: sub(0, i) + val + sub(i)
-
-- EG
-- SUMMA => i(no), j(end); i(no), j move left
-- loop chars;
-- i(no), j(end); i(no), j move left
-- 1234567 -> 1.234.567 (backward; 1st ".", 2 steps; 2nd ".", 3 steps, becau "." added)
-- insert => sub(0, ind) + val + sub(ind)
-- https://leetcode.com/problems/thousand-separator
-
-<br/>
-<br/>
-
-## rm\*1_item; (len_reduce, --i && ++i_back_to_top)
+## rm_1_item; (len_reduce, --i && ++i_back_to_top)
 
 ##### rm vowel in str; splice; (len_reduce, --i && ++i_back_to_top)
 
@@ -1160,9 +1133,9 @@
 <br/>
 <br/>
 
-## LOOK_BACK(continue; same OR inc) VS RESET(discontinue)
+## LOOK_BACK(consecutive; same OR inc) VS RESET(inconsecutive)
 
-##### LLL(continue); absent_counter; late_counter, 'LLA'; LOOK_BACK(continue) VS RESET(discontinue)
+##### LLL(consecutive); absent_counter; late_counter, 'LLA'; LOOK_BACK(consecutive) VS RESET(inconsecutive)
 
 - EG
 - A (absent); L (late); P (present)
@@ -1180,6 +1153,16 @@
 - e.g. 'LLL', 3_L; LOOK_BACK(continue)
 - e.g. 'LLP', 2_L -> 0_L; RESET(discontinue)
 - https://leetcode.com/problems/student-attendance-record-i
+
+##### [-1, 1, -1, 1, -1, 1]; sum / 3 = equal_part; consecutive(keep_doing); inconsecutive(sudden_reach_condi, reset)
+
+- EG
+- SUMMA
+- loop eles
+- s = s + ns[i] (doing stuff)
+- if s === sum / 3, ++count, s=0 (sudden_reach_condi, reset / count);
+- re count >= 3 (edge case, [-1, 1, -1, 1, -1, 1, -1, 1], sum=0, each_s=0, 4 times)
+- https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
 
 ##### consecutive(continue), characters; aaabcc, 3a; LOOK_BACK(continue) VS RESET(discontinue)
 
@@ -1229,29 +1212,29 @@
 ##### [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]; can_consecutive, keep_doing; cannot_consecutive, reset
 
 - EG
-- [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]; can_consecutive, keep_doing; cannot_consecutive, reset
+- [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]; consecutive(keep_doing); inconsecutive(sudden_reach_condi, reset)
 - SUMMA
 -
 - shortest_dist(neighbours) = a[i+1] - a[i]
 - loop(i=0; i < len-1; ) (LOOK_AHEAD)
-- dist = a[i+1] - a[i]
+- dist = a[i+1] - a[i];
 -
 - if dist < mi
-- reset_mi (cannot_consecutive, reset)
-- reset_arr (cannot_consecutive, reset)
+- reset_mi
+- reset_arr; inconsecutive(sudden_reach_condi, reset)
 - res.p(a[i], a[i+1])
 -
-- if dist == mi, res.p(..) (can_consecutive, keep_doing)
+- if dist == mi, res.p(..) consecutive(keep_doing)
 - https://leetcode.com/problems/minimum-absolute-difference
 
-##### [2, 3, 3, 5, 6] -> [2, 3(conse), 3(conse), 5(conse), 6]; can_consecutive, keep_doing; cannot_consecutive, reset
+##### [2, 3, 3, 5, 6] -> [2, 3(conse), 3(conse), 5(conse), 6]; consecutive(keep_doing); inconsecutive(sudden_reach_condi, reset)
 
 - EG
-- [2, 3, 3, 5, 6] -> [2, 3(conse), 3(conse), 5(conse), 6]; re true
+- [2, 3, 3, 5, 6] -> [2, 3(odd), 3(odd), 5(odd), 6]; re true
 - SUMMA
 - loop eles
-- if even, res.push (can_consecutive, keep_doing)
-- if odd, res = [] (cannot_consecutive, reset)
+- if even, res.push; consecutive(keep_doing)
+- if odd, res = []; inconsecutive(sudden_reach_condi, reset)
 - https://leetcode.com/problems/three-consecutive-odds/submissions
 
 <br/>
