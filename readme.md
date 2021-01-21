@@ -141,19 +141,33 @@
 - end_loop, re false
 - https://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array
 
-##### l_res Pivot r_res; pivot_move, l_res_expand, r_res_shrink; arr_left_right_has_0
+##### pivot, left_sum == right_sum;
 
 - EG
-- a little bit like slide_window
-- 0(l_res) [0(p), 0, 3(r_res)] 0 --> L: 0 | 0(p) | R: 0,3,0 (0 VS 3, bad)
-- 0 [0(l_res), 0(p), 3(r_res)] 0 --> L: 0,0 | 0(p) | R: 3,0 (0 VS 3, bad)
-- 0 [0, 0(l_res), 3(p)] 0(r_res) --> L: 0,0,0 | 3(p) | R: 0 (0 VS 0, good)
+- [1(p), 7, 3, 6, 5, 6] -> l_sum = 0, r_sum = 1+..6 = 28
+- [1, 7(p), 3, 6, 5, 6] -> l_sum = 1, r_sum = 3+..6 = 20
+- [1, 7, 3(p), 6, 5, 6] -> l_sum = 8, r_sum = 6+5+6 = 17
+- [1, 7, 3, 6(p), 5, 6] -> l_sum = 11, r_sum = 11, good
 - SUMMA
-- loop #
-- pivot
-- right_shrink, left_already_done
-- l_res VS r_res
-- left_ahead_expand
+
+- loop ele
+-
+- "win_1"
+- i_loop_ele
+- win_start: start
+- win_end: before_pivot
+- win_status: left_sum
+- win_len: start -> before_pivot
+- win_slide: sum = sum + n[i]
+-
+- "win_2"
+- i_loop_ele
+- win_start: after_pivot
+- win_end: end
+- win_status: right_sum
+- win_len: after_pivot -> end
+- win_slide: sum = sum - n[i]
+-
 - https://leetcode.com/problems/find-pivot-index
 
 ##### slide_window; (1) i_loop_ele; win_start: hit_condi; win_end: follow_loop; (2)win_status: sum; (3) win_len: k_len; (4) win_slide: ++win_start, ++win_end
