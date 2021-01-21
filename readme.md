@@ -110,23 +110,34 @@
 - SUMMA
 -
 - loop(i=0; i < len - q_len; ..); (i < len - q_len VS a[i+q_len])
+-
 - i_loop_ele
 - win_start: i
 - win_end: i+q_len
 - win_status: same_num
 - win_len: quarter
 - win_slide: ++i
+-
 - if a[i] == a[i + q_len], re a[i]
 - https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
 
-##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; slide_window; major_len (i_start + len)
+##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; (1) i_loop_ele, win_start, win_end (2) win_status: same_num (3) win_len: half (4) win_slide: ++i
 
 - EG
 - SUMMA
 - major_len => 5_odd / 2 = 2.5, major_len >= 3 (half)
 - major_len => 4_even / 2 = 2, major_len > 2 (half)
-- loop(i=0; i < major; ++i)
-- if a[i] == input && a[i + major_len] == input, re true (i_start + len)
+-
+- loop(i=0; i < len - major_len; ..) (i < len - major_len VS a[i+major_len])
+-
+- i_loop_ele
+- win_start: i
+- win_end: i+major_len
+- win_status: same_num
+- win_len: half
+- win_slide: ++i
+-
+- if a[i] == a[i + major_len] == input, re true
 - end_loop, re false
 - https://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array
 
