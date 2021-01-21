@@ -102,15 +102,21 @@
 
 ## slide_window
 
-##### slide_window; i_start + len (a[i] -> a[i+len]); (loop_condi_reduce, arr_ind_inc; vice versa)
+##### slide_window; (1) i_loop_ele, win_start, win_end (2) win_status: same_num (3) win_len: quarter (4) win_slide: ++i
 
 - EG
-- [1, 1, 1, 2, 2], len = 5, quarter_len = 5/4 -> floor(1.25) -> 1
-- e.g [1] ceil(1/4=0.25) = 1, outbound, so nono
+- [1, 2, 2, 6, 6, 6, 6, 7, 10], len = 9, quarter_len = 9/4 -> floor(2.25) = 2;
+- ceil(2.25) = 3, 3\*4_quarter = 12_too_big
 - SUMMA
 -
-- loop(i=0; i<len - quarter_len; ..) (loop_condi_reduce, arr_ind_inc; vice versa)
-- if a[i] == a[i + q_len], re a[i] (i_start + len)
+- loop(i=0; i < len - q_len; ..); (i < len - q_len VS a[i+q_len])
+- i_loop_ele
+- win_start: i
+- win_end: i+q_len
+- win_status: same_num
+- win_len: quarter
+- win_slide: ++i
+- if a[i] == a[i + q_len], re a[i]
 - https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
 
 ##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; slide_window; major_len (i_start + len)
@@ -139,23 +145,23 @@
 - left_ahead_expand
 - https://leetcode.com/problems/find-pivot-index
 
-##### slide_window; i_loop_ele, win_start_with_hit, win_end_with_loop; equal_win_len, update_win_status;
+##### slide_window; (1) i_loop_ele; win_start: hit_condi; win_end: follow_loop; (2)win_status: sum; (3) win_len: k_len; (4) win_slide: ++win_start, ++win_end
 
 - EG
 - SUMMA
 - [2, 3, 4, 1, 5], k = 3; e.g. [2, 3, 4], range = k = 3
 -
 - i_loop_ele
-- win_start_with_hit
-- win_end_with_loop
+- win_start: hit_condi
+- win_end: follow_loop
 -
 - loop eles (i_loop_ele)
-- sum = sum + ns[i] (update_win_status)
+- sum = sum + ns[i] (win_status: sum)
 -
-- if win_end == win_start + k - 1 (equal_win_len, update_win_status)
-- sum = sum - ns[i]; (update_win_status)
-- ++win_start (win_start_with_hit)
-- end_if, ++win_end (win_end_with_loop)
+- if win_end == win_start + k - 1 (win_len: k_len)
+- sum = sum - ns[i]; (win_status: sum)
+- ++win_start (win_start: hit_condi; win_slide: ++win_start)
+- end_if, ++win_end (win_end: follow_loop; win_slide: ++win_end)
 - https://leetcode.com/problems/maximum-average-subarray-i
 
 <br/>
