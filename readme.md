@@ -2175,7 +2175,7 @@
 
 ## greatest common divisor (gcd)
 
-##### AAAA - AAA(rm_prefix) = A, (gcd); AAA - A(rm_prefix) = A, (gcd)
+##### keep long_before_short; AAAA - AAA(rm_prefix) = A, (gcd); AAA - A(rm_prefix) = A, (gcd)
 
 - EG
 - AAAA - AAA = A;
@@ -2188,6 +2188,20 @@
 - recur
 - (1) long > short; (2) false_case(not_prefix); (3) good_case(short.empty); (4) con(rm_prefix)
 - https://leetcode.com/problems/greatest-common-divisor-of-strings
+
+##### keep start_before_end; curr_res in total_res, when_condi; total_res_with_loop; part_cycle = curr_res; rest_part_cycle = tot_res - curr_res
+
+- EG
+- [1_distance, 2_d, 3_d, 4_d]; 1_ind -> 2_ind, 2_distance
+- SUMMA
+- if start_ind > end_ind; swap; keep_1_direction_cycle
+-
+- loop eles
+- if i >= start_ind(0_ind) && i < dest_ind(1_ind); res = res + dist[i] (curr_res in total_res, when_condi)
+- tot = tot + dist[i] (total_res_with_loop)
+-
+- end_loop; part_of_cycle = curr_res; rest_part_of_cycle = tot_res - curr_res
+- https://leetcode.com/problems/distance-between-bus-stops
 
 ##### another gcd, [1,1,2,2,2,2] -> [1, 1], [2, 2], [2, 2]
 
