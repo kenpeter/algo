@@ -1385,7 +1385,7 @@
 <br/>
 <br/>
 
-## loop 1 -> 1000; loop a -> b; xxxx; (bottom_up)
+## loop 1 -> 1000; loop a -> b; xxxx; (natural_bottom_up)
 
 ##### a2 in a1; a1 follows a2 order; res build_from_ground
 
@@ -1398,7 +1398,7 @@
 -
 - ..
 - ..
-- loop 0->1000 (e.g. loop 1 -> 1000 or loop a -> z, bottom_up)
+- loop 0->1000 (e.g. loop 1 -> 1000 or loop a -> z, natural_bottom_up)
 - use all freq
 - res.push(build_from_ground)
 -
@@ -1480,7 +1480,7 @@
 
 ## build_from_ground_rearrange (a_i + a_j VS res_i + res_j)
 
-##### a2 in a1; a1 follows a2 order; res build_from_ground_rearrange(i_hash_fill_res + j_bottom_up_fill_res VS res_ind )
+##### a2 in a1; a1 follows a2 order; res build_from_ground_rearrange(i_hash_fill_res + j_natural_bottom_up_fill_res VS res_ind )
 
 - EG
 - a1: [3, 4, 1, 1, 2, 2]
@@ -1496,7 +1496,7 @@
 - res.push
 - end_loop, reset freq
 -
-- loop 0->1000 (e.g. loop 1 -> 1000 or loop a -> z; j_bottom_up_fill_res)
+- loop 0->1000 (e.g. loop 1 -> 1000 or loop a -> z; j_natural_bottom_up_fill_res)
 - use all freq
 - res.push
 -
