@@ -1295,21 +1295,19 @@
 
 ## a vs b -> res, res vs c -> res; (1) prefix (reduce non_useful); (2) common (reduce non_useful), w (reduce already_scan)
 
-##### ["flower","flow","flight"]; flower as prefix; flower vs flow -> flow (reduce non_useful) vs flow; flow vs flight -> fl (reduce non_useful) vs fl
+##### outloop_each_word; inloop_non_found_prefix; prefix_reduce_1_char; inloop_non_found_prefix(back_to); compare_with_input_word
 
 - EG
+- ["flower","flow","flight"]; prefix = flower; flower vs flow -> flow(er); flow vs flight -> fl(ow);
 - SUMMA
 -
-- prefix = a[0]
-- loop w
+- prefix = arr[0];
+- out_loop (i=1, i<len) (out_loop_each_word)
 
-- loop prefix ("flower")
-- flower.prefix(flow) -> flowe.prefix(flow) -> flow.prefix(flow); (reduce non_useful)
-- flow.prefix(flight) -> .... (reduce non_useful)
--
-- loop(w.indexOf(prefix) !==0); s.sub(0, prefix-1); (reduce non_useful)
-- if prefix empty, re empty
-- end_loop, re prefix
+- in_loop (non_found_prefix_loop)
+- (prefix_reduce_1_char; back_to, non_found_prefix_loop; compare_with_input_word)
+- prefix === '', re ''
+- end_loop, prefix
 - https://leetcode.com/problems/longest-common-prefix
 - https://www.geeksforgeeks.org/longest-common-prefix-using-character-by-character-matching (vertical w by w matching char)
 
