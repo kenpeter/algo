@@ -1404,6 +1404,20 @@
 -
 - https://leetcode.com/problems/relative-sort-array
 
+##### [1,1,4,2,1,3] -> how_many_move -> [1, 1, 1, 2, 3, 4]; natural_bottom_up + consume_hash === input_arr_len
+
+- EG
+- [1,1,4,2,1,3] -> how_many_move -> [1, 1, 1, 2, 3, 4] (sort)
+- SUMMA
+- hash 0, 1, 2, 3 -> 100 (natural_bottom_up)
+- out_loop 1 -> 100 (natural_bottom_up)
+-
+- input_arr_ind = 0 (global)
+- i === height
+- in_loop( (hash[i]--) > 0); (natural_bottom_up + consume_hash === input_arr_len)
+- input_arr[ input_arr_ind ] !== i_height; res++; e.g. input_arr[1] may == input_arr[100], beause dup
+- https://leetcode.com/problems/height-checker
+
 <br/>
 <br/>
 
