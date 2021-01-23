@@ -2185,12 +2185,11 @@
 
 ## greatest common divisor (gcd)
 
-##### keep long_before_short; long_has_no_short; short_full_consumed; gcd_recur
+##### keep long_before_short; long_has_no_short; short_full_consumed; gcd_recur_rm_common
 
 - EG
 - AAAA - AAA = A;
 - AAA - A = AA;
-- AA - A = AA;
 - AA - A = A;
 - A - A = 0 (done)
 - SUMMA
@@ -2199,7 +2198,7 @@
 - if short_str.len > long_str.len (keep short_before_long)
 - if long.index(short) === 0, re ''; (long_has_no_short)
 - if short.len === 0, re big; (short full consumed)
-- else gcd( long.substr(short), short ); (gcd_recur)
+- else gcd( long.substr(short), short ); (gcd_recur_rm_common)
 - https://leetcode.com/problems/greatest-common-divisor-of-strings
 
 ##### keep start_before_end; curr_res in total_res, when_condi; total_res_with_loop; part_cycle = curr_res; rest_part_cycle = tot_res - curr_res
