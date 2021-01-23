@@ -1338,6 +1338,22 @@
 <br/>
 <br/>
 
+## vertical_compare
+
+##### [1, 1, 4, 2, 1, 3] -> min_move_become_sort -> [1, 1, 1, 2, 3, 4]
+
+- EG
+- [1, 1, 4, 2, 1, 3] -> sort -> [1, 1, 1, 2, 3, 4]; vertical_compare; not_equal_res_inc
+- SUMMA
+- orig_arr;
+- sort_arr;
+- loop ele
+- vertical_compare; not_equal_res_inc
+- https://leetcode.com/problems/height-checker
+
+<br/>
+<br/>
+
 ## compare(sb 1 group || b 1 group) / in_hash(sb 1 group || b 1 group)
 
 ##### IVIV(roman) -> IV(s, s+1) -> compare(sb 1 group || b 1 group); i(start), i(start+1), j(x, end), j(x, end-1); i move right; access_hash
