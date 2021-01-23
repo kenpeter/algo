@@ -406,6 +406,16 @@
 
 ## skip_loop_up_highest, skip_loop_down_lowest;
 
+##### min_val is always past; highest - lowest
+
+- EG
+- SUMMA
+- min_val = ps[0]; (min_val is always past)
+- loop(i=1, i<...) (LOOK_BACK)
+- profit = highest - lowest = curr_ele - min_val (highest - lowest)
+- min(p[i], min_val) (min_val is always past)
+- https://leetcode.com/problems/best-time-to-buy-and-sell-stock
+
 ##### [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest; skip_loop_down_lowest; buy at 0, sell at 4
 
 - EG
