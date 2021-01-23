@@ -1293,44 +1293,45 @@
 <br/>
 <br/>
 
-## a vs b -> res, res vs c -> res; (1) prefix (reduce non_useful); (2) common (reduce non_useful), w (reduce already_scan)
+## in_loop; prefix_reduce_1_char; compare_with_input_word
 
-##### inloop; prefix_reduce_1_char; compare_with_input_word
+##### in_loop(non_found_prefix_loop); prefix_reduce_1_char; compare_with_input_word
 
 - EG
-- ["flower","flow","flight"]; prefix = flower; flower vs flow -> flow(er); flow vs flight -> fl(ow);
+- ["flower","flow","flight"]; flower as prefix; flower vs flow -> flow(er); flow vs flight -> fl(ow);
 - SUMMA
 -
-- prefix = arr[0];
+- arr[0] as prefix (global)
 - out_loop (i=1, i<len) (outloop_each_word)
 
-- in_loop
+- in_loop(non_found_prefix_loop)
 - (prefix_reduce_1_char; compare_with_input_word)
 - prefix === '', re ''
 - end_loop, prefix
 - https://leetcode.com/problems/longest-common-prefix
 - https://www.geeksforgeeks.org/longest-common-prefix-using-character-by-character-matching (vertical w by w matching char)
 
-##### ["cool", "lock", "cook"]; cook as common; cool vs lock -> co (reduce non_useful) vs lk (reduce already_scan); co vs cook
+##### ["cool", "lock", "cook"]; cook as common; cool vs lock -> co (ol); co vs cook -> co(); if_common, rm from input_word; if_non_common, rm from common
 
 - EG
 - SUMMA
 -
-- common = a[0]
-- loop w
-
-- loop common ("cool")
-- "c"; keep in "cool" (common), rm in "lock" (w) ==> "cool" vs "lok" (reduce already_scan)
-- "o"; keep in "cool", rm in "lok" ==> "cool" vs "lk" (reduce already_scan)
-- "o"; rm in "cool" (reduce non_useful), none in "lk" ==> "col" vs "lk"
-- "l"; rm in "col" (reduce non_useful), none in "lk" ==> "co" vs "lk"
+- arr[0] as common (global)
+- out_loop (i=1, i<len) (outloop_each_word)
 -
-- now loop char ("co")
-- "co" vs "cook"
-- ...
+- in_loop(loop_each_char_in_common)
+- (1)
+- vertical compare
+- common: aac; first_a stay; for next input_word (global)
+- input: abc; first_a gone; next_common_char won't check again
 -
-- w, reduce already_scan
-- common, reduce non_useful
+- (2)
+- vertical compare
+- common: xy; first_x gone; next input_word won't use (global)
+- input: abc; first_a stay; next_common_char may hit
+-
+- in_summary; if_common, rm from input_word; if_non_common, rm from common
+-
 - https://leetcode.com/problems/find-common-characters
 
 <br/>
