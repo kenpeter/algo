@@ -373,9 +373,9 @@
 <br/>
 <br/>
 
-## ?
+## non_decrease_arr; (1)left_before_edge; (2)too_low, i-1, i, i+1; (3)too_high, i-2, i; (4)right_edge
 
-##### non_decrease_arr
+##### non_decrease_arr; (1)left_before_edge; (2)too_low, i-1, i, i+1; (3)too_high, i-2, i; (4)right_edge
 
 - EG
 - SUMMA
@@ -384,20 +384,20 @@
 - [0(i_no_i-1), 1, 2, 3, 4], 5pt
 -
 - i=1
-- [1, -100(i_look_back, drop, out_of_trend_low), 2, 3, 4], 5pt
+- [1, -100(i_look_back, drop, out_of_trend_low), 2, 3, 4], 5pt; (left_before_edge)
 -
 - i=2
-- [1, 2, -100(i, drop, out_of_trend_low), 3, 4], 5pt
+- [1, 2, -100(i, drop, out_of_trend_low), 3, 4], 5pt; (too_low; i-1, i, i+1)
 -
 - i=3
-- [1, 2, 100(out_of_trend_high), 3(i, drop), 4], 5pt
+- [1, 2, 100(out_of_trend_high), 3(i, drop), 4], 5pt; (too high; i-2, i)
 - .....
 -
 - i=len-2
-- [1, 2, 3, -100(i, drop, out_of_trend_high), 4], 5pt
+- [1, 2, 3, -100(i, drop, out_of_trend_high), 4], 5pt; (too low; i-1, i, i+1)
 -
 - i=len-1
-- [1, 2, 3, 4, -100(i, drop, i_last)], 5pt
+- [1, 2, 3, 4, -100(i, drop, i_last)], 5pt; (right_edge)
 -
 - https://leetcode.com/problems/non-decreasing-array
 
@@ -1628,6 +1628,16 @@
 - e.g. b:2 (odd), can use 3-1=2; later add 1
 - ba a ab
 - https://leetcode.com/problems/longest-palindrome
+
+##### hash; max(...arr)
+
+- EG
+- SUMMA
+- loop eles
+- if h[n] !== undef, h[n] = 1;
+- else delete h[n]
+- end_loop; max(... Obj.keys(hash) )
+- https://leetcode.com/problems/largest-unique-number/
 
 <br/>
 <br/>
