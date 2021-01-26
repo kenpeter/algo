@@ -816,6 +816,22 @@
 -
 - https://leetcode.com/problems/reshape-the-matrix
 
+##### win_case_arr; 2D_to_1D, a_1D[col_ind\*width + row_ind]; tic_tac_3_same
+
+- EG
+- SUMMA
+- [ r:[0, 1, 2], [3, 4, 5], [6, 7, 8], c:[0, 3, 6], [1, 4, 7], diag[2, 5, 8], [0, 4, 8], [2, 4, 6] ] (win_case_arr)
+-
+- loop input_arr (fill_tic_tac)
+- a_1D[ col_ind\*width + row_ind ] = (i_A_OR_B % 2) + 1 (2D_to_1D, a_1D[col_ind\*width + row_ind])
+-
+- loop win_case_arr (loop_win_case_arr)
+- if a_1D[ win_case[0] ] == a_1D[ win_case[1] ] == a_1D[ win_case[2] ] && not_eq_zero (tic_tac_3_same)
+- either re 'A' or 'B'
+-
+- end_loop; input_arr.len === 9 re 'DRAW'; else 'PENDING'
+- https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game
+
 ##### is_palindrome; 121 -> 121(able_rebuild), 123 -> 321(not_able_rebuild); last_digit = input % 10; prev_num = input / 10
 
 - EG
