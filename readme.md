@@ -797,23 +797,6 @@
 
 - https://leetcode.com/problems/reshape-the-matrix
 
-###### flat_arr -> fill_new_shap_arr; row_ind = floor(i_dy_total_width / new_col_width); col_ind = i_dy_total_width % new_col_width;
-
-- EG
-- SUMMA
-- row \* col === new_w \* new_h
-- i_total, flat_arr -> fill_new_shape_arr
--
-- loop row \* col (all_eles)
-- row_ind = floor(i_dy_total_width / new_col_width); keep_it_same_row;
-- similar, prev_num = floor(num / 10)
--
-- if !res[row_ind], res[row_ind] = [];
-- else res[row_ind].push( ns[i_dy_total_width / new_col_width][i % new_col_width] );
-- similar, anything_elft = floor(num / 10); last_digit = num % 10;
--
-- https://leetcode.com/problems/reshape-the-matrix
-
 ##### 2D -> 1D; a_old[r][c] -> a_mid[r * width + c];
 
 - EG
