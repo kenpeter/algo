@@ -783,13 +783,13 @@
 <br/>
 <br/>
 
-## ?
+## 2D -> 1D -> 2D
 
-###### 2D -> 1D -> 2D; a_old[i_total / old_w][i % old_w] -> a_mid[i_total = r * width + c] -> a_new[i_total / new_w][i % new_w]
+###### 2D -> 1D -> 2D; 1D[i_total] = 2D[i_total / w][i_total % w]; 2D[i][j] = 1D[r * w + c];
 
 - EG
 - SUMMA
-- 2D -> 1D -> 2D; a_old[i_total / old_w][i_total % old_w] -> a_mid[i_total] -> a_new[i_total / new_w][i_total % new_w]
+- 2D -> 1D -> 2D; a_old[i_total / old_w][i_total % old_w] -> a_mid[i_total = i_total = r * width + c] -> a_new[i_total / new_w][i_total % new_w]
 - old_w \* old_h === new_w \* new_h;
 -
 - loop(i_total=0; i < old_w \* old_h; ..); 2D -> 1D; a_old[i_total / old_w][i_total % old_w] -> a_mid[i_total = r * width + c]
@@ -797,7 +797,16 @@
 
 - https://leetcode.com/problems/reshape-the-matrix
 
-##### 2D -> 1D; a_old[r][c] -> a_mid[r * width + c];
+##### 2D -> 1D -> 2D; 1D[i_total] = 2D[i_total / w][i_total % w]; 2D[i][j] = 1D[r * w + c];
+
+- EG
+- SUMMA
+- 2D -> 1D; loop(i=0; i<m\*n; ..); a_mid[i_total] = a_old[i_total / old_w][i_total % old_w];
+- shift; loop(i=0; i<m\*n; ..); a_new_1D[(i_total + k) % len] = a_mid[i_total];
+- 1D -> 2D; in_loop, out_loop; a_new_2D[i][j] = a_new_1D[i * width + j];
+- https://leetcode.com/problems/shift-2d-grid
+
+##### 2D -> 1D; 1D[i_total] = 2D[i_total / w][i_total % w]; 2D[i][j] = 1D[r * w + c];
 
 - EG
 - SUMMA
