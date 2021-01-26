@@ -785,15 +785,15 @@
 
 ## row_ind = floor(i_dynamic_total_width / new_col_width); col_ind = i_dy_total_width % width;
 
-###### flat_arr -> fill_new_shap_arr; row_ind = floor(i_dy_total_width / new_col_width); col_ind = i_dy_total_width % new_col_width;
+###### 2D -> 1D -> 2D; a_old[i_total / old_w][i % old_w] -> a_mid[i_total] -> a_new[i_total / new_w][i % new_w]
 
 - EG
 - SUMMA
-- 2D -> 1D -> 2D
+- 2D -> 1D -> 2D; a_old[i_total / old_w][i_total % old_w] -> a_mid[i_total] -> a_new[i_total / new_w][i_total % new_w]
 - old_w \* old_h === new_w \* new_h;
 -
-- loop(i_total=0; i < old_w \* old_h; ..) (2D -> 1D)
-- a_new_2D[ i_total / new_w ] = a_old_2D[ i_total / old_w ][ i_total % old_w ]
+- loop(i_total=0; i < old_w \* old_h; ..); 2D -> 1D; a_old[i_total / old_w][i_total % old_w] -> a_mid[i_total]
+- a_new[i_total / new_w][] = a_old[i_total / old_w][i_total % old_w]
 
 - https://leetcode.com/problems/reshape-the-matrix
 
