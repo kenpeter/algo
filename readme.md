@@ -789,6 +789,7 @@
 
 - EG
 - SUMMA
+- 2D -> 1D -> 2D
 - row \* col === new_w \* new_h
 - i_total, flat_arr -> fill_new_shape_arr
 -
@@ -816,17 +817,17 @@
 -
 - https://leetcode.com/problems/reshape-the-matrix
 
-##### win_case_arr; 2D_to_1D, a_1D[col_ind\*width + row_ind]; tic_tac_3_same
+##### 2D -> 1D; 1D_easier_found_3_win; a[col_ind\*width + row_ind];
 
 - EG
 - SUMMA
-- [ r:[0, 1, 2], [3, 4, 5], [6, 7, 8], c:[0, 3, 6], [1, 4, 7], diag[2, 5, 8], [0, 4, 8], [2, 4, 6] ] (win_case_arr)
+- [ r:[0, 1, 2], [3, 4, 5], [6, 7, 8], c:[0, 3, 6], [1, 4, 7], diag[2, 5, 8], [0, 4, 8], [2, 4, 6] ] (3_win)
 -
 - loop input_arr (fill_tic_tac)
-- a_1D[ col_ind\*width + row_ind ] = (i_A_OR_B % 2) + 1 (2D_to_1D, a_1D[col_ind\*width + row_ind])
+- a[ col_ind\*width + row_ind ] = (i_A_OR_B % 2) + 1 (2D -> 1D; 1D_easier_found_3_win; a[col_ind\*width + row_ind])
 -
-- loop win_case_arr (loop_win_case_arr)
-- if a_1D[ win_case[0] ] == a_1D[ win_case[1] ] == a_1D[ win_case[2] ] && not_eq_zero (tic_tac_3_same)
+- loop win_case_arr (loop 3_win)
+- if a[ win_case[0] ] == a[ win_case[1] ] == a[ win_case[2] ] && not_eq_zero (3_win)
 - either re 'A' or 'B'
 -
 - end_loop; input_arr.len === 9 re 'DRAW'; else 'PENDING'
