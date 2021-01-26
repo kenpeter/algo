@@ -783,16 +783,16 @@
 <br/>
 <br/>
 
-## row_ind = floor(i_dynamic_total_width / new_col_width); col_ind = i_dy_total_width % width;
+## ?
 
-###### 2D -> 1D -> 2D; a_old[i_total / old_w][i % old_w] -> a_mid[i_total] -> a_new[i_total / new_w][i % new_w]
+###### 2D -> 1D -> 2D; a_old[i_total / old_w][i % old_w] -> a_mid[i_total = r * width + c] -> a_new[i_total / new_w][i % new_w]
 
 - EG
 - SUMMA
 - 2D -> 1D -> 2D; a_old[i_total / old_w][i_total % old_w] -> a_mid[i_total] -> a_new[i_total / new_w][i_total % new_w]
 - old_w \* old_h === new_w \* new_h;
 -
-- loop(i_total=0; i < old_w \* old_h; ..); 2D -> 1D; a_old[i_total / old_w][i_total % old_w] -> a_mid[i_total]
+- loop(i_total=0; i < old_w \* old_h; ..); 2D -> 1D; a_old[i_total / old_w][i_total % old_w] -> a_mid[i_total = r * width + c]
 - a_new[i_total / new_w][] = a_old[i_total / old_w][i_total % old_w]
 
 - https://leetcode.com/problems/reshape-the-matrix
@@ -814,17 +814,17 @@
 -
 - https://leetcode.com/problems/reshape-the-matrix
 
-##### 2D -> 1D; 1D_easier_found_3_win; a_1D[col_ind\*width + row_ind];
+##### 2D -> 1D; a_old[r][c] -> a_mid[r * width + c];
 
 - EG
 - SUMMA
 - [ r:[0, 1, 2], [3, 4, 5], [6, 7, 8], c:[0, 3, 6], [1, 4, 7], diag[2, 5, 8], [0, 4, 8], [2, 4, 6] ] (3_win)
 -
 - loop input_arr (fill_tic_tac)
-- a_1D[ col_ind\*width + row_ind ] = (i_A_OR_B % 2) + 1 (2D -> 1D; 1D_easier_found_3_win; a[col_ind\*width + row_ind])
+- a_mid[ c * width + r ] = (i_A_OR_B % 2) + 1; (2D -> 1D; a_old[r][c] -> a_mid[ c * width + r])
 -
-- loop win_case_arr (loop 3_win)
-- if a_1D[ win_case[0] ] == a_1D[ win_case[1] ] == a_1D[ win_case[2] ] && not_eq_zero (3_win)
+- loop win
+- if a_mid[ win[i][0] ] == a_mid[ win[i][1] ] == a_mid[ win[i][2] ] && not_eq_zero (3_win)
 - either re 'A' or 'B'
 -
 - end_loop; input_arr.len === 9 re 'DRAW'; else 'PENDING'
