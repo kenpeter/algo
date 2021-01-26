@@ -790,14 +790,11 @@
 - EG
 - SUMMA
 - 2D -> 1D -> 2D
-- row \* col === new_w \* new_h
-- i_total, flat_arr -> fill_new_shape_arr
+- old_w \* old_h === new_w \* new_h;
 -
-- loop_row
-- loop_col
-- row_ind = floor(i_dy_total_width / new_col_width); keep_it_same_row
-- if !res[row_ind] -> res[row_ind] = [];
-- else res[row_ind].push( ns[r][c] );
+- loop(i_total=0; i < old_w \* old_h; ..) (2D -> 1D)
+- a_new_2D[ i_total / new_w ] = a_old_2D[ i_total / old_w ][ i_total % old_w ]
+
 - https://leetcode.com/problems/reshape-the-matrix
 
 ###### flat_arr -> fill_new_shap_arr; row_ind = floor(i_dy_total_width / new_col_width); col_ind = i_dy_total_width % new_col_width;
@@ -817,17 +814,17 @@
 -
 - https://leetcode.com/problems/reshape-the-matrix
 
-##### 2D -> 1D; 1D_easier_found_3_win; a[col_ind\*width + row_ind];
+##### 2D -> 1D; 1D_easier_found_3_win; a_1D[col_ind\*width + row_ind];
 
 - EG
 - SUMMA
 - [ r:[0, 1, 2], [3, 4, 5], [6, 7, 8], c:[0, 3, 6], [1, 4, 7], diag[2, 5, 8], [0, 4, 8], [2, 4, 6] ] (3_win)
 -
 - loop input_arr (fill_tic_tac)
-- a[ col_ind\*width + row_ind ] = (i_A_OR_B % 2) + 1 (2D -> 1D; 1D_easier_found_3_win; a[col_ind\*width + row_ind])
+- a_1D[ col_ind\*width + row_ind ] = (i_A_OR_B % 2) + 1 (2D -> 1D; 1D_easier_found_3_win; a[col_ind\*width + row_ind])
 -
 - loop win_case_arr (loop 3_win)
-- if a[ win_case[0] ] == a[ win_case[1] ] == a[ win_case[2] ] && not_eq_zero (3_win)
+- if a_1D[ win_case[0] ] == a_1D[ win_case[1] ] == a_1D[ win_case[2] ] && not_eq_zero (3_win)
 - either re 'A' or 'B'
 -
 - end_loop; input_arr.len === 9 re 'DRAW'; else 'PENDING'
