@@ -2898,6 +2898,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dy \* (x1 - x) !== dx \* (y1 - y) (not straight line)
 - https://leetcode.com/problems/check-if-it-is-a-straight-line
 
+##### [0, 100] -> [0, 1]; diag to hor / ver (diag cover hor / ver); then straight_line; shortest;
+
+- EG
+- SUMMA
+- diag to hor / ver (diag cover hor / ver), then straight_line; shortest
+- https://leetcode.com/problems/minimum-time-visiting-all-points
+
 <br/>
 <br/>
 <br/>
