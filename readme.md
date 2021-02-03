@@ -1830,6 +1830,19 @@
 <br/>
 <br/>
 
+## loop_each_ele, but_mod_each_ele
+
+##### loop_each_ele, but_mod_each_ele
+
+- EG
+- SUMMA
+- loop eles (orig_arr)
+- if orig_arr.includes(ele + 1); ++count; (loop_each_ele, but_mod_each_ele)
+- https://codenuclear.com/leetcode-counting-elements-30days-challenge/
+
+<br/>
+<br/>
+
 ## up_ups || up_lows || low_lows
 
 ##### CHINA || China || china -> up_ups, up_lows, low_lows
