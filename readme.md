@@ -1716,19 +1716,15 @@
 <br/>
 <br/>
 
-## multi_hash, multi_tracking_var
+## one pass; hash_obj(freq, distance); sudden_meet_condi, update_freq, update_distance
 
-##### [1,2,2,3,1]; freq_hash, posi_hash; maxF (freq), minD (distance);
+##### [1,2,1,2,1,3,3,2]; {1:3, 2:3, 3:2}; 1 and 2 same max_freq, but 1 is shorter dist; (1) one pass; hash_obj: {freq, distance}; sudden_meet_condi(freq > max_freq || freq == max_freq), update_freq, update_distance
 
 - EG
 - SUMMA
-- loop eles (const [ind, n] = arr.entries())
-- build freq_hash
-- build start_posi_hash (if 1st time)
--
-- maxF can do in loop. (minD not easy)
-- freq_hash[n] > maxF, force up minD
-- freq_hash[n] === maxF, min(minD, end - start(posi_hash) +1)
+- loop eles (one pass)
+- hash_obj: {freq, distance}
+- sudden_meet_condi(freq > max_freq || freq == max_freq), update_freq, update_distance;
 - https://leetcode.com/problems/degree-of-an-array
 
 <br/>
