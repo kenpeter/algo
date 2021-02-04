@@ -766,6 +766,31 @@
 <br/>
 <br/>
 
+##
+
+##### 2D_matrix -> [r_0, r_1] x [c_0, c_1]; [r_0, r_1] x [c_0, c_1] -> 2D_matrix
+
+- EG
+- SUMMA
+- {r:0 (all_row +1), c:1 (all_col +1)}
+- 0 0 -> 1 1 -> 1 2
+- 0 0 -> 0 0 -> 0 1
+-
+- (1) build_row_arr
+- [{r:0, c:1}, {r:1, c:1}] -> r[] = [r:0, r:1] (become_same_row)
+-
+- (2) build_col_arr
+- ........................ -> c[] = [c:1, c:1] (become_same_col)
+-
+- (3) row_arr x col_arr -> 2D_matrix
+- [r:0, r:1] x [c:1, c:1] -> 2D_matrix -> r:0+c:1, r:0+c:1, r:1+c:1, r:1+c1
+- if (r[i] + c[j]) % 2 == 0, ++counter
+-
+- https://leetcode.com/problems/cells-with-odd-values-in-a-matrix
+
+<br/>
+<br/>
+
 ## prev_num( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
 
 ##### 12345678 -> 12.345.678; prev_num( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
