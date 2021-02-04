@@ -768,7 +768,7 @@
 
 ##
 
-##### 2D_matrix -> [r_0, r_1] x [c_0, c_1]; [r_0, r_1] x [c_0, c_1] -> 2D_matrix
+##### 2D_matrix -> row_arr x col_arr; row_arr x col_arr -> 2D_matrix
 
 - EG
 - SUMMA
