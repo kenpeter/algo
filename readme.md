@@ -766,24 +766,35 @@
 <br/>
 <br/>
 
-## row -> rest_col_same; col -> rest_row_same; row_arr x col_arr -> 2D_matrix
+## (row, col; row col ==> row, row; col, col); [row, row] x [col, col] ==> 2D_matrix
 
-##### [r:0](row -> rest_col_same) -> [[1, 1], [0, 0]]; [c:0](col -> rest_row_same) -> [[0, 1], [0, 1]]; row_arr x col_arr -> 2D_matrix
+##### (row, col; row col ==> row, row; col, col); [row, row] x [col, col] ==> 2D_matrix
 
 - EG
 - SUMMA
-- {r:0 (all_row +1), c:1 (all_col +1)}
+- (1)
+- ind: [[0_row, 1_col]]
 - 0 0 -> 1 1 -> 1 2
 - 0 0 -> 0 0 -> 0 1
 -
-- (1) row_arr
-- [{r:0, c:1}, {r:1, c:1}] -> r[] = [r:0, r:1] ==== [[1, 1], [0, 0]] then [[1, 1], [1, 1]]
+- (2)
+- ind: [[0_row, 1_col], [1_row, 1_col]] (row, col; row, col)
+- 0 0 -> 1 1 -> 1 2 ==> 1 2 -> 1 3
+- 0 0 -> 0 0 -> 0 1 ==> 1 2 -> 1 3
 -
-- (2) col_arr
-- ........................ -> c[] = [c:1, c:1] ==== [[0, 1], [0, 1]] then [[0, 2], [0, 2]]
+- (3)
+- ind: [0_row, 1_row] (row, row)
+- 0 0 -> 1 1 -> 1 1
+- 0 0 -> 0 0 -> 1 1
 -
-- (3) row_arr x col_arr -> 2D_matrix
-- [r:0, r:1] x [c:1, c:1] -> 2D_matrix -> r:0+c:1, r:0+c:1, r:1+c:1, r:1+c1
+- ind: [1_col, 1_col] (col, col)
+- 0 0 -> 0 1 -> 0 2
+- 0 0 -> 0 1 -> 0 2
+- merge_2
+-
+- row, col; row col ==> row, row; col, col
+-
+- [row, row] x [col, col] ==> 2D_matrix
 - if (r[i] + c[j]) % 2 == 0, ++counter
 -
 - https://leetcode.com/problems/cells-with-odd-values-in-a-matrix
