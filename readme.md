@@ -802,6 +802,31 @@
 <br/>
 <br/>
 
+## sorted_desc_matrix, row_desc, col_desc; top_left_big, bottom_right_small; row_ind_go_up,col_above_same_or_behind
+
+###### sorted_desc_matrix, row_desc, col_desc; top_left_big, bottom_right_small; row_ind_go_up,col_above_same_or_behind
+
+- EG
+- SUMMA
+- ! + + + + + +
+- ! + + + - - -
+- ! + + - - - -
+- ! + - - - - -
+- ! - - - - - -
+- sorted_desc_matrix, row_desc, col_desc
+- top_left_big, bottom_right_small
+-
+- ! + + + + + +
+- ! + + + - - -
+- ! + + - - - -
+- ! + -(col_above_same_or_behind) - - - -
+- ! -(col) - - - - - (row_ind_go_up)
+-
+- https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix
+
+<br/>
+<br/>
+
 ## prev_num( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
 
 ##### 12345678 -> 12.345.678; prev_num( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
