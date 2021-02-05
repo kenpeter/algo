@@ -1764,16 +1764,6 @@
 - if !met; h[n] = init_posi; (build hash_init_posi along)
 - https://leetcode.com/problems/contains-duplicate-ii
 
-##### two_sum, [0, 3, 4, 0], tar = 7; build hash_init_posi along (met_the_other / !met_the_other)
-
-- EG
-- SUMMA
-- loop eles;
-- if met_the_other, hash[tar - val], re [ hash[tar - val], ind ]
-- if !met_the_other, hash[val] = posi (build hash_init_posi along)
-- https://leetcode.com/problems/two-sum
-- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
-
 <br/>
 <br/>
 
@@ -1906,6 +1896,25 @@
 - if 1 zero, skip_this_zero; if >= 2 zeros, no_skip
 - if orig_arr.includes(2\*ele); re true; (loop_each_ele, but_mod_each_ele)
 - https://leetcode.com/problems/check-if-n-and-its-double-exist
+
+##### 2\*ele, ele/2, set.con?; loop_each_ele, but_mod_each_ele
+
+- EG
+- SUMMA
+- loop eles
+- if set.con(2\*ele) || set.con(ele/2), re true; (loop_each_ele, but_mod_each_ele)
+- else set.add(ele)
+- https://leetcode.com/problems/check-if-n-and-its-double-exist
+
+##### tar - ele, hash.con?; loop_each_ele, but_mod_each_ele
+
+- EG
+- SUMMA
+- loop eles;
+- if hash[tar - ele] !== undef, re ind (loop_each_ele, but_mod_each_ele)
+- else hash[ele] = ind
+- https://leetcode.com/problems/two-sum
+- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
 <br/>
 <br/>
