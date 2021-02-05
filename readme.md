@@ -1889,13 +1889,23 @@
 
 ## loop_each_ele, but_mod_each_ele
 
-##### loop_each_ele, but_mod_each_ele
+##### ele + 1; loop_each_ele, but_mod_each_ele
 
 - EG
 - SUMMA
 - loop eles (orig_arr)
 - if orig_arr.includes(ele + 1); ++count; (loop_each_ele, but_mod_each_ele)
-- https://codenuclear.com/leetcode-counting-elements-30days-challenge/
+- https://leetcode.com/problems/counting-elements
+- https://codenuclear.com/leetcode-counting-elements-30days-challenge
+
+##### 2\*ele; loop_each_ele, but_mod_each_ele
+
+- EG
+- SUMMA
+- loop eles (orig_arr)
+- if 1 zero, skip_this_zero; if >= 2 zeros, no_skip
+- if orig_arr.includes(2\*ele); re true; (loop_each_ele, but_mod_each_ele)
+- https://leetcode.com/problems/check-if-n-and-its-double-exist
 
 <br/>
 <br/>
