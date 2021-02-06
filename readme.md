@@ -1148,6 +1148,20 @@
 - check i_start, j_end
 - https://leetcode.com/problems/valid-palindrome
 
+##### 2pts(cross_over); fill_unique_num, sum == 0; 0_mid OR no_zero; i_same_spt_pt_same_start; j_same_spt_pt_same_end;
+
+- EG
+- SUMMA
+- (1)
+- n = 5
+- [0, 0, 0, 0, 0] -> [1_i, 2, 0, 2, 1_j]; (0_mid; i_same_spt_pt_same_start; j_same_spt_pt_same_end)
+-
+- (2)
+- n = 4
+- [0, 0, 0, 0] -> [1_i, 2, 2, 1_j]; (no_zero; i_same_spt_pt_same_start; j_same_spt_pt_same_end)
+-
+- https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
+
 ##### 2pts(sort, cross_over); a[i] + a[j] < k; corss_over_only_1_direction; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
 
 - EG
