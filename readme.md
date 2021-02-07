@@ -2243,33 +2243,34 @@
 <br/>
 <br/>
 
-## sort, 2 same, 1 same, 0 same
+## sort_other_and_default_attr
 
-##### w_log(lexico_order), d_log(orig_order); sort, 2 same, 1 same, 0 same
+##### letter_log, digi_log; data_into_diff_steam; sort_other_and_default_attr;
 
 - EG
-- (a, a), c VS (a, a); [2 same]
-- (a), b, c VS (a), c, b; [1 same]
-- c, a, c VS a, b, c; [0 same]
--
-- w_log (lexico_order, localeCompare), d_log (orig_order) -> ["w1 b", "w2 a", "d1 5", "d2 1"] -> ["w1 a", "w2 b", "d1 5", "d2 1"]
 - SUMMA
-- w_log (lexico_order, localeCompare), d_log(orig_order)
-- combine indexOf + substring, get 1st_content
-- (a, a), c VS (a, a); [2 same]
-- (a), b, c VS (a), c, b; [1 same]
-- c, a, c VS a, b, c; [0 same]
+- "dig1 8 1 5 1" (start + num)
+- "let2 own kit dig" (start + word)
+-
+- in: ["dig1 8 1 5 1", "let1 art can","dig2 3 6", "let2 own kit dig", "let3 art zero"]
+- out: ["let1 art can", "let3 art zero", "dig1 8 1 5 1", "let2 own kit dig"]
+- letter_sort, digi_orig_order;
+-
+- loop eles
+- if letter, letter_arr; if digi digi_arr; (data_into_diff_stream)
+-
+- end_loop, (sort_other_and_default_attr), lexico_compare
 - https://leetcode.com/problems/reorder-data-in-log-files
 
-##### sort_multi_attr -> slice_portion -> map_sub_attr
+##### sort_other_and_default_attr; sort -> slice -> map
 
 - EG
 - SUMMA
 - [[1,0,0,0], [1,1,1,1], [1,0,0,0], [1,0,0,0]]
 - res = [[1_count, 0_ind], [4, 1], [1, 2], [1, 3]]
 -
-- res.sort(a[0] === b[0] ? a[1] - b[1] : default_attr)
-- res.sort.slice.map (sort_multi_attr -> slice_portion -> map_sub_attr)
+- res.sort(other_attr ? other_attr : default_attr);
+- res.sort.slice.map (sort_other_and_default_attr -> slice_portion -> map_sub_attr)
 - https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix
 
 ##### ababa, [aba, ab] -> [(0, 2), (2, 4)...]; slide_word (loop_word, slide_word, substring_equal)
