@@ -1183,6 +1183,16 @@
 - if a[i] + a[j] == k, return
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
+##### 2pts(i_start, j_end === indOf, lastIndOf); .....
+
+- EG
+- SUMMA
+- [3, 2, 1, 2, 8] -> [1, 2, 2, 3, 8]\_sort -> [0_small, 1_small, 1_small, 3, 4]; (i_start + j_end === indOf + lastIndOf)
+-
+- new_arr = [...orig_arr].sort(); (copy)
+- orig_arr.map(t => new_arr.indOf(t)); (i_start + j_end === indOf + lastIndOf)
+- https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number
+
 <br/>
 <br/>
 
