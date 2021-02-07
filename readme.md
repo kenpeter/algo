@@ -2261,6 +2261,17 @@
 - c, a, c VS a, b, c; [0 same]
 - https://leetcode.com/problems/reorder-data-in-log-files
 
+##### sort_multi_attr -> slice_portion -> map_sub_attr
+
+- EG
+- SUMMA
+- [[1,0,0,0], [1,1,1,1], [1,0,0,0], [1,0,0,0]]
+- res = [[1_count, 0_ind], [4, 1], [1, 2], [1, 3]]
+-
+- res.sort(a[0] === b[0] ? a[1] - b[1] : default_attr)
+- res.sort.slice.map (sort_multi_attr -> slice_portion -> map_sub_attr)
+- https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix
+
 ##### ababa, [aba, ab] -> [(0, 2), (2, 4)...]; slide_word (loop_word, slide_word, substring_equal)
 
 - EG
