@@ -799,6 +799,33 @@
 -
 - https://leetcode.com/problems/cells-with-odd-values-in-a-matrix
 
+##### outloop_row, row_move_down, each_ele_is_prev_history, collect_max; inloop_col, col_move_right, each_ele_is_prev_history, collect_min; outloop_row_1D, inloop_col_1D -> 2D
+
+- EG
+  matrix:
+  1, 2, 3, 4
+  5, 6, 7, 8
+  9, 10, 11, 12
+- outloop_row; row_move_down; each_ele_is_prev_history; collect_max
+- inloop_col; col_move_right; each_ele_is_prev_history; collect_min
+-
+- ma = [1, 2, 3, 4] -> [5, 6, 7, 8] -> [9, 10, 11, 12]
+- mi = [1, 5, 9] -> [1, 5, 9] -> [1, 5, 9] -> [1, 5, 9]
+-
+- 1D x 1D = outloop_row x inloop_col
+- res = [9], cross_over
+-
+- SUMMA
+- outloop_row (outloop_row; row_move_down; each_ele_is_prev_history; collect_max)
+- inloop_col (inloop_col; col_move_right; each_ele_is_prev_history; collect_min)
+- ma[i] = ma(matrix[i][j], ma[i]) (slot_not_finish)
+- mi[j] = mi(matrix[i][j], mi[j]) (slot_finish)
+-
+- outloop_row (outloop_row_1D)
+- inloop_col (inloop_row_1D)
+- if ma[i] == mi[j], arr.push (outloop_row_1D, inloop_row_1D -> 2D)
+- https://leetcode.com/problems/lucky-numbers-in-a-matrix
+
 <br/>
 <br/>
 
