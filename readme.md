@@ -772,58 +772,54 @@
 
 - EG
 - SUMMA
-- (1)
-- ind: [[0_row, 1_col]]
-- 0 0 -> 1 1 -> 1 2
-- 0 0 -> 0 0 -> 0 1
 -
-- (2)
-- ind: [[0_row, 1_col], [1_row, 1_col]] (row, col; row, col)
+- method 1: do_row, do_col; do_row, do_col
+- ind: [[0_row, 1_col], [1_row, 1_col]]
 - 0 0 -> 1 1 -> 1 2 ==> 1 2 -> 1 3
 - 0 0 -> 0 0 -> 0 1 ==> 1 2 -> 1 3
 -
-- (3)
-- ind: [0_row, 1_row] (row, row)
+- method 2: do_row, do_row; do_col, do_col
+- ind: [0_row, 1_row]
 - 0 0 -> 1 1 -> 1 1
 - 0 0 -> 0 0 -> 1 1
 -
-- ind: [1_col, 1_col] (col, col)
+- ind: [1_col, 1_col]
 - 0 0 -> 0 1 -> 0 2
 - 0 0 -> 0 1 -> 0 2
 - merge_2
 -
-- row, col; row col ==> row, row; col, col
+- do_row, do_col; do_row, do_col ===> do_row, do_row; do_col, do_col
 -
 - [row, row] x [col, col] ==> 2D_matrix
 - if (r[i] + c[j]) % 2 == 0, ++counter
 -
 - https://leetcode.com/problems/cells-with-odd-values-in-a-matrix
 
-##### outloop_row, row_move_down, each_ele_is_prev_history, collect_max; inloop_col, col_move_right, each_ele_is_prev_history, collect_min; outloop_row_1D, inloop_col_1D -> 2D
+##### outloop(row_move_down, ele_is_prev_history, collect_max); inloop(col_move_right, ele_is_prev_history, collect_min); row_1D_arr x col_1D_arr -> 2D
 
 - EG
   matrix:
   1, 2, 3, 4
   5, 6, 7, 8
   9, 10, 11, 12
-- outloop_row; row_move_down; each_ele_is_prev_history; collect_max
-- inloop_col; col_move_right; each_ele_is_prev_history; collect_min
+- outloop(row_1D_arr, move_down, ele_is_prev_history, collect_max)
+- inloop(col_1D_arr, move_right, ele_is_perv_history, collect_min)
 -
 - ma = [1, 2, 3, 4] -> [5, 6, 7, 8] -> [9, 10, 11, 12]
 - mi = [1, 5, 9] -> [1, 5, 9] -> [1, 5, 9] -> [1, 5, 9]
 -
-- 1D x 1D = outloop_row x inloop_col
+- 1D x 1D = outloop(row_1D_arr) x inloop(col_1D_arr)
 - res = [9], cross_over
 -
 - SUMMA
-- outloop_row (outloop_row; row_move_down; each_ele_is_prev_history; collect_max)
-- inloop_col (inloop_col; col_move_right; each_ele_is_prev_history; collect_min)
+- outloop(row_1D_arr, move_down, ele_is_prev_history, collect_max)
+- inloop(col_1D_arr, move_right, ele_is_prev_history, collect_min)
 - ma[i] = ma(matrix[i][j], ma[i]) (slot_not_finish)
 - mi[j] = mi(matrix[i][j], mi[j]) (slot_finish)
 -
-- outloop_row (outloop_row_1D)
-- inloop_col (inloop_row_1D)
-- if ma[i] == mi[j], arr.push (outloop_row_1D, inloop_row_1D -> 2D)
+- outloop(row_1D_arr)
+- inloop(col_1D_arr)
+- if ma[i] == mi[j], arr.push (row_1D_arr x col_1D_arr -> 2D)
 - https://leetcode.com/problems/lucky-numbers-in-a-matrix
 
 <br/>
