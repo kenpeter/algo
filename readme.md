@@ -795,7 +795,7 @@
 -
 - https://leetcode.com/problems/cells-with-odd-values-in-a-matrix
 
-##### outloop(row_move_down, ele_is_prev_history, collect_max); inloop(col_move_right, ele_is_prev_history, collect_min); row_1D_arr x col_1D_arr -> 2D
+##### outloop(row_1D_arr, move_down, ele_is_prev_history, collect_max); inloop(col_1D_arr, move_right, ele_is_prev_history, collect_min); row_1D_arr x col_1D_arr -> 2D
 
 - EG
   matrix:
@@ -805,8 +805,8 @@
 - outloop(row_1D_arr, move_down, ele_is_prev_history, collect_max)
 - inloop(col_1D_arr, move_right, ele_is_perv_history, collect_min)
 -
-- ma = [1, 2, 3, 4] -> [5, 6, 7, 8] -> [9, 10, 11, 12]
-- mi = [1, 5, 9] -> [1, 5, 9] -> [1, 5, 9] -> [1, 5, 9]
+- row_1D_arr_max = [1, 2, 3, 4] -> [5, 6, 7, 8] -> [9, 10, 11, 12]
+- col_1D_arr_min = [1, 5, 9] -> [1, 5, 9] -> [1, 5, 9] -> [1, 5, 9]
 -
 - 1D x 1D = outloop(row_1D_arr) x inloop(col_1D_arr)
 - res = [9], cross_over
@@ -814,8 +814,8 @@
 - SUMMA
 - outloop(row_1D_arr, move_down, ele_is_prev_history, collect_max)
 - inloop(col_1D_arr, move_right, ele_is_prev_history, collect_min)
-- ma[i] = ma(matrix[i][j], ma[i]) (slot_not_finish)
-- mi[j] = mi(matrix[i][j], mi[j]) (slot_finish)
+- row_1D_arr_max[i] = ma(matrix[i][j], ma[i]) (slot_not_finish)
+- col_1D_arr_min[j] = mi(matrix[i][j], mi[j]) (slot_finish)
 -
 - outloop(row_1D_arr)
 - inloop(col_1D_arr)
