@@ -2489,24 +2489,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## continue max eles, dp and reset
+## dp[i] = (dp[i_prev] or choose_correct_state) + sth
 
-##### [-2,1,-3,4,-1,2,1,-5,4]; continue max eles, dp and reset
-
-- EG
-- SUMMA
-- arr.len+1 size
-- dp[i] => AT this ind, FINAL max_val
-- loop eles
-- dp[i] = (dp[i-1] || 0) + ns[i-1]; why reset? !want less more
-- https://leetcode.com/problems/maximum-subarray
-
-<br/>
-<br/>
-
-## dp[i] = dp[i_prev] + sth
-
-##### dp[i]\_sum = dp[ before_num ] + last_num; hash_freq; continue_add_up, else_reset
+##### dp[i] = dp[ i/10 ] + i % 10; hash_freq; continue_add_up, else_reset
 
 - EG
 - n = 13, [1, 10]\_1, [2, 11]\_2, [3, 12]\_3, [4, 13]\_4, [5]\_5, [6]\_6 ...
@@ -2516,6 +2501,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - prepare
 - single_loop (1 -> n)
 -
+- DP_EXPLAIN
 - i == i_curr_num
 - dp[i] == curr_sum at i
 - i-1 == prev_num
@@ -2524,13 +2510,32 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i/10] == before_sum
 - i%10 == last_num == sth
 -
-- dp[i] = dp[i/10] + i%10; (dp[i]\_sum = dp[ before_num ] + last_num)
+- sum = before_num_sum + last_digi (dp[i] = dp[i/10] + i%10)
 - h[dp[i]] = (h[dp[i]] || 0) + 1; (hash_freq)
 -
 - then_do
 - single_loop (hash_freq)
 - continue_add_up, else_reset
 - https://leetcode.com/problems/count-largest-group
+
+##### [-2,1,-3,4,-1,2,1,-5,4]; subarray_max_sum; dp[i] = (dp[i-1]>0 ? dp[i-1] : 0) + ns[i-1]
+
+- EG
+- SUMMA
+- single_loop(i=1; i<=ns.len...)
+-
+- DP_EXPLAIN
+- i == curr_ind
+- dp[i] == curr_ind_sum
+- i-1 == prev_ind
+- dp[i-1] == prev_sum
+- ns[i-1] == curr_num == sth
+- dp[i-1]>0 ? dp[i-1] : 0 == choose_correct_state
+-
+- dp[i] = (dp[i-1]>0 ? dp[i-1] : 0) + ns[i-1]
+- dp.splice(0, 1) (rm 0 ind)
+- re ma(...dp);
+- https://leetcode.com/problems/maximum-subarray
 
 <br/>
 <br/>
