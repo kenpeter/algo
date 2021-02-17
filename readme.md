@@ -3064,6 +3064,18 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+# prepare, then_do
+
+# prepare, while doing
+
+# prepare no, then_do
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 # when_hash: ele spreads out + has own position
 
 # when_knowledge: can simplify a problem
