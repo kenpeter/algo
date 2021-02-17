@@ -2433,17 +2433,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# some kind of mem
-
-- max/min
-- hash
-- dp ( dp[i] = dp[i-x] + val; dp[i] = max/min(dp[i-x]) )
-
-<br/>
-<br/>
-<br/>
-<br/>
-
 # misc dp
 
 ## each digit as group; double digit as group
@@ -2511,6 +2500,28 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop eles
 - dp[i] = (dp[i-1] || 0) + ns[i-1]; why reset? !want less more
 - https://leetcode.com/problems/maximum-subarray
+
+<br/>
+<br/>
+
+## dp[i] = dp[i_prev] + sth
+
+##### dp[i]\_sum = dp[ before_num ] + last_num; hash_freq; continue_add_up, else_reset
+
+- EG
+- n = 13, [1, 10]\_1, [2, 11]\_2, [3, 12]\_3, [4, 13]\_4, [5]\_5, [6]\_6 ...
+- [1, 10], [2, 11], [3, 12], [4, 13]; freq_max_2, so 4 of them
+- SUMMA
+-
+- prepare
+- single_loop (1 -> n)
+- dp[i] = dp[i/10] + i%10; (dp[i]\_sum = dp[ before_num ] + last_num)
+- h[dp[i]] = (h[dp[i]] || 0) + 1; (hash_freq)
+-
+- then_do
+- single_loop (hash_freq)
+- continue_add_up, else_reset
+- https://leetcode.com/problems/count-largest-group
 
 <br/>
 <br/>
@@ -3076,7 +3087,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# when_hash: ele spreads out + has own position
+# when_hash: hash_freq; hash_each_ele;
 
 # when_knowledge: can simplify a problem
 
