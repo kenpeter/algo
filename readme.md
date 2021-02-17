@@ -2489,7 +2489,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## dp[i] = (dp[i_prev] or choose_correct_state) + sth
+## dp[i] = (dp[i_prev] or reset) + sth
 
 ##### dp[i] = dp[ i/10 ] + i % 10; hash_freq; continue_add_up, else_reset
 
