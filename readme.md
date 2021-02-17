@@ -2515,6 +2515,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - prepare
 - single_loop (1 -> n)
+-
+- i == i_curr_num
+- dp[i] == curr_sum at i
+- i-1 == prev_num
+- dp[i-1] == prev_sum
+- i/10 == before_num
+- dp[i/10] == before_sum
+- i%10 == last_num == sth
+-
 - dp[i] = dp[i/10] + i%10; (dp[i]\_sum = dp[ before_num ] + last_num)
 - h[dp[i]] = (h[dp[i]] || 0) + 1; (hash_freq)
 -
