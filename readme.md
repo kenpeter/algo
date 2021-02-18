@@ -2476,22 +2476,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## ??
+## dp[i] = (dp[i_prev] or reset) + curr_ele
 
-##### aaabc -> ( aaa(3_char), aa(2_char), a(1_char); b(1_char); c(1_char) ) -> 3+2+1+1+1=8
-
-- EG
-- SUMMA
-- loop chars
-- aaabc -> dp: [1(init), 1, 1, 1(init), 1(init)]; s[i] == s[i-1], dp[i] = dp[i-1] + 1; each_col, dp add up
-- https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms
-
-<br/>
-<br/>
-
-## dp[i] = (dp[i_prev] or reset) + sth
-
-##### dp_curr_sum[i] = dp_prev_sum[ (i/10)_before_digits ] + (i%10)\_last_digit; hash_freq; continue_add_up, else_reset
+##### dp[i]\_curr_sum = dp_prev_sum[ (i/10)_before_digits ] + (i%10)\_last_digit; hash_freq; continue_add_up, else_reset
 
 - EG
 - n = 13, [1, 10]\_1, [2, 11]\_2, [3, 12]\_3, [4, 13]\_4, [5]\_5, [6]\_6 ...
@@ -2502,6 +2489,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - single_loop (1 -> n)
 -
 - DP_EXPLAIN
+- dp[a.len] == input_arr.len
+- dp[a.len].fill(0)
+-
 - i == i_curr_num
 - dp[i] == curr_sum at i
 - i-1 == prev_num
@@ -2510,7 +2500,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i/10] == before_sum
 - i%10 == last_num == sth
 -
-- dp_curr_sum[i] = dp_prev_sum[ (i/10)_before_digits ] + (i%10)\_last_digit
+- dp[i]\_curr_sum = dp_prev_sum[ (i/10)_before_digits ] + (i%10)\_last_digit
 - h[dp[i]] = (h[dp[i]] || 0) + 1; (hash_freq)
 -
 - then_do
@@ -2518,13 +2508,36 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - continue_add_up, else_reset
 - https://leetcode.com/problems/count-largest-group
 
-##### [-2,1,-3,4,-1,2,1,-5,4]; subarray_max_sum; dp_curr_sum[i] = (dp[i-1]\_prev_sum > 0 ? dp[i-1] : 0_reset) + ns[i-1]\_curr_num
+##### aaabc -> aaa_3_char, aa_2_char, a_1_char, b_1_char, c_1_char -> 3+2+1+1+1=8; dp[i]\_curr_freq = dp[i-1]\_prev_freq + dp[i]\_curr_freq
 
 - EG
 - SUMMA
-- single_loop(i=1; i<=ns.len...)
+- single_loop (i=1_look_back; i<len...)
 -
 - DP_EXPLAIN
+- dp[a.len]== input_arr.len
+- dp[a.len].fill(1) == 1_char_freq
+-
+- i == curr_ind
+- dp[i] == curr_freq
+- i-1 == prev_ind
+- dp[i-1] == prev_freq
+-
+- single_loop (i=1_look_back; i<len...)
+- dp[i]\_curr_freq = dp[i-1]\_prev_freq + dp[i]\_curr_freq
+-
+- https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms
+
+##### [-2,1,-3,4,-1,2,1,-5,4]; subarray_max_sum; dp[i]\_curr_sum = (dp[i-1]\_prev_sum > 0 ? dp[i-1] : 0_reset) + ns[i-1]\_curr_num
+
+- EG
+- SUMMA
+- single_loop(i=1_look_back; i<=ns.len...)
+-
+- DP_EXPLAIN
+- dp[a.len+1] == input_arr.len + 1
+- dp[a.len+1].fill(0)
+-
 - i == curr_ind
 - dp[i] == curr_ind_sum
 - i-1 == prev_ind
@@ -2532,7 +2545,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - ns[i-1] == curr_num == sth
 - dp[i-1]>0 ? dp[i-1] : 0 == reset
 -
-- dp_curr_sum[i] = (dp[i-1]\_prev_sum > 0 ? dp[i-1] : 0_reset) + ns[i-1]\_curr_num
+- dp[i]\_curr_sum = (dp[i-1]\_prev_sum > 0 ? dp[i-1] : 0_reset) + ns[i-1]\_curr_num
 - dp.splice(0, 1) (rm 0 ind)
 - re ma(...dp);
 - https://leetcode.com/problems/maximum-subarray
