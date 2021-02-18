@@ -2454,29 +2454,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## digit 180 degree rotate
+## dp[i] = dp[i_prev] + sth
 
-##### 14 -> 1(1)4(x) -> 0 (1 bad, 0); 20 -> 2(1)0(0) -> 1 (some rotate, 1); 22 -> 2(1)2(1) -> 1 (every rotate, 1)
-
-- EG
-- 0 1 2 3 4 5 6 7 8 9 (input_num)
-- 0 1 5 x x 2 9 x 8 6 (digit rotate 180 degree)
-- 0 0 1 0 0 1 1 0 0 1 (can rotate give 1)
--
-- 14 -> 1(1)4(x) -> 0 (1 bad, 0)
-- 20 -> 2(1)0(0) -> 1 (some rotate, 1)
-- 22 -> 2(1)2(1) -> 1 (every rotate, 1)
-- SUMMA
-- 3, 4, 7 need to out early
-- 2, 5, 6, 9 sure give 1; combo with 0, 1, 8 give 1
-- loop input_num
-- dp[i] = dp[i-1] + mycount_above(input_num)
-- https://leetcode.com/problems/rotated-digits
-
-<br/>
-<br/>
-
-## dp[i] = (dp[i_prev] or reset) + curr_ele
+- dp[i] = dp[i_prev] + curr_ele
+- dp[i] = dp[i_prev] + func(curr_ele)
+- dp[i] = reset + curr_ele
 
 ##### dp[i]\_curr_sum = dp_prev_sum[ (i/10)_before_digits ] + (i%10)\_last_digit; hash_freq; continue_add_up, else_reset
 
@@ -2489,7 +2471,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - single_loop (1 -> n)
 -
 - DP_EXPLAIN
-- dp[a.len] == input_arr.len
+- dp_slot == arr.len
 - dp[a.len].fill(0)
 -
 - i == i_curr_num
@@ -2515,7 +2497,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - single_loop (i=1_look_back; i<len...)
 -
 - DP_EXPLAIN
-- dp[a.len]== input_arr.len
+- dp_slot == arr.len
 - dp[a.len].fill(1) == 1_char_freq
 -
 - i == curr_ind
@@ -2535,12 +2517,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - single_loop(i=1_look_back; i<=ns.len...)
 -
 - DP_EXPLAIN
-- dp[a.len+1] == input_arr.len + 1
+- dp_slot == arr.len + 1
 - dp[a.len+1].fill(0)
 -
 - i == curr_ind
 - dp[i] == curr_ind_sum
-- i-1 == prev_ind
+- i-1 == prev_dp_ind
 - dp[i-1] == prev_sum
 - ns[i-1] == curr_num == sth
 - dp[i-1]>0 ? dp[i-1] : 0 == reset
@@ -2549,6 +2531,38 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp.splice(0, 1) (rm 0 ind)
 - re ma(...dp);
 - https://leetcode.com/problems/maximum-subarray
+
+##### N = 12; 1 -> 0(0), 2 -> 5(1), 3 -> x(0)... 10 -> 10(0), 11 -> 11(0), 12 -> 15; contain [3, 4, 7], then\*all_fail; contain [2, 5, 6, 9], then_give_1
+
+- EG
+- mycount
+- 0 1 2 3 4 5 6 7 8 9 10 11 12 13 (each_num)
+- 0 1 5 x x 2 9 x 8 6 10 11 12 1x (e.g. 2 -> 5, 180 degrees)
+- 0 0 1 0 0 1 1 0 0 1 00 00 01 00 (contain [3, 4, 7], then_all_fail; contain [2, 5, 6, 9], give_1)
+-
+- double_digits
+- 14 -> 1(1)4(x) -> 0 (contain [3, 4, 7], then_all_fail)
+- 20 -> 2(1)0(0) -> 1 (contain [2, 5, 6, 9], give_1)
+- 22 -> 2(1)2(1) -> 1 (......)
+- SUMMA
+-
+- contain [3, 4, 7], then_all_fail
+- contain [2, 5, 6, 9], then_give_1
+-
+- single_loop(i=1; i<=N...)
+-
+- DP_EXPLAIN
+- dp_slot == N+1
+- dp[N+1].fill(0)
+
+- i == curr_input_num
+- dp[i] == curr_rotate_addup
+- i-1 == prev_input_num
+- dp[i-1] == prev_rotate_addup
+-
+- dp[i] = dp[i-1] + mycount(i)
+
+- https://leetcode.com/problems/rotated-digits
 
 <br/>
 <br/>
