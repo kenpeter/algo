@@ -2484,14 +2484,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - loop chars
 - aaabc -> dp: [1(init), 1, 1, 1(init), 1(init)]; s[i] == s[i-1], dp[i] = dp[i-1] + 1; each_col, dp add up
-- https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms/
+- https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms
 
 <br/>
 <br/>
 
 ## dp[i] = (dp[i_prev] or reset) + sth
 
-##### dp[i] = dp[ i/10 ] + i % 10; hash_freq; continue_add_up, else_reset
+##### dp_curr_sum[i] = dp_prev_sum[ (i/10)_before_digits ] + (i%10)\_last_digit; hash_freq; continue_add_up, else_reset
 
 - EG
 - n = 13, [1, 10]\_1, [2, 11]\_2, [3, 12]\_3, [4, 13]\_4, [5]\_5, [6]\_6 ...
@@ -2510,7 +2510,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i/10] == before_sum
 - i%10 == last_num == sth
 -
-- sum = before_num_sum + last_digi (dp[i] = dp[i/10] + i%10)
+- dp_curr_sum[i] = dp_prev_sum[ (i/10)_before_digits ] + (i%10)\_last_digit
 - h[dp[i]] = (h[dp[i]] || 0) + 1; (hash_freq)
 -
 - then_do
@@ -2518,7 +2518,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - continue_add_up, else_reset
 - https://leetcode.com/problems/count-largest-group
 
-##### [-2,1,-3,4,-1,2,1,-5,4]; subarray_max_sum; dp[i] = (dp[i-1]>0 ? dp[i-1] : 0) + ns[i-1]
+##### [-2,1,-3,4,-1,2,1,-5,4]; subarray_max_sum; dp_curr_sum[i] = (dp[i-1]\_prev_sum > 0 ? dp[i-1] : 0_reset) + ns[i-1]\_curr_num
 
 - EG
 - SUMMA
@@ -2530,9 +2530,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - i-1 == prev_ind
 - dp[i-1] == prev_sum
 - ns[i-1] == curr_num == sth
-- dp[i-1]>0 ? dp[i-1] : 0 == choose_correct_state
+- dp[i-1]>0 ? dp[i-1] : 0 == reset
 -
-- dp[i] = (dp[i-1]>0 ? dp[i-1] : 0) + ns[i-1]
+- dp_curr_sum[i] = (dp[i-1]\_prev_sum > 0 ? dp[i-1] : 0_reset) + ns[i-1]\_curr_num
 - dp.splice(0, 1) (rm 0 ind)
 - re ma(...dp);
 - https://leetcode.com/problems/maximum-subarray

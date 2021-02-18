@@ -25,13 +25,16 @@
 // out = countLetters("aaaaaaaaaa");
 // console.log("+++ out", out);
 
+// [aaabc]; a1, a2, a3, b1, c1; 1+2+3+1+1=8
 // dp
 const countLetters = (s) => {
-  // fill 1 for init
+  // each letter is 1 freq
   const dp = Array(s.length).fill(1);
+  // i=1, i<s.len; look_back
   for (let i = 1; i < s.length; ++i) {
     if (s[i] === s[i - 1]) {
-      dp[i] = dp[i - 1] + 1;
+      // curr_state = prev_state
+      dp[i] = dp[i - 1] + dp[i];
     }
   }
 
