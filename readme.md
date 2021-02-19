@@ -286,9 +286,9 @@
 <br/>
 <br/>
 
-## ask_for_n_max; m0, m1, m2; flow_backup + replace
+## ask_for_n_max; m0, m1, m2; max_flow_back(ma0+, ma1+, ma2+) / min_flow_back(mi0-, mi1-, mi2-); avoid_sort
 
-##### ask_for_3_max; m0, m1, m2; [1, 1, 1, 2, 2, 3, 3, 3](distinct #); flow_backup + replace; 3rd largest;
+##### ask_for_3_max; m0, m1, m2; [1, 1, 1, 2, 2, 3, 3, 3](distinct #); max_flow_back(ma0, ma1, ma2); avoid_sort; 3rd largest;
 
 - EG
 - SUMMA
@@ -298,12 +298,12 @@
 -
 - min to big
 - if n > m0 (largest)
-- m2 = m1 (flow_backup)
-- m1 = m0 (flow_backup)
+- m2 = m1 (flow_back)
+- m1 = m0 (flow_back)
 - m0 = n (replace)
 -
 - if n > m1
-- m1 = m2 (flow_backup)
+- m1 = m2 (flow_back)
 - m0 = n (replace)
 -
 - if n > m2
@@ -312,21 +312,21 @@
 - if m2 not set, re m1 (by question)
 - https://leetcode.com/problems/third-maximum-number
 
-##### ask_for_3_max; m0, m1, m2; [-4, -3, -2, 1]; flow_backup + replace; m0(+) \* m1(+) \* m2(+) VS m0 \* (-) \* (-)
+##### ask_for_3_max; m0, m1, m2; [-4, -3, -2, 1]; max_flow_back(ma0+ \* ma1+ \* ma2+) / min_flow_back(ma0 \* mi0- \* mi1-); avoid_sort
 
 - EG
 - SUMMA
 -
-- m0(largest), m1, m2;
-- mi0(smallest) = min, mi2 = min;
+- m0(largest) = -, m1 = - , m2 = -;
+- mi0(smallest) = +, mi2 = +;
 -
 - if n > m0
-- m2 = m1 (flow_backup)
-- m1 = m0 (flow_backup)
+- m2 = m1 (flow_back)
+- m1 = m0 (flow_back)
 - m0 = n (replace)
 -
 - if n > m1
-- m2 = m1 (flow_backup)
+- m2 = m1 (flow_back)
 - m1 = n (replace)
 -
 - if n > m2
@@ -334,7 +334,7 @@
 -
 - max -> small
 - if n < mi0
-- mi1 = mi0 (flow_backup)
+- mi1 = mi0 (flow_back)
 - mi0 = n (replace)
 -
 - if n < mi1
@@ -343,30 +343,30 @@
 - return m0 \* m1 \* m2 VS m0 \* (-) \_ (-)
 - https://leetcode.com/problems/maximum-product-of-three-numbers
 
-##### largest # >=1 others ===> largest >= 2\*2nd_largest; ask_for_2_max; m0, m1; [4, 3, 2, 1], m0 = 4, m1 = 3; flow_backup + replace
+##### largest # >=1 others ===> largest >= 2\*2nd_largest; ask_for_2_max; m0, m1; [4, 3, 2, 1], m0 = 4, m1 = 3; flow_back
 
 - EG
 - SUMMA
-- flow_backup + replace
+- max_flow_backup
 - if m0 !== MIN, m1 !== MIN, m0 >= 2\*m1, re true
 - else re false
 - https://leetcode.com/problems/largest-number-at-least-twice-of-others
 
-##### ask_for_2_max; m0, m1; [4, 3, 2, 1]; m0 = 4, m1 = 3; flow_backup + replace
+##### ask_for_2_max; m0, m1; [4, 3, 2, 1]; m0 = 4, m1 = 3; max_flow_back(ma0+, ma1+, ma2+); avoid_sort
 
 - EG
 - SUMMA
-- flow_backup + replace
+- max_flow_back
 - https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array
 
-##### top 5 subject scores for each student; [[1, 91], [1, 92], [2, 81], [1, 60]] (mixed up);
+##### top 5 subject scores for each student; [[1, 91], [1, 92], [2, 81], [1, 60]] (mixed up); max_flow_back(ma0+, ma1+, ma2+, ma3+, ma4+)
 
 - EG
 - SUMMA
 - loop arr
 - hash[student_1] = [m0, m1, m2, m3, m4]
 - hash[student_2] = [m0, m1, m2, m3, m4]
-- [m0, m1, m2, m3, m4] (flow_backup + replace)
+- [m0, m1, m2, m3, m4] (max_flow_back)
 - https://www.cnblogs.com/cnoodle/p/13722300.html
 - https://leetcode.com/problems/high-five
 
@@ -578,16 +578,19 @@
 <br/>
 <br/>
 
-## i, then i+1 rest max
+## curr_ele = max(..rest_arr)
 
-##### i, then i+1 rest max
+##### curr_ele = max(..rest_arr)
 
 - EG
 - SUMMA
-- [4(i), 3, 2, 1] -> [3(i), 3, 2, 1] ===> [3, 3(i), 2, 1] -> [3, 2(i), 2, 1] ===> [3, 2, 2(i), 1] -> [3, 2, 1(i), 1] ===> [3, 2, 2, -1(i)]
+- [4(i), 3, 2, 1] -> [3(i), 3, 2, 1]; curr_ele == 4, replace_with_3
+- [3, 3(i), 2, 1] -> [3, 2(i), 2, 1]; curr_ele == 3, replace_with_2
+- ..
+- [3, 2, 2, 1(i)] -> [3, 2, 2, -1(i)]; last_ele = -1
 -
-- loop eles
-- a[i] = i+1 rest max
+- single_loop(i=0; i<len..)
+- a[i] = ma(...a.slice(i+1))
 - end_loop a[a.len-1] = -1
 -
 - https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side
@@ -1929,41 +1932,41 @@
 <br/>
 <br/>
 
-## loop_each_ele, but_mod_each_ele
+## loop_each_ele, mod_it_to_use
 
-##### ele + 1; loop_each_ele, but_mod_each_ele
+##### ele + 1; loop_each_ele, mod_it_to_use
 
 - EG
 - SUMMA
 - loop eles (orig_arr)
-- if orig_arr.includes(ele + 1); ++count; (loop_each_ele, but_mod_each_ele)
+- if orig_arr.includes(ele + 1); ++count; (loop_each_ele, mod_it_to_use)
 - https://leetcode.com/problems/counting-elements
 - https://codenuclear.com/leetcode-counting-elements-30days-challenge
 
-##### 2\*ele; loop_each_ele, but_mod_each_ele
+##### 2\*ele; loop_each_ele, mod_it_to_use
 
 - EG
 - SUMMA
 - loop eles (orig_arr)
 - if 1 zero, skip_this_zero; if >= 2 zeros, no_skip
-- if orig_arr.includes(2\*ele); re true; (loop_each_ele, but_mod_each_ele)
+- if orig_arr.includes(2\*ele); re true; (loop_each_ele, mod_it_to_use)
 - https://leetcode.com/problems/check-if-n-and-its-double-exist
 
-##### 2\*ele, ele/2, set.con?; loop_each_ele, but_mod_each_ele
+##### 2\*ele, ele/2, set.con?; loop_each_ele, mod_it_to_use
 
 - EG
 - SUMMA
 - loop eles
-- if set.con(2\*ele) || set.con(ele/2), re true; (loop_each_ele, but_mod_each_ele)
+- if set.con(2\*ele) || set.con(ele/2), re true; (loop_each_ele, mod_it_to_use)
 - else set.add(ele)
 - https://leetcode.com/problems/check-if-n-and-its-double-exist
 
-##### tar - ele, hash.con?; loop_each_ele, but_mod_each_ele
+##### tar - ele, hash.con?; loop_each_ele, mod_it_to_use
 
 - EG
 - SUMMA
 - loop eles;
-- if hash[tar - ele] !== undef, re ind (loop_each_ele, but_mod_each_ele)
+- if hash[tar - ele] !== undef, re ind (loop_each_ele, mod_it_to_use)
 - else hash[ele] = ind
 - https://leetcode.com/problems/two-sum
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
