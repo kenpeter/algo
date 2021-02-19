@@ -343,12 +343,15 @@
 - return m0 \* m1 \* m2 VS m0 \* (-) \_ (-)
 - https://leetcode.com/problems/maximum-product-of-three-numbers
 
-##### largest # >=1 others ===> largest >= 2\*2nd_largest; ask_for_2_max; m0, m1; [4, 3, 2, 1], m0 = 4, m1 = 3; flow_down
+##### ma0 >= 2 \* ma1? ; [4, 3, 2, 1], ma0 = 4, ma1 = 3; max_flow_down(ma0+, ma1+); avoid_sort
 
 - EG
 - SUMMA
+-
 - single_loop(i=0; i<len..)
-- max_flow_down
+- max_flow_down(ma0+, ma1+); avoid_sort
+- end_loop; if ma0 >= 2\*ma1, re posi;
+-
 - https://leetcode.com/problems/largest-number-at-least-twice-of-others
 
 ##### ask_for_2_max; m0, m1; [4, 3, 2, 1]; m0 = 4, m1 = 3; max_flow_down(ma0+, ma1+, ma2+); avoid_sort
