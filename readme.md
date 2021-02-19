@@ -286,9 +286,9 @@
 <br/>
 <br/>
 
-## ask_for_n_max; m0, m1, m2; max_flow_back(ma0+, ma1+, ma2+) / min_flow_back(mi0-, mi1-, mi2-); avoid_sort
+## ask_for_n_max; m0, m1, m2; max_flow_down(ma0+, ma1+, ma2+) / min_flow_down(mi0-, mi1-, mi2-); avoid_sort
 
-##### ask_for_3_max; m0, m1, m2; [1, 1, 1, 2, 2, 3, 3, 3](distinct #); max_flow_back(ma0, ma1, ma2); avoid_sort; 3rd largest;
+##### ask_for_3_max; m0, m1, m2; [1, 1, 1, 2, 2, 3, 3, 3](distinct #); max_flow_down(ma0, ma1, ma2); avoid_sort; 3rd largest;
 
 - EG
 - SUMMA
@@ -298,12 +298,12 @@
 -
 - min to big
 - if n > m0 (largest)
-- m2 = m1 (flow_back)
-- m1 = m0 (flow_back)
+- m2 = m1 (flow_down)
+- m1 = m0 (flow_down)
 - m0 = n (replace)
 -
 - if n > m1
-- m1 = m2 (flow_back)
+- m1 = m2 (flow_down)
 - m0 = n (replace)
 -
 - if n > m2
@@ -312,7 +312,7 @@
 - if m2 not set, re m1 (by question)
 - https://leetcode.com/problems/third-maximum-number
 
-##### ask_for_3_max; m0, m1, m2; [-4, -3, -2, 1]; max_flow_back(ma0+ \* ma1+ \* ma2+) / min_flow_back(ma0 \* mi0- \* mi1-); avoid_sort
+##### ask_for_3_max; m0, m1, m2; [-4, -3, -2, 1]; max_flow_down(ma0+ \* ma1+ \* ma2+) / min_flow_down(ma0 \* mi0- \* mi1-); avoid_sort
 
 - EG
 - SUMMA
@@ -321,12 +321,12 @@
 - mi0(smallest) = +, mi2 = +;
 -
 - if n > m0
-- m2 = m1 (flow_back)
-- m1 = m0 (flow_back)
+- m2 = m1 (flow_down)
+- m1 = m0 (flow_down)
 - m0 = n (replace)
 -
 - if n > m1
-- m2 = m1 (flow_back)
+- m2 = m1 (flow_down)
 - m1 = n (replace)
 -
 - if n > m2
@@ -334,7 +334,7 @@
 -
 - max -> small
 - if n < mi0
-- mi1 = mi0 (flow_back)
+- mi1 = mi0 (flow_down)
 - mi0 = n (replace)
 -
 - if n < mi1
@@ -343,30 +343,29 @@
 - return m0 \* m1 \* m2 VS m0 \* (-) \_ (-)
 - https://leetcode.com/problems/maximum-product-of-three-numbers
 
-##### largest # >=1 others ===> largest >= 2\*2nd_largest; ask_for_2_max; m0, m1; [4, 3, 2, 1], m0 = 4, m1 = 3; flow_back
+##### largest # >=1 others ===> largest >= 2\*2nd_largest; ask_for_2_max; m0, m1; [4, 3, 2, 1], m0 = 4, m1 = 3; flow_down
 
 - EG
 - SUMMA
-- max_flow_backup
-- if m0 !== MIN, m1 !== MIN, m0 >= 2\*m1, re true
-- else re false
+- single_loop(i=0; i<len..)
+- max_flow_down
 - https://leetcode.com/problems/largest-number-at-least-twice-of-others
 
-##### ask_for_2_max; m0, m1; [4, 3, 2, 1]; m0 = 4, m1 = 3; max_flow_back(ma0+, ma1+, ma2+); avoid_sort
+##### ask_for_2_max; m0, m1; [4, 3, 2, 1]; m0 = 4, m1 = 3; max_flow_down(ma0+, ma1+, ma2+); avoid_sort
 
 - EG
 - SUMMA
-- max_flow_back
+- max_flow_down
 - https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array
 
-##### top 5 subject scores for each student; [[1, 91], [1, 92], [2, 81], [1, 60]] (mixed up); max_flow_back(ma0+, ma1+, ma2+, ma3+, ma4+)
+##### top 5 subject scores for each student; [[1, 91], [1, 92], [2, 81], [1, 60]] (mixed up); max_flow_down(ma0+, ma1+, ma2+, ma3+, ma4+)
 
 - EG
 - SUMMA
 - loop arr
 - hash[student_1] = [m0, m1, m2, m3, m4]
 - hash[student_2] = [m0, m1, m2, m3, m4]
-- [m0, m1, m2, m3, m4] (max_flow_back)
+- [m0, m1, m2, m3, m4] (max_flow_down)
 - https://www.cnblogs.com/cnoodle/p/13722300.html
 - https://leetcode.com/problems/high-five
 
