@@ -1195,26 +1195,54 @@
 -
 - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
 
-##### 2pts(sort, cross_over); a[i] + a[j] < k; corss_over_only_1_direction; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
+##### 2pts(sort, cross_over); a[i] + a[j] < k; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
 
 - EG
 - SUMMA
 - sort
 - loop(i < j) (sort, cross_over)
-- if a[i] + a[j] < k, ++i_same_spd_pt_same_small (corss_over_only_1_direction)
-- if a[i] + a[j] >= k, --j_same_spd_pt_same_big (corss_over_only_1_direction)
+- if a[i] + a[j] < k, ++i_same_spd_pt_same_small
+- if a[i] + a[j] >= k, --j_same_spd_pt_same_big
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
-##### 2pts(sort, cross_over); a[i] + a[j] == k; corss_over_only_1_direction; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
+##### 2pts(sort, cross_over); a[i] + a[j] == k; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
 
 - EG
 - SUMMA
 - sort
 - loop (i < j>) (sort, corss_over)
-- if a[i] + a[j] < k, ++i_same_spd_pt_same_small (corss_over_only_1_direction)
-- if a[i] + a[j] > k, --j_same_spd_pt_same_big (corss_over_only_1_direction)
+- if a[i] + a[j] < k, ++i_same_spd_pt_same_small
+- if a[i] + a[j] > k, --j_same_spd_pt_same_big
 - if a[i] + a[j] == k, return
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
+
+##### 3sum = 1_ele + 2sum; 2pts(sort, corss_over); a[i] + a[k] == 0; i_same_spd_pt_same_small; j_same_spd_pt_same_big; look_back_if_before_operation; look_forward_if_after_operation
+
+- EG
+- [1, 1, -1, -1, 0] -> [-1(i), -1(second), 0, 1, 1(third)]
+- SUMMA
+-
+- sort (rm_dup)
+-
+- outloop (i=0, i<len, ...)
+- skip_loop_i, ns[i] == ns[i-1], ++i; (look_back_if_before_operation) \*
+- sum = tar - ns[i];
+- second = i+1;
+- third = len-1;
+-
+- inloop (sec < thi)
+- if ns[sec] + ns[thi] < sum, sec++;
+- if ns[sec] + ns[thi] > sum, thi--;
+-
+- if ns[sec] + ns[thi] == sum
+- tri = [ns[i], ns[sec], ns[thi]]
+- res.push(tri)
+- skip_loop_sec, tri[1] == ns[sec], sec++;
+- skip_loop_thi, tri[2] == ns[thi], thi--;
+-
+- end_inloop;
+- skip_loop_i, ns[i] == ns[i+1], ++i; (look_forward_if_after_operation) \*
+- https://leetcode.com/problems/3sum
 
 ##### 2pts(i_start, j_end === indOf, lastIndOf); .....
 

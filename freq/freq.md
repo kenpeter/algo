@@ -4,7 +4,7 @@
 
 #### array
 
-##### loop_each_ele, mod_it_to_use
+##### 2sum; loop_each_ele, mod_it_to_use
 
 - https://leetcode.com/problems/two-sum
 
@@ -16,6 +16,10 @@
 
 - https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array
 
+##### 3sum
+
+- https://leetcode.com/problems/3sum
+
 <br/>
 <br/>
 <br/>
@@ -24,3 +28,4 @@
 ### freq
 
 - https://github.com/afatcoder/LeetcodeTop
+- https://leetcode-cn.com/problemset/lcof/
