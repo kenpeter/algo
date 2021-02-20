@@ -1216,7 +1216,7 @@
 - if a[i] + a[j] == k, return
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### 3sum = 1_ele + 2sum; 2pts(sort, corss_over); a[i] + a[k] == 0; i_same_spd_pt_same_small; j_same_spd_pt_same_big; look_back_if_before_operation; look_forward_if_after_operation
+##### 3sum_sort = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(second_same_spd_pt_same_small, third_same_spd_pt_same_big; skip_loop_sec; skip_loop_thi)
 
 - EG
 - [1, 1, -1, -1, 0] -> [-1(i), -1(second), 0, 1, 1(third)]
@@ -1242,6 +1242,20 @@
 -
 - end_inloop;
 - skip_loop_i, ns[i] == ns[i+1], ++i; (look_forward_if_after_operation) \*
+- https://leetcode.com/problems/3sum
+
+##### 3sum = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(2sum_hash_mod_to_use, i=start, i<=end; skip_loop, look_forward_if_after_operation);
+
+- EG
+- SUMMA
+-
+- outloop (i=0; i<len-2..)
+- skip_loop, look_back_if_before_operation
+-
+- 2sum(res, n_this_num, ns_orig, start=i+1, end=len-1, 0-tar); (i=start, i<=end)
+- inloop_like (i=start, i<=end)
+- 2sum_hash_mod_to_use + (skip_loop, look_forward_if_after_operation)
+-
 - https://leetcode.com/problems/3sum
 
 ##### 2pts(i_start, j_end === indOf, lastIndOf); .....
