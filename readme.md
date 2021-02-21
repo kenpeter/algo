@@ -1195,17 +1195,7 @@
 -
 - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
 
-##### 2pts(sort, cross_over); a[i] + a[j] < k; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
-
-- EG
-- SUMMA
-- sort
-- loop(i < j) (sort, cross_over)
-- if a[i] + a[j] < k, ++i_same_spd_pt_same_small
-- if a[i] + a[j] >= k, --j_same_spd_pt_same_big
-- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
-
-##### 2pts(sort, cross_over); a[i] + a[j] == k; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
+##### 2pts(sort; cross_over; <k, s++; >k, e--); a[i] + a[j] == k; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
 
 - EG
 - SUMMA
@@ -1216,7 +1206,7 @@
 - if a[i] + a[j] == k, return
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### 3sum_sort = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(second_same_spd_pt_same_small, third_same_spd_pt_same_big; skip_loop_sec; skip_loop_thi)
+##### 2pts(sort; cross_over; <k, s++; >k, e--); 3sum_sort = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(second_same_spd_pt_same_small, third_same_spd_pt_same_big; skip_loop_sec; skip_loop_thi)
 
 - EG
 - [1, 1, -1, -1, 0] -> [-1(i), -1(second), 0, 1, 1(third)]
@@ -1244,7 +1234,7 @@
 - skip_loop_i, ns[i] == ns[i+1], ++i; (look_forward_if_after_operation) \*
 - https://leetcode.com/problems/3sum
 
-##### 3sum = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(2sum_hash_mod_to_use, i=start, i<=end; skip_loop, look_forward_if_after_operation);
+##### 2pts(sort; cross_over; 2sum); 3sum = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(hash_mod_to_use, i=start, i<=end; skip_loop, look_forward_if_after_operation);
 
 - EG
 - SUMMA
@@ -1257,6 +1247,24 @@
 - 2sum_hash_mod_to_use + (skip_loop, look_forward_if_after_operation)
 -
 - https://leetcode.com/problems/3sum
+
+##### 2pts(sort; cross_over; <k, s++; >=k, e--); 2sum less than k; i_same_spd_pt_start, j_same_spd_pt_end
+
+- EG
+- SUMMA
+- sort
+- start = 0; (i_same_spd_pt_start)
+- end = len-1; (j_same_spd_pt_end)
+-
+- ma = -1
+- single_loop (start < end)
+- if a[i] + a[j] < k
+- ma = ma(ma, a[i] + a[j]); start++; (sort, < k, start++)
+- else >=k, end--; (sort, >= k, end--)
+- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
+
+<br/>
+<br/>
 
 ##### 2pts(i_start, j_end === indOf, lastIndOf); .....
 
@@ -2110,19 +2118,6 @@
 - outloop: pattern
 - inloop: move pattern
 - https://leetcode.com/problems/repeated-substring-pattern
-
-##### two sum less than k; i=0, i+1 < a.len (save_for_j); j=i+1 (start_behind), j < a.len; pick ele stable, rest ele move
-
-- EG
-- SUMMA
-- outloop: i=0, i+1 < a.len (save_for_j)
-- inloop: j=i+1 (start_behind), j < a.len
-- sort
-- a[i] + a[j] < k && a[i] + a[j] > max, max = a[i] + a[j]
-- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
-
-<br/>
-<br/>
 
 ## back_to_zero, TWO / +1|-1 / MULTI_CANCEL / MULTI_ONE_GO
 
