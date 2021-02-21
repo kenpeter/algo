@@ -1215,10 +1215,10 @@
 - end = len-1; (j_same_spd_pt_end)
 -
 - ma = -1
-- single_loop (start < end)
+- single_loop (s < e)
 - if a[i] + a[j] < k
-- ma = ma(ma, a[i] + a[j]); start++; (sort, < k, start++)
-- else >=k, end--; (sort, >= k, end--)
+- ma = ma(ma, a[i] + a[j]); s++; (sort, < k, s++)
+- else >=k, e--; (sort, >= k, e--)
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
 ##### 2pts(sort; cross_over; <k, s++; >k, e--); 3sum_sort = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(second_same_spd_pt_same_small, third_same_spd_pt_same_big; skip_loop_sec; skip_loop_thi)
@@ -1232,18 +1232,18 @@
 - outloop (i=0, i<len, ...)
 - skip_loop_i, ns[i] == ns[i-1], ++i; (look_back_if_before_operation) \*
 - sum = tar - ns[i];
-- second = i+1;
-- third = len-1;
+- start = i+1;
+- end = len-1;
 -
-- inloop (sec < thi)
-- if ns[sec] + ns[thi] < sum, sec++;
-- if ns[sec] + ns[thi] > sum, thi--;
+- inloop (s < e)
+- if ns[s] + ns[e] < sum, s++;
+- if ns[s] + ns[e] > sum, e--;
 -
-- if ns[sec] + ns[thi] == sum
-- tri = [ns[i], ns[sec], ns[thi]]
+- if ns[s] + ns[e] == sum
+- tri = [ns[i], ns[s], ns[e]]
 - res.push(tri)
-- skip_loop_sec, tri[1] == ns[sec], sec++;
-- skip_loop_thi, tri[2] == ns[thi], thi--;
+- skip_loop_sec, tri[1] == ns[s], s++;
+- skip_loop_thi, tri[2] == ns[e], e--;
 -
 - end_inloop;
 - skip_loop_i, ns[i] == ns[i+1], ++i; (look_forward_if_after_operation) \*
@@ -1259,16 +1259,30 @@
 - outloop (i=0; i<len-2..)
 - skip_loop, look_back_if_before_operation
 -
-- 2sum(res, n_this_num, ns_orig, start=i+1, end=len-1, 0-tar); (i=start, i<=end)
-- inloop_like (i=start, i<=end)
+- 2sum(res, n[i]\_curr, ns, start=i+1, end=len-1, 0-tar);
+- inloop_2sum (i=s, i<=e)
 - 2sum_hash_mod_to_use + (skip_loop, look_forward_if_after_operation)
 -
 - https://leetcode.com/problems/3sum
 
-##### 3sum less than k;
+##### 2pts(sort; cross_over; 2sum); how many 3sum less than k; sort, >=k, e--; sort, <k, s++; the_real_3sum; how_many_less_k = e - s
 
 - EG
 - SUMMA
+-
+- outloop (i=0; i<len-2..)
+- ns[i];
+- start = i+1;
+- end = len-1;
+-
+- inloop (s < e)
+- if ns[i] + s + e >= k; (the_real_3sum)
+- e--; (sort, >=k, end--)
+-
+- else
+- s++;
+- e.g. [-2_i, 0_start, 1, 3_end]; [-2, 0, 3], [-2, 0, 1]; e - s == 2 == res
+- res = res + (e - s) (sort, <k, s++; how_many_less_k = e - s)
 -
 - https://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value
 
