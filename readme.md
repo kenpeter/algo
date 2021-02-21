@@ -1276,7 +1276,7 @@
 - end = len-1;
 -
 - inloop (s < e)
-- if ns[i] + s + e >= k; (the_real_3sum)
+- if ns[i] + ns[s] + ns[e] >= k; (the_real_3sum)
 - e--; (sort, >=k, end--)
 -
 - else
@@ -1285,6 +1285,31 @@
 - res = res + (e - s) (sort, <k, s++; how_many_less_k = e - s)
 -
 - https://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value
+
+##### 2pts(sort; 2sum_start_end); 3sum that close to tar; abs_sum_diff; 1_ele + 2sum_start_end(sort, >k, e--; sort, <k, s++; sort, ==k, action);
+
+- EG
+- SUMMA
+-
+- outloop (i=0; i<len-2..)
+- ns[i]; (1_ele)
+- start = i+1;
+- end = len-1;
+-
+- inloop (s < e)
+- if ns[i] + ns[s] + ns[e] < k (sort, <k, ++s)
+- if curr_d < g_min_d, g_sum = 3sum, g_min_d = curr_d (abs_sum_diff)
+- ++s;
+-
+- if ns[i] + ns[s] + ns[e] > k (sort, >k, --e)
+- if curr_d < g_min_d, g_sum = 3sum, g_min_d = curr_d (abs_sum_diff)
+- --e;
+-
+- if ns[i] + ns[s] + ns[e] == k (sort, ==k, action)
+- re k
+-
+- end_loop, re g_sum;
+- https://leetcode.com/problems/3sum-closest
 
 <br/>
 <br/>
