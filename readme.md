@@ -1206,6 +1206,21 @@
 - if a[i] + a[j] == k, return
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
+##### 2pts(sort; cross_over; <k, s++; >=k, e--); 2sum less than k; i_same_spd_pt_start, j_same_spd_pt_end
+
+- EG
+- SUMMA
+- sort
+- start = 0; (i_same_spd_pt_start)
+- end = len-1; (j_same_spd_pt_end)
+-
+- ma = -1
+- single_loop (start < end)
+- if a[i] + a[j] < k
+- ma = ma(ma, a[i] + a[j]); start++; (sort, < k, start++)
+- else >=k, end--; (sort, >= k, end--)
+- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
+
 ##### 2pts(sort; cross_over; <k, s++; >k, e--); 3sum_sort = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(second_same_spd_pt_same_small, third_same_spd_pt_same_big; skip_loop_sec; skip_loop_thi)
 
 - EG
@@ -1239,6 +1254,8 @@
 - EG
 - SUMMA
 -
+- sort (rm_dup)
+-
 - outloop (i=0; i<len-2..)
 - skip_loop, look_back_if_before_operation
 -
@@ -1248,20 +1265,12 @@
 -
 - https://leetcode.com/problems/3sum
 
-##### 2pts(sort; cross_over; <k, s++; >=k, e--); 2sum less than k; i_same_spd_pt_start, j_same_spd_pt_end
+##### 3sum less than k;
 
 - EG
 - SUMMA
-- sort
-- start = 0; (i_same_spd_pt_start)
-- end = len-1; (j_same_spd_pt_end)
 -
-- ma = -1
-- single_loop (start < end)
-- if a[i] + a[j] < k
-- ma = ma(ma, a[i] + a[j]); start++; (sort, < k, start++)
-- else >=k, end--; (sort, >= k, end--)
-- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
+- https://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value
 
 <br/>
 <br/>
