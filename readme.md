@@ -1143,7 +1143,7 @@
 - res.push, new Array(#).fill(val)
 - https://leetcode.com/problems/decompress-run-length-encoded-list
 
-##### 2pts(cross_over); [0, 1, 2, 3, 4, 3, 2, 1, 0]; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_up_highest(stop_same_posi); skip_loop_up_highest(stop_same_posi);
+##### 2pts(start_end); [0, 1, 2, 3, 4, 3, 2, 1, 0]; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_up_highest(stop_same_posi); skip_loop_up_highest(stop_same_posi);
 
 - EG
 - SUMMA
@@ -1156,7 +1156,7 @@
 - re i > 0 (i_use) && j < a.len-1 (j_use) && i === j (meet)
 - https://leetcode.com/problems/valid-mountain-array
 
-##### 2pts(cross_over); [3(i_odd),1,2,4(j_even)] -> [4, 1(i_odd), 2(j_even), 3] -> [4, 2, 1, 3]; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_even(stop_is_odd); skip_loop_odd(stop_is_even)
+##### 2pts(start_end); [3(i_odd),1,2,4(j_even)] -> [4, 1(i_odd), 2(j_even), 3] -> [4, 2, 1, 3]; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_even(stop_is_odd); skip_loop_odd(stop_is_even)
 
 - EG
 - SUMMA
@@ -1168,7 +1168,7 @@
 - swap(i, j)
 - https://leetcode.com/problems/sort-array-by-parity
 
-##### 2pts(cross_over); is palindrome; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_non_alph# (stop_is_alph#)
+##### 2pts(start_end); is palindrome; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_non_alph# (stop_is_alph#)
 
 - EG
 - SUMMA
@@ -1206,7 +1206,7 @@
 - if a[i] + a[j] == k, return
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### 2pts(sort; cross_over; 2sum_start_enc); 2sum less than k; i_same_spd_pt_start, j_same_spd_pt_end
+##### 2pts(sort; 2sum_start_end); 2sum less than k; i_same_spd_pt_start, j_same_spd_pt_end
 
 - EG
 - SUMMA
@@ -1221,7 +1221,7 @@
 - else >=k, e--; (sort, >= k, e--)
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
-##### 2pts(sort; cross_over; 2sum_start_end); 3sum_sort = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(sort, <k, s++; sort, >k, e--; skip_loop_sec; skip_loop_thi)
+##### 2pts(sort; 2sum_start_end); 3sum_sort = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(sort, <k, s++; sort, >k, e--; skip_loop_sec; skip_loop_thi)
 
 - EG
 - [1, 1, -1, -1, 0] -> [-1(i), -1(second), 0, 1, 1(third)]
@@ -1249,7 +1249,7 @@
 - skip_loop_i, ns[i] == ns[i+1], ++i; (look_forward_if_after_operation) \*
 - https://leetcode.com/problems/3sum
 
-##### 2pts(sort; cross_over; 2sum_hash); 3sum = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(hash_mod_to_use, i=start, i<=end; skip_loop, look_forward_if_after_operation);
+##### 2pts(sort; 2sum_hash); 3sum = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(hash_mod_to_use, i=start, i<=end; skip_loop, look_forward_if_after_operation);
 
 - EG
 - SUMMA
@@ -1265,7 +1265,7 @@
 -
 - https://leetcode.com/problems/3sum
 
-##### 2pts(sort; cross_over; 2sum_start_end); how many 3sum less than k; sort, >=k, e--; sort, <k, s++; the_real_3sum; how_many_less_k = e - s
+##### 2pts(sort; 2sum_start_end); how many 3sum less than k; sort, >=k, e--; sort, <k, s++; the_real_3sum; how_many_less_k = e - s
 
 - EG
 - SUMMA
