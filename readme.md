@@ -1162,7 +1162,7 @@
 - SUMMA
 - i_odd
 - j_even
-- loop(i<j) (cross_over)
+- loop(i<j) (start_end)
 - skip_loop_even(stop_is_odd)
 - skip_loop_odd(stop_is_even)
 - swap(i, j)
@@ -1195,7 +1195,7 @@
 -
 - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
 
-##### 2pts(sort; cross_over; 2sum_start_end); a[i] + a[j] == k; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
+##### 2pts(sort; 2sum_start_end); a[i] + a[j] == k; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
 
 - EG
 - SUMMA
@@ -1221,7 +1221,7 @@
 - else >=k, e--; (sort, >= k, e--)
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
-##### 2pts(sort; 2sum_start_end); 3sum_sort = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(sort, <k, s++; sort, >k, e--; skip_loop_sec; skip_loop_thi)
+##### 2pts(sort; 2sum_start_end); 3sum_sort = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum_start_end(sort, <k, s++; sort, >k, e--; skip_loop_start; skip_loop_end)
 
 - EG
 - [1, 1, -1, -1, 0] -> [-1(i), -1(second), 0, 1, 1(third)]
@@ -1249,7 +1249,7 @@
 - skip_loop_i, ns[i] == ns[i+1], ++i; (look_forward_if_after_operation) \*
 - https://leetcode.com/problems/3sum
 
-##### 2pts(sort; 2sum_hash); 3sum = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum(hash_mod_to_use, i=start, i<=end; skip_loop, look_forward_if_after_operation);
+##### 2pts(sort; 2sum_hash); 3sum = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum_hash(mod_to_use, i=start, i<=end; skip_loop, look_forward_if_after_operation);
 
 - EG
 - SUMMA
@@ -1265,7 +1265,7 @@
 -
 - https://leetcode.com/problems/3sum
 
-##### 2pts(sort; 2sum_start_end); how many 3sum less than k; sort, >=k, e--; sort, <k, s++; the_real_3sum; how_many_less_k = e - s
+##### 2pts(sort; 2sum_start_end); how many 3sum less than k; 1_ele + 2sum_start_end(sort, >=k, e--; sort, <k, s++); the_real_3sum; how_many_less_k = e - s
 
 - EG
 - SUMMA
