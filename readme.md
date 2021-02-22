@@ -1327,7 +1327,7 @@
 <br/>
 <br/>
 
-## what_diff_type_pt? (1) i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); (2) i_same_spd_pt_diff, j_same_spd_pt_diff(i_start + len); (3) i_same_spd_pt_diff, j_same_spd_pt_diff(tracking_var); (4) i_slow_spd_pt_same, j_fast_spd_pt_same(????);
+## what_diff_type_pt? (1) i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); (2) i_same_spd_pt_diff, j_same_spd_pt_diff(i_start + len); (3) i_same_spd_pt_diff, j_same_spd_pt_diff(tracking_var); (4) i_diff_spd_pt_same, j_diff_spd_pt_same(????);
 
 ##### i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); abc VS abc (normal, good); abc VS aabbcc (long press, good); abc VS aabbd (both fail)
 
@@ -3206,19 +3206,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# prepare, then_do
+# generic idea
 
-# prepare, while doing
+- prepare, then_do
+- prepare, while doing
+- prepare no, then_do
 
-# prepare no, then_do
-
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
 
-# when_hash: hash_freq; hash_each_ele;
+# when_hash:
+
+- hash[num]
+- hash[ind]
+- hash[sum]
+
+- hash[?] = freq
+- hash[?] = each_ele
 
 # when_knowledge: can simplify a problem
 
@@ -3243,3 +3250,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 # important questions
 
 https://aaronice.gitbook.io/lintcode/problem-solving-summary/
+
+# todo
+
+- https://leetcode.com/problems/continuous-subarray-sum/
+- https://leetcode.com/problems/subarray-product-less-than-k/
+- https://leetcode.com/problems/subarray-sums-divisible-by-k/
+- https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/
