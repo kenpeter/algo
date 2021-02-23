@@ -1311,6 +1311,37 @@
 - end_loop, re g_sum;
 - https://leetcode.com/problems/3sum-closest
 
+##### subarray sum == k; i_diff_spd_pt_same; j_diff_spd_pt_same
+
+- EG
+- SUMMA
+-
+- timeout solution
+-
+- outloop (i_diff_spd_pt_same)
+- inloop (j_diff_spd_pt_same)
+- mysum(ns, i, j) == k, ++res;
+-
+- https://leetcode.com/problems/subarray-sum-equals-k
+
+##### subarray sum == k; i_diff_spd_pt_same; j_diff_spd_inherit_pt_same
+
+- EG
+- SUMMA
+-
+- timeout solution
+-
+- prepare
+- dp[i] = dp[i-1] + ns[i]
+-
+- outloop (i_diff_spd_pt_same)
+- if dp[i] == k, res++;
+-
+- inloop (j_diff_spd_inherit_pt_same; avoid_dup)
+- if dp[i] - dp[i-1] == k, res++ (curr_sum - prev_sum == k)
+-
+- https://leetcode.com/problems/subarray-sum-equals-k
+
 <br/>
 <br/>
 
@@ -2071,12 +2102,12 @@
 - https://leetcode.com/problems/two-sum
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### subarray sum == k; |\_\_\_|------|\_\_\_\_\_\_|----|\_\_\_\_|; 2sum_hash_sum; mod_to_use, contain
+##### subarray sum == k; curr_sum - prev_sum == k; 2sum_hash_sum; mod_to_use, contain
 
 - EG
 - SUMMA
 -
-- |\_\_\_|------|\_\_\_\_\_\_|----|\_\_\_\_|;
+- |\_\_\_|------|\_\_\_\_\_\_|----|\_\_\_\_|; (curr_sum - prev_sum == k)
 -
 - single_loop(i=0; i<len)
 - curr_sum = curr_sum + ns[i]; (at_each_i_sum_unique)
