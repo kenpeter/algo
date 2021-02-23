@@ -2061,7 +2061,7 @@
 - else set.add(ele)
 - https://leetcode.com/problems/check-if-n-and-its-double-exist
 
-##### tar - ele, hash.con?; loop_each_ele, mod_it_to_use
+##### 2sum_hash; mod_it_to_use;
 
 - EG
 - SUMMA
@@ -2070,6 +2070,24 @@
 - else hash[ele] = ind
 - https://leetcode.com/problems/two-sum
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
+
+##### subarray sum == k; |\_\_\_|------|\_\_\_\_\_\_|----|\_\_\_\_|; 2sum_hash_sum
+
+- EG
+- SUMMA
+-
+- |\_\_\_|------|\_\_\_\_\_\_|----|\_\_\_\_|;
+-
+- single_loop(i=0; i<len)
+- curr_sum = curr_sum + ns[i]; (at_each_i_sum_unique)
+-
+- if m.has(prev_sum); (curr_sum - prev_sum == k; curr_sum - k == prev_sum)
+- c = c + m.get(prev_sum) (2sum_hash_sum)
+-
+- if m.has(curr_sum); (at_each_i_sum_unique)
+- m.set(curr_sum, m.get(curr_sum) + 1) (++1)
+- else m.set(curr_sum, 1) (set 1)
+- https://leetcode.com/problems/subarray-sum-equals-k
 
 <br/>
 <br/>
