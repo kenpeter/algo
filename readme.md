@@ -2032,46 +2032,46 @@
 <br/>
 <br/>
 
-## loop_each_ele, mod_it_to_use
+## mod_to_use, contain
 
-##### ele + 1; loop_each_ele, mod_it_to_use
+##### ele + 1; mod_to_use, contain
 
 - EG
 - SUMMA
 - loop eles (orig_arr)
-- if orig_arr.includes(ele + 1); ++count; (loop_each_ele, mod_it_to_use)
+- if orig_arr.includes(ele + 1); ++count; (loop_each_ele, mod_to_use)
 - https://leetcode.com/problems/counting-elements
 - https://codenuclear.com/leetcode-counting-elements-30days-challenge
 
-##### 2\*ele; loop_each_ele, mod_it_to_use
+##### 2\*ele; mod_to_use, contain
 
 - EG
 - SUMMA
 - loop eles (orig_arr)
 - if 1 zero, skip_this_zero; if >= 2 zeros, no_skip
-- if orig_arr.includes(2\*ele); re true; (loop_each_ele, mod_it_to_use)
+- if orig_arr.includes(2\*ele); re true; (loop_each_ele, mod_to_use)
 - https://leetcode.com/problems/check-if-n-and-its-double-exist
 
-##### 2\*ele, ele/2, set.con?; loop_each_ele, mod_it_to_use
+##### 2\*ele, ele/2; mod_to_use, contain
 
 - EG
 - SUMMA
 - loop eles
-- if set.con(2\*ele) || set.con(ele/2), re true; (loop_each_ele, mod_it_to_use)
+- if set.con(2\*ele) || set.con(ele/2), re true; (loop_each_ele, mod_to_use)
 - else set.add(ele)
 - https://leetcode.com/problems/check-if-n-and-its-double-exist
 
-##### 2sum_hash; mod_it_to_use;
+##### 2sum_hash_ele; mod_to_use, contain
 
 - EG
 - SUMMA
 - loop eles;
-- if hash[tar - ele] !== undef, re ind (loop_each_ele, mod_it_to_use)
+- if hash[tar - ele] !== undef, re ind (loop_each_ele, mod_to_use)
 - else hash[ele] = ind
 - https://leetcode.com/problems/two-sum
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### subarray sum == k; |\_\_\_|------|\_\_\_\_\_\_|----|\_\_\_\_|; 2sum_hash_sum
+##### subarray sum == k; |\_\_\_|------|\_\_\_\_\_\_|----|\_\_\_\_|; 2sum_hash_sum; mod_to_use, contain
 
 - EG
 - SUMMA
