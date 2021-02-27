@@ -170,39 +170,44 @@
 -
 - https://leetcode.com/problems/find-pivot-index
 
-##### slide_window; (1) i_loop_ele; win_start: hit_condi; win_end: follow_loop; (2)win_status: sum; (3) win_len: k_len; (4) win_slide: ++win_start, ++win_end
+##### slide_window; max_in_slide_win; i_diff_spd_pt_same_start; j_diff_spd_pt_same_end; sum == curr_win_size_in_val, plus ns[j] == extend_win_right; end-start, affect curr_win_size_in_len; sum == curr_win_size_in_val, minus ns[j] == shrink_win_left;
 
 - EG
+- [2, 3, 4, 1, 5], k = 3; e.g. [2, 3, 4] or [2, 4, 1] or [4, 1, 5]; max = 4+1+5=10
 - SUMMA
-- [2, 3, 4, 1, 5], k = 3; e.g. [2, 3, 4], range = k = 3
 -
-- i_loop_ele
-- win_start: hit_condi
-- win_end: follow_loop
+- i_diff_spd_pt_same_start
+- j_diff_spd_pt_same_end
 -
-- loop eles (i_loop_ele)
-- sum = sum + ns[i] (win_status: sum)
+- outloop (j < len)
+- sum = sum + ns[j] (sum == curr_win_size_in_val, plus ns[j] == extend_win_right)
 -
-- if win_end == win_start + k - 1 (win_len: k_len)
-- sum = sum - ns[i]; (win_status: sum)
-- ++win_start (win_start: hit_condi; win_slide: ++win_start)
-- end_if, ++win_end (win_end: follow_loop; win_slide: ++win_end)
+- if end - start = k-1 (end-start, affect curr_win_size_in_len)
+- ma = ma(ma, sum) (update_max)
+- sum = sum - ns[i] (sum == curr_win_size_in_val, minus ns[j] == shrink_win_left)
+- end_if, ++j (extend_win_right)
+-
+- re max / k
 - https://leetcode.com/problems/maximum-average-subarray-i
 
-##### subarray product < k; i_diff_spd_pt_same_start; j_diff_spd_pt_same_end; p == win_size_in_val, times ns[j] == extend_win_right; p == win_size_in_val, divide ns[j] == shrink_win_left; extend_win_right_new_combo == j - i + 1;
+##### slide_window; subarray product < k; i_diff_spd_pt_same_start; j_diff_spd_pt_same_end; p == curr_win_size_in_val, times ns[j] == extend_win_right; p >=k, affect curr_win_size_in_val; p == curr_win_size_in_val, divide ns[j] == shrink_win_left; extend_win_right_new_combo == j - i + 1;
 
 - EG
 - [10, 5, 2, 6], k = 100; [10], [5], [10, 5], etc..
 - SUMMA
 -
-- outloop (j < len)
-- p = p \* ns[i_diff_spd_pt_same_start] (p == win_size_in_val, times ns[j] == extend_win_right)
+- i_diff_spd_pt_same_start
+- j_diff_spd_pt_same_end
 -
-- inloop (i<=j && p >= k) (skin_loop_shrink_win_left)
-- p = p / ns[j_diff_spd_pt_same_end] (p == win_size_in_val, divide ns[j] == shrink_win_left)
-- ++i (extend_win_right)
+- outloop (j < len)
+- p = p \* ns[j_end] (p == curr_win_size_in_val, times ns[j] == extend_win_right)
+-
+- inloop (i<=j && p >= k) (p >= k, affect curr_win_size_in_val)
+- p = p / ns[i_start] (p == curr_win_size_in_val, divide ns[j] == shrink_win_left)
+- ++i (shrink_win_left)
 -
 - end_inloop, res = res + (j - i + 1) (e.g. [10] -> [10, 5]; extend_win_right_new_combo == j_1 - i_0 + 1)
+- ++j (extend_win_right)
 -
 - https://leetcode.com/problems/subarray-product-less-than-k
 
