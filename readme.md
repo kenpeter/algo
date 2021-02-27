@@ -189,6 +189,23 @@
 - end_if, ++win_end (win_end: follow_loop; win_slide: ++win_end)
 - https://leetcode.com/problems/maximum-average-subarray-i
 
+##### subarray product < k; i_diff_spd_pt_same_start; j_diff_spd_pt_same_end; p == win_size_in_val, times ns[j] == extend_win_right; p == win_size_in_val, divide ns[j] == shrink_win_left; extend_win_right_new_combo == j - i + 1;
+
+- EG
+- [10, 5, 2, 6], k = 100; [10], [5], [10, 5], etc..
+- SUMMA
+-
+- outloop (j < len)
+- p = p \* ns[i_diff_spd_pt_same_start] (p == win_size_in_val, times ns[j] == extend_win_right)
+-
+- inloop (i<=j && p >= k) (skin_loop_shrink_win_left)
+- p = p / ns[j_diff_spd_pt_same_end] (p == win_size_in_val, divide ns[j] == shrink_win_left)
+- ++i (extend_win_right)
+-
+- end_inloop, res = res + (j - i + 1) (e.g. [10] -> [10, 5]; extend_win_right_new_combo == j_1 - i_0 + 1)
+-
+- https://leetcode.com/problems/subarray-product-less-than-k
+
 <br/>
 <br/>
 
