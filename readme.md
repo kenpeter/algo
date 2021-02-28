@@ -141,36 +141,27 @@
 - end_loop, re false
 - https://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array
 
-##### pivot, left_sum == right_sum;
+##### slide_window_avoid_rest_ops; pivot, left_sum == right_sum; right_win_size_in_val, shrink_win_left; left_win_size_in_val, expand_win_right
 
 - EG
-- [1(p), 7, 3, 6, 5, 6] -> l_sum = 0, r_sum = 1+..6 = 28
+- [1(p), 7, 3, 6, 5, 6] -> l_sum = 0, r_sum = 7+..6 = 28
 - [1, 7(p), 3, 6, 5, 6] -> l_sum = 1, r_sum = 3+..6 = 20
-- [1, 7, 3(p), 6, 5, 6] -> l_sum = 8, r_sum = 6+5+6 = 17
-- [1, 7, 3, 6(p), 5, 6] -> l_sum = 11, r_sum = 11, good
+- [1, 7, 3(p), 6, 5, 6] -> l_sum = 1+7, r_sum = 6+5+6 = 17
+- [1, 7, 3, 6(p), 5, 6] -> l_sum = 1+7+3, r_sum = 11, good
 - SUMMA
-
-- loop ele
 -
-- "win_1"
-- i_loop_ele
-- win_start: start
-- win_end: before_pivot
-- win_status: left_sum
-- win_len: start -> before_pivot
-- win_slide: sum = sum + n[i]
+- ls = 0 (left_win_size_in_val)
+- rs = ns[0] + ns[1] + ... (right_win_size_in_val)
 -
-- "win_2"
-- i_loop_ele
-- win_start: after_pivot
-- win_end: end
-- win_status: right_sum
-- win_len: after_pivot -> end
-- win_slide: sum = sum - n[i]
+- single_loop (i=0; i<len)
+- n = ns[i]; (ele, shrink_win_left; ele, expand_win_right)
+- rs = rs - n; (right_win_size_in_val, shrink_win_left)
+- if ls == rs, re i;
+- ls = ls + n; (left_win_size_in_val, expand_win_right)
 -
 - https://leetcode.com/problems/find-pivot-index
 
-##### slide_window; max_in_slide_win; i_diff_spd_pt_same_start; j_diff_spd_pt_same_end; sum == curr_win_size_in_val, plus ns[j] == extend_win_right; end-start, affect curr_win_size_in_len; sum == curr_win_size_in_val, minus ns[j] == shrink_win_left;
+##### slide_window_avoid_rest_ops; max_in_slide_win; i_diff_spd_pt_same_start; j_diff_spd_pt_same_end; sum == curr_win_size_in_val, plus ns[j] == extend_win_right; end-start, affect curr_win_size_in_len; sum == curr_win_size_in_val, minus ns[j] == shrink_win_left;
 
 - EG
 - [2, 3, 4, 1, 5], k = 3; e.g. [2, 3, 4] or [2, 4, 1] or [4, 1, 5]; max = 4+1+5=10
@@ -190,7 +181,7 @@
 - re max / k
 - https://leetcode.com/problems/maximum-average-subarray-i
 
-##### slide_window; subarray product < k; i_diff_spd_pt_same_start; j_diff_spd_pt_same_end; p == curr_win_size_in_val, times ns[j] == extend_win_right; p >=k, affect curr_win_size_in_val; p == curr_win_size_in_val, divide ns[j] == shrink_win_left; extend_win_right_new_combo == j - i + 1;
+##### slide_window_avoid_rest_ops; subarray product < k; i_diff_spd_pt_same_start; j_diff_spd_pt_same_end; p == curr_win_size_in_val, times ns[j] == extend_win_right; p >=k, affect curr_win_size_in_val; p == curr_win_size_in_val, divide ns[j] == shrink_win_left; extend_win_right_new_combo == j - i + 1;
 
 - EG
 - [10, 5, 2, 6], k = 100; [10], [5], [10, 5], etc..
