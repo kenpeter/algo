@@ -100,7 +100,7 @@
 <br/>
 <br/>
 
-## slide_window
+## slide_window_avoid_rest_ops
 
 ##### slide_window; (1) i_loop_ele, win_start, win_end (2) win_status: same_num (3) win_len: quarter (4) win_slide: ++i
 
@@ -121,24 +121,17 @@
 - if a[i] == a[i + q_len], re a[i]
 - https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
 
-##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; (1) i_loop_ele, win_start, win_end (2) win_status: same_num (3) win_len: half (4) win_slide: ++i
+##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; res == 1; i < a.len - len VS a[i+len]; sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val
 
 - EG
 - SUMMA
 - major_len => 5_odd / 2 = 2.5, major_len >= 3 (half)
 - major_len => 4_even / 2 = 2, major_len > 2 (half)
 -
-- loop(i=0; i < len - major_len; ..) (i < len - major_len VS a[i+major_len])
--
-- i_loop_ele
-- win_start: i
-- win_end: i+major_len
-- win_status: same_num
-- win_len: half
-- win_slide: ++i
--
-- if a[i] == a[i + major_len] == input, re true
+- loop(i=0; i < len - major_len; ..) (i < a.len - len VS a[i+len])
+- if a[i] == input && a[i + major_len] == input, re true (sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val)
 - end_loop, re false
+-
 - https://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array
 
 ##### slide_window_avoid_rest_ops; pivot, left_sum == right_sum; right_win_size_in_val, shrink_win_left; left_win_size_in_val, expand_win_right
