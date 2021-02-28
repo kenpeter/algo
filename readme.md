@@ -102,34 +102,28 @@
 
 ## slide_window_avoid_rest_ops
 
-##### slide_window; (1) i_loop_ele, win_start, win_end (2) win_status: same_num (3) win_len: quarter (4) win_slide: ++i
+##### slide_window; res == 1; i < a.len - len VS a[i+len]; sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val
 
 - EG
 - [1, 2, 2, 6, 6, 6, 6, 7, 10], len = 9, quarter_len = 9/4 -> floor(2.25) = 2;
 - ceil(2.25) = 3, 3\*4_quarter = 12_too_big
 - SUMMA
 -
-- loop(i=0; i < len - q_len; ..); (i < len - q_len VS a[i+q_len])
--
-- i_loop_ele
-- win_start: i
-- win_end: i+q_len
-- win_status: same_num
-- win_len: quarter
-- win_slide: ++i
--
-- if a[i] == a[i + q_len], re a[i]
+- len = a.len / 4 (floor)
+- single_loop(i=0; i < a.len - len; ..); (i < a.len - len VS a[i+len])
+- if a[i] == a[i + len], re a[i]; (sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val)
 - https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
 
 ##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; res == 1; i < a.len - len VS a[i+len]; sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val
 
 - EG
 - SUMMA
-- major_len => 5_odd / 2 = 2.5, major_len >= 3 (half)
-- major_len => 4_even / 2 = 2, major_len > 2 (half)
+- len => 5_odd / 2 = 2.5, ceil, len >= 3 (half)
+- len => 4_even / 2 = 2, nothing, len > 2 (half)
 -
-- loop(i=0; i < len - major_len; ..) (i < a.len - len VS a[i+len])
-- if a[i] == input && a[i + major_len] == input, re true (sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val)
+- len = a.len / 2 (ceil)
+- single_loop(i=0; i < a.len - len; ..) (i < a.len - len VS a[i+len])
+- if a[i] == a[i + major_len] == input, re true (sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val)
 - end_loop, re false
 -
 - https://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array
