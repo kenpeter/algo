@@ -2473,7 +2473,7 @@
 - res.sort.slice.map: sort(other_attr ? other_attr : default_attr) -> slice_portion -> map_sub_attr)
 - https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix
 
-##### [10, 20] -> 1020 vs 2010 -> 2010_largest; a vs b -> a_posi_val vs b_posi_val
+##### [10, 20] -> 1020 vs 2010 -> 2010_largest; sort(a vs b) -> sort(a_posi_val vs b_posi_val)
 
 - EG
 - SUMMA
