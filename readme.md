@@ -102,7 +102,7 @@
 
 ## slide_window_avoid_rest_ops
 
-##### slide_window; res == 1; i < a.len - len VS a[i+len]; sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val
+##### slide_window_avoid_rest_ops; res == 1; i < a.len - len VS a[i+len]; sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val
 
 - EG
 - [1, 2, 2, 6, 6, 6, 6, 7, 10], len = 9, quarter_len = 9/4 -> floor(2.25) = 2;
@@ -114,7 +114,7 @@
 - if a[i] == a[i + len], re a[i]; (sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val)
 - https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
 
-##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; res == 1; i < a.len - len VS a[i+len]; sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val
+##### slide_window_avoid_rest_ops; [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; res == 1; i < a.len - len VS a[i+len]; sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val
 
 - EG
 - SUMMA
@@ -176,6 +176,7 @@
 -
 - i_diff_spd_pt_same_start
 - j_diff_spd_pt_same_end
+- NOTE: to use expand_win_right, shrink_win_left, all_num + / -; because +, - mixed up
 -
 - outloop (j < len)
 - p = p \* ns[j_end] (p == curr_win_size_in_val, times ns[j] == extend_win_right)
@@ -2110,12 +2111,13 @@
 - |\_\_\_|------|\_\_\_\_\_\_|----|\_\_\_\_|; (curr_sum - prev_sum == k)
 -
 - single_loop(i=0; i<len)
-- curr_sum = curr_sum + ns[i]; (at_each_i_sum_unique)
+- curr_sum = curr_sum + ns[i]; (curr_win_size_in_val)
+- NOTE: cannot use expand_win_right, shrink_win_left; because +, - mixed up
 -
 - if m.has(prev_sum); (curr_sum - prev_sum == k; curr_sum - k == prev_sum)
 - c = c + m.get(prev_sum) (2sum_hash_sum)
 -
-- if m.has(curr_sum); (at_each_i_sum_unique)
+- if m.has(curr_sum); (curr_win_size_in_val)
 - m.set(curr_sum, m.get(curr_sum) + 1) (++1)
 - else m.set(curr_sum, 1) (set 1)
 - https://leetcode.com/problems/subarray-sum-equals-k
