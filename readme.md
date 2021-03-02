@@ -2443,9 +2443,9 @@
 <br/>
 <br/>
 
-## sort_other_and_default_attr
+## sort(other_attr ? other_attr : default_attr)
 
-##### letter_log, digi_log; data_into_diff_steam; sort_other_and_default_attr;
+##### letter_log, digi_log; data_into_diff_steam; sort(other_attr ? other_attr : default_attr)
 
 - EG
 - SUMMA
@@ -2459,10 +2459,10 @@
 - loop eles
 - if letter, letter_arr; if digi digi_arr; (data_into_diff_stream)
 -
-- end_loop, (sort_other_and_default_attr), lexico_compare
+- end_loop, sort(other_attr ? other_attr : default_attr), lexico_compare
 - https://leetcode.com/problems/reorder-data-in-log-files
 
-##### sort_other_and_default_attr; sort -> slice -> map
+##### sort(other_attr ? other_attr : default_attr); sort -> slice -> map
 
 - EG
 - SUMMA
@@ -2470,8 +2470,27 @@
 - res = [[1_count, 0_ind], [4, 1], [1, 2], [1, 3]]
 -
 - res.sort(other_attr ? other_attr : default_attr);
-- res.sort.slice.map (sort_other_and_default_attr -> slice_portion -> map_sub_attr)
+- res.sort.slice.map: sort(other_attr ? other_attr : default_attr) -> slice_portion -> map_sub_attr)
 - https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix
+
+##### [10, 20] -> 1020 vs 2010 -> 2010_largest; a vs b -> a_posi_val vs b_posi_val
+
+- EG
+- SUMMA
+- [a, b, c]
+- ab > ba (a_posi_val > b_posi_val; b_connect)
+- bc > cb (b_posi_val > c_posi_val; b_connect)
+- ac > ca (a_posi_val > c_posi_val)
+-
+- [9, 6, 30]
+- 96 > 69 (9_posi_val > 6_posi_val, 6_connect)
+- 630 > 306 (6_posi_val > 30_posi_val, 6 connect)
+- 930 > 309 (9_posi_val > 30_posi_val)
+-
+- ns.sort((a, b) => { 'ba' - 'ab' });
+- ns.join('').toInt
+-
+- https://leetcode.com/problems/largest-number
 
 ##### ababa, [aba, ab] -> [(0, 2), (2, 4)...]; slide_word (loop_word, slide_word, substring_equal)
 
