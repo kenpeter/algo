@@ -1222,35 +1222,56 @@
 - else >=k, e--; (sort, >= k, e--)
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
-##### 2pts(sort; 2sum_start_end); 3sum_sort = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum_start_end(sort, <k, s++; sort, >k, e--; skip_loop_start; skip_loop_end)
+##### 2pts(sort; 2sum_start_end); 3sum = 1_ele + 2sum_start_end
 
 - EG
 - [1, 1, -1, -1, 0] -> [-1(i), -1(second), 0, 1, 1(third)]
 - SUMMA
 -
 - sort (rm_dup)
+
 -
-- outloop (i=0, i<len, ...)
-- skip_loop_i, ns[i] == ns[i-1], ++i; (look_back_if_before_operation) \*
-- sum = tar - ns[i];
-- start = i+1;
-- end = len-1;
+- outloop (i=0, i<len-2, ...)
+- i
+- s = i+1
+- e = len-1
+-
+- skip_loop_i, ns[i] == ns[i-1], ++i; (rm_dup, look_back_if_before_operation)
 -
 - inloop (s < e)
-- if ns[s] + ns[e] < sum, s++;
-- if ns[s] + ns[e] > sum, e--;
--
-- if ns[s] + ns[e] == sum
+- if ns[i] + ns[s] + ns[e] < sum, s++;
+- if ns[i] + ns[s] + ns[e] > sum, e--;
+- if ns[i] + ns[s] + ns[e] == sum
 - tri = [ns[i], ns[s], ns[e]]
 - res.push(tri)
-- skip_loop_start, tri[1] == ns[s], s++;
-- skip_loop_end, tri[2] == ns[e], e--;
+- skip_loop_start, tri[1] == ns[s], s++; (rm_dup, see_if_can_get_more)
+- skip_loop_end, tri[2] == ns[e], e--; (rm_dup, see_if_can_get_more)
 -
 - end_inloop;
-- skip_loop_i, ns[i] == ns[i+1], ++i; (look_forward_if_after_operation) \*
+- bonus: skip_loop_i, ns[i] == ns[i+1], ++i; (rm_dup, look_forward_if_after_operation) \*
 - https://leetcode.com/problems/3sum
 
-##### 2pts(sort; 2sum_hash); 3sum = 1_ele(i<len-2; skip_loop, look_back_if_before_operation) + 2sum_hash(mod_to_use, i=start, i<=end; skip_loop, look_forward_if_after_operation);
+##### 2pts(sort; 2sum_start_end); 3sum_less_k = 1_ele + 2sum_start_end; c = c + (j-i)
+
+- EG
+- SUMMA
+-
+- sort (rm_dup)
+-
+- outloop (i=0, i<len-2, ...)
+- i
+- s = i+1
+- e = len-1
+-
+- inloop (s < e)
+- if ns[i] + ns[s] + ns[e] < sum
+- c = c + (j-i), s++; (j-i, because else j-i+1)
+-
+- else, e--
+- https://kennyzhuang.gitbooks.io/leetcode-lock/content/259_3sum_smaller.html
+- https://leetcode.com/problems/3sum-smaller/
+
+##### 2pts(sort; 2sum_hash); 3sum = 1_ele + 2sum_hash
 
 - EG
 - SUMMA
@@ -1258,11 +1279,11 @@
 - sort (rm_dup)
 -
 - outloop (i=0; i<len-2..)
-- skip_loop, look_back_if_before_operation
+- rm_dup, skip_loop, look_back_if_before_operation
 -
 - 2sum(res, n[i]\_curr, ns, start=i+1, end=len-1, 0-tar);
 - inloop_2sum (i=s, i<=e)
-- 2sum_hash_mod_to_use + (skip_loop, look_forward_if_after_operation)
+- 2sum_hash_mod_to_use + (rm_dup, skip_loop, look_forward_if_after_operation)
 -
 - https://leetcode.com/problems/3sum
 
