@@ -373,6 +373,26 @@
 - https://www.cnblogs.com/cnoodle/p/13722300.html
 - https://leetcode.com/problems/high-five
 
+##### [4, 3, 2, 1], 2nd max; priority_queue: [3, 4]; 3 is 2nd max; loop_ele; search priority_queue(max_end); start_shift_give_1_space, flow_down_ultimate_form
+
+- EG
+-
+- SUMMA
+- outloop ( loop ele )
+- n = ns[i];
+-
+- inloop ( search priority_queue(max_end) )
+- fresh, can insert
+- > q[j], can insert
+-
+- inloop_1 ( start_shift_give_1_space, flow_down_ultimate_form )
+- j+1 and up, no touch
+- j, insert
+- j-1 and down, start_shift_give_1_space, flow_down_ultimate_form
+-
+- re q[0] (kth max)
+- https://leetcode.com/problems/kth-largest-element-in-an-array
+
 <br/>
 <br/>
 
