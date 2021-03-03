@@ -57,6 +57,38 @@
 <br/>
 <br/>
 
+## intersection(1_ele_in_another) -> unique(set); unique(set) -> intersection(1_ele_in_another);
+
+##### [1, 1, 1] and [1, 1] -> [1, 1]-> [1]; intersection -> unique
+
+- EG
+- SUMMA
+- intersection: (1_ele_in_another)
+- unique: ([...set])
+-
+- https://leetcode.com/problems/intersection-of-two-arrays
+
+##### [1, 1, 1] and [1, 1] -> [1, 1] -> [1]; unique -> intersection
+
+- EG
+- SUMMA
+- unique: ([...set], [...set])
+- intersection: (1_ele_in_another)
+-
+- https://leetcode.com/problems/intersection-of-two-arrays
+
+##### [1, 1, 1] and [1, 1] -> [1, 1]-> [1]; unique -> intersection
+
+- EG
+- SUMMA
+- unique: (map_ns1[ns1])
+- intersection: map_ns1[ns2] -> map_ns2[ns2]
+-
+- https://leetcode.com/problems/intersection-of-two-arrays
+
+<br/>
+<br/>
+
 ## ele independent (update_no_matter_what); sum independent, (conditional_update)
 
 ##### ele independent (update_no_matter_what, even/odd); sum independent, (conditional_update, even)
