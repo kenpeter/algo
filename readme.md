@@ -89,6 +89,23 @@
 <br/>
 <br/>
 
+## find ns1 in ns2, rm
+
+##### ns1 = [1, 1, 1, 1], ns2 = [1]; ns1 = [1], ns2 = [1, 1, 1, 1]; intersection = [1]; find ns1 in ns2, rm
+
+- EG
+- SUMMA
+-
+- loop ele
+- if ns2.indexOf(ns1); (find ns1 in ns2)
+- ns2.splice(ns1); (rm)
+- back_loop
+-
+- https://leetcode.com/problems/intersection-of-two-arrays-ii
+
+<br/>
+<br/>
+
 ## ele independent (update_no_matter_what); sum independent, (conditional_update)
 
 ##### ele independent (update_no_matter_what, even/odd); sum independent, (conditional_update, even)
