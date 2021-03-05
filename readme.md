@@ -3404,7 +3404,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - bt(final_res, tmp_arr, ns_orig, curr_i, tar)
 -
-- recur_stop_check: tar_reach(arr_ref_copy) || tar_overconsume
+- recur_stop_check: tar_reach || tar_overconsume
 -
 - recur:
 - single_loop (i vs i+1 and res_inds)
@@ -3412,6 +3412,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - bt (tar_desc) (0_repeat_entire_x; i-1_x; i_repeat_self_x; i+1_avoid_self + res)
 -
 - https://leetcode.com/problems/combination-sum-ii
+
+##### combo_sum_2; ns = [1, 2, 3, ... 9], k_len = 3, tar = 7, res = [[1,2,4]; sort_rm_dup, bt_recur, i vs (i+1 and res_inds);
+
+- EG
+- SUMMA
+- sort_rm_dup
+-
+- ns_orig = [1, 2, 3, 4, 5, 6, 7, 8, 9] (new_part)
+- bt(final_res, tmp_arr, ns_orig, curr_i, tar)
+-
+- recur_stop_check: tar_reach + len_reach || tar_overconsume or len_overconsume
+-
+- recur:
+- single_loop (i vs i+1 and res_inds)
+- tmp_arr_new = tmp_arr.concat(ns[i]) (concat)
+- bt (tar_desc) (0_repeat_entire_x; i-1_x; i_repeat_self_x; i+1_avoid_self + res)
+-
+- https://leetcode.com/problems/combination-sum-iii
 
 <br/>
 <br/>
