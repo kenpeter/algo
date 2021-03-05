@@ -3384,15 +3384,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - bt(final_res, tmp_arr, ns_orig, curr_i, tar)
 -
-- recur_stop_check: tar_reach(arr_ref_copy) || tar_overconsume
+- recur_stop_check: tar_reach || tar_overconsume
 -
 - recur:
 - single_loop (i vs i and res_inds)
 - before_op, look_back, sort_rm_dup
 -
-- like_win_size_inc
+- tmp_arr_new = tmp_arr.concat(ns[i]) (concat)
 - bt (tar_desc) (0_repeat_entire_x; i-1_x; i_no_repeat + include_self; i+1_miss_self_x)
-- like_win_size_back_orig
 -
 - https://leetcode.com/problems/combination-sum
 
@@ -3409,9 +3408,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - recur:
 - single_loop (i vs i+1 and res_inds)
-- like_win_size_inc
+- tmp_arr_new = tmp_arr.concat(ns[i]) (concat)
 - bt (tar_desc) (0_repeat_entire_x; i-1_x; i_repeat_self_x; i+1_avoid_self + res)
-- like_win_size_back_orig
 -
 - https://leetcode.com/problems/combination-sum-ii
 
