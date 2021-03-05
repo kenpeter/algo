@@ -3370,27 +3370,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/180014/Backtracking-Thinking-Process
 
-## bt_recur, i vs self + res_inds;
+## sort_rm_dup, bt_recur, i vs (self + res_inds);
 
-##### combo_sum_1; ns = [2,3,6,7], tar = 7, res = [[2,2,3],[7]]; bt_recur, i vs self + res_inds;
+##### combo_sum_1; ns = [2,3,6,7], tar = 7, res = [[2,2,3],[7]]; sort_rm_dup, bt_recur, i vs (self + res_inds);
 
 - EG
 - SUMMA
 -
-- bt:
-- final_res_flow_down, tmp_arr, ns_orig
-- curr_i (prev_inds + curr_i + rest_inds)
-- tar
+- sort_rm_dup
 -
-- recur_stop_check:
-- tar_reach_out; arr_ref, need_copy
-- overconsume_out
+- bt(final_res, tmp_arr, ns_orig, curr_i, tar)
+-
+- recur_stop_check: tar_reach_out(arr_ref_copy) || overconsume_out
 -
 - recur:
 - single_loop (i vs self + res_inds)
-- tmp_arr_inc
-- bt (tmp_arr_inc, tar_desc) (0_repeat_entire_x; i-1_x; i_no_repeat + include_self; i+1_miss_self_x)
-- tmp_arr_back_orig
+- like_win_size_inc
+- bt (like_win_size_inc, tar_desc) (0_repeat_entire_x; i-1_x; i_no_repeat + include_self; i+1_miss_self_x)
+- like_win_size_back_orig
 -
 - https://leetcode.com/problems/combination-sum
 
