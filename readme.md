@@ -3370,9 +3370,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/180014/Backtracking-Thinking-Process
 
-## sort_rm_dup, bt_recur, i vs (self + res_inds);
+## sort_rm_dup, bt_recur, i vs (i + res_inds);
 
-##### combo_sum_1; ns = [2,3,6,7], tar = 7, res = [[2,2,3],[7]]; sort_rm_dup, bt_recur, i vs (self + res_inds);
+##### combo_sum_1; ns = [2,3,6,7], tar = 7, res = [[2,2,3],[7]]; sort_rm_dup, bt_recur, i vs (i + res_inds);
 
 - EG
 - SUMMA
@@ -3381,10 +3381,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - bt(final_res, tmp_arr, ns_orig, curr_i, tar)
 -
-- recur_stop_check: tar_reach_out(arr_ref_copy) || overconsume_out
+- recur_stop_check: tar_reach(arr_ref_copy) || tar_overconsume
 -
 - recur:
-- single_loop (i vs self + res_inds)
+- single_loop (i vs i + res_inds)
 - like_win_size_inc
 - bt (like_win_size_inc, tar_desc) (0_repeat_entire_x; i-1_x; i_no_repeat + include_self; i+1_miss_self_x)
 - like_win_size_back_orig
