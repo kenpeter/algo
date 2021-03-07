@@ -3375,7 +3375,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - sort_rm_dup, bt_recur, i vs (i and res_inds);
 - sort_rm_dup, bt_recur, i vs (i+1 and res_inds);
 
-##### combo_sum_1; ns = [2,3,6,7], tar = 7, res = [[2,2,3],[7]]; sort_rm_dup, bt_recur, i vs (i and res_inds);
+##### combo_sum_1; ns = [2,3,6,7], tar = 7, res = [[2,2,3],[7]]; sort_rm_dup, bt_recur_abstract_return_val, i vs (i and res_inds);
 
 - EG
 - SUMMA
@@ -3395,7 +3395,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/combination-sum
 
-##### combo_sum_2; ns = [2,5,2,1,2], tar = 5, res = [[1,2,2], [5]]; sort_rm_dup, bt_recur, i vs (i+1 and res_inds);
+##### combo_sum_2; ns = [2,5,2,1,2], tar = 5, res = [[1,2,2], [5]]; sort_rm_dup, bt_recur_abstract_return_val, i vs (i+1 and res_inds);
 
 - EG
 - SUMMA
@@ -3413,7 +3413,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/combination-sum-ii
 
-##### combo_sum_2; ns = [1, 2, 3, ... 9], k_len = 3, tar = 7, res = [[1,2,4]; sort_rm_dup, bt_recur, i vs (i+1 and res_inds);
+##### combo_sum_3; ns = [1, 2, 3, ... 9], k_len = 3, tar = 7, res = [[1,2,4]; sort_rm_dup, bt_recur_abstract_return_val, i vs (i+1 and res_inds);
 
 - EG
 - SUMMA
@@ -3430,6 +3430,64 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - bt (tar_desc) (0_repeat_entire_x; i-1_x; i_repeat_self_x; i+1_avoid_self + res)
 -
 - https://leetcode.com/problems/combination-sum-iii
+
+##### combo_sum_4; ns = [1, 2, 3, ... 9], k_len = 3, tar = 7, res = [[1,2,4]; sort_rm_dup, bt_recur_abstract_return_val, i vs (i+1 and res_inds);
+
+- EG
+- SUMMA
+- sort_rm_dup
+-
+- ns_orig = [1, 2, 3, 4, 5, 6, 7, 8, 9] (new_part)
+- bt(final_res, tmp_arr, ns_orig, curr_i, tar)
+-
+- recur_stop_check: tar_reach + len_reach || tar_overconsume or len_overconsume
+-
+- recur:
+- single_loop (i vs i+1 and res_inds)
+- tmp_arr_new = tmp_arr.concat(ns[i]) (concat)
+- bt (tar_desc) (0_repeat_entire_x; i-1_x; i_repeat_self_x; i+1_avoid_self + res)
+-
+- https://leetcode.com/problems/combination-sum-iv
+
+<br/>
+<br/>
+
+##### combo_sum_4; ns = [1, 2, 3], tar = 4, res = [[1, 1, 2], [2, 1, 1]..], permutation; draw_the_tree_cache
+
+- EG
+- SUMMA
+-
+- draw_the_tree_cache:
+- each_top_node == tar
+- each_path_below == action, ns[i]; all_paths == loop
+-
+- sub_tars contrib top_tar: dp[tar] = dp[tar-ns[0]] + dp[tar-ns[1]] + dp[tar-ns[2]]... -> dp[tar] = dp[tar]\_acc_inloop + dp[tar-ns[i]]
+- dp[0]: dp[4_tar - 4_ele == 0] = 1_freq_count
+- top -> bottom_left -> slow_cover_up; dp[tar_basic_small], sub_tars_cache
+-
+- https://leetcode.com/problems/combination-sum-iv
+
+##### combo_sum_4; ns = [1, 2, 3], tar = 4, res = [[1, 1, 2], [2, 1, 1]..], permutation; draw_the_tree_dp
+
+- EG
+- SUMMA
+-
+- draw_the_tree_dp:
+- each_top_node == tar
+- each_path_below == action, ns[i]; all_paths == loop
+-
+- sub_tars contrib top_tar: dp[tar] = dp[tar-ns[0]] + dp[tar-ns[1]] + dp[tar-ns[2]]... -> dp[tar] = dp[tar]\_acc_inloop + dp[tar-ns[i]]
+- dp[0]: dp[4_tar - 4_ele == 0] = 1_freq_count, e.g.
+- bottom -> top
+-
+-
+- dp_arr
+- dp[0]: dp[4_tar - 4_ele == 0] = 1_freq_count, e.g.
+- outloop (i_sub_tar, bottom -> top)
+- inloop (j, sub_tars contrib top_tar)
+- i_subtar < ns[j], sub_tars no_contrib
+-
+- https://leetcode.com/problems/combination-sum-iv
 
 <br/>
 <br/>
