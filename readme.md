@@ -3459,11 +3459,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - draw_the_tree_cache:
 - each_top_node == tar
-- each_path_below == action, ns[i]; all_paths == loop
--
 - sub_tars contrib top_tar: dp[tar] = dp[tar-ns[0]] + dp[tar-ns[1]] + dp[tar-ns[2]]... -> dp[tar] = dp[tar]\_acc_inloop + dp[tar-ns[i]]
 - dp[0]: dp[4_tar - 4_ele == 0] = 1_freq_count
 - top -> bottom_left -> slow_cover_up; dp[tar_basic_small], sub_tars_cache
+-
+-
+- sort_rm_dup, bt_recur_abstract_return_val, i vs (0 + res_inds), sub_tars_cache
 -
 - https://leetcode.com/problems/combination-sum-iv
 
@@ -3474,8 +3475,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - draw_the_tree_dp:
 - each_top_node == tar
-- each_path_below == action, ns[i]; all_paths == loop
--
 - sub_tars contrib top_tar: dp[tar] = dp[tar-ns[0]] + dp[tar-ns[1]] + dp[tar-ns[2]]... -> dp[tar] = dp[tar]\_acc_inloop + dp[tar-ns[i]]
 - dp[0]: dp[4_tar - 4_ele == 0] = 1_freq_count, e.g.
 - bottom -> top
@@ -3485,7 +3484,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[0]: dp[4_tar - 4_ele == 0] = 1_freq_count, e.g.
 - outloop (i_sub_tar, bottom -> top)
 - inloop (j, sub_tars contrib top_tar)
-- i_subtar < ns[j], sub_tars no_contrib
+- i_subtar < ns[j], sub_tars contrib no
 -
 - https://leetcode.com/problems/combination-sum-iv
 
