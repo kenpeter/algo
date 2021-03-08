@@ -2110,6 +2110,19 @@
 <br/>
 <br/>
 
+## nums -> digi_sum -> group_sum
+
+##### [1, 2, 11, 12]\_num -> [1, 2, 2, 3]\_digi_sum -> [1, 2, 2, 3]\_group_sum; nums -> digi_sum -> group_sum
+
+- EG
+- SUMMA
+-
+- nums -> digi_sum -> group_sum
+- https://leetcode.com/problems/count-largest-group
+
+<br/>
+<br/>
+
 ## indexOf === lastIndexOf, only_1_no_repeat
 
 ##### 1st unique char in str; indexOf === lastIndexOf, only_1_no_repeat
@@ -2709,36 +2722,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[i] = dp[i_prev] + curr_ele
 - dp[i] = dp[i_prev] + func(curr_ele)
 - dp[i] = reset + curr_ele
-
-##### dp[i]\_curr_sum = dp_prev_sum[ (i/10)_before_digits ] + (i%10)\_last_digit; hash_freq; continue_add_up, else_reset
-
-- EG
-- n = 13, [1, 10]\_1, [2, 11]\_2, [3, 12]\_3, [4, 13]\_4, [5]\_5, [6]\_6 ...
-- [1, 10], [2, 11], [3, 12], [4, 13]; freq_max_2, so 4 of them
-- SUMMA
--
-- prepare
-- single_loop (1 -> n)
--
-- DP_EXPLAIN
-- dp_slot == arr.len
-- dp[a.len].fill(0)
--
-- i == i_curr_num
-- dp[i] == curr_sum at i
-- i-1 == prev_num
-- dp[i-1] == prev_sum
-- i/10 == before_num
-- dp[i/10] == before_sum
-- i%10 == last_num == sth
--
-- dp[i]\_curr_sum = dp_prev_sum[ (i/10)_before_digits ] + (i%10)\_last_digit
-- h[dp[i]] = (h[dp[i]] || 0) + 1; (hash_freq)
--
-- then_do
-- single_loop (hash_freq)
-- continue_add_up, else_reset
-- https://leetcode.com/problems/count-largest-group
 
 ##### aaabc -> aaa_3_char, aa_2_char, a_1_char, b_1_char, c_1_char -> 3+2+1+1+1=8; dp[i]\_curr_freq = dp[i-1]\_prev_freq + dp[i]\_curr_freq
 
