@@ -2110,14 +2110,14 @@
 <br/>
 <br/>
 
-## nums -> digi_sum -> group_sum
+## nums -> digi_sum_prepare_hash -> group_sum
 
-##### [1, 2, 11, 12]\_num -> [1, 2, 2, 3]\_digi_sum -> [1, 2, 2, 3]\_group_sum; nums -> digi_sum -> group_sum
+##### [1, 2, 11, 12]\_num -> [1, 2, 2, 3]\_digi_sum_prepare_hash -> [1, 2, 2, 3]\_group_sum; nums -> digi_sum_prepare_hash -> group_sum
 
 - EG
 - SUMMA
 -
-- nums -> digi_sum -> group_sum
+- nums -> digi_sum_prepare_hash -> group_sum
 - https://leetcode.com/problems/count-largest-group
 
 <br/>
