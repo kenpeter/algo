@@ -1265,15 +1265,14 @@
 -
 - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
 
-##### 2pts(sort; 2sum_start_end); a[i] + a[j] == k; i_same_spd_pt_same_small; j_same_spd_pt_same_big;
+##### 2sum_hash_ele; mod_to_use
 
 - EG
+- ns = [2,7,11,15], tar = 9 -> [7, 2, -2, -6]
 - SUMMA
-- sort
-- loop (i < j>) (sort, corss_over)
-- if a[i] + a[j] < k, ++i_same_spd_pt_same_small
-- if a[i] + a[j] > k, --j_same_spd_pt_same_big
-- if a[i] + a[j] == k, return
+- single_loop (loop_ele)
+- if h[tar - ns[i]], re; (mod_to_use)
+- else hash_rem_posi
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
 ##### 2pts(sort; 2sum_start_end); 2sum less than k; i_same_spd_pt_start, j_same_spd_pt_end
