@@ -2196,12 +2196,13 @@
 - else set.add(ele)
 - https://leetcode.com/problems/check-if-n-and-its-double-exist
 
-##### 2sum_hash_ele; mod_to_use, contain
+##### 2sum_hash_ele; mod_to_use
 
 - EG
+- ns = [2,7,11,15], tar = 9 -> [7, 2, -2, -6]
 - SUMMA
 - loop eles;
-- if hash[tar - ele] !== undef, re ind (loop_each_ele, mod_to_use)
+- if hash[tar - ele] !== undef, re ind (mod_to_use)
 - else hash[ele] = ind
 - https://leetcode.com/problems/two-sum
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
@@ -3400,7 +3401,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - i vs (i+1 and res_inds);
 - i vs (0 and res_inds);
 
-##### combo_sum_1, i vs (i and res_inds);
+##### combo_sum_1; i vs (i and res_inds);
 
 - EG
 - combo_sum_1, ns = [2,3,6,7], tar = 7, res = [[2,2,3],[7]]
@@ -3421,7 +3422,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/combination-sum
 
-##### combo_sum_2, i vs (i+1 and res_inds);
+##### combo_sum_2; i vs (i+1 and res_inds);
 
 - EG
 - combo_sum_2; ns = [2,5,2,1,2], tar = 5, res = [[1,2,2], [5]];
@@ -3440,7 +3441,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/combination-sum-ii
 
-##### combo_sum_3, i vs (i+1 and res_inds);
+##### combo_sum_3; i vs (i+1 and res_inds);
 
 - EG
 - combo_sum_3; ns = [1, 2, 3, ... 9], k_len = 3, tar = 7, res = [[1,2,4];
@@ -3459,7 +3460,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/combination-sum-iii
 
-##### combo_sum_4, i vs (i+1 and res_inds);
+##### combo_sum_4; i vs (i+1 and res_inds);
 
 - EG
 - combo_sum_4; ns = [1, 2, 3, ... 9], k_len = 3, tar = 7, res = [[1,2,4];
@@ -3481,7 +3482,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-##### combo_sum_4, draw_the_tree_cache
+##### combo_sum_4; draw_the_tree_cache
 
 - EG
 - combo_sum_4; ns = [1, 2, 3], tar = 4, res = [[1, 1, 2], [2, 1, 1]..], permutation;
@@ -3500,7 +3501,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/combination-sum-iv
 
-##### combo_sum_4, draw_the_tree_dp
+##### combo_sum_4; draw_the_tree_dp
 
 - EG
 - combo_sum_4; ns = [1, 2, 3], tar = 4, res = [[1, 1, 2], [2, 1, 1]..], permutation;
