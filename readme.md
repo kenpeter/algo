@@ -3317,6 +3317,45 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - re mi(dp[len-1], dp[len-2]) (2_ending)
 - https://leetcode.com/problems/min-cost-climbing-stairs
 
+##### climb, take_1_step or take_2_step; draw_the_tree_cache
+
+- EG
+- SUMMA
+-
+- draw_the_tree_cache
+-
+- init:
+- recur_cache VS dp_arr
+- dp[0]: when_tar_exhaust
+-
+- single_loop:
+- recur_func VS dp_func
+- sub_tars contrib top_tar; count = count + recur(sub_tar)\_abstract_return
+- sub_tars_cache
+-
+- https://leetcode.com/problems/climbing-stairs
+
+##### climb, take_1_step or take_2_step; draw_the_tree_dp
+
+- EG
+- SUMMA
+-
+- draw_the_tree_dp
+-
+- init:
+- dp_arr VS recur_cache
+- dp[0]: when_tar_exhaust
+-
+- outloop:
+- bottom -> top VS top -> bottom -> slow_cover_top
+-
+- inloop:
+- dp_func VS recur_func
+- sub_tars contrib top_tar: dp[tar] = dp[tar-ns[0]] + dp[tar-ns[1]] + dp[tar-ns[2]]... -> dp[tar] = dp[tar]\_acc_inloop + dp[tar-ns[i]];
+- avoid_ind_overconsume
+-
+- https://leetcode.com/problems/climbing-stairs
+
 <br/>
 <br/>
 <br/>
@@ -3358,7 +3397,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - sort_rm_dup, bt_recur, i vs (i and res_inds);
 - sort_rm_dup, bt_recur, i vs (i+1 and res_inds);
 
-##### combo_sum_1; ns = [2,3,6,7], tar = 7, res = [[2,2,3],[7]]; sort_rm_dup, bt_recur_abstract_return_val, i vs (i and res_inds);
+##### combo_sum_1; ns = [2,3,6,7], tar = 7, res = [[2,2,3],[7]]; sort_rm_dup, recur_abstract_return, i vs (i and res_inds);
 
 - EG
 - SUMMA
@@ -3378,7 +3417,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/combination-sum
 
-##### combo_sum_2; ns = [2,5,2,1,2], tar = 5, res = [[1,2,2], [5]]; sort_rm_dup, bt_recur_abstract_return_val, i vs (i+1 and res_inds);
+##### combo_sum_2; ns = [2,5,2,1,2], tar = 5, res = [[1,2,2], [5]]; sort_rm_dup, recur_abstract_return, i vs (i+1 and res_inds);
 
 - EG
 - SUMMA
@@ -3396,7 +3435,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/combination-sum-ii
 
-##### combo_sum_3; ns = [1, 2, 3, ... 9], k_len = 3, tar = 7, res = [[1,2,4]; sort_rm_dup, bt_recur_abstract_return_val, i vs (i+1 and res_inds);
+##### combo_sum_3; ns = [1, 2, 3, ... 9], k_len = 3, tar = 7, res = [[1,2,4]; sort_rm_dup, recur_abstract_return, i vs (i+1 and res_inds);
 
 - EG
 - SUMMA
@@ -3414,7 +3453,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/combination-sum-iii
 
-##### combo_sum_4; ns = [1, 2, 3, ... 9], k_len = 3, tar = 7, res = [[1,2,4]; sort_rm_dup, bt_recur_abstract_return_val, i vs (i+1 and res_inds);
+##### combo_sum_4; ns = [1, 2, 3, ... 9], k_len = 3, tar = 7, res = [[1,2,4]; sort_rm_dup, recur_abstract_return, i vs (i+1 and res_inds);
 
 - EG
 - SUMMA
