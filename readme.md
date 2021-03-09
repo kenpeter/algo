@@ -1386,13 +1386,13 @@
 - 3sum = 1_ele + 2sum_start_end
 -
 - inloop (s < e)
+- if curr_diff < g_min_diff, update (absolute_diff)
+-
 - if ns[i] + ns[s] + ns[e] < k (real_3sum)
-- if curr_d < g_min_d; g_min_d = curr_d (absolute_diff)
-- ++s;
+- ++s; (real_3sum_control)
 -
 - if ns[i] + ns[s] + ns[e] > k (real_3sum)
-- if curr_d < g_min_d; g_min_d = curr_d (absolute_diff)
-- --e;
+- --e; (real_3sum_control)
 -
 - if ns[i] + ns[s] + ns[e] == k (real_3sum)
 - re k
