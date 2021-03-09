@@ -1399,35 +1399,19 @@
 -
 - https://leetcode.com/problems/3sum-closest
 
-##### subarray sum == k; i_diff_spd_pt_same; j_diff_spd_pt_same
+##### subarray_sum == k; subarray_sum = curr_sum - prev_sum; win_2sum_hash;
 
 - EG
+- k=3; [0, 0, 3]\_num -> [0, 0, 3]\_sum -> [[0, 0, 3], [0, 3], [3]]; freq == 3
 - SUMMA
 -
-- timeout solution
+- h[0] = 1 (e.g. k=3; [0, 0, 3]\_num -> [0, 0, 3]\_sum, h[0] never appear below)
+- single_loop (ele)
+- win_size_in_val (mix +/-, no win_expand_shrink)
+- if h[sum-k], counter = counter + h[sum-k]\_freq (subarray_sum = curr_sum - prev_sum)
 -
-- outloop (i_diff_spd_pt_same)
-- inloop (j_diff_spd_pt_same)
-- mysum(ns, i, j) == k, ++res;
--
-- https://leetcode.com/problems/subarray-sum-equals-k
-
-##### subarray sum == k; i_diff_spd_pt_same; j_diff_spd_inherit_pt_same
-
-- EG
-- SUMMA
--
-- timeout solution
--
-- prepare
-- dp[i] = dp[i-1] + ns[i]
--
-- outloop (i_diff_spd_pt_same)
-- if dp[i] == k, res++;
--
-- inloop (j_diff_spd_inherit_pt_same; avoid_dup)
-- if dp[i] - dp[i-1] == k, res++ (curr_sum - prev_sum == k)
--
+- if h[sum], h[sum]++ (win_2sum_hash)
+- if !h[sum], h[sum]=1 (win_2sum_hash)
 - https://leetcode.com/problems/subarray-sum-equals-k
 
 <br/>
