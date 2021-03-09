@@ -1275,7 +1275,7 @@
 - else hash_rem_posi
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### 2pts(sort; 2sum_start_end); 2sum less than k; i_same_spd_pt_start, j_same_spd_pt_end
+##### 2sum_less_k; 2sum_start_end
 
 - EG
 - SUMMA
@@ -1290,7 +1290,7 @@
 - else >=k, e--; (sort, >= k, e--)
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
-##### 2pts(sort; 2sum_start_end); 3sum = 1_ele + 2sum_start_end
+##### 3sum; 3sum = 1_ele + 2sum_start_end
 
 - EG
 - [1, 1, -1, -1, 0] -> [-1(i), -1(second), 0, 1, 1(third)]
@@ -1314,12 +1314,12 @@
 - res.push(tri)
 - skip_loop_start, tri[1] == ns[s], s++; (rm_dup, see_if_can_get_more)
 - skip_loop_end, tri[2] == ns[e], e--; (rm_dup, see_if_can_get_more)
--
 - end_inloop;
+-
 - bonus: skip_loop_i, ns[i] == ns[i+1], ++i; (rm_dup, look_forward_if_after_operation) \*
 - https://leetcode.com/problems/3sum
 
-##### 2pts(sort; 2sum_start_end); 3sum_less_k = 1_ele + 2sum_start_end; c = c + (j-i)
+##### 3sum_less_k; less_k == range
 
 - EG
 - SUMMA
@@ -1332,14 +1332,14 @@
 - e = len-1
 -
 - inloop (s < e)
-- if ns[i] + ns[s] + ns[e] < sum
-- c = c + (j-i), s++; (j-i, because else j-i+1)
+- if ns[i] + ns[s] + ns[e] < sum (3sum = 1_ele + 2sum_start_end)
+- c = c + (j-i), s++; (less_k == range)
 -
 - else, e--
 - https://kennyzhuang.gitbooks.io/leetcode-lock/content/259_3sum_smaller.html
 - https://leetcode.com/problems/3sum-smaller/
 
-##### 2pts(sort; 2sum_hash); 3sum = 1_ele + 2sum_hash
+##### 3sum; 3sum = 1_ele + 2sum_hash
 
 - EG
 - SUMMA
