@@ -1742,24 +1742,36 @@
 - input_arr[ input_arr_ind ] !== i_height; res++; e.g. input_arr[1] may == input_arr[100], beause dup
 - https://leetcode.com/problems/height-checker
 
-##### missing_positive_num; hash_prepare + natural_bottom_up
+##### missing_positive_num; hash_prepare + bottom_up + fill_gap_in_hash
 
 - EG
 - ns = [3,4,-1,1], missing == 2
 - ns = [-1], missing == 1
 - SUMMA
 - single_loop (hash_prepare)
-- single_loop (i=1; i<=max) (natural_bottom_up)
-- if hash[ns[i]], con; else re
+- single_loop (i=1; i<=max) (max, natural_bottom_up)
+- if hash[ns[i]], con; else re (fill_gap)
+-
 - https://leetcode.com/problems/first-missing-positive
 
-##### missing_positive_num; positive_uniq + hit_1st_gap
+##### missing_positive_num; hash_prepare + bottom_up + fill_gap_in_hash
+
+- EG
+- ns = [1, 2, 3, 4, 6], no_gap_until_5, missing == 5
+- SUMMA
+- single_loop (hash_prepare)
+- single_loop (i=1; i<=len) (len, natural_bottom_up)
+- if hash[ns[i]], con; else re (fill_gap)
+-
+- https://leetcode.com/problems/first-missing-positive/discuss/927112/Three-JS-Solutions
+
+##### missing_positive_num; positive_uniq + find_gap_in_input
 
 - EG
 - ns = [1, 2, 3, 4, 6], no_gap_until_5, missing == 5
 - SUMMA
 - set, sort, filter (positive_uniq)
-- single_loop (ele); j == ns[i]\_no_gap, ++j; (hit_1st_gap)
+- single_loop (ele); j == ns[i]\_no_gap, ++j; (find_1st_gap_in_input)
 - https://leetcode.com/problems/first-missing-positive/discuss/927112/Three-JS-Solutions
 
 <br/>
