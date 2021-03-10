@@ -1742,6 +1742,17 @@
 - input_arr[ input_arr_ind ] !== i_height; res++; e.g. input_arr[1] may == input_arr[100], beause dup
 - https://leetcode.com/problems/height-checker
 
+##### missing_positive_num; hash_prepare + natural_bottom_up
+
+- EG
+- ns = [3,4,-1,1], missing == 2
+- ns = [-1], missing == 1
+- SUMMA
+- single_loop (hash_prepare)
+- single_loop (i=1; i<=max) (natural_bottom_up)
+- if hash[ns[i]], con; else re
+- https://leetcode.com/problems/first-missing-positive
+
 <br/>
 <br/>
 
