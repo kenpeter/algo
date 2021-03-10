@@ -1753,6 +1753,16 @@
 - if hash[ns[i]], con; else re
 - https://leetcode.com/problems/first-missing-positive
 
+##### missing_positive_num; positive_uniq + hit_1st_gap
+
+- EG
+- ns = [3,4,-1,1], missing == 2
+- ns = [-1], missing == 1
+- SUMMA
+- set, sort, filter (positive_uniq)
+- single_loop (ele); j == ns[i]\_no_gap, ++j; (hit_1st_gap)
+- https://leetcode.com/problems/first-missing-positive/discuss/927112/Three-JS-Solutions
+
 <br/>
 <br/>
 
