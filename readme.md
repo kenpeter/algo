@@ -1756,8 +1756,7 @@
 ##### missing_positive_num; positive_uniq + hit_1st_gap
 
 - EG
-- ns = [3,4,-1,1], missing == 2
-- ns = [-1], missing == 1
+- ns = [1, 2, 3, 4, 6], no_gap_until_5, missing == 5
 - SUMMA
 - set, sort, filter (positive_uniq)
 - single_loop (ele); j == ns[i]\_no_gap, ++j; (hit_1st_gap)
