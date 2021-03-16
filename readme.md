@@ -3153,39 +3153,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://medium.com/swlh/solving-the-target-sum-problem-with-dynamic-programming-and-more-b76bd2a661f9
 - https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
 
-##### arr_to_2_part; order !important
-
-- EG
-- SUMMA
-- 
-- method 1:
-- draw_the_tree_no_cache
-- knapsack recur; recur_as_loop_i
--
-- method 2:
-- draw_the_tree_2d_cache
-- knapsack recur, recur_as_loop_i
-- 
-- method 3:
-- same as above, cache(dp[i][tar] == dp[tar][i])
-- 
-- method 4:
-- combination_sum recur, no recur_as_loop_i
--
-- method 5:
-- tar -> ele (order important; want_more dp[..][len])
-- ele -> tar (order !important; want_less dp[..][j-1]; loop_order_can_swap) * 
--
-- method 6:
-- tar -> ele (order important; want_more dp[..][len]) * 
-- ele -> tar (order !important; want_less dp[..][j-1]; loop_order_can_swap)
--
-- method 7:
-- backward_loop, can_use_prev_dp; forward_loop, cannot_use_prev_dp
--
-- see my solution: https://leetcode.com/submissions/detail/468284357
-- https://leetcode.com/problems/partition-equal-subset-sum
-
 ##### 1D; backward, curr_overwrite, prev_nochange
 
 - EG
@@ -3293,30 +3260,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - dp[j] = MIN(dp[j](top, ele_1st, NO_ORDER; press_ele), 1 + dp[j-i(ele)](left, num_combo_left; press_ele; x+y=tar) )
 - https://leetcode.com/problems/coin-change/
 
-## ele; addup to tar; loop_tar, loop_ele; permu_num_combo
-
-##### 2D; ORDER ele; addup to tar; loop_tar, loop_ele; permu_num_combo(add)
-
-- n+1, m+1 size
-- dp[i][j] === AT this tar, AT this ele, FINAL num_combo (add)
-- init side => fake_top_vals (num_combo_nopress, so 1s; below_noval)
-- loop tar (forward; ORDER, question said permu)
-- loop ele (forward; dp_ind_constraint)
-- direction
-- dp[i][j] = dp[i][j](orig, tar_1st, ORDER) + dp[i-j(ele)][ele.len](diag?, permu_last_len_max; x+y=tar; ele.len_last, tar_1st); (add)
-- https://leetcode.com/problems/combination-sum-iv/discuss/702432/Java-or-1D-or-2D-or-Bottom-Up-or-Top-Down
-
-##### 1D; ORDER ele; addup to tar; loop_tar, loop_ele; permu_num_combo(add)
-
-- m+1 size
-- dp[i] === AT this tar, FINAL num_combo (add)
-- init side => 1 (num_combo_press, so 1; below_noval)
-- loop tar (forward; ORDER, question said permu)
-- loop ele (forward; dp_ind_constraint)
-- direction
-- dp[i] = dp[i](orig, tar_1st, ORDER; press_ele) + dp[i-j(ele)](diag?, permu_last_len_max; press_ele; x+y=tar)
-- https://leetcode.com/problems/combination-sum-iv/
-
 <br/>
 <br/>
 
@@ -3380,6 +3323,80 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - avoid_ind_overconsume
 -
 - https://leetcode.com/problems/climbing-stairs
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# dp (real_understanding)
+
+##### arr_to_2_part; order !important
+
+- EG
+- SUMMA
+- 
+- method 1:
+- draw_the_tree_no_cache
+- knapsack recur; recur_as_loop_i
+-
+- method 2:
+- draw_the_tree_2d_cache
+- knapsack recur, recur_as_loop_i
+- 
+- method 3:
+- 2d_cache
+- same as above, 2d_cache(dp[i][tar] == dp[tar][i])
+- 
+- method 4:
+- 2d_cache
+- combination_sum recur, no recur_as_loop_i
+-
+- method 5:
+- 2d_cache
+- tar -> ele (order important; want_more dp[..][len])
+- ele -> tar (order !important; want_less dp[..][j-1]; loop_order_can_swap) <--
+-
+- method 6:
+- 2d_cache
+- tar -> ele (order important; want_more dp[..][len]) <--
+- ele -> tar (order !important; want_less dp[..][j-1]; loop_order_can_swap)
+-
+- method 7:
+- 1d_cache
+- backward_loop, use_prev_dp; forward_loop, overwritten_prev_dp
+-
+- see my solution: https://leetcode.com/submissions/detail/468284357
+- https://leetcode.com/problems/partition-equal-subset-sum
+
+##### combo_sum_4; order important
+
+- EG
+- SUMMA
+-
+- method 1:
+- draw_the_tree_no_cache(timeout); recur_abstract_return
+-
+- method 2:
+- 1d_cache
+- draw_the_tree_cache; recur_abstract_return
+-
+- method 3:
+- 2d_cache
+- tar -> ele (order important; want_more, dp[..][j-1]) <--
+- ele -> tar (order !important; want_less, dp[..][len]; loop_order_can_swap) x
+- 
+- method 4:
+- 1d_cache
+- forward_loop, no_overwritten_prev_dp (dp[..][len])
+-
+- method 5:
+- 1d_cache
+- backward_loop, use_prev_dp
+-
+- my solution: https://leetcode.com/submissions/detail/468503374/
+- https://leetcode.com/problems/combination-sum-iv
 
 <br/>
 <br/>
@@ -3484,66 +3501,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### combo_sum_4; i vs (i+1 and res_inds);
 
-- EG
-- combo_sum_4; ns = [1, 2, 3, ... 9], k_len = 3, tar = 7, res = [[1,2,4];
-- SUMMA
-- sort_rm_dup
--
-- ns_orig = [1, 2, 3, 4, 5, 6, 7, 8, 9] (new_part)
-- bt(final_res, tmp_arr, ns_orig, curr_i, tar)
--
-- recur_stop_check: tar_reach + len_reach || tar_overconsume or len_overconsume
--
-- recur:
-- single_loop (i vs i+1 and res_inds)
-- tmp_arr_new = tmp_arr.concat(ns[i]) (concat)
-- bt_recur_abstract_return(tar_desc) (0_repeat_entire_x; i-1_x; i_repeat_self_x; i+1_avoid_self + res)
--
-- https://leetcode.com/problems/combination-sum-iv
-
-<br/>
-<br/>
-
-##### combo_sum_4; draw_the_tree_cache
-
-- EG
-- combo_sum_4; ns = [1, 2, 3], tar = 4, res = [[1, 1, 2], [2, 1, 1]..], permutation;
-- SUMMA
--
-- draw_the_tree_cache
--
-- init:
-- recur_cache VS dp_arr
-- dp[0]: when_tar_exhaust
--
-- single_loop:
-- recur_func VS dp_func
-- sub_tars contrib top_tar; count = count + recur(sub_tar)\_abstract_return
-- sub_tars_cache
--
-- https://leetcode.com/problems/combination-sum-iv
-
-##### combo_sum_4; draw_the_tree_dp
-
-- EG
-- combo_sum_4; ns = [1, 2, 3], tar = 4, res = [[1, 1, 2], [2, 1, 1]..], permutation;
-- SUMMA
--
-- draw_the_tree_dp
--
-- init:
-- dp_arr VS recur_cache
-- dp[0]: when_tar_exhaust
--
-- outloop:
-- bottom -> top VS top -> bottom -> slow_cover_top
--
-- inloop:
-- dp_func VS recur_func
-- sub_tars contrib top_tar: dp[tar] = dp[tar-ns[0]] + dp[tar-ns[1]] + dp[tar-ns[2]]... -> dp[tar] = dp[tar]\_acc_inloop + dp[tar-ns[i]];
-- avoid_ind_overconsume
--
-- https://leetcode.com/problems/combination-sum-iv
 
 <br/>
 <br/>
