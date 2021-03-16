@@ -3153,29 +3153,38 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://medium.com/swlh/solving-the-target-sum-problem-with-dynamic-programming-and-more-b76bd2a661f9
 - https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
 
-##### 2D; NO_ORDER ele; (2 equal set); reach gen_tar(1d_backward_tar); condi
+##### arr_to_2_part; order !important
 
-- transfer: ha = sum / 2
-- n+1, ha+1 size
-- dp[i][j] === AT this ele, AT this tar, FINAL condi
-- init side == fake_left_vals (condi_nopress, so trues; below_noval)
-- loop ele (forward; NO_ORDER)
-- loop ha (forward)
-- direction
-- dp[i][j] = dp[i-1][j](top, ele_1st) || dp[i-1][j-i](diag, condi; x+y=tar)
-- https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
-
-##### 1D; NO_ORDER ele; (2 equal set); reach gen_tar(1d_backward_tar); condi
-
-- transfer: ha = sum / 2
-- ha+1 size
-- dp[j] === AT this ha, FINAL condi (question condi)
-- init side == true (condi_press, so true; below_noval)
-- loop ele (forward; NO_ORDER, 1+2, 2+1, same)
-- loop ha (backward; gen_tar; dp_ind_constraint)
-- direction
-- dp[j] = dp[j](top, ele_1st; press_ele) || dp[j-i(ele)](diag, condi; press_ele; x+y=tar);
-- https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
+- EG
+- SUMMA
+- 
+- method 1:
+- draw_the_tree_no_cache
+- knapsack recur; recur_as_loop_i
+-
+- method 2:
+- draw_the_tree_2d_cache
+- knapsack recur, recur_as_loop_i
+- 
+- method 3:
+- same as above, cache(dp[i][tar] == dp[tar][i])
+- 
+- method 4:
+- combination_sum recur, no recur_as_loop_i
+-
+- method 5:
+- tar -> ele (order important; want_more dp[..][len])
+- ele -> tar (order !important; want_less dp[..][j-1]; loop_order_can_swap) * 
+-
+- method 6:
+- tar -> ele (order important; want_more dp[..][len]) * 
+- ele -> tar (order !important; want_less dp[..][j-1]; loop_order_can_swap)
+-
+- method 7:
+- backward_loop, can_use_prev_dp; forward_loop, cannot_use_prev_dp
+-
+- see my solution: https://leetcode.com/submissions/detail/468284357
+- https://leetcode.com/problems/partition-equal-subset-sum
 
 ##### 1D; backward, curr_overwrite, prev_nochange
 
