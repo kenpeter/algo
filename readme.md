@@ -217,37 +217,6 @@
 - re max / k
 - https://leetcode.com/problems/maximum-average-subarray-i
 
-##### slide_window_avoid_rest_ops; subarray product < k; i_diff_spd_pt_same_start; j_diff_spd_pt_same_end; p == curr_win_size_in_val, times ns[j] == extend_win_right; p >=k, affect curr_win_size_in_val; p == curr_win_size_in_val, divide ns[j] == shrink_win_left; extend_win_right_new_combo == j - i + 1;
-
-- EG
-- [10, 5, 2, 6], k = 100; [10], [5], [10, 5], etc..
-- SUMMA
--
-- i_diff_spd_pt_same_start
-- j_diff_spd_pt_same_end
-- NOTE: to use expand_win_right, shrink_win_left, all_num + / -; because +, - mixed up
--
-- outloop (j < len)
-- p = p \* ns[j_end] (p == curr_win_size_in_val, times ns[j] == extend_win_right)
--
-- inloop (i<=j && p >= k) (p >= k, affect curr_win_size_in_val)
-- p = p / ns[i_start] (p == curr_win_size_in_val, divide ns[j] == shrink_win_left)
-- ++i (shrink_win_left)
--
-- end_inloop, res = res + (j - i + 1) (e.g. [10] -> [10, 5]; extend_win_right_new_combo == j_1 - i_0 + 1)
-- ++j (extend_win_right)
--
-- https://leetcode.com/problems/subarray-product-less-than-k
-
-##### subarray_sum (>=0) == k ; expand_win_right(once), then shrink_win_left(cycle)
-
-- EG
-- SUMMA
--
-- expand_win_right(once), then shrink_win_left(cycle)
--
-- https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
-
 <br/>
 <br/>
 
@@ -3415,6 +3384,30 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+# slide_window
+
+##### subarray_sum (>=0) == k; expand_win_right (once), then shrink_win_left (cycle)
+
+- EG
+- SUMMA
+-
+- expand_win_right (once), then shrink_win_left (cycle)
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
+
+##### subarray_product (>=0) less_than_k; expand_win_right (once), then shrink_win_left (cycle)
+
+- EG
+- SUMMA
+-
+- expand_win_right (once), then shrink_win_left (when prod >= k, including_self)
+-
+- less_than_k === range
+- e.g. j-i+1 -> [10(0_ind), 2(1_ind_income)] -> 1_ind - 0_ind + 1 -> 2 times
+-
+- https://leetcode.com/problems/subarray-product-less-than-k
+- https://leetcode.com/submissions/detail/469783113/
+
 # hash
 
 ##### subarray_sum (+ / -) == k; hash(curr_sum - subarray_sum == prev_sum)
@@ -3567,19 +3560,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # when_bottom_up: 0->1000, a-z; natual_bottom_up
 
-# binary search
-
-# BST - DFS
-
-# b-tree, link
-
 # important questions
 
 https://aaronice.gitbook.io/lintcode/problem-solving-summary/
-
-# todo
-
-- https://leetcode.com/problems/continuous-subarray-sum/
-- https://leetcode.com/problems/subarray-product-less-than-k/
-- https://leetcode.com/problems/subarray-sums-divisible-by-k/
-- https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/
