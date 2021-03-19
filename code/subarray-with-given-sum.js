@@ -48,8 +48,14 @@ const subarraySum = (ns, len, tar) => {
   return [-1];
 };
 
-const ns = [1, 2, 3, 7, 5];
-const len = 5;
-const tar = 12;
-const out = constsubarraySum(ns, len, tar);
+// const ns = [1, 2, 3, 7, 5];
+// const len = 5;
+// const tar = 12;
+// const out = subarraySum(ns, len, tar);
+// console.log("++ out", out);
+
+const ns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const len = 10;
+const tar = 15;
+const out = subarraySum(ns, len, tar);
 console.log("++ out", out);

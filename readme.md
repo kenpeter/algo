@@ -239,6 +239,15 @@
 -
 - https://leetcode.com/problems/subarray-product-less-than-k
 
+##### subarray sum (>=0) == k ; expand_win_right(once), then shrink_win_left(cycle)
+
+- EG
+- SUMMA
+-
+- expand_win_right(once), then shrink_win_left(cycle)
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
+
 <br/>
 <br/>
 
@@ -3336,7 +3345,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - EG
 - SUMMA
-- 
+-
 - method 1:
 - draw_the_tree_no_cache
 - knapsack recur; recur_as_loop_i
@@ -3344,11 +3353,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - method 2:
 - draw_the_tree_2d_cache
 - knapsack recur, recur_as_loop_i
-- 
+-
 - method 3:
 - 2d_cache
 - same as above, 2d_cache(dp[i][tar] == dp[tar][i])
-- 
+-
 - method 4:
 - 2d_cache
 - combination_sum recur, no recur_as_loop_i
@@ -3386,7 +3395,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 2d_cache
 - tar -> ele (order important; want_more, dp[..][j-1]) <--
 - ele -> tar (order !important; want_less, dp[..][len]; loop_order_can_swap) x
-- 
+-
 - method 4:
 - 1d_cache
 - forward_loop, no_overwritten_prev_dp (dp[..][len])
@@ -3397,6 +3406,32 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - my solution: https://leetcode.com/submissions/detail/468503374/
 - https://leetcode.com/problems/combination-sum-iv
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# brute force
+
+##### subarray sum (>=0) == k; i vs rest_j; sum_build_at_end (next_loop_check)
+
+- EG
+- SUMMA
+-
+- brute force: i vs rest_j; sum_build_at_end (next_loop_check)
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
+
+##### subarray sum (>=0) == k; i vs rest_j; single_sum, beyond_single_sum(cycle)
+
+- EG
+- SUMMA
+-
+- brute force: i vs rest_j; single_sum, beyond_single_sum(cycle);
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
 <br/>
 <br/>
@@ -3500,7 +3535,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/combination-sum-iii
 
 ##### combo_sum_4; i vs (i+1 and res_inds);
-
 
 <br/>
 <br/>
