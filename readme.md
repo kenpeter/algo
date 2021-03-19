@@ -1408,21 +1408,6 @@
 -
 - https://leetcode.com/problems/3sum-closest
 
-##### subarray_sum == k; subarray_sum = curr_sum - prev_sum; win_2sum_hash;
-
-- EG
-- k=3; [0, 0, 3]\_num -> [0, 0, 3]\_sum -> [[0, 0, 3], [0, 3], [3]]; freq == 3
-- SUMMA
--
-- h[0] = 1 (e.g. k=3; [0, 0, 3]\_num -> [0, 0, 3]\_sum, h[0] never appear below)
-- single_loop (ele)
-- win_size_in_val (mix +/-, no win_expand_shrink)
-- if h[sum-k], counter = counter + h[sum-k]\_freq (subarray_sum = curr_sum - prev_sum)
--
-- if h[sum], h[sum]++ (win_2sum_hash)
-- if !h[sum], h[sum]=1 (win_2sum_hash)
-- https://leetcode.com/problems/subarray-sum-equals-k
-
 <br/>
 <br/>
 
@@ -2228,25 +2213,6 @@
 - else hash[ele] = ind
 - https://leetcode.com/problems/two-sum
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
-
-##### subarray sum == k; curr_sum - prev_sum == k; 2sum_hash_sum; mod_to_use, contain
-
-- EG
-- SUMMA
--
-- |\_\_\_|------|\_\_\_\_\_\_|----|\_\_\_\_|; (curr_sum - prev_sum == k)
--
-- single_loop(i=0; i<len)
-- curr_sum = curr_sum + ns[i]; (curr_win_size_in_val)
-- NOTE: cannot use expand_win_right, shrink_win_left; because +, - mixed up
--
-- if m.has(prev_sum); (curr_sum - prev_sum == k; curr_sum - k == prev_sum)
-- c = c + m.get(prev_sum) (2sum_hash_sum)
--
-- if m.has(curr_sum); (curr_win_size_in_val)
-- m.set(curr_sum, m.get(curr_sum) + 1) (++1)
-- else m.set(curr_sum, 1) (set 1)
-- https://leetcode.com/problems/subarray-sum-equals-k
 
 <br/>
 <br/>
@@ -3424,14 +3390,42 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray_sum (>=0) == k; i vs rest_j; single_sum, loop_rest_sum
+##### subarray_sum (>=0) == k; single_sum_check, loop_rest_sum_check
 
 - EG
 - SUMMA
 -
-- brute force: i vs rest_j; single_sum, loop_rest_sum
+- brute force: i vs rest_j; single_sum_check, loop_rest_sum_check
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
+
+##### subarray_sum (+ / -) == k; single_sum_check, loop_rest_sum_check
+
+- EG
+- SUMMA
+-
+- brute force: i vs rest_j; single_sum_check, loop_rest_sum_check
+-
+- https://leetcode.com/problems/subarray-sum-equals-k
+- https://leetcode.com/submissions/detail/469373460/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# hash
+
+##### subarray_sum (+ / -) == k; hash(curr_sum - subarray_sum == prev_sum)
+
+- EG
+- SUMMA
+-
+- hash(curr_sum - subarray_sum == prev_sum)
+-
+- https://leetcode.com/submissions/detail/469373460/
+- https://leetcode.com/problems/subarray-sum-equals-k
 
 <br/>
 <br/>
