@@ -3415,21 +3415,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # brute force
 
-##### subarray sum (>=0) == k; i vs rest_j; sum_build_at_end (next_loop_check)
+##### subarray sum (>=0) == k; i vs rest_j; sum_build_at_end (next_loop)
 
 - EG
 - SUMMA
 -
-- brute force: i vs rest_j; sum_build_at_end (next_loop_check)
+- brute force: i vs rest_j; sum_build_at_end (next_loop)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray sum (>=0) == k; i vs rest_j; single_sum, beyond_single_sum(cycle)
+##### subarray sum (>=0) == k; i vs rest_j; single_sum, loop_rest_sum
 
 - EG
 - SUMMA
 -
-- brute force: i vs rest_j; single_sum, beyond_single_sum(cycle);
+- brute force: i vs rest_j; single_sum, loop_rest_sum
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
