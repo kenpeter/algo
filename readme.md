@@ -239,7 +239,7 @@
 -
 - https://leetcode.com/problems/subarray-product-less-than-k
 
-##### subarray sum (>=0) == k ; expand_win_right(once), then shrink_win_left(cycle)
+##### subarray_sum (>=0) == k ; expand_win_right(once), then shrink_win_left(cycle)
 
 - EG
 - SUMMA
@@ -3415,7 +3415,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # brute force
 
-##### subarray sum (>=0) == k; i vs rest_j; sum_build_at_end (next_loop)
+##### subarray_sum (>=0) == k; i vs rest_j; sum_build_at_end (next_loop)
 
 - EG
 - SUMMA
@@ -3424,7 +3424,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray sum (>=0) == k; i vs rest_j; single_sum, loop_rest_sum
+##### subarray_sum (>=0) == k; i vs rest_j; single_sum, loop_rest_sum
 
 - EG
 - SUMMA
