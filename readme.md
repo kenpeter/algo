@@ -3416,6 +3416,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - hash(curr_sum - subarray_sum == prev_sum)
+- hash, because dp ~== hash
 -
 - https://leetcode.com/submissions/detail/469373460/
 - https://leetcode.com/problems/subarray-sum-equals-k
