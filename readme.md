@@ -3386,24 +3386,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # slide_window
 
-##### subarray_sum (>=0) == k; expand_win_right (once), then shrink_win_left (cycle)
+##### subarray_sum (>=0) == k; expand_win_right (check), shrink_win_left (check)
 
 - EG
 - SUMMA
 -
-- expand_win_right (once), then shrink_win_left (cycle)
+- expand_win_right (check; once), shrink_win_left (check; cycle)
 -
-- https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
+- https://practice.geeksforgeeks.org/viewSol.php?subId=b70840393292ef97fdbe78121760d972&pid=701236&user=figo2476
 
-##### subarray_product (>=0) less_than_k; expand_win_right (once), then shrink_win_left (cycle)
+##### subarray_product (>=0) less_than_k; expand_win_right (check), shrink_win_left (check)
 
 - EG
 - SUMMA
 -
-- expand_win_right (once), then shrink_win_left (when prod >= k, including_self)
+- expand_win_right (check; once), shrink_win_left (check; cycle, when prod >= k, include_self)
 -
 - less_than_k === range
-- e.g. j-i+1 -> [10(0_ind), 2(1_ind_income)] -> 1_ind - 0_ind + 1 -> 2 times
+- orig_arr + income_ele -> 2 times more
 -
 - https://leetcode.com/problems/subarray-product-less-than-k
 - https://leetcode.com/submissions/detail/469783113/
