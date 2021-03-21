@@ -3436,7 +3436,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=7f960d672c005585e2c0324b5c6cce17&pid=702837&user=figo2476
 
-#####
+##### 3sum; k_stable; i, j meet;
 
 - EG
 - SUMMA
