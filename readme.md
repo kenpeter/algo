@@ -3431,7 +3431,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - sort
 - k_stable; i, j meet;
-- matched, ++i, --j still_chance
+- matched, ++i (no skip_loop), --j (no skip_loop) still_chance
 -
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=7f960d672c005585e2c0324b5c6cce17&pid=702837&user=figo2476
@@ -3443,7 +3443,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - sort
 - k_stable; i, j meet
-- matched, ++i, --j still_chance
+- matched, ++i (skip_loop), --j (skip_loop) still_chance
 -
 - https://leetcode.com/problems/3sum
 
