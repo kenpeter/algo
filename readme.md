@@ -1253,21 +1253,6 @@
 - else hash_rem_posi
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### 2sum_less_k; 2sum_start_end
-
-- EG
-- SUMMA
-- sort
-- start = 0; (i_same_spd_pt_start)
-- end = len-1; (j_same_spd_pt_end)
--
-- ma = -1
-- single_loop (s < e)
-- if a[i] + a[j] < k
-- ma = ma(ma, a[i] + a[j]); s++; (sort, < k, s++)
-- else >=k, e--; (sort, >= k, e--)
-- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
-
 ##### 3sum; 3sum = 1_ele + 2sum_start_end
 
 - EG
@@ -3348,35 +3333,81 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# brute force
+# brute_force
 
-##### subarray_sum (>=0) == k; i vs rest_j; sum_build_at_end (next_loop)
+## i_stable vs j_loop
+
+##### subarray_sum (>=0) == k; i_stable vs j_loop; sum_build_at_end (next_loop)
 
 - EG
 - SUMMA
 -
-- brute force: i vs rest_j; sum_build_at_end (next_loop)
+- i_stable vs j_loop; sum_build_at_end (next_loop)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray_sum (>=0) == k; single_sum_check, loop_rest_sum_check
+##### subarray_sum (>=0) == k; i_stable vs j_loop; single_sum, rest_sum_loop
 
 - EG
 - SUMMA
 -
-- brute force: i vs rest_j; single_sum_check, loop_rest_sum_check
+- i_stable vs j_loop; single_sum, rest_sum_loop
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray_sum (+ / -) == k; single_sum_check, loop_rest_sum_check
+##### subarray_sum (+ / -) == k; i_stable vs j_loop; single_sum, rest_sum_loop
 
 - EG
 - SUMMA
 -
-- brute force: i vs rest_j; single_sum_check, loop_rest_sum_check
+- i_stable vs j_loop; single_sum, rest_sum_loop
 -
 - https://leetcode.com/problems/subarray-sum-equals-k
 - https://leetcode.com/submissions/detail/469373460/
+
+##### 2_sum == 3rd_ele; i_stable vs j_loop; i j sum, binary_search
+
+- EG
+- SUMMA
+-
+- sort
+- i_stable vs j_loop; i j sum, binary_search
+-
+- https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
+- https://practice.geeksforgeeks.org/viewSol.php?subId=897008f882370645ad43ee369da48b30&pid=702837&user=figo2476
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# arr
+
+## k_stable; i, j meet
+
+##### 2_sum == 3rd_ele; k_stable; i, j meet;
+
+- EG
+- SUMMA
+-
+- sort
+- k_stable; i, j meet;
+- matched, ++i, --j still_chance
+-
+- https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
+- https://practice.geeksforgeeks.org/viewSol.php?subId=7f960d672c005585e2c0324b5c6cce17&pid=702837&user=figo2476
+
+##### 2sum_less_k; k_stable (no_such); i, j meet;
+
+- EG
+- SUMMA
+-
+- sort
+- k_stable (no_such); i, j meet;
+- < k, ++i;
+- > = k, --j;
+- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
 <br/>
 <br/>
@@ -3386,12 +3417,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # slide_window
 
+## expand_win_right (check), shrink_win_left (check)
+
 ##### subarray_sum (>=0) == k; expand_win_right (check), shrink_win_left (check)
 
 - EG
 - SUMMA
 -
-- expand_win_right (check; once), shrink_win_left (check; cycle)
+- expand_win_right (check; stable), shrink_win_left (check; cycle)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=b70840393292ef97fdbe78121760d972&pid=701236&user=figo2476
 
@@ -3400,7 +3433,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- expand_win_right (check; once), shrink_win_left (check; cycle, when prod >= k, include_self)
+- expand_win_right (check; stable), shrink_win_left (check; cycle, when prod >= k, include_self)
 -
 - less_than_k === range
 - orig_arr + income_ele -> 2 times more
@@ -3408,7 +3441,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-product-less-than-k
 - https://leetcode.com/submissions/detail/469783113/
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 # hash
+
+## ?
 
 ##### subarray_sum (+ / -) == k; hash(curr_sum - subarray_sum == prev_sum)
 
@@ -3416,7 +3457,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - hash(curr_sum - subarray_sum == prev_sum)
-- hash, because dp ~== hash
+- because hash_can_go_back
 -
 - https://leetcode.com/submissions/detail/469373460/
 - https://leetcode.com/problems/subarray-sum-equals-k
@@ -3454,8 +3495,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 
 # backtrack
-
-- https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/180014/Backtracking-Thinking-Process
 
 ## i vs (i+? and res_inds);
 
@@ -3529,38 +3568,3 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 <br/>
-
-# generic idea
-
-- prepare, then_do
-- prepare, while doing
-- prepare no, then_do
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-# when_hash:
-
-- hash[num]
-- hash[ind]
-- hash[sum]
-
-- hash[?] = freq
-- hash[?] = each_ele
-
-# when_knowledge: can simplify a problem
-
-# when_2_pts: 2 parts
-
-# when_invert_question: true, false; can simplify
-
-# when_build_from_ground: fresh; rearrange
-
-# when_bottom_up: 0->1000, a-z; natual_bottom_up
-
-# important questions
-
-https://aaronice.gitbook.io/lintcode/problem-solving-summary/
