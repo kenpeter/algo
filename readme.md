@@ -3384,6 +3384,44 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # arr
 
+## combo_sum
+
+##### combo_sum_1; i
+
+- EG
+- SUMMA
+-
+- combo_sum_1 (i; non_0 no_repeat; unlimit so i)
+- https://leetcode.com/problems/combination-sum
+
+##### combo_sum_2; i+1
+
+- EG
+- SUMMA
+-
+- combo_sum_2 (i+1; use_once)
+- skip_loop, before_op
+- https://leetcode.com/problems/combination-sum-ii
+
+##### combo_sum_3; i+1 && len
+
+- EG
+- SUMMA
+-
+- combo_sum_3 (i+1 && len)
+- https://leetcode.com/problems/combination-sum-iii
+
+##### combo_sum_4; draw_the_tree
+
+- EG
+- SUMMA
+-
+- combo_sum_3 (draw_the_tree cache / dp)
+- https://leetcode.com/problems/combination-sum-iv
+
+<br/>
+<br/>
+
 ## k_stable; i, j meet
 
 ##### 2_sum == 3rd_ele; k_stable; i, j meet;
@@ -3407,7 +3445,35 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - k_stable (no_such); i, j meet;
 - < k, ++i;
 - > = k, --j;
+-
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
+
+<br/>
+<br/>
+
+## change_sth, become_old_question
+
+##### 3sum_less_k; sum - ele, become_old_question
+
+- EG
+- SUMMA
+-
+- sort
+- sum - ele (change_sth)
+- become 2sum_less_k (become_old_question)
+-
+- https://baihuqian.github.io/2018-07-28-3sum-smaller
+
+#####
+
+- EG
+- SUMMA
+-
+- sort
+- half sum (change_sth)
+- become combo_sum_2 (i+1) || combo_sum_3 (i+1, len)
+-
+- https://leetcode.com/problems/partition-equal-subset-sum
 
 <br/>
 <br/>
