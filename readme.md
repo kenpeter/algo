@@ -1243,16 +1243,6 @@
 -
 - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
 
-##### 2sum_hash_ele; mod_to_use
-
-- EG
-- ns = [2,7,11,15], tar = 9 -> [7, 2, -2, -6]
-- SUMMA
-- single_loop (loop_ele)
-- if h[tar - ns[i]], re; (mod_to_use)
-- else hash_rem_posi
-- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
-
 ##### 3sum_less_k; less_k == range
 
 - EG
@@ -2111,17 +2101,6 @@
 - if set.con(2\*ele) || set.con(ele/2), re true; (loop_each_ele, mod_to_use)
 - else set.add(ele)
 - https://leetcode.com/problems/check-if-n-and-its-double-exist
-
-##### 2sum_hash_ele; mod_to_use
-
-- EG
-- ns = [2,7,11,15], tar = 9 -> [7, 2, -2, -6]
-- SUMMA
-- loop eles;
-- if hash[tar - ele] !== undef, re ind (mod_to_use)
-- else hash[ele] = ind
-- https://leetcode.com/problems/two-sum
-- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
 <br/>
 <br/>
@@ -3386,7 +3365,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - sort
 - k_stable; i, j meet;
-- matched, ++i (no skip_loop), --j (no skip_loop) still_chance
+- matched, still_chance; ++i (no skip_loop), --j (no skip_loop)
 -
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=7f960d672c005585e2c0324b5c6cce17&pid=702837&user=figo2476
@@ -3398,7 +3377,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - sort
 - k_stable; i, j meet
-- matched, ++i (skip_loop), --j (skip_loop) still_chance
+- matched, still_chance; ++i (skip_loop), --j (skip_loop)
 -
 - https://leetcode.com/problems/3sum
 
@@ -3419,7 +3398,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## change_sth, become_old_question
 
-##### 3sum; sum - ele (change_sth), 2sum_hash_prev, become_old_question
+##### 3sum; sum - ele (change_sth), 2sum_hash_prev (become_old_question)
 
 - EG
 - SUMMA
@@ -3427,11 +3406,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - sort
 - sum - ele (change_sth)
 - become 2sum_hash_prev (become_old_question)
+- matched, still_chance; 2sum_hash_prev
 -
 - https://leetcode.com/submissions/detail/470985485
 - https://leetcode.com/problems/3sum
 
-##### 3sum_less_k; sum - ele (change_sth), 2sum_less, become_old_question
+##### 3sum_less_k; sum - ele (change_sth), 2sum_less (become_old_question)
 
 - EG
 - SUMMA
@@ -3442,7 +3422,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://baihuqian.github.io/2018-07-28-3sum-smaller
 
-#####
+##### 2part_equal; half_sum (change_sth), combination_sum_2 (become_old_question)
 
 - EG
 - SUMMA
@@ -3493,7 +3473,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # hash
 
-## ?
+## hash(prev)
 
 ##### subarray_sum (+ / -) == k; hash(curr_sum - subarray_sum == prev_sum)
 
@@ -3505,6 +3485,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/469373460/
 - https://leetcode.com/problems/subarray-sum-equals-k
+
+##### 2sum_hash_prev; hash(prev)
+
+- EG
+- SUMMA
+- 2sum_hash_prev; hash(prev)
+- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
+
+##### 2sum_hash_prev; hash(prev)
+
+- EG
+- SUMMA
+- 2sum_hash_prev; hash(prev)
+- https://leetcode.com/problems/two-sum
 
 <br/>
 <br/>
