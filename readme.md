@@ -1243,26 +1243,6 @@
 -
 - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
 
-##### 3sum_less_k; less_k == range
-
-- EG
-- SUMMA
--
-- sort (rm_dup)
--
-- outloop (i=0, i<len-2, ...)
-- i
-- s = i+1
-- e = len-1
--
-- inloop (s < e)
-- if ns[i] + ns[s] + ns[e] < sum (3sum = 1_ele + 2sum_start_end)
-- c = c + (j-i), s++; (less_k == range)
--
-- else, e--
-- https://kennyzhuang.gitbooks.io/leetcode-lock/content/259_3sum_smaller.html
-- https://leetcode.com/problems/3sum-smaller/
-
 ##### 2pts(sort; 2sum_start_end); how many 3sum less than k; 1_ele + 2sum_start_end(sort, >=k, e--; sort, <k, s++); the_real_3sum; how_many_less_k = e - s
 
 - EG
@@ -3388,10 +3368,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - sort
 - k_stable (no_such); i, j meet;
-- < k, ++i;
-- > = k, --j;
+- < k; (less_k)
+- > = k;
 -
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
+
+##### 3sum_less_k (3sum_smaller); k_stable; i, j meet
+
+- EG
+- SUMMA
+-
+- sort
+- k_stable; i, j meet
+- < k; (less_k)
+- > = k;
+-
+- https://kennyzhuang.gitbooks.io/leetcode-lock/content/259_3sum_smaller.html
+- https://leetcode.com/problems/3sum-smaller/
 
 <br/>
 <br/>
