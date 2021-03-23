@@ -1243,29 +1243,6 @@
 -
 - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
 
-##### 3sum_cloest_to_k; absolute_diff
-
-- EG
-- SUMMA
--
-- outloop (i=0; i<len-2..); (ns[i_len-2] vs len-2)
-- sort (start_end)
-- 3sum = 1_ele + 2sum_start_end
--
-- inloop (s < e)
-- if curr_diff < g_min_diff, update (absolute_diff)
--
-- if ns[i] + ns[s] + ns[e] < k (real_3sum)
-- ++s; (real_3sum_control)
--
-- if ns[i] + ns[s] + ns[e] > k (real_3sum)
-- --e; (real_3sum_control)
--
-- if ns[i] + ns[s] + ns[e] == k (real_3sum)
-- re k
--
-- https://leetcode.com/problems/3sum-closest
-
 <br/>
 <br/>
 
@@ -3365,7 +3342,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 
-##### 3sum_less_k (3sum_smaller); k_stable; i, j meet
+##### 3sum_less_k (count); k_stable; i, j meet
 
 - EG
 - SUMMA
@@ -3378,7 +3355,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://kennyzhuang.gitbooks.io/leetcode-lock/content/259_3sum_smaller.html
 - https://leetcode.com/problems/3sum-smaller
 
-#####
+##### 3sum_less_k (count); k_stable; i, j meet
 
 - EG
 - SUMMA
@@ -3388,6 +3365,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - < k (less_k)
 - > = k
 - https://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value/
+
+##### 3sum_less_k (absolute_distance); k_stable; i, j meet
+
+- EG
+- SUMMA
+- sort
+- k_stable; i, j meet
+- < k (less_k)
+- > = k
+- https://leetcode.com/problems/3sum-closest
 
 <br/>
 <br/>
