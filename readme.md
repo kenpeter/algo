@@ -2556,28 +2556,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms
 
-##### [-2,1,-3,4,-1,2,1,-5,4]; subarray_max_sum; dp[i]\_curr_sum = (dp[i-1]\_prev_sum > 0 ? dp[i-1] : 0_reset) + ns[i-1]\_curr_num
-
-- EG
-- SUMMA
-- single_loop(i=1_look_back; i<=ns.len...)
--
-- DP_EXPLAIN
-- dp_slot == arr.len + 1
-- dp[a.len+1].fill(0)
--
-- i == curr_ind
-- dp[i] == curr_ind_sum
-- i-1 == prev_dp_ind
-- dp[i-1] == prev_sum
-- ns[i-1] == curr_num == sth
-- dp[i-1]>0 ? dp[i-1] : 0 == reset
--
-- dp[i]\_curr_sum = (dp[i-1]\_prev_sum > 0 ? dp[i-1] : 0_reset) + ns[i-1]\_curr_num
-- dp.splice(0, 1) (rm 0 ind)
-- re ma(...dp);
-- https://leetcode.com/problems/maximum-subarray
-
 ##### N = 12; 1 -> 0(0), 2 -> 5(1), 3 -> x(0)... 10 -> 10(0), 11 -> 11(0), 12 -> 15; contain [3, 4, 7], then\*all_fail; contain [2, 5, 6, 9], then_give_1
 
 - EG
@@ -3131,6 +3109,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # dp (real_understanding)
 
+## order !important
+
 ##### arr_to_2_part; order !important
 
 - EG
@@ -3169,6 +3149,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - see my solution: https://leetcode.com/submissions/detail/468284357
 - https://leetcode.com/problems/partition-equal-subset-sum
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## order important
+
 ##### combo_sum_4; order important
 
 - EG
@@ -3196,6 +3184,34 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - my solution: https://leetcode.com/submissions/detail/468503374/
 - https://leetcode.com/problems/combination-sum-iv
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## curr = (con_subarray || startover_subarray) + ele
+
+##### subarray max_sum; curr = (con_subarray || startover_subarray) + ele
+
+- EG
+- SUMMA
+-
+- method 1:
+- brute_force; i_stable, j_stable, k_loop (everytime_startover_subarray)
+-
+- method 2:
+- brute_force; i_stable, j_loop, (everytime_prev_subarray)
+-
+- method 3:
+- dp; curr = (con_subarray || startover_subarray) + ele
+-
+- method 4:
+- dp; curr = (con_subarray || startover_subarray) + ele; dp[i], dp[i-1] using_same_var
+-
+- https://leetcode.com/submissions/detail/472100127/
+- https://leetcode.com/problems/maximum-subarray
 
 <br/>
 <br/>
@@ -3458,12 +3474,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## hash(prev)
 
-##### subarray_sum (+ / -) == k; hash(curr_sum - subarray_sum == prev_sum)
+##### subarray_sum (+ / -) == k; hash(curr_sum - subarray_sum(k) == prev_sum)
 
 - EG
 - SUMMA
 -
-- hash(curr_sum - subarray_sum == prev_sum)
+- hash(curr_sum - subarray_sum(k) == prev_sum)
 - because hash_can_go_back
 -
 - https://leetcode.com/submissions/detail/469373460/
