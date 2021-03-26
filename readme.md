@@ -456,16 +456,6 @@
 
 ## skip_loop_up_highest, skip_loop_down_lowest;
 
-##### min_val is always past; highest - lowest
-
-- EG
-- SUMMA
-- min_val = ps[0]; (min_val is always past)
-- loop(i=1, i<...) (LOOK_BACK)
-- profit = highest - lowest = curr_ele - min_val (highest - lowest)
-- min(p[i], min_val) (min_val is always past)
-- https://leetcode.com/problems/best-time-to-buy-and-sell-stock
-
 ##### [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest; skip_loop_down_lowest; buy at 0, sell at 4
 
 - EG
@@ -3193,7 +3183,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## curr = (con_subarray || startover_subarray) + ele
 
-##### subarray max_sum; curr = (con_subarray || startover_subarray) + ele
+##### max_subarray; curr = (con_subarray || startover_subarray) + ele
 
 - EG
 - SUMMA
@@ -3212,6 +3202,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/472100127/
 - https://leetcode.com/problems/maximum-subarray
+
+##### buy_low_sell_high_once;
+
+- EG
+- SUMMA
+-
+- method 1:
+- brute_force; i_stable vs j_loop
+-
+- method 2:
+- big_segment == small_segments (prepare), then max_subarray problem
+-
+- method 3:
+- big_segment == small_segments (in_fly), then max_subarray problem
+-
+- method 4:
+- i vs i-1 partition (1_min)
+-
+- https://leetcode.com/problems/best-time-to-buy-and-sell-stock
 
 <br/>
 <br/>
