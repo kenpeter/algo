@@ -3230,7 +3230,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # brute_force
 
-## i_stable vs j_loop
+## brute_force; i_stable vs j_loop
 
 ##### subarray_sum (>=0) == k; i_stable vs j_loop; sum_build_at_end (next_loop)
 
@@ -3274,7 +3274,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## i_stable vs j_stable vs k_loop
+## brute_force; i_stable vs j_stable vs k_loop
 
 ##### 3sum_less_k, count; i_stable vs j_stable vs k_loop
 
@@ -3282,7 +3282,40 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - i_stable vs j_stable vs k_loop
 -
-- https://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value/
+- https://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value
+
+<br/>
+<br/>
+
+## brute_force; dp[ind][can_buy][tran] = buy or no_action; dp[ind][can_buy][tran] = sell or no_action; k_tran = 1, 2, k, unlimit
+
+##### dp[ind][can_buy][tran] = buy or no_action; dp[ind][can_buy][tran] = sell or no_action; k_tran = 1
+
+- EG
+- SUMMA
+- dp[ind][can_buy][tran] = buy or no_action; dp[ind][can_buy][tran] = sell or no_action; k_tran = 1
+- https://leetcode.com/problems/best-time-to-buy-and-sell-stock
+
+##### dp[ind][can_buy][tran] = buy or no_action; dp[ind][can_buy][tran] = sell or no_action; k_tran = 2
+
+- EG
+- SUMMA
+- dp[ind][can_buy][tran] = buy or no_action; dp[ind][can_buy][tran] = sell or no_action; k_tran = 2
+- https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii
+
+##### dp[ind][can_buy][tran] = buy or no_action; dp[ind][can_buy][tran] = sell or no_action; k_tran = k
+
+- EG
+- SUMMA
+- dp[ind][can_buy][tran] = buy or no_action; dp[ind][can_buy][tran] = sell or no_action; k_tran = k
+- https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv
+
+##### dp[ind][can_buy] = buy or no_action; dp[ind][can_buy] = sell or no_action; k_tran = unlimit (no care)
+
+- EG
+- SUMMA
+- dp[ind][can_buy] = buy or no_action; dp[ind][can_buy] = sell or no_action; k_tran = unlimit
+- https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii
 
 <br/>
 <br/>
