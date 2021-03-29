@@ -456,20 +456,6 @@
 
 ## skip_loop_up_highest, skip_loop_down_lowest;
 
-##### [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest; skip_loop_down_lowest; buy at 0, sell at 4
-
-- EG
-- SUMMA
-- loop(i < ps.len-1) (loop_condi_reduce, arr_ind_inc; vice versa)
--
-- skip_loop_down_lowest(i < ps.len - 1 && ps[i] >= ps[i+1]) (LOOK_AHEAD, i_stay; LOOK_BACK, i_already_move)
-- end_loop, ps[i] (lowest)
--
-- skip_loop_up_highest(i < ps.len - 1 && ps[i] < ps[i+1]) (LOOK_AHEAD, i_stay; LOOK_BACK, i_already_move)
-- end_loop, ps[i] (highest)
--
-- https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii
-
 ##### [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest; skip_loop_down_lowest;
 
 - EG
@@ -3174,6 +3160,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - my solution: https://leetcode.com/submissions/detail/468503374/
 - https://leetcode.com/problems/combination-sum-iv
+
+##### buy sell stock k_tran = unlimit; recur == dp, some_param == dp_ind, ele == ele
+
+- EG
+- SUMMA
+-
+- method 1:
+- dp[ind][can_buy] = buy or no_action; dp[ind][can_buy] = sell or no_action; k_tran = unlimit (so no care)
+-
+- method 2:
+- recur == dp, some_param == dp_ind, ele == ele
+-
+- method 3:
+- 1D_dp, order important; recur == dp; some_param == dp_ind; ele == ele
+-
+- method 4:
+- const_var; recur == dp; some_param == dp_ind; ele == ele
+-
+- https://leetcode.com/submissions/detail/473724417
+- https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii
 
 <br/>
 <br/>
