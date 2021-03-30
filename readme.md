@@ -3178,7 +3178,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - method 4:
 - const_var; recur == dp; some_param == dp_ind; ele == ele
 -
-- https://leetcode.com/submissions/detail/473724417
+- method 5:
+- peak-valley; find_bottom, ind_exceed_condi; find_top, ind_exceed_condi;
+-
+- https://leetcode.com/submissions/detail/474057458/
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii
 
 <br/>
