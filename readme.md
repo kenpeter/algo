@@ -3630,9 +3630,17 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - EG
 - SUMMA
-- 2sum; i_stable, j_loop (i+1, len, tar-n[i])
+- i_stable, j_loop (i+1, len, tar-n[i])
 - https://leetcode.com/submissions/detail/475853031/
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
+
+##### same_ele_in_both_arrs; l < r, r=mid
+
+- EG
+- SUMMA
+- set(arr1), sort(arr2); l < r, r=mid
+- https://leetcode.com/submissions/detail/475860815/
+- https://leetcode.com/problems/intersection-of-two-arrays/
 
 <br/>
 <br/>
