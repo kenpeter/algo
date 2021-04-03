@@ -88,21 +88,6 @@
 
 <br/>
 <br/>
-
-## find ns1 in ns2, rm
-
-##### ns1 = [1, 1, 1, 1], ns2 = [1]; ns1 = [1], ns2 = [1, 1, 1, 1]; intersection = [1]; find ns1 in ns2, rm
-
-- EG
-- SUMMA
--
-- loop ele
-- if ns2.indexOf(ns1); (find ns1 in ns2)
-- ns2.splice(ns1); (rm)
-- back_loop
--
-- https://leetcode.com/problems/intersection-of-two-arrays-ii
-
 <br/>
 <br/>
 
@@ -3626,7 +3611,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/guess-number-higher-or-lower/
 
-##### 2sum; i_stable, j_loop (binary_search)
+##### 2sum; i_stable, j_loop (i < r, r=mid)
 
 - EG
 - SUMMA
@@ -3634,13 +3619,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/475853031/
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### same_ele_in_both_arrs; l < r, r=mid
+##### same_ele_in_both_arrs(unique); l < r, r=mid
 
 - EG
 - SUMMA
 - set(arr1), sort(arr2); l < r, r=mid
 - https://leetcode.com/submissions/detail/475860815/
 - https://leetcode.com/problems/intersection-of-two-arrays/
+
+##### same_ele_in_both_arrs(repeated); l < r, r=mid (sync_move, ind+1)
+
+- EG
+- SUMMA
+- sort(ns1), sort(ns2); sync_move, ind+1
+- https://leetcode.com/submissions/detail/476110174/
+- https://leetcode.com/problems/intersection-of-two-arrays-ii/
 
 <br/>
 <br/>
