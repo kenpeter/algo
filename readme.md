@@ -3556,6 +3556,90 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+# binary_search
+
+## l < r, r=mid
+
+##### search_insert_position; l < r, r=mid
+
+- EG
+- SUMMA
+-
+- method 1:
+- l < r (r=len), l=mid+1, r=mid; == at_end (l < r, r=mid)
+-
+- method 2:
+- l < r (r=len), l=mid+1, r=mid; == at_end (l < r, r=mid)
+-
+- method 3:
+- l <= r (r=len), l=mid+1, r=mid-1; == at_end (l <= r, r=mid-1)
+-
+- method 4:
+- l < r (r=len), l=mid+1, r=mid; == at_start (l < r, r=mid)
+-
+- method 5:
+- l <= r (r=len-1), l = m + 1, r = m - 1; == at_end (l < r, r=mid)
+-
+- https://leetcode.com/submissions/detail/475070091/
+- https://leetcode.com/problems/search-insert-position
+
+##### sqrtx; mid\*mid == tar;
+
+- EG
+- SUMMA
+- method 1:
+- ele_equal; ele_round_down; ele_too_big; ele_too_small; mid\*mid == tar; == at_start
+-
+- method 2:
+- mid\*mid == tar; == at_start
+-
+- https://leetcode.com/submissions/detail/475071694/
+- https://leetcode.com/problems/sqrtx
+
+##### perfect-square; l <= r, l = mid+1, r = mid-1
+
+- EG
+- SUMMA
+- method 1:
+- l <= r, l = mid+1, r = mid-1; == at_start (https://leetcode.com/problems/sqrtx)
+-
+- https://leetcode.com/submissions/detail/474581846/
+- https://leetcode.com/problems/valid-perfect-square
+
+##### good_version or bad_version; l < r, r=mid
+
+- EG
+- SUMMA
+-
+- method 1:
+- l < r, r=mid
+-
+- https://leetcode.com/problems/first-bad-version
+
+##### guess higher or lower num; l < r, r=mid
+
+- EG
+- SUMMA
+-
+- method 1:
+- l < r, r=mid
+-
+- https://leetcode.com/problems/guess-number-higher-or-lower/
+
+##### 2sum; i_stable, j_loop (binary_search)
+
+- EG
+- SUMMA
+- 2sum; i_stable, j_loop (i+1, len, tar-n[i])
+- https://leetcode.com/submissions/detail/475853031/
+- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 # math
 
 ## straight line slope; dy / dx = (y1 - y) / (x1 - x)
