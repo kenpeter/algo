@@ -3635,6 +3635,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/476110174/
 - https://leetcode.com/problems/intersection-of-two-arrays-ii/
 
+#####
+
+- EG
+- SUMMA
+- binary_search in sort_part
+- https://leetcode.com/submissions/detail/476986990/
+- https://leetcode.com/problems/search-in-rotated-sorted-array
+
 <br/>
 <br/>
 <br/>
