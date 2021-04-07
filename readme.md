@@ -3654,23 +3654,37 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# forward / backward, n read, n write
+# i_f_b (r), j_f_b (r), k_f_b (w)
 
-## forward / backward, n read, n write
+## i_forward_backward (r), j_forward_backward (r), k_forward_backward (w)
 
-#####
+##### merge 2_sort_arr; i_f_b (r), j_f_b (r), k_f_b (w)
 
 - EG
 - SUMMA
 -
 - method 1:
-- forward, 2 write, 1 read; together, anything left
+- i_f (r), j_f (r), k_f (w); together, anything left
 -
 - method 2:
-- backward, 2 write, 1 read; if i over-run (ns2 left)
+- in_place
+- i_b (r), j_b (r), k_b (w); else_catch_everything (i over-run)
 -
 - https://leetcode.com/submissions/detail/477449924/
 - https://leetcode.com/problems/merge-sorted-array
+
+##### sqt sort_arr; 2_sort_subarr; i_f_b (r), j_f_b (r), k_f_b (w)
+
+- EG
+- SUMMA
+-
+- method 1:
+- 2_sort_subarr; i_f (r), j_b (r), else_catch_everything
+-
+- method 2:
+- 2_sort_subarr; i_b (r), j_f (r); no_else_catch_everything, so complicated
+-
+- https://leetcode.com/problems/squares-of-a-sorted-array
 
 <br/>
 <br/>
