@@ -3654,9 +3654,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# i_f_b (r), j_f_b (r), k_f_b (w)
+# 2_sort_subarr
 
-## i_forward_backward (r), j_forward_backward (r), k_forward_backward (w)
+## 2_sort_subarr
 
 ##### merge 2_sort_arr; i_f_b (r), j_f_b (r), k_f_b (w)
 
@@ -3664,11 +3664,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - method 1:
-- i_f (r), j_f (r), k_f (w); together, anything left
+- 2_sort_arr; i_f (r), j_f (r), k_f (w); together, anything left
 -
 - method 2:
 - in_place
-- i_b (r), j_b (r), k_b (w); else_catch_everything (i over-run)
+- 2_sort_subarr; i_b (r), j_b (r), k_b (w); else_catch_everything (i over-run)
 -
 - https://leetcode.com/submissions/detail/477449924/
 - https://leetcode.com/problems/merge-sorted-array
