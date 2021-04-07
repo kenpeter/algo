@@ -13,7 +13,7 @@ var merge = function (ns1, m, ns2, n) {
     } else {
       ns1[k] = ns2[j];
       --k; // k guard
-      --j; // i over-run (ns2 left)
+      --j; // j guard
     }
   }
 };

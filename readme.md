@@ -3317,7 +3317,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# arr
+# combo_sum
 
 ## combo_sum
 
@@ -3430,6 +3430,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+
+# change_sth, become_old_question
 
 ## change_sth, become_old_question
 
@@ -3635,13 +3640,37 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/476110174/
 - https://leetcode.com/problems/intersection-of-two-arrays-ii/
 
-#####
+##### partial sort arr; binary_search in sort_part
 
 - EG
 - SUMMA
 - binary_search in sort_part
 - https://leetcode.com/submissions/detail/476986990/
 - https://leetcode.com/problems/search-in-rotated-sorted-array
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# forward / backward, n read, n write
+
+## forward / backward, n read, n write
+
+#####
+
+- EG
+- SUMMA
+-
+- method 1:
+- forward, 2 write, 1 read; together, anything left
+-
+- method 2:
+- backward, 2 write, 1 read; if i over-run (ns2 left)
+-
+- https://leetcode.com/submissions/detail/477449924/
+- https://leetcode.com/problems/merge-sorted-array
 
 <br/>
 <br/>
