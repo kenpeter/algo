@@ -2329,25 +2329,6 @@
 - res.sort.slice.map: sort(other_attr ? other_attr : default_attr) -> slice_portion -> map_sub_attr)
 - https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix
 
-##### [10, 20] -> 1020 vs 2010 -> 2010_largest; sort(a vs b) -> sort(a_posi_val vs b_posi_val)
-
-- EG
-- SUMMA
-- [a, b, c]
-- ab > ba (a_posi_val > b_posi_val; b_connect)
-- bc > cb (b_posi_val > c_posi_val; b_connect)
-- ac > ca (a_posi_val > c_posi_val)
--
-- [9, 6, 30]
-- 96 > 69 (9_posi_val > 6_posi_val, 6_connect)
-- 630 > 306 (6_posi_val > 30_posi_val, 6 connect)
-- 930 > 309 (9_posi_val > 30_posi_val)
--
-- ns.sort((a, b) => { 'ba' - 'ab' });
-- ns.join('').toInt
--
-- https://leetcode.com/problems/largest-number
-
 ##### ababa, [aba, ab] -> [(0, 2), (2, 4)...]; slide_word (loop_word, slide_word, substring_equal)
 
 - EG
@@ -3067,12 +3048,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 # dp (real_understanding)
 
-## order !important
+## order !important (ele -> tar)
 
-##### arr_to_2_part; order !important
+##### arr\*to_2_equal_sum_part; order !important (ele -> tar)
 
 - EG
 - SUMMA
@@ -3116,9 +3107,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## order important
+## order important (tar -> ele)
 
-##### combo_sum_4; order important
+##### combo_sum_4; order_important (tar -> ele)
 
 - EG
 - SUMMA
@@ -3317,9 +3308,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# combo_sum
+# combo_sum; (1) i (2) i+1 (3) i+1 && len (4) draw_the_tree
 
-## combo_sum
+## combo_sum; (1) i (2) i+1 (3) i+1 && len (4) draw_the_tree
 
 ##### combo_sum_1; i
 
@@ -3685,6 +3676,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 2_sort_subarr; i_b (r), j_f (r); no_else_catch_everything, so complicated
 -
 - https://leetcode.com/problems/squares-of-a-sorted-array
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# comparator
+
+## comparator
+
+##### [1, 20] -> 120 vs 201; comparator, ba-ab
+
+- EG
+- SUMMA
+- method 1:
+- comprator, ba-ab
+-
+- https://leetcode.com/submissions/detail/477886109/
+- https://leetcode.com/problems/largest-number
 
 <br/>
 <br/>
