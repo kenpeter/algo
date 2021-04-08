@@ -3425,35 +3425,35 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# change_sth, become_old_question
+# chg_sth, become_old_question
 
-## change_sth, become_old_question
+## chg_sth, become_old_question
 
-##### 3sum; sum - ele (change_sth), 2sum_hash_prev (become_old_question)
+##### 3sum; ele + 2sum_hash_prev (chg_sth, become_old_question)
 
 - EG
 - SUMMA
 -
 - sort
-- sum - ele (change_sth)
+- sum - ele (chg_sth)
 - become 2sum_hash_prev (become_old_question)
 - matched, still_chance; 2sum_hash_prev
 -
 - https://leetcode.com/submissions/detail/470985485
 - https://leetcode.com/problems/3sum
 
-##### 3sum_less_k; sum - ele (change_sth), 2sum_less (become_old_question)
+##### 3sum_less_k; ele + 2sum_less (chg_sth, become_old_question)
 
 - EG
 - SUMMA
 -
 - sort
-- sum - ele (change_sth)
+- sum - ele (chg_sth)
 - become 2sum_less_k (become_old_question)
 -
 - https://baihuqian.github.io/2018-07-28-3sum-smaller
 
-##### 2part_equal; half_sum (change_sth), combination_sum_2 (become_old_question)
+##### 2part_equal; half_sum + combination_sum_2; (chg_sth, become_old_question)
 
 - EG
 - SUMMA
