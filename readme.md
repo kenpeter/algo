@@ -3472,29 +3472,39 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # slide_window
 
-## expand_win_right (check), shrink_win_left (check)
+## expand_win_right (1 by 1), shrink_win_left (condi)
 
-##### subarray_sum (>=0) == k; expand_win_right (check), shrink_win_left (check)
+##### subarray_sum (>=0) == k; expand_win_right (1 by 1), shrink_win_left (sum == k)
 
 - EG
 - SUMMA
 -
-- expand_win_right (check; stable), shrink_win_left (check; cycle)
+- expand_win_right (1 by 1), shrink_win_left (sum == k)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=b70840393292ef97fdbe78121760d972&pid=701236&user=figo2476
 
-##### subarray_product (>=0) less_than_k; expand_win_right (check), shrink_win_left (check)
+##### subarray_product (>=0) less_than_k; expand_win_right (1 by 1), shrink_win_left (product >= k)
 
 - EG
 - SUMMA
 -
-- expand_win_right (check; stable), shrink_win_left (check; cycle, when prod >= k, include_self)
+- expand_win_right (1 by 1), shrink_win_left (product >= k)
 -
 - less_than_k === range
 - orig_arr + income_ele -> 2 times more
 -
 - https://leetcode.com/problems/subarray-product-less-than-k
 - https://leetcode.com/submissions/detail/469783113/
+
+##### longest non-repeated substr; expand_win_right (1 by 1), shrink_win_left (non_unique), hash_unique
+
+- EG
+- SUMMA
+-
+- expand_win_right (1 by 1), shrink_win_left (non_unique, shrink), hash_unique
+-
+- https://leetcode.com/submissions/detail/482623234/
+- https://leetcode.com/problems/longest-substring-without-repeating-characters
 
 <br/>
 <br/>
