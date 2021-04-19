@@ -3729,6 +3729,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+# sort
+
+## bubble_sort
+
+##### example 1; 1 iteration, push 1 bubble to end
+
+- 1 iteration, push 1 bubble to end
+
+##### example 2; if anything not sort, bubble continue
+
+- if anything not sort, bubble continue
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 # backtrack
 
 ## i vs (i+? and res_inds);
