@@ -1,17 +1,6 @@
-# some solution
+# list
 
-- https://github.com/lxztju/leetcode-algorithm
-- https://my.oschina.net/znfang/blog/4314950
-- https://darktiantian.github.io
-
-# worth looking at
-
-- https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4
-- https://code.dennyzhang.com/hexspeak
-
-# similar question sets
-
-- https://zhuanlan.zhihu.com/p/341176507
+- https://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/#arrays
 
 <br/>
 <br/>
