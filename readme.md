@@ -3496,7 +3496,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-product-less-than-k
 - https://leetcode.com/submissions/detail/469783113/
 
-##### longest non-repeated substr; expand_win_right (1 by 1), shrink_win_left (hash_unique), hash_unique
+##### longest non-repeated substr; expand_win_right (1 by 1), shrink_win_left (hash_unique)
 
 - EG
 - SUMMA
