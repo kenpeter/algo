@@ -3256,7 +3256,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=897008f882370645ad43ee369da48b30&pid=702837&user=figo2476
 
-#####
+##### longest non-repeat substr; i_stable, j_loop (non-repeat)
 
 - EG
 - SUMMA
@@ -3510,8 +3510,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- expand_win_right (1 by 1), shrink_win_left (non_unique, shrink), hash_unique
+- method 1:
+- expand_win_right (1 by 1), shrink_win_left (hash_unique)
 -
+- method 2:
+- .........; hash.set(same_old_char, old_posi), hash.get(same_new_char) == old_posi
+-
+- method 3:
+- brute_force; i_stable, j_loop (non-repeat)
+-
+
 - https://leetcode.com/submissions/detail/482623234/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
@@ -3549,6 +3557,36 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - 2sum_hash_prev; hash(prev)
 - https://leetcode.com/problems/two-sum
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## hash(self, posi)
+
+##### longest non-repeat substr; hash(self, posi)
+
+- EG
+- SUMMA
+- hash(self, posi)
+- https://leetcode.com/submissions/detail/483336929/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## longest non-repeat substr; hash.set(same_old_char, old_posi), hash.get(same_new_char) == old_posi
+
+##### longest non-repeat substr; hash.set(same_old_char, old_posi), hash.get(same_new_char) == old_posi
+
+- EG
+- SUMMA
+- hash.set(same_old_char, old_posi), hash.get(same_new_char) == old_Posi
+- https://leetcode.com/submissions/detail/483336929/
 
 <br/>
 <br/>
