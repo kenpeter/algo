@@ -3215,9 +3215,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # brute_force
 
-## brute_force; i_stable vs j_loop
+## brute_force; i_stable, j_loop
 
-##### subarray_sum (>=0) == k; i_stable vs j_loop; sum_build_at_end (next_loop)
+##### subarray_sum (>=0) == k; i_stable, j_loop; sum_build_at_end (next_loop)
 
 - EG
 - SUMMA
@@ -3226,7 +3226,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray_sum (>=0) == k; i_stable vs j_loop; single_sum, rest_sum_loop
+##### subarray_sum (>=0) == k; i_stable, j_loop; single_sum, rest_sum_loop
 
 - EG
 - SUMMA
@@ -3235,7 +3235,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray_sum (+ / -) == k; i_stable vs j_loop; single_sum, rest_sum_loop
+##### subarray_sum (+ / -) == k; i_stable, j_loop; single_sum, rest_sum_loop
 
 - EG
 - SUMMA
@@ -3245,16 +3245,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-sum-equals-k
 - https://leetcode.com/submissions/detail/469373460/
 
-##### 2_sum == 3rd_ele; i_stable vs j_loop; i j sum, binary_search
+##### 2_sum == 3rd_ele; i_stable, j_loop; i j sum, binary_search
 
 - EG
 - SUMMA
 -
 - sort
-- i_stable vs j_loop; i j sum, binary_search
+- i_stable, j_loop; i j sum, binary_search
 -
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=897008f882370645ad43ee369da48b30&pid=702837&user=figo2476
+
+#####
+
+- EG
+- SUMMA
+-
+- i_stable, j_loop (non-repeat)
+- https://leetcode.com/submissions/detail/483228011/
+- https://leetcode.com/problems/longest-substring-without-repeating-characters
 
 <br/>
 <br/>
