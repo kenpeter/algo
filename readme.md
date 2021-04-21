@@ -3505,16 +3505,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-product-less-than-k
 - https://leetcode.com/submissions/detail/469783113/
 
-##### longest non-repeated substr; expand_win_right (1 by 1), shrink_win_left (hash_unique)
+##### longest non-repeated substr; expand_win_right (1 by 1), shrink_win_left (unique)
 
 - EG
 - SUMMA
 -
 - method 1:
-- expand_win_right (1 by 1), shrink_win_left (hash_unique)
+- expand_win_right (1 by 1), shrink_win_left (unique); chop_left_char
 -
 - method 2:
-- .........; hash.set(same_old_char, old_posi), hash.get(same_new_char) == old_posi
+- ...........; hash.set(char, old_posi), hash.get(char) == old_posi
 -
 - method 3:
 - brute_force; i_stable, j_loop (non-repeat)
@@ -3579,13 +3579,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## longest non-repeat substr; hash.set(same_old_char, old_posi), hash.get(same_new_char) == old_posi
+## longest non-repeat substr; hash.set(char, old_posi), hash.get(char) == old_posi
 
-##### longest non-repeat substr; hash.set(same_old_char, old_posi), hash.get(same_new_char) == old_posi
+##### longest non-repeat substr; hash.set(char, old_posi), hash.get(char) == old_posi
 
 - EG
 - SUMMA
-- hash.set(same_old_char, old_posi), hash.get(same_new_char) == old_Posi
+- hash.set(char, old_posi), hash.get(char) == old_Posi
 - https://leetcode.com/submissions/detail/483336929/
 
 <br/>
