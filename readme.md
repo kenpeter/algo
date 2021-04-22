@@ -510,7 +510,7 @@
 <br/>
 <br/>
 
-## INVERSE_QUESTION; matrix; most re_fail, else re_true; 2_ele_diag, upto_2nd_last
+## INVERSE_QUESTION; when saying true, false, yes, no; inverse
 
 ##### INVERSE_QUESTION; matrix; most re_fail, else re_true; 2_ele_diag, upto_2nd_last
 
@@ -523,6 +523,9 @@
 -
 - https://leetcode.com/problems/toeplitz-matrix
 
+<br/>
+<br/>
+<br/>
 <br/>
 <br/>
 
@@ -3206,7 +3209,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## brute_force; i_stable, j_loop
 
-##### subarray_sum (>=0) == k; i_stable, j_loop; sum_build_at_end (next_loop)
+##### subarray_sum (>=0) == k; brute_force; i_stable, j_loop; sum_build_at_end (next_loop)
 
 - EG
 - SUMMA
@@ -3215,7 +3218,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray_sum (>=0) == k; i_stable, j_loop; single_sum, rest_sum_loop
+##### subarray_sum (>=0) == k; brute_force; i_stable, j_loop; single_sum, rest_sum_loop
 
 - EG
 - SUMMA
@@ -3224,7 +3227,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray_sum (+ / -) == k; i_stable, j_loop; single_sum, rest_sum_loop
+##### subarray_sum (+ / -) == k; brute_force; i_stable, j_loop; single_sum, rest_sum_loop
 
 - EG
 - SUMMA
@@ -3234,7 +3237,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-sum-equals-k
 - https://leetcode.com/submissions/detail/469373460/
 
-##### 2_sum == 3rd_ele; i_stable, j_loop; i j sum, binary_search
+##### 2_sum == 3rd_ele; brute_force; i_stable, j_loop; i j sum, binary_search
 
 - EG
 - SUMMA
@@ -3245,7 +3248,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=897008f882370645ad43ee369da48b30&pid=702837&user=figo2476
 
-##### longest non-repeat substr; i_stable, j_loop (non-repeat)
+##### longest non-repeat substr; brute_force; i_stable, j_loop (non-repeat)
 
 - EG
 - SUMMA
@@ -3254,6 +3257,17 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/483228011/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
+##### local_inv_num == global_inv_num; brute_force; i_stable, j_loop; next_each (local, global), beyond (global)
+
+- EG
+- SUMMA
+-
+- https://leetcode.com/submissions/detail/483848195/
+- https://leetcode.com/problems/global-and-local-inversions
+
+<br/>
+<br/>
+<br/>
 <br/>
 <br/>
 
@@ -3267,6 +3281,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value
 
+<br/>
+<br/>
+<br/>
 <br/>
 <br/>
 
@@ -3461,6 +3478,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - become combo_sum_2 (i+1) || combo_sum_3 (i+1, len)
 -
 - https://leetcode.com/problems/partition-equal-subset-sum
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## inverse_question; when saying true, false, yes, no; inverse
+
+##### local_inv_num == global_inv_num; means only local_inv exist (inverse_question)
+
+- EG
+- SUMMA
+-
+- equal, means only local_inv exist (inverse_question)
+- max_most_likely
+-
+- https://leetcode.com/submissions/detail/483848195/
+- https://leetcode.com/problems/global-and-local-inversions
 
 <br/>
 <br/>
