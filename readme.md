@@ -3209,30 +3209,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## brute_force; i_stable, j_loop
 
-##### subarray_sum (>=0) == k; brute_force; i_stable, j_loop; sum_build_at_end (next_loop)
+##### subarray_sum (>=0) == k; brute_force; i_stable (start_num), j_loop (adding_num)
 
 - EG
 - SUMMA
 -
-- i_stable vs j_loop; sum_build_at_end (next_loop)
+- i_stable (start_num), j_loop (adding_num)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray_sum (>=0) == k; brute_force; i_stable, j_loop; single_sum, rest_sum_loop
+##### subarray_sum (+ / -) == k; brute_force; i_stable (start_num), j_loop (adding_num)
 
 - EG
 - SUMMA
 -
-- i_stable vs j_loop; single_sum, rest_sum_loop
--
-- https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
-
-##### subarray_sum (+ / -) == k; brute_force; i_stable, j_loop; single_sum, rest_sum_loop
-
-- EG
-- SUMMA
--
-- i_stable vs j_loop; single_sum, rest_sum_loop
+- i_stable (start_num), j_loop (adding_num)
 -
 - https://leetcode.com/problems/subarray-sum-equals-k
 - https://leetcode.com/submissions/detail/469373460/
