@@ -3050,6 +3050,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 # dp (real_understanding)
 
@@ -3722,7 +3730,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 2_sort_subarr
 
-##### merge 2_sort_arr; i_f_b (r), j_f_b (r), k_f_b (w)
+##### merge 2_sort_arr; i_forward_backward (r), j_forward_backward (r), k_forward_backward (w)
 
 - EG
 - SUMMA
@@ -3749,6 +3757,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 2_sort_subarr; i_b (r), j_f (r); no_else_catch_everything, so complicated
 -
 - https://leetcode.com/problems/squares-of-a-sorted-array
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# build_from_ground
+
+## build_from_ground
+
+#####
+
+- https://practice.geeksforgeeks.org/viewSol.php?subId=ef93198b6ad4ffc74cf627d7e52294e3&pid=702382&user=figo2476
 
 <br/>
 <br/>
