@@ -3720,12 +3720,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/476986990/
 - https://leetcode.com/problems/search-in-rotated-sorted-array
 
-##### sort arr of 0, 1, 2;
+##### sort arr of 0, 1, 2; lower (swap mid), mid (swap mid), high (swap mid)
 
 - EG
 - SUMMA
 -
-- lower (sort_stable), mid (detect/explode/test), high(sort_stable)
+- lower (swap mid), mid (swap mid), high(swap mid)
+- NOTE: not binary search, but mid (explode/detect/test)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=ef93198b6ad4ffc74cf627d7e52294e3&pid=702382&user=figo2476
 - https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231
