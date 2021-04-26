@@ -3796,6 +3796,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1
 
+##### global_inv_num == local_inv_num; next_each....; max represent entire subarr
+
+- EG
+- SUMMA
+-
+- next_each....; max represent entire subarr
+-
+- https://leetcode.com/submissions/detail/485237779/
+- https://leetcode.com/problems/global-and-local-inversions
+
 <br/>
 <br/>
 <br/>
