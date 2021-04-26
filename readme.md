@@ -3244,6 +3244,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/483848195/
 - https://leetcode.com/problems/global-and-local-inversions
 
+##### train start, end time; brute_force; i_stable, j_loop; start edge cross square
+
+- EG
+- SUMMA
+-
+- brute_force; i_stable, j_loop; start edge cross square
+-
+- https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1
+- https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
+
 <br/>
 <br/>
 <br/>
@@ -3600,6 +3610,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - hash.set(char, old_posi), hash.get(char) == old_Posi
 - https://leetcode.com/submissions/detail/483336929/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# arr push, pop
+
+## arr push, pop
+
+##### train start, end time; arr push, pop
+
+- EG
+- SUMMA
+-
+- arr push, pop
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
+- https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
 
 <br/>
 <br/>
