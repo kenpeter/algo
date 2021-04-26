@@ -151,26 +151,6 @@
 -
 - https://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array
 
-##### slide_window_avoid_rest_ops; pivot, left_sum == right_sum; right_win_size_in_val, shrink_win_left; left_win_size_in_val, expand_win_right
-
-- EG
-- [1(p), 7, 3, 6, 5, 6] -> l_sum = 0, r_sum = 7+..6 = 28
-- [1, 7(p), 3, 6, 5, 6] -> l_sum = 1, r_sum = 3+..6 = 20
-- [1, 7, 3(p), 6, 5, 6] -> l_sum = 1+7, r_sum = 6+5+6 = 17
-- [1, 7, 3, 6(p), 5, 6] -> l_sum = 1+7+3, r_sum = 11, good
-- SUMMA
--
-- ls = 0 (left_win_size_in_val)
-- rs = ns[0] + ns[1] + ... (right_win_size_in_val)
--
-- single_loop (i=0; i<len)
-- n = ns[i]; (ele, shrink_win_left; ele, expand_win_right)
-- rs = rs - n; (right_win_size_in_val, shrink_win_left)
-- if ls == rs, re i;
-- ls = ls + n; (left_win_size_in_val, expand_win_right)
--
-- https://leetcode.com/problems/find-pivot-index
-
 ##### slide_window_avoid_rest_ops; max_in_slide_win; i_diff_spd_pt_same_start; j_diff_spd_pt_same_end; sum == curr_win_size_in_val, plus ns[j] == extend_win_right; end-start, affect curr_win_size_in_len; sum == curr_win_size_in_val, minus ns[j] == shrink_win_left;
 
 - EG
@@ -3547,6 +3527,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/482623234/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
+##### 1 pivot, left_sum == right_sum; 2_slide_windows
+
+- EG
+- SUMMA
+-
+- 2_slide_windows
+-
+- https://leetcode.com/problems/find-pivot-index
+
 <br/>
 <br/>
 <br/>
@@ -3787,6 +3776,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - hash (0, 1, 2), build_from_ground
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=ef93198b6ad4ffc74cf627d7e52294e3&pid=702382&user=figo2476
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# max represent entire subarr
+
+## max represent entire subarr
+
+##### ele >= everything_in_right; backward; max represent entire subarr
+
+- EG
+- SUMMA
+-
+- backward; max represent entire subarr
+-
+- https://practice.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1
 
 <br/>
 <br/>
