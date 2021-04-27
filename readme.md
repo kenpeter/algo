@@ -3617,16 +3617,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# arr push, pop
+# overlap; one_start vs else_end; one_end vs else_start
 
-## arr push, pop
+## overlap; one_start vs else_end; one_end vs else_start
 
-##### train start, end time; arr push, pop
+##### train start_time, end_time; overlap; one_start vs else_end
 
 - EG
 - SUMMA
 -
-- arr push, pop
+- one_start vs else_end; align them to travel
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
+- https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
+
+##### shooting max balloon; overlap; one_end vs else_start
+
+- EG
+- SUMMA
+-
+- one_end vs else_start
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
