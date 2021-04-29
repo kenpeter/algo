@@ -3617,29 +3617,33 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# overlap; one_start vs else_end; one_end vs else_start
+# overlap; my_start vs else_end; my_end vs else_start
 
-## overlap; one_start vs else_end; one_end vs else_start
+## overlap; my_start vs else_end; my_end vs else_start
 
-##### train start_time, end_time; overlap; one_start vs else_end
-
-- EG
-- SUMMA
--
-- one_start vs else_end; align them to travel
--
-- https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
-- https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
-
-##### shooting max balloon; overlap; one_end vs else_start
+##### train start_time, end_time; overlap; my_start vs else_end
 
 - EG
 - SUMMA
 -
-- one_end vs else_start
+- my_start vs else_end; align them to travel
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
+
+##### shooting max balloons; overlap; greedy_start_map_start; greedy_end_map_end
+
+- EG
+- SUMMA
+-
+- method 1:
+- start_pt (desc), arrow_start -> good; greedy_start_map_start
+-
+- method 2:
+- end_pt (asc), arrow_end -> good; greedy_end_map_end
+-
+- https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
+- https://leetcode.com/submissions/detail/486665811/
 
 <br/>
 <br/>
