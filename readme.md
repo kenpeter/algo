@@ -3617,16 +3617,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# overlap; my_start vs else_end; my_end vs else_start
+# start_pick, end_pick; able_to_cover, not_able_to_cover;
 
-## overlap; my_start vs else_end; my_end vs else_start
+## start_pick, end_pick; able_to_cover, not_able_to_cover;
 
-##### train start_time, end_time; overlap; my_start vs else_end
+##### train start_time, end_time (overlap problem); kind of merging 2 arr, travese them; start_pick, end_pick; able_to_cover, not_able_to_cover;
 
 - EG
 - SUMMA
 -
-- my_start vs else_end; align them to travel
+- kind of merging 2 arr, travese them; start_pick, end_pick; able_to_cover, not_able_to_cover;
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
