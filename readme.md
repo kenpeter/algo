@@ -3631,19 +3631,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
 
-##### shooting max balloons; overlap; greedy_start_map_start; greedy_end_map_end
+##### shooting max balloons (overlap problem); start_pick, end_pick; able_to_cover, not_able_to_cover
 
 - EG
 - SUMMA
 -
 - method 1:
-- start_pt (desc), arrow_start -> good; greedy_start_map_start
+- start_pt (asc), attach_to_small (math.min); start_pick, end_pick; able_to_cover, not_able_to_cover;
 -
 - method 2:
-- end_pt (asc), arrow_end -> good; greedy_end_map_end
+- start_pt (desc), attach_to_big (math.max); start_pick, end_pick; able_to_cover, not_able_to_cover;
 -
+- method 3:
+- end_pt (asc), attach_to_small (math.min); start_pick, end_pick; able_to_cover, not_able_to_cover;
+-
+- method 4:
+- end_pt (desc), attach_to_big (math.big); start_pick, end_pick; able_to_cover, not_able_to_cover;
+-
+- https://leetcode.com/submissions/detail/487741686/
 - https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
-- https://leetcode.com/submissions/detail/486665811/
 
 <br/>
 <br/>
