@@ -3651,6 +3651,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/487741686/
 - https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
 
+##### merge_interval, [[1,4],[4,5]] -> [[1, 5]]; start, end as whole; able_to_cover (keep_extending), not_able_to_cover
+
+- EG
+- SUMMA
+-
+- start, end as whole; able_to_cover (keep_extending), not_able_to_cover
+-
+- https://leetcode.com/submissions/detail/487860609/
+- https://leetcode.com/problems/merge-intervals
+
 <br/>
 <br/>
 <br/>
