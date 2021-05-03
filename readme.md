@@ -3661,19 +3661,28 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/487860609/
 - https://leetcode.com/problems/merge-intervals
 
-#####
+##### non overlapping intervals; inverse of merge interval
 
 - EG
 - SUMMA
 -
 - method 1:
-- inverse of merge intervals
+- inverse of merge_interval
 -
 - method 2:
 - start_pt (asc); start_pick, end_pick; able_to_cover (merge), not_able_to_cover (new)
 -
 - https://leetcode.com/submissions/detail/488154801/
 - https://leetcode.com/problems/non-overlapping-intervals
+
+##### meeting room 1; end=max or end=1st_num; start_pick.....
+
+- EG
+- SUMMA
+-
+- end=max or end=1st_num; start_pick
+-
+- https://ttzztt.gitbooks.io/lc/content/sort/meeting-rooms.html
 
 <br/>
 <br/>

@@ -1,3 +1,5 @@
+// https://ttzztt.gitbooks.io/lc/content/sort/meeting-rooms.html
+// sm: end=max or end = 1st_num; start_pick, end_pick; able_to_cover (merge), not_able_to_cover (new)
 const meetingRoom = (ins) => {
   ins.sort((a, b) => a[0] - b[0]);
 
