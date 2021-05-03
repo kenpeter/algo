@@ -3244,7 +3244,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/483848195/
 - https://leetcode.com/problems/global-and-local-inversions
 
-##### train start, end time; brute_force; i_stable, j_loop; start edge cross square
+##### find minimum platforms (train start, end time); brute_force; i_stable, j_loop; start edge cross square
 
 - EG
 - SUMMA
@@ -3621,15 +3621,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## start_pick, end_pick; overlap (merge), non-overlap (new);
 
-##### train start_time, end_time; kind of merging 2 arr, travese them; start_pick, end_pick; overlap (merge), non-overlap (new);
+##### find minimum platforms (train start, end time); kind of merging 2 arr; start_pick, end_pick; overlap (train keep coming), non-overlap (train leaving);
 
 - EG
 - SUMMA
 -
-- kind of merging 2 arr, travese them; start_pick, end_pick; overlap (merge), non-overlap (new);
+- kind of merging 2 arr; start_pick, end_pick; overlap (train keep coming), non-overlap (train leaving);
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
+
+##### meeting room 2 (minimum meeting rooms); kind of merging 2 arr; overlap (meeting keep coming), non-overlap (meeting done);
+
+- EG
+- SUMMA
+-
+- kind of merging 2 arr; overlap (meeting keep coming), non-overlap (meeting done);
+-
+- https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
+- https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
 
 ##### shooting max balloons; start_pick, end_pick; overlap (merge), non-overlap (new)
 
