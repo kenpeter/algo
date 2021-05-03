@@ -3617,46 +3617,46 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# start_pick, end_pick; able_to_cover (merge), not_able_to_cover (new);
+# start_pick, end_pick; overlap (merge), non-overlap (new);
 
-## start_pick, end_pick; able_to_cover (merge), not_able_to_cover (new);
+## start_pick, end_pick; overlap (merge), non-overlap (new);
 
-##### train start_time, end_time (overlap problem); kind of merging 2 arr, travese them; start_pick, end_pick; able_to_cover (merge), not_able_to_cover (new);
+##### train start_time, end_time; kind of merging 2 arr, travese them; start_pick, end_pick; overlap (merge), non-overlap (new);
 
 - EG
 - SUMMA
 -
-- kind of merging 2 arr, travese them; start_pick, end_pick; able_to_cover (merge), not_able_to_cover (new);
+- kind of merging 2 arr, travese them; start_pick, end_pick; overlap (merge), non-overlap (new);
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
 
-##### shooting max balloons (overlap problem); start_pick, end_pick; able_to_cover (merge), not_able_to_cover (new)
+##### shooting max balloons; start_pick, end_pick; overlap (merge), non-overlap (new)
 
 - EG
 - SUMMA
 -
 - method 1:
-- start_pt (asc), attach_to_small (math.min); start_pick, end_pick; able_to_cover (merge), not_able_to_cover (new);
+- start_pt (asc), attach_to_small (math.min); start_pick, end_pick; overlap (merge), non-overlap (new);
 -
 - method 2:
-- start_pt (desc), attach_to_big (math.max); start_pick, end_pick; able_to_cover, not_able_to_cover (new);
+- start_pt (desc), attach_to_big (math.max); start_pick, end_pick; overlap (merge), non-overlap (new);
 -
 - method 3:
-- end_pt (asc), attach_to_small (math.min); start_pick, end_pick; able_to_cover (merge), not_able_to_cover (new);
+- end_pt (asc), attach_to_small (math.min); start_pick, end_pick; overlap (merge), non-overlap (new);
 -
 - method 4:
-- end_pt (desc), attach_to_big (math.big); start_pick, end_pick; able_to_cover (merge), not_able_to_cover (new);
+- end_pt (desc), attach_to_big (math.big); start_pick, end_pick; overlap (merge), non-overlap (new);
 -
 - https://leetcode.com/submissions/detail/487741686/
 - https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
 
-##### merge_interval, [[1,4],[4,5]] -> [[1, 5]]; start, end as whole; able_to_cover (merge), not_able_to_cover (new)
+##### merge_interval, [[1,4],[4,5]] -> [[1, 5]]; start, end as whole; overlap (merge), non-overlap (new)
 
 - EG
 - SUMMA
 -
-- start, end as whole; able_to_cover (merge), not_able_to_cover (new)
+- start, end as whole; overlap (merge), non-overlap (new)
 -
 - https://leetcode.com/submissions/detail/487860609/
 - https://leetcode.com/problems/merge-intervals
@@ -3670,7 +3670,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - inverse of merge_interval
 -
 - method 2:
-- start_pt (asc); start_pick, end_pick; able_to_cover (merge), not_able_to_cover (new)
+- start_pt (asc); start_pick, end_pick; overlap (merge), non-overlap (new)
 -
 - https://leetcode.com/submissions/detail/488154801/
 - https://leetcode.com/problems/non-overlapping-intervals
