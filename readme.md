@@ -3690,9 +3690,29 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- end=max or end=1st_num; start_pick
+- end=max or end=1st_num; start_pick....
 -
 - https://ttzztt.gitbooks.io/lc/content/sort/meeting-rooms.html
+
+##### meeting room 2; kind of merging 2 arr; overlap (meeting keep coming), non-overlap (meeting done);
+
+- EG
+- SUMMA
+-
+- kind of merging 2 arr; overlap (meeting keep coming), non-overlap (meeting done);
+-
+- https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
+- https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
+
+##### meeting room 3; prepare, then query; fill_time_block
+
+- EG
+- SUMMA
+-
+- prepare, then query; fill_time_block
+-
+- https://leetcode.com/discuss/interview-question/613816/Google-or-Onsite-or-Meeting-Rooms-3
+- see my js file in code dir
 
 <br/>
 <br/>
