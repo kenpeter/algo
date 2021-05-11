@@ -3714,6 +3714,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/discuss/interview-question/613816/Google-or-Onsite-or-Meeting-Rooms-3
 - see my js file in code dir
 
+##### my-calendar-i; cross_compare or inverse_problem
+
+- EG
+- SUMMA
+-
+- method 1:
+- start_a vs end_b; end_a vs start_b; cropss_compare
+-
+- method 2:
+- 2 cal no intersection; inverse_problem
+-
+- https://leetcode.com/submissions/detail/491628532/
+- https://leetcode.com/problems/my-calendar-i
+
 <br/>
 <br/>
 <br/>
