@@ -3617,29 +3617,74 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# start_pick, end_pick; overlap (merge), non-overlap (new);
+# ask_resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 
-## start_pick, end_pick; overlap (merge), non-overlap (new);
+## ask_resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 
-##### find minimum platforms (train start, end time); kind of merging 2 arr; start_pick, end_pick; overlap (train keep coming), non-overlap (train leaving);
+##### find minimum platforms (ask resource); start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 
 - EG
 - SUMMA
 -
-- kind of merging 2 arr; start_pick, end_pick; overlap (train keep coming), non-overlap (train leaving);
+- start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
 
-##### meeting room 2 (minimum meeting rooms); kind of merging 2 arr; overlap (meeting keep coming), non-overlap (meeting done);
+##### meeting room 2 (ask resource); start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 
 - EG
 - SUMMA
 -
-- kind of merging 2 arr; overlap (meeting keep coming), non-overlap (meeting done);
+- start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 -
 - https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
 - https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# treemap; sort, +1 / -1, state
+
+## treemap; sort, +1 / -1, state
+
+##### find minimum platforms (ask resource); treemap; sort, +1 / -1, statenon-overlap (--);
+
+- EG
+- SUMMA
+-
+- treemap; sort, +1 / -1, statenon-overlap (--);
+- https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
+
+##### meeting room 2 (ask resource); treemap; sort, +1 / -1, state(--);
+
+- EG
+- SUMMA
+-
+- treemap; sort, +1 / -1, statenon-overlap (--);
+- look at my code
+
+##### my-calendar-ii (ask resource); treemap; sort, +1 / -1, state
+
+- EG
+- SUMMA
+-
+- treemap; sort, +1 / -1, state
+-
+- https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# start_pick, end_pick; overlap (merge / intersect), non-overlap (new);
+
+## start_pick, end_pick; overlap (merge / intersect), non-overlap (new);
 
 ##### shooting max balloons; start_pick, end_pick; overlap (merge), non-overlap (new)
 
@@ -3694,12 +3739,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://ttzztt.gitbooks.io/lc/content/sort/meeting-rooms.html
 
-##### meeting room 2; kind of merging 2 arr; overlap (meeting keep coming), non-overlap (meeting done);
+##### meeting room 2; kind of merging 2 arr; overlap, non-overlap;
 
 - EG
 - SUMMA
 -
-- kind of merging 2 arr; overlap (meeting keep coming), non-overlap (meeting done);
+- kind of merging 2 arr; overlap, non-overlap;
 -
 - https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
 - https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
