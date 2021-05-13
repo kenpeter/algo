@@ -3626,16 +3626,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# ask_resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
+# ask resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 
-## ask_resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
+## ask resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 
 ##### find minimum platforms (ask resource); start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 
 - EG
 - SUMMA
 -
-- start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
+- ask resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
@@ -3645,7 +3645,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
+- ask resouce; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 -
 - https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
 - https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
@@ -3739,21 +3739,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/488154801/
 - https://leetcode.com/problems/non-overlapping-intervals
 
-##### meeting room 1; end=max or end=1st_num; start_pick.....
+##### meeting room 1 (attend_all?); brute_force; sort_start, curr_end > next_end, no_attend_all
 
 - EG
 - SUMMA
 -
-- end=max or end=1st_num; start_pick....
+- brute_force; sort_start, curr_end > next_end, no_attend_all
 -
-- https://ttzztt.gitbooks.io/lc/content/sort/meeting-rooms.html
+- https://www.programcreek.com/2014/07/leetcode-meeting-rooms-java/
 
-##### meeting room 2; kind of merging 2 arr; overlap, non-overlap;
+##### meeting room 2 (ask resource); start_arr, end_arr, travel_each; overlap (++), non-overlap (--)
 
 - EG
 - SUMMA
 -
-- kind of merging 2 arr; overlap, non-overlap;
+- ask resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--)
 -
 - https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
 - https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
@@ -3774,10 +3774,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - method 1:
-- start_a vs end_b; end_a vs start_b; cropss_compare
+- start_a vs end_b; end_a vs start_b (cropss_compare)
 -
 - method 2:
-- 2 cal no intersection; inverse_problem
+- 2 cal no intersection (inverse_problem)
 -
 - https://leetcode.com/submissions/detail/491628532/
 - https://leetcode.com/problems/my-calendar-i
