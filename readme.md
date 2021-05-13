@@ -3685,6 +3685,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
 
+##### my-calendar-iii (ask resource); treemap; sort, +1 / -1, state
+
+- EG
+- SUMMA
+-
+- treemap; sort, +1 / -1, state
+-
+- https://leetcode.com/submissions/detail/492441640/
+- https://leetcode.com/problems/my-calendar-iii/
+
+##### car-pooling (ask resource); trip = [[2_person, 1_on, 5_off],[3,3,7]], cap = 4; treemap; sort, +1 / -1, state
+
+- EG
+- SUMMA
+-
+- treemap; sort, +1 / -1, state
+-
+- https://leetcode.com/problems/car-pooling/
+-
+
 <br/>
 <br/>
 <br/>
