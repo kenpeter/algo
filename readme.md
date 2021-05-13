@@ -3254,6 +3254,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 
+##### my-calendar-ii; brute_force, rem overlap; overlap_problem -> merge / intersect
+
+- EG
+- SUMMA
+-
+- brute_force, rem overlap; overlap_problem -> merge / intersect
+-
+- https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
+
 <br/>
 <br/>
 <br/>
@@ -3682,36 +3691,36 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# start_pick, end_pick; overlap (merge / intersect), non-overlap (new);
+# end_pick (start_pick); overlap (merge / intersect / update_pick), non-overlap (new pick);
 
-## start_pick, end_pick; overlap (merge / intersect), non-overlap (new);
+## end_pick (start_pick); overlap (merge / intersect / update_pick), non-overlap (new pick);
 
-##### shooting max balloons; start_pick, end_pick; overlap (merge), non-overlap (new)
+##### shooting max balloons; end_pick (start_pick); overlap (min / max pick), non-overlap (new pick)
 
 - EG
 - SUMMA
 -
 - method 1:
-- start_pt (asc), attach_to_small (math.min); start_pick, end_pick; overlap (merge), non-overlap (new);
+- start_pt (asc), attach_to_small (math.min); end_pick; overlap (min end_pick), non-overlap (new end_pick);
 -
 - method 2:
-- start_pt (desc), attach_to_big (math.max); start_pick, end_pick; overlap (merge), non-overlap (new);
+- start_pt (desc), attach_to_big (math.max); start_pick; overlap (max start_pick), non-overlap (new start_pick);
 -
 - method 3:
-- end_pt (asc), attach_to_small (math.min); start_pick, end_pick; overlap (merge), non-overlap (new);
+- end_pt (asc), attach_to_small (math.min); end_pick; overlap (min end_pick), non-overlap (new end_pick);
 -
 - method 4:
-- end_pt (desc), attach_to_big (math.big); start_pick, end_pick; overlap (merge), non-overlap (new);
+- end_pt (desc), attach_to_big (math.big); start_pick; overlap (max start_pick), non-overlap (new start_pick);
 -
 - https://leetcode.com/submissions/detail/487741686/
 - https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
 
-##### merge_interval, [[1,4],[4,5]] -> [[1, 5]]; start, end as whole; overlap (merge), non-overlap (new)
+##### merge_interval, [[1,4],[4,5]] -> [[1, 5]]; [start_pick, end_pick] (end_pick); overlap (merge, max end_pick), non-overlap (new end_pick)
 
 - EG
 - SUMMA
 -
-- start, end as whole; overlap (merge), non-overlap (new)
+- [start_pick, end_pick] (end_pick); overlap (merge, max end_pick), non-overlap (new end_pick)
 -
 - https://leetcode.com/submissions/detail/487860609/
 - https://leetcode.com/problems/merge-intervals
@@ -3725,7 +3734,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - inverse of merge_interval
 -
 - method 2:
-- start_pt (asc); start_pick, end_pick; overlap (merge), non-overlap (new)
+- start_pt (asc); end_pick; overlap (min end_pick), non-overlap (new end_pick)
 -
 - https://leetcode.com/submissions/detail/488154801/
 - https://leetcode.com/problems/non-overlapping-intervals
