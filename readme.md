@@ -3396,10 +3396,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/410433342/
 - https://leetcode.com/problems/reverse-words-in-a-string
 
-##### rev position, but no rev word; rev_entire(group_stay), rev_word(i_start, j_end), clean_space(i_write, j_read)
+##### reverse words in str; " a good \_\_ example " -> "example good a"; rev_whole, rev_each_word, no_extra_space
 
-- same as above
-- except no extra space
+- EG
+- SUMMA
+- same above, just_no_extra_space
+- https://www.programcreek.com/2014/05/leetcode-reverse-words-in-a-string-ii-java/
 - https://leetcode.com/problems/reverse-words-in-a-string-ii
 
 ##### rm duplicated ele; i_write, j_read;
