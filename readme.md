@@ -3390,9 +3390,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - EG
 - SUMMA
-- (1) rev_whole (start, end, swap; i<=j, swap_self; i<j, no_swap_self)
-- (2) rev_each_word (i_skip_loop, consume_space, stop_at_char; j_skip_loop, consume_char, stop_at_space)
-- (3) no_extra_space (skip_loop, consume_space, stop_at_char; write_in_place(j posi >= i posi); follow spaces -> 1 space)
+- (1) rev_whole (start, end, swap)
+- (2) rev_each_word (consume, stop)
+- (3) no_extra_space (write in place)
+- https://leetcode.com/submissions/detail/410433342/
 - https://leetcode.com/problems/reverse-words-in-a-string
 
 ##### rev position, but no rev word; rev_entire(group_stay), rev_word(i_start, j_end), clean_space(i_write, j_read)
