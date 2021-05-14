@@ -605,74 +605,6 @@
 <br/>
 <br/>
 
-# str
-
-## rev_entire, rev_word, clean_space(i_write, j_read)
-
-##### rev position, but no rev word; rev_entire(group_stay), rev_word(i_start, j_end), clean_space(i write, j read)
-
-- EG
-- SUMMA => rev_entire (group_stay); rev_word; clean_space (i_write, j_read)
-- (1) rev_entire (group_stay)
-- i, j cross over;
-- (2) rev_word(i_start, j_end)
-- i_start, j_end, i=new_cycle
-- (3) clean_space (i write, j read)
-- letf_good, right_waste
-- front_space, copy, end_space, 1 space;
-- https://leetcode.com/problems/reverse-words-in-a-string
-
-##### rev position, but no rev word; rev_entire(group_stay), rev_word(i_start, j_end), clean_space(i_write, j_read)
-
-- same as above
-- except no extra space
-- https://leetcode.com/problems/reverse-words-in-a-string-ii
-
-##### rm duplicated ele; i_write, j_read;
-
-- EG
-- i=0 (write), j=0 (read)
-- [1, 1, 2, 2, 3, 3], sort;
-- e.g. i pt 1(ind_0), j pt 2(ind_2)
-- SUMMA
-- loop eles (j)
-- if a[i_write] === a[j_read], ++j (equal val; j move only);
-- if a[i_write] !== a[j_read], a[++i] = a[j] (!equal val; i pt good stuff, overwrite, j move);
-- end_loop re ++i;
-- https://leetcode.com/problems/remove-duplicates-from-sorted-array
-
-##### rm particular ele; i_write, j_read;
-
-- EG
-- SUMMA
-- loop eles (j)
-- if a[j_read] === v, ++j (equal val; j move only)
-- if a[j_read] !== v, a[i++] = a[j++] (!equal val; overwrite, i j move)
-- https://leetcode.com/problems/remove-element
-
-##### move zeros to the end; i_write, j_read;
-
-- EG
-- SUMMA
-- loop eles (j)
-- if a[j_read] === 0, ++j (equal val; j move only)
-- if a[j_read] !== 0, a[i++] = a[j++] (!equal val; overwrite, i j move)
-- fill rest of i_read, 0
-- https://leetcode.com/problems/move-zeroes
-
-###### n1: [1, 2, 3, 4(end_m_r), 0, 0(end_w)]; n2: [2, 2(end_n_r)]; 1_write, 2_reads
-
-- EG
-- SUMMA
-- end_write, end_m_read, end_n_read (1_write, 2_reads)
-- while(n>=0) (scan_from_right)
-- n1[end_w--] = n1[end_m_r] > n2[end_n_r] ? n1[end_m_r--] (1_write, 2_reads)
-- n1[end_w--] = n1[end_m_r] <= n2[end_n_r] ? n2[end_n_r--] (1_write, 2_reads)
-- https://leetcode.com/problems/merge-sorted-array
-
-<br/>
-<br/>
-
 ## when_same_flip_both, when_diff_do_nothing
 
 ##### [1, 0](when_diff) -> [0, 1](rev) -> [1, 0](flip) -> when_diff_do_nothing; [1, 1](when_same) -> [1, 1](rev) -> [0, 0](flip) -> when_same_flip_both;
@@ -3039,6 +2971,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+# =============================================================================
+
 # dp (real_understanding)
 
 ## order !important (ele -> tar)
@@ -3431,6 +3365,83 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - < k (less_k)
 - > = k
 - https://leetcode.com/problems/3sum-closest
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## rev_entire, rev_word, clean_space(i_write, j_read)
+
+##### reverse group in arr; build_fresh (res=[]); i_start, j_end (read_backward, push)
+
+- EG
+- [1, 2 , 3, 4, 5], k = 3 -> [3, 2, 1, 5, 4]
+- SUMMA
+-
+- build_from_fresh (res=[]); i_start, j_end (read_backward, push)
+- j abstract; j = inbound, j = outbound
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=2654ac371c531fa9fb2c06f5690a0623&pid=701191&user=figo2476
+- https://practice.geeksforgeeks.org/problems/reverse-array-in-groups0255/1
+
+##### reverse words in str; " a good \_\_ example " -> "example good a"; rev_whole, rev_each_word, no_extra_space
+
+- EG
+- SUMMA
+- (1) rev_whole (start, end, swap; i<=j, swap_self; i<j, no_swap_self)
+- (2) rev_each_word (i_skip_loop, consume_space, stop_at_char; j_skip_loop, consume_char, stop_at_space)
+- (3) no_extra_space (skip_loop, consume_space, stop_at_char; write_in_place(j posi >= i posi); follow spaces -> 1 space)
+- https://leetcode.com/problems/reverse-words-in-a-string
+
+##### rev position, but no rev word; rev_entire(group_stay), rev_word(i_start, j_end), clean_space(i_write, j_read)
+
+- same as above
+- except no extra space
+- https://leetcode.com/problems/reverse-words-in-a-string-ii
+
+##### rm duplicated ele; i_write, j_read;
+
+- EG
+- i=0 (write), j=0 (read)
+- [1, 1, 2, 2, 3, 3], sort;
+- e.g. i pt 1(ind_0), j pt 2(ind_2)
+- SUMMA
+- loop eles (j)
+- if a[i_write] === a[j_read], ++j (equal val; j move only);
+- if a[i_write] !== a[j_read], a[++i] = a[j] (!equal val; i pt good stuff, overwrite, j move);
+- end_loop re ++i;
+- https://leetcode.com/problems/remove-duplicates-from-sorted-array
+
+##### rm particular ele; i_write, j_read;
+
+- EG
+- SUMMA
+- loop eles (j)
+- if a[j_read] === v, ++j (equal val; j move only)
+- if a[j_read] !== v, a[i++] = a[j++] (!equal val; overwrite, i j move)
+- https://leetcode.com/problems/remove-element
+
+##### move zeros to the end; i_write, j_read;
+
+- EG
+- SUMMA
+- loop eles (j)
+- if a[j_read] === 0, ++j (equal val; j move only)
+- if a[j_read] !== 0, a[i++] = a[j++] (!equal val; overwrite, i j move)
+- fill rest of i_read, 0
+- https://leetcode.com/problems/move-zeroes
+
+###### n1: [1, 2, 3, 4(end_m_r), 0, 0(end_w)]; n2: [2, 2(end_n_r)]; 1_write, 2_reads
+
+- EG
+- SUMMA
+- end_write, end_m_read, end_n_read (1_write, 2_reads)
+- while(n>=0) (scan_from_right)
+- n1[end_w--] = n1[end_m_r] > n2[end_n_r] ? n1[end_m_r--] (1_write, 2_reads)
+- n1[end_w--] = n1[end_m_r] <= n2[end_n_r] ? n2[end_n_r--] (1_write, 2_reads)
+- https://leetcode.com/problems/merge-sorted-array
 
 <br/>
 <br/>
