@@ -3372,7 +3372,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## rev_entire, rev_word, clean_space(i_write, j_read)
+## ????????
 
 ##### reverse group in arr; build_fresh (res=[]); i_start, j_end (read_backward, push)
 
@@ -3392,7 +3392,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - (1) rev_whole (start, end, swap)
 - (2) rev_each_word (consume, stop)
-- (3) no_extra_space (write in place)
+- (3) no_extra_space (i_write (at_right_posi), j_read; i_posi <= j_posi)
 - https://leetcode.com/submissions/detail/410433342/
 - https://leetcode.com/problems/reverse-words-in-a-string
 
@@ -3404,26 +3404,19 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://www.programcreek.com/2014/05/leetcode-reverse-words-in-a-string-ii-java/
 - https://leetcode.com/problems/reverse-words-in-a-string-ii
 
-##### rm duplicated ele; i_write, j_read;
+##### [1, 1, 2, 2, 3, 3] (sort) -> [1, 2, 3]; i_read (at_right_posi), j_read; i_posi <= j_posi
 
 - EG
-- i=0 (write), j=0 (read)
-- [1, 1, 2, 2, 3, 3], sort;
-- e.g. i pt 1(ind_0), j pt 2(ind_2)
 - SUMMA
-- loop eles (j)
-- if a[i_write] === a[j_read], ++j (equal val; j move only);
-- if a[i_write] !== a[j_read], a[++i] = a[j] (!equal val; i pt good stuff, overwrite, j move);
-- end_loop re ++i;
+- i_read (at_right_posi), j_read; i_posi <= j_posi
+- https://leetcode.com/submissions/detail/420662665/
 - https://leetcode.com/problems/remove-duplicates-from-sorted-array
 
-##### rm particular ele; i_write, j_read;
+##### [3, 2, 2, 3] -> [x, 2, 2, x]; i_write (at_right_posi), j_read; i_posi <= j_posi
 
 - EG
 - SUMMA
-- loop eles (j)
-- if a[j_read] === v, ++j (equal val; j move only)
-- if a[j_read] !== v, a[i++] = a[j++] (!equal val; overwrite, i j move)
+- i_write (at_right_posi), j_read; i_posi <= j_posi
 - https://leetcode.com/problems/remove-element
 
 ##### move zeros to the end; i_write, j_read;
