@@ -3404,7 +3404,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://www.programcreek.com/2014/05/leetcode-reverse-words-in-a-string-ii-java/
 - https://leetcode.com/problems/reverse-words-in-a-string-ii
 
-##### [1, 1, 2, 2, 3, 3] (sort) -> [1, 2, 3]; i_read (at_right_posi), j_read; i_posi <= j_posi
+##### [1, 1, 2, 2, 3, 3] (sort) -> [1, 2, 3]; i_read (at_right_posi), j_read; either skip or write
 
 - EG
 - SUMMA
@@ -3412,31 +3412,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/420662665/
 - https://leetcode.com/problems/remove-duplicates-from-sorted-array
 
-##### [3, 2, 2, 3] -> [x, 2, 2, x]; i_write (at_right_posi), j_read; i_posi <= j_posi
+##### rm ele, [3, 2, 2, 3] -> [x, 2, 2, x]; i_write (at_right_posi), j_read; either skip or write
 
 - EG
 - SUMMA
 - i_write (at_right_posi), j_read; i_posi <= j_posi
 - https://leetcode.com/problems/remove-element
 
-##### move zeros to the end; i_write, j_read;
+##### move zeros to end, [0,1,0,3,12] -> [1, 3, 12, 0, 0]; i_write (at_right_posi), j_read, either skip or write
 
 - EG
 - SUMMA
-- loop eles (j)
-- if a[j_read] === 0, ++j (equal val; j move only)
-- if a[j_read] !== 0, a[i++] = a[j++] (!equal val; overwrite, i j move)
-- fill rest of i_read, 0
+- i_write (at_right_posi), j_read, either skip or write
+- https://leetcode.com/submissions/detail/493858027/
 - https://leetcode.com/problems/move-zeroes
 
-###### n1: [1, 2, 3, 4(end_m_r), 0, 0(end_w)]; n2: [2, 2(end_n_r)]; 1_write, 2_reads
+###### ns1 = [5, 6, 0, 0, 0], m = 2, ns2 = [1, 2, 3], n = 3 -> [1, 2, 3, 5, 6]; i_read, j_read, k_write (at_right_posi); backward (at_right_posi)
 
 - EG
 - SUMMA
-- end_write, end_m_read, end_n_read (1_write, 2_reads)
-- while(n>=0) (scan_from_right)
-- n1[end_w--] = n1[end_m_r] > n2[end_n_r] ? n1[end_m_r--] (1_write, 2_reads)
-- n1[end_w--] = n1[end_m_r] <= n2[end_n_r] ? n2[end_n_r--] (1_write, 2_reads)
+- i_read, j_read, k_write (at_right_posi); backward (at_right_posi)
 - https://leetcode.com/problems/merge-sorted-array
 
 <br/>
