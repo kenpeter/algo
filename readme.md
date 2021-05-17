@@ -281,15 +281,17 @@
 - prepare before (hash); priority queue (find insert posi, shift left); m1 = -max (num vs num)
 - https://leetcode.com/problems/third-maximum-number
 
-##### ma0 >= 2 \* ma1? ; [4, 3, 2, 1], ma0 = 4, ma1 = 3; max_flow_down(ma0+, ma1+); avoid_sort
+##### [3,6,1,0], 6 (>= 2 \* everyone); (1) flow_down (priority queue like) (2) priority queue
 
 - EG
 - SUMMA
+- method 1:
+- rem posi; flow_down (priority queue like)
 -
-- single_loop(i=0; i<len..)
-- max_flow_down(ma0+, ma1+); avoid_sort
-- end_loop; if ma0 >= 2\*ma1, re posi;
+- method 2:
+- rem posi; priority queue
 -
+- https://leetcode.com/submissions/detail/494400148/
 - https://leetcode.com/problems/largest-number-at-least-twice-of-others
 
 ##### ask_for_2_max; m0, m1; [4, 3, 2, 1]; m0 = 4, m1 = 3; max_flow_down(ma0+, ma1+, ma2+); avoid_sort
