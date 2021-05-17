@@ -268,31 +268,36 @@
 <br/>
 <br/>
 
-## ask_for_n_max; m0, m1, m2; max_flow_down(ma0+, ma1+, ma2+) / min_flow_down(mi0-, mi1-, mi2-); avoid_sort
+## flow_down (priority queue like)
 
-##### ask_for_3_max; m0, m1, m2; [1, 1, 1, 2, 2, 3, 3, 3](distinct #); max_flow_down(ma0, ma1, ma2); avoid_sort; 3rd largest;
+##### [1, 1, 2, 2, 3, 3] -> 1 is 3rd max; (1) flow_down (priority queue like) (2) priority queue
 
 - EG
 - SUMMA
-- hash[n] to skip num (by question)
+- method 1:
+- prepare on the fly (hash); flow_down (priority queue like)
 -
-- m0 (largest); m1 = 2nd_large; m2 = 3rd_large
--
-- min to big
-- if n > m0 (largest)
-- m2 = m1 (flow_down)
-- m1 = m0 (flow_down)
-- m0 = n (replace)
--
-- if n > m1
-- m1 = m2 (flow_down)
-- m0 = n (replace)
--
-- if n > m2
-- m2 = n (replace)
-
-- if m2 not set, re m1 (by question)
+- method 2:
+- prepare before (hash); priority queue (find insert posi, shift left); m1 = -max (num vs num)
 - https://leetcode.com/problems/third-maximum-number
+
+##### ma0 >= 2 \* ma1? ; [4, 3, 2, 1], ma0 = 4, ma1 = 3; max_flow_down(ma0+, ma1+); avoid_sort
+
+- EG
+- SUMMA
+-
+- single_loop(i=0; i<len..)
+- max_flow_down(ma0+, ma1+); avoid_sort
+- end_loop; if ma0 >= 2\*ma1, re posi;
+-
+- https://leetcode.com/problems/largest-number-at-least-twice-of-others
+
+##### ask_for_2_max; m0, m1; [4, 3, 2, 1]; m0 = 4, m1 = 3; max_flow_down(ma0+, ma1+, ma2+); avoid_sort
+
+- EG
+- SUMMA
+- max_flow_down
+- https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array
 
 ##### ask_for_3_max; m0, m1, m2; [-4, -3, -2, 1]; max_flow_down(ma0+ \* ma1+ \* ma2+) / min_flow_down(ma0 \* mi0- \* mi1-); avoid_sort
 
@@ -325,24 +330,6 @@
 - return m0 \* m1 \* m2 VS m0 \* (-) \_ (-)
 - https://leetcode.com/problems/maximum-product-of-three-numbers
 
-##### ma0 >= 2 \* ma1? ; [4, 3, 2, 1], ma0 = 4, ma1 = 3; max_flow_down(ma0+, ma1+); avoid_sort
-
-- EG
-- SUMMA
--
-- single_loop(i=0; i<len..)
-- max_flow_down(ma0+, ma1+); avoid_sort
-- end_loop; if ma0 >= 2\*ma1, re posi;
--
-- https://leetcode.com/problems/largest-number-at-least-twice-of-others
-
-##### ask_for_2_max; m0, m1; [4, 3, 2, 1]; m0 = 4, m1 = 3; max_flow_down(ma0+, ma1+, ma2+); avoid_sort
-
-- EG
-- SUMMA
-- max_flow_down
-- https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array
-
 ##### top 5 subject scores for each student; [[1, 91], [1, 92], [2, 81], [1, 60]] (mixed up); max_flow_down(ma0+, ma1+, ma2+, ma3+, ma4+)
 
 - EG
@@ -354,26 +341,17 @@
 - https://www.cnblogs.com/cnoodle/p/13722300.html
 - https://leetcode.com/problems/high-five
 
-##### [4, 3, 2, 1], 2nd max; priority_queue: [3, 4]; 3 is 2nd max; loop_ele; search priority_queue(max_end); start_shift_give_1_space, flow_down_ultimate_form
+##### kth largest element; priority queue (find insert posi, shift_left)
 
 - EG
--
 - SUMMA
-- outloop ( loop ele )
-- n = ns[i];
--
-- inloop ( search priority_queue(max_end) )
-- fresh, can insert
-- > q[j], can insert
--
-- inloop_1 ( start_shift_give_1_space, flow_down_ultimate_form )
-- j+1 and up, no touch
-- j, insert
-- j-1 and down, start_shift_give_1_space, flow_down_ultimate_form
--
-- re q[0] (kth max)
+- priority queue (find insert posi, shift_left)
+- https://leetcode.com/submissions/detail/494223381/
 - https://leetcode.com/problems/kth-largest-element-in-an-array
 
+<br/>
+<br/>
+<br/>
 <br/>
 <br/>
 
