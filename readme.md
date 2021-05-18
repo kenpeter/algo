@@ -3630,24 +3630,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - treemap; sort, +1 / -1, statenon-overlap (--);
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 
-##### meeting room 2 (ask resource); treemap; sort, +1 / -1, state(--);
+##### meeting room 2 (ask resource); treemap (sort, +1 / -1, state);
 
 - EG
 - SUMMA
 -
-- treemap; sort, +1 / -1, statenon-overlap (--);
+- treemap (sort, +1 / -1, state); non-overlap (--);
 - look at my code
 
-##### my-calendar-ii (ask resource); treemap; sort, +1 / -1, state
+##### my-calendar-ii (ask resource); treemap (sort, +1 / -1, state)
 
 - EG
 - SUMMA
 -
-- treemap; sort, +1 / -1, state
+- treemap (sort, +1 / -1, state); look_ahead (later remove)
 -
 - https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
 
-##### my-calendar-iii (ask resource); treemap; sort, +1 / -1, state
+##### my-calendar-iii (ask resource); treemap (sort, +1 / -1, state)
 
 - EG
 - SUMMA
@@ -3750,16 +3750,19 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/discuss/interview-question/613816/Google-or-Onsite-or-Meeting-Rooms-3
 - see my js file in code dir
 
-##### my-calendar-i; cross_compare or inverse_problem
+##### my-calendar-i; (1) brute_force, cross_compare (2) brute_force, inverse no intersection
 
 - EG
 - SUMMA
 -
 - method 1:
-- start_a vs end_b; end_a vs start_b (cropss_compare)
+- brute_force, cross_compare (start_a vs end_b; end_a vs start_b)
 -
 - method 2:
-- 2 cal no intersection (inverse_problem)
+- brute_force, inverse no intersection
+-
+- method 3:
+- tree map (sort, +/-, state); look_ahead (remove later)
 -
 - https://leetcode.com/submissions/detail/491628532/
 - https://leetcode.com/problems/my-calendar-i
