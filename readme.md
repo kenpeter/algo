@@ -294,42 +294,24 @@
 - https://leetcode.com/submissions/detail/494400148/
 - https://leetcode.com/problems/largest-number-at-least-twice-of-others
 
-##### ask_for_2_max; m0, m1; [4, 3, 2, 1]; m0 = 4, m1 = 3; max_flow_down(ma0+, ma1+, ma2+); avoid_sort
+##### [3,4,5,2], max prod of 2 num, 4\*5=20; (1) flow_down (priority queue like) (2) priority queue
 
 - EG
 - SUMMA
-- max_flow_down
+- - method 1:
+- rem posi; flow_down (priority queue like)
+-
+- method 2:
+- rem posi; priority queue
+- https://leetcode.com/submissions/detail/494662342/
 - https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array
 
-##### ask_for_3_max; m0, m1, m2; [-4, -3, -2, 1]; max_flow_down(ma0+ \* ma1+ \* ma2+) / min_flow_down(ma0 \* mi0- \* mi1-); avoid_sort
+##### [10, -1, -2, -3] -> 10 \* (-2) \* (-3); +, +, + VS +max, -, -
 
 - EG
 - SUMMA
--
-- m0(largest) = -, m1 = - , m2 = -;
-- mi0(smallest) = +, mi2 = +;
--
-- if n > m0
-- m2 = m1 (flow_down)
-- m1 = m0 (flow_down)
-- m0 = n (replace)
--
-- if n > m1
-- m2 = m1 (flow_down)
-- m1 = n (replace)
--
-- if n > m2
-- m2 = n (replace)
--
-- max -> small
-- if n < mi0
-- mi1 = mi0 (flow_down)
-- mi0 = n (replace)
--
-- if n < mi1
-- mi1 = n (replace)
--
-- return m0 \* m1 \* m2 VS m0 \* (-) \_ (-)
+- flowdown or priority queue; +, +, + VS +max, -, -
+- https://leetcode.com/submissions/detail/494667667/
 - https://leetcode.com/problems/maximum-product-of-three-numbers
 
 ##### top 5 subject scores for each student; [[1, 91], [1, 92], [2, 81], [1, 60]] (mixed up); max_flow_down(ma0+, ma1+, ma2+, ma3+, ma4+)
