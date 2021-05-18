@@ -314,14 +314,12 @@
 - https://leetcode.com/submissions/detail/494667667/
 - https://leetcode.com/problems/maximum-product-of-three-numbers
 
-##### top 5 subject scores for each student; [[1, 91], [1, 92], [2, 81], [1, 60]] (mixed up); max_flow_down(ma0+, ma1+, ma2+, ma3+, ma4+)
+##### top 5 subject scores for each student; [[1, 91], [1, 92], [2, 81], [1, 60]] -> [[1, 91], [1, 92], [1, 60], [2, 81]]; prepare before (hash) + flow_down
 
 - EG
 - SUMMA
-- loop arr
-- hash[student_1] = [m0, m1, m2, m3, m4]
-- hash[student_2] = [m0, m1, m2, m3, m4]
-- [m0, m1, m2, m3, m4] (max_flow_down)
+- prepare before (hash) + flow_down
+-
 - https://www.cnblogs.com/cnoodle/p/13722300.html
 - https://leetcode.com/problems/high-five
 
