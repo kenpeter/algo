@@ -3157,10 +3157,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
 
-##### trap rain water; brute_force (search_max_left, search_max_right), each_slot
+##### trap rain water; each_slot (add up entire water); brute_force (search_max_left, search_max_right)
 
 - EG
 - SUMMA
+-
+- each_slot (add up entire water); brute_force (search_max_left, search_max_right), each_slot
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
@@ -3498,7 +3500,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-product-less-than-k
 - https://leetcode.com/submissions/detail/469783113/
 
-##### longest non-repeated substr; slide_win (remove_repeated, expand_len)
+##### longest non-repeated substr; (1) slide_win (2) hash (3) brute_force
 
 - EG
 - SUMMA
@@ -3507,7 +3509,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - slide_win (remove_repeated, expand_len); hash_detect (repeated), shrink_win_left (until unique), expand_win_right (1 by 1)
 -
 - method 2:
-- hash (same_char get prev posi); hash_detect (repeated + posi)
+- hash (same_char prev posi); hash_detect (repeated + posi)
 -
 - method 3:
 - brute_force (curr char stable, other char loop)
@@ -3594,8 +3596,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 <br/>
-
-# ask resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 
 ## ask resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 
