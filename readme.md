@@ -3678,45 +3678,49 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## end_pick (start_pick); overlap (merge / intersect / update_pick), non-overlap (new pick);
+## a_end > b_start (detect overlap); end_pick (start_pick); overlap (merge / intersect / update_pick), non-overlap (new pick);
 
-##### shooting max balloons; end_pick (start_pick); overlap (min / max pick), non-overlap (new pick)
+##### shooting max balloons; a_end > b_start (detect overlap); end_pick (start_pick); overlap, non-overlap
 
 - EG
 - SUMMA
 -
 - method 1:
+- a_end > b_start (detect overlap);
 - start_pt (asc), attach_to_small (math.min); end_pick; overlap (min end_pick), non-overlap (new end_pick);
 -
 - method 2:
+- a_end > b_start (detect overlap);
 - start_pt (desc), attach_to_big (math.max); start_pick; overlap (max start_pick), non-overlap (new start_pick);
 -
 - method 3:
+- a_end > b_start (detect overlap);
 - end_pt (asc), attach_to_small (math.min); end_pick; overlap (min end_pick), non-overlap (new end_pick);
 -
 - method 4:
+- a_end > b_start (detect overlap);
 - end_pt (desc), attach_to_big (math.big); start_pick; overlap (max start_pick), non-overlap (new start_pick);
 -
 - https://leetcode.com/submissions/detail/487741686/
 - https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
 
-##### merge_interval, [[1,4],[4,5]] -> [[1, 5]]; [start_pick, end_pick] (end_pick); overlap (merge, max end_pick), non-overlap (new end_pick)
+##### merge_interval, [[1,4],[4,5]] -> [[1, 5]]; merge (longer range); [start_pick, end_pick] (whole); overlap (merge), non-overlap (new end_pick)
 
 - EG
 - SUMMA
 -
-- [start_pick, end_pick] (end_pick); overlap (merge, max end_pick), non-overlap (new end_pick)
+- merge (longer range); [start_pick, end_pick] (whole); overlap (merge), non-overlap (new end_pick)
 -
 - https://leetcode.com/submissions/detail/487860609/
 - https://leetcode.com/problems/merge-intervals
 
-##### non overlapping intervals; inverse of merge interval
+##### non overlapping interval; inverse of merge_interval (non overlap)
 
 - EG
 - SUMMA
 -
 - method 1:
-- inverse of merge_interval
+- inverse of merge_interval (non overlap)
 -
 - method 2:
 - start_pt (asc); end_pick; overlap (min end_pick), non-overlap (new end_pick)
@@ -3724,12 +3728,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/488154801/
 - https://leetcode.com/problems/non-overlapping-intervals
 
-##### meeting room 1 (attend_all?); brute_force; sort_start, curr_end > next_end, no_attend_all
+##### meeting room 1 (arr of [start, end], attend_all?); brute_force (loop events, a_end > b_start);
 
 - EG
 - SUMMA
 -
-- brute_force; sort_start, curr_end > next_end, no_attend_all
+- brute_force (loop events, a_end > b_start);
 -
 - https://www.programcreek.com/2014/07/leetcode-meeting-rooms-java/
 
