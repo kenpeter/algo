@@ -3121,7 +3121,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=897008f882370645ad43ee369da48b30&pid=702837&user=figo2476
 
-##### longest non-repeat substr; brute_force; i_stable, j_loop (non-repeat)
+##### longest non-repeat substr; brute_force (curr char stable, other char loop)
 
 - EG
 - SUMMA
@@ -3130,7 +3130,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/483228011/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
-##### local_inv_num == global_inv_num; brute_force; i_stable, j_loop; next_each (local, global), beyond (global)
+##### local_inv_num == global_inv_num; brute_force (curr num stable, other num loop); next_each (local, global), beyond (global)
 
 - EG
 - SUMMA
@@ -3138,24 +3138,32 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/483848195/
 - https://leetcode.com/problems/global-and-local-inversions
 
-##### find minimum platforms (train start, end time); brute_force; i_stable, j_loop; start edge cross square
+##### find minimum platforms (train start, end time); brute_force (1 train stable, other train loop); start_end_cross_compare
 
 - EG
 - SUMMA
 -
-- brute_force; i_stable, j_loop; start edge cross square
+- brute_force (1 train stable, other train loop); start_end_cross_compare
 -
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 
-##### my-calendar-ii; brute_force, rem overlap; overlap_problem -> merge / intersect
+##### my-calendar-ii; brute_force (loop overlap, loop event); overlap_arr
 
 - EG
 - SUMMA
 -
-- brute_force, rem overlap; overlap_problem -> merge / intersect
+- brute_force (loop overlap, loop event); overlap_arr (check), overlap_arr (build)
 -
 - https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
+
+##### trap rain water; brute_force (search_max_left, search_max_right), each_slot
+
+- EG
+- SUMMA
+-
+- https://leetcode.com/submissions/detail/495366729/
+- https://leetcode.com/problems/trapping-rain-water
 
 <br/>
 <br/>
