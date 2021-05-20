@@ -3081,6 +3081,30 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock
 
+##### trap rain water; each_slot (add up all water); dp (dp_left, dp_right); each_var_meaing
+
+- EG
+- SUMMA
+-
+- each_slot (add up all water);
+-
+- dp (dp_left, dp_right);
+- each_var_meaing;
+- i: curr max so far
+- i-1: prev..
+- i+1: next..
+- 0: init self
+- n-1: last max
+- dp[i]: curr max so far
+- dp[i-1]: ..
+- dp[i+1]: ..
+- dp[0]: init self
+- dp[n-1]: last ..
+- f: max so far
+-
+- https://leetcode.com/submissions/detail/495366729/
+- https://leetcode.com/problems/trapping-rain-water
+
 <br/>
 <br/>
 <br/>
@@ -3157,12 +3181,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
 
-##### trap rain water; each_slot (add up entire water); brute_force (search_max_left, search_max_right)
+##### trap rain water; each_slot (add up all water); brute_force (loop left max, loop right max)
 
 - EG
 - SUMMA
 -
-- each_slot (add up entire water); brute_force (search_max_left, search_max_right), each_slot
+- each_slot (add up all water); brute_force (loop left max, loop right max)
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
