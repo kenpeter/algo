@@ -3135,14 +3135,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
 
-##### subarray_sum (>=0) == k; 2pt (i_start, j_end); brute_force (i_start, j_end, range == k)
+##### subarray_sum == k (+); 2pt (i_start, j_extending); brute_force (i_start, j_extending, range == k)
 
 - EG
 - SUMMA
 -
-- 2pt (i_start, j_end); brute_force (i_start, j_end, range == k)
+- 2pt (i_start, j_extending); brute_force (i_start, j_extending, range == k); can_exist_early (+)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
+
+##### subarray_sum == k (+/-); 2pt (i_start, j_extending); brute_force (i_start, j_extending, range == k)
+
+- EG
+- SUMMA
+-
+- 2pt (i_start, j_extending); brute_force (i_start, j_extending, range == k); cannot_exit_early (+/-)
+-
+- https://leetcode.com/problems/subarray-sum-equals-k
+- https://leetcode.com/submissions/detail/469373460/
 
 <br/>
 <br/>
@@ -3151,16 +3161,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 
 ## brute_force; i_stable, j_loop
-
-##### subarray_sum (+ / -) == k; brute_force; i_stable (start_num), j_loop (adding_num)
-
-- EG
-- SUMMA
--
-- i_stable (start_num), j_loop (adding_num)
--
-- https://leetcode.com/problems/subarray-sum-equals-k
-- https://leetcode.com/submissions/detail/469373460/
 
 ##### 2_sum == 3rd_ele; brute_force; i_stable, j_loop; i j sum, binary_search
 
