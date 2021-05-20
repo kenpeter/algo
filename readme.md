@@ -3737,36 +3737,36 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://www.programcreek.com/2014/07/leetcode-meeting-rooms-java/
 
-##### meeting room 2 (ask resource); start_arr, end_arr, travel_each; overlap (++), non-overlap (--)
+##### meeting room 2 (ask resource); a_end > b_start (detect overlap in 2 arr); start_arr, end_arr, 2 pt; overlap (++), non-overlap (--)
 
 - EG
 - SUMMA
 -
-- ask resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--)
+- a_end > b_start (detect overlap in 2 arr); start_arr, end_arr, 2 pt; overlap (++), non-overlap (--)
 -
 - https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
 - https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
 
-##### meeting room 3; prepare, then query; fill_time_block
+##### meeting room 3; prepare, then query (incoming data); fill_time_block (more visible)
 
 - EG
 - SUMMA
 -
-- prepare, then query; fill_time_block
+- prepare, then query (incoming data); fill_time_block (more visible)
 -
 - https://leetcode.com/discuss/interview-question/613816/Google-or-Onsite-or-Meeting-Rooms-3
 - see my js file in code dir
 
-##### my-calendar-i; (1) brute_force, cross_compare (2) brute_force, inverse no intersection
+##### my-calendar-i; (1) brute_force (loop event, cross_compare) (2) brute_force (loop event, !no_intersect == intersect)
 
 - EG
 - SUMMA
 -
 - method 1:
-- brute_force, cross_compare (start_a vs end_b; end_a vs start_b)
+- brute_force (loop event, cross_compare)
 -
 - method 2:
-- brute_force, inverse no intersection
+- brute_force (loop event, !no_intersect == intersect)
 -
 - method 3:
 - tree map (sort, +/-, state); look_ahead (remove later)
