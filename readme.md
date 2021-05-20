@@ -3134,23 +3134,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
--
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-## brute_force; i_stable, j_loop
-
-##### subarray_sum (>=0) == k; brute_force; i_stable (start_num), j_loop (adding_num)
+##### subarray_sum (>=0) == k; 2pt (i_start, j_end); brute_force (i_start, j_end, range == k)
 
 - EG
 - SUMMA
 -
-- i_stable (start_num), j_loop (adding_num)
+- 2pt (i_start, j_end); brute_force (i_start, j_end, range == k)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## brute_force; i_stable, j_loop
 
 ##### subarray_sum (+ / -) == k; brute_force; i_stable (start_num), j_loop (adding_num)
 
