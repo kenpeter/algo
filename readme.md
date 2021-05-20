@@ -3113,12 +3113,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 2 pt (start, end)
 
-##### trap rain water; left_max (i_start, left_slots), right_max (right_start, right_slots); small_move (already consumed)
+##### trap rain water; 2 pt (left slots, right slots) small_move (already consumed)
 
 - EG
 - SUMMA
 -
-- left_max (i_start, left_slots), right_max (right_start, right_slots); small_move (already consumed)
+- 2 pt (left slots, right slots) small_move (already consumed)
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
