@@ -2935,7 +2935,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # dp (real_understanding)
 
-## order !important (ele -> tar)
+## dp, order !important (ele -> tar)
 
 ##### arr\*to_2_equal_sum_part; order !important (ele -> tar)
 
@@ -2981,7 +2981,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## order important (tar -> ele)
+## dp, order important (tar -> ele)
 
 ##### combo_sum_4; order_important (tar -> ele)
 
@@ -3111,8 +3111,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# brute_force
+## 2 pt (start, end)
 
+##### trap rain water; left_max (i_start, left_slots), right_max (right_start, right_slots); small_move (already consumed)
+
+- EG
+- SUMMA
+-
+- left_max (i_start, left_slots), right_max (right_start, right_slots); small_move (already consumed)
+-
+- https://leetcode.com/submissions/detail/495366729/
+- https://leetcode.com/problems/trapping-rain-water
+-
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 ## brute_force; i_stable, j_loop
 
 ##### subarray_sum (>=0) == k; brute_force; i_stable (start_num), j_loop (adding_num)
