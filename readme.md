@@ -3126,7 +3126,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- i_stable, j_loop (non-repeat)
+- brute_force (curr char stable, other char loop)
 - https://leetcode.com/submissions/detail/483228011/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
@@ -3498,21 +3498,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-product-less-than-k
 - https://leetcode.com/submissions/detail/469783113/
 
-##### longest non-repeated substr; expand_win_right (1 by 1), shrink_win_left (unique)
+##### longest non-repeated substr; slide_win (remove_repeated, expand_len)
 
 - EG
 - SUMMA
 -
 - method 1:
-- expand_win_right (1 by 1), shrink_win_left (unique); chop_left_char
+- slide_win (remove_repeated, expand_len); hash_detect (repeated), shrink_win_left (until unique), expand_win_right (1 by 1)
 -
 - method 2:
-- ...........; hash.set(char, old_posi), hash.get(char) == old_posi
+- hash (same_char get prev posi); hash_detect (repeated + posi)
 -
 - method 3:
-- brute_force; i_stable, j_loop (non-repeat)
+- brute_force (curr char stable, other char loop)
 -
-
 - https://leetcode.com/submissions/detail/482623234/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
