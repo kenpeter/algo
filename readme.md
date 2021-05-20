@@ -3111,14 +3111,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 2 pt (start, end)
+## 2 pt (i_start, j_end)
 
-##### trap rain water; 2 pt (left slots, right slots) small_move (already consumed)
+##### reverse group eles in arr; build_fresh (backward inject); i_start, j_end (j backward inject)
+
+- EG
+- [1, 2, 3, 4, 5], k = 3 -> [3, 2, 1, 5, 4]
+- SUMMA
+-
+- build_fresh (backward inject); i_start, j_end (j backward inject)
+- j (inbound, or outbound)
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=2654ac371c531fa9fb2c06f5690a0623&pid=701191&user=figo2476
+- https://practice.geeksforgeeks.org/problems/reverse-array-in-groups0255/1
+
+##### trap rain water; 2 pt (left slots, right slots), small_move (already consumed)
 
 - EG
 - SUMMA
 -
-- 2 pt (left slots, right slots) small_move (already consumed)
+- 2 pt (left slots, right slots), small_move (already consumed)
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
@@ -3382,19 +3394,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## ????????
-
-##### reverse group in arr; build_fresh (res=[]); i_start, j_end (read_backward, push)
-
-- EG
-- [1, 2 , 3, 4, 5], k = 3 -> [3, 2, 1, 5, 4]
-- SUMMA
--
-- build_from_fresh (res=[]); i_start, j_end (read_backward, push)
-- j abstract; j = inbound, j = outbound
--
-- https://practice.geeksforgeeks.org/viewSol.php?subId=2654ac371c531fa9fb2c06f5690a0623&pid=701191&user=figo2476
-- https://practice.geeksforgeeks.org/problems/reverse-array-in-groups0255/1
+## j_read (explode), i_write (at_right_posi)
 
 ##### reverse words in str; " a good \_\_ example " -> "example good a"; rev_whole, rev_each_word, no_extra_space
 
