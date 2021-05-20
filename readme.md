@@ -3625,51 +3625,49 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# treemap; sort, +1 / -1, state
+## treemap (ask_resource == state); sort, +1 / -1, state
 
-## treemap; sort, +1 / -1, state
-
-##### find minimum platforms (ask resource); treemap; sort, +1 / -1, statenon-overlap (--);
+##### find minimum platforms (ask resource); treemap (ask_resource == state); sort, +1 / -1, state
 
 - EG
 - SUMMA
 -
-- treemap; sort, +1 / -1, statenon-overlap (--);
+- treemap (ask_resource == state); sort, +1 / -1, state;
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 
-##### meeting room 2 (ask resource); treemap (sort, +1 / -1, state);
+##### meeting room 2 (ask resource); treemap (ask_resource == state); sort, +1 / -1, state
 
 - EG
 - SUMMA
 -
-- treemap (sort, +1 / -1, state); non-overlap (--);
+- treemap (ask_resource == state); sort, +1 / -1, state
 - look at my code
 
-##### my-calendar-ii (ask resource); treemap (sort, +1 / -1, state)
+##### my-calendar-ii (ask resource); treemap (ask_resource == state); sort, +1 / -1, state
 
 - EG
 - SUMMA
 -
-- treemap (sort, +1 / -1, state); look_ahead (later remove)
+- treemap (ask_resource == state); sort, +1 / -1, state; look_ahead (later remove)
 -
 - https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
 
-##### my-calendar-iii (ask resource); treemap (sort, +1 / -1, state)
+##### my-calendar-iii (ask resource); treemap (ask_resource == state); sort, +1 / -1, state
 
 - EG
 - SUMMA
 -
-- treemap; sort, +1 / -1, state
+- treemap (ask_resource == state); sort, +1 / -1, state
 -
 - https://leetcode.com/submissions/detail/492441640/
 - https://leetcode.com/problems/my-calendar-iii/
 
-##### car-pooling (ask resource); trip = [[2_person, 1_on, 5_off],[3,3,7]], cap = 4; treemap; sort, +1 / -1, state
+##### car-pooling (ask resource); trip = [[2_person, 1_on, 5_off],[3,3,7]], cap = 4; treemap (ask_resource == state); sort, +1 / -1, state
 
 - EG
 - SUMMA
 -
-- treemap; sort, +1 / -1, state
+- treemap (ask_resource == state); sort, +1 / -1, state
 -
 - https://leetcode.com/problems/car-pooling/
 -
@@ -3679,8 +3677,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 <br/>
-
-# end_pick (start_pick); overlap (merge / intersect / update_pick), non-overlap (new pick);
 
 ## end_pick (start_pick); overlap (merge / intersect / update_pick), non-overlap (new pick);
 
