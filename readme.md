@@ -3172,10 +3172,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=897008f882370645ad43ee369da48b30&pid=702837&user=figo2476
 
-##### local_inv_num == global_inv_num; brute_force (curr num stable, other num loop); next_each (local, global), beyond (global)
+##### local_inv == global_inv; brute_force (i, i+1 is local_inv and global_inv; i, i+2.. is only global_inv)
 
 - EG
 - SUMMA
+- brute_force (i, i+1 is local_inv and global_inv; i, i+2.. is only global_inv)
 -
 - https://leetcode.com/submissions/detail/483848195/
 - https://leetcode.com/problems/global-and-local-inversions
