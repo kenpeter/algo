@@ -3162,25 +3162,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## brute_force; i_stable, j_loop
 
-##### 2_sum == 3rd_ele; brute_force; i_stable, j_loop; i j sum, binary_search
+##### 2_ele_sum == 3rd_ele; smallest + 2nd_largest == largest (likely success)
 
 - EG
 - SUMMA
 -
-- sort
-- i_stable, j_loop; i j sum, binary_search
+- sort; i_start (smallest) + j_end (2nd_largest) = k_end (largest); likely success
 -
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=897008f882370645ad43ee369da48b30&pid=702837&user=figo2476
-
-##### longest non-repeat substr; brute_force (curr char stable, other char loop)
-
-- EG
-- SUMMA
--
-- brute_force (curr char stable, other char loop)
-- https://leetcode.com/submissions/detail/483228011/
-- https://leetcode.com/problems/longest-substring-without-repeating-characters
 
 ##### local_inv_num == global_inv_num; brute_force (curr num stable, other num loop); next_each (local, global), beyond (global)
 
@@ -3540,7 +3530,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-product-less-than-k
 - https://leetcode.com/submissions/detail/469783113/
 
-##### longest non-repeated substr; (1) slide_win (2) hash (3) brute_force
+##### longest non-repeated substr; (1) slide_win (2) hash (3) brute_force (arr_contain?) (4) brute_force (substr.indexOf?)
 
 - EG
 - SUMMA
@@ -3552,7 +3542,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - hash (same_char prev posi); hash_detect (repeated + posi)
 -
 - method 3:
-- brute_force (curr char stable, other char loop)
+- brute_force (curr char stable, other char loop, arr_contain?)
+-
+- method 4:
+- brute_force (curr char stable, other char loop, substr.indexOf?)
+- https://leetcode.com/submissions/detail/483228011/
 -
 - https://leetcode.com/submissions/detail/482623234/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
