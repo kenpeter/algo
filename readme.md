@@ -3135,21 +3135,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
 
-##### subarray_sum == k (+); 2pt (i_start, j_extending); brute_force (i_start, j_extending, range == k)
+##### subarray_sum == k (+); 2pt (i_start, j_extending); brute_force (i_start, j_extending)
 
 - EG
 - SUMMA
 -
-- 2pt (i_start, j_extending); brute_force (i_start, j_extending, range == k); can_exist_early (+)
+- 2pt (i_start, j_extending); brute_force (i_start, j_extending); can_exist_early (+)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray_sum == k (+/-); 2pt (i_start, j_extending); brute_force (i_start, j_extending, range == k)
+##### subarray_sum == k (+/-); 2pt (i_start, j_extending); brute_force (i_start, j_extending)
 
 - EG
 - SUMMA
 -
-- 2pt (i_start, j_extending); brute_force (i_start, j_extending, range == k); cannot_exit_early (+/-)
+- 2pt (i_start, j_extending); brute_force (i_start, j_extending); cannot_exit_early (+/-)
 -
 - https://leetcode.com/problems/subarray-sum-equals-k
 - https://leetcode.com/submissions/detail/469373460/
@@ -3172,11 +3172,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=897008f882370645ad43ee369da48b30&pid=702837&user=figo2476
 
-##### local_inv == global_inv; brute_force (i, i+1 is local_inv and global_inv; i, i+2.. is only global_inv)
+##### local_inv == global_inv; brute_force (i_stable, j_loop); i, i+1 is local_inv and global_inv (neighbour); i, i+2.. is only global_inv (beyond neighbour)
 
 - EG
 - SUMMA
-- brute_force (i, i+1 is local_inv and global_inv; i, i+2.. is only global_inv)
+- brute_force (i_stable, j_loop); i, i+1 is local_inv and global_inv (neighbour); i, i+2.. is only global_inv (beyond neighbour)
 -
 - https://leetcode.com/submissions/detail/483848195/
 - https://leetcode.com/problems/global-and-local-inversions
@@ -3567,17 +3567,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# hash
+## hash (check), then hash (inject); hash (1) met_before (2) related_met_before
 
-## hash(prev)
-
-##### subarray_sum (+ / -) == k; hash(curr_sum - subarray_sum(k) == prev_sum)
+##### subarray_sum (+ / -) == k; hash(each_sum), future_sum - prev_sum = k
 
 - EG
 - SUMMA
 -
-- hash(curr_sum - subarray_sum(k) == prev_sum)
-- because hash_can_go_back
+- hash(each_sum), future_sum - prev_sum = k
 -
 - https://leetcode.com/submissions/detail/469373460/
 - https://leetcode.com/problems/subarray-sum-equals-k
