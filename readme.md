@@ -3579,18 +3579,18 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/469373460/
 - https://leetcode.com/problems/subarray-sum-equals-k
 
-##### 2sum_hash_prev; hash(prev)
+##### 2sum (sort); hash (check), hash (inject); hash (2) related_met_before
 
 - EG
 - SUMMA
-- 2sum_hash_prev; hash(prev)
+- hash (check), hash (inject); hash (2) related_met_before
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### 2sum_hash_prev; hash(prev)
+##### 2sum; hash (check), hash (inject); hash (2) related_met_before
 
 - EG
 - SUMMA
-- 2sum_hash_prev; hash(prev)
+- hash (check), hash (inject); hash (2) related_met_before
 - https://leetcode.com/problems/two-sum
 
 <br/>
