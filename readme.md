@@ -3385,15 +3385,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## j_read (explode), i_write (at_right_posi)
+## j_read (explode), i_write (non-move easily, write_at_correct_posi)
 
 ##### reverse words in str; " a good \_\_ example " -> "example good a"; rev_whole, rev_each_word, no_extra_space
 
 - EG
 - SUMMA
-- (1) rev_whole (start, end, swap)
-- (2) rev_each_word (consume, stop)
-- (3) no_extra_space (i_write (at_right_posi), j_read; i_posi <= j_posi)
+- (1) rev_whole (later rev each_block)
+- (2) rev_each_word (question ask); consume, stop
+- (3) no_extra_space (trim_end, 1_each_word); j_read, i_write (non-move easily, write_at_correct_posi)
 - https://leetcode.com/submissions/detail/410433342/
 - https://leetcode.com/problems/reverse-words-in-a-string
 
@@ -3401,38 +3401,41 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - EG
 - SUMMA
-- same above, just_no_extra_space
+- same above
+- (1) rev_whole
+- (2) rev_each_word
+- (3) no_extra_space
 - https://www.programcreek.com/2014/05/leetcode-reverse-words-in-a-string-ii-java/
 - https://leetcode.com/problems/reverse-words-in-a-string-ii
 
-##### [1, 1, 2, 2, 3, 3] (sort) -> [1, 2, 3]; i_read (at_right_posi), j_read; either skip or write
+##### [1, 1, 2, 2, 3, 3] (sort) -> [1, 2, 3]; i_write (non-move easily, write_at_correct_posi), j_read (explode)
 
 - EG
 - SUMMA
-- i_read (at_right_posi), j_read; i_posi <= j_posi
+- i_write (non-move easily, write_at_correct_posi), j_read (explode)
 - https://leetcode.com/submissions/detail/420662665/
 - https://leetcode.com/problems/remove-duplicates-from-sorted-array
 
-##### rm ele, [3, 2, 2, 3] -> [x, 2, 2, x]; i_write (at_right_posi), j_read; either skip or write
+##### rm ele, [3, 2, 2, 3] -> [x, 2, 2, x]; i_write (non-move easily, write_at_correct_posi), j_read (explode)
 
 - EG
 - SUMMA
-- i_write (at_right_posi), j_read; i_posi <= j_posi
+- i_write (non-move easily, write_at_correct_posi), j_read (explode)
 - https://leetcode.com/problems/remove-element
 
-##### move zeros to end, [0,1,0,3,12] -> [1, 3, 12, 0, 0]; i_write (at_right_posi), j_read, either skip or write
+##### move zeros to end, [0,1,0,3,12] -> [1, 3, 12, 0, 0]; i_write (non-move easily, write_at_correct_posi), j_read (explode)
 
 - EG
 - SUMMA
-- i_write (at_right_posi), j_read, either skip or write
+- i_write (non-move easily, write_at_correct_posi), j_read (explode)
 - https://leetcode.com/submissions/detail/493858027/
 - https://leetcode.com/problems/move-zeroes
 
-###### ns1 = [5, 6, 0, 0, 0], m = 2, ns2 = [1, 2, 3], n = 3 -> [1, 2, 3, 5, 6]; i_read, j_read, k_write (at_right_posi); backward (at_right_posi)
+###### ns1 = [5, 6, 0, 0, 0], m = 2, ns2 = [1, 2, 3], n = 3 -> [1, 2, 3, 5, 6]; i_read (backward_explode, won't overwrite), j_read (backward_explode, won't overwrite), k_write (non-move easily, write_at_correct_posi)
 
 - EG
 - SUMMA
-- i_read, j_read, k_write (at_right_posi); backward (at_right_posi)
+- i_read (backward_explode, won't overwrite), j_read (backward_explode, won't overwrite), k_write (non-move easily, write_at_correct_posi)
 - https://leetcode.com/problems/merge-sorted-array
 
 <br/>
