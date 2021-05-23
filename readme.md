@@ -3125,6 +3125,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/viewSol.php?subId=2654ac371c531fa9fb2c06f5690a0623&pid=701191&user=figo2476
 - https://practice.geeksforgeeks.org/problems/reverse-array-in-groups0255/1
 
+## 2pt (i_start, j_end)
+
 ##### trap rain water; 2 pt (left slots, right slots), small_move (already consumed)
 
 - EG
@@ -3135,16 +3137,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
 
-##### subarray_sum == k (+); 2pt (i_start, j_extending); brute_force (i_start, j_extending)
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## 2pt (i_start, j_start, j_extending)
+
+##### subarray_sum == k (+); 2pt (i_start, j_start, j_extending); brute_force (i_start, j_start, j_extending)
 
 - EG
 - SUMMA
 -
-- 2pt (i_start, j_extending); brute_force (i_start, j_extending); can_exist_early (+)
+- 2pt (i_start, j_start, j_extending); brute_force (i_start, j_start, j_extending); can_exist_early (+)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray_sum == k (+/-); 2pt (i_start, j_extending); brute_force (i_start, j_extending)
+##### subarray_sum == k (+/-); 2pt (i_start, j_start, j_extending); brute_force (i_start, j_start, j_extending)
 
 - EG
 - SUMMA
@@ -3160,7 +3170,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## brute_force; i_stable, j_loop
+## 3pt (i_start, j_end-1, k_end)
 
 ##### 2_ele_sum == 3rd_ele; smallest + 2nd_largest == largest (likely success)
 
@@ -3172,6 +3182,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=897008f882370645ad43ee369da48b30&pid=702837&user=figo2476
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## 3pt (i, i+1, i+2_con)
+
 ##### local_inv == global_inv; brute_force (i_stable, j_loop); i, i+1 is local_inv and global_inv (neighbour); i, i+2.. is only global_inv (beyond neighbour)
 
 - EG
@@ -3181,22 +3199,30 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/483848195/
 - https://leetcode.com/problems/global-and-local-inversions
 
-##### find minimum platforms (train start, end time); brute_force (1 train stable, other train loop); start_end_cross_compare
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## brute_force; i_stable, j_loop
+
+##### find minimum platforms (train start, end time); brute_force (1 train stable, other train loop); cross_compare (a_end vs b_start)
 
 - EG
 - SUMMA
 -
-- brute_force (1 train stable, other train loop); start_end_cross_compare
+- brute_force (1 train stable, other train loop); cross_compare (a_end vs b_start)
 -
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 
-##### my-calendar-ii; brute_force (loop overlap, loop event); overlap_arr
+##### my-calendar-ii; brute_force (loop overlap, loop event); overlap_arr (check), overlap_arr (inject)
 
 - EG
 - SUMMA
 -
-- brute_force (loop overlap, loop event); overlap_arr (check), overlap_arr (build)
+- brute_force (loop overlap, loop event); overlap_arr (check), overlap_arr (inject)
 -
 - https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
 
