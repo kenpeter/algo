@@ -3567,60 +3567,37 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## hash (check), then hash (inject); hash (1) met_before (2) related_met_before
+## hash (check), then hash (inject); hash: (1) met_before (2) related_met_before (3) hash (val, posi)
 
-##### subarray_sum (+ / -) == k; hash(each_sum), future_sum - prev_sum = k
+##### subarray_sum (+ / -) == k; hash (check), then hash (inject); hash(each_sum), future_sum - prev_sum = k
 
 - EG
 - SUMMA
 -
-- hash(each_sum), future_sum - prev_sum = k
+- hash (check), then hash (inject); hash(each_sum), future_sum - prev_sum = k
 -
 - https://leetcode.com/submissions/detail/469373460/
 - https://leetcode.com/problems/subarray-sum-equals-k
 
-##### 2sum (sort); hash (check), hash (inject); hash (2) related_met_before
+##### 2sum (sort); hash (check), hash (inject); hash: (2) related_met_before
 
 - EG
 - SUMMA
 - hash (check), hash (inject); hash (2) related_met_before
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### 2sum; hash (check), hash (inject); hash (2) related_met_before
+##### 2sum; hash (check), hash (inject); hash: (2) related_met_before
 
 - EG
 - SUMMA
 - hash (check), hash (inject); hash (2) related_met_before
 - https://leetcode.com/problems/two-sum
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-## hash(self, posi)
-
-##### longest non-repeat substr; hash(self, posi)
+##### longest non-repeat substr; hash (check), hash (inject); hash: (3) hash(val, posi)
 
 - EG
 - SUMMA
-- hash(self, posi)
-- https://leetcode.com/submissions/detail/483336929/
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-## longest non-repeat substr; hash.set(char, old_posi), hash.get(char) == old_posi
-
-##### longest non-repeat substr; hash.set(char, old_posi), hash.get(char) == old_posi
-
-- EG
-- SUMMA
-- hash.set(char, old_posi), hash.get(char) == old_Posi
+- hash (check), hash (inject); hash: (3) hash(val, posi)
 - https://leetcode.com/submissions/detail/483336929/
 
 <br/>
