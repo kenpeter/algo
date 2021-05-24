@@ -3122,7 +3122,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- 2pt, skip_loop (i_start), skip_loop (j_end); rev
+- 2pt, skip_loop (i_start), skip_loop (j_end); rev; next
 -
 - https://leetcode.com/submissions/detail/410447049/
 - https://leetcode.com/problems/reverse-words-in-a-string-iii
