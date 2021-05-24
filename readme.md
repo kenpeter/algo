@@ -3112,18 +3112,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
 
-##### [1, 2, 3, 4, 5, 10, 100, 1000], lo=5, hi=10 -> missing_range, [6->9]; arr_ele <= c_res (no gap), arr_ele > c_res (gap)
-
-- EG
-- SUMMA
--
-- arr_ele <= c_res (no gap), arr_ele > c_res (gap)
--
-- https://leetcode.com/problems/missing-ranges/
-- https://medium.com/@rebeccahezhang/leetcode-163-missing-ranges-6ac21b477e96
-- https://goodtecher.com/leetcode-163-missing-ranges/
-- https://wentao-shao.gitbook.io/leetcode/array/163.missing-ranges
-
 <br/>
 <br/>
 <br/>
@@ -3222,6 +3210,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## gap
+
+##### [1, 2, 3, 4, 5, 10, 100, 1000], lo=5, hi=10 -> missing_range, [6->9]; arr_ele <= c_res (no gap), arr_ele > c_res (gap)
+
+- EG
+- SUMMA
+-
+- arr_ele <= c_res (no gap), arr_ele > c_res (gap)
+-
+- https://leetcode.com/problems/missing-ranges/
+- https://medium.com/@rebeccahezhang/leetcode-163-missing-ranges-6ac21b477e96
+- https://goodtecher.com/leetcode-163-missing-ranges/
+- https://wentao-shao.gitbook.io/leetcode/array/163.missing-ranges
 
 <br/>
 <br/>
