@@ -3112,14 +3112,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
 
-##### [1, 2, 3, 4, 5, 10, 100, 1000], lo=5, hi=10 -> missing_range, [6->9]; there is gap, there is missing_range
+##### [1, 2, 3, 4, 5, 10, 100, 1000], lo=5, hi=10 -> missing_range, [6->9]; arr_ele <= c_res (no gap), arr_ele > c_res (gap)
 
 - EG
 - SUMMA
 -
-- there is gap, there is missin_range
-- (1) arr_ele <= c_res (no gap)
-- (2) c_res < arr_ele (gap, missing_range)
+- arr_ele <= c_res (no gap), arr_ele > c_res (gap)
 -
 - https://leetcode.com/problems/missing-ranges/
 - https://medium.com/@rebeccahezhang/leetcode-163-missing-ranges-6ac21b477e96
