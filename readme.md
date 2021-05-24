@@ -932,21 +932,6 @@
 
 ## when_use_2_pts? palindrome / reverse / swap / sort / cross_over / i_start_j_end_form_str / i_start + len / fast_slow / xxxx
 
-##### 2pts(fast_slow); " abc abc " -> " cba cba "; i_slow_pt_same (i_start_j_end_form_str); j_fast_pt_same (i_start_j_end_form_str); skip_loop_space(stop_is_non_space); skip_loop_non_space(stop_is_space)
-
-- EG
-- SUMMA
--
-- i_slow_pt_same (i_j_strlen)
-- j_fast_pt_same (i_j_strlen)
--
-- loop eles
-- skip_loop_space(stop_is_non_space)
-- skip_loop_non_space(stop_is_space)
-- rev(i_start, j_end-1)
-- i = j; j = j+1 (inc)
-- https://leetcode.com/problems/reverse-words-in-a-string-iii
-
 ##### 2pts(i_start + len); i_slow_pt_same, j_fast_pt_same(i_start + len); i = i+2k(segment), j = i+k(i_start + len)
 
 - EG
@@ -3131,6 +3116,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 2pt, i_start (stable, brute_force); i_start (extending, compare), j_start (extending, compare)
 -
 - https://leetcode.com/problems/implement-strstr
+
+##### rev_each_word, keep space; 2pt, skip_loop (i_start), skip_loop (j_end)
+
+- EG
+- SUMMA
+-
+- 2pt, skip_loop (i_start), skip_loop (j_end); rev
+-
+- https://leetcode.com/submissions/detail/410447049/
+- https://leetcode.com/problems/reverse-words-in-a-string-iii
 
 <br/>
 <br/>
