@@ -1,3 +1,7 @@
+// there is a gap, there is missing_range
+// https://goodtecher.com/leetcode-163-missing-ranges/
+// https://medium.com/@rebeccahezhang/leetcode-163-missing-ranges-6ac21b477e96
+// https://wentao-shao.gitbook.io/leetcode/array/163.missing-ranges
 const getOut = (s, num) => {
   if (s === num) {
     return "" + s;
@@ -7,53 +11,70 @@ const getOut = (s, num) => {
 };
 
 const missRange = (arr, low, high) => {
-  // * input_range, low, high
-  // * start with low
-  let curr_print = low;
+  // c_res, lower bound
+  let c_res = low;
   const res = [];
-  // loop arr
+
   for (let i = 0; i < arr.length; ++i) {
     const n = arr[i];
-    // e.g. [1, 2, 3, 4, 5, 10, 100, 1000]; low=10, high=100 (input_range);
-    // * 1, 2, 3, 4, 5 skip;
-    if (curr_print > n) {
+    // arr_ele too small, no gap
+    if (c_res > n) {
       continue;
-    } else if (curr_print === n) {
-      // e.g. [1, 2, 3, 4, 5, 10, 100, 1000]; low=10, high=100 (input_range);
-      // * 10 already there, skip; curr_print + 1
-      curr_print = curr_print + 1;
+    } else if (c_res === n) {
+      // arr_ele same, no gap
+      c_res = c_res + 1;
       continue;
     } else {
-      // curr_print > input_range, skip
-      if (curr_print > high) {
+      // guard
+      if (c_res > high) {
         continue;
       }
 
-      // e.g. [1, 2, 3, 4, 5, 10, 100, 1000]; low=10, high=100 (input_range);
-      // * curr_print == 11, n-1 (avoid_n), print
-      res.push(getOut(curr_print, n - 1));
-
-      // * curr_print = n + 1 (avoid_n)
-      curr_print = n + 1;
+      // c_res and arr_ele, has a gap
+      res.push(getOut(c_res, n - 1));
+      c_res = n + 1;
     }
-  } // end loop
+  }
 
-  // end_loop, curr_print <= input_range, print rest
-  if (curr_print <= high) {
-    res.push(getOut(curr_print, high));
+  // anything left
+  if (c_res <= high) {
+    res.push(getOut(c_res, high));
   }
 
   return res;
 };
 
-// const low = 10;
-// const high = 100;
-// const arr = [1, 10, 100, 1000];
+// // left out_bound; -10 -> 1 gap
+// const low = -10;
+// const high = -1;
+// const arr = [1, 2, 3, 4, 5, 10, 100, 1000];
 // const out = missRange(arr, low, high);
 // console.log("+++ out", out);
 
-const low = -1;
-const high = 1001;
-const arr = [1, 10, 100, 1000];
+// // left cross_bound; -10 -> 1 gap
+// const low = -10;
+// const high = 100;
+// const arr = [1, 2, 3, 4, 5, 10, 100, 1000];
+// const out = missRange(arr, low, high);
+// console.log("+++ out", out);
+
+// // within; orig 5-10 gap, 10->100 gap
+// const low = 2;
+// const high = 100;
+// const arr = [1, 2, 3, 4, 5, 10, 100, 1000];
+// const out = missRange(arr, low, high);
+// console.log("+++ out", out);
+
+// // right cross_bound; 100 -> 1000 gap; 1000 -> 2000 gap
+// const low = 100;
+// const high = 2000;
+// const arr = [1, 2, 3, 4, 5, 10, 100, 1000];
+// const out = missRange(arr, low, high);
+// console.log("+++ out", out);
+
+// right out_bound; 2000 -> 3000 gap
+const low = 2000;
+const high = 3000;
+const arr = [1, 2, 3, 4, 5, 10, 100, 1000];
 const out = missRange(arr, low, high);
 console.log("+++ out", out);

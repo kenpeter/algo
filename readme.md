@@ -400,33 +400,7 @@
 
 <br/>
 <br/>
-
-## 2pts, curr VS arr_ind; curr > ns[i]; curr == ns[i]; curr < ns[i]; end_loop, curr_print <= input_range
-
-##### find missing range num; curr_print > ns[i]; curr_print == ns[i]; curr_print < ns[i]; end_loop, curr_print <= input_range
-
-- EG
-- SUMMA
--
-- loop arr
--
-- if curr_print > ns[i]
-- e.g. [1, 2, 3, 4, 5, 10, 100, 1000]; low=10, high=100 (input_range);
-- 1, 2, 3, 4, 5 skip;
--
-- if curr_print == ns[i]
-- e.g. [1, 2, 3, 4, 5, 10, 100, 1000]; low=10, high=100 (input_range);
-- 10 aready there, curr_print + 1 (avoid_ns[i]);
--
-- if curr_print < ns[i]
-- e.g. [1, 2, 3, 4, 5, 10, 100, 1000]; low=10, high=100 (input_range);
-- curr_print == 11, ns[i]-1 (avoid_ns[i])
--
-- end_loop, curr_print <= input_range, print rest
--
-- https://leetcode.com/problems/missing-ranges/
-- https://medium.com/@rebeccahezhang/leetcode-163-missing-ranges-6ac21b477e96
-
+<br/>
 <br/>
 <br/>
 
@@ -447,6 +421,9 @@
 - re [A[i], B[i]]
 - https://leetcode.com/problems/fair-candy-swap
 
+<br/>
+<br/>
+<br/>
 <br/>
 <br/>
 
@@ -3125,8 +3102,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/viewSol.php?subId=2654ac371c531fa9fb2c06f5690a0623&pid=701191&user=figo2476
 - https://practice.geeksforgeeks.org/problems/reverse-array-in-groups0255/1
 
-## 2pt (i_start, j_end)
-
 ##### trap rain water; 2 pt (left slots, right slots), small_move (already consumed)
 
 - EG
@@ -3136,6 +3111,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
+
+##### [1, 2, 3, 4, 5, 10, 100, 1000], low=5, high=900 -> missing_range: [6->9, 11->99, 101->999]; there is gap, there is missing_range
+
+- EG
+- SUMMA
+-
+- there is gap, there is missin_range (e.g. 5->10, so 6->9)
+- (1) arr_ele < c_res (no gap)
+- (2) c_res == arr_ele (no gap)
+- (3) c_res < arr_ele (gap, missing_range)
+-
+- https://leetcode.com/problems/missing-ranges/
+- https://medium.com/@rebeccahezhang/leetcode-163-missing-ranges-6ac21b477e96
+- https://goodtecher.com/leetcode-163-missing-ranges/
+- https://wentao-shao.gitbook.io/leetcode/array/163.missing-ranges
 
 <br/>
 <br/>
