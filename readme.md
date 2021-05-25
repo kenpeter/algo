@@ -3155,7 +3155,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## brute_force; i_stable, j_loop
 
-##### find minimum platforms (train start, end time); brute_force (1 train stable, other train loop); cross_compare (a_end vs b_start)
+##### find minimum platforms (train start, end time); cross_compare; deakin_experience
 
 - EG
 - SUMMA
@@ -3165,7 +3165,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 
-##### my-calendar-ii; brute_force (loop overlap, loop event); overlap_arr (check), overlap_arr (inject)
+##### my-calendar-ii; overlap_arr (check), overlap_arr (inject); remember_past
 
 - EG
 - SUMMA
@@ -3174,7 +3174,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
 
-##### trap rain water; each_slot (add up all water); brute_force (loop left max, loop right max)
+##### trap rain water; loop_left_max, loop_right_max; at_this_i
 
 - EG
 - SUMMA
@@ -3216,7 +3216,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## skip_loop (up_hill, down_hill)
 
-##### valid mountain; (1) skip_loop (up); skip_loop (down); mountain (2) skip_loop (up), skip_loop (up, backward); mountain
+##### valid mountain; skip_loop (up), skip_loop (up, backward); form mountain
 
 - EG
 - SUMMA
@@ -3237,7 +3237,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## gap
 
-##### [1, 2, 3, 4, 5, 10, 100, 1000], lo=5, hi=10 -> missing_range, [6->9]; arr_ele <= c_res (no gap), arr_ele > c_res (gap)
+##### [1, 2, 3, 4, 5, 10, 100, 1000], lo=5, hi=10 -> missing_range, [6->9]; gap -> missing_range
 
 - EG
 - SUMMA
