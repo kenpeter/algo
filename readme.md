@@ -932,25 +932,6 @@
 
 ## when_use_2_pts? palindrome / reverse / swap / sort / cross_over / i_start_j_end_form_str / i_start + len / fast_slow / xxxx
 
-##### 2pts(i_start + len); i_slow_pt_same, j_fast_pt_same(i_start + len); i = i+2k(segment), j = i+k(i_start + len)
-
-- EG
-- k=2(rev), 2k=4(segment)
-- ab(op),ab(stay)|ab(op),a -> ba,ab|ba,a
--
-- k=3(rev), 2k=6(segment)
-- abc(op),def|abc(op),def|ab(op) -> cba,def|cba,def|ba
-- SUMMA
--
-- i_start (k_is_rev + rest_k_stay = 2k_is_segment; so next i=i+2k)
-- j_end (i_start + k VS what_left = s.len)
--
-- loop(i < s.len)
-- rev(i_start, j_end-1)
-- i_start = i_start + 2k (segment)
-- j_end = i+k VS what_left (i_start + len = j_end)
-- https://leetcode.com/problems/reverse-string-ii
-
 ##### [1, 2, 3, 4] -> one 2, three 4 -> [2, 4, 4, 4]; i=i+2(segment)
 
 - EG
@@ -3126,6 +3107,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/410447049/
 - https://leetcode.com/problems/reverse-words-in-a-string-iii
+
+##### 0 (k len rev); 1k (no); 2k (k len rev); 3k (no); 4k (k len rev); j_end abstract
+
+- EG
+- SUMMA
+-
+- 0 (k len rev); 1k (no); 2k (k len rev); 3k (no); 4k (k len rev); j_end abstract
+-
+- https://leetcode.com/problems/reverse-string-ii
 
 <br/>
 <br/>
