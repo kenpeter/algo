@@ -3206,9 +3206,17 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-##### skip_loop
+## skip_loop (space, then char)
 
-##### valid mountain; (1) skip_loop (up); skip_loop (down) (2) skip_loop (up), skip_loop (up, backward)
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## skip_loop (up_hill, down_hill)
+
+##### valid mountain; (1) skip_loop (up); skip_loop (down); mountain (2) skip_loop (up), skip_loop (up, backward); mountain
 
 - EG
 - SUMMA
