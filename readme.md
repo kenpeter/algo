@@ -3557,16 +3557,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-product-less-than-k
 - https://leetcode.com/submissions/detail/469783113/
 
-##### longest non-repeated substr; (1) slide_win (2) hash (3) brute_force (arr_contain?) (4) brute_force (substr.indexOf?)
+##### longest non-repeated substr; (1) slide_win (shrink_left) (2) hash (val + posi) (3) brute_force (arr_contain?) (4) brute_force (substr.indexOf?)
 
 - EG
 - SUMMA
 -
 - method 1:
-- slide_win (remove_repeated, expand_len); hash_detect (repeated), shrink_win_left (until unique), expand_win_right (1 by 1)
+- slide_win (remove_repeated, expand_len); hash_check (repeated), shrink_win_left (until unique), expand_win_right (1 by 1)
 -
 - method 2:
-- hash (same_char prev posi); hash_detect (repeated + posi)
+- hash (same_char prev posi); hash_check (repeated + posi)
 -
 - method 3:
 - brute_force (curr char stable, other char loop, arr_contain?)
@@ -3593,9 +3593,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## hash (check), then hash (inject); hash: (1) met_before (2) related_met_before (3) hash (val, posi)
+## hash (check), then hash (inject); (1) met_before (2) related_met_before (3) hash (val, posi)
 
-##### subarray_sum (+ / -) == k; hash (check), then hash (inject); hash(each_sum), future_sum - prev_sum = k
+##### subarray_sum (+ / -) == k; future_sum - prev_sum = k; == k
 
 - EG
 - SUMMA
@@ -3605,25 +3605,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/469373460/
 - https://leetcode.com/problems/subarray-sum-equals-k
 
-##### 2sum (sort); hash (check), hash (inject); hash: (2) related_met_before
+##### 2sum (sort); hash (check), hash (inject); (2) related_met_before; sum_up
 
 - EG
 - SUMMA
 - hash (check), hash (inject); hash (2) related_met_before
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### 2sum; hash (check), hash (inject); hash: (2) related_met_before
+##### 2sum; hash (check), hash (inject); (2) related_met_before; sum_up
 
 - EG
 - SUMMA
 - hash (check), hash (inject); hash (2) related_met_before
 - https://leetcode.com/problems/two-sum
 
-##### longest non-repeat substr; hash (check), hash (inject); hash: (3) hash(val, posi)
+##### longest non-repeat substr; hash (check), hash (inject); (3) hash(val, posi); posi
 
 - EG
 - SUMMA
-- hash (check), hash (inject); hash: (3) hash(val, posi)
+- hash (check), hash (inject); (3) hash(val, posi)
 - https://leetcode.com/submissions/detail/483336929/
 
 <br/>
@@ -3634,7 +3634,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## ask resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 
-##### find minimum platforms (ask resource); start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
+##### find minimum platforms (ask resource); ++i, --j; platform inc / desc
 
 - EG
 - SUMMA
@@ -3644,7 +3644,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
 
-##### meeting room 2 (ask resource); start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
+##### meeting room 2 (ask resource); ++i, --j; platform inc / desc
 
 - EG
 - SUMMA
