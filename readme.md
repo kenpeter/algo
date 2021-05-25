@@ -2995,7 +2995,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock
 
-##### trap rain water; each_slot (add up all water); dp_each_var_meaning (dp_left, dp_right); each_slot
+##### trap rain water; max_hold_most_water (left), max_hold_most_water (right);dp_each_var_meaning;
 
 - EG
 - SUMMA
@@ -3039,12 +3039,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/viewSol.php?subId=2654ac371c531fa9fb2c06f5690a0623&pid=701191&user=figo2476
 - https://practice.geeksforgeeks.org/problems/reverse-array-in-groups0255/1
 
-##### trap rain water; left_slot, rigth_slot; meet_up
+##### trap rain water; max_hold_most_water (left), max_hold_most_water (right)
 
 - EG
 - SUMMA
 -
-- 2 pt (left slot, right slot), small_move (already consumed)
+- 2 pt, max_hold_most_water (left), max_hold_most_water (right); small_move (already consumed)
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
@@ -3173,13 +3173,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - brute_force (loop overlap, loop event); overlap_arr (check), overlap_arr (inject)
 -
 - https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
+  (
 
-##### trap rain water; loop_left_max, loop_right_max; at_this_i
+##### trap rain water; max_hold_most_water (left), max_hold_most_water (right); at_this_i
 
 - EG
 - SUMMA
 -
-- each_slot (add up all water); brute_force (loop left max, loop right max)
+- max_hold_most_water (left), max_hold_most_water (right); brute_force (left), brute_force (right); at_this_i
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
