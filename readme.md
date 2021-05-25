@@ -3715,7 +3715,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## a_end > b_start (detect overlap); end_pick (start_pick); overlap (merge / intersect / update_pick), non-overlap (new pick);
 
-##### shooting max balloons; a_end > b_start (detect overlap); end_pick (start_pick); overlap, non-overlap
+##### shooting max balloons; a_end > b_start; that is overlap
 
 - EG
 - SUMMA
@@ -3739,7 +3739,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/487741686/
 - https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
 
-##### merge_interval, [[1,4],[4,5]] -> [[1, 5]]; merge (longer range); [start_pick, end_pick] (whole); overlap (merge), non-overlap (new end_pick)
+##### merge_interval, [[1,4],[4,5]] -> [[1, 5]]; merge; [a, longer]
 
 - EG
 - SUMMA
@@ -3749,7 +3749,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/487860609/
 - https://leetcode.com/problems/merge-intervals
 
-##### non overlapping interval; inverse of merge_interval (non overlap)
+##### non overlapping interval; inverse; overlap problem exist
 
 - EG
 - SUMMA
@@ -3763,7 +3763,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/488154801/
 - https://leetcode.com/problems/non-overlapping-intervals
 
-##### meeting room 1 (arr of [start, end], attend_all?); brute_force (loop events, a_end > b_start);
+##### meeting room 1 (arr of [start, end], attend_all?); a_end > b_start; overlap
 
 - EG
 - SUMMA
@@ -3772,7 +3772,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://www.programcreek.com/2014/07/leetcode-meeting-rooms-java/
 
-##### meeting room 2 (ask resource); a_end > b_start (detect overlap in 2 arr); start_arr, end_arr, 2 pt; overlap (++), non-overlap (--)
+##### meeting room 2 (ask resource); ++i, --j; room inc / desc
 
 - EG
 - SUMMA
@@ -3782,29 +3782,29 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
 - https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
 
-##### meeting room 3; prepare, then query (incoming data); fill_time_block (more visible)
+##### meeting room 3; prepare, then query; fill_time_block; easier to understand
 
 - EG
 - SUMMA
 -
-- prepare, then query (incoming data); fill_time_block (more visible)
+- prepare, then query (incoming data); fill_time_block; easier to understand
 -
 - https://leetcode.com/discuss/interview-question/613816/Google-or-Onsite-or-Meeting-Rooms-3
 - see my js file in code dir
 
-##### my-calendar-i; (1) brute_force (loop event, cross_compare) (2) brute_force (loop event, !no_intersect == intersect)
+##### my-calendar-i; (1) brute_force (loop event, a_end > b_start) (2) brute_force (loop event, diagram !no_intersect == intersect) (3) tree_map
 
 - EG
 - SUMMA
 -
 - method 1:
-- brute_force (loop event, cross_compare)
+- brute_force (loop event, a_end > b_start)
 -
 - method 2:
-- brute_force (loop event, !no_intersect == intersect)
+- brute_force (loop event, diagram, !no_intersect == intersect)
 -
 - method 3:
-- tree map (sort, +/-, state); look_ahead (remove later)
+- tree_map (sort, +/-, state); look_ahead (remove later)
 -
 - https://leetcode.com/submissions/detail/491628532/
 - https://leetcode.com/problems/my-calendar-i
