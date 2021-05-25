@@ -3086,15 +3086,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-sum-equals-k
 - https://leetcode.com/submissions/detail/469373460/
 
-##### find a str in another str; sub_str vs sub_str; compare_match
-
-- EG
-- SUMMA
--
-- 2pt, i_start (stable); i_start (extending), j_start (extending)
--
-- https://leetcode.com/problems/implement-strstr
-
 <br/>
 <br/>
 <br/>
@@ -3111,6 +3102,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 0 (k len rev); 1k (no); 2k (k len rev); 3k (no); 4k (k len rev); j_end abstract
 -
 - https://leetcode.com/problems/reverse-string-ii
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## 2pt (i+len, 0+len)
+
+##### find a str in another str; i+len vs 0+len; compare
+
+- EG
+- SUMMA
+-
+- 2pt, i_start (stable, brute_force); i+len (extending), 0+len (extending); compare
+-
+- https://leetcode.com/problems/implement-strstr
 
 <br/>
 <br/>
