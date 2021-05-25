@@ -3408,9 +3408,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## j_read (explode), i_write (non-move easily, write_at_correct_posi)
+## j_read (explode), i_write (correct_posi)
 
-##### reverse words in str; " a good \_\_ example " -> "example good a"; rev_whole, rev_each_word, no_extra_space
+##### reverse words in str; rev_whole, rev_each, no_space; whole then small_modify
 
 - EG
 - SUMMA
@@ -3420,7 +3420,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/410433342/
 - https://leetcode.com/problems/reverse-words-in-a-string
 
-##### reverse words in str; " a good \_\_ example " -> "example good a"; rev_whole, rev_each_word, no_extra_space
+##### reverse words in str; rev_whole, rev_each, no_space; whole then small_modifya good \_\_ example " -> "example good a"; rev_whole, rev_each_word, no_extra_space
 
 - EG
 - SUMMA
@@ -3431,30 +3431,30 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://www.programcreek.com/2014/05/leetcode-reverse-words-in-a-string-ii-java/
 - https://leetcode.com/problems/reverse-words-in-a-string-ii
 
-##### [1, 1, 2, 2, 3, 3] (sort) -> [1, 2, 3]; i_write (non-move easily, write_at_correct_posi), j_read (explode)
+##### [1, 1, 2, 2, 3, 3] (sort) -> [1, 2, 3]; i_write (correct_posi), j_read (explode)
 
 - EG
 - SUMMA
-- i_write (non-move easily, write_at_correct_posi), j_read (explode)
+- i_write (correct_posi), j_read (explode)
 - https://leetcode.com/submissions/detail/420662665/
 - https://leetcode.com/problems/remove-duplicates-from-sorted-array
 
-##### rm ele, [3, 2, 2, 3] -> [x, 2, 2, x]; i_write (non-move easily, write_at_correct_posi), j_read (explode)
+##### rm ele, [3, 2, 2, 3] -> [x, 2, 2, x]; i_write (correct_posi), j_read (explode)
 
 - EG
 - SUMMA
-- i_write (non-move easily, write_at_correct_posi), j_read (explode)
+- i_write (correct_posi), j_read (explode)
 - https://leetcode.com/problems/remove-element
 
-##### move zeros to end, [0,1,0,3,12] -> [1, 3, 12, 0, 0]; i_write (non-move easily, write_at_correct_posi), j_read (explode)
+##### move zeros to end, [0,1,0,3,12] -> [1, 3, 12, 0, 0]; i_write (correct_posi), j_read (explode)
 
 - EG
 - SUMMA
-- i_write (non-move easily, write_at_correct_posi), j_read (explode)
+- i_write (correct_posi), j_read (explode)
 - https://leetcode.com/submissions/detail/493858027/
 - https://leetcode.com/problems/move-zeroes
 
-###### ns1 = [5, 6, 0, 0, 0], m = 2, ns2 = [1, 2, 3], n = 3 -> [1, 2, 3, 5, 6]; i_read (backward_explode, won't overwrite), j_read (backward_explode, won't overwrite), k_write (non-move easily, write_at_correct_posi)
+###### ns1 = [5, 6, 0, 0, 0], m = 2, ns2 = [1, 2, 3], n = 3 -> [1, 2, 3, 5, 6]; i_read (explode), j_read (explode), k_write (correct_posi)
 
 - EG
 - SUMMA
