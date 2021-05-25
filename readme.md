@@ -943,19 +943,6 @@
 - res.push, new Array(#).fill(val)
 - https://leetcode.com/problems/decompress-run-length-encoded-list
 
-##### 2pts(start_end); [0, 1, 2, 3, 4, 3, 2, 1, 0]; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_up_highest(stop_same_posi); skip_loop_up_highest(stop_same_posi);
-
-- EG
-- SUMMA
--
-- when_2_end; skip_loop_up_highest(forward); skip_loop_up_highest(backward)
--
-- skip_loop_up_highest(forward) (i < a.len - 1 && a[i] < a[i+1]), ++i;
-- skip_loop_up_highest(backward) (j > 1 && a[j] < a[j-1]), --j;
--
-- re i > 0 (i_use) && j < a.len-1 (j_use) && i === j (meet)
-- https://leetcode.com/problems/valid-mountain-array
-
 ##### 2pts(start_end); [3(i_odd),1,2,4(j_even)] -> [4, 1(i_odd), 2(j_even), 3] -> [4, 2, 1, 3]; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_even(stop_is_odd); skip_loop_odd(stop_is_even)
 
 - EG
@@ -3108,7 +3095,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/410447049/
 - https://leetcode.com/problems/reverse-words-in-a-string-iii
 
-##### 0 (k len rev); 1k (no); 2k (k len rev); 3k (no); 4k (k len rev); j_end abstract
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## 2pt (i, i+len)
+
+##### rev str in k; 0 (k len rev); 1k (no); 2k (k len rev); 3k (no); 4k (k len rev); j_end abstract
 
 - EG
 - SUMMA
@@ -3195,6 +3190,43 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## brute_force; i_stable vs j_stable vs k_loop
+
+##### 3sum_less_k, count; i_stable vs j_stable vs k_loop
+
+- EG
+- SUMMA
+- i_stable vs j_stable vs k_loop
+-
+- https://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+##### skip_loop
+
+##### valid mountain; (1) skip_loop (up); skip_loop (down) (2) skip_loop (up), skip_loop (up, backward)
+
+- EG
+- SUMMA
+- method 1:
+- skip_loop (all the way up); skip_loop (all the way down)
+-
+- method 2:
+- skip_loop (all way up); skip_loop (all the way up, backward)
+-
+- https://leetcode.com/submissions/detail/497931700/
+- https://leetcode.com/problems/valid-mountain-array
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## gap
 
 ##### [1, 2, 3, 4, 5, 10, 100, 1000], lo=5, hi=10 -> missing_range, [6->9]; arr_ele <= c_res (no gap), arr_ele > c_res (gap)
@@ -3208,22 +3240,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://medium.com/@rebeccahezhang/leetcode-163-missing-ranges-6ac21b477e96
 - https://goodtecher.com/leetcode-163-missing-ranges/
 - https://wentao-shao.gitbook.io/leetcode/array/163.missing-ranges
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-## brute_force; i_stable vs j_stable vs k_loop
-
-##### 3sum_less_k, count; i_stable vs j_stable vs k_loop
-
-- EG
-- SUMMA
-- i_stable vs j_stable vs k_loop
--
-- https://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value
 
 <br/>
 <br/>
