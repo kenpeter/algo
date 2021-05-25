@@ -2995,7 +2995,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock
 
-##### trap rain water; each_slot (add up all water); dp (dp_left, dp_right); each_var_meaing
+##### trap rain water; each_slot (add up all water); dp_each_var_meaning (dp_left, dp_right); each_slot
 
 - EG
 - SUMMA
@@ -3027,65 +3027,29 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 2 pt (i_start, j_end)
 
-##### reverse group eles in arr; build_fresh (backward inject); i_start, j_end (j backward inject)
+##### reverse group eles in arr; build_fresh; easier
 
 - EG
 - [1, 2, 3, 4, 5], k = 3 -> [3, 2, 1, 5, 4]
 - SUMMA
 -
 - build_fresh (backward inject); i_start, j_end (j backward inject)
-- j (inbound, or outbound)
+- j abstract (inbound or outbound)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=2654ac371c531fa9fb2c06f5690a0623&pid=701191&user=figo2476
 - https://practice.geeksforgeeks.org/problems/reverse-array-in-groups0255/1
 
-##### trap rain water; 2 pt (left slots, right slots, each_slot), small_move (already consumed)
+##### trap rain water; left_slot, rigth_slot; meet_up
 
 - EG
 - SUMMA
 -
-- 2 pt (left slots, right slots, each_slot), small_move (already consumed)
+- 2 pt (left slot, right slot), small_move (already consumed)
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-## 2pt, i_start (stable), j_start (extending)
-
-##### subarray_sum == k (+); 2pt, i_start (stable), j_start (extending)
-
-- EG
-- SUMMA
--
-- 2pt, i_start (stable), j_start (extending); brute_force; can_exist_early (+)
--
-- https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
-
-##### subarray_sum == k (+/-); 2pt, i_start (stable), j_start (extending);
-
-- EG
-- SUMMA
--
-- 2pt, i_start (stable), j_start (extending); brute_force; cannot_exit_early (+/-)
--
-- https://leetcode.com/problems/subarray-sum-equals-k
-- https://leetcode.com/submissions/detail/469373460/
-
-##### find a str in another str; 2pt, i_start (stable, brute_force); i_start (extending, compare), j_start (extending, compare)
-
-- EG
-- SUMMA
--
-- 2pt, i_start (stable, brute_force); i_start (extending, compare), j_start (extending, compare)
--
-- https://leetcode.com/problems/implement-strstr
-
-##### rev_each_word, keep space; 2pt, skip_loop (i_start), skip_loop (j_end)
+##### rev_each_word, keep space; i_start, j_end; rev_a_word
 
 - EG
 - SUMMA
@@ -3101,9 +3065,45 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## 2pt, i_start, j_extending
+
+##### subarray_sum == k (+); i_start, j_extending; range
+
+- EG
+- SUMMA
+-
+- 2pt, i_start (stable), j_start (extending); brute_force; can_exist_early (+)
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
+
+##### subarray_sum == k (+/-); i_start, j_extending; range
+
+- EG
+- SUMMA
+-
+- 2pt, i_start (stable), j_start (extending); brute_force; cannot_exit_early (+/-)
+-
+- https://leetcode.com/problems/subarray-sum-equals-k
+- https://leetcode.com/submissions/detail/469373460/
+
+##### find a str in another str; sub_str vs sub_str; compare_match
+
+- EG
+- SUMMA
+-
+- 2pt, i_start (stable); i_start (extending), j_start (extending)
+-
+- https://leetcode.com/problems/implement-strstr
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## 2pt (i, i+len)
 
-##### rev str in k; 0 (k len rev); 1k (no); 2k (k len rev); 3k (no); 4k (k len rev); j_end abstract
+##### rev str in k; 0->k rev, k->2k no; question_ask
 
 - EG
 - SUMMA
@@ -3120,7 +3120,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 3pt (i_start, j_end-1, k_end)
 
-##### 2_ele_sum == 3rd_ele; smallest + 2nd_largest == largest (likely success)
+##### 2_ele_sum == 3rd_ele; smallest + 2nd_largest == largest; likely success
 
 - EG
 - SUMMA
@@ -3138,7 +3138,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 3pt (i, i+1, i+2_con)
 
-##### local_inv == global_inv; brute_force (i_stable, j_loop); i, i+1 is local_inv and global_inv (neighbour); i, i+2.. is only global_inv (beyond neighbour)
+##### local_inv == global_inv; i, i+1, i+2_con; question_ask
 
 - EG
 - SUMMA
