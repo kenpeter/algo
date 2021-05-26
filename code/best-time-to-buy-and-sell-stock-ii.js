@@ -1,30 +1,26 @@
-let maxProfit = (A, profit = 0) => {
-  let N = A.length;
-  for (let i = 0, j = 0; i < N; i = j) {
-    //test
-    console.log("1st loop: ", "i", i, "j", j);
+var maxProfit = function (ps) {
+  let i = 0;
+  let j = 0;
+  let res = 0;
 
-    while (i < N - 1 && A[i] > A[i + 1]) {
-      ++i;
-      //test
-      console.log("valley loop: ", "i", i, "j", j);
-    }
+  while (i < ps.length - 1 && j < ps.length - 1) {
+    // low
+    while (i < ps.length - 1 && ps[i] >= ps[i + 1]) ++i;
 
-    // if last ele
-    j = i;
+    j = i + 1;
 
-    // * if last ele, this loop no run
-    // * back_to_top, infinite_loop
-    while (j < N - 1 && A[j] < A[j + 1]) {
-      ++j;
-      //test
-      console.log("peak loop: ", "i", i, "j", j);
-    }
+    // high
+    while (j < ps.length - 1 && ps[j] <= ps[j + 1]) ++j;
 
-    profit += Math.max(0, A[j] - A[i]);
+    if (i < ps.length && j < ps.length)
+      res = Math.max(res, res + (ps[j] - ps[i]));
+
+    i = j + 1;
   }
-  return profit;
+
+  return res;
 };
 
-const input = [7, 1, 5, 3, 6, 4];
+const input = [7, 6, 4, 3, 1];
 const out = maxProfit(input);
+console.log(out);

@@ -3238,6 +3238,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/497931700/
 - https://leetcode.com/problems/valid-mountain-array
 
+##### buy low, sell high; greedy
+
+- EG
+- SUMMA
+- buy low (skip_loop), sell high (skip_loop); greedy
+- https://leetcode.com/submissions/detail/498288319/
+- https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii
+
 <br/>
 <br/>
 <br/>
