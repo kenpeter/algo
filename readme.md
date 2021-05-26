@@ -943,18 +943,6 @@
 - res.push, new Array(#).fill(val)
 - https://leetcode.com/problems/decompress-run-length-encoded-list
 
-##### 2pts(start_end); [3(i_odd),1,2,4(j_even)] -> [4, 1(i_odd), 2(j_even), 3] -> [4, 2, 1, 3]; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_even(stop_is_odd); skip_loop_odd(stop_is_even)
-
-- EG
-- SUMMA
-- i_odd
-- j_even
-- loop(i<j) (start_end)
-- skip_loop_even(stop_is_odd)
-- skip_loop_odd(stop_is_even)
-- swap(i, j)
-- https://leetcode.com/problems/sort-array-by-parity
-
 ##### 2pts(start_end); is palindrome; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_non_alph# (stop_is_alph#)
 
 - EG
@@ -3033,7 +3021,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - [1, 2, 3, 4, 5], k = 3 -> [3, 2, 1, 5, 4]
 - SUMMA
 -
-- build_fresh (backward inject); i_start, j_end (j backward inject)
+- build_fresh (inject); i_start, j_end (j backward inject)
 - j abstract (inbound or outbound)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=2654ac371c531fa9fb2c06f5690a0623&pid=701191&user=figo2476
@@ -3058,6 +3046,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/410447049/
 - https://leetcode.com/problems/reverse-words-in-a-string-iii
+
+##### even num on left, odd num on right; swap (question_ask, even_left, odd_right)
+
+- EG
+- SUMMA
+- i_start (look_for_odd, correct_posi), j_end (look_for_even, correct_posi); swap
+- https://leetcode.com/problems/sort-array-by-parity
 
 <br/>
 <br/>
