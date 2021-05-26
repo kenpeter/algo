@@ -3047,12 +3047,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/410447049/
 - https://leetcode.com/problems/reverse-words-in-a-string-iii
 
-##### even num on left, odd num on right; swap; i_start (write, correct_posi for even), j_end (write, correct_posi for odd)
+##### even num on left, odd num on right; skip_loop (hit odd), skip_loop (hit even), swap; even_left, odd_right
 
 - EG
 - SUMMA
-- swap; i_start (write, correct_posi for even), j_end (write, correct_posi for odd)
+- skip_loop (hit odd), skip_loop (hit even), swap; even_left, odd_right
 - https://leetcode.com/problems/sort-array-by-parity
+
+##### even num on left, odd num on right; build_fresh (easier), i_write (start), j_write (end), n_read; left_partition_even, right_partition_odd
+
+- EG
+- SUMMA
+- build_fresh (easier), i_write (start), j_write (end), n_read; left_partition_even, right_partition_odd
+- https://leetcode.com/problems/sort-array-by-parity
+
+##### even num at even ind, odd num at odd ind; build_fresh (easier), i_write (start), j_write (start), n_read; i (correct_posi), j (correct_posi)
+
+- EG
+- SUMMA
+- build_fresh (easier), i_write (start), j_write (start), n_read; i (correct_posi), j (correct_posi)
+- https://leetcode.com/problems/sort-array-by-parity-ii/
 
 <br/>
 <br/>
