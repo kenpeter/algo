@@ -930,7 +930,7 @@
 <br/>
 <br/>
 
-## when_use_2_pts? palindrome / reverse / swap / sort / cross_over / i_start_j_end_form_str / i_start + len / fast_slow / xxxx
+## ???
 
 ##### [1, 2, 3, 4] -> one 2, three 4 -> [2, 4, 4, 4]; i=i+2(segment)
 
@@ -3047,11 +3047,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/410447049/
 - https://leetcode.com/problems/reverse-words-in-a-string-iii
 
-##### even num on left, odd num on right; swap (question_ask, even_left, odd_right)
+##### even num on left, odd num on right; swap; i_start (write, correct_posi for even), j_end (write, correct_posi for odd)
 
 - EG
 - SUMMA
-- i_start (look_for_odd, correct_posi), j_end (look_for_even, correct_posi); swap
+- swap; i_start (write, correct_posi for even), j_end (write, correct_posi for odd)
 - https://leetcode.com/problems/sort-array-by-parity
 
 <br/>
