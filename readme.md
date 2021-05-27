@@ -932,17 +932,6 @@
 
 ## ???
 
-##### [1, 2, 3, 4] -> one 2, three 4 -> [2, 4, 4, 4]; i=i+2(segment)
-
-- EG
-- [1, 2, 3, 4] -> one 2, three 4 -> [2, 4, 4, 4];
-- SUMMA
-- loop(i=1; i<len; i=i+2) (segment)
-- a[i-1] == #
-- a[i] == val
-- res.push, new Array(#).fill(val)
-- https://leetcode.com/problems/decompress-run-length-encoded-list
-
 ##### 2pts(start_end); is palindrome; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_non_alph# (stop_is_alph#)
 
 - EG
@@ -1006,17 +995,6 @@
 -
 - re i === short.len (i must to end)
 - https://leetcode.com/problems/long-pressed-name
-
-##### i_same_spd_pt_diff, j_same_spd_pt_diff(i_start + len); search "def" in "abcdef"
-
-- EG
-- i_same_spd_pt_diff, j_same_spd_pt_diff(i_start + len); "abcdef" VS "def";
-- SUMMA
-- loop chars (long_str)
-- long chars (short_str)
-- i_same_spd_pt_diff, j_same_spd_pt_diff(i_start + len);
-- ++j, if j == short_str.len, re posi;
-- https://leetcode.com/problems/implement-strstr
 
 ##### i_same_spd_pt_diff, j_same_spd_pt_diff(tracking_var); "ab" VS "ba" (A_can_swap)
 
@@ -3108,9 +3086,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- 0 (k len rev); 1k (no); 2k (k len rev); 3k (no); 4k (k len rev); j_end abstract
--
+- 0 (k len rev); 1k (no); 2k (k len rev); 3k (no); 4k (k len rev); i+k (question_ask)
+- j_end abstract
 - https://leetcode.com/problems/reverse-string-ii
+
+##### [1, 2, 3, 4] -> [2, 4, 4, 4]; one 2, then three 4; i = i+2 (question_show)
+
+- EG
+- SUMMA
+- i = i+2 (question_show)
+- https://leetcode.com/problems/decompress-run-length-encoded-list
 
 <br/>
 <br/>
