@@ -929,22 +929,7 @@
 
 <br/>
 <br/>
-
-## ???
-
 <br/>
-<br/>
-
-##### 2pts(i_start, j_end === indOf, lastIndOf); .....
-
-- EG
-- SUMMA
-- [3, 2, 1, 2, 8] -> [1, 2, 2, 3, 8]\_sort -> [0_small, 1_small, 1_small, 3, 4]; (i_start + j_end === indOf + lastIndOf)
--
-- new_arr = [...orig_arr].sort(); (copy)
-- orig_arr.map(t => new_arr.indOf(t)); (i_start + j_end === indOf + lastIndOf)
-- https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number
-
 <br/>
 <br/>
 
@@ -2964,7 +2949,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 2 pt (i_start, j_end)
+## 2pt (i_start, j_end)
 
 ##### reverse group eles in arr; build_fresh; easier
 
@@ -2983,7 +2968,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- 2 pt, max_hold_most_water (left), max_hold_most_water (right); small_move (already consumed)
+- 2pt, max_hold_most_water (left), max_hold_most_water (right); small_move (already consumed)
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
@@ -3264,6 +3249,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - n%2 != 0; (-....) 0 (+.....)
 -
 - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## partition
+
+##### [3, 3, 3, 1, 1, 1, 2, 2, 2]; sort; left_partition of first 3; smaller
+
+- EG
+- SUMMA
+- [3, 3, 3, 1, 1, 1, 2, 2, 2] -> [1, 1, 1, 2, 2, 2, 3, 3, 3]; sort; left_partition of first 3; smaller
+- https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number
 
 <br/>
 <br/>
@@ -3793,7 +3793,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- a_end > b_start (detect overlap in 2 arr); start_arr, end_arr, 2 pt; overlap (++), non-overlap (--)
+- a_end > b_start (detect overlap in 2 arr); start_arr, end_arr, 2pt; overlap (++), non-overlap (--)
 -
 - https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
 - https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
