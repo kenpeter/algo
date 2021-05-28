@@ -3105,6 +3105,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=897008f882370645ad43ee369da48b30&pid=702837&user=figo2476
 
+##### in arr, a^2 + b^2 == c^2; smallest + 2nd_largest == largest; likely success
+
+- EG
+- SUMMA
+-
+- sort; i_start (smallest) + j_end (2nd_largest) = k_end (largest); likely success
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=e42971255da045373e53e797d7618dec&pid=702805&user=figo2476
+- https://practice.geeksforgeeks.org/problems/pythagorean-triplet3018/1
+
 <br/>
 <br/>
 <br/>
