@@ -932,33 +932,6 @@
 
 ## ???
 
-##### 2pts(start_end); is palindrome; i_same_spd_pt_same_start; j_same_spd_pt_same_end; skip_loop_non_alph# (stop_is_alph#)
-
-- EG
-- SUMMA
-- loop chars;
-- i_same_spd_pt_same_start
-- j_same_spd_pt_same_end
-
-- skip_loop_non_alph# (stop_is_alph#)
-- skip_loop_non_alphskip_loop_non_alph# (stop_is_alph#)
-- check i_start, j_end
-- https://leetcode.com/problems/valid-palindrome
-
-##### 2pts(cross_over); fill_unique_num, sum == 0; 0_mid OR no_zero; i_same_spt_pt_same_start; j_same_spt_pt_same_end;
-
-- EG
-- SUMMA
-- (1)
-- n = 5
-- [0, 0, 0, 0, 0] -> [1_i, 2, 0, 2, 1_j]; (0_mid; i_same_spt_pt_same_start; j_same_spt_pt_same_end)
--
-- (2)
-- n = 4
-- [0, 0, 0, 0] -> [1_i, 2, 2, 1_j]; (no_zero; i_same_spt_pt_same_start; j_same_spt_pt_same_end)
--
-- https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
-
 <br/>
 <br/>
 
@@ -3039,6 +3012,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - build_fresh (easier), i_write (start), j_write (end), n_read; left_partition_even, right_partition_odd
 - https://leetcode.com/problems/sort-array-by-parity
 
+##### is palindrome; i_start == j_end, cross; brute_force
+
+- EG
+- SUMMA
+- skip_loop (non-alpha-num); i_start == j_end, cross; brute_force
+- https://leetcode.com/problems/valid-palindrome
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## 2pt, i_start, j_start
+
 ##### even num at even ind, odd num at odd ind; build_fresh (easier), i_write (start), j_write (start), n_read; i (correct_posi), j (correct_posi)
 
 - EG
@@ -3259,6 +3247,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://medium.com/@rebeccahezhang/leetcode-163-missing-ranges-6ac21b477e96
 - https://goodtecher.com/leetcode-163-missing-ranges/
 - https://wentao-shao.gitbook.io/leetcode/array/163.missing-ranges
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## symmetric
+
+##### all num sum == 0; symmetric
+
+- EG
+- SUMMA
+- n%2 == 0; (-....) | (+.....)
+- n%2 != 0; (-....) 0 (+.....)
+-
+- https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
 
 <br/>
 <br/>
