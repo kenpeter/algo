@@ -3283,11 +3283,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## problem == 2 sub problems
 
-##### curr i > neighbours --> 2 sub problems (left, right)
+##### curr i > neighbours --> left neighbours, right neighbours; curr i, 2 neighbours
 
 - EG
 - SUMMA
-- curr i > neighbours --> 2 sub problem (left, right)
+- curr i > neighbours --> left neighbours, right neighbours; curr i, 2 neighbours
 - https://leetcode.com/problems/candy
 
 <br/>
