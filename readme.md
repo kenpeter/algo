@@ -3281,7 +3281,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## problem == 2 sub problems
+## deal with left, deal with right
 
 ##### curr i > neighbours --> left neighbours, right neighbours; curr i, 2 neighbours
 
@@ -3508,7 +3508,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# chg_sth, become_old_question
+## greedy
+
+##### sort; can this cookie feed this child?
+
+- EG
+- SUMMA
+- sort; can this cookie feed this child?
+- https://leetcode.com/problems/assign-cookies/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## chg_sth, become_old_question
 
