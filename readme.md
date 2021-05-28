@@ -3281,6 +3281,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## problem == 2 sub problems
+
+##### curr i > neighbours --> 2 sub problems (left, right)
+
+- EG
+- SUMMA
+- curr i > neighbours --> 2 sub problem (left, right)
+- https://leetcode.com/problems/candy
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## brute_force; dp[ind][can_buy][tran] = buy or no_action; dp[ind][can_buy][tran] = sell or no_action; k_tran = 1, 2, k, unlimit
 
 ##### dp[ind][can_buy][tran] = buy or no_action; dp[ind][can_buy][tran] = sell or no_action; k_tran = 1
