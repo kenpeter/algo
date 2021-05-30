@@ -3523,6 +3523,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## ind = num % len
+
+##### distribute candy; candy_n = 10, [1, 2, 3]\_order -> [5, 2, 3]; ind = num % len; distribute
+
+- EG
+- SUMMA
+- ind = num % len;
+- https://leetcode.com/problems/distribute-candies-to-people
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## chg_sth, become_old_question
 
 ##### 3sum; ele + 2sum_hash_prev (chg_sth, become_old_question)
