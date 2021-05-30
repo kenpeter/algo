@@ -709,21 +709,6 @@
 
 <br/>
 <br/>
-
-## prev_num( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
-
-##### 12345678 -> 12.345.678; prev_num( total_len(s.len) - how_many(i_dy_total_width) ) % 3 ==== i_dy_total_width % width
-
-- EG
-- SUMMA
-- loop eles (forward)
-- if i > 0, (s.len - i) % 3 == 0
-- i>0, skip_1st_num; .1 == nono
-- total_len(s.len) - how_many(ind) == new_total_len(%3)
-- res = res + '.'
-- res = res + ns[i]
-- https://leetcode.com/problems/thousand-separator
-
 <br/>
 <br/>
 
@@ -1395,17 +1380,6 @@
 - if ns[i]^2 > ns[j]^2, res[ind--](can be arr / hash) = ns[i]^2; (i_big_fill_res; res_ind)
 - if ns[i]^2 <= ns[j]^2, res[ind--](can be arr / hash) = ns[j]^2 (i_small_fill_res; res_ind)
 - https://leetcode.com/problems/squares-of-a-sorted-array
-
-##### build_from_ground_rearrange(i_orig_arr VS even_ind_pt_res + odd_ind_pt_res)
-
-- EG
-- [1, 2, 3, 4] -> [x(e), x(o), x, x] -> [x(e), 1, x, x(o)] -> [2, 1, x(e), x(o)] -> [2, 1, x(e), 3] -> [2, 1, 4, 3]
-- SUMMA
-- loop eles (i_orig_arr)
-- if a[i] % 2 === 0, res[even] = a[i] (even_ind_pt_res)
-- if a[i] % 2 !== 0, res[odd] = a[i] (odd_ind_pt_res)
-- https://leetcode.com/problems/sort-array-by-parity-ii
--
 
 <br/>
 <br/>
@@ -3012,7 +2986,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 2pt, i_start, j_start
 
-##### even num at even ind, odd num at odd ind; build_fresh (easier), i_write (start), j_write (start), n_read; i (correct_posi), j (correct_posi)
+##### even num at even ind, odd num at odd ind; build_fresh (easier), i_write (start), j_write (start), n_read; even at even, odd at odd
 
 - EG
 - SUMMA
@@ -3531,6 +3505,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - ind = num % len;
 - https://leetcode.com/problems/distribute-candies-to-people
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## full_len - ind == rest_len
+
+##### 12345678 -> 12.345.678; full_len - ind == rest_len; rest_len % 3 == 0
+
+- EG
+- SUMMA
+- full_len - ind == rest_len; rest_len % 3 == 0
+- https://leetcode.com/problems/thousand-separator
 
 <br/>
 <br/>
