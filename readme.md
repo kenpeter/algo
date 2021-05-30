@@ -751,16 +751,6 @@
 - end_loop; input_arr.len === 9 re 'DRAW'; else 'PENDING'
 - https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game
 
-##### is_palindrome; 121 -> 121(able_rebuild), 123 -> 321(not_able_rebuild); last_digit = input % 10; prev_num = input / 10
-
-- EG
-- SUMMA
-- loop eles
-- last_digit = input % 10 (last_digit)
-- input = floor(input / 10) (prev_num)
-- res = res\*10 + last_digit (rebuild)
-- https://leetcode.com/problems/palindrome-number
-
 <br/>
 <br/>
 
@@ -778,17 +768,7 @@
 - join
 - https://leetcode.com/problems/rearrange-spaces-between-words
 
-##### is_palindrome; 121 -> 121(able_rebuild), 123 -> 321(not_able_rebuild); full_num = floor(full_num / 10)\*10 + (full_num % 10)
-
-- EG
-- SUMMA
-- loop eles
-- last_digit = input % 10 (last_digit)
-- input = floor(input / 10) (prev_num)
-- res = res\*10 + last_digit (rebuild)
-- https://leetcode.com/problems/palindrome-number
-
-#####
+##### ???
 
 - EG
 - [99,77,33,66,55], 33 is min; sum 3+3=6; 6 is even; last_digit = input % 10; prev_num = floor(input / 10)
@@ -854,16 +834,6 @@
 - loop chars (i stay)
 - loop j, move until !consecutive
 - https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms/
-
-##### is palindrome; i(start), j(end); loop_skip_alph#
-
-- EG
-- SUMMA
-- loop chars;
-- i(start), j(end)
-- sub_loop(skip_alph#) ++i
-- sub_loop(skip_alph#) --j
-- https://leetcode.com/problems/valid-palindrome
 
 <br/>
 <br/>
@@ -3261,7 +3231,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - EG
 - SUMMA
-- curr i > neighbours --> left neighbours, right neighbours; curr i, 2 neighbours
+- curr i > neighbours --> left neighbours, right neighbours; curr i, 2 neighbours; get_max
 - https://leetcode.com/problems/candy
 
 <br/>
@@ -3484,11 +3454,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## greedy
 
-##### sort; can this cookie feed this child?
+##### [2, 3]\_child, [1, 10]\_cookie; sort; can this cookie feed this child?
 
 - EG
 - SUMMA
-- sort; can this cookie feed this child?
+- sort; can this cookie feed this child? then_next
 - https://leetcode.com/problems/assign-cookies/
 
 <br/>
@@ -3505,6 +3475,29 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - ind = num % len;
 - https://leetcode.com/problems/distribute-candies-to-people
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## is_palindrome (1) compare now (2) compare later
+
+##### is_palindrome; abba; (1) compare now
+
+- EG
+- SUMMA
+- i_start == j_end
+- https://leetcode.com/problems/valid-palindrome
+
+##### is_palindrome; 121 -> 121; (2) compare later
+
+- EG
+- SUMMA
+- 1 -> 12 -> 121 (build, then compare, compare later)
+- prev_digit = input / 10; curr_digit = input % 10;
+- https://leetcode.com/problems/palindrome-number
 
 <br/>
 <br/>
