@@ -2848,30 +2848,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock
 
-##### trap rain water; max_hold_most_water (left), max_hold_most_water (right);dp_each_var_meaning;
-
-- EG
-- SUMMA
--
-- each_slot (add up all water);
--
-- dp (dp_left, dp_right);
-- each_var_meaing;
-- i: curr max so far
-- i-1: prev..
-- i+1: next..
-- 0: init self
-- n-1: last max
-- dp[i]: curr max so far
-- dp[i-1]: ..
-- dp[i+1]: ..
-- dp[0]: init self
-- dp[n-1]: last ..
-- f: max so far
--
-- https://leetcode.com/submissions/detail/495366729/
-- https://leetcode.com/problems/trapping-rain-water
-
 <br/>
 <br/>
 <br/>
@@ -3087,17 +3063,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - brute_force (loop overlap, loop event); overlap_arr (check), overlap_arr (inject)
 -
 - https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
-  (
-
-##### trap rain water; max_hold_most_water (left), max_hold_most_water (right); at_this_i
-
-- EG
-- SUMMA
--
-- max_hold_most_water (left), max_hold_most_water (right); brute_force (left), brute_force (right); at_this_i
--
-- https://leetcode.com/submissions/detail/495366729/
-- https://leetcode.com/problems/trapping-rain-water
 
 <br/>
 <br/>
@@ -3144,7 +3109,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/497931700/
 - https://leetcode.com/problems/valid-mountain-array
 
-##### buy low, sell high; greedy
+##### buy low (down_hill), sell high (up_hill);
 
 - EG
 - SUMMA
@@ -3210,14 +3175,47 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## deal with left, deal with right
+## left, right; curr i, smallest / biggest
 
-##### curr i > neighbours --> left neighbours, right neighbours; curr i, 2 neighbours
+##### curr i > neighbours --> left neighbours, right neighbours; curr i, biggest
 
 - EG
 - SUMMA
-- curr i > neighbours --> left neighbours, right neighbours; curr i, 2 neighbours; get_max
+- curr i > neighbours --> left neighbours, right neighbours; curr i, 2 neighbours; curr i, biggest
 - https://leetcode.com/problems/candy
+
+##### trap rain water; max_hold_most_water (brute_force, left), max_hold_most_water (brute_force, right); curr i, smallest
+
+- EG
+- SUMMA
+-
+- max_hold_most_water (brute_force, left), max_hold_most_water (brute_force, right); curr i, smallest
+-
+- https://leetcode.com/submissions/detail/495366729/
+- https://leetcode.com/problems/trapping-rain-water
+
+##### trap rain water; max_hold_most_water (dp left), max_hold_most_water (dp right); curr i, smallest
+
+- EG
+- SUMMA
+-
+- max_hold_most_water (dp left), max_hold_most_water (dp right); curr i, smallest
+-
+- each_var_meaing;
+- i: curr max so far
+- i-1: prev..
+- i+1: next..
+- 0: init self
+- n-1: last max
+- dp[i]: curr max so far
+- dp[i-1]: ..
+- dp[i+1]: ..
+- dp[0]: init self
+- dp[n-1]: last ..
+- f: max so far
+-
+- https://leetcode.com/submissions/detail/495366729/
+- https://leetcode.com/problems/trapping-rain-water
 
 <br/>
 <br/>
