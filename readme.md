@@ -753,21 +753,7 @@
 
 <br/>
 <br/>
-
-## full_length == floor(s_len / width)\*width + (s_len % width)
-
-##### \_a_b_c\_\_ -> a\_\_b\_\_c\_; 3 words, 5 spaces; full_length == floor(s_len / width)\*width + (s_len % width); full_length = floor(5 / 2)\*2 + (5 % 2)
-
-- EG
-- SUMMA
-- edge_case (1_word)
-- how_many_word
-- how_many_space
-- full_length = floor(s_len / width)\*width + (s_len % width)
-- width = 3_words - 1; (3 words, use 2 spaces to separate)
-- join
-- https://leetcode.com/problems/rearrange-spaces-between-words
-
+<br/>
 <br/>
 <br/>
 
@@ -3505,7 +3491,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-##### is_palindrome; 121 -> 121; (2) compare later
+## len / num = each, len % num = remain;
+
+##### " this is a sentence " -> "this is a sentence\_\_"; len / num = each, len % num = remain; combine_words
+
+- EG
+- SUMMA
+- len / num = each, len % num = remain; combine_words
+- https://leetcode.com/problems/rearrange-spaces-between-words
 
 <br/>
 <br/>
