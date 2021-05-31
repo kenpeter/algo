@@ -768,21 +768,6 @@
 - join
 - https://leetcode.com/problems/rearrange-spaces-between-words
 
-##### ???
-
-- EG
-- [99,77,33,66,55], 33 is min; sum 3+3=6; 6 is even; last_digit = input % 10; prev_num = floor(input / 10)
-- SUMMA
-- loop ele, find min
--
-- sum digit;
-- loop(min > 0) (e.g. 1/10 = floor(0.1) === 0; so min > 0)
-- n = min % 10 (last_digit)
-- sum = sum + n;
-- min = floor(min / 10) (prev_num; e.g. 2.5, need 2)
-- https://bloggie.io/@rugved/leetcode-1085-sum-of-digits-in-the-minimum-number-java-solution
-- https://leetcode.com/problems/sum-of-digits-in-the-minimum-number
-
 <br/>
 <br/>
 
@@ -3498,6 +3483,31 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 1 -> 12 -> 121 (build, then compare, compare later)
 - prev_digit = input / 10; curr_digit = input % 10;
 - https://leetcode.com/problems/palindrome-number
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## prev_digit = input / 10; curr_digit = input % 10;
+
+##### sum of min num; prev_digit = input / 10; curr_digit = input % 10; brute_force
+
+- EG
+- SUMMA
+- [99,77,33,66,55], 33 is min, sum is 6 (even_num);
+- prev_digit = input / 10; curr_digit = input % 10;
+- https://bloggie.io/@rugved/leetcode-1085-sum-of-digits-in-the-minimum-number-java-solution
+- https://leetcode.com/problems/sum-of-digits-in-the-minimum-number
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+##### is_palindrome; 121 -> 121; (2) compare later
 
 <br/>
 <br/>
