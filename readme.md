@@ -3161,31 +3161,31 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## left, right; curr i, smallest / biggest
+## deal with left, deal with right;
 
-##### curr i > neighbours --> left neighbours, right neighbours; curr i, biggest
+##### curr i > neighbours --> left neighbours, right neighbours; curr i
 
 - EG
 - SUMMA
-- curr i > neighbours --> left neighbours, right neighbours; curr i, 2 neighbours; curr i, biggest
+- curr i > neighbours --> left neighbours, right neighbours; curr i max
 - https://leetcode.com/problems/candy
 
-##### trap rain water; max_hold_most_water (brute_force, left), max_hold_most_water (brute_force, right); curr i, smallest
+##### trap rain water; max_hold_water (brute_force, left), max_hold_water (brute_force, right); curr i
 
 - EG
 - SUMMA
 -
-- max_hold_most_water (brute_force, left), max_hold_most_water (brute_force, right); curr i, smallest
+- max_hold_water (brute_force, left), max_most_water (brute_force, right); curr i min
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
 
-##### trap rain water; max_hold_most_water (dp left), max_hold_most_water (dp right); curr i, smallest
+##### trap rain water; max_hold_water (dp left), max_hold_water (dp right); curr i
 
 - EG
 - SUMMA
 -
-- max_hold_most_water (dp left), max_hold_most_water (dp right); curr i, smallest
+- max_hold_water (dp left), max_hold_water (dp right); curr i min
 -
 - each_var_meaing;
 - i: curr max so far
@@ -3202,6 +3202,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/495366729/
 - https://leetcode.com/problems/trapping-rain-water
+
+##### curr i > left, curr i < right; left_max (dp left), right_max (dp right); curr i
+
+- EG
+- SUMMA
+-
+- left_max (dp left), right_max (dp right); curr i
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=a606567724872fdd52f0f7f36e3e68a0&pid=703327&user=figo2476
+- https://practice.geeksforgeeks.org/problems/unsorted-array4925
 
 <br/>
 <br/>
