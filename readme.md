@@ -3163,11 +3163,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## deal with left, deal with right;
 
-##### curr i > neighbours --> left neighbours, right neighbours; curr i
+##### curr rating high > neighbours --> left neighbours, right neighbours; curr i
 
 - EG
 - SUMMA
-- curr i > neighbours --> left neighbours, right neighbours; curr i max
+- curr rating high > neighbours --> left neighbours (look_back, preserve prev), right neighbours (look_back, preserve prev); curr i max
 - https://leetcode.com/problems/candy
 
 ##### trap rain water; max_hold_water (brute_force, left), max_hold_water (brute_force, right); curr i
