@@ -3619,6 +3619,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-product-less-than-k
 - https://leetcode.com/submissions/detail/469783113/
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## expand_win_right (by couple), shrink_win_left (condi)
+
 ##### longest non-repeated substr; (1) slide_win (shrink_left) (2) hash (val + posi) (3) brute_force (arr_contain?) (4) brute_force (substr.indexOf?)
 
 - EG
@@ -3639,6 +3647,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/482623234/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## 2_slide_windows, same place
 
 ##### 1 pivot, left_sum == right_sum; 2_slide_windows
 
