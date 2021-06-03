@@ -3029,6 +3029,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## 3pt (i-1, i, i+1)
+
+##### zig zag; [1, 2, 3, 4, 5] -> [1, 3_max, 2, 5_max, 4]; i-1, i, i+1; i max swap; max_top
+
+- EG
+- SUMMA
+-
+- i-1, i, i+1; i max swap; max_top
+-
+- https://practice.geeksforgeeks.org/problems/convert-array-into-zig-zag-fashion1638/1#
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## brute_force; i_stable, j_loop
 
 ##### find minimum platforms (train start, end time); cross_compare; deakin_experience
