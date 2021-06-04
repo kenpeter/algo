@@ -404,29 +404,6 @@
 <br/>
 <br/>
 
-## take_concept_diff, not thinking big/small
-
-##### take_concept_diff, not thinking big/small
-
-- EG
-- [2, 4] VS [1, 2, 5]
-- [2, 4] + x - y VS [1, 2, 5] - x + y (make both sum equal)
-- 6 + x - y === 8 - x + y
-- 2x - 2y === diff(2), so x - y = diff/2 (take_concept_diff, not thinking big/small)
-- SUMMA
--
-- loop A arr
-- loop B arr
-- if diff/2 === A[i] - B[i] (take_concept_diff, not thinking big/small)
-- re [A[i], B[i]]
-- https://leetcode.com/problems/fair-candy-swap
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 ## INVERSE_QUESTION; when saying true, false, yes, no; inverse
 
 ##### INVERSE_QUESTION; matrix; most re_fail, else re_true; 2_ele_diag, upto_2nd_last
@@ -3073,9 +3050,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## brute_force; i_stable vs j_stable vs k_loop
+## brute_force; i_stable, j_stable, k_loop
 
-##### 3sum_less_k, count; i_stable vs j_stable vs k_loop
+##### 3sum_less_k, count; i_stable, j_stable, k_loop
 
 - EG
 - SUMMA
@@ -4136,6 +4113,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 
 # math
+
+## swap, then equal
+
+##### candy swap; swap, then equal
+
+- A = A' + (x/2 + x/2)
+- B = B' + (x/2)
+- swap
+- A' + (x/2) == B' + (x/2 + x/2)
+-
+- swap, then equal
+-
+- https://leetcode.com/problems/fair-candy-swap
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## straight line slope; dy / dx = (y1 - y) / (x1 - x)
 
