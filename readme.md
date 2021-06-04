@@ -4110,10 +4110,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## comparator; (1) 1 vs 1 (2) combine vs combine (3)
 
-##### xxxx; a vs b (1 vs 1)
+##### [4, 3, 1, 2]; a vs b (1 vs 1)
 
 - EG
 - SUMMA
+- arr.sort((a, b) => a-b)
 -
 
 ##### [1, 20, ...] -> 120 vs 201; ba vs ab (combine vs combine)
