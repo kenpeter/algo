@@ -3179,7 +3179,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- max_hold_water (dp left), max_hold_water (dp right); curr i min
+- max_hold_water (dp left), max_hold_water (dp right); curr i (max - curr)
 -
 - each_var_meaing;
 - i: curr max so far
@@ -3202,10 +3202,17 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- left_max (dp left), right_max (dp right); curr i
+- left_max (dp left), right_max (dp right); curr i (compare left right, no curr i)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a606567724872fdd52f0f7f36e3e68a0&pid=703327&user=figo2476
-- https://practice.geeksforgeeks.org/problems/unsorted-array4925
+- https://practice.geeksforgeeks.org/problems/unsorted-array4925/1
+
+#####
+
+- EG
+- SUMMA
+-
+- https://practice.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1
 
 <br/>
 <br/>
@@ -4063,18 +4070,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# max represent entire subarr
-
 ## max represent entire subarr
 
-##### ele >= everything_in_right; backward; max represent entire subarr
+##### [1, 2, 17, 1, 2], 17 is leader >= everything at right; max represent entire subarr
 
 - EG
 - SUMMA
 -
-- backward; max represent entire subarr
+- leader >= everything at right; max represent entire subarr
 -
 - https://practice.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1
+
+##### [2,3,5,1,3]\_candy, extra = 3; a[i] + extra > max; max represent entire subarr
+
+- EG
+- SUMMA
+-
+- a[i] + extra > max; max represent entire subarr
+-
+- https://leetcode.com/problems/kids-with-the-greatest-number-of-candies
 
 ##### global_inv_num == local_inv_num; next_each....; max represent entire subarr
 
