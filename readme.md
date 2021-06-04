@@ -4108,17 +4108,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # comparator
 
-## comparator
+## comparator; (1) 1 vs 1 (2) combine vs combine (3)
 
-##### [1, 20] -> 120 vs 201; comparator, ba-ab
+##### xxxx; a vs b (1 vs 1)
 
 - EG
 - SUMMA
-- method 1:
-- comprator, ba-ab
+-
+
+##### [1, 20, ...] -> 120 vs 201; ba vs ab (combine vs combine)
+
+- EG
+- SUMMA
+-
+- ab, ba, ba vs ab; return ba-ab; diff better sort num
 -
 - https://leetcode.com/submissions/detail/477886109/
 - https://leetcode.com/problems/largest-number
+- https://practice.geeksforgeeks.org/problems/largest-number-formed-from-an-array1117/1
 
 <br/>
 <br/>
