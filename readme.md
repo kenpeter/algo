@@ -1895,23 +1895,6 @@
 
 ## sort(other_attr ? other_attr : default_attr)
 
-##### letter_log, digi_log; data_into_diff_steam; sort(other_attr ? other_attr : default_attr)
-
-- EG
-- SUMMA
-- "dig1 8 1 5 1" (start + num)
-- "let2 own kit dig" (start + word)
--
-- in: ["dig1 8 1 5 1", "let1 art can","dig2 3 6", "let2 own kit dig", "let3 art zero"]
-- out: ["let1 art can", "let3 art zero", "dig1 8 1 5 1", "let2 own kit dig"]
-- letter_sort, digi_orig_order;
--
-- loop eles
-- if letter, letter_arr; if digi digi_arr; (data_into_diff_stream)
--
-- end_loop, sort(other_attr ? other_attr : default_attr), lexico_compare
-- https://leetcode.com/problems/reorder-data-in-log-files
-
 ##### sort(other_attr ? other_attr : default_attr); sort -> slice -> map
 
 - EG
@@ -4108,7 +4091,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # comparator
 
-## comparator; (1) 1 vs 1 (2) combine vs combine (3)
+## comparator; (1) sub vs sub (2) 1 vs 1 (3) combine vs combine
+
+##### ["dig1 8 1 5 1", "let1 art can"]; "8 1 5 1" vs "art can" (sub vs sub)
+
+- EG
+- SUMMA
+-
+- log identifier + log content; without log identifier + log content;
+- https://leetcode.com/submissions/detail/503865437/
+- https://leetcode.com/problems/reorder-data-in-log-files/
 
 ##### [4, 3, 1, 2]; a vs b (1 vs 1)
 
