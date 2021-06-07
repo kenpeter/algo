@@ -2834,14 +2834,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/410447049/
 - https://leetcode.com/problems/reverse-words-in-a-string-iii
 
-##### even num on left, odd num on right; skip_loop (hit odd), skip_loop (hit even), swap; even_left, odd_right
+##### even num on left, odd num on right; skip_loop (hit odd), skip_loop (hit even), swap; even_left, odd_right (in place)
 
 - EG
 - SUMMA
 - skip_loop (hit odd), skip_loop (hit even), swap; even_left, odd_right
 - https://leetcode.com/problems/sort-array-by-parity
 
-##### even num on left, odd num on right; build_fresh (easier), i_write (start), j_write (end), n_read; left_partition_even, right_partition_odd
+##### even num on left, odd num on right; build_fresh, i_write (start), j_write (end), n_read; left_partition_even, right_partition_odd (fresh)
 
 - EG
 - SUMMA
