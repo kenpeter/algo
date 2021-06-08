@@ -2808,9 +2808,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 2pt, i_start, j_extending
+## 2pt, i_start, j_start (extending)
 
-##### subarray_sum == k (+); i_start, j_extending; range
+##### subarray_sum == k (+); i_start, j_start (extending); range
 
 - EG
 - SUMMA
@@ -2819,7 +2819,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray_sum == k (+/-); i_start, j_extending; range
+##### subarray_sum == k (+/-); i_start, j_start (extending); range
 
 - EG
 - SUMMA
@@ -2828,6 +2828,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/subarray-sum-equals-k
 - https://leetcode.com/submissions/detail/469373460/
+
+##### consecutive chars len >= 3; i_start, j_start (extending); range
+
+- EG
+- SUMMA
+-
+- 2pt, i_start, j_start (extending); range
+-
+- https://leetcode.com/submissions/detail/432859062/
+- https://leetcode.com/problems/positions-of-large-groups/
 
 <br/>
 <br/>
