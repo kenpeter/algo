@@ -3049,7 +3049,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+# skip_loop
+
 ## skip_loop (space, then char)
+
+##### skip_loop (space, then char)
+
+- EG
+- SUMMA
+-
+
+##### skip_loop (space, then dot)
+
+- EG
+- SUMMA
+- skip_loop (char, then dot)
+- https://practice.geeksforgeeks.org/viewSol.php?subId=00cda62b9c4381b69883a0649c7bb704&pid=701308&user=figo2476
+- https://practice.geeksforgeeks.org/problems/reverse-words-in-a-given-string5459/1
 
 <br/>
 <br/>
