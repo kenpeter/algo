@@ -367,39 +367,6 @@
 
 <br/>
 <br/>
-
-## skip_loop_up_highest, skip_loop_down_lowest;
-
-##### [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest; skip_loop_down_lowest;
-
-- EG
-- SUMMA
-- loop(i < ps.len-1) (loop_condi_reduce, arr_ind_inc; vice versa)
--
-- skip_loop_down_lowest(i < a.len - 1 && a[i] > a[i+1]), ++i, is_up=true
-- end_loop, a[i] (lowest)
--
-- skip_loop_up_highest( i < a.len - 1 && a[i] < a[i+1]), ++i, is_down=true
-- end_loop, a[i] (highest)
--
-- re is_up && is_down && a.len-1 == i
-- https://leetcode.com/problems/valid-mountain-array
-
-##### [0, 1, 2, 3, 4, 3, 2, 1, 0]; skip_loop_up_highest(forward); skip_loop_up_highest(backward);
-
-- EG
-- SUMMA
--
-- 2_pts_meet; skip_loop_up_highest(forward); skip_loop_up_highest(backward)
--
-- skip_loop_up_highest(forward) (i < a.len - 1 && a[i] < a[i+1]), ++i;
-- skip_loop_up_highest(backward) (j > 1 && a[j] < a[j-1]), --j;
--
-- re i > 0 (i_use) && j < a.len-1 (j_use) && i === j (meet)
-- https://leetcode.com/problems/valid-mountain-array
-
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
@@ -534,41 +501,6 @@
 
 <br/>
 <br/>
-
-## rev non_x; i, j cross over; skip_loop(when_x)
-
-##### rev non_vowel (rev position, rev word); i_start, j_end; i, j cross over; skip_loop(when_vowel)
-
-- EG
-- SUMMA
-- loop chars
-- i_start, j_end; i, j cross over
-- skip_loop(i<j, when_vowel) ++i; no i<=s.len-1
-- skip_loop(i<j, when_vowel) --j; no j>=0
-- rev
-- https://leetcode.com/problems/reverse-vowels-of-a-string
-
-##### rev non_symbol (rev position, rev word); i_start, j_end; i, j cross over; skip_loop(when_symbol)
-
-- EG
-- SUMMA
-- loop chars
-- i_start, j_end; i, j cross over
-- skip_loop(i<j, when_letter) ++i; no i<=s.len-1
-- skip_loop(i<j, when_letter) --j; no j>=0
-- rev
-- https://leetcode.com/problems/reverse-only-letters
-
-##### aaaabbb -> [[0, 3], [4, 6]]; loop_char; i_start, j_end; skip_loop; reset
-
-- EG
-- SUMMA
-- out_loop (loop_char)
-- i, j (i_start, j_end)
-- in_loop (skip_loop)
-- i=j (reset)
-- https://leetcode.com/problems/positions-of-large-groups
-
 <br/>
 <br/>
 
@@ -3057,7 +2989,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - EG
 - SUMMA
--
+- ...
 
 ##### skip_loop (space, then dot)
 
@@ -3066,6 +2998,28 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - skip_loop (char, then dot)
 - https://practice.geeksforgeeks.org/viewSol.php?subId=00cda62b9c4381b69883a0649c7bb704&pid=701308&user=figo2476
 - https://practice.geeksforgeeks.org/problems/reverse-words-in-a-given-string5459/1
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## skip_loop (i_start, j_end)
+
+##### skip_loop (i_start, hit a e i o u; j_end, hit a e i o u)
+
+- EG
+- SUMMA
+- skip_loop (i_start, hit a e i o u; j_end, hit a e i o u), swap
+- https://leetcode.com/problems/reverse-vowels-of-a-string
+
+##### skip_loop (i_start, hit letter; j_end, hit letter)
+
+- EG
+- SUMMA
+- skip_loop (i_start, hit letter; j_end, hit letter), swap
+- https://leetcode.com/problems/reverse-only-letters
 
 <br/>
 <br/>
