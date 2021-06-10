@@ -2888,7 +2888,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## 3pt (i_start, j_end-1, k_end)
 
-##### 2_ele_sum == 3rd_ele; smallest + 2nd_largest == largest; likely success
+##### find how many ele_1 + ele_2 == ele_3; smallest + 2nd_largest == largest; likely success
 
 - EG
 - SUMMA
@@ -3259,19 +3259,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## k_stable; i, j meet
-
-##### 2_sum == 3rd_ele; k_stable; i, j meet;
-
-- EG
-- SUMMA
--
-- sort
-- k_stable; i, j meet;
-- matched, still_chance; ++i (no skip_loop), --j (no skip_loop)
--
-- https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
-- https://practice.geeksforgeeks.org/viewSol.php?subId=7f960d672c005585e2c0324b5c6cce17&pid=702837&user=figo2476
+## ??
 
 ##### 3sum; k_stable; i, j meet;
 
