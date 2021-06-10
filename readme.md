@@ -1119,20 +1119,6 @@
 - end_loop, counter >= k?
 - https://leetcode.com/problems/can-place-flowers
 
-## LOOK_BACK(same OR inc; i=1), LOOK_AHEAD
-
-##### (L, R-1) VS (L+1, R) ====> a(L)bba(R-1)c(skip) -> abba(palindrome); c(skip)a(L+1)bba(R) -> abba(palindrome);
-
-- EG
-- SUMMA
-- loop char (i_start, j_end, will meet)
-- if s[i] !== s[j] (not palindrome, try del 1 char)
-- skip_loop(L, R-1), will meet; (L, R-1) VS (L+1, R)
-- skip_loop(L+1, R), will meet; (L, R-1) VS (L+1, R)
-- if L > R-1 || L+1 > R, re true
-- else re false
-- https://leetcode.com/problems/valid-palindrome-ii
-
 <br/>
 <br/>
 
@@ -2958,6 +2944,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - i-1, i, i+1; i max swap; max_top
 -
 - https://practice.geeksforgeeks.org/problems/convert-array-into-zig-zag-fashion1638/1#
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## 4pt (i_start, i_start+1, j_end-1, j_end)
+
+##### if not palindrome, rm 1 char; i_start vs j_end, i_start vs j_end-1, i_start+1 vs j_end
+
+- EG
+- SUMMA
+- i_start vs j_end (normal), i_start vs j_end-1 (rm char), i_start+1 vs j_end (rm char)
+- https://leetcode.com/submissions/detail/505923628/
+- https://leetcode.com/problems/valid-palindrome-ii
 
 <br/>
 <br/>
