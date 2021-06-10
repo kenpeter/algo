@@ -2886,19 +2886,19 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 3pt (i_start, j_end-1, k_end)
+## 3pt (i_start, j_end-1, k_end\*)
 
-##### find how many ele_1 + ele_2 == ele_3; smallest + 2nd_largest == largest; likely success
+##### find how many ele_1 + ele_2 == ele_3; smallest + 2nd_largest == largest\*; likely success
 
 - EG
 - SUMMA
 -
-- sort; i_start (smallest) + j_end (2nd_largest) = k_end (largest); likely success
+- sort; i_start (smallest) + j_end (2nd_largest) = k_end (largest\*); likely success
 -
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=897008f882370645ad43ee369da48b30&pid=702837&user=figo2476
 
-##### in arr, a^2 + b^2 == c^2; smallest + 2nd_largest == largest; likely success
+##### in arr, a^2 + b^2 == c^2; smallest + 2nd_largest == largest\*; likely success
 
 - EG
 - SUMMA
@@ -2907,6 +2907,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=e42971255da045373e53e797d7618dec&pid=702805&user=figo2476
 - https://practice.geeksforgeeks.org/problems/pythagorean-triplet3018/1
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## 3pt (i_start\*, i_start+1, j_end)
+
+##### 3sum, ele_1 + ele_2 + ele_3 == 0; i_start\* + i_start+1 + j_end == 0
+
+- EG
+- SUMMA
+-
+- sort; i_start\* + i_start+1 + j_end == 0
+-
+- https://leetcode.com/problems/3sum
 
 <br/>
 <br/>
@@ -3260,17 +3277,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 
 ## ??
-
-##### 3sum; k_stable; i, j meet;
-
-- EG
-- SUMMA
--
-- sort
-- k_stable; i, j meet
-- matched, still_chance; ++i (skip_loop), --j (skip_loop)
--
-- https://leetcode.com/problems/3sum
 
 ##### 2sum_less_k; k_stable (no_such); i, j meet;
 
