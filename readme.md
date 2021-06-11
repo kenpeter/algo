@@ -137,20 +137,6 @@
 - if a[i] == a[i + len], re a[i]; (sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val)
 - https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
 
-##### slide_window_avoid_rest_ops; [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; res == 1; i < a.len - len VS a[i+len]; sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val
-
-- EG
-- SUMMA
-- len => 5_odd / 2 = 2.5, ceil, len >= 3 (half)
-- len => 4_even / 2 = 2, nothing, len > 2 (half)
--
-- len = a.len / 2 (ceil)
-- single_loop(i=0; i < a.len - len; ..) (i < a.len - len VS a[i+len])
-- if a[i] == a[i + major_len] == input, re true (sorted, a[i] == start_val, a[i+len] == end_val, start_val == end_val)
-- end_loop, re false
--
-- https://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array
-
 ##### slide_window_avoid_rest_ops; max_in_slide_win; i_diff_spd_pt_same_start; j_diff_spd_pt_same_end; sum == curr_win_size_in_val, plus ns[j] == extend_win_right; end-start, affect curr_win_size_in_len; sum == curr_win_size_in_val, minus ns[j] == shrink_win_left;
 
 - EG
@@ -223,24 +209,6 @@
 
 ## loop_eles + build hash / sort_then_middle
 
-##### [2, 3, 1, 1, 1]; hash[n] = freq, sudden_reach_condi, return
-
-- EG
-- SUMMA
-- major_len => 5_odd / 2 = 2.5, major_len >= 3 (half)
-- major_len => 4_even / 2 = 2, major_len > 2 (half)
-- loop eles
-- hash[n] = freq; if freq > major, re num (sudden_reach_condi)
-- https://leetcode.com/problems/majority-element
-
-##### [2, 3, 1, 1, 1] -> [1, 1, 1(cover posi), 2, 3]; a.sort, return a[floor(len/2)]
-
-- EG
-- SUMMA
-- a.sort (major cover lots of positions)
-- re a[floor(len/2)]; e.g. [3, 3, 4], ceil(3/2=1.5) = 2, wrong ind, so floor(len/2)
-- https://leetcode.com/problems/majority-element
-
 ##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; vote_algo; same_ele_vote, diff_ele_vote_cancel, vote_exhaust_new_major
 
 - EG
@@ -253,17 +221,6 @@
 - if major === ns[i]; ++c (same_ele_vote)
 - else --c (diff_ele_vote_cancel)
 - https://leetcode.com/problems/majority-element
-
-##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; major_len (i_start + len)
-
-- EG
-- SUMMA
-- major_len => 5_odd / 2 = 2.5, major_len >= 3 (half)
-- major_len => 4_even / 2 = 2, major_len > 2 (half)
-- loop(i=0; i < major; ++i)
-- if a[i] == input && a[i + major_len] == input, re true (i_start + len)
-- end_loop, re false
-- https://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array
 
 <br/>
 <br/>
@@ -2838,16 +2795,30 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- 0 (k len rev); 1k (no); 2k (k len rev); 3k (no); 4k (k len rev); i+k (question_ask)
+- 0 (k len rev); 1k (no); 2k (k len rev); 3k (no); 4k (k len rev); i+k_len (question_ask)
 - j_end abstract
 - https://leetcode.com/problems/reverse-string-ii
 
-##### [1, 2, 3, 4] -> [2, 4, 4, 4]; one 2, then three 4; i = i+2 (question_show)
+##### [1, 2, 3, 4] -> [2, 4, 4, 4]; one 2, then three 4; i = i+2_len (question_show)
 
 - EG
 - SUMMA
 - i = i+2 (question_show)
 - https://leetcode.com/problems/decompress-run-length-encoded-list
+
+##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; i, i+len/2 (i vs i+len/2, then slide)
+
+- EG
+- SUMMA
+- sort; i, i+len/2 (i vs i+len/2, then slide)
+- https://leetcode.com/problems/majority-element
+
+##### [2, 3, 1, 1, 1] -> [1, 1, 1, 2, 3]; i, i+len/2 (i vs i+len/2, then slide)
+
+- EG
+- SUMMA
+- sort; i, i+len/2 (i vs i+len/2, then slide)
+- https://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array/
 
 <br/>
 <br/>
