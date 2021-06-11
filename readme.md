@@ -2826,14 +2826,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 2pt (i+len, 0+len)
+## 2pt (i+len, j+len)
 
-##### find a str in another str; i+len vs 0+len; compare
+##### find a str in another str; i+len, j+len; i+len vs j+len
 
 - EG
 - SUMMA
 -
-- 2pt, i_start (stable, brute_force); i+len (extending), 0+len (extending); compare
+- i+len, j+len; i+len vs j+len
 -
 - https://leetcode.com/problems/implement-strstr
 
