@@ -1,4 +1,4 @@
-// sm: look_back (same type)
+// sm: EITHER 1 by 1 (can long press), OR long press ( look_back(same type) ); look_back (same_type)
 var isLongPressedName = function (na, ty) {
   if (ty.length < na.length) return false;
 
