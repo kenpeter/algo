@@ -783,18 +783,6 @@
 - re count >= 3 (edge_case, more than 3 times)
 - https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
 
-##### aaabcc; 3_a, 1_b, 2_c; max=3;
-
-- EG
-- aaabcc, consecutive 3a, so max
-- SUMMA
--
-- counter = 1
-- loop chars
-- if s[i-1](look_back) == s[i]; ++counter; consecutive(keep_doing)
-- else counter = 1; inconsecutive(sudden_hit_condi, reset)
-- https://leetcode.com/problems/consecutive-characters
-
 ##### 00011100 -> [3, 3, 2]; min(3, 3) -> 3; min(3, 2) -> 2; 3+2 = 5; build_consecutive_arr;consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset); loop_and_min;
 
 - EG
@@ -4063,6 +4051,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - 1 by 1, then long pressed (look_back same_type)
 - https://leetcode.com/problems/long-pressed-name
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## either continue or reset
+
+##### aaabbbcccccc, max_len = 6; either continue or reset
+
+- EG
+- SUMMA
+- either continue or reset
+- https://leetcode.com/problems/consecutive-characters
 
 <br/>
 <br/>
