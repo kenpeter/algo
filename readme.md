@@ -727,25 +727,6 @@
 
 ## what_diff_type_pt? (1) i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); (2) i_same_spd_pt_diff, j_same_spd_pt_diff(i_start + len); (3) i_same_spd_pt_diff, j_same_spd_pt_diff(tracking_var); (4) i_diff_spd_pt_same, j_diff_spd_pt_same(????);
 
-##### i_slow_pt_diff, j_fast_pt_diff(LOOK_BACK); abc VS abc (normal, good); abc VS aabbcc (long press, good); abc VS aabbd (both fail)
-
-- EG
-- abc VS abc (normal typing, true_same)
-- abc VS aabbcc (long press, true_same)
-- abc VS aabbd (both fail, fail_diff)
-- SUMMA
--
-- i pt to one (i_slow_pt_diff)
-- j pt to another (j_fast_pt_diff, LOOK_BACK)
--
-- loop chars (long_str)
-- if normal typing, ++i, ++j
-- if long press, ++j (j_fast_pt_diff, LOOK_BACK)
-- if both fail, re fail
--
-- re i === short.len (i must to end)
-- https://leetcode.com/problems/long-pressed-name
-
 ##### i_same_spd_pt_diff, j_same_spd_pt_diff(tracking_var); "ab" VS "ba" (A_can_swap)
 
 - EG
@@ -4066,6 +4047,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/477886109/
 - https://leetcode.com/problems/largest-number
 - https://practice.geeksforgeeks.org/problems/largest-number-formed-from-an-array1117/1
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## look_back (same_type)
+
+##### letter long pressed; look_back (same_type)
+
+- EG
+- abc vs aaabbbbcccc;
+- SUMMA
+- 1 by 1, then long pressed (look_back same_type)
+- https://leetcode.com/problems/long-pressed-name
 
 <br/>
 <br/>
