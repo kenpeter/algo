@@ -649,14 +649,6 @@
 - i stays, j move right
 - https://leetcode.com/problems/length-of-last-word
 
-##### aaabc -> i pt a, j move right, !(j-i == consecutive); i pt b, j move right, !(j-i == consecutive)
-
-- EG
-- SUMMA
-- loop chars (i stay)
-- loop j, move until !consecutive
-- https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms/
-
 <br/>
 <br/>
 
@@ -2892,7 +2884,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## brute_force; i_stable, j_loop
+## i_stable, j_loop
 
 ##### find minimum platforms (train start, end time); cross_compare; deakin_experience
 
@@ -2904,14 +2896,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 
-##### my-calendar-ii; overlap_arr (check), overlap_arr (inject); remember_past
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## i_stable, j_loop, exhaust all combo
+
+##### aaaba; "a" 4, "aa" 2, "aaa" 1, "b" 1, so 8; i_stable, j_loop, exhaust all combo (count consecutive)
 
 - EG
 - SUMMA
--
-- brute_force (loop overlap, loop event); overlap_arr (check), overlap_arr (inject)
--
-- https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
+- 1 letter # consecutive; 2 letter # consecutive; 3 letter # consecutive, etc (but no care same type)
+- i_stable, j_loop, exhaust all combo (count consecutive)
+- https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms/
 
 <br/>
 <br/>
@@ -3558,15 +3557,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## hash (check), then hash (inject); (1) met_before (2) related_met_before (3) hash (val, posi)
 
-##### subarray_sum (+ / -) == k; future_sum - prev_sum = k; == k
+##### subarray_sum (+ / -) == k; future_sum - prev_sum = k; (1) met_before
 
 - EG
 - SUMMA
 -
-- hash (check), then hash (inject); hash(each_sum), future_sum - prev_sum = k
+- hash (check), then hash (inject); hash(each_sum), future_sum - prev_sum = k; (1) met_before
 -
 - https://leetcode.com/submissions/detail/469373460/
 - https://leetcode.com/problems/subarray-sum-equals-k
+
+##### my-calendar-ii; overlap_arr (check), overlap_arr (inject); (1) met_before
+
+- EG
+- SUMMA
+-
+- brute_force (loop overlap, loop event); overlap_arr (check), overlap_arr (inject); (1) met_before
+-
+- https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
 
 ##### 2sum (sort); hash (check), hash (inject); (2) related_met_before; sum_up
 
