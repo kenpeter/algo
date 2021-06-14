@@ -640,21 +640,6 @@
 
 ## i(start), j(end); j - i === word_len / same_kind / consecutive
 
-##### count(#) and say(def); i(start), j(start); i stay, j move right, j - i === same_kind
-
-- EG
-- 1 -> one 1;
-- 11 -> two 1;
-- 21 -> one 2 one 1;
-- 1211 -> one 1 one 2 two 1;
-- SUMMA => count(#) + say(def)
-- edge_case (1 -> "1")
-- loop input_num
-- res = say(res) (update_res)
-- sub_loop diff kind
-- subsub_loop same kind (i stays, j moving)
-- https://leetcode.com/problems/count-and-say
-
 ##### count_last_word_len; i(end), j(end); i stay, j move right, j - i === word_len
 
 - EG
@@ -4070,10 +4055,30 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 ##### count and say, input -> output -> input; either continue or reset
 
 - EG
-- 1 -> one 1;
-- 11 -> two 1;
-- 21 -> one 2 one 1;
-- 1211 -> one 1 one 2 two 1;
+- 1 -> 1 (init);
+- 2 -> one 1 (above);
+- 3 -> 21 (above);
+- 4 -> 1211 (above)
+- SUMMA
+- input -> output -> input; either continue or reset
+- https://leetcode.com/submissions/detail/507769749/
+- https://leetcode.com/problems/count-and-say
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## input -> output -> input
+
+##### count and say; input -> output -> input
+
+- EG
+- 1 -> 1 (init);
+- 2 -> one 1 (above);
+- 3 -> 21 (above);
+- 4 -> 1211 (above)
 - SUMMA
 - input -> output -> input; either continue or reset
 - https://leetcode.com/submissions/detail/507769749/
