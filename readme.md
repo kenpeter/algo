@@ -4067,6 +4067,18 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - either continue or reset
 - https://leetcode.com/problems/consecutive-characters
 
+##### count and say, input -> output -> input; either continue or reset
+
+- EG
+- 1 -> one 1;
+- 11 -> two 1;
+- 21 -> one 2 one 1;
+- 1211 -> one 1 one 2 two 1;
+- SUMMA
+- input -> output -> input; either continue or reset
+- https://leetcode.com/submissions/detail/507769749/
+- https://leetcode.com/problems/count-and-say
+
 <br/>
 <br/>
 <br/>
