@@ -637,23 +637,7 @@
 
 <br/>
 <br/>
-
-## i(start), j(end); j - i === word_len / same_kind / consecutive
-
 <br/>
-<br/>
-
-## subarray consecutive; subsequence !consecutive
-
-##### baabb (only a, b); subseq palin == bbb, subseq palin == aa
-
-- EG
-- SUMMA
-- s.len == 0, re 0
-- s is palin, re 1 (remove 1 sebseq palin)
-- s is not palin, rm a, rm b; re 2
-- https://leetcode.com/problems/remove-palindromic-subsequences
-
 <br/>
 <br/>
 
@@ -3367,6 +3351,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 1 -> 12 -> 121 (build, then compare, compare later)
 - prev_digit = input / 10; curr_digit = input % 10;
 - https://leetcode.com/problems/palindrome-number
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## palindr subseq (start, end same; non-con), rm 1 go
+
+##### rm palindr subseq until ""; palindr subseq (start, end same; non-con), rm 1 go
+
+- EG
+- aabbaa -> 1 step, rm everything (palindr subseq)
+- aaa -> 1 step, .. (palindr subseq)
+- aaba -> 2 step, (a alone is palindr subseq; b alone ..)
+- SUMMA
+-
+- palindr subseq (start, end same; non-con), rm 1 go
+-
+- https://leetcode.com/problems/remove-palindromic-subsequences
 
 <br/>
 <br/>
