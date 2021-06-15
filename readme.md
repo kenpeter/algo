@@ -640,15 +640,6 @@
 
 ## i(start), j(end); j - i === word_len / same_kind / consecutive
 
-##### count_last_word_len; i(end), j(end); i stay, j move right, j - i === word_len
-
-- EG
-- \_ab\_\_ab_bc\_\_
-- SUMMA => i(end), j(end); i stay, j move right
-- loop chars;
-- i stays, j move right
-- https://leetcode.com/problems/length-of-last-word
-
 <br/>
 <br/>
 
@@ -2727,6 +2718,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/432859062/
 - https://leetcode.com/problems/positions-of-large-groups/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## 2pt, i_end, j_end (extending)
+
+##### count last word len; 2pt, i_end, j_end (extending)
+
+- EG
+- SUMMA
+- 2pt, i_end, j_end (extending); backward, skip spaces
+- https://leetcode.com/problems/length-of-last-word
 
 <br/>
 <br/>
