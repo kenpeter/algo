@@ -700,30 +700,6 @@
 
 ## consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset)
 
-##### ++absent; ++late; consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset)
-
-- EG
-- A (absent); L (late); P (present)
-- 'APA'; 1_A, 1_P, 1_A
-- 2_absent; bad
--
-- 'PPALLP'; 2_P, 1_A, 2_L, 1_P
-- inconsecutive_3_late, no_2_absent; good
--
-- 'PPALLL'; 2_P, 1_A, 3_L
-- consecutive_3_l; bad
-- SUMMA
--
-- loop chars
-- if s[i] === 'A', ++absent
--
-- if s[i] === 'L'; ++late; consecutive(keep_doing)
-- else s[i] !== 'L'; late = 0; inconsecutive(sudden_hit_condi, reset)
--
-- absent >= 2, re f;
-- late >= 3, re f;
-- https://leetcode.com/problems/student-attendance-record-i
-
 ##### [-1, 1, -1, 1, -1, 1]; sum / 3 = equal_part; consecutive(keep_doing); inconsecutive(sudden_reach_condi, reset)
 
 - EG
@@ -4081,6 +4057,18 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - input -> output -> input; either continue or reset
 - https://leetcode.com/submissions/detail/507769749/
 - https://leetcode.com/problems/count-and-say
+
+##### PPALLP, 2A (non-con) or 3L (con), no award; either continue or reset
+
+- EG
+- A absent, L late, P present;
+- SUMMA
+-
+- count_A, count_L
+- either continue or reset
+-
+- https://leetcode.com/submissions/detail/507769749/
+- https://leetcode.com/problems/student-attendance-record-i
 
 <br/>
 <br/>
