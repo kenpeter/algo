@@ -700,17 +700,6 @@
 
 ## consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset)
 
-##### [-1, 1, -1, 1, -1, 1]; sum / 3 = equal_part; consecutive(keep_doing); inconsecutive(sudden_reach_condi, reset)
-
-- EG
-- SUMMA
-- loop eles
-- count = 0 (want 3 times)
-- s = s + ns[i]; consecutive(keep_doing)
-- if s === sum / 3, ++count, s=0; inconsecutive(sudden_hit_condi, reset)
-- re count >= 3 (edge_case, more than 3 times)
-- https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
-
 ##### 00011100 -> [3, 3, 2]; min(3, 3) -> 3; min(3, 2) -> 2; 3+2 = 5; build_consecutive_arr;consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset); loop_and_min;
 
 - EG
@@ -4069,6 +4058,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/507769749/
 - https://leetcode.com/problems/student-attendance-record-i
+
+##### [-1, 1, -1, 1, -1, 1]; sum / 3 = equal_part; either continue or reset
+
+- EG
+- SUMMA
+- either continue (equal_part) or reset
+- https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
 
 <br/>
 <br/>
