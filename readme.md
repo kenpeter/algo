@@ -2857,14 +2857,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## i_stable, j_loop, exhaust all combo
+## instead of count same_type, count as go
 
-##### aaaba; "a" 4, "aa" 2, "aaa" 1, "b" 1, so 8; i_stable, j_loop, exhaust all combo (count consecutive)
+##### aaaba; "a" 4, "aa" 2, "aaa" 1, "b" 1, so 8; i_stable, j_loop, exhaust all (instead of count same_type, count as go)
 
 - EG
 - SUMMA
-- 1 letter # consecutive; 2 letter # consecutive; 3 letter # consecutive, etc (but no care same type)
-- i_stable, j_loop, exhaust all combo (count consecutive)
+- 1 letter # consecutive; 2 letter # consecutive; 3 letter # consecutive, etc
+- i_stable, j_loop, exhaust all (instead of count same_type, count as go)
 - https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms/
 
 <br/>
