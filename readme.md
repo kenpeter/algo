@@ -2525,7 +2525,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - brute_force; i_stable, j_stable, k_loop (everytime_startover_subarray)
 -
 - method 2:
-- brute_force; i_stable, j_loop, (everytime_prev_subarray)
+- brute_force; i_stable, j_loop, exhaust (everytime_prev_subarray)
 -
 - method 3:
 - dp; curr = (con_subarray || startover_subarray) + ele
@@ -2795,7 +2795,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - EG
 - SUMMA
-- brute_force (i_stable, j_loop); i, i+1 is local_inv and global_inv (neighbour); i, i+2.. is only global_inv (beyond neighbour)
+- brute_force (i_stable, j_loop, exhaust); i, i+1 is local_inv and global_inv (neighbour); i, i+2.. is only global_inv (beyond neighbour)
 -
 - https://leetcode.com/submissions/detail/483848195/
 - https://leetcode.com/problems/global-and-local-inversions
@@ -2839,7 +2839,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## i_stable, j_loop
+## i_stable, j_loop, exhaust
 
 ##### find minimum platforms (train start, end time); cross_compare; deakin_experience
 
@@ -2850,6 +2850,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
+
+##### 0011 -> 01, 0011 (2 count); i_stable, j_loop, exhaust; i_start, j_end (check valid)
+
+- EG
+- SUMMA
+-
+- i_stable, j_loop, exhaust; i_start, j_end (check valid)
+-
+- https://leetcode.com/submissions/detail/509678242/
+- https://leetcode.com/problems/count-binary-substrings
 
 <br/>
 <br/>
