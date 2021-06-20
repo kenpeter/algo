@@ -700,40 +700,6 @@
 
 ## consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset)
 
-##### 00011100 -> [3, 3, 2]; min(3, 3) -> 3; min(3, 2) -> 2; 3+2 = 5; build_consecutive_arr;consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset); loop_and_min;
-
-- EG
-- build_consecutive_arr (build_knowledge)
-- 00011100 -> [3, 3, 2]; min(3, 3) -> 3; min(3, 2) -> 2;
-- 3+2=5
--
-- 0101100 -> [1, 1, 1, 2, 2]; min(1, 1) -> 1; min(1, 1) -> 1, min(1, 2) -> 1, min(2, 2) -> 2;
-- 1 + 1 + 1 + 2 = 5
-- SUMMA
--
-- loop chars
-- build_consecutive_arr
-- counter = 1
-- if s[i-1](LOOK_BACK) == s[i], ++c; consecutive(keep_doing)
-- else a.push(prev_result); c=1; inconsecutive(sudden_hit_condi, reset)
--
--
-- loop_and_min; e.g. [3, 3, 2] -> min(3, 3) + min(3, 2
-- https://leetcode.com/problems/count-binary-substrings
-
-##### [3, 2, 1, 2, 3, 4] -> 1, 2, 3, 4; counter == 4; consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset)
-
-- EG
-- SUMMA
--
-- counter = 1
-- loop chars
-- if ns[i] > ns[i-1]; ++counter; update_max; consecutive(keep_doing)
-- else c = 1; inconsecutive(sudden_hit_condi, reset)
--
-- if ma ==0, not_set, ma = 1 (edge_case, not enter)
-- https://leetcode.com/problems/longest-continuous-increasing-subsequence
-
 ##### [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]; consecutive(keep_doing); consecutive(sudden_reach_condi, reset)
 
 - EG
@@ -4053,14 +4019,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## either continue or reset
 
-##### aaabbbcccccc, max_len = 6; either continue or reset
+##### aaabbbcccccc, max_len = 6; either continue or reset (same)
 
 - EG
 - SUMMA
 - either continue or reset
 - https://leetcode.com/problems/consecutive-characters
 
-##### count and say, input -> output -> input; either continue or reset
+##### count and say, input -> output -> input; either continue or reset (same)
 
 - EG
 - 1 -> 1 (init);
@@ -4072,7 +4038,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/507769749/
 - https://leetcode.com/problems/count-and-say
 
-##### PPALLP, 2A (non-con) or 3L (con), no award; either continue or reset
+##### PPALLP, 2A (non-con) or 3L (con), no award; either continue or reset (same)
 
 - EG
 - A absent, L late, P present;
@@ -4084,12 +4050,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/507769749/
 - https://leetcode.com/problems/student-attendance-record-i
 
-##### [-1, 1, -1, 1, -1, 1]; sum / 3 = equal_part; either continue or reset
+##### [-1, 1, -1, 1, -1, 1]; sum / 3 = equal_part; either continue or reset (zero)
 
 - EG
 - SUMMA
-- either continue (equal_part) or reset
+- either continue (equal_part) or reset (zero)
 - https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
+
+##### [1, 2, 3, 1], 1->2->3 inc, max_freq=3; either continue or reset (inc)
+
+- EG
+- SUMMA
+- look_back; either continue or reset (inc)
+- https://leetcode.com/submissions/detail/510419128/
+- https://leetcode.com/problems/longest-continuous-increasing-subsequence/
 
 <br/>
 <br/>
