@@ -700,24 +700,6 @@
 
 ## consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset)
 
-##### [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]; consecutive(keep_doing); consecutive(sudden_reach_condi, reset)
-
-- EG
-- [100, 99, 1, 2] -> [1, 2, 99, 100]; shortest_dist(sort_neighbour) = a[i+1] - a[i]; consecutive(keep_doing); inconsecutive(sudden_reach_condi, reset)
-- SUMMA
--
-- shortest_dist(neighbours) = a[i+1] - a[i]
-- loop(i=0; i < len-1; ) (LOOK_AHEAD)
-- dist = a[i+1] - a[i];
--
-- if dist < mi
-- reset_mi
-- reset_arr; inconsecutive(sudden_reach_condi, reset)
-- res.p(a[i], a[i+1])
--
-- if dist == mi, res.p(..) consecutive(keep_doing)
-- https://leetcode.com/problems/minimum-absolute-difference
-
 ##### [2, 3, 3, 5, 6] -> [2, 3(odd), 3(odd), 5(odd), 6]; consecutive(keep_doing); inconsecutive(sudden_reach_condi, reset)
 
 - EG
@@ -4064,6 +4046,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - look_back; either continue or reset (inc)
 - https://leetcode.com/submissions/detail/510419128/
 - https://leetcode.com/problems/longest-continuous-increasing-subsequence/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+##### [100, 99, 1, 2] -> [1, 2, 99, 100]; in sort, neighbour shortest
+
+- EG
+- SUMMA
+- in sort, neighbour shortest
+-
+- https://leetcode.com/submissions/detail/510847420/
+- https://leetcode.com/problems/minimum-absolute-difference
 
 <br/>
 <br/>
