@@ -2996,7 +2996,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## symmetric
 
-##### all num sum == 0; symmetric
+##### build all num sum == 0; symmetric
 
 - EG
 - SUMMA
@@ -3004,6 +3004,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - n%2 != 0; (-....) 0 (+.....)
 -
 - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
+
+##### 00011 -> 0011, 01, total = 2; 0(0011) min_symmetric
+
+- EG
+- SUMMA
+- https://leetcode.com/submissions/detail/510165020/
+- https://leetcode.com/problems/count-binary-substrings
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## find consecutive; (i_start, j_end) vs (either con or reset); both can work
 
 <br/>
 <br/>
