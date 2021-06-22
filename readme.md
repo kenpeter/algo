@@ -2680,24 +2680,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 3pt (i_start, j_end-1, k_end\*)
+## 3pt (i_start, j_end-1, k_end\*; look for large)
 
-##### find how many ele_1 + ele_2 == ele_3; smallest + 2nd_largest == largest\*; likely success
+##### find how many ele_1 + ele_2 == ele_3; i_start + j_end-1 == k_end\* (look for large)
 
 - EG
 - SUMMA
 -
-- sort; i_start (smallest) + j_end (2nd_largest) = k_end (largest\*); likely success
+- sort; i_start + j_end-1 = k_end (look for large)
 -
 - https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 - https://practice.geeksforgeeks.org/viewSol.php?subId=897008f882370645ad43ee369da48b30&pid=702837&user=figo2476
 
-##### in arr, a^2 + b^2 == c^2; smallest + 2nd_largest == largest\*; likely success
+##### in arr, a^2 + b^2 == c^2; i_start + j_end-1 == k_end\* (look for large)
 
 - EG
 - SUMMA
 -
-- sort; i_start (smallest) + j_end (2nd_largest) = k_end (largest); likely success
+- sort; i_start + j_end-1 == k_end\* (look for large)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=e42971255da045373e53e797d7618dec&pid=702805&user=figo2476
 - https://practice.geeksforgeeks.org/problems/pythagorean-triplet3018/1
@@ -2708,14 +2708,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 3pt (i_start\*, i_start+1, j_end)
+## 3pt (i_start\*, i_start+1, j_end; make it small)
 
-##### 3sum, ele_1 + ele_2 + ele_3 == 0; i_start\* + i_start+1 + j_end == 0
+##### 3sum, ele_1 + ele_2 + ele_3 == 0; i_start\* + i_start+1 + j_end == 0 (make it small)
 
 - EG
 - SUMMA
 -
-- sort; i_start\* + i_start+1 + j_end == 0
+- sort; i_start\* + i_start+1 + j_end == 0 (make it small)
 -
 - https://leetcode.com/problems/3sum
 
@@ -2742,7 +2742,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 3pt (i-2, i-1, i\*)
+## 3pt (i-2, i-1, i\*; backward)
 
 ##### [1, 3, 5, 4, 4] -> 1, 3, 5 (all_odd); i-2, i-1, i\*
 
@@ -2757,7 +2757,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 3pt (i-1, i\*, i+1)
+## 3pt (i-1, i\*, i+1; mid)
 
 ##### zig zag; [1, 2, 3, 4, 5] -> [1, 3_max, 2, 5_max, 4]; i-1, i, i+1; i max swap; max_top
 
@@ -2807,7 +2807,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- i_stable, j_loop, exhaust; i_start, j_end (check valid)
+- odd_num skip; i_stable, j_loop, exhaust; i_start, j_end (check valid)
 -
 - https://leetcode.com/submissions/detail/509678242/
 - https://leetcode.com/problems/count-binary-substrings
