@@ -697,19 +697,7 @@
 
 <br/>
 <br/>
-
-## consecutive(keep_doing); inconsecutive(sudden_hit_condi, reset)
-
-##### [2, 3, 3, 5, 6] -> [2, 3(odd), 3(odd), 5(odd), 6]; consecutive(keep_doing); inconsecutive(sudden_reach_condi, reset)
-
-- EG
-- [2, 3, 3, 5, 6] -> [2, 3(odd), 3(odd), 5(odd), 6]; re true
-- SUMMA
-- loop eles
-- if even, res.push; consecutive(keep_doing)
-- if odd, res = []; inconsecutive(sudden_reach_condi, reset)
-- https://leetcode.com/problems/three-consecutive-odds/submissions
-
+<br/>
 <br/>
 <br/>
 
@@ -2737,9 +2725,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 3pt (i, i+1, i+2_con)
+## 3pt (i\*, i+1, i+2_con)
 
-##### local_inv == global_inv; i, i+1, i+2_con; question_ask
+##### local_inv == global_inv; i\*, i+1, i+2_con; question_ask
 
 - EG
 - SUMMA
@@ -2754,14 +2742,29 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 3pt (i-1, i, i+1)
+## 3pt (i-2, i-1, i\*)
+
+##### [1, 3, 5, 4, 4] -> 1, 3, 5 (all_odd); i-2, i-1, i\*
+
+- EG
+- SUMMA
+- 3 consecutive odds; i-2, i-1, i\*
+- https://leetcode.com/problems/three-consecutive-odds
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## 3pt (i-1, i\*, i+1)
 
 ##### zig zag; [1, 2, 3, 4, 5] -> [1, 3_max, 2, 5_max, 4]; i-1, i, i+1; i max swap; max_top
 
 - EG
 - SUMMA
 -
-- i-1, i, i+1; i max swap; max_top
+- i-1, i\*, i+1; i max swap; max_top
 -
 - https://practice.geeksforgeeks.org/problems/convert-array-into-zig-zag-fashion1638/1#
 
@@ -2771,13 +2774,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 4pt (i_start, i_start+1, j_end-1, j_end)
+## 4pt (i_start, i_start+1, j_end-1, j_end ===> i_start, j_end-1 OR i_start+1, j_end)
 
-##### if not palindrome, rm 1 char; i_start vs j_end, i_start vs j_end-1, i_start+1 vs j_end
+##### if not palindrome, rm 1 char; i_start, i_start+1, j_end-1, j_end ===> i_start, j_end-1 OR i_start+1, j_end
 
 - EG
 - SUMMA
-- i_start vs j_end (normal), i_start vs j_end-1 (rm char), i_start+1 vs j_end (rm char)
+- rm 1 char; i_start, i_start+1, j_end-1, j_end ===> i_start, j_end-1 OR i_start+1, j_end
 - https://leetcode.com/submissions/detail/505923628/
 - https://leetcode.com/problems/valid-palindrome-ii
 
