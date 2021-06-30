@@ -701,29 +701,6 @@
 <br/>
 <br/>
 
-## prev_bound, prev_char; next_bound, next_char
-
-##### k?a -> kba (!k, !a); prev_bound, prev_char; next_bound, next_char
-
-- EG
-- ? -> s[i-1] == undef, s[i+1] == undef
-- ?a -> s[i-1] == undef, s[i+1](a) !== b -> ba
-- a? -> s[i-1](a) !== b, s[i+1] == undef -> ab
-- k?a -> s[i-1](k) !== b, s[i+1](a) !== b -> kba
--
-- SUMMA
-- loop chars
-- loop (a, b, c)
-- if c == '?'
-- if ( i > 0 (prev_bound) && a[i-1] == 'a'+j ) con; prev == 'a'+? (perv_char), collide, con
--
-- if ( i+1 < s.len (next_bound) && a[i+1] == 'a'+j ) con; next == 'a'+?, (next_char), collide, con
-- a[i] = 'a'+j, final
-- https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters
-
-<br/>
-<br/>
-
 ## in_loop; prefix_reduce_1_char; compare_with_input_word
 
 ##### in_loop(non_found_prefix_loop); prefix_reduce_1_char; compare_with_input_word
@@ -2767,6 +2744,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - i-1, i\*, i+1; i max swap; max_top
 -
 - https://practice.geeksforgeeks.org/problems/convert-array-into-zig-zag-fashion1638/1#
+
+##### a?c -> abc, fill ? so no repeat (consecutive); i-1, i\*, i+1; inc "a" to 26 char;
+
+- EG
+- SUMMA
+- i-1, i\*, i+1; inc "a" to 26 char;
+- https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters
+
+##### a?c -> abc, fill ? so no repeat (consecutive); i-1, i\*, i+1; inc "a" to "c";
+
+- EG
+- SUMMA
+- i-1, i\*, i+1; inc "a" to "c";
+- https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters
 
 <br/>
 <br/>
