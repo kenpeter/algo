@@ -79,27 +79,6 @@
 <br/>
 <br/>
 <br/>
-
-## ele independent (update_no_matter_what); sum independent, (conditional_update)
-
-##### ele independent (update_no_matter_what, even/odd); sum independent, (conditional_update, even)
-
-- EG
-- SUMMA
-- cal total_even_sum (with input_query)
-- ele independent; ele (update_no_matter_what, even/odd)
-- sum independent; (conditional_update, even)
--
-- loop ele
--
-- if ele even, sum = sum - ele (conditional_update, even; if !minus, ele dup)
--
-- new_ele = ele + val (update_no_matter_what, even/odd)
-- if new_ele even, sum = sum + new_ele; (conditional_update, even)
-- res.push(sum)
-- https://leetcode.com/problems/sum-of-even-numbers-after-queries
-
-<br/>
 <br/>
 
 ## 1 loop, 2_same_kind_var track pureness
@@ -3267,7 +3246,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## is_palindrome (1) compare now (2) compare later
+## is_palindrome (1) compare now (2) compare later (final == final)
 
 ##### is_palindrome; abba; (1) compare now
 
@@ -3276,7 +3255,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - i_start == j_end
 - https://leetcode.com/problems/valid-palindrome
 
-##### is_palindrome; 121 -> 121; (2) compare later
+##### is_palindrome; 121 -> 121; (2) compare later (final == final)
 
 - EG
 - SUMMA
@@ -4075,6 +4054,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - input -> output -> input; either continue or reset
 - https://leetcode.com/submissions/detail/507769749/
 - https://leetcode.com/problems/count-and-say
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## two states; extra_state (derive from arr), exist_state (arr)
+
+##### two states; extra_state (even_sum), exist_state (arr); even + even = even; odd + odd = even
+
+- EG
+- SUMMA
+- two states; extra_state (even_sum), exist_state (arr); even + even = even; odd + odd = even
+- https://leetcode.com/problems/sum-of-even-numbers-after-queries
 
 <br/>
 <br/>
