@@ -2636,6 +2636,25 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## 2pt (no-check-self, 2_loop)
+
+##### longest substr palindrome; 2pt (no-check-self, 2_loop)
+
+- EG
+- SUMMA
+-
+- i=0; i<len+1;
+- j=i+1; j<len; (no-check-self, 2_loop)
+-
+- https://leetcode.com/problems/longest-palindromic-substring/discuss/523015/Simple-brute-force
+- https://leetcode.com/submissions/detail/516739706/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## 3pt (i_start, j_end-1, k_end\*; look for large)
 
 ##### find how many ele_1 + ele_2 == ele_3; i_start + j_end-1 == k_end\* (look for large)
@@ -2813,6 +2832,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - i_stable vs j_stable vs k_loop
 -
 - https://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## brute_force; efficiency, no-met-skip
+
+##### longest substr palindrome; brute_force; efficiency, no-met-skip
+
+- EG
+- SUMMA
+- brute_force; efficiency, no-met-skip
+- https://leetcode.com/submissions/detail/516739706/
+- https://leetcode.com/problems/longest-palindromic-substring
 
 <br/>
 <br/>
