@@ -2778,7 +2778,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - odd_num skip; i_stable, j_loop, exhaust; i_start, j_end (check valid)
--
+- time limit exceed
 - https://leetcode.com/submissions/detail/509678242/
 - https://leetcode.com/problems/count-binary-substrings
 
@@ -2788,14 +2788,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## instead of count same_type, count as go
+## instead of count same_type, count as go; eventually add up
 
 ##### aaaba; "a" 4, "aa" 2, "aaa" 1, "b" 1, so 8; i_stable, j_loop, exhaust (instead of count same_type, count as go)
 
 - EG
 - SUMMA
 - 1 letter # consecutive; 2 letter # consecutive; 3 letter # consecutive, etc
-- i_stable, j_loop, exhaust (instead of count same_type, count as go)
+- i_stable, j_loop, exhaust (instead of count same_type, count as go; eventually add up)
 - https://helloacm.com/counting-substrings-with-only-one-distinct-letter-with-different-algorithms/
 
 <br/>
