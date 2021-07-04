@@ -2135,18 +2135,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - if, dp[i-1][j-1](diag, each_child_use_diag) == true && c[i] == p[j](char == char), dp[i][j](condi) = true
 - https://leetcode.com/problems/is-subsequence/
 
-##### 2D; child chars(ele); parent chars(tar); head_tail_equal, sub_head_tail_equal; condi
-
-- n, m size (dp size == str size, becau head tail)
-- dp[i][j] => AT this end_char_index; AT this start_char_index; FINAL condi(is_palindrom);
-- init side => nothing (dp size == str size)
-- loop parent (parent_1st, head_tail_compress)
-- loop child
-- direction
-- if, p[i] == c[i](char == char), i-j<=2(shortcut), dp[i][j] = true
-- if, p[i] == c[i](char == char), dp[i-1][j+1](else) == true, dp[i][j] = true
-- https://leetcode.com/problems/longest-palindromic-substring
-
 ##### 1D; child chars(ele); parent chars(tar); child_build_parent; condi
 
 - m+1 size
@@ -2446,6 +2434,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - i vs i-1 partition (1_min)
 -
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## brute_force, all_step map 2D dp;
+
+##### find palindrome in substr; brute_force, all_step map 2D dp;
+
+- EG
+- SUMMA
+- brute_force, all_step map 2D dp; i_start, j_end -> range
+- https://leetcode.com/problems/longest-palindromic-substring
 
 <br/>
 <br/>
@@ -3317,6 +3320,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - palindr subseq (start, end same; non-con), rm 1 go
 -
 - https://leetcode.com/problems/remove-palindromic-subsequences
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## palindrome 2 sides + mid;
+
+##### find palindrome in substr; palindrome 2 sides + mid;
+
+- EG
+- SUMMA
+- palindrome 2 sides + mid; "a" pal; "aa" pal; "a?a" pal; "a??a", prev dp;
+- https://leetcode.com/problems/longest-palindromic-substring
+- https://leetcode.com/submissions/detail/517268107/
 
 <br/>
 <br/>
