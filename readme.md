@@ -3256,11 +3256,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## rm 2 chars, new dup;
 
-##### "abba" -> "aa" -> ""; rm 2 chars, new dup; j_read (explode), i_write (move forward / backward); build_from_ground
+##### "abba" -> "aa" -> ""; rm 2 chars, new dup; j_read (explode), i_write (back / forward); build_from_ground
 
 - EG
 - SUMMA
-- rm 2 chars, new dup; j_read (explode), i_write (move forward / backward); build_from_ground
+- rm 2 chars, new dup; j_read (explode), i_write (back / forward); build_from_ground
 - https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string
 
 ##### "abba" -> "aa" -> ""; rm 2 chars, new dup; redo
