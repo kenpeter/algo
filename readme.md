@@ -3195,7 +3195,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## j_read (explode), i_write (correct_posi)
+## j_read (explode), i_write (move forward); build_from_ground
 
 ##### reverse words in str; rev_whole, rev_each, no_space; whole then small_modify
 
@@ -3247,6 +3247,28 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - i_read (backward_explode, won't overwrite), j_read (backward_explode, won't overwrite), k_write (non-move easily, write_at_correct_posi)
 - https://leetcode.com/problems/merge-sorted-array
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## rm 2 chars, new dup;
+
+##### "abba" -> "aa" -> ""; rm 2 chars, new dup; j_read (explode), i_write (move forward / backward); build_from_ground
+
+- EG
+- SUMMA
+- rm 2 chars, new dup; j_read (explode), i_write (move forward / backward); build_from_ground
+- https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string
+
+##### "abba" -> "aa" -> ""; rm 2 chars, new dup; redo
+
+- EG
+- SUMMA
+- rm 2 chars, new dup; redo (outerloop)
+- https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string
 
 <br/>
 <br/>
