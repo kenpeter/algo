@@ -40,22 +40,43 @@
 // const out = removeDuplicates(input);
 // console.log(out);
 
+// const removeDuplicates = (s) => {
+//   const a = s.split("");
+//   let end = -1;
+//   for (let i = 0; i < a.length; ++i) {
+//     const c = a[i];
+//     if (end >= 0 && a[end] === c) {
+//       --end;
+//     } else {
+//       a[++end] = c;
+//     }
+//   }
+
+//   const res = a.join("").substring(0, end + 1);
+//   return res;
+// };
+
+// const input = "abbbba";
+// const out = removeDuplicates(input);
+// console.log(out);
+
 const removeDuplicates = (s) => {
+  const st = [];
   const a = s.split("");
-  let end = -1;
-  for (let i = 0; i < a.length; ++i) {
-    const c = a[i];
-    if (end >= 0 && a[end] === c) {
-      --end;
+
+  st.push(a[0]);
+  for (let i = 1; i < a.length; ++i) {
+    const e = a[i];
+    if (st[st.length - 1] === e) {
+      st.pop();
     } else {
-      a[++end] = c;
+      st.push(e);
     }
   }
 
-  const res = a.join("").substring(0, end + 1);
-  return res;
+  return st.join("");
 };
 
-const input = "abbbba";
+const input = "abbaca";
 const out = removeDuplicates(input);
 console.log(out);

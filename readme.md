@@ -3270,6 +3270,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - rm 2 chars, new dup; redo (outerloop)
 - https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string
 
+##### "abba" -> "aa" -> ""; rm 2 chars, new dup; stack (close ele move together)
+
+- EG
+- SUMMA
+- rm 2 chars, new dup; stack (close ele move together)
+- https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string
+
 <br/>
 <br/>
 <br/>
