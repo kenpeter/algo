@@ -3974,18 +3974,31 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# build_from_ground
+## hash (freq)
 
-## build_from_ground
-
-##### sort arr of 0, 1, 2; hash (0, 1, 2), build_from_ground
+##### [0, 1, 0, 2, 1] -> [0, 0, 1, 1, 2]; no sort, hash (freq), build_from_groud
 
 - EG
 - SUMMA
 -
-- hash (0, 1, 2), build_from_ground
+- no sort, hash (freq), build_from_groud
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=ef93198b6ad4ffc74cf627d7e52294e3&pid=702382&user=figo2476
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## hash (memory)
+
+##### "gfg" -> "gf", rm duplicated; hash (prev visited)
+
+- EG
+- SUMMA
+- hash (prev visited)
+- https://practice.geeksforgeeks.org/problems/remove-duplicates3034/1#
 
 <br/>
 <br/>
