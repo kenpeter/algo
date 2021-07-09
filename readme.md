@@ -3586,54 +3586,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## hash (check), then hash (inject); (1) met_before (2) related_met_before (3) hash (val, posi)
-
-##### subarray_sum (+ / -) == k; future_sum - prev_sum = k; (1) met_before
-
-- EG
-- SUMMA
--
-- hash (check), then hash (inject); hash(each_sum), future_sum - prev_sum = k; (1) met_before
--
-- https://leetcode.com/submissions/detail/469373460/
-- https://leetcode.com/problems/subarray-sum-equals-k
-
-##### my-calendar-ii; overlap_arr (check), overlap_arr (inject); (1) met_before
-
-- EG
-- SUMMA
--
-- brute_force (loop overlap, loop event); overlap_arr (check), overlap_arr (inject); (1) met_before
--
-- https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
-
-##### 2sum (sort); hash (check), hash (inject); (2) related_met_before; sum_up
-
-- EG
-- SUMMA
-- hash (check), hash (inject); hash (2) related_met_before
-- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
-
-##### 2sum; hash (check), hash (inject); (2) related_met_before; sum_up
-
-- EG
-- SUMMA
-- hash (check), hash (inject); hash (2) related_met_before
-- https://leetcode.com/problems/two-sum
-
-##### longest non-repeat substr; hash (check), hash (inject); (3) hash(val, posi); posi
-
-- EG
-- SUMMA
-- hash (check), hash (inject); (3) hash(val, posi)
-- https://leetcode.com/submissions/detail/483336929/
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 ## ask resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
 
 ##### find minimum platforms (ask resource); ++i, --j; platform inc / desc
@@ -3793,23 +3745,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/discuss/interview-question/613816/Google-or-Onsite-or-Meeting-Rooms-3
 - see my js file in code dir
-
-##### my-calendar-i; (1) brute_force (loop event, a_end > b_start) (2) brute_force (loop event, diagram !no_intersect == intersect) (3) tree_map
-
-- EG
-- SUMMA
--
-- method 1:
-- brute_force (loop event, a_end > b_start)
--
-- method 2:
-- brute_force (loop event, diagram, !no_intersect == intersect)
--
-- method 3:
-- tree_map (sort, +/-, state); look_ahead (remove later)
--
-- https://leetcode.com/submissions/detail/491628532/
-- https://leetcode.com/problems/my-calendar-i
 
 <br/>
 <br/>
@@ -3991,14 +3926,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## hash (memory)
+## hash (met_before)
 
-##### "gfg" -> "gf", rm duplicated; hash (prev visited)
+##### "gfg" -> "gf", rm duplicated; hash (met_before)
 
 - EG
 - SUMMA
-- hash (prev visited)
+- hash (met_before)
 - https://practice.geeksforgeeks.org/problems/remove-duplicates3034/1#
+
+##### my-calendar-ii; overlap_arr (check), overlap_arr (inject); (1) met_before
+
+- EG
+- SUMMA
+-
+- brute_force (loop overlap, loop event); overlap_arr (check), overlap_arr (inject); (1) met_before
+-
+- https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
 
 <br/>
 <br/>
@@ -4192,6 +4136,70 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - reach_balance (unsort, hash, eventually_cancel_out)
 - https://leetcode.com/problems/valid-anagram
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## treeMap (inject but sort)
+
+##### treeMap (inject but sort)
+
+- EG
+- SUMMA
+-
+- 1. treeMap == 3 col table
+- 2. col_1: mix(sort)
+- 2. col_2: use / release resource
+- 2. col_3: curr_resource (acc, because use / release)
+- 3. income inject treeMap (inject but sort)
+-
+- https://leetcode.com/problems/my-calendar-i
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## my-calendar
+
+##### intersect formular (mid 3 blocks)
+
+- EG
+- SUMMA
+- intersect formular (mid 3 blocks); past_start < income_end && past_end > income_start
+- https://leetcode.com/problems/my-calendar-i
+
+##### intersect formular (top block + bottom block);
+
+- EG
+- SUMMA
+- intersect formular (top block + bottom block);
+- https://leetcode.com/problems/my-calendar-i
+
+##### my-calendar-i; double booking: 1st_book, in_mem; 2nd_book, income_hit
+
+- EG
+- SUMMA
+- method 1:
+- hash (memory); intersect formular (3 mid blocks)
+-
+- method 2:
+- hash (memory); intersect formular (top + bottom blocks)
+-
+- method 3:
+- treeMap (inject but sort)
+
+- https://leetcode.com/problems/my-calendar-i
+
+##### my-calendar-ii; tripple booking: 1st_book, in_mem; 2nd_book, merge_extend; 3nd_book, income_hit
+
+- EG
+- SUMMA
+- https://leetcode.com/problems/my-calendar-ii
 
 <br/>
 <br/>
