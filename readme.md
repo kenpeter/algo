@@ -2444,14 +2444,29 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## brute_force, all_step map 2D dp;
+## brute_force; all_step map 2D dp;
 
-##### find palindrome in substr; brute_force, all_step map 2D dp;
+##### find palindrome in substr; brute_force; all_step map 2D dp;
 
 - EG
 - SUMMA
-- brute_force, all_step map 2D dp; i_start, j_end -> range
+- brute_force; all_step map 2D dp; i_start, j_end -> range
 - https://leetcode.com/problems/longest-palindromic-substring
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## brute_force; at curr_i, look left, look right
+
+##### how many < curr_i; brute_force; at curr_i, look left, look right
+
+- EG
+- SUMMA
+- brute_force; at curr_i, look left, look right
+- https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
 
 <br/>
 <br/>
@@ -2988,14 +3003,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## partition
+## what does "sort" mean?
 
-##### [3, 3, 3, 1, 1, 1, 2, 2, 2]; sort; left_partition of first 3; smaller
+##### [3, 3, 3, 1, 1, 1, 2, 2, 2]; sort -> curr_ind === how many smaller than you
 
 - EG
 - SUMMA
-- [3, 3, 3, 1, 1, 1, 2, 2, 2] -> [1, 1, 1, 2, 2, 2, 3, 3, 3]; sort; left_partition of first 3; smaller
+- [3, 3, 3, 1, 1, 1, 2, 2, 2] -> [1, 1, 1, 2, 2, 2, 3, 3, 3]; sort -> curr_ind === how many smaller than you
 - https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number
+
+##### [100, 99, 1, 2] -> [1, 2, 99, 100]; sort -> neighbour shortest
+
+- EG
+- SUMMA
+- sort -> neighbour shortest
+-
+- https://leetcode.com/submissions/detail/510847420/
+- https://leetcode.com/problems/minimum-absolute-difference
 
 <br/>
 <br/>
@@ -4018,13 +4042,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/503865437/
 - https://leetcode.com/problems/reorder-data-in-log-files/
 
-##### [4, 3, 1, 2]; a vs b (1 vs 1)
-
-- EG
-- SUMMA
-- arr.sort((a, b) => a-b)
--
-
 ##### [1, 20, ...] -> 120 vs 201; ba vs ab (combine vs combine)
 
 - EG
@@ -4105,21 +4122,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - look_back; either continue or reset (inc)
 - https://leetcode.com/submissions/detail/510419128/
 - https://leetcode.com/problems/longest-continuous-increasing-subsequence/
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-##### [100, 99, 1, 2] -> [1, 2, 99, 100]; in sort, neighbour shortest
-
-- EG
-- SUMMA
-- in sort, neighbour shortest
--
-- https://leetcode.com/submissions/detail/510847420/
-- https://leetcode.com/problems/minimum-absolute-difference
 
 <br/>
 <br/>
