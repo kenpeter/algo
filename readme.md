@@ -739,6 +739,9 @@
 
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
 
 ## compare(sb 1 group || b 1 group) / in_hash(sb 1 group || b 1 group)
 
@@ -4152,6 +4155,28 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - two states; extra_state (even_sum), exist_state (arr); even + even = even; odd + odd = even
 - https://leetcode.com/problems/sum-of-even-numbers-after-queries
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## reach_balance;
+
+##### is anagram; reach_balance (sort, vertical_compare, direct_cancel_out)
+
+- EG
+- SUMMA
+- reach_balance (sort, vertical_compare, direct_cancel_out)
+- https://leetcode.com/problems/valid-anagram
+
+##### is anagram; reach_balance (unsort, hash, eventually_cancel_out)
+
+- EG
+- SUMMA
+- reach_balance (unsort, hash, eventually_cancel_out)
+- https://leetcode.com/problems/valid-anagram
 
 <br/>
 <br/>
