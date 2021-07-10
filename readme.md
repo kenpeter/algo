@@ -3632,16 +3632,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - treemap (ask_resource == state); sort, +1 / -1, state
 - look at my code
 
-##### my-calendar-iii (ask resource); treemap (ask_resource == state); sort, +1 / -1, state
-
-- EG
-- SUMMA
--
-- treemap (ask_resource == state); sort, +1 / -1, state
--
-- https://leetcode.com/submissions/detail/492441640/
-- https://leetcode.com/problems/my-calendar-iii/
-
 ##### car-pooling (ask resource); trip = [[2_person, 1_on, 5_off],[3,3,7]], cap = 4; treemap (ask_resource == state); sort, +1 / -1, state
 
 - EG
@@ -3707,35 +3697,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/488154801/
 - https://leetcode.com/problems/non-overlapping-intervals
-
-##### meeting room 1 (arr of [start, end], attend_all?); a_end > b_start; overlap
-
-- EG
-- SUMMA
--
-- brute_force (loop events, a_end > b_start);
--
-- https://www.programcreek.com/2014/07/leetcode-meeting-rooms-java/
-
-##### meeting room 2 (ask resource); ++i, --j; room inc / desc
-
-- EG
-- SUMMA
--
-- a_end > b_start (detect overlap in 2 arr); start_arr, end_arr, 2pt; overlap (++), non-overlap (--)
--
-- https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
-- https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
-
-##### meeting room 3; prepare, then query; fill_time_block; easier to understand
-
-- EG
-- SUMMA
--
-- prepare, then query (incoming data); fill_time_block; easier to understand
--
-- https://leetcode.com/discuss/interview-question/613816/Google-or-Onsite-or-Meeting-Rooms-3
-- see my js file in code dir
 
 <br/>
 <br/>
@@ -4125,9 +4086,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## treeMap (inject but sort)
+## treeMap (keep injecting)
 
-##### treeMap (inject but sort)
+##### treeMap (keep injecting)
 
 - EG
 - SUMMA
@@ -4136,7 +4097,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 2. col_1: mix(sort)
 - 2. col_2: use / release resource
 - 2. col_3: curr_resource (acc, because use / release)
-- 3. income inject treeMap (inject but sort)
+- 3. income inject treeMap (keep injecting)
 -
 - https://leetcode.com/problems/my-calendar-i
 
@@ -4162,7 +4123,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - intersect formular (top block + bottom block);
 - https://leetcode.com/problems/my-calendar-i
 
-##### my-calendar-i (double booking); 1 booking (mem); 2 booking (voliate)
+##### my-calendar-i (2 booking); 1 booking (mem); 2 booking (voliate)
 
 - EG
 - SUMMA
@@ -4177,7 +4138,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/my-calendar-i
 
-##### my-calendar-ii (tripple booking); 1 booking (mem); 2 booking (mem, intersect_future_hit); 3 booking (voliate)
+##### my-calendar-ii (3 booking); 1 booking (mem); 2 booking (mem, intersect_future_hit); 3 booking (voliate)
 
 - EG
 - SUMMA
@@ -4185,9 +4146,59 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 1 booking (mem); 2 booking (mem, intersect_future_hit); 3 booking (voliate)
 -
 - method 2:
-- treeMap (inject but sort)
+- treeMap (inject but sort);
 -
 - https://leetcode.com/problems/my-calendar-ii
+
+##### my-calendar-iii (k booking); 1 booking (mem); 2 booking (mem, intersect_future_hit); 3 booking (...); .... k booking
+
+- EG
+- SUMMA
+-
+- method 2:
+- treeMap (keep injecting);
+-
+- https://leetcode.com/problems/my-calendar-iii
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## meeting room
+
+##### meeting room 1 (my calendar 1)
+
+- EG
+- SUMMA
+-
+- treeMap (keep injecting); if count >= 2 return false
+-
+- https://www.programcreek.com/2014/07/leetcode-meeting-rooms-java/
+
+##### meeting room 2, what is min room needed? (my calendar 3, count)
+
+- EG
+- SUMMA
+-
+- treeMap (keep injecting); count = max(max, count)
+-
+- https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
+- https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
+
+##### meeting room 3; prepare, then query; fill_time_block; easier to understand
+
+- EG
+- SUMMA
+-
+- method 1:
+- treeMap (keep injecting)
+-
+- method 2:
+- prepare, then query (incoming data); fill_time_block; easier to understand
+- https://leetcode.com/discuss/interview-question/613816/Google-or-Onsite-or-Meeting-Rooms-3
+- see my js file in code dir (for time fill method)
 
 <br/>
 <br/>
