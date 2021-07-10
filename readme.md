@@ -3632,15 +3632,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - treemap (ask_resource == state); sort, +1 / -1, state
 - look at my code
 
-##### my-calendar-ii (ask resource); treemap (ask_resource == state); sort, +1 / -1, state
-
-- EG
-- SUMMA
--
-- treemap (ask_resource == state); sort, +1 / -1, state; look_ahead (later remove)
--
-- https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
-
 ##### my-calendar-iii (ask resource); treemap (ask_resource == state); sort, +1 / -1, state
 
 - EG
@@ -3935,15 +3926,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - hash (met_before)
 - https://practice.geeksforgeeks.org/problems/remove-duplicates3034/1#
 
-##### my-calendar-ii; overlap_arr (check), overlap_arr (inject); (1) met_before
-
-- EG
-- SUMMA
--
-- brute_force (loop overlap, loop event); overlap_arr (check), overlap_arr (inject); (1) met_before
--
-- https://leetcode.com/problems/my-calendar-ii/discuss/1183353/Brute-force-and-built-in-sorted-dictionary
-
 <br/>
 <br/>
 <br/>
@@ -4180,25 +4162,31 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - intersect formular (top block + bottom block);
 - https://leetcode.com/problems/my-calendar-i
 
-##### my-calendar-i; double booking: 1st_book, in_mem; 2nd_book, income_hit
+##### my-calendar-i (double booking); 1 booking (mem); 2 booking (voliate)
 
 - EG
 - SUMMA
 - method 1:
-- hash (memory); intersect formular (3 mid blocks)
+- 1 booking (mem); 2 booking (voliate); intersect formular (3 mid blocks)
 -
 - method 2:
-- hash (memory); intersect formular (top + bottom blocks)
+- 1 booking (mem); 2 booking (voliate); intersect formular (top + bottom blocks)
 -
 - method 3:
 - treeMap (inject but sort)
-
+-
 - https://leetcode.com/problems/my-calendar-i
 
-##### my-calendar-ii; tripple booking: 1st_book, in_mem; 2nd_book, merge_extend; 3nd_book, income_hit
+##### my-calendar-ii (tripple booking); 1 booking (mem); 2 booking (mem, intersect_future_hit); 3 booking (voliate)
 
 - EG
 - SUMMA
+- method 1:
+- 1 booking (mem); 2 booking (mem, intersect_future_hit); 3 booking (voliate)
+-
+- method 2:
+- treeMap (inject but sort)
+-
 - https://leetcode.com/problems/my-calendar-ii
 
 <br/>
