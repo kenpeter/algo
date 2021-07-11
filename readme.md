@@ -3586,68 +3586,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## ask resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
-
-##### find minimum platforms (ask resource); ++i, --j; platform inc / desc
-
-- EG
-- SUMMA
--
-- ask resource; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
--
-- https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
-- https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620
-
-##### meeting room 2 (ask resource); ++i, --j; platform inc / desc
-
-- EG
-- SUMMA
--
-- ask resouce; start_arr, end_arr, travel_each; overlap (++), non-overlap (--);
--
-- https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
-- https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-## treemap (ask_resource == state); sort, +1 / -1, state
-
-##### find minimum platforms (ask resource); treemap (ask_resource == state); sort, +1 / -1, state
-
-- EG
-- SUMMA
--
-- treemap (ask_resource == state); sort, +1 / -1, state;
-- https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
-
-##### meeting room 2 (ask resource); treemap (ask_resource == state); sort, +1 / -1, state
-
-- EG
-- SUMMA
--
-- treemap (ask_resource == state); sort, +1 / -1, state
-- look at my code
-
-##### car-pooling (ask resource); trip = [[2_person, 1_on, 5_off],[3,3,7]], cap = 4; treemap (ask_resource == state); sort, +1 / -1, state
-
-- EG
-- SUMMA
--
-- treemap (ask_resource == state); sort, +1 / -1, state
--
-- https://leetcode.com/problems/car-pooling/
--
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 ## a_end > b_start (detect overlap); end_pick (start_pick); overlap (merge / intersect / update_pick), non-overlap (new pick);
 
 ##### shooting max balloons; a_end > b_start; that is overlap
@@ -4199,6 +4137,33 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - prepare, then query (incoming data); fill_time_block; easier to understand
 - https://leetcode.com/discuss/interview-question/613816/Google-or-Onsite-or-Meeting-Rooms-3
 - see my js file in code dir (for time fill method)
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## minimum platform, car_pooling (calendar, meeting_room)
+
+##### minimum platform (calendar, meeting_room)
+
+- EG
+- SUMMA
+-
+- treeMap (keep injecting)
+-
+- https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1#
+- https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
+
+##### bus, [persons, start_time, end_time], counter = 4 (calendar, meeting_room)
+
+- EG
+- SUMMA
+-
+- treeMap (keep injecting); use / release resource (variable); counter (variable)
+-
+- https://leetcode.com/problems/car-pooling/
 
 <br/>
 <br/>
