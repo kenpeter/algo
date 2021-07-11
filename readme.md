@@ -3586,62 +3586,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## a_end > b_start (detect overlap); end_pick (start_pick); overlap (merge / intersect / update_pick), non-overlap (new pick);
-
-##### shooting max balloons; a_end > b_start; that is overlap
-
-- EG
-- SUMMA
--
-- method 1:
-- a_end > b_start (detect overlap);
-- start_pt (asc), attach_to_small (math.min); end_pick; overlap (min end_pick), non-overlap (new end_pick);
--
-- method 2:
-- a_end > b_start (detect overlap);
-- start_pt (desc), attach_to_big (math.max); start_pick; overlap (max start_pick), non-overlap (new start_pick);
--
-- method 3:
-- a_end > b_start (detect overlap);
-- end_pt (asc), attach_to_small (math.min); end_pick; overlap (min end_pick), non-overlap (new end_pick);
--
-- method 4:
-- a_end > b_start (detect overlap);
-- end_pt (desc), attach_to_big (math.big); start_pick; overlap (max start_pick), non-overlap (new start_pick);
--
-- https://leetcode.com/submissions/detail/487741686/
-- https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
-
-##### merge_interval, [[1,4],[4,5]] -> [[1, 5]]; merge; [a, longer]
-
-- EG
-- SUMMA
--
-- merge (longer range); [start_pick, end_pick] (whole); overlap (merge), non-overlap (new end_pick)
--
-- https://leetcode.com/submissions/detail/487860609/
-- https://leetcode.com/problems/merge-intervals
-
-##### non overlapping interval; inverse; overlap problem exist
-
-- EG
-- SUMMA
--
-- method 1:
-- inverse of merge_interval (non overlap)
--
-- method 2:
-- start_pt (asc); end_pick; overlap (min end_pick), non-overlap (new end_pick)
--
-- https://leetcode.com/submissions/detail/488154801/
-- https://leetcode.com/problems/non-overlapping-intervals
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 # binary_search
 
 ## l < r, r=mid
@@ -4164,6 +4108,38 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - treeMap (keep injecting); use / release resource (variable); counter (variable)
 -
 - https://leetcode.com/problems/car-pooling/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## merge (2 ele -> new_ele, compare_next)
+
+##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; 2 ele -> new_ele, compare_next;
+
+- EG
+- SUMMA
+- sort, 2 ele -> new_ele, compare_next; merge -> sort, max_range
+- https://leetcode.com/problems/merge-intervals/
+- https://leetcode.com/submissions/detail/520779033/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## merge (max_range)
+
+##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; 2 ele -> new_ele, compare_next; merge -> max_range
+
+- EG
+- SUMMA
+- sort, 2 ele -> new_ele, compare_next; merge -> sort, max_range
+- https://leetcode.com/problems/merge-intervals/
+- https://leetcode.com/submissions/detail/520779033/
 
 <br/>
 <br/>
