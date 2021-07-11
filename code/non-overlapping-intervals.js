@@ -25,26 +25,26 @@
 //   return res.length;
 // };
 
-var eraseOverlapIntervals = function (ins) {
-  // sort
-  ins.sort((a, b) => a[0] - b[0]);
+// var eraseOverlapIntervals = function (ins) {
+//   // sort
+//   ins.sort((a, b) => a[0] - b[0]);
 
-  let end = Number.MAX_SAFE_INTEGER;
-  let count = 0;
+//   let end = Number.MAX_SAFE_INTEGER;
+//   let count = 0;
 
-  for (let i = 0; i < ins.length; ++i) {
-    // able_to_cover (merge)
-    if (end > ins[i][0]) {
-      end = Math.min(end, ins[i][1]);
-      ++count;
-    } else {
-      // not_able_to_cover (new)
-      end = ins[i][1];
-    }
-  }
+//   for (let i = 0; i < ins.length; ++i) {
+//     // able_to_cover (merge)
+//     if (end > ins[i][0]) {
+//       end = Math.min(end, ins[i][1]);
+//       ++count;
+//     } else {
+//       // not_able_to_cover (new)
+//       end = ins[i][1];
+//     }
+//   }
 
-  return count;
-};
+//   return count;
+// };
 
 // const input = [
 //   [1, 2],
@@ -55,10 +55,46 @@ var eraseOverlapIntervals = function (ins) {
 // const out = eraseOverlapIntervals(input);
 // console.log(out);
 
+// const input = [
+//   [1, 2],
+//   [1, 2],
+//   [1, 2],
+// ];
+// const out = eraseOverlapIntervals(input);
+// console.log(out);
+
+var eraseOverlapIntervals = function (ins) {
+  ins.sort((a, b) => {
+    return a[0] - b[0];
+  });
+
+  let c = 0;
+  const res = [];
+  res.push(ins[0]);
+
+  for (let i = 1; i < ins.length; ++i) {
+    const prev = res[res.length - 1];
+    const curr = ins[i];
+
+    if (prev[1] > curr[0]) {
+      res.pop();
+      const ele = prev[1] > curr[1] ? curr : prev;
+      res.push(ele);
+      ++c;
+    } else {
+      res.push(curr);
+    }
+  }
+
+  return c;
+};
+
 const input = [
-  [1, 2],
-  [1, 2],
-  [1, 2],
+  [0, 2],
+  [1, 3],
+  [2, 4],
+  [3, 5],
+  [4, 6],
 ];
 const out = eraseOverlapIntervals(input);
 console.log(out);

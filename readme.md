@@ -4115,13 +4115,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## merge (2 ele -> new_ele, compare_next)
+## overlap (merge 2 ele)
 
-##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; 2 ele -> new_ele, compare_next;
+##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; overlap (merge 2 ele)
 
 - EG
 - SUMMA
-- sort, 2 ele -> new_ele, compare_next; merge -> sort, max_range
+- overlap (merge 2 ele)
 - https://leetcode.com/problems/merge-intervals/
 - https://leetcode.com/submissions/detail/520779033/
 
@@ -4131,15 +4131,45 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## merge (max_range)
+## non-overlap (pick 1 from 2 ele )
 
-##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; 2 ele -> new_ele, compare_next; merge -> max_range
+##### [[1, 2], [1, 3], [2, 3], [3, 4]] -> [[1, 2], [2, 3], [3, 4]]; non-overlap (pick 1 from 2 ele)
 
 - EG
 - SUMMA
-- sort, 2 ele -> new_ele, compare_next; merge -> sort, max_range
-- https://leetcode.com/problems/merge-intervals/
-- https://leetcode.com/submissions/detail/520779033/
+- non-overlap (pick 1 from 2 ele)
+- https://leetcode.com/submissions/detail/520798909/
+- https://leetcode.com/problems/non-overlapping-intervals/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+##### shooting max balloons; a_end > b_start; that is overlap
+
+- EG
+- SUMMA
+-
+- method 1:
+- a_end > b_start (detect overlap);
+- start_pt (asc), attach_to_small (math.min); end_pick; overlap (min end_pick), non-overlap (new end_pick);
+-
+- method 2:
+- a_end > b_start (detect overlap);
+- start_pt (desc), attach_to_big (math.max); start_pick; overlap (max start_pick), non-overlap (new start_pick);
+-
+- method 3:
+- a_end > b_start (detect overlap);
+- end_pt (asc), attach_to_small (math.min); end_pick; overlap (min end_pick), non-overlap (new end_pick);
+-
+- method 4:
+- a_end > b_start (detect overlap);
+- end_pt (desc), attach_to_big (math.big); start_pick; overlap (max start_pick), non-overlap (new start_pick);
+-
+- https://leetcode.com/submissions/detail/487741686/
+- https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
 
 <br/>
 <br/>
