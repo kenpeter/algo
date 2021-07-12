@@ -4115,13 +4115,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## overlap (max_range)
+## overlap (become 1, with_merge)
 
-##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; overlap (max_range)
+##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; overlap (become 1, with_merge)
 
 - EG
 - SUMMA
-- overlap (max_range)
+- overlap (become_1, with_merge)
 - https://leetcode.com/problems/merge-intervals/
 - https://leetcode.com/submissions/detail/520779033/
 
@@ -4131,21 +4131,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## non-overlap (pick small)
+## overlap (become 1, with_small)
 
-##### [[1, 2], [1, 3], [2, 3], [3, 4]] -> [[1, 2], [2, 3], [3, 4]]; non-overlap (pick small)
+##### [[1, 2], [1, 3], [2, 3], [3, 4]] -> [[1, 2], [2, 3], [3, 4]]; (become 1, with_small)
 
 - EG
 - SUMMA
-- non-overlap (pick small)
+- overlap (become 1, with_small)
 - https://leetcode.com/submissions/detail/520798909/
 - https://leetcode.com/problems/non-overlapping-intervals/
 
-##### shooting balloon (pick small, because balloon overlap);
+##### shooting balloon; overlap (become 1, with_small)
 
 - EG
 - SUMMA
-- pick small (balloon overlap)
+- overlap (become 1, with_small, shoot_arrow)
 - https://leetcode.com/submissions/detail/521275495/
 - https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
 
