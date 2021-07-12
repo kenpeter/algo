@@ -4115,13 +4115,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## overlap (merge 2 ele)
+## overlap (max_range)
 
-##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; overlap (merge 2 ele)
+##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; overlap (max_range)
 
 - EG
 - SUMMA
-- overlap (merge 2 ele)
+- overlap (max_range)
 - https://leetcode.com/problems/merge-intervals/
 - https://leetcode.com/submissions/detail/520779033/
 
@@ -4131,44 +4131,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## non-overlap (pick 1 from 2 ele )
+## non-overlap (pick small)
 
-##### [[1, 2], [1, 3], [2, 3], [3, 4]] -> [[1, 2], [2, 3], [3, 4]]; non-overlap (pick 1 from 2 ele)
+##### [[1, 2], [1, 3], [2, 3], [3, 4]] -> [[1, 2], [2, 3], [3, 4]]; non-overlap (pick small)
 
 - EG
 - SUMMA
-- non-overlap (pick 1 from 2 ele)
+- non-overlap (pick small)
 - https://leetcode.com/submissions/detail/520798909/
 - https://leetcode.com/problems/non-overlapping-intervals/
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-##### shooting max balloons; a_end > b_start; that is overlap
+##### shooting balloon (pick small, because balloon overlap);
 
 - EG
 - SUMMA
--
-- method 1:
-- a_end > b_start (detect overlap);
-- start_pt (asc), attach_to_small (math.min); end_pick; overlap (min end_pick), non-overlap (new end_pick);
--
-- method 2:
-- a_end > b_start (detect overlap);
-- start_pt (desc), attach_to_big (math.max); start_pick; overlap (max start_pick), non-overlap (new start_pick);
--
-- method 3:
-- a_end > b_start (detect overlap);
-- end_pt (asc), attach_to_small (math.min); end_pick; overlap (min end_pick), non-overlap (new end_pick);
--
-- method 4:
-- a_end > b_start (detect overlap);
-- end_pt (desc), attach_to_big (math.big); start_pick; overlap (max start_pick), non-overlap (new start_pick);
--
-- https://leetcode.com/submissions/detail/487741686/
+- pick small (balloon overlap)
+- https://leetcode.com/submissions/detail/521275495/
 - https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
 
 <br/>
