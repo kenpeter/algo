@@ -4088,24 +4088,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## minimum platform, car_pooling (calendar, meeting_room)
+## minimum platform / car_pooling; treeMap (start/end, +/-, curr_res)
 
-##### minimum platform (calendar, meeting_room)
+##### minimum platform; treeMap (start/end, +/-, curr_res)
 
 - EG
 - SUMMA
 -
-- treeMap (keep injecting)
+- treeMap (start/end, +/-, curr_res)
 -
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1#
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 
-##### bus, [persons, start_time, end_time], counter = 4 (calendar, meeting_room)
+##### bus, [persons, start_time, end_time], counter = 4; treeMap (start/end, +/-, curr_res)
 
 - EG
 - SUMMA
 -
-- treeMap (keep injecting); use / release resource (variable); counter (variable)
+- treeMap (start/end, +/-, curr_res)
 -
 - https://leetcode.com/problems/car-pooling/
 
@@ -4115,9 +4115,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## overlap (become 1, with_merge)
+## overlap (become 1, with_large)
 
-##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; overlap (become 1, with_merge)
+##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; overlap (become 1, with_large)
 
 - EG
 - SUMMA
