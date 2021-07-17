@@ -3968,9 +3968,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## treeMap (keep injecting)
+## treeMap (static)
 
-##### treeMap (keep injecting)
+##### treeMap (static)
 
 - EG
 - SUMMA
@@ -3980,6 +3980,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 2. col_2: use / release resource
 - 2. col_3: curr_resource (acc, because use / release)
 - 3. income inject treeMap (keep injecting)
+-
+- https://leetcode.com/problems/car-pooling/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## treeMap (keep injecting)
+
+##### treeMap (keep injecting)
+
+- EG
+- SUMMA
+-
+- treeMap (keep injecting) === loop + treeMap (static)
 -
 - https://leetcode.com/problems/my-calendar-i
 
@@ -4050,26 +4067,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## meeting room
 
-##### meeting room 1 (my calendar 1)
+##### meeting room 1 (mini_platform); treeMap (static)
 
 - EG
 - SUMMA
 -
-- treeMap (keep injecting); if count >= 2 return false
+- treeMap (static; start/end, use/release, curr_resouce); count >= 2, bad
 -
 - https://www.programcreek.com/2014/07/leetcode-meeting-rooms-java/
 
-##### meeting room 2, what is min room needed? (my calendar 3, count)
+##### meeting room 2 (mini_platform), what is min room needed? treeMap (static)
 
 - EG
 - SUMMA
 -
-- treeMap (keep injecting); count = max(max, count)
+- treeMap (static; ....); count = max
 -
 - https://osgoodgunawan.medium.com/meeting-room-ii-in-javascript-d478690dd432
 - https://github.com/Seanforfun/Algorithm-and-Leetcode/blob/master/leetcode/253.%20Meeting%20Rooms%20II.md
 
-##### meeting room 3; prepare, then query; fill_time_block; easier to understand
+##### meeting room 3 (my calendar 1, 2, 3); treeMap (keep injecting)
 
 - EG
 - SUMMA
@@ -4088,24 +4105,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## minimum platform / car_pooling; treeMap (start/end, +/-, curr_res)
+## minimum platform / car_pooling; treeMap (static)
 
-##### minimum platform; treeMap (start/end, +/-, curr_res)
+##### minimum platform; treeMap (static)
 
 - EG
 - SUMMA
 -
-- treeMap (start/end, +/-, curr_res)
+- treeMap (static; start/end, +/-, curr_res)
 -
 - https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1#
 - https://practice.geeksforgeeks.org/viewSol.php?subId=a5d446a873521478733111306c0e77dd&pid=701368&user=figo2476
 
-##### bus, [persons, start_time, end_time], counter = 4; treeMap (start/end, +/-, curr_res)
+##### bus, [persons, start_time, end_time], counter = 4; treeMap (static)
 
 - EG
 - SUMMA
 -
-- treeMap (start/end, +/-, curr_res)
+- treeMap (static; start/end, +/-, curr_res)
 -
 - https://leetcode.com/problems/car-pooling/
 
@@ -4115,9 +4132,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## overlap (become 1, with_large)
+## overlap (become 1, with_merge)
 
-##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; overlap (become 1, with_large)
+##### [[1, 3], [2, 6], [8, 10], [15, 18]] -> [[1, 6], [8, 10], [15, 18]]; overlap (become 1, with_merge)
 
 - EG
 - SUMMA
