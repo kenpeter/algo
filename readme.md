@@ -3990,8 +3990,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 1. treeMap == 3 col table
 - 2. col_1: mix(sort)
 - 2. col_2: use / release resource
-- 2. col_3: curr_resource (acc, because use / release)
-- 3. income inject treeMap (keep injecting)
+- 2. col_3: curr_resource
 -
 - https://leetcode.com/problems/car-pooling/
 
@@ -4020,11 +4019,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## my-calendar
 
-##### intersect formular (3 mid blocks)
+##### intersect formular (3 mid block)
 
 - EG
 - SUMMA
-- intersect formular (mid 3 blocks); past_start < income_end && past_end > income_start
+- intersect formular (mid 3 block); past_start < income_end && past_end > income_start
 - https://leetcode.com/problems/my-calendar-i
 
 ##### intersect formular (top + bottom block);
@@ -4059,6 +4058,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - method 1:
 - 1st_booking (mem1), 2nd_booking (mem2, do_merge), 3rd_booking (tripple booking); 3 mid block
+- each mem hold all income; each mem represents own state
 -
 - method 2:
 - treeMap (keep injecting); inject (no_matter), good_keep, bad_out
