@@ -3958,20 +3958,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## reach_balance;
+## cancel_out;
 
-##### is anagram; reach_balance (sort, vertical_compare, direct_cancel_out)
+##### is anagram; direct cancel_out, eventually balance
 
 - EG
 - SUMMA
-- reach_balance (sort, vertical_compare, direct_cancel_out)
+- sort, vertical_compare; direct cancel_out, eventually balance
 - https://leetcode.com/problems/valid-anagram
 
-##### is anagram; reach_balance (unsort, hash, eventually_cancel_out)
+##### is anagram; delay cancel_out, eventually balance
 
 - EG
 - SUMMA
-- reach_balance (unsort, hash, eventually_cancel_out)
+- unsort, hash; delay cancel_out, eventually balance
 - https://leetcode.com/problems/valid-anagram
 
 <br/>
