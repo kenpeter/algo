@@ -1345,75 +1345,6 @@
 - inloop: move pattern
 - https://leetcode.com/problems/repeated-substring-pattern
 
-## back_to_zero, TWO / +1|-1 / MULTI_CANCEL / MULTI_ONE_GO
-
-##### ++parent, --child; back_to_zero(TWO)
-
-- EG
-- SUMMA
-- parent_hash ( h[e] = (h[e] || 0) + 1 )
-- loop child_chars
-- if(parent_hash[child] && --parent_hash[child] back_to_zero(TWO) >= 0)
-- https://leetcode.com/problems/ransom-note
-
-##### LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1), res == 1; back_to_zero(+1|-1)
-
-- EG
-- LLLLRRRR, (-1)(-1)(-1)(-1)(+1)(+1)(+1)(+1)|, res == 1; greedy split when 0
-- RLLLRR, (+1)(-1)|(-1)(-1)(+1)(+1), res == 2; greedy split when 0
-- SUMMA
-- loop chars
-- back_to_zero(TWO, ++var, --var)
-- greedy split when 0
-- https://leetcode.com/problems/split-a-string-in-balanced-strings
-
-##### [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero(+1|-1)), c(-1), c(+1, back_to_zero(TWO)), d(-1);
-
-- EG
-- SUMMA
-- loop paths
-- [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero(+1|-1)), c(-1), c(+1, back_to_zero(+1|-1)), d(-1)
-- h[b] = +1, h[b] = +1 + (-1) == 0
-- https://leetcode.com/problems/destination-city
-
-##### aabbb, build_palin? back_to_zero(+1|-1)
-
-- EG
-- aabbb, build_palin?; a(+1)a(-1) b(+1)b(-1)b(+1); b:1 (left), can; back_to_zero(+1|-1)
-- aabb, build_palin?; a(+1)a(-1) b(+1)b(-1)b; nothing (left), can; back_to_zero(+1|-1)
-- ab, build_palin?; a(+1) b(+1); a:1, b:1 (left), no; back_to_zero(+1|-1)
-- SUMMA
-- loop chars
-- if not exist, set.add; if exist, set.delete; back_to_zero(+1|-1)
-- set.size === 1 || set.size === 0
-- https://medium.com/swlh/palindrome-permutations-9752d8e71c7f
-
-##### ++vertical, --vertical; ++horizontal, --horizontal; back_to_zero(MULTI)
-
-- EG
-- SUMMA
-- loop chars (e.g. LLRRUD, robot move)
-- back_to_zero(MULTI); ++vertical, --vertical; ++horizontal, --horizontal
-- https://leetcode.com/problems/robot-return-to-origin
-
-##### ++vertical, --vertical; ++horizontal, --horizontal; meet_old_point(MULTI)
-
-- EG
-- NNS (north, north, south); (0, 0) -> @(0, 1) -> (0, 2) -> @(0, 1); coord = old_coord + path
-- SUMMA
-- loop chars
-- ++vertical, --vertical; ++horizontal, --horizontal; meet_old_point(MULTI);
-- coord = old_coord + path
-- https://leetcode.com/problems/path-crossing
-
-##### bbaalloooonn, balloon, 2\*balloon; back_to_zero(MULTI_ONE_GO)
-
-- EG
-- SUMMA
-- build_hash
-- back_to_zero(MULTI_ONE_GO)
-- https://leetcode.com/problems/maximum-number-of-balloons
-
 <br/>
 <br/>
 
@@ -3934,29 +3865,122 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## cancel_out;
+## same_pool_size, direct_cancel_out (letter to # cancel)
 
-##### is anagram; direct cancel_out, eventually balance
+##### is anagram; same_pool_size, direct_cancel_out
 
 - EG
 - SUMMA
-- sort, vertical_compare; direct cancel_out, eventually balance
+- sort, vertical_compare; same_pool_size, direct_cancel_out
 - https://leetcode.com/problems/valid-anagram
 
-##### is anagram; delay cancel_out, eventually balance
+##### n = 5 -> [-2, -1, 0, 1, 2]; n = 4 -> [-2, -1, 1, 2]; same_pool_size, direct_cancel_out
 
 - EG
 - SUMMA
-- unsort, hash; delay cancel_out, eventually balance
-- https://leetcode.com/problems/valid-anagram
-
-##### n = 5 -> [-2, -1, 0, 1, 2]; n = 4 -> [-2, -1, 1, 2]; direct cancel_out, eventualy balance
-
-- EG
-- SUMMA
-- x-coordinate; direct cancel_out, eventualy balance
+- x-coordinate; same_pool_size, direct_cancel_out
 -
 - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## same_pool_size, delay_cancel_out ('a' to # cancel)
+
+##### is anagram; same_pool_size, delay_cancel_out
+
+- EG
+- SUMMA
+- unsort, hash; same_pool_size, delay_cancel_out, eventually_balance
+- https://leetcode.com/problems/valid-anagram
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## diff_pool_size, direct_cancel_out ('a' to # cancel)
+
+##### s1 = cba, s2 = abcabc, build s1 from s2; diff_pool_size, direct_cancel_out
+
+- EG
+- SUMMA
+- s1 (small_pool), s2 (big_pool); diff_pool_size, direct_cancel_out
+- https://leetcode.com/problems/ransom-note
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## greedy_split; direct_cancel_out ('a' to # cancel)
+
+##### RLLRRL -> RLLR + RL, res = 2; or RLLRRL -> RL + LR + RL, res = 3 (max); greedy_split; direct_cancel_out ('a' to # cancel)
+
+- EG
+- SUMMA
+- greedy_split; direct_cancel_out ('a' to # cancel)
+- sub_balance_1 (L# == R#, !order, greedy) + sub_balance_2 (...) + sub_balance_2 (...) + ... == balance_whole (...)
+-
+- https://leetcode.com/problems/split-a-string-in-balanced-strings
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+##### [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero(+1|-1)), c(-1), c(+1, back_to_zero(TWO)), d(-1);
+
+- EG
+- SUMMA
+- loop paths
+- [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero(+1|-1)), c(-1), c(+1, back_to_zero(+1|-1)), d(-1)
+- h[b] = +1, h[b] = +1 + (-1) == 0
+- https://leetcode.com/problems/destination-city
+
+##### aabbb, build_palin? back_to_zero(+1|-1)
+
+- EG
+- aabbb, build_palin?; a(+1)a(-1) b(+1)b(-1)b(+1); b:1 (left), can; back_to_zero(+1|-1)
+- aabb, build_palin?; a(+1)a(-1) b(+1)b(-1)b; nothing (left), can; back_to_zero(+1|-1)
+- ab, build_palin?; a(+1) b(+1); a:1, b:1 (left), no; back_to_zero(+1|-1)
+- SUMMA
+- loop chars
+- if not exist, set.add; if exist, set.delete; back_to_zero(+1|-1)
+- set.size === 1 || set.size === 0
+- https://medium.com/swlh/palindrome-permutations-9752d8e71c7f
+
+##### ++vertical, --vertical; ++horizontal, --horizontal; back_to_zero(MULTI)
+
+- EG
+- SUMMA
+- loop chars (e.g. LLRRUD, robot move)
+- back_to_zero(MULTI); ++vertical, --vertical; ++horizontal, --horizontal
+- https://leetcode.com/problems/robot-return-to-origin
+
+##### ++vertical, --vertical; ++horizontal, --horizontal; meet_old_point(MULTI)
+
+- EG
+- NNS (north, north, south); (0, 0) -> @(0, 1) -> (0, 2) -> @(0, 1); coord = old_coord + path
+- SUMMA
+- loop chars
+- ++vertical, --vertical; ++horizontal, --horizontal; meet_old_point(MULTI);
+- coord = old_coord + path
+- https://leetcode.com/problems/path-crossing
+
+##### bbaalloooonn, balloon, 2\*balloon; back_to_zero(MULTI_ONE_GO)
+
+- EG
+- SUMMA
+- build_hash
+- back_to_zero(MULTI_ONE_GO)
+- https://leetcode.com/problems/maximum-number-of-balloons
 
 <br/>
 <br/>
