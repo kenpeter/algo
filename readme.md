@@ -3987,10 +3987,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- 1. treeMap == 3 col table
-- 2. col_1: mix(sort)
+- 1. col_1: start / end
 - 2. col_2: use / release resource
-- 2. col_3: curr_resource
+- 3. col_3: curr_resource
 -
 - https://leetcode.com/problems/car-pooling/
 
