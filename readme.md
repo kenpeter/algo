@@ -2971,30 +2971,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## symmetric
-
-##### build all num sum == 0; symmetric
-
-- EG
-- SUMMA
-- n%2 == 0; (-....) | (+.....)
-- n%2 != 0; (-....) 0 (+.....)
--
-- https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
-
-##### 00011 -> 0011, 01, total = 2; 0(0011) min_symmetric
-
-- EG
-- SUMMA
-- https://leetcode.com/submissions/detail/510165020/
-- https://leetcode.com/problems/count-binary-substrings
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 ## find consecutive; (i_start, j_end) vs (either con or reset); both can work
 
 <br/>
@@ -3973,6 +3949,29 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - unsort, hash; delay cancel_out, eventually balance
 - https://leetcode.com/problems/valid-anagram
+
+##### n = 5 -> [-2, -1, 0, 1, 2]; n = 4 -> [-2, -1, 1, 2]; direct cancel_out, eventualy balance
+
+- EG
+- SUMMA
+- x-coordinate; direct cancel_out, eventualy balance
+-
+- https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## symmetric
+
+##### 00011 -> 0011, 01, total = 2; 0(0011) min_symmetric
+
+- EG
+- SUMMA
+- https://leetcode.com/submissions/detail/510165020/
+- https://leetcode.com/problems/count-binary-substrings
 
 <br/>
 <br/>
