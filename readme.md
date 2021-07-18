@@ -3743,6 +3743,18 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## hash (what really it is?)
+
+- EG
+- SUMMA
+- check_past, inject
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## hash (freq)
 
 ##### [0, 1, 0, 2, 1] -> [0, 0, 1, 1, 2]; no sort, hash (freq), build_from_groud
@@ -4008,53 +4020,57 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## my-calendar
 
-##### intersect formular (mid 3 blocks)
+##### intersect formular (3 mid blocks)
 
 - EG
 - SUMMA
 - intersect formular (mid 3 blocks); past_start < income_end && past_end > income_start
 - https://leetcode.com/problems/my-calendar-i
 
-##### intersect formular (top block + bottom block);
+##### intersect formular (top + bottom block);
 
 - EG
 - SUMMA
-- intersect formular (top block + bottom block);
+- intersect formular (top + bottom block);
 - https://leetcode.com/problems/my-calendar-i
 
-##### my-calendar-i (2 booking); 1 booking (mem); 2 booking (voliate)
+##### my-calendar-0 (count === 1, single booking)
+
+- EG
+- SUMMA
+- just fyi
+-
+
+##### my-calendar-i (count >= 2, double booking)
 
 - EG
 - SUMMA
 - method 1:
-- 1 booking (mem); 2 booking (voliate); intersect formular (3 mid blocks)
+- 1st_booking (mem), 2nd_booking (double booking); 3 mid block
 -
 - method 2:
-- 1 booking (mem); 2 booking (voliate); intersect formular (top + bottom blocks)
--
-- method 3:
-- treeMap (inject but sort)
+- treeMap (keep injecting); inject (no_matter), good_keep, bad_out
 -
 - https://leetcode.com/problems/my-calendar-i
 
-##### my-calendar-ii (3 booking); 1 booking (mem); 2 booking (mem, intersect_future_hit); 3 booking (voliate)
+##### my-calendar-ii (count >= 3, tripple booking)
 
 - EG
 - SUMMA
 - method 1:
-- 1 booking (mem); 2 booking (mem, intersect_future_hit); 3 booking (voliate)
+- 1st_booking (mem1), 2nd_booking (mem2, do_merge), 3rd_booking (tripple booking); 3 mid block
 -
 - method 2:
-- treeMap (inject but sort);
+- treeMap (keep injecting); inject (no_matter), good_keep, bad_out
 -
 - https://leetcode.com/problems/my-calendar-ii
 
-##### my-calendar-iii (k booking); 1 booking (mem); 2 booking (mem, intersect_future_hit); 3 booking (...); .... k booking
+##### my-calendar-iii (count >= k, k booking);
 
 - EG
 - SUMMA
 -
-- method 2:
+- method 1:
 - treeMap (keep injecting);
 -
 - https://leetcode.com/problems/my-calendar-iii
@@ -4092,7 +4108,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - method 1:
-- treeMap (keep injecting)
+- treeMap (keep injecting) == loop + treeMap (static);
+- inject (no_matter), good_keep, bad_out
 -
 - method 2:
 - prepare, then query (incoming data); fill_time_block; easier to understand
