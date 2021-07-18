@@ -3918,13 +3918,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## greedy_split; direct_cancel_out ('a' to # cancel)
+## greedy_split; delay_cancel_out ('a' to # cancel)
 
-##### RLLRRL -> RLLR + RL, res = 2; or RLLRRL -> RL + LR + RL, res = 3 (max); greedy_split; direct_cancel_out ('a' to # cancel)
+##### RLLRRL -> RLLR + RL, res = 2; or RLLRRL -> RL + LR + RL, res = 3 (max); greedy_split; delay_cancel_out ('a' to # cancel)
 
 - EG
 - SUMMA
-- greedy_split; direct_cancel_out ('a' to # cancel)
+- greedy_split; delay_cancel_out ('a' to # cancel)
 - sub_balance_1 (L# == R#, !order, greedy) + sub_balance_2 (...) + sub_balance_2 (...) + ... == balance_whole (...)
 -
 - https://leetcode.com/problems/split-a-string-in-balanced-strings
