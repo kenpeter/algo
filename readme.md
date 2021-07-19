@@ -3874,51 +3874,28 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## same_pool_size, direct_cancel_out (letter to # cancel)
+## direct_cancel (...)
 
-##### is anagram; same_pool_size, direct_cancel_out
+##### is anagram; direct_cancel (vertical)
 
 - EG
 - SUMMA
-- sort, vertical_compare; same_pool_size, direct_cancel_out
+- sort, vertical_compare; direct_cancel (vertical)
 - https://leetcode.com/problems/valid-anagram
 
-##### n = 5 -> [-2, -1, 0, 1, 2]; n = 4 -> [-2, -1, 1, 2]; same_pool_size, direct_cancel_out
+##### n = 5 -> [-2, -1, 0, 1, 2]; n = 4 -> [-2, -1, 1, 2]; direct_cancel (symmetric)
 
 - EG
 - SUMMA
-- x-coordinate; same_pool_size, direct_cancel_out
+- x-coordinate; direct_cancel (symmetric)
 -
 - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-## same_pool_size, delay_cancel_out ('a' to # cancel)
-
-##### is anagram; same_pool_size, delay_cancel_out
+##### s1 = cba, s2 = abcabc, build s1 from s2; direct_cancel (diff_pool_size)
 
 - EG
 - SUMMA
-- unsort, hash; same_pool_size, delay_cancel_out, eventually_balance
-- https://leetcode.com/problems/valid-anagram
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-## diff_pool_size, direct_cancel_out ('a' to # cancel)
-
-##### s1 = cba, s2 = abcabc, build s1 from s2; diff_pool_size, direct_cancel_out
-
-- EG
-- SUMMA
-- s1 (small_pool), s2 (big_pool); diff_pool_size, direct_cancel_out
+- s1 (small_pool), s2 (big_pool); direct_cancel (diff_pool_size)
 - https://leetcode.com/problems/ransom-note
 
 <br/>
@@ -3927,13 +3904,28 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## greedy_cancel_out ('a' to # cancel)
+## delay_cancel (eventuall_balance)
 
-##### RLLRRL -> RLLR + RL, res = 2; or RLLRRL -> RL + LR + RL, res = 3 (max); greedy_cancel_out ('a' to # cancel)
+##### is anagram; delay_cancel (eventuall_balance)
 
 - EG
 - SUMMA
-- greedy_split; greedy_cancel_out ('a' to # cancel)
+- unsort, hash; delay_cancel (eventuall_balance)
+- https://leetcode.com/problems/valid-anagram
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## greedy_cancel
+
+##### RLLRRL -> RLLR + RL, res = 2; or RLLRRL -> RL + LR + RL, res = 3 (max); greedy_cancel
+
+- EG
+- SUMMA
+- greedy_split; greedy_cancel
 - sub_balance_1 (L# == R#, !order, greedy) + sub_balance_2 (...) + sub_balance_2 (...) + ... == balance_whole (...)
 -
 - https://leetcode.com/problems/split-a-string-in-balanced-strings
