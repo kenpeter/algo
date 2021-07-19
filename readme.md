@@ -3963,14 +3963,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## convert to coordinate
+## moving convert coordinate
 
-##### NESWW (north, east, south, ...), cross origin; convert to coordinate
+##### NESWW (north, east, south, ...), moving convert coordinate
 
 - EG
 -
 - SUMMA
-- convert to coordinate; hash (past)
+- moving convert coordinate; hash (past)
 - https://leetcode.com/problems/path-crossing
 
 <br/>
