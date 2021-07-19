@@ -987,15 +987,6 @@
 
 ## build_hash_freq, --hash_freq[n]
 
-##### build_hash_freq; --hash_freq[char]
-
-- EG
-- SUMMA
-- build_hash_freq
-- loop chars
-- if(hash_freq[char] !== undef && --hash_freq[char] >= 0)
-- https://leetcode.com/problems/ransom-note
-
 ##### chars build words; can "atach" build "cat", "dog", "xxxxx" each time?
 
 - EG
@@ -3650,11 +3641,29 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## hash (what really it is?)
+## hash (what the truth?)
 
 - EG
 - SUMMA
-- check_past, inject
+- 1. past, inject
+- 2. freq
+-
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+##### ++vertical, --vertical; ++horizontal, --horizontal; meet_old_point(MULTI)
+
+- EG
+- NNS (north, north, south); (0, 0) -> @(0, 1) -> (0, 2) -> @(0, 1); coord = old_coord + path
+- SUMMA
+- loop chars
+- ++vertical, --vertical; ++horizontal, --horizontal; meet_old_point(MULTI);
+- coord = old_coord + path
+- https://leetcode.com/problems/path-crossing
 
 <br/>
 <br/>
@@ -3918,13 +3927,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## greedy_split; delay_cancel_out ('a' to # cancel)
+## greedy_cancel_out ('a' to # cancel)
 
-##### RLLRRL -> RLLR + RL, res = 2; or RLLRRL -> RL + LR + RL, res = 3 (max); greedy_split; delay_cancel_out ('a' to # cancel)
+##### RLLRRL -> RLLR + RL, res = 2; or RLLRRL -> RL + LR + RL, res = 3 (max); greedy_cancel_out ('a' to # cancel)
 
 - EG
 - SUMMA
-- greedy_split; delay_cancel_out ('a' to # cancel)
+- greedy_split; greedy_cancel_out ('a' to # cancel)
 - sub_balance_1 (L# == R#, !order, greedy) + sub_balance_2 (...) + sub_balance_2 (...) + ... == balance_whole (...)
 -
 - https://leetcode.com/problems/split-a-string-in-balanced-strings
@@ -3963,16 +3972,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - loop chars (e.g. LLRRUD, robot move)
 - back_to_zero(MULTI); ++vertical, --vertical; ++horizontal, --horizontal
 - https://leetcode.com/problems/robot-return-to-origin
-
-##### ++vertical, --vertical; ++horizontal, --horizontal; meet_old_point(MULTI)
-
-- EG
-- NNS (north, north, south); (0, 0) -> @(0, 1) -> (0, 2) -> @(0, 1); coord = old_coord + path
-- SUMMA
-- loop chars
-- ++vertical, --vertical; ++horizontal, --horizontal; meet_old_point(MULTI);
-- coord = old_coord + path
-- https://leetcode.com/problems/path-crossing
 
 ##### bbaalloooonn, balloon, 2\*balloon; back_to_zero(MULTI_ONE_GO)
 
