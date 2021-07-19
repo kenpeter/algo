@@ -3655,22 +3655,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-##### ++vertical, --vertical; ++horizontal, --horizontal; meet_old_point(MULTI)
-
-- EG
-- NNS (north, north, south); (0, 0) -> @(0, 1) -> (0, 2) -> @(0, 1); coord = old_coord + path
-- SUMMA
-- loop chars
-- ++vertical, --vertical; ++horizontal, --horizontal; meet_old_point(MULTI);
-- coord = old_coord + path
-- https://leetcode.com/problems/path-crossing
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 ## hash (freq)
 
 ##### [0, 1, 0, 2, 1] -> [0, 0, 1, 1, 2]; no sort, hash (freq), build_from_groud
@@ -3972,6 +3956,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - build_hash
 - back_to_zero(MULTI_ONE_GO)
 - https://leetcode.com/problems/maximum-number-of-balloons
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## convert to coordinate
+
+##### NESWW (north, east, south, ...), cross origin; convert to coordinate
+
+- EG
+-
+- SUMMA
+- convert to coordinate; hash (past)
+- https://leetcode.com/problems/path-crossing
 
 <br/>
 <br/>
