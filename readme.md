@@ -3941,14 +3941,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - set.size === 1 || set.size === 0
 - https://medium.com/swlh/palindrome-permutations-9752d8e71c7f
 
-##### ++vertical, --vertical; ++horizontal, --horizontal; back_to_zero(MULTI)
-
-- EG
-- SUMMA
-- loop chars (e.g. LLRRUD, robot move)
-- back_to_zero(MULTI); ++vertical, --vertical; ++horizontal, --horizontal
-- https://leetcode.com/problems/robot-return-to-origin
-
 ##### bbaalloooonn, balloon, 2\*balloon; back_to_zero(MULTI_ONE_GO)
 
 - EG
@@ -3963,15 +3955,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## moving convert coordinate
+## moving -> coordinate
 
-##### NESWW (north, east, south, ...), moving convert coordinate
+##### NESWW (north, east, south, ...), cross any point; moving -> coordinate
 
 - EG
 -
 - SUMMA
-- moving convert coordinate; hash (past)
+- moving -> coordinate; hash (past)
 - https://leetcode.com/problems/path-crossing
+
+##### robot at (0, 0), UULDDR (up, up, left...), back to (0, 0); moving -> coordinate
+
+- EG
+- SUMMA
+- moving -> coordinate
+- https://leetcode.com/problems/robot-return-to-origin
 
 <br/>
 <br/>
