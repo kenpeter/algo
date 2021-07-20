@@ -3860,26 +3860,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## direct_cancel (...)
 
-##### is anagram; direct_cancel (vertical)
+##### is anagram; direct_cancel (vertical, similar_but_diff_posi)
 
 - EG
 - SUMMA
-- sort, vertical_compare; direct_cancel (vertical)
+- sort, vertical_compare; direct_cancel (vertical, similar_but_diff_posi)
 - https://leetcode.com/problems/valid-anagram
 
-##### n = 5 -> [-2, -1, 0, 1, 2]; n = 4 -> [-2, -1, 1, 2]; direct_cancel (symmetric)
+##### n = 5 -> [-2, -1, 0, 1, 2]; n = 4 -> [-2, -1, 1, 2]; direct_cancel (symmetric, similar_but_diff_posi)
 
 - EG
 - SUMMA
-- x-coordinate; direct_cancel (symmetric)
+- x-coordinate; direct_cancel (symmetric, similar_but_diff_posi)
 -
 - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
 
-##### s1 = cba, s2 = abcabc, build s1 from s2; direct_cancel (diff_pool_size)
+##### s1 = cba, s2 = abcabc, build s1 from s2; direct_cancel (diff_pool_size, similar_but_diff_posi)
 
 - EG
 - SUMMA
-- s1 (small_pool), s2 (big_pool); direct_cancel (diff_pool_size)
+- s1 (small_pool), s2 (big_pool); direct_cancel (diff_pool_size, similar_but_diff_posi)
 - https://leetcode.com/problems/ransom-note
 
 <br/>
@@ -3888,14 +3888,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## delay_cancel (eventuall_balance)
+## delay_cancel (eventuall_balance, similar_but_diff_posi)
 
-##### is anagram; delay_cancel (eventuall_balance)
+##### is anagram; delay_cancel (eventuall_balance, similar_but_diff_posi)
 
 - EG
 - SUMMA
-- unsort, hash; delay_cancel (eventuall_balance)
+- unsort, hash; delay_cancel (eventuall_balance, similar_but_diff_posi)
 - https://leetcode.com/problems/valid-anagram
+
+##### [a, b], [c, d], [b, c] -> sort [a, b], [b, c], [c, d]; delay_cancel ([in, out], similar_but_diff_posi)
+
+- EG
+- SUMMA
+- delay_cancel ([in, out], similar_but_diff_posi)
+- https://leetcode.com/submissions/detail/525476821/
+- https://leetcode.com/problems/destination-city
 
 <br/>
 <br/>
@@ -3905,11 +3913,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## greedy_cancel
 
-##### RLLRRL -> RLLR + RL, res = 2; or RLLRRL -> RL + LR + RL, res = 3 (max); greedy_cancel
+##### RLLRRL -> RLLR + RL, res = 2; or RLLRRL -> RL + LR + RL, res = 3 (max); greedy_cancel (similar_but_diff_posi)
 
 - EG
 - SUMMA
-- greedy_split; greedy_cancel
+- greedy_split; greedy_cancel (similar_but_diff_posi)
 - sub_balance_1 (L# == R#, !order, greedy) + sub_balance_2 (...) + sub_balance_2 (...) + ... == balance_whole (...)
 -
 - https://leetcode.com/problems/split-a-string-in-balanced-strings
@@ -3919,15 +3927,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 <br/>
-
-##### [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero(+1|-1)), c(-1), c(+1, back_to_zero(TWO)), d(-1);
-
-- EG
-- SUMMA
-- loop paths
-- [a, b], [b, c], [c, d], so desti == d; a(+1), b(-1), b(+1, back_to_zero(+1|-1)), c(-1), c(+1, back_to_zero(+1|-1)), d(-1)
-- h[b] = +1, h[b] = +1 + (-1) == 0
-- https://leetcode.com/problems/destination-city
 
 ##### aabbb, build_palin? back_to_zero(+1|-1)
 
