@@ -3905,7 +3905,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/525476821/
 - https://leetcode.com/problems/destination-city
 
-##### baabb -> abbba; palin (odd) -> cancel; palin (even) -> cancel
+##### baabb -> abbba; palin (odd) -> cancel -> 1 left; palin (even) -> cancel -> 0 left
 
 - EG
 - SUMMA
@@ -3913,8 +3913,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - permutation -> any_combo -> palin? (brute_force)
 -
 - method 2:
-- palin (odd) -> cancel (delay) -> 1 char left
-- palin (even) -> cancel (delay) -> 0 char left
+- palin (odd) -> cancel (delay) -> 1 left
+- palin (even) -> cancel (delay) -> 0 left
 -
 - https://medium.com/swlh/palindrome-permutations-9752d8e71c7f
 
