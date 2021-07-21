@@ -3867,7 +3867,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - sort, vertical_compare; direct_cancel (vertical, similar_but_diff_posi)
 - https://leetcode.com/problems/valid-anagram
 
-##### n = 5 -> [-2, -1, 0, 1, 2]; n = 4 -> [-2, -1, 1, 2]; direct_cancel (symmetric, similar_but_diff_posi)
+##### n = 5 -> [-2, -1, 0, 1, 2]; n = 4 -> [-2, -1, 1, 2]; direct_cancel (horizontal, similar_but_diff_posi)
 
 - EG
 - SUMMA
@@ -3905,6 +3905,19 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/525476821/
 - https://leetcode.com/problems/destination-city
 
+##### baabb -> abbba; palin (odd) -> cancel; palin (even) -> cancel
+
+- EG
+- SUMMA
+- method 1:
+- permutation -> any_combo -> palin? (brute_force)
+-
+- method 2:
+- palin (odd) -> cancel (delay) -> 1 char left
+- palin (even) -> cancel (delay) -> 0 char left
+-
+- https://medium.com/swlh/palindrome-permutations-9752d8e71c7f
+
 <br/>
 <br/>
 <br/>
@@ -3927,18 +3940,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 <br/>
-
-##### aabbb, build_palin? back_to_zero(+1|-1)
-
-- EG
-- aabbb, build_palin?; a(+1)a(-1) b(+1)b(-1)b(+1); b:1 (left), can; back_to_zero(+1|-1)
-- aabb, build_palin?; a(+1)a(-1) b(+1)b(-1)b; nothing (left), can; back_to_zero(+1|-1)
-- ab, build_palin?; a(+1) b(+1); a:1, b:1 (left), no; back_to_zero(+1|-1)
-- SUMMA
-- loop chars
-- if not exist, set.add; if exist, set.delete; back_to_zero(+1|-1)
-- set.size === 1 || set.size === 0
-- https://medium.com/swlh/palindrome-permutations-9752d8e71c7f
 
 ##### bbaalloooonn, balloon, 2\*balloon; back_to_zero(MULTI_ONE_GO)
 

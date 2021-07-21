@@ -1,22 +1,26 @@
 // https://medium.com/swlh/palindrome-permutations-9752d8e71c7f
 
 const palin_per = (s) => {
-  const set = new Set();
-
-  // e.g. aaabbb; a(+)a(-)a(+) b(+)b(-)b(+)
+  const m = new Map();
   for (let i = 0; i < s.length; ++i) {
     const c = s[i];
-    if (set.has(c)) {
-      set.delete(c);
+    if (m.has(c)) {
+      m.delete(c);
     } else {
-      set.add(c);
+      m.set(c, true);
     }
   }
 
-  return set.size === 1 || set.size === 0;
+  const a = Array.from(m);
+  if (a.length === 1 || a.length === 0) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
-// const input = "aaabbb";
-input = "aabbb";
+//const input = "aaabbb";
+//const input = "aabbb";
+const input = "aabb";
 const out = palin_per(input);
 console.log("++ out", out);
