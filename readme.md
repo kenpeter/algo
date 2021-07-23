@@ -3725,9 +3725,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # comparator
 
-## comparator; (1) sub vs sub (2) 1 vs 1 (3) combine vs combine
+## comparator; (1) a_sub vs b_sub (2) a vs b (3) ab vs ba
 
-##### ["dig1 8 1 5 1", "let1 art can"]; "8 1 5 1" vs "art can" (sub vs sub)
+##### ["dig1 8 1 5 1", "let1 art can"]; "8 1 5 1" vs "art can" (a_sub vs b_sub)
 
 - EG
 - SUMMA
@@ -3736,7 +3736,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/503865437/
 - https://leetcode.com/problems/reorder-data-in-log-files/
 
-##### [1, 20, ...] -> 120 vs 201; ba vs ab (combine vs combine)
+##### [1, 20, ...] -> 120 vs 201; ba vs ab (ab vs ba)
 
 - EG
 - SUMMA
@@ -4189,7 +4189,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## min is max strength
 
-##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:3, a:3, l:3/2, o:3/2, n:1}, so 1; min is max strength (whoever min)
+##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:3, a:3, l:3/2, o:3/2, n:1}, so 1; min is max strength (it is min)
 
 - EG
 - SUMMA
@@ -4197,7 +4197,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/maximum-number-of-balloons
 
-##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:2, a:2, l:1, o:1, n:2}, so 1; min is max strength (batch remove)
+##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:2, a:2, l:1, o:1, n:2}, so 1; min is max strength (rm_same_time)
 
 - EG
 - SUMMA
@@ -4210,8 +4210,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 <br/>
-
-# math
 
 ## swap, then equal
 
