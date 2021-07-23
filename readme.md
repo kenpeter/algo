@@ -4189,7 +4189,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## min is max strength
 
-##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:3, a:3, l:3/2, o:3/2, n:1}, so 1; min is max strength (it is min)
+##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:3, a:3, l:3/2, o:3/2, n:1}, so 1; min is strength (min is strength)
 
 - EG
 - SUMMA
@@ -4197,7 +4197,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/maximum-number-of-balloons
 
-##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:2, a:2, l:1, o:1, n:2}, so 1; min is max strength (rm_same_time)
+##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:2, a:2, l:1, o:1, n:2}, so 1; min is strength (rm_same_time)
 
 - EG
 - SUMMA
