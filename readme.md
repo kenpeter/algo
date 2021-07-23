@@ -3941,12 +3941,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-##### bbaalloooonn, balloon, 2\*balloon; back_to_zero(MULTI_ONE_GO)
+## reduce_in_batch, reduce_in_batch_condi
+
+##### h {b:3, a:3, l:3, o:3, n:3}, balloon; reduce_in_batch, reduce_in_batch_condi
 
 - EG
 - SUMMA
-- build_hash
-- back_to_zero(MULTI_ONE_GO)
+- reduce_in_batch, reduce_in_batch_condi
 - https://leetcode.com/problems/maximum-number-of-balloons
 
 <br/>
@@ -4194,6 +4195,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - overlap (become 1, with_small, shoot_arrow)
 - https://leetcode.com/submissions/detail/521275495/
 - https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## min is max strength
+
+##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:3, a:3, l:3/2, o:3/2, n:1}, so 1; min is max strength
+
+- EG
+- SUMMA
+- min is max strength (1 by 1)
+- https://leetcode.com/problems/maximum-number-of-balloons
 
 <br/>
 <br/>
