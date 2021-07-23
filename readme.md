@@ -3941,21 +3941,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## reduce_in_batch, reduce_in_batch_condi
-
-##### h {b:3, a:3, l:3, o:3, n:3}, balloon; reduce_in_batch, reduce_in_batch_condi
-
-- EG
-- SUMMA
-- reduce_in_batch, reduce_in_batch_condi
-- https://leetcode.com/problems/maximum-number-of-balloons
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 ## moving -> coordinate
 
 ##### NESWW (north, east, south, ...), cross any point; moving -> coordinate
@@ -4204,11 +4189,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## min is max strength
 
-##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:3, a:3, l:3/2, o:3/2, n:1}, so 1; min is max strength
+##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:3, a:3, l:3/2, o:3/2, n:1}, so 1; min is max strength (whoever min)
 
 - EG
 - SUMMA
-- min is max strength (1 by 1)
+- min is max strength (whoever min)
+-
+- https://leetcode.com/problems/maximum-number-of-balloons
+
+##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:2, a:2, l:1, o:1, n:2}, so 1; min is max strength (batch remove)
+
+- EG
+- SUMMA
+- min is max strength (batch remove)
+-
 - https://leetcode.com/problems/maximum-number-of-balloons
 
 <br/>
