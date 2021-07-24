@@ -3843,13 +3843,18 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## two states; extra_state (derive from arr), exist_state (arr)
+## income_ele chg internal_ele prop (odd/even)
 
-##### two states; extra_state (even_sum), exist_state (arr); even + even = even; odd + odd = even
+##### income_ele chg internal_ele prop (odd/even)
 
 - EG
 - SUMMA
-- two states; extra_state (even_sum), exist_state (arr); even + even = even; odd + odd = even
+- method 1:
+- income_ele chg internal_ele prop (odd/even); brute_force
+-
+- method 2:
+- income_ele chg internal_ele prop (odd/even); precompute sum(even);
+-
 - https://leetcode.com/problems/sum-of-even-numbers-after-queries
 
 <br/>
