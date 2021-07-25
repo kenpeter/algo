@@ -3769,26 +3769,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## either continue or reset
+## leading char, same continue, diff reset
 
-##### aaabbbcccccc, max_len = 6; either continue or reset (same)
+##### aabbccc, max = 3; leading char, same continue, diff reset
 
 - EG
 - SUMMA
-- either continue or reset
+- method 1:
+- leading char (need compare), same continue, diff reset (1 loop)
+-
+- method 2:
+- skip loop (2 loop, but underneath 1 loop)
+-
 - https://leetcode.com/problems/consecutive-characters
 
-##### count and say, input -> output -> input; either continue or reset (same)
+##### [1, 2, 3, 6, 6] -> [1, 2, 3], [6], [6]; non-reach purpose continue, reach purpose reset
 
 - EG
-- 1 -> 1 (init);
-- 2 -> one 1 (above);
-- 3 -> 21 (above);
-- 4 -> 1211 (above)
 - SUMMA
-- input -> output -> input; either continue or reset
-- https://leetcode.com/submissions/detail/507769749/
-- https://leetcode.com/problems/count-and-say
+- non-reach purpose continue, reach purpose reset
+- https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
 
 ##### PPALLP, 2A (non-con) or 3L (con), no award; either continue or reset (same)
 
@@ -3802,13 +3802,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/507769749/
 - https://leetcode.com/problems/student-attendance-record-i
 
-##### [-1, 1, -1, 1, -1, 1]; sum / 3 = equal_part; either continue or reset (zero)
-
-- EG
-- SUMMA
-- either continue (equal_part) or reset (zero)
-- https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
-
 ##### [1, 2, 3, 1], 1->2->3 inc, max_freq=3; either continue or reset (inc)
 
 - EG
@@ -3816,6 +3809,18 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - look_back; either continue or reset (inc)
 - https://leetcode.com/submissions/detail/510419128/
 - https://leetcode.com/problems/longest-continuous-increasing-subsequence/
+
+##### count and say, input -> output -> input; either continue or reset (same)
+
+- EG
+- 1 -> 1 (init);
+- 2 -> one 1 (above);
+- 3 -> 21 (above);
+- 4 -> 1211 (above)
+- SUMMA
+- input -> output -> input; either continue or reset
+- https://leetcode.com/submissions/detail/507769749/
+- https://leetcode.com/problems/count-and-say
 
 <br/>
 <br/>
