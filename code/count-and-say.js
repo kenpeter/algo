@@ -1,34 +1,40 @@
-var say = function (s) {
-  if (s === "0") return "1";
+var say = function (s, ind) {
+  if (ind === 0) return "1"; // why put here? i=0; i<len
 
-  let mychar = s[0];
-  let c = 0;
+  // leading_char (reset part)
+  let ch = s[0];
+  let c = 1;
   let res = "";
 
-  for (let i = 0; i <= s.length; ++i) {
-    if (mychar === s[i]) {
+  //
+  for (let i = 1; i < s.length; ++i) {
+    // continue (leading_char vs curr)
+    if (ch === s[i]) {
       ++c;
     } else {
-      res = res + c + s[i - 1];
+      // reset (finish past; reset_curr; curr_tobe_past)
+      res = res + c.toString() + ch;
+
+      ch = s[i].toString();
       c = 1;
-      mychar = s[i];
     }
   }
+
+  res = res + c.toString() + ch;
 
   return res;
 };
 
 var countAndSay = function (n) {
-  if (n === 1) return "1";
-
-  let res = "0";
-  for (let i = 0; i < n; i++) {
-    res = say(res);
+  let input;
+  // input -> output -> input
+  for (let i = 0; i < n; ++i) {
+    input = say(input, i);
   }
 
-  return res;
+  return input;
 };
 
-const input = 6;
+const input = "5";
 const out = countAndSay(input);
 console.log(out);
