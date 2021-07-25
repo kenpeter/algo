@@ -3771,12 +3771,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## continue acc (reaching), reset break (reached)
 
-##### aabbccc, max = 3; leading char, continue acc (same_char), reset break (diff_char)
+##### aabbccc, max = 3; continue acc (same_char), reset break (diff_char)
 
 - EG
 - SUMMA
 - method 1:
-- leading char (no need look forward/backward), continue acc (same_char), reset break (diff_char) (1 loop)
+- leading char (same_char), continue acc (same_char), reset break (diff_char) (1 loop)
 -
 - method 2:
 - skip loop (2 loop, but underneath 1 loop)
@@ -3790,23 +3790,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - continue acc (!part_sum), reset break (part_sum)
 - https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
 
-##### APAPLLL, 2A (non-con) or 3L (con), no award; single_loop, continue acc, reset break
+##### APAPLLL, 2A (non-con) or 3L (con), no award; single_loop, continue acc (LLL), reset break (LLA)
 
 - EG
 - A absent, L late, P present;
 - SUMMA
 -
 - count_A, count_L
-- single_loop, continue acc, reset break
+- single_loop, continue acc (LLL), reset break (LLA)
 -
 - https://leetcode.com/submissions/detail/507769749/
 - https://leetcode.com/problems/student-attendance-record-i
 
-##### [1, 2, 3, 1], 1->2->3 inc, max_freq=3; either continue or reset (inc)
+##### [1, 2, 3, 1], 1->2->3 inc, max_freq=3; continue acc (inc), reset break (desc)
 
 - EG
 - SUMMA
-- look_back; either continue or reset (inc)
+- continue acc (inc), reset break (desc)
 - https://leetcode.com/submissions/detail/510419128/
 - https://leetcode.com/problems/longest-continuous-increasing-subsequence/
 
