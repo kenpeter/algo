@@ -3818,7 +3818,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 11 -> 21;
 - 21 -> 1211
 - SUMMA
-- 1. input -> output -> input e.g. input = say(input)
+- 1. input = say(input)
 - 2. continue (past vs curr), reset (past, curr, curr_tobe_past)
 -
 - https://leetcode.com/submissions/detail/507769749/
