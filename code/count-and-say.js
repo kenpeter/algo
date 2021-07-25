@@ -1,5 +1,5 @@
 var say = function (s, ind) {
-  if (ind === 0) return "1"; // why put here? i=0; i<len
+  if (ind === 0) return "1"; // follow loop len
 
   // leading_char (reset part)
   let ch = s[0];
@@ -8,7 +8,7 @@ var say = function (s, ind) {
 
   //
   for (let i = 1; i < s.length; ++i) {
-    // continue (leading_char vs curr)
+    // continue (leading_char vs new_char)
     if (ch === s[i]) {
       ++c;
     } else {
