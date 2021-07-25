@@ -20,7 +20,7 @@ var say = function (s, ind) {
     }
   }
 
-  // last char
+  // reset missing for last char
   res = res + c.toString() + ch;
 
   return res;

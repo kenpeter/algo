@@ -3769,56 +3769,58 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## continue acc (reaching), reset break (reached)
+## continue (reaching), reset (reached)
 
-##### aabbccc, max = 3; continue acc (same_char), reset break (diff_char)
+##### aabbccc, max = 3; continue (leading_char), reset (diff_char)
 
 - EG
 - SUMMA
 - method 1:
-- leading char (same_char), continue acc (same_char), reset break (diff_char) (1 loop)
+- leading char (same_char), continue (leading_char), reset (diff_char) (1 loop)
 -
 - method 2:
 - skip loop (2 loop, but underneath 1 loop)
 -
 - https://leetcode.com/problems/consecutive-characters
 
-##### [1, 2, 3, 6, 6] -> [1, 2, 3], [6], [6]; continue acc (!part_sum), reset break (part_sum)
+##### [1, 2, 3, 6, 6] -> [1, 2, 3], [6], [6]; continue (!part_sum), reset (part_sum)
 
 - EG
 - SUMMA
-- continue acc (!part_sum), reset break (part_sum)
+- continue (!part_sum), reset (part_sum)
 - https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
 
-##### APAPLLL, 2A (non-con) or 3L (con), no award; single_loop, continue acc (LLL), reset break (LLA)
+##### APAPLLL, 2A (non-con) or 3L (con), no award; single_loop, continue (LLL), reset (LLA)
 
 - EG
 - A absent, L late, P present;
 - SUMMA
 -
 - count_A, count_L
-- single_loop, continue acc (LLL), reset break (LLA)
+- single_loop, continue (LLL), reset (LLA)
 -
 - https://leetcode.com/submissions/detail/507769749/
 - https://leetcode.com/problems/student-attendance-record-i
 
-##### [1, 2, 3, 1], 1->2->3 inc, max_freq=3; continue acc (inc), reset break (desc)
+##### [1, 2, 3, 1], 1->2->3 inc, max_freq=3; continue (inc), reset (desc)
 
 - EG
 - SUMMA
-- continue acc (inc), reset break (desc)
+- continue (inc), reset (desc)
 - https://leetcode.com/submissions/detail/510419128/
 - https://leetcode.com/problems/longest-continuous-increasing-subsequence/
 
-##### count and say, input -> output -> input; either continue or reset (same)
+##### count and say, 21 -> 1211; continue (past vs curr), reset (past, curr, curr_tobe_past)
 
 - EG
 - 1 -> 1 (init);
-- 2 -> one 1 (above);
-- 3 -> 21 (above);
-- 4 -> 1211 (above)
+- 1 -> 11;
+- 11 -> 21;
+- 21 -> 1211
 - SUMMA
-- input -> output -> input; either continue or reset
+- 1. input -> output -> input e.g. input = say(input)
+- 2. continue (past vs curr), reset (past, curr, curr_tobe_past)
+-
 - https://leetcode.com/submissions/detail/507769749/
 - https://leetcode.com/problems/count-and-say
 
