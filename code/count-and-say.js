@@ -20,6 +20,7 @@ var say = function (s, ind) {
     }
   }
 
+  // last char
   res = res + c.toString() + ch;
 
   return res;
