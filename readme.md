@@ -3769,35 +3769,35 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## leading char, same continue, diff reset
+## continue acc (reaching), reset break (reached)
 
-##### aabbccc, max = 3; leading char, same continue, diff reset
+##### aabbccc, max = 3; leading char, continue acc (same_char), reset break (diff_char)
 
 - EG
 - SUMMA
 - method 1:
-- leading char (need compare), same continue, diff reset (1 loop)
+- leading char (no need look forward/backward), continue acc (same_char), reset break (diff_char) (1 loop)
 -
 - method 2:
 - skip loop (2 loop, but underneath 1 loop)
 -
 - https://leetcode.com/problems/consecutive-characters
 
-##### [1, 2, 3, 6, 6] -> [1, 2, 3], [6], [6]; non-reach purpose continue, reach purpose reset
+##### [1, 2, 3, 6, 6] -> [1, 2, 3], [6], [6]; continue acc (!part_sum), reset break (part_sum)
 
 - EG
 - SUMMA
-- non-reach purpose continue, reach purpose reset
+- continue acc (!part_sum), reset break (part_sum)
 - https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
 
-##### PPALLP, 2A (non-con) or 3L (con), no award; either continue or reset (same)
+##### APAPLLL, 2A (non-con) or 3L (con), no award; single_loop, continue acc, reset break
 
 - EG
 - A absent, L late, P present;
 - SUMMA
 -
 - count_A, count_L
-- either continue or reset
+- single_loop, continue acc, reset break
 -
 - https://leetcode.com/submissions/detail/507769749/
 - https://leetcode.com/problems/student-attendance-record-i
