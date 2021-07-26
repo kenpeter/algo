@@ -862,17 +862,6 @@
 
 ## LOOK_BACK(same OR inc; i=1)
 
-##### ++++ -> [--++, +--+, ++--] how_many_combo; if s[i-1], s[i], LOOK_BACK, build_from_ground (sub(0, i-1), sub(i+1))
-
-- EG
-- SUMMA
-- loop char
-- loop(i=1, i<len, ++i) (LOOK_BACK)
-- if s[i-1] == '+' && s[i] == '+'; (LOOK_BACK)
-- build_from_ground == before + '--' (s[i-1], s[i]) + rest (build_from_ground)
-- build_from_ground == sub(0, i-1)(exclude) + '--' + sub(i+1) (build_from_ground)
-- https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
-
 ##### find_word_segment; letter space == word_segment; i-1, i(LOOK_BACK, i_move);
 
 - EG
@@ -922,18 +911,6 @@
 - res.push
 -
 - https://leetcode.com/problems/relative-sort-array
-
-##### ++++ -> [--++, +--+, ++--] how_many; if s[i-1], s[i], LOOK_BACK, build_from_ground_rearrange( i-1_fill_res + i_fill_res VS res_ind)
-
-- EG
-- SUMMA
-- loop char
-- loop(i=1, i<len, ++i)
-- if s[i-1] == '+' && s[i] == '+'; (LOOK_BACK)
-- ++++ (i-1=0, i=1)
-- res == sub(0, i-1)(exclude) + '--' + sub(i+1)(rest)
--
-- https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
 
 ##### build_from_ground_rearrange(i_big_fill_res, i_small_fill_res VS res_ind); [-4(i_start), -3, 1, 2(j_big)] -> [1, 4, 9, 16];
 
@@ -3753,15 +3730,53 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## look_back (same_type)
+## i exhaust 1st, j exhaust later, both_exhaust_end
 
-##### letter long pressed; look_back (same_type)
+##### abc (i) -> long press -> aaabbbccc (j); i exhaust 1st, j exhaust later, both_exhaust_end
 
 - EG
-- abc vs aaabbbbcccc;
 - SUMMA
-- 1 by 1, then long pressed (look_back same_type)
+- i exhaust 1st, j exhaust later, both_exhaust_end;
+- (1) 1 on 1 exact_match (2) extend_match (look_back) (3) false
 - https://leetcode.com/problems/long-pressed-name
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## partition
+
+##### ++++ -> [--++, +--+, ++--], combo#; partition, i, i+1, partition
+
+- EG
+- SUMMA
+- method 1:
+- look_forward; partition, i, i+1, partition
+- sub(0, i), i, i+1, sub(i+2)
+-
+- method 2:
+- look_backward; partition, i-1, i, partition
+- sub(0, i-1), i-1, i, sub(i+1)
+-
+- https://xiaoguan.gitbooks.io/leetcode/content/LeetCode/293-flip-game-easy.html
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## look_back
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## look_forward
 
 <br/>
 <br/>
@@ -3821,26 +3836,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - 1. input = say(input)
 - 2. continue (past vs curr), reset (past, curr, curr_tobe_past)
 -
-- https://leetcode.com/submissions/detail/507769749/
-- https://leetcode.com/problems/count-and-say
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-## input -> output -> input
-
-##### count and say; input -> output -> input
-
-- EG
-- 1 -> 1 (init);
-- 2 -> one 1 (above);
-- 3 -> 21 (above);
-- 4 -> 1211 (above)
-- SUMMA
-- input -> output -> input; either continue or reset
 - https://leetcode.com/submissions/detail/507769749/
 - https://leetcode.com/problems/count-and-say
 
