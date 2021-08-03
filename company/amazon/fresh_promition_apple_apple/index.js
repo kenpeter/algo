@@ -90,7 +90,7 @@
 
 // sm
 // * chars in substr (order); substrs in sentense (order, gap)
-// * vertical_match or !match, reset substr
+// * substr_search, vertical_compare; !match (away disturb char, substr reset)
 const freshPromotion = (codes, cart) => {
   let j = 0;
   // substrs
@@ -98,14 +98,14 @@ const freshPromotion = (codes, cart) => {
     // single substr
     let i = 0;
     while (i < code.length && j < cart.length) {
-      // vertical match
+      // vertical_compare
       if (code[i] === cart[j] || code[i] === "anything") {
         ++i;
         ++j;
       } else {
-        // !match, reset substr
+        // substr reset
         i = 0;
-        // skip the gap
+        // away disturb char
         ++j;
       }
     } // end loop

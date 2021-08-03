@@ -3730,6 +3730,48 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## char in substr, substr in sentence
+
+##### code and shopping vcart; char in substr (order), substr in sentence (order, gap)
+
+- EG
+- code: [[apple, apple], [orange, *, orange]] -> [[a, a], [o, *, o]] -> substrs
+- cart: [appple, apple, x, x, orange, apple, orange] -> [a, a, x, x, o, o, o] -> sentense
+- SUMMA
+-
+- chars in substr (order); substrs in sentense (order, gap)
+- substr_search, vertical_compare; !match (away disturb char, substr reset)
+-
+- see my amazon code
+- https://leetcode.com/discuss/interview-question/1002811/Amazon-or-OA-2021-or-Fresh-Promotion
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## substr_search, !match (away disturb char, substr reset)
+
+##### code and shopping vcart; substr_search, !match (away disturb char, substr reset)
+
+- EG
+- code: [[apple, apple], [orange, *, orange]] -> [[a, a], [o, *, o]] -> substrs
+- cart: [appple, apple, x, x, orange, apple, orange] -> [a, a, x, x, o, o, o] -> sentense
+- SUMMA
+-
+- chars in substr (order); substrs in sentense (order, gap)
+- substr_search, vertical_compare; !match (away disturb char, substr reset)
+-
+- see my amazon code
+- https://leetcode.com/discuss/interview-question/1002811/Amazon-or-OA-2021-or-Fresh-Promotion
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## i exhaust 1st, j exhaust later, both_exhaust_end
 
 ##### abc (i) -> long press -> aaabbbccc (j); i exhaust 1st, j exhaust later, both_exhaust_end
