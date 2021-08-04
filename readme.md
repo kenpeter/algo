@@ -3764,6 +3764,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## loop each, substr of another string?
+
+##### is substr of another string; loop each, include by other?
+
+- EG
+- SUMMA
+- loop each, include by other?
+- self is self-substr
+- https://leetcode.com/problems/string-matching-in-an-array
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## i exhaust 1st, j exhaust later, both_exhaust_end
 
 ##### abc (i) -> long press -> aaabbbccc (j); i exhaust 1st, j exhaust later, both_exhaust_end
