@@ -88,35 +88,53 @@
 //   }
 // };
 
-// sm
-// * chars in substr (order); substrs in sentense (order, gap)
-// * substr_search, vertical_compare; !match (away disturb char, substr reset)
-const freshPromotion = (codes, cart) => {
-  let j = 0;
-  // substrs
-  for (const code of codes) {
-    // single substr
-    let i = 0;
-    while (i < code.length && j < cart.length) {
-      // vertical_compare
-      if (code[i] === cart[j] || code[i] === "anything") {
-        ++i;
-        ++j;
-      } else {
-        // substr reset
-        i = 0;
-        // away disturb char
-        ++j;
-      }
-    } // end loop
+// // sm
+// // * chars in substr (order); substrs in sentense (order, gap)
+// // * substr_search, vertical_compare; !match (away disturb char, substr reset)
+// const freshPromotion = (codes, cart) => {
+//   let j = 0;
+//   // substrs
+//   for (const code of codes) {
+//     // single substr
+//     let i = 0;
+//     while (i < code.length && j < cart.length) {
+//       // vertical_compare
+//       if (code[i] === cart[j] || code[i] === "anything") {
+//         ++i;
+//         ++j;
+//       } else {
+//         // substr reset
+//         i = 0;
+//         // away disturb char
+//         ++j;
+//       }
+//     } // end loop
 
-    // substr
-    if (i !== code.length) return 0;
+//     // substr
+//     if (i !== code.length) return 0;
+//   }
+
+//   return 1;
+// };
+
+const freshPromotion = (codes, cart) => {
+  let i = 0; // for cart
+
+  // slide (exhaust)
+  while (i < cart.length) {
+    // check all codes
+    for (let j = 0; j < codes.length; ++j) {
+      // search this code in this cart posi
+      const code = codes[j];
+      let k = 0;
+      //while(k)
+    }
   }
 
   return 1;
 };
 
+// =========== test cases
 // const codeList = [
 //   ["apple", "apple"],
 //   ["banana", "anything", "banana"],

@@ -2539,23 +2539,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## 2pt (i+len, j+len)
-
-##### find a str in another str; i+len, j+len; i+len vs j+len
-
-- EG
-- SUMMA
--
-- i+len, j+len; i+len vs j+len
--
-- https://leetcode.com/problems/implement-strstr
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 ## 2pt (no-check-self, 2_loop)
 
 ##### longest substr palindrome; 2pt (no-check-self, 2_loop)
@@ -3740,7 +3723,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - chars in substr (order); substrs in sentense (order, gap)
-- substr_search, vertical_compare; !match (away disturb char, substr reset)
+- slide (exhaust), then extend (match); match good; !match, reset substr, next_char_sentence
 -
 - see my amazon code
 - https://leetcode.com/discuss/interview-question/1002811/Amazon-or-OA-2021-or-Fresh-Promotion
@@ -3751,9 +3734,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## substr_search, !match (away disturb char, substr reset)
+## slide (exhaust), then extend (match)
 
-##### code and shopping vcart; substr_search, !match (away disturb char, substr reset)
+##### code and shopping vcart; slide (exhaust), then extend (match);
 
 - EG
 - code: [[apple, apple], [orange, *, orange]] -> [[a, a], [o, *, o]] -> substrs
@@ -3761,10 +3744,19 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - chars in substr (order); substrs in sentense (order, gap)
-- substr_search, vertical_compare; !match (away disturb char, substr reset)
+- slide (exhaust), then extend (match); match good; !match, reset substr, next_char_sentence
 -
 - see my amazon code
 - https://leetcode.com/discuss/interview-question/1002811/Amazon-or-OA-2021-or-Fresh-Promotion
+
+##### find substr in sentence; slide (exhaust), then extend (match)
+
+- EG
+- SUMMA
+-
+- slide (exhaust), then extend (match); match good; !match, reset substr, next_char_sentence
+-
+- https://leetcode.com/problems/implement-strstr
 
 <br/>
 <br/>

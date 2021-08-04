@@ -1,31 +1,25 @@
+// sm: slide (exhaust), extend (match)
 var strStr = function (h, n) {
-  // empty
-  if (h.length === 0 && n.length === 0) return 0;
-
-  // empty
+  // search nothing, then good
   if (n.length === 0) return 0;
 
-  // needle too long
+  // the thing we search, too long
   if (h.length < n.length) return -1;
 
   let i = 0;
 
-  // * brute_force; i_start (stable), j_start (j_extending)
+  // * slide (exhaust), extend (match)
+  // * match good; !match, substr reset, next_char in sentense
   for (i = 0; i < h.length; i++) {
     let j = 0;
-
-    // j_start (j_extending)
-    while (h[i + j] === n[j]) {
+    while (j < n.length && h[i + j] === n[j]) {
       ++j;
-      if (j === n.length) {
-        return i;
-      }
+    }
+
+    if (j === n.length) {
+      return i;
     }
   }
 
   return -1;
 };
-
-const needle = "ll";
-const source = "hello";
-const out = strStr(source, needle);
