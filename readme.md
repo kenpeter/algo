@@ -2558,6 +2558,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## 2pt (lo -> small, hi -> large)
+
+##### IDID, pool: [0, 1, 2, 3, 4_len] -> [0_I, 4_D, 1_I, 3_D, 2_last]; lo -> small, hi -> large
+
+- EG
+- SUMMA
+- 2pt (lo -> small, hi -> large)
+- https://leetcode.com/problems/di-string-match/
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## 3pt (i_start, j_end-1, k_end\*; look for large)
 
 ##### find how many ele_1 + ele_2 == ele_3; i_start + j_end-1 == k_end\* (look for large)
