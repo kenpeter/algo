@@ -3764,14 +3764,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## loop each, substr of another string?
+## is myself part of others (include self)?
 
-##### is substr of another string; loop each, include by other?
+##### is substr of another string; is myself part of others (include self)?
 
 - EG
 - SUMMA
-- loop each, include by other?
-- self is self-substr
+- is myself part of others (include self)?
 - https://leetcode.com/problems/string-matching-in-an-array
 
 <br/>
