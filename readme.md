@@ -3677,6 +3677,36 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## set (unique)
+
+##### set (unique)
+
+- EG
+- SUMMA
+-
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## set (set1.size == set2.size)
+
+##### aba -> dog cat cat (bad); set (set1.size == set2.size)
+
+- EG
+- SUMMA
+- set (set1.size == set2.size)
+-
+- https://leetcode.com/problems/word-pattern
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## max represent entire subarr
 
 ##### [1, 2, 17, 1, 2], 17 is leader >= everything at right; max represent entire subarr
