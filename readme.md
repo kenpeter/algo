@@ -3662,6 +3662,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
+## hash (1 to 1, 2 hash)
+
+##### aba -> dog cat dog (good); aba -> dog cat cat (bad); 1 to 1, 2 hash
+
+- EG
+- SUMMA
+- 1 to 1, 2 hash; h_key[key] = val, h_val[val] = key
+- https://leetcode.com/problems/word-pattern
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## max represent entire subarr
 
 ##### [1, 2, 17, 1, 2], 17 is leader >= everything at right; max represent entire subarr
