@@ -59,49 +59,40 @@
 //   return res;
 // };
 
-const suggestedProducts = (products, searchWord) => {
-  // 2D arr
-  const result = Array.from({ length: searchWord.length }, () => []);
-  // left
-  let left = 0;
-  // right
-  let right = products.length - 1;
-  // sort
+var suggestedProducts = function (products, searchWord) {
+  const res = [];
   products.sort();
 
-  // loop char in search_word
-  for (let idx = 0; idx < searchWord.length; ++idx) {
-    // target char
-    const targetChar = searchWord[idx];
+  for (let i = 0; i < searchWord.length; i++) {
+    const prefix = searchWord.substring(0, i + 1);
 
-    //
-    for (let low = left, high = right; low < high; ) {
-      // mid
-      const mid = Math.floor((high + low) / 2);
+    let left = 0;
+    let right = products.length;
 
-      products[mid][idx] === undefined || products[mid][idx] < targetChar
-        ? (low = mid + 1)
-        : (high = mid);
+    while (left < right) {
+      // mid is what, seach_ind === why
+      const ind = Math.floor((left + right) / 2);
 
-      //
-      left = low;
+      if (prefix <= products[ind]) right = ind;
+      else left = ind + 1;
     }
-    for (let low = left, high = right; low < high; ) {
-      const mid = Math.ceil((high + low) / 2);
-      products[mid][idx] > targetChar ? (high = mid - 1) : (low = mid);
-      right = high;
+
+    const suggestions = [];
+
+    for (let i = 0; i < 3; i++) {
+      const product = products[left + i];
+
+      if (!product || !product.startsWith(prefix)) break;
+      else suggestions.push(product);
     }
-    for (let i = 0; i < 3; ++i) {
-      if (left + i > right || products[left + i][idx] !== targetChar) break;
-      result[idx].push(products[left + i]);
-    }
-    if (result[idx].length === 0) break;
+
+    res.push(suggestions);
   }
-  return result;
+
+  return res;
 };
 
-// sort: mobile, moneypot, monitor, mouse, mousepad
-const p = ["mobile", "mouse", "moneypot", "monitor", "mousepad"];
-const s = "mouse";
+const p = ["abc", "acb", "bac"];
+const s = "acb";
 const out = suggestedProducts(p, s);
 console.log(out);
