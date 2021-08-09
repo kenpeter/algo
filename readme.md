@@ -3743,7 +3743,48 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# comparator
+## suggest while typing
+
+##### suggest while typing; each_char == level_of_filter
+
+- EG
+- SUMMA
+-
+- brute_force
+- each_char == level_of_filter
+- (1) no update pool (2) update pool (once outloop)\*; (3) update pool (inner loop);
+- arr[each_char][result]
+- e.g. ["abc", "def"] -> 2D_arr
+-
+- https://leetcode.com/problems/search-suggestions-system
+
+##### suggest while typing; s.startsWith (prefix)
+
+- EG
+- SUMMA
+-
+- brute_force
+- s.startsWith (prefix)
+- (1) no update pool\* (2) update pool (once outloop); (3) update pool (inner loop);
+- arr[each_char][result]
+- e.g. ["abc", "def"] -> 2D_arr
+-
+- https://leetcode.com/problems/search-suggestions-system
+
+##### suggest while typing; ind causes l, r to bound; use left (binary search)
+
+- EG
+- SUMMA
+- ind causes l, r to bound; use left (binary search)
+- products[l] < target (cover most, <= no), l = ind+1;
+-
+- https://leetcode.com/problems/search-suggestions-system
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## comparator; (1) a_sub vs b_sub (sub) (2) a vs b (individual) (3) ab vs ba (combo)
 

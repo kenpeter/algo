@@ -59,35 +59,73 @@
 //   return res;
 // };
 
-var suggestedProducts = function (products, searchWord) {
+// var suggestedProducts = function (products, searchWord) {
+//   const res = [];
+//   products.sort();
+
+//   for (let i = 0; i < searchWord.length; i++) {
+//     const prefix = searchWord.substring(0, i + 1);
+
+//     let left = 0;
+//     let right = products.length;
+
+//     while (left < right) {
+//       // mid is what, seach_ind === why
+//       const ind = Math.floor((left + right) / 2);
+
+//       if (prefix <= products[ind]) right = ind;
+//       else left = ind + 1;
+//     }
+
+//     const suggestions = [];
+
+//     for (let i = 0; i < 3; i++) {
+//       const product = products[left + i];
+
+//       if (!product || !product.startsWith(prefix)) break;
+//       else suggestions.push(product);
+//     }
+
+//     res.push(suggestions);
+//   }
+
+//   return res;
+// };
+
+// sm: ind causes l, r to bound; use l
+var suggestedProducts = function (ps, s) {
+  // sort
+  ps.sort();
   const res = [];
-  products.sort();
 
-  for (let i = 0; i < searchWord.length; i++) {
-    const prefix = searchWord.substring(0, i + 1);
+  // each char in search
+  for (let i = 0; i < s.length; ++i) {
+    const str = s.substring(0, i + 1);
 
-    let left = 0;
-    let right = products.length;
+    let l = 0;
+    let r = ps.length - 1;
 
-    while (left < right) {
-      // mid is what, seach_ind === why
-      const ind = Math.floor((left + right) / 2);
+    // ind causes l, r to bound; use l
+    while (l < r) {
+      const ind = Math.floor((l + r) / 2);
 
-      if (prefix <= products[ind]) right = ind;
-      else left = ind + 1;
-    }
+      if (ps[ind] < str) {
+        l = ind + 1;
+      } else {
+        r = ind;
+      }
+    } // end loop
 
-    const suggestions = [];
+    //
+    const sug = [];
+    for (let j = 0; j < 3; ++j) {
+      if (l + j < ps.length && ps[l + j].startsWith(str)) {
+        sug.push(ps[l + j]);
+      }
+    } // end loop
 
-    for (let i = 0; i < 3; i++) {
-      const product = products[left + i];
-
-      if (!product || !product.startsWith(prefix)) break;
-      else suggestions.push(product);
-    }
-
-    res.push(suggestions);
-  }
+    res.push(sug);
+  } // end loop
 
   return res;
 };
