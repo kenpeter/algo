@@ -34,7 +34,7 @@
 
 // // sm:
 // // * brute_force
-// // * w.lastIndexOf(substr, 0) === 0
+// // * prefix: w.lastIndexOf(substr, 0) === 0
 // // * (1) no update pool* (2) update pool (once outloop); (3) update pool (inner loop);
 // // * 2D_arr[each_char][result]
 // // * e.g. ["abc", "def"] -> 2D_arr

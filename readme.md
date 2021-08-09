@@ -3839,13 +3839,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## i exhaust 1st, j exhaust later, both_exhaust_end
+## (1) 1 on 1 exact_match (2) extend_match (3) false
 
-##### abc (i) -> long press -> aaabbbccc (j); i exhaust 1st, j exhaust later, both_exhaust_end
+##### abc (i) -> long press -> aaabbbccc (j); (1) 1 on 1 exact_match (2) extend_match (3) false
 
 - EG
 - SUMMA
-- i exhaust 1st, j exhaust later, both_exhaust_end;
 - (1) 1 on 1 exact_match (2) extend_match (look_back) (3) false
 - https://leetcode.com/problems/long-pressed-name
 
