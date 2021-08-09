@@ -3745,9 +3745,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # comparator
 
-## comparator; (1) a_sub vs b_sub (2) a vs b (3) ab vs ba
+## comparator; (1) a_sub vs b_sub (sub) (2) a vs b (individual) (3) ab vs ba (combo)
 
-##### ["dig1 8 1 5 1", "let1 art can"]; "8 1 5 1" vs "art can" (a_sub vs b_sub)
+##### ["dig1 8 1 5 1", "let1 art can"]; "8 1 5 1" vs "art can"; a_sub vs b_sub (sub)
 
 - EG
 - SUMMA
@@ -3756,7 +3756,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/503865437/
 - https://leetcode.com/problems/reorder-data-in-log-files/
 
-##### [1, 20, ...] -> 120 vs 201; ba vs ab (ab vs ba)
+##### [1, 20, ...] -> 120 vs 201; ab vs ba (combo)
 
 - EG
 - SUMMA
