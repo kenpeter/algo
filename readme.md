@@ -3459,125 +3459,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-# binary_search
-
-## l < r, r=mid
-
-##### search_insert_position; l < r, r=mid
-
-- EG
-- SUMMA
--
-- method 1:
-- l < r (r=len), l=mid+1, r=mid; == at_end (l < r, r=mid)
--
-- method 2:
-- l < r (r=len), l=mid+1, r=mid; == at_end (l < r, r=mid)
--
-- method 3:
-- l <= r (r=len), l=mid+1, r=mid-1; == at_end (l <= r, r=mid-1)
--
-- method 4:
-- l < r (r=len), l=mid+1, r=mid; == at_start (l < r, r=mid)
--
-- method 5:
-- l <= r (r=len-1), l = m + 1, r = m - 1; == at_end (l < r, r=mid)
--
-- https://leetcode.com/submissions/detail/475070091/
-- https://leetcode.com/problems/search-insert-position
-
-##### sqrtx; mid\*mid == tar;
-
-- EG
-- SUMMA
-- method 1:
-- ele_equal; ele_round_down; ele_too_big; ele_too_small; mid\*mid == tar; == at_start
--
-- method 2:
-- mid\*mid == tar; == at_start
--
-- https://leetcode.com/submissions/detail/475071694/
-- https://leetcode.com/problems/sqrtx
-
-##### perfect-square; l <= r, l = mid+1, r = mid-1
-
-- EG
-- SUMMA
-- method 1:
-- l <= r, l = mid+1, r = mid-1; == at_start (https://leetcode.com/problems/sqrtx)
--
-- https://leetcode.com/submissions/detail/474581846/
-- https://leetcode.com/problems/valid-perfect-square
-
-##### good_version or bad_version; l < r, r=mid
-
-- EG
-- SUMMA
--
-- method 1:
-- l < r, r=mid
--
-- https://leetcode.com/problems/first-bad-version
-
-##### guess higher or lower num; l < r, r=mid
-
-- EG
-- SUMMA
--
-- method 1:
-- l < r, r=mid
--
-- https://leetcode.com/problems/guess-number-higher-or-lower/
-
-##### 2sum; i_stable, j_loop (i < r, r=mid)
-
-- EG
-- SUMMA
-- i_stable, j_loop (i+1, len, tar-n[i])
-- https://leetcode.com/submissions/detail/475853031/
-- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
-
-##### same_ele_in_both_arrs(unique); l < r, r=mid
-
-- EG
-- SUMMA
-- set(arr1), sort(arr2); l < r, r=mid
-- https://leetcode.com/submissions/detail/475860815/
-- https://leetcode.com/problems/intersection-of-two-arrays/
-
-##### same_ele_in_both_arrs(repeated); l < r, r=mid (sync_move, ind+1)
-
-- EG
-- SUMMA
-- sort(ns1), sort(ns2); sync_move, ind+1
-- https://leetcode.com/submissions/detail/476110174/
-- https://leetcode.com/problems/intersection-of-two-arrays-ii/
-
-##### partial sort arr; binary_search in sort_part
-
-- EG
-- SUMMA
-- binary_search in sort_part
-- https://leetcode.com/submissions/detail/476986990/
-- https://leetcode.com/problems/search-in-rotated-sorted-array
-
-##### sort arr of 0, 1, 2; lower (swap mid), mid (swap mid), high (swap mid)
-
-- EG
-- SUMMA
--
-- lower (swap mid), mid (swap mid), high(swap mid)
-- NOTE: not binary search, but mid (explode/detect/test)
--
-- https://practice.geeksforgeeks.org/viewSol.php?subId=ef93198b6ad4ffc74cf627d7e52294e3&pid=702382&user=figo2476
-- https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 # 2_sort_subarr
 
 ## 2_sort_subarr
@@ -3771,14 +3652,131 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/search-suggestions-system
 
-##### suggest while typing; ind causes l, r to bound; use left (binary search)
+##### suggest while typing; ind causes l, r to bound (binary search)
 
 - EG
 - SUMMA
 - ind causes l, r to bound; use left (binary search)
-- products[l] < target (cover most, <= no), l = ind+1;
+- products[l] < target (\*) VS products[l] <= target
 -
 - https://leetcode.com/problems/search-suggestions-system
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## binary search; l < r, r=mid
+
+##### search_insert_position; l < r, r=mid
+
+- EG
+- SUMMA
+-
+- method 1:
+- l < r (r=len), l=mid+1, r=mid; == at_end (l < r, r=mid)
+-
+- method 2:
+- l < r (r=len), l=mid+1, r=mid; == at_end (l < r, r=mid)
+-
+- method 3:
+- l <= r (r=len), l=mid+1, r=mid-1; == at_end (l <= r, r=mid-1)
+-
+- method 4:
+- l < r (r=len), l=mid+1, r=mid; == at_start (l < r, r=mid)
+-
+- method 5:
+- l <= r (r=len-1), l = m + 1, r = m - 1; == at_end (l < r, r=mid)
+-
+- https://leetcode.com/submissions/detail/475070091/
+- https://leetcode.com/problems/search-insert-position
+
+##### sqrtx; mid\*mid == tar;
+
+- EG
+- SUMMA
+- method 1:
+- ele_equal; ele_round_down; ele_too_big; ele_too_small; mid\*mid == tar; == at_start
+-
+- method 2:
+- mid\*mid == tar; == at_start
+-
+- https://leetcode.com/submissions/detail/475071694/
+- https://leetcode.com/problems/sqrtx
+
+##### perfect-square; l <= r, l = mid+1, r = mid-1
+
+- EG
+- SUMMA
+- method 1:
+- l <= r, l = mid+1, r = mid-1; == at_start (https://leetcode.com/problems/sqrtx)
+-
+- https://leetcode.com/submissions/detail/474581846/
+- https://leetcode.com/problems/valid-perfect-square
+
+##### good_version or bad_version; l < r, r=mid
+
+- EG
+- SUMMA
+-
+- method 1:
+- l < r, r=mid
+-
+- https://leetcode.com/problems/first-bad-version
+
+##### guess higher or lower num; l < r, r=mid
+
+- EG
+- SUMMA
+-
+- method 1:
+- l < r, r=mid
+-
+- https://leetcode.com/problems/guess-number-higher-or-lower/
+
+##### 2sum; i_stable, j_loop (i < r, r=mid)
+
+- EG
+- SUMMA
+- i_stable, j_loop (i+1, len, tar-n[i])
+- https://leetcode.com/submissions/detail/475853031/
+- https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
+
+##### same_ele_in_both_arrs(unique); l < r, r=mid
+
+- EG
+- SUMMA
+- set(arr1), sort(arr2); l < r, r=mid
+- https://leetcode.com/submissions/detail/475860815/
+- https://leetcode.com/problems/intersection-of-two-arrays/
+
+##### same_ele_in_both_arrs(repeated); l < r, r=mid (sync_move, ind+1)
+
+- EG
+- SUMMA
+- sort(ns1), sort(ns2); sync_move, ind+1
+- https://leetcode.com/submissions/detail/476110174/
+- https://leetcode.com/problems/intersection-of-two-arrays-ii/
+
+##### partial sort arr; binary_search in sort_part
+
+- EG
+- SUMMA
+- binary_search in sort_part
+- https://leetcode.com/submissions/detail/476986990/
+- https://leetcode.com/problems/search-in-rotated-sorted-array
+
+##### sort arr of 0, 1, 2; lower (swap mid), mid (swap mid), high (swap mid)
+
+- EG
+- SUMMA
+-
+- lower (swap mid), mid (swap mid), high(swap mid)
+- NOTE: not binary search, but mid (explode/detect/test)
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=ef93198b6ad4ffc74cf627d7e52294e3&pid=702382&user=figo2476
+- https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231
 
 <br/>
 <br/>
@@ -4345,7 +4343,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## min is max strength
 
-##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:3, a:3, l:3/2, o:3/2, n:1}, so 1; min is strength (min is strength)
+##### LOOnBALxBALLpOOn; h {b:3, a:3, l:3, o:3, n:3} -> h {b:3, a:3, l:3/2, o:3/2, n:1}, so 1; min is strength (min is strength)
 
 - EG
 - SUMMA
@@ -4353,7 +4351,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/maximum-number-of-balloons
 
-##### h {b:3, a:3, l:3, o:3, n:3} -> h {b:2, a:2, l:1, o:1, n:2}, so 1; min is strength (rm_same_time)
+##### LOOnBALxBALLpOOn; h {b:3, a:3, l:3, o:3, n:3} -> h {b:2, a:2, l:1, o:1, n:2}, so 1; min is strength (rm_same_time)
 
 - EG
 - SUMMA
