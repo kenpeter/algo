@@ -92,7 +92,7 @@ var suggestedProducts = function (products, searchWord) {
   return res;
 };
 
-const p = ["abc", "acb", "bac"];
-const s = "acb";
+const p = ["mobile", "mouse", "moneypot", "monitor", "mousepad"];
+const s = "mouse";
 const out = suggestedProducts(p, s);
 console.log(out);
