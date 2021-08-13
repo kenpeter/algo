@@ -3667,27 +3667,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## binary search; l < r, r=mid
+## binary search
 
-##### search_insert_position; l < r, r=mid
+##### search_insert_position; binary search (combo of ind)
 
 - EG
 - SUMMA
 -
+- combo
+- l = 0 (stable)
+- r = len; r = len-1;
+-
+- ind = (l+r)/2; ind = l + (r-l)/2;
+-
+- l = ind+1 (stable)
+- r = ind; r = ind-1
+-
 - method 1:
-- l < r (r=len), l=mid+1, r=mid; == at_end (l < r, r=mid)
--
-- method 2:
-- l < r (r=len), l=mid+1, r=mid; == at_end (l < r, r=mid)
--
-- method 3:
-- l <= r (r=len), l=mid+1, r=mid-1; == at_end (l <= r, r=mid-1)
--
-- method 4:
-- l < r (r=len), l=mid+1, r=mid; == at_start (l < r, r=mid)
--
-- method 5:
-- l <= r (r=len-1), l = m + 1, r = m - 1; == at_end (l < r, r=mid)
+- l = 0, r=len; ind = (l+r)/2; l = ind+1, r = ind;
 -
 - https://leetcode.com/submissions/detail/475070091/
 - https://leetcode.com/problems/search-insert-position
