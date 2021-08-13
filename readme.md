@@ -3674,17 +3674,26 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- combo
+- (1)
 - l = 0 (stable)
-- r = len; r = len-1;
+- r = len; r = len-1; (outbound / inbound)
 -
-- ind = (l+r)/2; ind = l + (r-l)/2;
+- (2)
+- loop(l < r); loop(l <= r) (outbound / inbound)
 -
+- (3)
+- ind = (l+r)/2; ind = l + (r-l)/2; (!matter / !matter)
+-
+- (4)
 - l = ind+1 (stable)
-- r = ind; r = ind-1
+- r = ind; r = ind-1 (include / exclude)
+-
 -
 - method 1:
-- l = 0, r=len; ind = (l+r)/2; l = ind+1, r = ind;
+- outbound -> outbound -> !mastter -> include
+-
+- method 2:
+- inbound -> inbound -> !mastter -> exclude
 -
 - https://leetcode.com/submissions/detail/475070091/
 - https://leetcode.com/problems/search-insert-position
