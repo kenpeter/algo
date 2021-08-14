@@ -3669,7 +3669,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## binary search
 
-##### search_insert_position; binary search (combo of ind)
+##### search_insert_position; binary search (outbound vs inbound)
 
 - EG
 - SUMMA
@@ -3688,6 +3688,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - l = ind+1 (stable)
 - r = ind; r = ind-1 (include / exclude)
 -
+- left is insert; ind is exact
+-
 -
 - method 1:
 - outbound -> outbound -> !mastter -> include
@@ -3698,27 +3700,28 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/475070091/
 - https://leetcode.com/problems/search-insert-position
 
-##### sqrtx; mid\*mid == tar;
+##### find square root of 8; binary search (ind\*ind vs tar)
 
 - EG
 - SUMMA
 - method 1:
-- ele_equal; ele_round_down; ele_too_big; ele_too_small; mid\*mid == tar; == at_start
+- binary search (ind\*ind vs tar)
 -
 - method 2:
-- mid\*mid == tar; == at_start
+- natural bottom up
 -
-- https://leetcode.com/submissions/detail/475071694/
 - https://leetcode.com/problems/sqrtx
 
-##### perfect-square; l <= r, l = mid+1, r = mid-1
+##### is 16 a perfect square; binary search (ind\*ind vs tar)
 
 - EG
 - SUMMA
 - method 1:
-- l <= r, l = mid+1, r = mid-1; == at_start (https://leetcode.com/problems/sqrtx)
+- binary search (ind\*ind vs tar)
 -
-- https://leetcode.com/submissions/detail/474581846/
+- method 2:
+- natural bottom up
+-
 - https://leetcode.com/problems/valid-perfect-square
 
 ##### good_version or bad_version; l < r, r=mid
