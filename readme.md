@@ -3700,24 +3700,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/475070091/
 - https://leetcode.com/problems/search-insert-position
 
-##### find square root of 8; binary search (ind\*ind vs tar)
+##### find square root of 8; ind\*ind is square
 
 - EG
 - SUMMA
 - method 1:
-- binary search (ind\*ind vs tar)
+- ind\*ind is square (binary search)
 -
 - method 2:
 - natural bottom up
 -
 - https://leetcode.com/problems/sqrtx
 
-##### is 16 a perfect square; binary search (ind\*ind vs tar)
+##### is 16 a perfect square; ind\*ind is square
 
 - EG
 - SUMMA
 - method 1:
-- binary search (ind\*ind vs tar)
+- ind\*ind is square (binary search)
 -
 - method 2:
 - natural bottom up
