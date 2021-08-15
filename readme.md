@@ -3673,8 +3673,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - left is insert;
 - ind is exact;
-- ind not important; l and r smaller smaller, ind controls them
-- l and r can con, even cross (e.g. recur)
+- aim to find l and r bountry, ind !important
+- after l and r cross, can continue
+- [1, 2, 3, 4, 5, 6], tar = 4 -> [t, t, t, f, f, f] -> l partition, r partition -> cross
 
 ##### search_insert_position; binary search (outbound vs inbound)
 
@@ -3729,35 +3730,38 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/valid-perfect-square
 
-##### [g, g, g, g, b, b, b]; l partition, r partition
+##### [1, 2, 3, 4, 5_tar, 6, 7] -> [g, g, g, g, b, b, b] -> l partition, r partition -> cross
 
 - EG
 - SUMMA
 -
 - method 1:
-- l partition, r partition; when_corss, separator
-- last good vs first bad
+- [1, 2, 3, 4, 5_tar, 6, 7] -> [g, g, g, g, b, b, b] -> l partition, r partition -> cross
+- last good vs 1st bad
 -
 - method 2:
 - natural bottom up
 -
 - https://leetcode.com/problems/first-bad-version
 
-##### pick > guess or pick < guess; binary search (~= bad version)
+##### pick > guess or pick < guess; ~= first bad version
 
 - EG
 - SUMMA
 -
-- binary search (~= bad version)
+- ~= first bad version
 -
 - https://leetcode.com/problems/guess-number-higher-or-lower/
 
-##### 2sum; i_stable, j_loop (i < r, r=mid)
+##### 2sum (sorted); ele_2 = tar - ele_1
 
 - EG
 - SUMMA
-- i_stable, j_loop (i+1, len, tar-n[i])
-- https://leetcode.com/submissions/detail/475853031/
+-
+- ele_2 = tar - ele_1, binary search ele_2
+- bs(arr, l_dynamic, r, tar)
+-
+- https://leetcode.com/submissions/detail/538754691/
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
 ##### same_ele_in_both_arrs(unique); l < r, r=mid
