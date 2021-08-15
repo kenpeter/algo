@@ -3688,7 +3688,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - l = ind+1 (stable)
 - r = ind; r = ind-1 (include / exclude)
 -
-- left is insert; ind is exact
+- left is insert; ind is exact; l and r can con, even cross
 -
 -
 - method 1:
