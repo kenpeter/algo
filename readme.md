@@ -3753,13 +3753,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/guess-number-higher-or-lower/
 
-##### 2sum (sorted); ele_i = tar - ns[i] (outloop i; inloop, l_smaller)
+##### 2sum (sorted); ele_i = tar - ns[i], bs(arr, l_smaller, r, tar)
 
 - EG
 - SUMMA
 -
 - ele_i = tar - ns[i] (pool of ele, binary search)
-- outloop i; inloop, l_smaller
+- bs(arr, l_smaller, r, tar)
 -
 - https://leetcode.com/submissions/detail/538754691/
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
@@ -3770,7 +3770,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - ele_i = tar - ns[i] (pool of ele, binary search)
-- outloop i; inloop, l_smaller
+- bs(arr, l_smaller, r, tar)
 -
 - https://leetcode.com/submissions/detail/538754691/
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
