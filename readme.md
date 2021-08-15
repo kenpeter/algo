@@ -3743,13 +3743,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/first-bad-version
 
-##### guess higher or lower num; l < r, r=mid
+##### pick > guess or pick < guess; binary search (~= bad version)
 
 - EG
 - SUMMA
 -
-- method 1:
-- l < r, r=mid
+- binary search (~= bad version)
 -
 - https://leetcode.com/problems/guess-number-higher-or-lower/
 
