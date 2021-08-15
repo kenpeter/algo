@@ -3669,6 +3669,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## binary search
 
+##### summary binary search
+
+- left is insert;
+- ind is exact;
+- ind not important; l and r smaller smaller, ind controls them
+- l and r can con, even cross (e.g. recur)
+
 ##### search_insert_position; binary search (outbound vs inbound)
 
 - EG
@@ -3687,8 +3694,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - (4)
 - l = ind+1 (stable)
 - r = ind; r = ind-1 (include / exclude)
--
-- left is insert; ind is exact; l and r can con, even cross
 -
 -
 - method 1:
@@ -3724,13 +3729,17 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/valid-perfect-square
 
-##### good_version or bad_version; l < r, r=mid
+##### [g, g, g, g, b, b, b]; l partition, r partition
 
 - EG
 - SUMMA
 -
 - method 1:
-- l < r, r=mid
+- l partition, r partition; when_corss, separator
+- last good vs first bad
+-
+- method 2:
+- natural bottom up
 -
 - https://leetcode.com/problems/first-bad-version
 
