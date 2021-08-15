@@ -3753,23 +3753,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/guess-number-higher-or-lower/
 
-##### 2sum (sorted); ele_2 = tar - ele_1
+##### 2sum (sorted); ele_i = tar - ns[i] (arr1 binary_search arr2)
 
 - EG
 - SUMMA
 -
-- ele_2 = tar - ele_1, binary search ele_2
+- ele_i = tar - ns[i] (pool of ele, binary search)
 - bs(arr, l_dynamic, r, tar)
 -
 - https://leetcode.com/submissions/detail/538754691/
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### same_ele_in_both_arrs(unique); l < r, r=mid
+##### ns1 = [1, 1, 2, 2], ns2 = [2, 2]; ns1_unique (arr1 binary_search arr2)
 
 - EG
 - SUMMA
-- set(arr1), sort(arr2); l < r, r=mid
-- https://leetcode.com/submissions/detail/475860815/
+- ns1_unique (arr1 binary_search arr2)
+-
+- https://leetcode.com/submissions/detail/538876175/
 - https://leetcode.com/problems/intersection-of-two-arrays/
 
 ##### same_ele_in_both_arrs(repeated); l < r, r=mid (sync_move, ind+1)
