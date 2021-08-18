@@ -3764,7 +3764,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/538754691/
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### 2sum (sorted); ele_i = tar - ns[i] (arr1 binary_search arr2)
+##### 2sum (sorted); ele_i = tar - ns[i] (arr1 binary_search arr2, 2sum)
 
 - EG
 - SUMMA
@@ -3775,7 +3775,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/538754691/
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### ns1 = [1, 1, 2, 2], ns2 = [2, 2]; ns1_unique (arr1 binary_search arr2)
+##### arr1, arr2, find intersection eles, unique; (arr1 binary_search arr2, intersect)
 
 - EG
 - SUMMA
@@ -3784,12 +3784,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/538876175/
 - https://leetcode.com/problems/intersection-of-two-arrays/
 
-##### same_ele_in_both_arrs(repeated); l < r, r=mid (sync_move, ind+1)
+##### arr1, arr2, find intersection eles, repeated; (binary search: already_found, non_found_1st)
 
 - EG
 - SUMMA
-- sort(ns1), sort(ns2); sync_move, ind+1
-- https://leetcode.com/submissions/detail/476110174/
+- arr_long, arr_short
+- binary search ind + 1 (already_found)
+- binary search --ind (non_found_1st)
+-
+- https://leetcode.com/submissions/detail/539892078/
 - https://leetcode.com/problems/intersection-of-two-arrays-ii/
 
 ##### partial sort arr; binary_search in sort_part
