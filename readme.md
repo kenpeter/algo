@@ -3753,7 +3753,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/guess-number-higher-or-lower/
 
-##### 2sum (sorted); ele_i = tar - ns[i], bs(arr, l_smaller, r, tar)
+##### 2sum (sorted); ele_i = tar - ns[i] (arr1 binary_search arr2, l_dymaic, r_dynamic)
 
 - EG
 - SUMMA
