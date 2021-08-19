@@ -3753,7 +3753,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/guess-number-higher-or-lower/
 
-##### 2sum (sorted); ele_i = tar - ns[i] (arr1 binary_search arr2, l_dymaic, r_dynamic)
+##### 2sum (sorted); ele_i = tar - ns[i] (arr1 binary_search arr2, l_dynamic, r_dynamic)
 
 - EG
 - SUMMA
@@ -3795,13 +3795,19 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/539892078/
 - https://leetcode.com/problems/intersection-of-two-arrays-ii/
 
-##### partial sort arr; binary_search in sort_part
+##### [0, 1, 2, 3, 4] -> rotate (shift) at pivot 2 -> [2, 3, 4, 0, 1]; (rotate arr -> 2 partition -> binary search; snapshot of trend)
 
 - EG
 - SUMMA
-- binary_search in sort_part
-- https://leetcode.com/submissions/detail/476986990/
-- https://leetcode.com/problems/search-in-rotated-sorted-array
+-
+- what is rotate? rotate == shift; pivot push to start
+- roate arr -> 2 partition -> binary search (2 partition)
+- l -> ind -> r; [l, ind) (snapshot of trend, same_trend or cross_trend)
+- l -> ind -> r; (ind, r] (snapshot of trend, same_trend or cross_trend)
+- l <-> tar <-> r (more constraint to ind)
+-
+- https://leetcode.com/submissions/detail/540921981/
+- https://leetcode.com/problems/search-in-rotated-sorted-array/
 
 ##### sort arr of 0, 1, 2; lower (swap mid), mid (swap mid), high (swap mid)
 
