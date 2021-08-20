@@ -3847,7 +3847,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/541256024/
 - https://leetcode.com/problems/subarray-sum-equals-k
 
-##### 2sum; 2_sum: ele_2 + ele_1 = tar; hash (direct_prev) -> hash (related_prev)
+##### 2sum (once out); 2_sum: ele_2 + ele_1 = tar; hash (direct_prev) -> hash (related_prev)
+
+- EG
+- SUMMA
+- 2_sum: ele_2 + ele_1 = tar
+- hash (direct_prev) -> hash (related_prev)
+- https://leetcode.com/problems/two-sum
+
+##### 2sum (repeated, all pair); brute_force
 
 - EG
 - SUMMA
