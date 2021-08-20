@@ -3809,13 +3809,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/540921981/
 - https://leetcode.com/problems/search-in-rotated-sorted-array/
 
-##### sort arr of 0, 1, 2; lower (swap mid), mid (swap mid), high (swap mid)
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## limited ele
+
+##### sort [0, 0, 2, 2, 1, 1] (only 0, 1, 2) -> [0, 0, 1, 1, 2, 2]; limited_ele
 
 - EG
 - SUMMA
 -
-- lower (swap mid), mid (swap mid), high(swap mid)
-- NOTE: not binary search, but mid (explode/detect/test)
+- [0, 0, 2, 2, 1, 1] -> build_from_ground (hash) -> [0, 0, 1, 1, 2, 2] (limited_ele)
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=ef93198b6ad4ffc74cf627d7e52294e3&pid=702382&user=figo2476
 - https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231
