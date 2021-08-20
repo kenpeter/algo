@@ -3825,12 +3825,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## equal k problem
 
-##### [-2, -1, 0, 4, 1, 2], subarr == k; sum up and down
+##### [-2, -1, 0, 4, 1, 2], find all subarr == k; brute_force, single_ele is subarr, extend is subarr
 
 - EG
 - SUMMA
 -
 - burte_force; single_ele is subarr, extend is subarr; sum up and down
+-
+- https://leetcode.com/submissions/detail/541256024/
+- https://leetcode.com/problems/subarray-sum-equals-k
+
+##### [-2, -1, 0, 4, 1, 2], find all subarr == k; 2_diff: pre_sum_2 - pre_sum_1 = tar
+
+- EG
+- SUMMA
+-
+- 2_diff: pre_sum_2 - pre_sum_1 = tar
+- 2_sum: ele_2 + ele_1 = tar
+- hash (direct_prev) -> hash (related_prev)
 -
 - https://leetcode.com/submissions/detail/541256024/
 - https://leetcode.com/problems/subarray-sum-equals-k
