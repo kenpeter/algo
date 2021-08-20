@@ -3855,7 +3855,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - hash (direct_prev) -> hash (related_prev)
 - https://leetcode.com/problems/two-sum
 
-##### 2sum (repeated, all pair); brute_force
+##### 2sum (repeated, find all pair); brute_force
+
+- EG
+- SUMMA
+- brute_force
+- i_stable, j_loop
+- https://leetcode.com/problems/two-sum
+
+##### 2sum (repeated, find all pair); hash (direct_prev) -> has (releated_prev)
 
 - EG
 - SUMMA
