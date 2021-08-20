@@ -2460,16 +2460,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=8667e105a253bc4200a06c456b6b0142&pid=701236&user=figo2476
 
-##### subarray_sum == k (+/-); i_start, j_start (extending); range
-
-- EG
-- SUMMA
--
-- 2pt, i_start (stable), j_start (extending); brute_force; cannot_exit_early (+/-)
--
-- https://leetcode.com/problems/subarray-sum-equals-k
-- https://leetcode.com/submissions/detail/469373460/
-
 ##### consecutive chars len >= 3; i_start, j_start (extending); range
 
 - EG
@@ -3826,6 +3816,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=ef93198b6ad4ffc74cf627d7e52294e3&pid=702382&user=figo2476
 - https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## equal k problem
+
+##### [-2, -1, 0, 4, 1, 2], subarr == k; sum up and down
+
+- EG
+- SUMMA
+-
+- burte_force; single_ele is subarr, extend is subarr; sum up and down
+-
+- https://leetcode.com/submissions/detail/541256024/
+- https://leetcode.com/problems/subarray-sum-equals-k
 
 <br/>
 <br/>
