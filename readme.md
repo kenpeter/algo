@@ -3871,6 +3871,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - hash (direct_prev) -> hash (related_prev)
 - https://leetcode.com/problems/two-sum
 
+##### https://www.geeksforgeeks.org/given-two-unsorted-arrays-find-pairs-whose-sum-x/
+
 <br/>
 <br/>
 <br/>
