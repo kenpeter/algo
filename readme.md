@@ -3871,6 +3871,23 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - hash (direct_prev) -> hash (related_prev)
 - https://leetcode.com/problems/two-sum
 
+##### 2sum (repeated, find distinct pair); i_start, j_end + skip_loop (remove repeated)
+
+- EG
+- SUMMA
+- i_start, j_end + skip_loop (remove repeated)
+- https://www.geeksforgeeks.org/count-distinct-pairs-with-given-sum/
+- https://hjweds.gitbooks.io/leetcode/content/two-pointers/2-sum-all-pair-ii.html
+
+##### 2sum (repeated, find distinct pair); same_non_fresh + same_non_fresh == tar -> unique_apir; non_fresh + fresh -> uniqu_pair
+
+- EG
+- SUMMA
+- same_non_fresh + same_non_fresh == tar -> unique_apir; non_fresh + fresh -> uniqu_pair
+- hash (direct_prev) -> has (releated_prev)
+- https://www.geeksforgeeks.org/count-distinct-pairs-with-given-sum/
+- https://hjweds.gitbooks.io/leetcode/content/two-pointers/2-sum-all-pair-ii.html
+
 ##### https://www.geeksforgeeks.org/given-two-unsorted-arrays-find-pairs-whose-sum-x/
 
 <br/>
