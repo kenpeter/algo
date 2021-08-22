@@ -3863,7 +3863,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - i_stable, j_loop
 - https://leetcode.com/problems/two-sum
 
-##### 2sum (repeated, find all pair); hash (direct_prev) -> has (releated_prev)
+##### 2sum (repeated, find all pair); hash (direct_prev) -> has (related_prev)
 
 - EG
 - SUMMA
@@ -3896,7 +3896,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## prefix sum
 
-##### [4,5,0,-2,-3,1], k = 5 -> (presum) + (presum%mod control range)
+##### [4,5,0,-2,-3,1], k = 5 -> (presum) + (presum%mod controls range)
 
 - EG
 - SUMMA
@@ -3905,6 +3905,17 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/542285893/
 - https://leetcode.com/problems/subarray-sums-divisible-by-k
+
+##### [-2, -1, 0, 4, 1, 2], find all subarr == k; (presum) + (2 diff)
+
+- EG
+- SUMMA
+-
+- (presum) + (2 diff)
+- hash (direct_prev) -> hash (related_prev)
+-
+- https://leetcode.com/submissions/detail/541256024/
+- https://leetcode.com/problems/subarray-sum-equals-k
 
 ##### https://leetcode.com/discuss/general-discussion/563022/prefix-sum-problems
 
