@@ -3896,6 +3896,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## prefix sum
 
+##### [4,5,0,-2,-3,1], k = 5 -> (presum) + (presum%mod control range)
+
+- EG
+- SUMMA
+- (presum) + (presum%mod control range)
+- ind < 0 ? ind + tar
+-
+- https://leetcode.com/submissions/detail/542285893/
+- https://leetcode.com/problems/subarray-sums-divisible-by-k
+
 ##### https://leetcode.com/discuss/general-discussion/563022/prefix-sum-problems
 
 <br/>
