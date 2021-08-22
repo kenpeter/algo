@@ -3896,11 +3896,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## prefix sum
 
-##### [4,5,0,-2,-3,1], k = 5 -> (presum) + (presum%mod controls range)
+##### [4,5,0,-2,-3,1], k = 5 -> (presum) + (presum%mod controls range) + hash(counter)
 
 - EG
 - SUMMA
-- (presum) + (presum%mod control range)
+- (presum) + (presum%mod controls range) + hash(counter)
 - ind < 0 ? ind + tar
 -
 - https://leetcode.com/submissions/detail/542285893/
@@ -3918,6 +3918,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-sum-equals-k
 
 ##### https://leetcode.com/discuss/general-discussion/563022/prefix-sum-problems
+
+https://leetcode.com/problems/continuous-subarray-sum/
+https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
+https://leetcode.com/problems/binary-subarrays-with-sum/
+https://leetcode.com/problems/count-number-of-nice-subarrays/
+https://leetcode.com/problems/matrix-block-sum/
 
 <br/>
 <br/>
