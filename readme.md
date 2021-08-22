@@ -3805,9 +3805,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## limited ele
+## limited ele -> build_from_groud
 
-##### sort [0, 0, 2, 2, 1, 1] (only 0, 1, 2) -> [0, 0, 1, 1, 2, 2]; limited_ele
+##### sort [0, 0, 2, 2, 1, 1] (only 0, 1, 2) -> [0, 0, 1, 1, 2, 2]; limited_ele -> build_from_ground
 
 - EG
 - SUMMA
@@ -3888,7 +3888,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://www.geeksforgeeks.org/count-distinct-pairs-with-given-sum/
 - https://hjweds.gitbooks.io/leetcode/content/two-pointers/2-sum-all-pair-ii.html
 
-##### https://www.geeksforgeeks.org/given-two-unsorted-arrays-find-pairs-whose-sum-x/
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## prefix sum
+
+##### https://leetcode.com/discuss/general-discussion/563022/prefix-sum-problems
 
 <br/>
 <br/>
