@@ -64,3 +64,15 @@ var checkSubarraySum = function (ns, tar) {
 // const tar = 7;
 // const out = checkSubarraySum(ns, tar);
 // console.log(out);
+
+// // met again 4(1), 7(2); too short
+// const ns = [4, 4, 7];
+// const tar = 7;
+// const out = checkSubarraySum(ns, tar);
+// console.log(out);
+
+//
+const ns = [23, 2, 4, 6, 7];
+const tar = 6;
+const out = checkSubarraySum(ns, tar);
+console.log(out);
