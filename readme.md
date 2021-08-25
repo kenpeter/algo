@@ -3799,6 +3799,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/540921981/
 - https://leetcode.com/problems/search-in-rotated-sorted-array/
 
+##### binary search unknown size; step\*2
+
+- EG
+- SUMMA
+-
+- step = 10;
+- while(true), binary search, !found, step\*2
+-
+- https://stackoverflow.com/questions/16513429/binary-search-on-unknown-size-array
+
 <br/>
 <br/>
 <br/>
