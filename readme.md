@@ -3912,7 +3912,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - why map(0, 1)?
-- [0, 0, 7], tar = 7 --> sum - tar = 0_ind
+- [0, 0, 7], tar = 7 --> sum (all_the_way) - tar = 0_ind
 -
 - hash (related_met_again = presum_diff) + hash (freq)
 -
@@ -3956,7 +3956,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ##### https://leetcode.com/discuss/general-discussion/563022/prefix-sum-problems
 
-https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
+https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/ (https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/325-maximum-size-subarray-sum-equals-k.html)
 https://leetcode.com/problems/binary-subarrays-with-sum/
 https://leetcode.com/problems/count-number-of-nice-subarrays/
 https://leetcode.com/problems/matrix-block-sum/
