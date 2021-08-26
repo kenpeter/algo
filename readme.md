@@ -3916,20 +3916,43 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/542285893/
 - https://leetcode.com/problems/subarray-sums-divisible-by-k
 
-##### [-2, -1, 0, 4, 1, 2], find all subarr == k; (presum) + (2 diff)
+##### [-2, -1, 0, 4, 1, 2], all subarr == k; hash(related_met_again = presum_diff) + hash (freq)
 
 - EG
 - SUMMA
 -
-- (presum) + (2 diff)
-- hash (direct_prev) -> hash (related_prev)
+- hash (related_met_again = presum_diff) + hash (freq)
 -
 - https://leetcode.com/submissions/detail/541256024/
 - https://leetcode.com/problems/subarray-sum-equals-k
 
+##### mod = 7, [0, 7, 8] -> presum [0, 7, 15]; hash(direct_met_again = presum%mod) + hash(freq)
+
+- EG
+- SUMMA
+-
+- why map(0, -1)?
+- mod = 7, [7], 0_ind - (-1) = 1_bad
+- mod = 7, [0, 7], 1_ind - (-1) = 2_good
+-
+- overwritten?
+- [1, 1, 0_will_be_overwritten] -> presum: [1, 2_overwritten, 2_overwritten]
+-
+- mod?
+- mod <-> mutiply
+- mod control ind
+-
+- direct_met_again = presum%k?
+- hash(direct_met_again = presum%mod) + hash(freq)
+- s2%k - s1%k = 0 (direct_met_again) --> (s2-s1)%k = 0
+-
+- why distance > 1?
+- 2_ind - 1_ind = 1_bad; 3_ind - 1_ind = 2_good;
+-
+- https://leetcode.com/problems/continuous-subarray-sum
+
 ##### https://leetcode.com/discuss/general-discussion/563022/prefix-sum-problems
 
-https://leetcode.com/problems/continuous-subarray-sum/
 https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
 https://leetcode.com/problems/binary-subarrays-with-sum/
 https://leetcode.com/problems/count-number-of-nice-subarrays/
