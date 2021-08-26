@@ -3904,19 +3904,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## prefix sum
+## ind = presum diff; ind = presum%mod
 
-##### [4,5,0,-2,-3,1], k = 5 -> (presum) + (presum%mod controls range) + hash(counter)
-
-- EG
-- SUMMA
-- (presum) + (presum%mod controls range) + hash(counter)
-- ind < 0 ? ind + tar
--
-- https://leetcode.com/submissions/detail/542285893/
-- https://leetcode.com/problems/subarray-sums-divisible-by-k
-
-##### [-2, -1, 0, 4, 1, 2], all subarr == k; hash(related_met_again = presum_diff) + hash (freq)
+##### k = 7, [0, 7, 8], how_many = k?; hash(ind = presum_diff) + hash (freq)
 
 - EG
 - SUMMA
@@ -3926,7 +3916,17 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/541256024/
 - https://leetcode.com/problems/subarray-sum-equals-k
 
-##### mod = 7, [0, 7, 8] -> presum [0, 7, 15]; hash(direct_met_again = presum%mod) + hash(freq)
+##### mod = 7, [0, -7, -8], how_many%7?; hash(ind = presum%mod) + hash (freq)
+
+- EG
+- SUMMA
+- hash(ind = presum%mod) + hash (freq)
+- ind = presum%mod < 0, + mod
+-
+- https://leetcode.com/submissions/detail/542285893/
+- https://leetcode.com/problems/subarray-sums-divisible-by-k
+
+##### mod = 7, [0, 7, 8], >= 2 ele % 7?; hash(ind = presum%mod) + hash(freq)
 
 - EG
 - SUMMA
