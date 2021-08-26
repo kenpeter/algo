@@ -3906,10 +3906,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## ind = presum diff; ind = presum%mod
 
-##### k = 7, [0, 7, 8], how_many = k?; hash(ind = presum_diff) + hash (freq)
+##### tar = 7, [0, 7, 8], how_many = tar?; hash(ind = presum_diff) + hash (freq)
 
 - EG
 - SUMMA
+-
+- why map(0, 1)?
+- [0, 0, 7], tar = 7 --> sum - tar = 0_ind
 -
 - hash (related_met_again = presum_diff) + hash (freq)
 -
@@ -3926,12 +3929,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/542285893/
 - https://leetcode.com/problems/subarray-sums-divisible-by-k
 
-##### mod = 7, [0, 7, 8], >= 2 ele % 7?; hash(ind = presum%mod) + hash(freq)
+##### mod = 7, [0, 7, 8], >= 2 ele % 7?; hash(ind = presum%mod) + hash(posi)
 
 - EG
 - SUMMA
 -
-- why map(0, -1)?
+- why map(0, -1_posi)?
 - mod = 7, [7], 0_ind - (-1) = 1_bad
 - mod = 7, [0, 7], 1_ind - (-1) = 2_good
 -
@@ -3944,7 +3947,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - direct_met_again = presum%k?
 - hash(direct_met_again = presum%mod) + hash(freq)
-- s2%k - s1%k = 0 (direct_met_again) --> (s2-s1)%k = 0
+- s2%mod - s1%mod = 0 (direct_met_again) --> (s2-s1)%mod = 0
 -
 - why distance > 1?
 - 2_ind - 1_ind = 1_bad; 3_ind - 1_ind = 2_good;
