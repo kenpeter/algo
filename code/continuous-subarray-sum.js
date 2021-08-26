@@ -1,23 +1,26 @@
-// sm: (presum) + (presum%mod controls range) + hash(posi)
 var checkSubarraySum = function (ns, tar) {
   const m = new Map();
   let s = 0;
 
-  // once and once only
+  // e.g.
+  // * tar = 7; [7], 0_ind - (-1) = 1_bad (single num)
+  // * tar = 7; [0, 7], 1_ind - (-1) = 2_good (all the way)
   m.set(0, -1);
 
   for (let i = 0; i < ns.length; ++i) {
     const n = ns[i];
     s = s + n;
 
+    // mod control ind
     let ind = s % tar;
 
-    // * meet again, potential subarr % tar
-    // * never set
+    // hit once (meet again)
     if (m.get(ind) !== undefined) {
+      // e.g.
+      // * posi: ind_1 - ind_0 = 1_bad;
+      // * posi: ind_2 - ind_0 = 1_good
       if (i - m.get(ind) > 1) return true;
     } else {
-      // only fresh added
       m.set(ind, i);
     }
   }
@@ -71,8 +74,13 @@ var checkSubarraySum = function (ns, tar) {
 // const out = checkSubarraySum(ns, tar);
 // console.log(out);
 
-//
-const ns = [23, 2, 4, 6, 7];
-const tar = 6;
+// //
+// const ns = [23, 2, 4, 6, 7];
+// const tar = 6;
+// const out = checkSubarraySum(ns, tar);
+// console.log(out);
+
+const ns = [23, 2, 4, 6, 6];
+const tar = 7;
 const out = checkSubarraySum(ns, tar);
 console.log(out);
