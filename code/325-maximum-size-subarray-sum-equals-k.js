@@ -9,13 +9,16 @@ const maxSubArrayLen = (ns, k) => {
 
     // (1) all the way
     if (s === k) {
-      max = Math.max(max, i + 1); // e.g. 3_ind, len = 4
+      // * (1) all the way: tar_len = 1_ind - 0_ind + 1;
+      // * (2) presum diff: tar_len = 3_ind - 1_ind;
+      max = Math.max(max, i + 1);
     }
 
     // (2) presum diff
     let ind = s - k;
     if (m.has(ind)) {
-      // 3_ind - 1_ind = 2_ele_len
+      // * (1) all the way: ele_len = 1_ind - 0_ind + 1;
+      // * (2) presum diff: ele_len = 3_ind - 1_ind;
       max = Math.max(max, i - m.get(s - k));
     }
 

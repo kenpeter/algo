@@ -3889,12 +3889,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://www.geeksforgeeks.org/count-distinct-pairs-with-given-sum/
 - https://hjweds.gitbooks.io/leetcode/content/two-pointers/2-sum-all-pair-ii.html
 
-##### 2sum (repeated, find distinct pair); same_non_fresh + same_non_fresh == tar -> unique_apir; non_fresh + fresh -> uniqu_pair
+##### 2sum (repeated, find distinct pair); a+a = tar (a once) OR a+b = tar (a many times, but b once), hash (freq)
 
 - EG
 - SUMMA
-- same_non_fresh + same_non_fresh == tar -> unique_apir; non_fresh + fresh -> uniqu_pair
-- hash (direct_prev) -> has (releated_prev)
+- a+a = tar (a once) OR a+b = tar (a many times, but b once), hash (freq)
+-
 - https://www.geeksforgeeks.org/count-distinct-pairs-with-given-sum/
 - https://hjweds.gitbooks.io/leetcode/content/two-pointers/2-sum-all-pair-ii.html
 
