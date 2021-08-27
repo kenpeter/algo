@@ -3906,7 +3906,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## ind = presum diff; ind = presum%mod
 
-##### tar = 7, [0, 7, 8], how_many = tar?; hash(ind = presum_diff) + hash (freq)
+##### tar = 7, [0, 7, 8], how_many = tar?; all_the_way + hash(ind = presum_diff) + hash (freq)
 
 - EG
 - SUMMA
@@ -3914,10 +3914,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - why map(0, 1)?
 - [0, 0, 7], tar = 7 --> sum (all_the_way) - tar = 0_ind
 -
-- hash (related_met_again = presum_diff) + hash (freq)
+- all_the_way + hash (ind = presum_diff) + hash (freq)
 -
 - https://leetcode.com/submissions/detail/541256024/
 - https://leetcode.com/problems/subarray-sum-equals-k
+
+##### tar = 7, [0, 7, 8], max_len (== tar); all_the_way + hash(ind = presum_diff) + hash (posi)
+
+- EG
+- SUMMA
+-
+- all_the_way + hash(ind = presum_diff) + hash (posi)
+- 3_ind - 1_ind = 2_ele_len
+-
+- https://leetcode.com/problems/maximum-size-subarray-sum-equals-k
+- https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/325-maximum-size-subarray-sum-equals-k.html
 
 ##### mod = 7, [0, -7, -8], how_many%7?; hash(ind = presum%mod) + hash (freq)
 
@@ -3945,18 +3956,17 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - mod <-> mutiply
 - mod control ind
 -
-- direct_met_again = presum%k?
-- hash(direct_met_again = presum%mod) + hash(freq)
+- ind = presum%k?
+- hash(ind = presum%mod) + hash(freq)
 - s2%mod - s1%mod = 0 (direct_met_again) --> (s2-s1)%mod = 0
 -
 - why distance > 1?
-- 2_ind - 1_ind = 1_bad; 3_ind - 1_ind = 2_good;
+- 3_ind - 1_ind = 2_ele_len (>= 2 ele)
 -
 - https://leetcode.com/problems/continuous-subarray-sum
 
 ##### https://leetcode.com/discuss/general-discussion/563022/prefix-sum-problems
 
-https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/ (https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/325-maximum-size-subarray-sum-equals-k.html)
 https://leetcode.com/problems/binary-subarrays-with-sum/
 https://leetcode.com/problems/count-number-of-nice-subarrays/
 https://leetcode.com/problems/matrix-block-sum/
