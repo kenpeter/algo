@@ -3947,6 +3947,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - all_the_way vs hash(ind = presum%mod); hash (freq)
 -
+- hash (freq)?
+- hash (direct presum%mod)
+- hash (sum_nono, presum%mod -> range, sum -> no_range)
+-
 - ind < 0?
 - ind = presum%mod < 0, + mod
 -
@@ -3960,9 +3964,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - all_the_way vs hash(ind = presum%mod); hash(posi)
 -
-- map(0, -1_posi)?
-- all_the_way: len = 3_ind + 1
-- presum diff: 3_ind - 1_ind = 2_len
+- hash (freq)?
+- hash (direct presum%mod)
+- hash (sum_nono, presum%mod -> range, sum -> no_range)
 -
 - overwritten?
 - [1, 1, 0_will_be_overwritten] -> presum: [1, 2_overwritten, 2_overwritten]
@@ -3971,12 +3975,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - mod <-> mutiply
 - mod control ind
 -
-- ind = presum%k?
-- hash(ind = presum%mod)
+- ind = presum%mod?
 - s2%mod - s1%mod = 0 (met again) --> (s2-s1)%mod = 0
 -
 - why distance > 1?
-- all_the_way: len = 3_ind + 1
+- why map(0, -1_posi)?
+- all_the_way: len = 3_ind + 1; -1_posi
 - presum diff: 3_ind - 1_ind = 2_len
 -
 - https://leetcode.com/submissions/detail/545430683/
