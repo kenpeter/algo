@@ -3911,12 +3911,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- why map(0, 1)?
-- [0, 0, 7], tar = 7 --> sum (all_the_way) - tar = 0_ind
--
 - all_the_way vs hash(ind = presum_diff); hash(freq)
 -
-- https://leetcode.com/submissions/detail/541256024/
+- why map(0, 1)?
+- all_the_way
+-
+- hash (freq)?
+- hash (relate freq)
+- hash (direct freq)
+-
+- https://leetcode.com/submissions/detail/541397103/
 - https://leetcode.com/problems/subarray-sum-equals-k
 
 ##### tar = 7, [0, 7, 8], max_len (== tar); all_the_way vs hash(ind = presum_diff); hash (posi)
@@ -3926,8 +3930,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - all_the_way vs hash(ind = presum_diff); hash (posi)
 -
-- all_the_way: 3_ind - 0_ind
-- presum diff: 3_ind - 1_ind = 2_ele_len
+- len?
+- all_the_way: len = 3_ind - 0_ind
+- presum diff: len = 3_ind - 1_ind
+-
+- hash(posi)?
+- presum at i
 -
 - https://leetcode.com/problems/maximum-size-subarray-sum-equals-k
 - https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/325-maximum-size-subarray-sum-equals-k.html
@@ -3936,7 +3944,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 - EG
 - SUMMA
+-
 - all_the_way vs hash(ind = presum%mod); hash (freq)
+-
+- ind < 0?
 - ind = presum%mod < 0, + mod
 -
 - https://leetcode.com/submissions/detail/542285893/
@@ -3947,7 +3958,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 -
-- why map(0, -1_posi)?
+- all_the_way vs hash(ind = presum%mod); hash(posi)
+-
+- map(0, -1_posi)?
 - all_the_way: len = 3_ind + 1
 - presum diff: 3_ind - 1_ind = 2_len
 -
@@ -3969,10 +3982,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/545430683/
 - https://leetcode.com/problems/continuous-subarray-sum
 
+##### [3, 1, 2, 5, 3], k = 3_odd -> [1, 1, 0, 1, 1], k = 3;
+
+- EG
+- SUMMA
+-
+- all_the_way vs hash(ind = presum diff); hash(freq)
+-
+- hash(freq)?
+- hash(relate freq)
+- hash(direct freq)
+-
+- https://leetcode.com/problems/count-number-of-nice-subarrays/
+
 ##### https://leetcode.com/discuss/general-discussion/563022/prefix-sum-problems
 
 https://leetcode.com/problems/binary-subarrays-with-sum/
-https://leetcode.com/problems/count-number-of-nice-subarrays/
 https://leetcode.com/problems/matrix-block-sum/
 
 ##### DC leetcode 3, 300
