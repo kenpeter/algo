@@ -3948,8 +3948,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - why map(0, -1_posi)?
-- mod = 7, [7], 0_ind - (-1) = 1_bad
-- mod = 7, [0, 7], 1_ind - (-1) = 2_good
+- all_the_way: len = 3_ind + 1
+- presum diff: 3_ind - 1_ind = 2_len
 -
 - overwritten?
 - [1, 1, 0_will_be_overwritten] -> presum: [1, 2_overwritten, 2_overwritten]
@@ -3959,12 +3959,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - mod control ind
 -
 - ind = presum%k?
-- hash(ind = presum%mod) + hash(posi)
+- hash(ind = presum%mod)
 - s2%mod - s1%mod = 0 (met again) --> (s2-s1)%mod = 0
 -
 - why distance > 1?
-- 3_ind - 1_ind = 2_ele_len (>= 2 ele)
+- all_the_way: len = 3_ind + 1
+- presum diff: 3_ind - 1_ind = 2_len
 -
+- https://leetcode.com/submissions/detail/545430683/
 - https://leetcode.com/problems/continuous-subarray-sum
 
 ##### https://leetcode.com/discuss/general-discussion/563022/prefix-sum-problems
