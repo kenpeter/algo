@@ -3906,7 +3906,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## ind = presum diff; ind = presum%mod
 
-##### tar = 7, [0, 7, 8], how_many = tar?; all_the_way + hash(ind = presum_diff) + hash (freq)
+##### tar = 7, [0, 7, 8], how_many = tar?; all_the_way vs hash(ind = presum_diff); hash(freq)
 
 - EG
 - SUMMA
@@ -3914,33 +3914,35 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - why map(0, 1)?
 - [0, 0, 7], tar = 7 --> sum (all_the_way) - tar = 0_ind
 -
-- all_the_way + hash (ind = presum_diff) + hash (freq)
+- all_the_way vs hash(ind = presum_diff); hash(freq)
 -
 - https://leetcode.com/submissions/detail/541256024/
 - https://leetcode.com/problems/subarray-sum-equals-k
 
-##### tar = 7, [0, 7, 8], max_len (== tar); all_the_way + hash(ind = presum_diff) + hash (posi)
+##### tar = 7, [0, 7, 8], max_len (== tar); all_the_way vs hash(ind = presum_diff); hash (posi)
 
 - EG
 - SUMMA
 -
-- all_the_way + hash(ind = presum_diff) + hash (posi)
-- 3_ind - 1_ind = 2_ele_len
+- all_the_way vs hash(ind = presum_diff); hash (posi)
+-
+- all_the_way: 3_ind - 0_ind
+- presum diff: 3_ind - 1_ind = 2_ele_len
 -
 - https://leetcode.com/problems/maximum-size-subarray-sum-equals-k
 - https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/325-maximum-size-subarray-sum-equals-k.html
 
-##### mod = 7, [0, -7, -8], how_many%7?; hash(ind = presum%mod) + hash (freq)
+##### mod = 7, [0, -7, -8], how_many%7?; all_the_way vs hash(ind = presum%mod); hash (freq)
 
 - EG
 - SUMMA
-- hash(ind = presum%mod) + hash (freq)
+- all_the_way vs hash(ind = presum%mod); hash (freq)
 - ind = presum%mod < 0, + mod
 -
 - https://leetcode.com/submissions/detail/542285893/
 - https://leetcode.com/problems/subarray-sums-divisible-by-k
 
-##### mod = 7, [0, 7, 8], >= 2 ele % 7?; hash(ind = presum%mod) + hash(posi)
+##### mod = 7, [0, 7, 8], >= 2 ele % 7?; all_the_way vs hash(ind = presum%mod); hash(posi)
 
 - EG
 - SUMMA
@@ -3957,8 +3959,8 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - mod control ind
 -
 - ind = presum%k?
-- hash(ind = presum%mod) + hash(freq)
-- s2%mod - s1%mod = 0 (direct_met_again) --> (s2-s1)%mod = 0
+- hash(ind = presum%mod) + hash(posi)
+- s2%mod - s1%mod = 0 (met again) --> (s2-s1)%mod = 0
 -
 - why distance > 1?
 - 3_ind - 1_ind = 2_ele_len (>= 2 ele)
