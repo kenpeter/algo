@@ -3999,9 +3999,20 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/count-number-of-nice-subarrays/
 
+##### [0, 1, 1, 0, 1], k_sum = 3; all_the_way vs hash(ind = presum diff); hash(freq)
+
+- EG
+- SUMMA
+- all_the_way vs hash(ind = presum diff); hash(freq)
+-
+- hash(freq)?
+- hash(relate freq)
+- hash(direct freq)
+-
+- https://leetcode.com/problems/binary-subarrays-with-sum/
+
 ##### https://leetcode.com/discuss/general-discussion/563022/prefix-sum-problems
 
-https://leetcode.com/problems/binary-subarrays-with-sum/
 https://leetcode.com/problems/matrix-block-sum/
 
 ##### DC leetcode 3, 300
