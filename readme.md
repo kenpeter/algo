@@ -3373,6 +3373,46 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 # slide_window
 
+##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; brute_force, str_tmp (indexOf), income_char dup?
+
+- EG
+- SUMMA
+-
+- brute_force, str_tmp (indexOf), income_char dup?
+-
+- https://leetcode.com/submissions/detail/546461793/
+- https://leetcode.com/problems/longest-substring-without-repeating-characters
+
+##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; brute_force, hash (unique), income_char dup?
+
+- EG
+- SUMMA
+-
+- brute_force, hash (unique), income_char dup?
+-
+- https://leetcode.com/submissions/detail/546461793/
+- https://leetcode.com/problems/longest-substring-without-repeating-characters
+
+##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; tmp_str (reduce) controls left_win_end, i controls right_win_end
+
+- EG
+- SUMMA
+-
+- tmp_str (reduce) controls left_win_end, i controls right_win_end
+-
+- https://leetcode.com/submissions/detail/546461793/
+- https://leetcode.com/problems/longest-substring-without-repeating-characters
+
+##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; hash (posi) controls left_win_end, i controls right_win_end
+
+- EG
+- SUMMA
+-
+- hash (posi) controls left_win_end, i controls right_win_end
+-
+- https://leetcode.com/submissions/detail/546461793/
+- https://leetcode.com/problems/longest-substring-without-repeating-characters
+
 ## expand_win_right (1 by 1), shrink_win_left (condi)
 
 ##### subarray_sum (>=0) == k; expand_win_right (1 by 1), shrink_win_left (sum == k)
@@ -3424,7 +3464,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/483228011/
 -
 - https://leetcode.com/submissions/detail/482623234/
-- https://leetcode.com/problems/longest-substring-without-repeating-characters
 
 <br/>
 <br/>
