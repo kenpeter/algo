@@ -100,26 +100,26 @@
 // const s = "pwwkew";
 // const out = lengthOfLongestSubstring(s);
 
-// sm: slide window; hash (latest posi) controls win left end, i controls win right end
-var lengthOfLongestSubstring = function (s) {
-  const m = new Map();
-  let l = 0;
-  let max = 0;
+// // sm: slide window; hash (latest posi) controls win left end, i controls win right end
+// var lengthOfLongestSubstring = function (s) {
+//   const m = new Map();
+//   let l = 0;
+//   let max = 0;
 
-  for (let i = 0; i < s.length; ++i) {
-    const n = s[i];
+//   for (let i = 0; i < s.length; ++i) {
+//     const n = s[i];
 
-    if (m.has(n)) {
-      l = Math.max(l, m.get(n) + 1);
-    }
+//     if (m.has(n)) {
+//       l = Math.max(l, m.get(n) + 1);
+//     }
 
-    m.set(n, i);
-    max = Math.max(max, i - l + 1);
-  }
+//     m.set(n, i);
+//     max = Math.max(max, i - l + 1);
+//   }
 
-  return max;
-};
+//   return max;
+// };
 
-const s = "abc";
-const out = lengthOfLongestSubstring(s);
-console.log(out);
+// const s = "abc";
+// const out = lengthOfLongestSubstring(s);
+// console.log(out);

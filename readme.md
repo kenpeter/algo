@@ -3393,22 +3393,22 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
-##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; tmp_str (reduce) controls left_win_end, i controls right_win_end
+##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; tmp_str (reduce), right_end bit by bit, left_end sudden chop
 
 - EG
 - SUMMA
 -
-- tmp_str (reduce) controls left_win_end, i controls right_win_end
+- tmp_str (reduce), right_end bit by bit, left_end sudden chop
 -
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
-##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; hash (posi) controls left_win_end, i controls right_win_end
+##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; hash (posi), right_end bit by bit, left_end suden chop
 
 - EG
 - SUMMA
 -
-- hash (posi) controls left_win_end, i controls right_win_end
+- hash (posi) bit by bit, left_end suden chop
 -
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
