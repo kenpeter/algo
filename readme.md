@@ -3437,6 +3437,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-product-less-than-k
 - https://leetcode.com/submissions/detail/469783113/
 
+##### list
+
+##### https://www.1point3acres.com/bbs/thread-678970-1-1.html
+
 <br/>
 <br/>
 <br/>
