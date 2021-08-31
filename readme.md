@@ -3393,7 +3393,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
-##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; tmp_str (reduce), right_end bit by bit, left_end sudden chop
+##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; tmp_str (indof reduce), right_end bit by bit, left_end sudden chop
 
 - EG
 - SUMMA
@@ -3402,6 +3402,15 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
+
+##### (1) all_the_way: [1, 2, 3, 4], k = 10; (2) presum: [1, 2, 3, 4], k = 9; tmp_arr (loop reduce), right_end bit by bit, left_end loop reduce
+
+- EG
+- SUMMA
+-
+- tmp_arr (reduce), right_end bit by bit, left_end loop reduce
+-
+- https://practice.geeksforgeeks.org/viewSol.php?subId=66f55c983a16e914e59abcb7f5e74be6&pid=701236&user=figo2476
 
 ##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; hash (posi), right_end bit by bit, left_end suden chop
 
@@ -3412,15 +3421,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
-
-##### (1) all_the_way: [1, 2, 3, 4], k = 10; (2) presum: [1, 2, 3, 4], k = 9; tmp_arr (reduce), right_end bit by bit, left_end loop reduce
-
-- EG
-- SUMMA
--
-- tmp_arr (reduce), right_end bit by bit, left_end loop reduce
--
-- https://practice.geeksforgeeks.org/viewSol.php?subId=66f55c983a16e914e59abcb7f5e74be6&pid=701236&user=figo2476
 
 ##### subarray_product (>=0) less_than_k; expand_win_right (1 by 1), shrink_win_left (product >= k)
 
