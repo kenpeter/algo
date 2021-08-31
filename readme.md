@@ -3413,16 +3413,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
-## expand_win_right (1 by 1), shrink_win_left (condi)
-
-##### subarray_sum (>=0) == k; expand_win_right (1 by 1), shrink_win_left (sum == k)
+##### (1) all_the_way: [1, 2, 3, 4], k = 10; (2) presum: [1, 2, 3, 4], k = 9; tmp_arr (reduce), right_end bit by bit, left_end loop reduce
 
 - EG
 - SUMMA
 -
-- expand_win_right (1 by 1), shrink_win_left (sum == k)
+- tmp_arr (reduce), right_end bit by bit, left_end loop reduce
 -
-- https://practice.geeksforgeeks.org/viewSol.php?subId=b70840393292ef97fdbe78121760d972&pid=701236&user=figo2476
+- https://practice.geeksforgeeks.org/viewSol.php?subId=66f55c983a16e914e59abcb7f5e74be6&pid=701236&user=figo2476
 
 ##### subarray_product (>=0) less_than_k; expand_win_right (1 by 1), shrink_win_left (product >= k)
 
