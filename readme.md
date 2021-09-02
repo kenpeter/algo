@@ -3415,6 +3415,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - hash (posi) bit by bit, left_end suden chop
 -
+- code?
 - win (right_end bit by bit)
 - left_end (loop reduce)
 - check (1. after reduce, check; 2. after win inc, check)
@@ -3423,18 +3424,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
-##### subarray_product (>=0) less_than_k; expand_win_right (1 by 1), shrink_win_left (product >= k)
+##### [1, 2, 3, 4], k = 10, product < 10; [1], [1, 2], [2], etc; slide_win, right_end bit by bit, left_end loop reduce; (new_subarr = j_end_subarr - i_start_subarr + 1_self)
 
 - EG
 - SUMMA
 -
-- expand_win_right (1 by 1), shrink_win_left (product >= k)
--
-- less_than_k === range
-- orig_arr + income_ele -> 2 times more
+- slide_win, right_end bit by bit, left_end loop reduce;
+- [1, 2, 3], income = 4, new_subarr = j_end_subarr - i_start_subarr + 1_self; [4], [3, 4], [2, 3, 4], [1, 2, 3, 4]
 -
 - https://leetcode.com/problems/subarray-product-less-than-k
-- https://leetcode.com/submissions/detail/469783113/
+- https://leetcode.com/submissions/detail/548109082/
 
 ##### list
 
