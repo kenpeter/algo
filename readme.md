@@ -3996,8 +3996,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - all_the_way vs presum_diff ?
 - all_the_way: len = 3_ind - 0_ind
-- presum_diff: len = 3_ind - 1_ind_include_end; a: [1, 2, 3, 4] -> sum: [1, 3, 6, 10], tar = 7;
--
+- presum_diff: len = 3_ind - 1_ind(include_end); a: [1, 2, 3, 4] -> sum: [1, 3, 6, 10], tar = 7;
 -
 - code?
 - all_the_way (max)

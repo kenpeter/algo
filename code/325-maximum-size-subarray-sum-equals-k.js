@@ -7,19 +7,19 @@ const maxSubArrayLen = (ns, k) => {
     const n = ns[i];
     s = s + n;
 
-    // (1) all the way (max)
-    if (s === k) {
-      // * (1) all the way: tar_len = 1_ind - 0_ind + 1;
-      // * (2) presum diff: tar_len = 3_ind - 1_ind;
-      max = Math.max(max, i + 1);
-    }
-
     // (2) presum diff (max)
     let ind = s - k;
     if (m.has(ind)) {
       // * (1) all the way: ele_len = 1_ind - 0_ind + 1;
       // * (2) presum diff: ele_len = 3_ind - 1_ind;
       max = Math.max(max, i - m.get(s - k));
+    }
+
+    // (1) all the way (max)
+    if (s === k) {
+      // * (1) all the way: tar_len = 1_ind - 0_ind + 1;
+      // * (2) presum diff: tar_len = 3_ind - 1_ind;
+      max = Math.max(max, i + 1);
     }
 
     // hash (posi)
