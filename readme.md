@@ -3954,6 +3954,14 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://www.geeksforgeeks.org/count-distinct-pairs-with-given-sum/
 - https://hjweds.gitbooks.io/leetcode/content/two-pointers/2-sum-all-pair-ii.html
 
+##### 2sum (less than k, return max sum)
+
+- EG
+- SUMMA
+-
+- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
+- https://leetcode.com/problems/two-sum-less-than-k/
+
 <br/>
 <br/>
 <br/>
@@ -3992,6 +4000,11 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - hash(posi)?
 - presum at i
+-
+- code?
+- all_the_way (max)
+- hash(presum_diff) (max)
+- hash(posi)
 -
 - https://leetcode.com/problems/maximum-size-subarray-sum-equals-k
 - https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/325-maximum-size-subarray-sum-equals-k.html
