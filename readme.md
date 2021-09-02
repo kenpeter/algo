@@ -3031,20 +3031,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 <br/>
 <br/>
 
-## ??
-
-##### 2sum_less_k; k_stable (no_such); i, j meet;
-
-- EG
-- SUMMA
--
-- sort
-- k_stable (no_such); i, j meet;
-- < k (less_k)
-- > = k
--
-- https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
-
 ##### 3sum_less_k (count); k_stable; i, j meet
 
 - EG
@@ -3954,10 +3940,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://www.geeksforgeeks.org/count-distinct-pairs-with-given-sum/
 - https://hjweds.gitbooks.io/leetcode/content/two-pointers/2-sum-all-pair-ii.html
 
-##### 2sum (less than k, return max sum)
+##### 2sum (less than k, return max sum); 2pt, i and j meet
 
 - EG
 - SUMMA
+-
+- 2pt, i and j meet; max
 -
 - https://gist.github.com/yitonghe00/76a5f3034c9c81ebf8be3433e6865eae
 - https://leetcode.com/problems/two-sum-less-than-k/
