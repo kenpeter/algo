@@ -3424,13 +3424,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
-##### [1, 2, 3, 4], k = 10, product < 10; [1], [1, 2], [2], etc; slide_win, right_end bit by bit, left_end loop reduce; (new_subarr = j_end_sub - i_start_sub + 1_self)
+##### [1, 2, 3, 4], k = 10, product < 10; [1], [1, 2], [2], etc; slide_win, right_end bit by bit, left_end loop reduce;
 
 - EG
 - SUMMA
 -
 - slide_win, right_end bit by bit, left_end loop reduce;
-- new_subarr = j_end_sub - i_start_sub + 1_self
 - [1, 2, 3], income=4 -> [4], [3, 4], [2, 3, 4], [1, 2, 3, 4]
 -
 - https://leetcode.com/problems/subarray-product-less-than-k
