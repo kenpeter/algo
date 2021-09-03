@@ -3435,54 +3435,24 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/subarray-product-less-than-k
 - https://leetcode.com/submissions/detail/548109082/
 
+##### [1,7,3,6,5,6], left_win = 11, pivot = 6, right_win = 11, left_win == right_win;
+
+- EG
+- SUMMA
+-
+- left_win: right_end inc bit by bit
+- right_win: left_end reduce bit by bit
+-
+- flow?
+- init, !pivot, [1_s2, 2_s2, 3_s2, 4_s2]
+- 1st_ele, [1_pivot, 2_s2, 3_s2, 4_s2]
+- 2nd_ele, [1_s1, 2_pivot, 2_s2, 3_s2, 4_s2]
+-
+- https://leetcode.com/problems/find-pivot-index
+
 ##### list
 
 ##### https://www.1point3acres.com/bbs/thread-678970-1-1.html
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-## expand_win_right (by couple), shrink_win_left (condi)
-
-##### longest non-repeated substr; (1) slide_win (shrink_left) (2) hash (val + posi) (3) brute_force (arr_contain?) (4) brute_force (substr.indexOf?)
-
-- EG
-- SUMMA
--
-- method 1:
-- slide_win (remove_repeated, expand_len); hash_check (repeated), shrink_win_left (until unique), expand_win_right (1 by 1)
--
-- method 2:
-- hash (same_char prev posi); hash_check (repeated + posi)
--
-- method 3:
-- brute_force (curr char stable, other char loop, arr_contain?)
--
-- method 4:
-- brute_force (curr char stable, other char loop, substr.indexOf?)
-- https://leetcode.com/submissions/detail/483228011/
--
-- https://leetcode.com/submissions/detail/482623234/
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-## 2_slide_windows, same place
-
-##### 1 pivot, left_sum == right_sum; 2_slide_windows
-
-- EG
-- SUMMA
--
-- 2_slide_windows
--
-- https://leetcode.com/problems/find-pivot-index
 
 <br/>
 <br/>
