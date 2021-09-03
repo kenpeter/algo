@@ -3444,11 +3444,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - left_win: right_end inc bit by bit
 - right_win: left_end reduce bit by bit
 -
-- flow?
-- init, !pivot, [1_s2, 2_s2, 3_s2, 4_s2]
-- 1st_ele, [1_pivot, 2_s2, 3_s2, 4_s2]
-- 2nd_ele, [1_s1, 2_pivot, 2_s2, 3_s2, 4_s2]
--
 - https://leetcode.com/problems/find-pivot-index
 
 ##### list
