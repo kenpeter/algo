@@ -3408,18 +3408,16 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://practice.geeksforgeeks.org/viewSol.php?subId=09bbc614f0fddbefbb19230a22824ec8&pid=701236&user=figo2476
 - https://practice.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1
 
-##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; hash (posi), right_end bit by bit, left_end suden chop
+##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; right_end bit by bit, left_end hash reduce
 
 - EG
 - SUMMA
 -
-- hash (posi), right_end bit by bit, left_end suden chop
+- right_end bit by bit, left_end hash reduce
 -
-- code?
-- win (right_end bit by bit)
-- left_end (loop reduce)
-- check (1. after reduce, check; 2. after win inc, check)
-- win (right_end bit by bit)
+- check?
+- 1. after reduce, check
+- 2. after win inc, check
 -
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
