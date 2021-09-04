@@ -3379,12 +3379,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
-##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; tmp_str (indexOf), right_end bit by bit, left_end sudden chop
+##### longest no repeated, "abcbk" -> chop "abc" -> "bk"; tmp_str (indexOf), right_end bit by bit, left_end indexOf reduce
 
 - EG
 - SUMMA
 -
-- tmp_str (reduce), right_end bit by bit, left_end sudden chop
+- tmp_str (reduce), right_end bit by bit, left_end indexOf reduce
 -
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
