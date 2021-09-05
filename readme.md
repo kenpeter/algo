@@ -3930,9 +3930,10 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - why map(0, 1)?
 - all_the_way
 -
-- hash (freq)?
-- hash (relate freq)
-- hash (direct freq)
+- code?
+- all_the_way (count++)
+- hash(presum_diff) (count++)
+- hash (freq)
 -
 - https://leetcode.com/submissions/detail/541397103/
 - https://leetcode.com/problems/subarray-sum-equals-k
@@ -3943,10 +3944,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - all_the_way vs hash(ind = presum_diff); hash (posi)
--
-- all_the_way vs presum_diff ?
-- all_the_way: len = 3_ind - 0_ind
-- presum_diff: len = 3_ind - 1_ind(include_end); a: [1, 2, 3, 4] -> sum: [1, 3, 6, 10], tar = 7;
 -
 - code?
 - all_the_way (max)
@@ -4028,8 +4025,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/binary-subarrays-with-sum/
 
 ##### https://leetcode.com/discuss/general-discussion/563022/prefix-sum-problems
-
-https://leetcode.com/problems/matrix-block-sum/
 
 ##### DC leetcode 3, 300
 
