@@ -3389,7 +3389,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/546461793/
 - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
-##### (1) all_the_way: [1, 2, 3, 4], k = 10; (2) presum: [1, 2, 3, 4], k = 9; tmp_arr ( reduce), right_end bit by bit, left_end loop reduce
+##### (1) all_the_way: [1, 2, 3, 4], k = 10; (2) presum: [1, 2, 3, 4], k = 9; tmp_arr, right_end bit by bit, left_end loop reduce
 
 - EG
 - SUMMA
@@ -3398,12 +3398,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=66f55c983a16e914e59abcb7f5e74be6&pid=701236&user=figo2476
 
-##### [1, 2, 3, 7, 5], tar = 12; tmp_sum (reduce), right_end bit by bit, left_end loop reduce
+##### [1, 2, 3, 7, 5], tar = 12; tmp_sum, right_end bit by bit, left_end loop reduce
 
 - EG
 - SUMMA
 -
-- tmp_sum (reduce), right_end bit by bit, left_end loop reduce
+- tmp_sum, right_end bit by bit, left_end loop reduce
 -
 - https://practice.geeksforgeeks.org/viewSol.php?subId=09bbc614f0fddbefbb19230a22824ec8&pid=701236&user=figo2476
 - https://practice.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1
