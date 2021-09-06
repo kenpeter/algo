@@ -3997,10 +3997,9 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 -
 - all_the_way vs hash(ind = presum diff); hash(freq)
+- [3, 1, 2, 5, 3] -> [1, 1, 0, 1, 1]\_even_odd
 -
-- hash(freq)?
-- hash(relate freq)
-- hash(direct freq)
+- hash (set 1 or set +1)
 -
 - https://leetcode.com/problems/count-number-of-nice-subarrays/
 
@@ -4010,9 +4009,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - SUMMA
 - all_the_way vs hash(ind = presum diff); hash(freq)
 -
-- hash(freq)?
-- hash(relate freq)
-- hash(direct freq)
+- hash (set 1 or set +1)
 -
 - https://leetcode.com/problems/binary-subarrays-with-sum/
 
