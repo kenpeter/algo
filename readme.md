@@ -3920,12 +3920,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## ind = presum diff; ind = presum%mod
 
-##### tar = 7, [0, 7, 8], how_many = tar?; all_the_way vs hash(ind = presum_diff); hash(freq)
+##### tar = 7, [0, 7, 8], how_many = tar?; all_the_way vs hash(ind = presum_diff); hash(set 1/+1)
 
 - EG
 - SUMMA
 -
-- all_the_way vs hash(ind = presum_diff); hash(freq)
+- all_the_way vs hash(ind = presum_diff); hash(set 1/+1)
 -
 - why map(0, 1)?
 - all_the_way
@@ -3953,12 +3953,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/problems/maximum-size-subarray-sum-equals-k
 - https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/325-maximum-size-subarray-sum-equals-k.html
 
-##### mod = 7, [0, -7, -8], how_many%7?; all_the_way vs hash(ind = presum%mod); hash (freq)
+##### mod = 7, [0, -7, -8], how_many%7?; all_the_way vs hash(ind = presum%mod); hash (set 1/+1)
 
 - EG
 - SUMMA
 -
-- all_the_way vs hash(ind = presum%mod); hash (freq)
+- all_the_way vs hash(ind = presum%mod); hash (set 1/+1)
 -
 - ind < 0?
 - ind = presum%mod < 0, + mod
@@ -3991,25 +3991,21 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/545430683/
 - https://leetcode.com/problems/continuous-subarray-sum
 
-##### [3, 1, 2, 5, 3], k = 3_odd -> [1, 1, 0, 1, 1], k = 3;
+##### [3, 1, 2, 5, 3], k = 3_odd -> [1, 1, 0, 1, 1], k = 3; all_the_way vs hash(ind = presum_diff); hash(set 1/+1)
 
 - EG
 - SUMMA
 -
-- all_the_way vs hash(ind = presum diff); hash(freq)
+- all_the_way vs hash(ind = presum diff); hash(set 1/+1)
 - [3, 1, 2, 5, 3] -> [1, 1, 0, 1, 1]\_even_odd
--
-- hash (set 1 or set +1)
 -
 - https://leetcode.com/problems/count-number-of-nice-subarrays/
 
-##### [0, 1, 1, 0, 1], k_sum = 3; all_the_way vs hash(ind = presum diff); hash(freq)
+##### [0, 1, 1, 0, 1], k_sum = 3; all_the_way vs hash(ind = presum diff); hash(set 1/+1)
 
 - EG
 - SUMMA
-- all_the_way vs hash(ind = presum diff); hash(freq)
--
-- hash (set 1 or set +1)
+- all_the_way vs hash(ind = presum diff); hash(set 1/+1)
 -
 - https://leetcode.com/problems/binary-subarrays-with-sum/
 
