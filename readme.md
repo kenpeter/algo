@@ -3999,7 +3999,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - all_the_way vs hash(ind = presum diff); hash(set 1/+1)
 - [3, 1, 2, 5, 3] -> [1, 1, 0, 1, 1]\_even_odd
 -
-- https://leetcode.com/problems/count-number-of-nice-subarrays/
+- https://leetcode.com/problems/count-number-of-nice-subarrays
 
 ##### [0, 1, 1, 0, 1], k_sum = 3; all_the_way vs hash(ind = presum diff); hash(set 1/+1)
 
