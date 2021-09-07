@@ -3665,14 +3665,6 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 
 ## binary search
 
-##### summary binary search
-
-- left is insert;
-- ind is exact;
-- aim to find l and r bountry, ind !important
-- after l and r cross, can continue
-- [1, 2, 3, 4, 5, 6], tar = 4 -> [t, t, t, f, f, f] -> l partition, r partition -> cross
-
 ##### search_insert_position; binary search (outbound vs inbound)
 
 - EG
