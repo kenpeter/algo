@@ -3730,6 +3730,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - method 2:
 - natural bottom up
 -
+- https://leetcode.com/problems/first-bad-version/discuss/71386/An-clear-way-to-use-binary-search
 - https://leetcode.com/problems/first-bad-version
 
 ##### pick > guess or pick < guess; ~= first bad version
