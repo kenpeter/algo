@@ -3718,14 +3718,13 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 -
 - https://leetcode.com/problems/valid-perfect-square
 
-##### [1, 2, 3, 4, 5_tar, 6, 7] -> [g, g, g, g, b, b, b] -> l partition, r partition -> cross
+##### [g, g, g, g, b, b, b] -> left most vs right most
 
 - EG
 - SUMMA
 -
 - method 1:
-- [1, 2, 3, 4, 5_tar, 6, 7] -> [g, g, g, g, b, b, b] -> l partition, r partition -> cross
-- last good vs 1st bad
+- [g, g, g, g, b, b, b] -> left most vs right most
 -
 - method 2:
 - natural bottom up
