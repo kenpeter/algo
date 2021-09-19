@@ -3763,7 +3763,7 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/538754691/
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
-##### arr1, arr2, find intersection eles, unique; (arr1 binary_search arr2, intersect)
+##### arr1, arr2, find intersection eles, unique; (unique, binary search left most)
 
 - EG
 - SUMMA
@@ -3772,13 +3772,12 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - https://leetcode.com/submissions/detail/538876175/
 - https://leetcode.com/problems/intersection-of-two-arrays/
 
-##### arr1, arr2, find intersection eles, repeated; (binary search: already_found, non_found_1st)
+##### arr1, arr2, find intersection eles, repeated; (brute_force, binary search left most)
 
 - EG
 - SUMMA
-- arr_long, arr_short
-- binary search ind + 1 (already_found)
-- binary search --ind (non_found_1st)
+- method 1
+- brute_force, binary search left ost
 -
 - https://leetcode.com/submissions/detail/539892078/
 - https://leetcode.com/problems/intersection-of-two-arrays-ii/
