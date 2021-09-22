@@ -3777,21 +3777,18 @@ https://leetcode.com/discuss/general-discussion/491522/dynamic-programming-quest
 - EG
 - SUMMA
 - method 1
-- brute_force, binary search left ost
+- brute_force, binary search left most
 -
 - https://leetcode.com/submissions/detail/539892078/
 - https://leetcode.com/problems/intersection-of-two-arrays-ii/
 
-##### [0, 1, 2, 3, 4] -> rotate (shift) at pivot 2 -> [2, 3, 4, 0, 1]; (rotate arr -> 2 partition -> binary search; snapshot of trend)
+##### [0, 1, 2_pivot, 3, 4] -> shift left [2, 3, 4, 0, 1] -> shift right [3, 4, 0, 1, 2];
 
 - EG
 - SUMMA
 -
-- what is rotate? rotate == shift; pivot push to start
-- roate arr -> 2 partition -> binary search (2 partition)
-- l -> ind -> r; [l, ind) (snapshot of trend, same_trend or cross_trend)
-- l -> ind -> r; (ind, r] (snapshot of trend, same_trend or cross_trend)
-- l <-> tar <-> r (more constraint to ind)
+- a[ind] > tar
+- a[ind] < tar
 -
 - https://leetcode.com/submissions/detail/540921981/
 - https://leetcode.com/problems/search-in-rotated-sorted-array/
