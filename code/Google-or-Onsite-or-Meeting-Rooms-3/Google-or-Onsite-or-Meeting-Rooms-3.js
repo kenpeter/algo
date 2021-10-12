@@ -113,11 +113,11 @@
 
 // sm: prepare, then query; fill_time_block
 const meetingRoom3 = (cal, room_num, q) => {
-  // get max
+  // sort by end
   cal.sort((a, b) => a[1] - b[1]);
   const n = cal[cal.length - 1][1];
 
-  // start_pt (asc)
+  // sort by start
   cal.sort((a, b) => a[0] - b[0]);
 
   // entire_time_block (natural_bottom_up)
@@ -169,6 +169,19 @@ const meetingRoom3 = (cal, room_num, q) => {
   return res;
 };
 
+// const input = [
+//   [1, 2],
+//   [4, 5],
+//   [8, 10],
+// ];
+// const room_num = 1;
+// const q = [
+//   [2, 3],
+//   [3, 4],
+// ];
+// const out = meetingRoom3(input, room_num, q);
+// console.log(out);
+
 const input = [
   [1, 2],
   [4, 5],
@@ -176,8 +189,8 @@ const input = [
 ];
 const room_num = 1;
 const q = [
-  [2, 3],
-  [3, 4],
+  [4, 5],
+  [5, 6],
 ];
 const out = meetingRoom3(input, room_num, q);
 console.log(out);
