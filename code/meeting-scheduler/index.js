@@ -1,3 +1,4 @@
+// https://massivealgorithms.blogspot.com/2019/11/leetcode-1229-meeting-scheduler.html
 const sch = (s1, s2, du) => {
   s1.sort((a, b) => a - b);
   s2.sort((a, b) => a - b);
