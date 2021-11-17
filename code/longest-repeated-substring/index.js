@@ -35,6 +35,10 @@ const longestRepeatedSubstring = (s) => {
 // const out = longestRepeatedSubstring(s);
 // console.log(out);
 
-const s = "aabcaabdaac";
+// const s = "aabcaabdaac";
+// const out = longestRepeatedSubstring(s);
+// console.log(out);
+
+const s = "banana";
 const out = longestRepeatedSubstring(s);
 console.log(out);
