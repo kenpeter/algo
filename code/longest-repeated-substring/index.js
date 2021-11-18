@@ -31,15 +31,14 @@ const longestRepeatedSubstring = (s) => {
     for (let j = i + 1; j <= s.length; ++j) {
       if (s[i - 1] === s[j - 1]) {
         max = Math.max(max, 1 + dp[i - 1][j - 1]);
-        dp[i][j] = max;
+        dp[i][j] = 1 + dp[i - 1][j - 1];
       } else {
-        max = Math.max(dp[i - 1][j], dp[i][j - 1]);
-        dp[i][j] = max;
+        dp[i][j] = 0;
       }
     } // el
   } // el
 
-  console.log(dp);
+  //console.log(dp);
 
   return max;
 };
@@ -52,9 +51,9 @@ const longestRepeatedSubstring = (s) => {
 // const out = longestRepeatedSubstring(s);
 // console.log(out);
 
-const s = "abbaba";
-const out = longestRepeatedSubstring(s);
-console.log(out);
+// const s = "abbaba";
+// const out = longestRepeatedSubstring(s);
+// console.log(out);
 
 // const s = "aaaaa";
 // const out = longestRepeatedSubstring(s);
@@ -64,6 +63,6 @@ console.log(out);
 // const out = longestRepeatedSubstring(s);
 // console.log(out);
 
-// const s = "banana";
-// const out = longestRepeatedSubstring(s);
-// console.log(out);
+const s = "banana";
+const out = longestRepeatedSubstring(s);
+console.log(out);
