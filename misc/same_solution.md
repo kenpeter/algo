@@ -6,5 +6,5 @@
 - https://leetcode.com/problems/next-greater-element-ii/ (\*)
 - https://leetcode.com/problems/online-stock-span/ (\*)
 - https://leetcode.com/problems/132-pattern/ (\*)
-- https://leetcode.com/problems/sum-of-subarray-minimums/
-- https://leetcode.com/problems/largest-rectangle-in-histogram/
+- https://leetcode.com/problems/sum-of-subarray-minimums/ (\*)
+- https://leetcode.com/problems/largest-rectangle-in-histogram/ (x)
