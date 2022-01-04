@@ -25,6 +25,10 @@ var find132pattern = function (ns) {
 // const out = find132pattern(ns);
 // console.log(out);
 
-const ns = [3, 1, 4, 2];
+// const ns = [3, 1, 4, 2];
+// const out = find132pattern(ns);
+// console.log(out);
+
+const ns = [3, 1, 5, 4, 3];
 const out = find132pattern(ns);
 console.log(out);
