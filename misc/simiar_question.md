@@ -11,3 +11,12 @@
 
 - https://leetcode.com/discuss/interview-question/1669493/AMAZON-OA
 - https://leetcode.com/problems/number-of-laser-beams-in-a-bank/description/
+
+# pt to orig
+
+- https://leetcode.com/problems/k-closest-points-to-origin/
+
+# paint fence problem
+
+- https://leetcode.com/problems/paint-fence/
+- https://leetcode.com/discuss/interview-question/1488281/Amazon-OA
