@@ -18,5 +18,5 @@
 
 # paint fence problem
 
-- https://leetcode.com/problems/paint-fence/, https://baihuqian.github.io/2018-07-29-paint-fence/
+- https://leetcode.com/problems/paint-fence/, https://baihuqian.github.io/2018-07-29-paint-fence/ (x)
 - https://leetcode.com/discuss/interview-question/1488281/Amazon-OA (\*)
