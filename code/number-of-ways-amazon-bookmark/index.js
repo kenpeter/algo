@@ -1,3 +1,7 @@
+// sm:
+// * take this action, one path;
+// * take this action, another path;
+// * prev_info passed as well.
 const recur = (ns, ind, prev, len, h) => {
   const c_ind = ind + "#" + prev + "#" + len;
   if (h[c_ind] !== undefined) {
