@@ -51,7 +51,7 @@ Do I have even a miniscule chance of moving forward
 
 # https://leetcode.com/discuss/interview-question/1557009/amhttps://leetcode.com/discuss/interview-question/1557009/amazon-online-coding-assessment-sde-2
 
-- https://leetcode.com/problems/valid-parentheses/
+- https://leetcode.com/problems/valid-parentheses/ (\*)
 - There are 3 rules for a valid string:
 
 An empty string is valid
@@ -64,3 +64,8 @@ I tried using recursion. but could not complete all test cases. Good approaches 
 
 - https://leetcode.com/problems/generate-parentheses/
 - https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid/
+- https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
+- https://leetcode.com/problems/score-of-parentheses/
+- https://leetcode.com/problems/different-ways-to-add-parentheses/
+- https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+- https://leetcode.com/problems/valid-parenthesis-string/
