@@ -59,3 +59,8 @@ You can add same character to a valid string X, and create another valid string 
 You can concatenate two valid strings X and Y, so XY will also be valid.
 Ex: vv, xbbx, bbccdd, xyffyxdd are all valid.
 I tried using recursion. but could not complete all test cases. Good approaches or solutions will be helpful.
+
+# parentheses
+
+- https://leetcode.com/problems/generate-parentheses/
+- https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid/
