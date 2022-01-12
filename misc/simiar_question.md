@@ -62,7 +62,7 @@ I tried using recursion. but could not complete all test cases. Good approaches 
 
 # parentheses
 
-- https://leetcode.com/problems/generate-parentheses/
+- https://leetcode.com/problems/generate-parentheses/ (\*)
 - https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid/
 - https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
 - https://leetcode.com/problems/score-of-parentheses/
