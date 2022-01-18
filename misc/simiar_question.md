@@ -69,3 +69,17 @@ I tried using recursion. but could not complete all test cases. Good approaches 
 - https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
 - https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/ (\*)
 - https://leetcode.com/problems/valid-parenthesis-string/ (\*)
+
+# retail
+
+- https://leetcode.com/discuss/interview-question/1695225/Amazon-OA-or-Part-1-70-Min-or-SDE-Position
+- https://leetcode.com/discuss/interview-question/1688875/Amazon-SDE1-or-Number-of-Retailers-who-can-server-given-requests
+
+# product 1
+
+- https://leetcode.com/discuss/interview-question/1692832/Amazon-or-Online-Assessmentor-Product-of-1
+- https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/
+
+# flip 1 dp
+
+- https://leetcode.com/problems/flip-string-to-monotone-increasing/
