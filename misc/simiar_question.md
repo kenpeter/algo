@@ -78,7 +78,7 @@ I tried using recursion. but could not complete all test cases. Good approaches 
 # product 1
 
 - https://leetcode.com/discuss/interview-question/1692832/Amazon-or-Online-Assessmentor-Product-of-1
-- https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/
+- https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/ (\*)
 
 # flip 1 dp
 
