@@ -4,11 +4,14 @@ var maximumSwap = function (ns) {
   let a = ns;
   let b = ns;
 
+  // * brute force
+  // * swap digit 1
   for (let i = 0; i < len; ++i) {
+    // * swap digit 2
     for (let j = i + 1; j < len; ++j) {
       const bs = a.toString().split("");
 
-      // swap
+      // fake swap
       const t = bs[i];
       bs[i] = bs[j];
       bs[j] = t;
