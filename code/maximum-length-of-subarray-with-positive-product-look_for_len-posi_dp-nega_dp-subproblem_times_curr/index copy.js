@@ -43,7 +43,6 @@ const getMaxLen = (ns) => {
   return res;
 };
 
-// const ns = [1, -2, -3, 4];
-const ns = [-1, -2, -3, -4];
+const ns = [1, -2, -3, 4];
 const out = getMaxLen(ns);
 console.log(out);
