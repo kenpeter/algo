@@ -79,9 +79,9 @@ I tried using recursion. but could not complete all test cases. Good approaches 
 
 - https://leetcode.com/discuss/interview-question/1692832/Amazon-or-Online-Assessmentor-Product-of-1 (\*)
 - https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/ (\*)
-- https://leetcode.com/problems/product-of-array-except-self/
-- https://leetcode.com/problems/maximum-product-subarray/ (?)
-- https://leetcode.com/problems/sign-of-the-product-of-an-array/
+- https://leetcode.com/problems/product-of-array-except-self/ (\*)
+- https://leetcode.com/problems/maximum-product-subarray/ (look_for_val) (\*)
+- https://leetcode.com/problems/sign-of-the-product-of-an-array (\*)
 - https://leetcode.com/problems/product-of-the-last-k-numbers/
 - https://leetcode.com/problems/maximum-product-of-three-numbers/
 - https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
