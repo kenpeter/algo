@@ -84,7 +84,7 @@ I tried using recursion. but could not complete all test cases. Good approaches 
 - https://leetcode.com/problems/sign-of-the-product-of-an-array (\*)
 - https://leetcode.com/problems/product-of-the-last-k-numbers/
 - https://leetcode.com/problems/maximum-product-of-three-numbers/
-- https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
+- https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/ (\*)
 - https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/
 
 # flip 1 dp
