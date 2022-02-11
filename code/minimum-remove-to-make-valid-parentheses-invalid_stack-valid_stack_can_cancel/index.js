@@ -46,3 +46,7 @@ var minRemoveToMakeValid = function (s) {
 // const s = "))((";
 // const out = minRemoveToMakeValid(s);
 // console.log(out);
+
+const s = "))(";
+const out = minRemoveToMakeValid(s);
+console.log(out);

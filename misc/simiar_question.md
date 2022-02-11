@@ -69,6 +69,7 @@ I tried using recursion. but could not complete all test cases. Good approaches 
 - https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
 - https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/ (\*)
 - https://leetcode.com/problems/valid-parenthesis-string/ (\*)
+- https://www.1point3acres.com/bbs/thread-847941-1-1.html
 
 # retail
 
