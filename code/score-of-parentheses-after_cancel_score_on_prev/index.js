@@ -31,3 +31,7 @@ var scoreOfParentheses = function (s) {
 
   return st[st.length - 1];
 };
+
+const ns = "()()";
+const out = scoreOfParentheses(ns);
+console.log(out);
