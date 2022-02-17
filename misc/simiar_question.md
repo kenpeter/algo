@@ -7,6 +7,17 @@
 - https://leetcode.com/discuss/interview-question/1517196/Amazon-or-OA-2021-or-Hackerrank (\*)
 - https://leetcode.com/problems/move-zeroes/ (\*)
 
+# Monotonic Stack
+
+- https://leetcode.com/problems/daily-temperatures/ (\*)
+- https://leetcode.com/problems/shortest-unsorted-continuous-subarray (\*)
+- https://leetcode.com/problems/next-greater-element-i/ (\*)
+- https://leetcode.com/problems/next-greater-element-ii/ (\*)
+- https://leetcode.com/problems/online-stock-span/ (\*)
+- https://leetcode.com/problems/132-pattern/ (\*)
+- https://leetcode.com/problems/sum-of-subarray-minimums/ (\*)
+- https://leetcode.com/problems/largest-rectangle-in-histogram/ (x)
+
 # laser beam
 
 - https://leetcode.com/discuss/interview-question/1669493/AMAZON-OA
@@ -70,6 +81,7 @@ I tried using recursion. but could not complete all test cases. Good approaches 
 - https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/ (\*)
 - https://leetcode.com/problems/valid-parenthesis-string/ (\*)
 - https://www.1point3acres.com/bbs/thread-847941-1-1.html
+- https://leetcode.com/problems/valid-parentheses/
 
 # retail
 
