@@ -1,4 +1,4 @@
-// https://www.geeksforgeeks.org/minimum-swaps-required-group-1s-together/
+q; // https://www.geeksforgeeks.org/minimum-swaps-required-group-1s-together/
 
 // const minSwaps = (ns) => {
 //   let winSize = 0;

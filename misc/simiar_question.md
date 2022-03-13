@@ -4,7 +4,7 @@
 - https://leetcode.com/problems/maximum-swap/ (\*)
 - https://leetcode.com/problems/smallest-string-with-swaps/ (x)
 - https://leetcode.com/discuss/interview-question/780698/got-this-in-an-interview-how-to-solve (x)
-- https://leetcode.com/discuss/interview-question/1517196/Amazon-or-OA-2021-or-Hackerrank (\*)
+- https://leetcode.com/discuss/interview-question/1517196/Amazon-or-OA-2021-or-Hackerrank, find_min_swap (\*)
 - https://leetcode.com/problems/move-zeroes/ (\*)
 
 # Monotonic Stack
@@ -15,8 +15,9 @@
 - https://leetcode.com/problems/next-greater-element-ii/ (\*)
 - https://leetcode.com/problems/online-stock-span/ (\*)
 - https://leetcode.com/problems/132-pattern/ (\*)
-- https://leetcode.com/problems/sum-of-subarray-minimums/ (\*)
+- https://leetcode.com/problems/sum-of-subarray-minimums/ (x)
 - https://leetcode.com/problems/largest-rectangle-in-histogram/ (x)
+- https://leetcode.com/problems/sum-of-subarray-ranges/
 
 # laser beam
 
@@ -81,7 +82,7 @@ I tried using recursion. but could not complete all test cases. Good approaches 
 - https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/ (\*)
 - https://leetcode.com/problems/valid-parenthesis-string/ (\*)
 - https://www.1point3acres.com/bbs/thread-847941-1-1.html
-- https://leetcode.com/problems/valid-parentheses/
+- https://leetcode.com/problems/valid-parentheses/ (\*)
 
 # retail
 
