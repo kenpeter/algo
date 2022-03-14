@@ -5,6 +5,10 @@ https://leetcode.com/problems/subsets/discuss/27281/A-general-approach-to-backtr
 https://leetcode.com/problems/subsets/discuss/473975/Learning-and-summarizing-(3-solutions)
 https://leetcode.com/discuss/interview-question/1625460/AMAZON-OA-Find-K-maximum-Priority
 
+# read, write
+
+- https://leetcode.com/problems/merge-sorted-array
+
 # swap
 
 - https://www.geeksforgeeks.org/minimum-swaps-required-group-1s-together/ (\*)
