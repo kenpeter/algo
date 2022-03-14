@@ -12,7 +12,6 @@ var duplicateZeros = function (ns) {
     if (n === 0) {
       shift(ns, i + 1);
       ++i;
-      if (i === ns.length - 1) break;
     }
   } // el
 };
