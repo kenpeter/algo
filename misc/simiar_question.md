@@ -7,8 +7,8 @@ https://leetcode.com/discuss/interview-question/1625460/AMAZON-OA-Find-K-maximum
 
 # read, write
 
-- https://leetcode.com/problems/merge-sorted-array
-- https://leetcode.com/problems/duplicate-zeros
+- https://leetcode.com/problems/merge-sorted-array (\*)
+- https://leetcode.com/problems/duplicate-zeros (\*, brute_force)
 
 # swap
 
