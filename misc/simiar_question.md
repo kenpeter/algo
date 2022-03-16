@@ -9,6 +9,10 @@ https://leetcode.com/discuss/interview-question/1625460/AMAZON-OA-Find-K-maximum
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
 - https://leetcode.com/problems/duplicate-zeros (\*, brute_force)
+- https://leetcode.com/problems/sort-array-by-parity (\*)
+- https://leetcode.com/problems/sort-array-by-parity-ii/ (\*)
+- https://leetcode.com/problems/remove-duplicates-from-sorted-array (\*)
+- https://leetcode.com/problems/remove-element
 
 # swap
 
