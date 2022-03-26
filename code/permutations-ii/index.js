@@ -25,6 +25,6 @@ var permuteUnique = function (ns) {
   return res;
 };
 
-const ns = [1, 1];
+const ns = [1, 1, 1];
 const out = permuteUnique(ns);
 console.log(out);
