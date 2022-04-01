@@ -2,13 +2,13 @@
 
 - https://leetcode.com/problems/subsets/discuss/27281/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
 
-- https://leetcode.com/problems/subsets/ (\*)
+- https://leetcode.com/problems/subsets (\*)
 - https://leetcode.com/problems/subsets-ii/ (\*)
-- https://leetcode.com/problems/permutations/ (\*)
+- https://leetcode.com/problems/permutations (\*)
 - https://leetcode.com/problems/permutations-ii (\*)
-- https://leetcode.com/problems/combination-sum/
-- https://leetcode.com/problems/combination-sum-ii
-- https://leetcode.com/problems/palindrome-partitioning/
+- https://leetcode.com/problems/combination-sum (\*)
+- https://leetcode.com/problems/combination-sum-ii (\*)
+- https://leetcode.com/problems/palindrome-partitioning (\*)
 - https://leetcode.com/discuss/interview-question/1625460/AMAZON-OA-Find-K-maximum-Priority
 
 # read, write
