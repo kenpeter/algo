@@ -10,6 +10,19 @@
 - https://leetcode.com/problems/combination-sum-ii (\*)
 - https://leetcode.com/problems/palindrome-partitioning (\*)
 - https://leetcode.com/discuss/interview-question/1625460/AMAZON-OA-Find-K-maximum-Priority
+- https://leetcode.com/problems/factor-combinations/
+- https://leetcode.com/problems/palindrome-permutation-ii/
+- https://leetcode.com/problems/word-pattern-ii/
+- https://leetcode.com/problems/flip-game-ii/
+- https://leetcode.com/problems/generalized-abbreviation/
+- https://leetcode.com/problems/android-unlock-patterns/
+- https://leetcode.com/problems/robot-room-cleaner/
+- https://leetcode.com/problems/campus-bikes-ii/
+- https://leetcode.com/problems/brace-expansion/
+- https://leetcode.com/problems/stepping-numbers/
+- https://leetcode.com/problems/synonymous-sentences/
+- https://leetcode.com/problems/maximum-number-of-accepted-invitations/
+- https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/
 
 # read, write
 
