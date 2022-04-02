@@ -15,7 +15,12 @@
 - https://leetcode.com/problems/word-pattern-ii/
 - https://leetcode.com/problems/flip-game-ii/
 - https://leetcode.com/problems/generalized-abbreviation/
+
 - https://leetcode.com/problems/android-unlock-patterns/
+- https://medium.com/@rebeccahezhang/leetcode-351-android-unlock-patterns-d9bae4a8a958
+- https://massivealgorithms.blogspot.com/2016/06/leetcode-351-android-unlock-patterns.html
+- https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/351-android-unlock-patterns.html
+
 - https://leetcode.com/problems/robot-room-cleaner/
 - https://leetcode.com/problems/campus-bikes-ii/
 - https://leetcode.com/problems/brace-expansion/
