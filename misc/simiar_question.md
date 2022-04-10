@@ -14,8 +14,8 @@
 - https://leetcode.com/problems/palindrome-permutation (\*)
 - https://leetcode.com/problems/palindrome-permutation-ii
 - https://leetcode.com/problems/word-pattern-i (\*)
-- https://leetcode.com/problems/word-pattern-ii/
-- https://leetcode.com/problems/flip-game-ii/
+- https://leetcode.com/problems/word-pattern-ii/ (\*)
+- https://leetcode.com/problems/flip-game-ii
 - https://leetcode.com/problems/generalized-abbreviation/
 
 - https://leetcode.com/problems/android-unlock-patterns/
@@ -40,6 +40,8 @@
 - https://leetcode.com/problems/remove-duplicates-from-sorted-array (\*)
 - https://leetcode.com/problems/remove-element (\*)
 - https://leetcode.com/problems/move-zeroes (\*)
+- https://www.geeksforgeeks.org/minimum-swaps-required-group-1s-together/
+- https://poitevinpm.medium.com/leetcode-2134-minimum-swaps-to-group-all-1s-together-ii-a9a19d85d4f5
 
 # swap
 

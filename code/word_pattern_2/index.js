@@ -58,7 +58,7 @@
 
 */
 
-const wordPatternMatch = (pattern, str) => {
+const wordPatternMatch = (str, pattern) => {
   const map = new Map();
   const set = new Set();
   // 1st 0 === i
@@ -113,7 +113,12 @@ const isMatch = (str, i, pat, j, map, set) => {
   return false;
 };
 
-const pat = "aa";
-const str = "xyxy";
-const out = wordPatternMatch(pat, str);
+// const pat = "aa";
+// const str = "xx";
+// const out = wordPatternMatch(str, pat);
+// console.log(out);
+
+const pat = "a";
+const str = "xy";
+const out = wordPatternMatch(str, pat);
 console.log(out);
