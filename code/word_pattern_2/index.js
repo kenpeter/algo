@@ -72,10 +72,10 @@ const isMatch = (str, i, pat, j, map, set) => {
   if (i === str.length || j === pat.length) return false;
 
   // get current pattern character
-  const c = pat.charAt(j);
+  const c = pat[j];
 
   // if the pattern character exists
-  if (map.containsKey(c)) {
+  if (map.get(c)) {
     const s = map.get(c);
 
     // then check if we can use it to match str[i...i+s.length()]
@@ -84,19 +84,19 @@ const isMatch = (str, i, pat, j, map, set) => {
     }
 
     // if it can match, great, continue to match the rest
-    return isMatch(str, i + s.length(), pat, j + 1, map, set);
+    return isMatch(str, i + s.length, pat, j + 1, map, set);
   }
 
   // pattern character does not exist in the map
-  for (let k = i; k < str.length(); k++) {
+  for (let k = i; k < str.length; k++) {
     const p = str.substring(i, k + 1);
 
-    if (set.contains(p)) {
+    if (set.has(p)) {
       continue;
     }
 
     // create or update it
-    map.put(c, p);
+    map.set(c, p);
     set.add(p);
 
     // continue to match the rest
@@ -105,10 +105,15 @@ const isMatch = (str, i, pat, j, map, set) => {
     }
 
     // backtracking
-    map.remove(c);
-    set.remove(p);
+    map.delete(c);
+    set.delete(p);
   }
 
   // we've tried our best but still no luck
   return false;
 };
+
+const pat = "aa";
+const str = "xyxy";
+const out = wordPatternMatch(pat, str);
+console.log(out);
