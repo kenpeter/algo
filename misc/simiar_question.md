@@ -17,7 +17,7 @@
 - https://leetcode.com/problems/word-pattern-ii/ (\*)
 - https://leetcode.com/problems/flip-game-i (\*)
 - https://leetcode.com/problems/flip-game-ii (\*)
-- https://leetcode.com/problems/generalized-abbreviation
+- https://leetcode.com/problems/generalized-abbreviation (\*)
 
 - https://leetcode.com/problems/android-unlock-patterns/
 - https://medium.com/@rebeccahezhang/leetcode-351-android-unlock-patterns-d9bae4a8a958
