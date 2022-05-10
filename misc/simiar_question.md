@@ -24,7 +24,7 @@
 - https://massivealgorithms.blogspot.com/2016/06/leetcode-351-android-unlock-patterns.html
 - https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/351-android-unlock-patterns.html
 
-- https://leetcode.com/problems/robot-room-cleaner/, https://wentao-shao.gitbook.io/leetcode/graph-search/489.robot-room-cleaner
+- https://leetcode.com/problems/robot-room-cleaner/, https://wentao-shao.gitbook.io/leetcode/graph-search/489.robot-room-cleaner (\*)
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
 - https://leetcode.com/problems/brace-expansion/
 - https://leetcode.com/problems/stepping-numbers/
