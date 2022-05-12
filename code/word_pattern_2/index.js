@@ -59,7 +59,9 @@
 */
 
 const wordPatternMatch = (str, pattern) => {
+  // map
   const map = new Map();
+  // set
   const set = new Set();
   // 1st 0 === i
   // 2nd 0 === j
@@ -67,44 +69,49 @@ const wordPatternMatch = (str, pattern) => {
 };
 
 const isMatch = (str, i, pat, j, map, set) => {
-  // base case
+  // all exhaust
   if (i === str.length && j === pat.length) return true;
+  // 1 exhaust, but the other not
   if (i === str.length || j === pat.length) return false;
 
-  // get current pattern character
+  // curr char in pattern
   const c = pat[j];
 
-  // if the pattern character exists
+  // we see this pattern again
   if (map.get(c)) {
+    // get pattern
     const s = map.get(c);
 
+    // quick match
     // then check if we can use it to match str[i...i+s.length()]
     if (!str.startsWith(s, i)) {
       return false;
     }
 
-    // if it can match, great, continue to match the rest
+    // the abstract path
     return isMatch(str, i + s.length, pat, j + 1, map, set);
   }
 
-  // pattern character does not exist in the map
+  // loop char in str
   for (let k = i; k < str.length; k++) {
+    // a -> sub
     const p = str.substring(i, k + 1);
 
+    // 2nd time to see this pattern?
     if (set.has(p)) {
       continue;
     }
 
-    // create or update it
+    // add
     map.set(c, p);
     set.add(p);
 
-    // continue to match the rest
+    // the abstract path
     if (isMatch(str, k + 1, pat, j + 1, map, set)) {
       return true;
     }
 
-    // backtracking
+    // remove
     map.delete(c);
     set.delete(p);
   }
