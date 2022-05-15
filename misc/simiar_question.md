@@ -26,6 +26,7 @@
 
 - https://leetcode.com/problems/robot-room-cleaner/, https://wentao-shao.gitbook.io/leetcode/graph-search/489.robot-room-cleaner (\*)
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
+- https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/
 - https://leetcode.com/problems/brace-expansion/
 - https://leetcode.com/problems/stepping-numbers/
 - https://leetcode.com/problems/synonymous-sentences/
