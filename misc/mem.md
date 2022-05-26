@@ -1,6 +1,5 @@
 # mem
-- word pattern i
-- word pattern ii
-- campus bike ii
+- combination sum
+- combination sum ii
 - robot cleaner
 - palindrome partition
