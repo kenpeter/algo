@@ -19,15 +19,15 @@
 - https://leetcode.com/problems/flip-game-ii (\*)
 - https://leetcode.com/problems/generalized-abbreviation (\*)
 
-- https://leetcode.com/problems/android-unlock-patterns/
-- https://medium.com/@rebeccahezhang/leetcode-351-android-unlock-patterns-d9bae4a8a958
-- https://massivealgorithms.blogspot.com/2016/06/leetcode-351-android-unlock-patterns.html
-- https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/351-android-unlock-patterns.html
+- https://leetcode.com/problems/android-unlock-patterns/ (x)
+- https://medium.com/@rebeccahezhang/leetcode-351-android-unlock-patterns-d9bae4a8a958 (x)
+- https://massivealgorithms.blogspot.com/2016/06/leetcode-351-android-unlock-patterns.html (x)
+- https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/351-android-unlock-patterns.html (x)
 
 - https://leetcode.com/problems/robot-room-cleaner/, https://wentao-shao.gitbook.io/leetcode/graph-search/489.robot-room-cleaner (\*)
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
-- https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/
-- https://leetcode.com/problems/brace-expansion/
+- https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
+- https://leetcode.com/problems/brace-expansion/ (\*)
 - https://leetcode.com/problems/stepping-numbers/
 - https://leetcode.com/problems/synonymous-sentences/
 - https://leetcode.com/problems/maximum-number-of-accepted-invitations/
