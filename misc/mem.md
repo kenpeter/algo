@@ -1,5 +1,6 @@
 # mem
-- combination sum
-- combination sum ii
-- campus bike ii
-- palindrome partition
+- stepping number
+- brace expansion
+- shortest path with removed obstacle
+- permuation i
+- permuation ii
