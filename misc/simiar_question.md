@@ -29,7 +29,7 @@
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
 - https://leetcode.com/problems/brace-expansion/ (\*)
 - https://leetcode.com/problems/stepping-numbers/ (\*)
-- https://leetcode.com/problems/synonymous-sentences/
+- https://leetcode.com/problems/synonymous-sentences/ (\*)
 - https://leetcode.com/problems/maximum-number-of-accepted-invitations/
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/
 - 
