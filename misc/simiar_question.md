@@ -33,7 +33,8 @@
 - https://leetcode.com/problems/maximum-number-of-accepted-invitations/ (\*)
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
 - https://leetcode.com/problems/number-of-islands (\*)
-- https://leetcode.com/problems/nested-list-weight-sum/
+- https://leetcode.com/problems/nested-list-weight-sum/ (\*)
+- https://leetcode.com/problems/different-ways-to-add-parentheses/
 
 # read, write
 
