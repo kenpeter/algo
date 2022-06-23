@@ -1,7 +1,6 @@
 # mem
 - diff way to add parethesis
+- mine sweaper
 - flattern nested list
 - nested list weight sum ii
-- nested list weight sum i
-- boys and girls max invitation
-- synonymous sentense
+- min lines to cover points
