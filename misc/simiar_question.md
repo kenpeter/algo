@@ -34,7 +34,8 @@
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
 - https://leetcode.com/problems/number-of-islands (\*)
 - https://leetcode.com/problems/nested-list-weight-sum/ (\*)
-- https://leetcode.com/problems/different-ways-to-add-parentheses/
+- https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
+- https://leetcode.com/problems/longest-increasing-path-in-a-matrix/ (\*)
 
 # read, write
 
