@@ -1,6 +1,7 @@
 # mem
 - longest increase path in grid
-- max num island
-- diff way to add parethesis
 - mine sweaper
+- diff way to add parethesis
 - word pattern ii
+- subset ii
+- permuation ii
