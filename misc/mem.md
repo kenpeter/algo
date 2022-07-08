@@ -1,7 +1,6 @@
 # mem
-- longest increase path in grid
-- mine sweaper
-- diff way to add parethesis
-- word pattern ii
-- subset ii
-- permuation ii
+- palindrome partition
+- flip game i
+- flip game ii
+- generalized abbreviation
+- leetcode robot cleaner
