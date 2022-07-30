@@ -1,8 +1,10 @@
 # mem
 
-- palindrome partition
-- flip game i
-- flip game ii
-- generalized abbreviation
-- leetcode robot cleaner
--
+- nested list sum i
+- nested list sum ii
+- subset i
+- subset ii
+- permutation i
+- permutation ii
+- word pattern i
+- word pattern ii
