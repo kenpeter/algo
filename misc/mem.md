@@ -1,7 +1,5 @@
 # mem
 
-- nested list sum i
-- nested list sum ii
 - subset i
 - subset ii
 - permutation i
@@ -10,3 +8,5 @@
 - word pattern ii
 - combination sum i
 - combination sum ii
+- different way to add paretheses
+- brace expansion
