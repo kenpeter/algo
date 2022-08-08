@@ -4,3 +4,4 @@
 - synonymous sentences
 - factor combination
 - max invitation
+- account merge
