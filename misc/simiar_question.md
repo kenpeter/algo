@@ -37,8 +37,11 @@
 - https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
 - https://leetcode.com/problems/longest-increasing-path-in-a-matrix/ (\*)
 
-https://leetcode.com/problems/accounts-merge/
-https://leetcode.com/problems/accounts-merge/discuss/494151/JavaScript-Solution-DFS
+- https://leetcode.com/problems/accounts-merge/ (\*)
+- https://leetcode.com/problems/accounts-merge/discuss/494151/JavaScript-Solution-DFS
+- graph[x] = set (avoid duplicated)
+- before visit next path, mark visisted (avoid infinite loop)
+- res.push(email) in dfs (no other place to push to res)
 
 # read, write
 
