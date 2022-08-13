@@ -48,8 +48,8 @@
 
 - https://leetcode.com/problems/max-area-of-island (\*)
 - https://leetcode.com/problems/making-a-large-island/ (\*)
-- paint with label
-- then travel graph
+- we don't go down to the path easily
+- param updated, so use updated param
 
 - https://leetcode.com/problems/shortest-bridge/ (\*)
 - [i, j], cell_len = |x2-x1| + [y2-y1] - 1;
