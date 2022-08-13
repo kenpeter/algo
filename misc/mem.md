@@ -1,8 +1,9 @@
 # mem
 
-- step numbers
-- synonymous sentences
-- factor combination
 - max invitation
+- synonymous sentences
 - account merge
+- max area of island
+- number of island
 - make max island
+- shortest of bridge

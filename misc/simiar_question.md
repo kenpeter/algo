@@ -32,7 +32,6 @@
 - https://leetcode.com/problems/synonymous-sentences/ (\*)
 - https://leetcode.com/problems/maximum-number-of-accepted-invitations/ (\*)
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
-- https://leetcode.com/problems/number-of-islands (\*)
 - https://leetcode.com/problems/nested-list-weight-sum/ (\*)
 - https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
 - https://leetcode.com/problems/longest-increasing-path-in-a-matrix/ (\*)
@@ -42,6 +41,24 @@
 - graph[x] = set (avoid duplicated)
 - before visit next path, mark visisted (avoid infinite loop)
 - res.push(email) in dfs (no other place to push to res)
+
+- https://leetcode.com/problems/number-of-islands (\*)
+- paint this island to '0'
+- '1' is str, '0' is str
+
+- https://leetcode.com/problems/max-area-of-island (\*)
+- https://leetcode.com/problems/making-a-large-island/ (\*)
+- paint with label
+- then travel graph
+
+- https://leetcode.com/problems/shortest-bridge/ (\*)
+- [i, j], cell_len = |x2-x1| + [y2-y1] - 1;
+- remember to paint
+
+- https://leetcode.com/problems/count-sub-islands/
+- https://leetcode.com/problems/find-all-groups-of-farmland/
+- https://leetcode.com/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/
+- https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
 
 # read, write
 
