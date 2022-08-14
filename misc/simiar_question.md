@@ -56,7 +56,7 @@
 - remember to paint
 
 - https://leetcode.com/problems/count-sub-islands/ (\*)
--
+- because the dfs === init + self loop, so need g[i][j] to guard
 
 - https://leetcode.com/problems/find-all-groups-of-farmland/
 - https://leetcode.com/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/
