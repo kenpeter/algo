@@ -38,9 +38,8 @@
 
 - https://leetcode.com/problems/accounts-merge/ (\*)
 - https://leetcode.com/problems/accounts-merge/discuss/494151/JavaScript-Solution-DFS
-- graph[x] = set (avoid duplicated)
-- before visit next path, mark visisted (avoid infinite loop)
-- res.push(email) in dfs (no other place to push to res)
+- use seen in init travel graph
+- use seen in sub travel graph (set)
 
 - https://leetcode.com/problems/number-of-islands (\*)
 - paint this island to '0'
