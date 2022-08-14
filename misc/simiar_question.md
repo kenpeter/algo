@@ -40,6 +40,7 @@
 - https://leetcode.com/problems/accounts-merge/discuss/494151/JavaScript-Solution-DFS
 - use seen in init travel graph
 - use seen in sub travel graph (set)
+- cannot put seen in dfs, as refresh each time
 
 - https://leetcode.com/problems/number-of-islands (\*)
 - paint this island to '0'
