@@ -59,6 +59,8 @@
 - because the dfs === init + self loop, so need g[i][j] to guard
 
 - https://leetcode.com/problems/find-all-groups-of-farmland/
+- without paint, it will infinite loop
+
 - https://leetcode.com/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/
 - https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
 
