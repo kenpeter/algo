@@ -58,14 +58,19 @@
 - https://leetcode.com/problems/count-sub-islands/ (\*)
 - because the dfs === init + self loop, so need g[i][j] to guard
 
-- https://leetcode.com/problems/find-all-groups-of-farmland/
+- https://leetcode.com/problems/find-all-groups-of-farmland/ (\*)
 - without paint, it will infinite loop
 
-- https://leetcode.com/problems/web-crawler
+- https://leetcode.com/problems/web-crawler (\*)
 - init, set.add(url), as may be no more urls
 
-- https://leetcode.com/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/
-- https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
+- https://leetcode.com/problems/number-of-distinct-islands/
+- shape == direction + up + right + down + left
+- start direction = 'x' (init)
+- dfs return 'o' (something return)
+
+- https://leetcode.com/problems/swim-in-rising-water/
+- https://leetcode.com/problems/web-crawler-multithreaded/
 
 # read, write
 
