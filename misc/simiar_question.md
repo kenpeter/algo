@@ -69,7 +69,10 @@
 - start direction = 'x' (init)
 - dfs return 'o' (something return)
 
-- https://leetcode.com/problems/swim-in-rising-water/
+- https://leetcode.com/problems/swim-in-rising-water/ (\*)
+- time === depth
+- time++ in loop
+
 - https://leetcode.com/problems/web-crawler-multithreaded/
 
 # read, write
