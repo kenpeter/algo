@@ -64,7 +64,7 @@
 - https://leetcode.com/problems/web-crawler (\*)
 - init, set.add(url), as may be no more urls
 
-- https://leetcode.com/problems/number-of-distinct-islands/
+- https://leetcode.com/problems/number-of-distinct-islands/ (\*)
 - shape == direction + up + right + down + left
 - start direction = 'x' (init)
 - dfs return 'o' (something return)
