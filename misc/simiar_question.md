@@ -70,8 +70,9 @@
 - dfs return 'o' (something return)
 
 - https://leetcode.com/problems/swim-in-rising-water/ (\*)
-- time === depth
-- time++ in loop
+- time === depth, time++ in loop
+- each iteration is new
+- seen.add === paint
 
 - https://leetcode.com/problems/web-crawler-multithreaded/
 
