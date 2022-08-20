@@ -74,7 +74,9 @@
 - each iteration is new
 - seen.add === paint
 
-- https://leetcode.com/problems/web-crawler-multithreaded/
+- https://leetcode.com/problems/the-maze (\*)
+- each direction, 1 direction only (empty path || visited), bacause later will check
+- (block || visited) continue
 
 # read, write
 
