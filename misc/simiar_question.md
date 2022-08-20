@@ -77,6 +77,7 @@
 - https://leetcode.com/problems/the-maze (\*)
 - each direction, 1 direction only (empty path || visited), bacause later will check
 - (block || visited) continue
+- hit the boundary, need to go back
 
 # read, write
 
