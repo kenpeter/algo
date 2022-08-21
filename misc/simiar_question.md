@@ -84,7 +84,9 @@
 - in each dir, we do a fresh start (because state will be init same)
 - init the dp arr, as it needs to cal later
 
-- https://leetcode.com/problems/flood-fill
+- https://leetcode.com/problems/flood-fill (\*)
+- img[r][c] !== startColor, stop (because other pixel)
+- img[r][c] === newColor, stop (because already fill)
 
 - https://leetcode.com/problems/pacific-atlantic-water-flow/
 
