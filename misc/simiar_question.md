@@ -82,6 +82,7 @@
 - https://leetcode.com/problems/the-maze-ii (\*)
 - go down to the path, where distance is less
 - not random go back
+- in each path, we do a fresh start (not continue from old state)
 
 # read, write
 
