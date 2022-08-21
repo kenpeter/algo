@@ -84,6 +84,12 @@
 - not random go back
 - in each path, we do a fresh start (not continue from old state)
 
+- https://leetcode.com/problems/flood-fill
+
+- https://leetcode.com/problems/pacific-atlantic-water-flow/
+
+- https://leetcode.com/problems/battleships-in-a-board/
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
