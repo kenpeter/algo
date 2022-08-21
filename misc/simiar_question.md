@@ -80,9 +80,9 @@
 - hit the boundary, need to go back
 
 - https://leetcode.com/problems/the-maze-ii (\*)
-- go down to the path, where distance is less
-- not random go back
-- in each path, we do a fresh start (not continue from old state)
+- go down to the path, where distance is less; not random go down
+- in each dir, we do a fresh start (because state will be init same)
+- init the dp arr, as it needs to cal later
 
 - https://leetcode.com/problems/flood-fill
 
