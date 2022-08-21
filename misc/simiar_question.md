@@ -79,6 +79,10 @@
 - (block || visited) continue
 - hit the boundary, need to go back
 
+- https://leetcode.com/problems/the-maze-ii (\*)
+- go down to the path, where distance is less
+- not random go back
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
