@@ -89,7 +89,10 @@
 - img[r][c] !== startColor, stop (because other pixel)
 - img[r][c] === newColor, stop (because already fill)
 
-- https://leetcode.com/problems/pacific-atlantic-water-flow/
+- https://leetcode.com/problems/pacific-atlantic-water-flow/ (\*)
+- pacific === atlantic, not enough; pacific === atlantic === 1 (visited)
+- row loop then col loop
+- water, height flow to low
 
 - https://leetcode.com/problems/battleships-in-a-board/
 
