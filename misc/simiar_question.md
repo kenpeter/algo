@@ -96,7 +96,10 @@
 
 - https://leetcode.com/problems/battleships-in-a-board/ (\*)
 - ship is 1 to k (col) or 1 to k (row)
-- paint
+- paint in own grid === seen in set
+
+- https://leetcode.com/problems/course-schedule/ (\*)
+- https://leetcode.com/problems/course-schedule-ii/ (\*)
 
 # read, write
 

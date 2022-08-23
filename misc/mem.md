@@ -1,6 +1,5 @@
 # mem
 
-- web crawler
 - swim in rising water
 - the maze
 - the maze ii
