@@ -94,7 +94,9 @@
 - row loop then col loop
 - water, height flow to low
 
-- https://leetcode.com/problems/battleships-in-a-board/
+- https://leetcode.com/problems/battleships-in-a-board/ (\*)
+- ship is 1 to k (col) or 1 to k (row)
+- paint
 
 # read, write
 
