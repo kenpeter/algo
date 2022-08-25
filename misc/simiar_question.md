@@ -101,9 +101,8 @@
 - paint in own grid === seen in set
 
 - https://leetcode.com/problems/course-schedule/ (\*)
-- graph connect each course (vertex, edge)
-- visiting === curr paths
-- visisted === past paths
+- visiting === curr paths; visiting.delete(v); clean up each time
+- visisted === past paths; visisted.add(v); remember
 - map.get(vertex) === edges, some vertex never have edge
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
