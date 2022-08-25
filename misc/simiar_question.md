@@ -34,7 +34,9 @@
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
 - https://leetcode.com/problems/nested-list-weight-sum/ (\*)
 - https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
+
 - https://leetcode.com/problems/longest-increasing-path-in-a-matrix/ (\*)
+-
 
 - https://leetcode.com/problems/accounts-merge/ (\*)
 - https://leetcode.com/problems/accounts-merge/discuss/494151/JavaScript-Solution-DFS
@@ -99,6 +101,11 @@
 - paint in own grid === seen in set
 
 - https://leetcode.com/problems/course-schedule/ (\*)
+- graph connect each course (vertex, edge)
+- visiting === curr paths
+- visisted === past paths
+- map.get(vertex) === edges, some vertex never have edge
+
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
 
 # read, write

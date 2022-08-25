@@ -5,5 +5,4 @@
 - the maze ii
 - flood fill (img)
 - pacific-atlantic-water-flow
-- battleships-in-a-board
 - longest-increasing-path-in-a-matrix
