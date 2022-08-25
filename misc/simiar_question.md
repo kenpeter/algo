@@ -105,6 +105,7 @@
 - visisted === past paths; visisted.add(v); remember
 - map.get(vertex) === edges, some vertex never have edge
 - for const [v, e] of map (map sepcial)
+- in loop, use curr param; not global param
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
 
