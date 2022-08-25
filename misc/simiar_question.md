@@ -104,7 +104,7 @@
 - visiting === curr paths; visiting.delete(v); clean up each time
 - visisted === past paths; visisted.add(v); remember
 - map.get(vertex) === edges, some vertex never have edge
-- for const [v, e] of map
+- for const [v, e] of map (map sepcial)
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
 
