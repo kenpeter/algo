@@ -90,6 +90,7 @@
 - https://leetcode.com/problems/flood-fill (\*)
 - img[r][c] !== startColor, stop (because other pixel)
 - img[r][c] === newColor, stop (because already fill)
+- origColor = img[r][c], because it wants to change all same color
 
 - https://leetcode.com/problems/pacific-atlantic-water-flow/ (\*)
 - pacific === atlantic, not enough; pacific === atlantic === 1 (visited)
