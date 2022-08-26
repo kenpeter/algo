@@ -102,13 +102,18 @@
 - paint in own grid === seen in set
 
 - https://leetcode.com/problems/course-schedule/ (\*)
-- visiting === curr paths; visiting.delete(v); clean up each time
-- visisted === past paths; visisted.add(v); remember
-- map.get(vertex) === edges, some vertex never have edge
-- for const [v, e] of map (map sepcial)
-- in loop, use curr param; not global param
+- seeing, hit again, will be cycle
+- seeing, clean each time, so next one can use
+- seen, hit again, non-cycle, because sucess
+- vertex can has no edges, so need check
+- if loop graph, no relationship, item miss; loop courseNum
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
+- seeing, hit again, will be cycle
+- seeing, clean each time, so next one can use
+- seen, hit again, non-cycle, because sucess
+- vertex can has no edges, so need check
+- if loop graph, no relationship, item miss; loop courseNum
 
 # read, write
 
