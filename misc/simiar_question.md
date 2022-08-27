@@ -84,9 +84,8 @@
 - hit the boundary, need to go back
 
 - https://leetcode.com/problems/the-maze-ii (\*)
-- go down to the path, where distance is less; not random go down
-- in each dir, we do a fresh start (because state will be init same)
-- init the dp arr, as it needs to cal later
+- should we use seen in the loop of 4 directions, no; visited or empty path should allow
+- why we should not do dfs within the 4 directions loop, because after 4 directions finish, we update the distnce, it has good value
 
 - https://leetcode.com/problems/flood-fill (\*)
 - img[r][c] !== startColor, stop (because other pixel)
