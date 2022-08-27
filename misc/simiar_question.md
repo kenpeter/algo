@@ -103,14 +103,14 @@
 
 - https://leetcode.com/problems/course-schedule/ (\*)
 - seeing, hit again, will be cycle
-- seeing, clean each time, so next one can use
+- seeing, clean each time, so next one can use; seeing.add -> seeing.delete
 - seen, hit again, non-cycle, because sucess
 - vertex can has no edges, so need check
 - if loop graph, no relationship, item miss; loop courseNum
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
 - seeing, hit again, will be cycle
-- seeing, clean each time, so next one can use
+- seeing, clean each time, so next one can use; seeing.add -> seeing.delete
 - seen, hit again, non-cycle, because sucess
 - vertex can has no edges, so need check
 - if loop graph, no relationship, item miss; loop courseNum
