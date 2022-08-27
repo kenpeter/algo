@@ -72,9 +72,10 @@
 - dfs return 'o' (something return)
 
 - https://leetcode.com/problems/swim-in-rising-water/ (\*)
-- time === depth, time++ in loop
-- each iteration is new
-- seen.add === paint
+- why seen.clear() happened in each loop? because dfs(0, 0);
+- need to in sync; why other leetcode question no need seen.clear(), because no dfs(0, 0)
+- why not dfs(i-1, j), dfs(i+1, j)? why need 4 dir? because it is path finding
+
 
 - https://leetcode.com/problems/the-maze (\*)
 - dfs always consider base
