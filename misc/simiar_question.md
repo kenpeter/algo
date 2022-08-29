@@ -115,6 +115,13 @@
 - vertex can has no edges, so need check
 - if loop graph, no relationship, item miss; loop courseNum
 
+- https://leetcode.com/problems/critical-connections-in-a-network/ (\*)
+- in loop, there is con, return, nothing
+- con: u want loop run
+- return: u don't want loop run; out directly
+- nothing: allow code below run
+- set is not arr, cannot for i=...
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
