@@ -122,7 +122,15 @@
 - con: u want loop run
 - return: u don't want loop run; out directly
 - nothing: allow code below run
+-
 - set is not arr, cannot for i=...
+-
+- why there must be 1 dfs?
+- because we need to go down
+- why dfs is in edge loop?
+- because we have min rankAtNode, we have the push res
+- why visited = arr, rankAtNode = ar? why not use set?
+- because node num is nicely matched to arr num; use set no good
 
 # read, write
 
