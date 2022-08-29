@@ -78,10 +78,12 @@
 - because everyting in 1 place, instead of 4 dir; do it earlier
 
 - https://leetcode.com/problems/the-maze (\*)
-- dfs always consider base
-- each direction, 1 direction only (empty path || visited), bacause later will check
-- (block || visited) continue
-- hit the boundary, need to go back
+- so if we have a dp (set with inifinity), why we need to init it?
+- because in later code, we need to cal; curr_state = prev_state + action
+- why need to use let row = ..., not const row = ...?
+- because in the 4 dir loop, we keep updating let row
+- why not count + dist[row_start][col_start] < dist[row_start][col_start]?
+- well, it should be count + dist[r_start][c_start] < dist[r_curr][c_curr]
 
 - https://leetcode.com/problems/the-maze-ii (\*)
 - should we use seen in the loop of 4 directions, no; visited or empty path should allow
