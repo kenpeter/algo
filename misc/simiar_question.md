@@ -104,11 +104,15 @@
 - paint in own grid === seen in set
 
 - https://leetcode.com/problems/course-schedule/ (\*)
-- seeing, hit again, will be cycle
-- seeing, clean each time, so next one can use; seeing.add -> seeing.delete
-- seen, hit again, non-cycle, because sucess
-- vertex can has no edges, so need check
-- if loop graph, no relationship, item miss; loop courseNum
+- in dfs, after the guard condi, if no seeing / seen, it will infinite loop
+- why need to set seeing / seen, after guard, because infinite loop
+- why seeing before edge loop?
+- because later we clear seeing (set), allow other paths
+- why only set seen after edge loop?
+- because seen === finish / completed
+- why we care about cycle / !cycle here?
+- because it is not arr that stable, that is arr ind === node ind
+- this thing can be non-stable
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
 - seeing, hit again, will be cycle
