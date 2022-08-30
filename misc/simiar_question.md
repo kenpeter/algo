@@ -115,11 +115,11 @@
 - this thing can be non-stable
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
-- seeing, hit again, will be cycle
-- seeing, clean each time, so next one can use; seeing.add -> seeing.delete
-- seen, hit again, non-cycle, because sucess
-- vertex can has no edges, so need check
-- if loop graph, no relationship, item miss; loop courseNum
+- similar to course schedule i above
+- the output is 1D arr; graph (map) is key/val, so no; seeing is for instant path
+- only seen is left, convert set to arr;
+- why the order in seen is the order of output arr?
+- because that is the order to add
 
 - https://leetcode.com/problems/critical-connections-in-a-network/ (\*)
 - in loop, there is con, return, nothing
