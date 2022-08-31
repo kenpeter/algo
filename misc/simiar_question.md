@@ -40,9 +40,18 @@
 
 - https://leetcode.com/problems/accounts-merge/ (\*)
 - https://leetcode.com/problems/accounts-merge/discuss/494151/JavaScript-Solution-DFS
-- use seen in init travel graph
-- use seen in sub travel graph (set)
-- cannot put seen in dfs, as refresh each time
+- why there is seen, but no seeing?
+- because we don't have a single go down path; seeing.add() and seeing.delete() are no need
+- why do we need an extra name graph?
+- because name_graph[email] = name, will get name, from email_arr, to build merge
+- why there is no graph, we need to build it?
+- because we can add item without concerning, just add
+- why dfs return email_arr?
+- because return [] or email_arr, later we add name at 1st position
+- why we have loop to loop map_key, then sub loop to loop edges?
+- beause in the top level, we have other operations like name, sort, etc
+- why loop [key, val] of map?
+- because key and val
 
 - https://leetcode.com/problems/number-of-islands (\*)
 - paint this island to '0'
