@@ -7,3 +7,4 @@
 - course schedule
 - course schedule ii
 - critical connection in a network
+- synonymous sentense
