@@ -43,7 +43,11 @@
 - https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
 
 - https://leetcode.com/problems/longest-increasing-path-in-a-matrix/ (\*)
--
+- why we need to map.set(i_j, distance)?
+- because each 2d loop, we start from fresh.
+- why we need to start from fresh?
+- because we can get max = each time
+
 
 - https://leetcode.com/problems/accounts-merge/ (\*)
 - https://leetcode.com/problems/accounts-merge/discuss/494151/JavaScript-Solution-DFS
