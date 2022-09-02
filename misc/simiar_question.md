@@ -115,9 +115,9 @@
 - origColor = img[r][c], because it wants to change all same color
 
 - https://leetcode.com/problems/pacific-atlantic-water-flow/ (\*)
-- pacific === atlantic, not enough; pacific === atlantic === 1 (visited)
-- row loop then col loop
-- water, height flow to low
+- why we cannot have just 1 seen arr?
+- because we have pacific arr and atlantic arr
+- one is not enough and mix up
 
 - https://leetcode.com/problems/battleships-in-a-board/ (\*)
 - ship is 1 to k (col) or 1 to k (row)
