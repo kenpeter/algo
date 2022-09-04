@@ -94,6 +94,8 @@
 - 4 dir = u (up), r (right), down (d), left (l)
 - why shape === curr_dir + up + right + down + left?
 - because curr_dir (self) + up (future up) + right (future right) + down (future down) + left (future left)
+- why mod grid === seen, to avoid repeated?
+- because mod grid, avoid repeated; seen is like mirror
 
 - https://leetcode.com/problems/swim-in-rising-water/ (\*)
 - why use k? 
