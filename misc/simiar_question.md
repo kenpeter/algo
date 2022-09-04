@@ -81,7 +81,12 @@
 - because the dfs === init + self loop, so need g[i][j] to guard
 
 - https://leetcode.com/problems/find-all-groups-of-farmland/ (\*)
-- without paint, it will infinite loop
+- in the 2d loop, dfs(i, j), i, j are the smallest i, j?
+- why is that?
+- because we enter the path init
+- after single dfs, maxRow, maxCol will get
+- why?
+- because in single dfs, we eventually encounter maxRow, maxCol
 
 - https://leetcode.com/problems/web-crawler (\*)
 - why we need seen in web crawl?
