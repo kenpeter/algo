@@ -87,9 +87,13 @@
 - init, set.add(url), as may be no more urls
 
 - https://leetcode.com/problems/number-of-distinct-islands/ (\*)
-- shape == direction + up + right + down + left
-- start direction = 'x' (init)
-- dfs return 'o' (something return)
+- in 2d loop, dir = 'x'?
+- why we don't put dir = 'o', same as return base?
+- because init === 'x'
+- base return (exhaust) === 'o'
+- 4 dir = u (up), r (right), down (d), left (l)
+- why shape === curr_dir + up + right + down + left?
+- because curr_dir (self) + up (future up) + right (future right) + down (future down) + left (future left)
 
 - https://leetcode.com/problems/swim-in-rising-water/ (\*)
 - why use k? 
@@ -121,7 +125,8 @@
 
 - https://leetcode.com/problems/battleships-in-a-board/ (\*)
 - ship is 1 to k (col) or 1 to k (row)
-- paint in own grid === seen in set
+- why put seen check and empty path (battle ship) check in 2d loop?
+- because dfs just goes down, even seen it. ++res will inc a lot
 
 - https://leetcode.com/problems/course-schedule/ (\*)
 - in dfs, after the guard condi, if no seeing / seen, it will infinite loop
