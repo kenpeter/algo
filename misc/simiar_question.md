@@ -84,7 +84,11 @@
 - without paint, it will infinite loop
 
 - https://leetcode.com/problems/web-crawler (\*)
-- init, set.add(url), as may be no more urls
+- why we need seen in web crawl?
+- because each link is like node, it is a graph.
+- travel in graph, need seen to avoid repeated
+- why no seeing here?
+- seeing.add -> loop -> seeing.delete; this is single path to avoid cycle
 
 - https://leetcode.com/problems/number-of-distinct-islands/ (\*)
 - in 2d loop, dir = 'x'?
