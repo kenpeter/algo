@@ -74,8 +74,12 @@
 - param updated, so use updated param
 
 - https://leetcode.com/problems/shortest-bridge/ (\*)
-- [i, j], cell_len = |x2-x1| + [y2-y1] - 1;
-- remember to paint
+- avoid variable repated as the flow down?
+- why?
+- variable starts to overwrite with each other, bad
+- Math.abs(r1 - r2)
+- Not Math.abs(r1, r2), why?
+- because it can accept r1 + r2, etc; be sepcific
 
 - https://leetcode.com/problems/count-sub-islands/ (\*)
 - g1: [[1, 0], [0, 1]]
