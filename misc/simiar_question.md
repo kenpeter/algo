@@ -78,7 +78,15 @@
 - remember to paint
 
 - https://leetcode.com/problems/count-sub-islands/ (\*)
-- because the dfs === init + self loop, so need g[i][j] to guard
+- g1: [[1, 0], [0, 1]]
+- g2: [[1, 1], [0, 1]]
+- g1 has 2 islands
+- g2 has 1 islands
+- if in 2d loop assign each cell individually, it will break the islands
+- why it will breaks the island?
+- because island is connected blocked
+- why connected blocked is consider an island.
+- because disconnected islands are consider 2 islands
 
 - https://leetcode.com/problems/find-all-groups-of-farmland/ (\*)
 - in the 2d loop, dfs(i, j), i, j are the smallest i, j?
