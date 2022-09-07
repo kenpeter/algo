@@ -69,9 +69,23 @@
 - '1' is str, '0' is str
 
 - https://leetcode.com/problems/max-area-of-island (\*)
+
+
 - https://leetcode.com/problems/making-a-large-island/ (\*)
-- we don't go down to the path easily
-- param updated, so use updated param
+- we label diff island in grid
+- why?
+- then we can count the area
+- then we travel the label grid
+- why?
+- because if we hit g[r][c] = 0, we can try to connect surround island
+- why connect?
+- for largest island
+- why we need to have seen = new Set() before 4 dir loop?
+- because we loop each cell 
+- if cell = 0, then we try to connect 4 dir
+- for next cell, we try again to connect surround island
+- why we don't put seen in global?
+- because next cell does not have a chance
 
 - https://leetcode.com/problems/shortest-bridge/ (\*)
 - avoid variable repated as the flow down?
