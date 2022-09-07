@@ -81,11 +81,10 @@
 - why connect?
 - for largest island
 - why we need to have seen = new Set() before 4 dir loop?
-- because we loop each cell 
-- if cell = 0, then we try to connect 4 dir
-- for next cell, we try again to connect surround island
-- why we don't put seen in global?
-- because next cell does not have a chance
+- because image we are in cell = 0, if cell = 1, then it connects to 4 other islands, to form largest
+- so we put seen before 4 dir loop
+- why we put Math.max() after 4 dir loop?
+- same idea, we need to wait for the 4 island to connect
 
 - https://leetcode.com/problems/shortest-bridge/ (\*)
 - avoid variable repated as the flow down?
