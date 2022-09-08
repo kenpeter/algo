@@ -69,7 +69,9 @@
 - '1' is str, '0' is str
 
 - https://leetcode.com/problems/max-area-of-island (\*)
-
+- 1 island === 1 dfs go down
+- why?
+- because they are connected
 
 - https://leetcode.com/problems/making-a-large-island/ (\*)
 - we label diff island in grid
