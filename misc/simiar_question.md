@@ -183,19 +183,21 @@
 - because that is the order to add
 
 - https://leetcode.com/problems/critical-connections-in-a-network/ (\*)
-- in loop, there is con, return, nothing
-- con: u want loop run
-- return: u don't want loop run; out directly
-- nothing: allow code below run
--
-- set is not arr, cannot for i=...
--
-- why there must be 1 dfs?
-- because we need to go down
-- why dfs is in edge loop?
-- because we have min rankAtNode, we have the push res
-- why visited = arr, rankAtNode = ar? why not use set?
-- because node num is nicely matched to arr num; use set no good
+- rankAtNode = new Array(n).fill(0), why fill 0?
+- because ready to assign rank 0
+- why we need a global rank?
+- becuase node goes down, rank goes down
+- why conns.len not conns?
+- because conns === arr, arr.len
+- why currRank = rank, then nodeAtRank[node] = currRank?
+- because it is at this position, we need to assign rank
+- why we seen this node, we still need to update min_node_rank and push res?
+- becuase when update nodeAtRank[node], it is async, we need to update again
+- why rankAtNode[node] = min_rank?
+- because we want node small and close each other, then it is critical nodes
+- why currRank (prev min rank) < rankAtNode[edge], need to push res?
+- why not rankAtNode[child] (curr min rank) < rankAtNode[edge]?
+- because curr min rank always < rankAtNode[edge], no point
 
 # read, write
 
