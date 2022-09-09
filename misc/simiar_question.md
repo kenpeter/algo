@@ -40,7 +40,13 @@
 - https://leetcode.com/problems/maximum-number-of-accepted-invitations/ (\*)
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
 - https://leetcode.com/problems/nested-list-weight-sum/ (\*)
+
+
 - https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
+- why single number is the base case?
+- because res = (a) + (b), so dfs will see a and b
+- why put a into [a]?
+- because 2d loop to deal with combo; [a, b] vs [a1, b1]
 
 - https://leetcode.com/problems/longest-increasing-path-in-a-matrix/ (\*)
 - why we need to map.set(i_j, distance)?
