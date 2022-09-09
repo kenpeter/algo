@@ -65,8 +65,8 @@
 - because key and val
 
 - https://leetcode.com/problems/number-of-islands (\*)
-- paint this island to '0'
-- '1' is str, '0' is str
+- why '1' is str, '0' is str?
+- because look at the question, 1 str, 0 str
 
 - https://leetcode.com/problems/max-area-of-island (\*)
 - 1 island === 1 dfs go down
