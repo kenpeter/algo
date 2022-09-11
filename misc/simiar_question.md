@@ -39,7 +39,13 @@
 
 - https://leetcode.com/problems/maximum-number-of-accepted-invitations/ (\*)
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
-- https://leetcode.com/problems/nested-list-weight-sum/ (\*)
+
+
+- https://leetcode.com/problems/nested-list-weight-sum-ii (\*)
+- why we use localArr in dfs param?
+- because arr is keep passing down and consume
+- when getting max depth, why we need to math.max in end node and go down code
+- because each code section is in the level
 
 
 - https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
