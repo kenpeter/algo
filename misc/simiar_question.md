@@ -38,7 +38,20 @@
 
 
 - https://leetcode.com/problems/maximum-number-of-accepted-invitations/ (\*)
+-
+
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
+- 1. no pt left
+- 2. we have 1st pt, can existing lines cover 1st pt?
+- 3. we cannot cover 1st pt, if only 1 pt, then inc #, and return
+- 4. now we have 1st pt and other pts, form new lines
+- summary: we surround 1st pt to do code logic
+- why surround 1st pt to do logic?
+- because if we can cover 1st pt, rest of pt can cover
+- why we don't take out 1st pt physically?
+- because it may not be covered, so need to stay; other i can cover
+- why pt_arr.slice(0) and line_arr.slice(0)?
+- because it is double paths; It is easier for different sub tree
 
 - https://leetcode.com/problems/nested-list-weight-sum
 - https://leetcode.com/problems/nested-list-weight-sum-ii (\*)
