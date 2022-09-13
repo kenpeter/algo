@@ -38,7 +38,25 @@
 
 
 - https://leetcode.com/problems/maximum-number-of-accepted-invitations/ (\*)
+- why loop boy ind (row len), then dfs?
+- because it is like max path len in grid; we go down each girl ind (col len)
+- why use g_visit in each top level loop?
+- because it is like the max path len in grid
+- why g_visit set true / false?
+- because seen / visisted / paint
+- why g_match as global?
+- because g_match[girl_ind] = boy_ind; assign boy to girl
+- why loop each girl from i=0, within dfs?
+- because brute force
+- why dfs(g_match[girl_ind])?
+- because we g_match[girl_ind] === boy_ind (row_ind); restart dfs in row
 -
+- why code flow like this?
+- 1. can invite?
+- 2. seen this girl? 
+- 3. if can invite and never seen, can we assign boy to this girl
+- 4. if we cannot assign, can we switch (restart dfs)
+- 5. out
 
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
 - 1. no pt left
