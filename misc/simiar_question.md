@@ -28,7 +28,21 @@
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
 - https://leetcode.com/problems/brace-expansion/ (\*)
+
+
 - https://leetcode.com/problems/stepping-numbers/ (\*)
+- why outter loop i=1 -> i=9, then dfs?
+- it is like the max path in grid or flood-fill
+- why it is like max path in grid or flood-fill?
+- because we extend from base num
+- when low_boundary = 0, why res.push(0)?
+- because last_digit = curr % 10, 0 % 10 always zero, no good
+- if(curr >= low) res.push(curr), why no return here?
+- because we can build next step number (less or more), based on this curr
+- why prev = curr * 10 + last_digit - 1? because curr(digit) and last_digit(digit), diff = 1
+- same for next
+- why if(last_digit > 0) dfs(prev), because prev is less and less, prev hit low boundary.
+- why if(last_digit < 9) dfs(next), because next is more and more, next hit up boundary.
 
 - https://leetcode.com/problems/synonymous-sentences/ (\*)
 - queue (str) -> word arr (split single str) -> replace word (edge and graph)
