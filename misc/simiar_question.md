@@ -27,7 +27,16 @@
 - https://leetcode.com/problems/robot-room-cleaner/, https://wentao-shao.gitbook.io/leetcode/graph-search/489.robot-room-cleaner (\*)
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
+
 - https://leetcode.com/problems/brace-expansion/ (\*)
+- why we don't have outter loop then put dfs into it?
+- because {a, b}c{a, b} is entire str, we have str_ind all the way
+- why res = path1 (sub_path_char + sub_path_char + ..) + path2 (sub_path_char ..) + path3?
+- because sub_path_char is the sub path dfs
+- why we have arr dfs?
+- because {a,b} -> form arr
+- why we have normal char dfs?
+- {a, b}c, c is the only char
 
 
 - https://leetcode.com/problems/stepping-numbers/ (\*)
