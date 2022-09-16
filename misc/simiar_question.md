@@ -26,7 +26,21 @@
 
 - https://leetcode.com/problems/robot-room-cleaner/, https://wentao-shao.gitbook.io/leetcode/graph-search/489.robot-room-cleaner (\*)
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
+
+
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
+- why loop q.size (with q.len > 0) -> 4 dir?
+- because bfs we exhaust this queue level, then we exhaust next queue level.
+- because 4 dir is like future move
+- why curr_row, curr_col, curr_k is same in the 4 dir loop?
+- because we are trying, not real
+- why we ++res after exhaust this queue level?
+- because we are doing bfs.
+- why bfs?
+- because we try to exhaust each level
+- in the 4 dir loop, next_k <= k && used[r][c][next_k], then push to queue, why we don't have g[r][c] === 0 and g[r][c] === 1?
+- because next_k is from 0 -> k, so used[r][c][next_k] is all situation
+- because used[r][c][next_k] === true, we have visisited, then no need to push to queue
 
 - https://leetcode.com/problems/brace-expansion/ (\*)
 - why we don't have outter loop then put dfs into it?
