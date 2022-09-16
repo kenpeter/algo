@@ -38,6 +38,8 @@
 - because we are doing bfs.
 - why bfs?
 - because we try to exhaust each level
+- why exhaust each level?
+- because we have the ++res
 - in the 4 dir loop, next_k <= k && used[r][c][next_k], then push to queue, why we don't have g[r][c] === 0 and g[r][c] === 1?
 - because next_k is from 0 -> k, so used[r][c][next_k] is all situation
 - because used[r][c][next_k] === true, we have visisited, then no need to push to queue
