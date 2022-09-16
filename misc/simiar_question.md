@@ -25,7 +25,22 @@
 - https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/351-android-unlock-patterns.html (x)
 
 - https://leetcode.com/problems/robot-room-cleaner/, https://wentao-shao.gitbook.io/leetcode/graph-search/489.robot-room-cleaner (\*)
+
+
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
+- why we don't have a worker loop then dfs?
+- because only worker ind = 0 is useful, ind=1, 2, 3, we missing worker
+- why we have bike_seen?
+- because worker -> bike (connected), worker -> bike (connected) each level, to avoid repeated
+- why dp[worker_ind][bike_ind] need a 2D dp?
+- because workder -> bike (connected)
+- why dp[workder_ind][bike_ind] only store sub path, why not store full path?
+- because we not sure dp[worker_ind][bike_ind] = dp[worker_ind-1][bike_ind-1] + action
+- also we have acc_path = dp[w_ind][b_ind] + dp[w_ind][b_ind] + ....
+- why w_ind >= worker.len, min(min, acc_path)?
+- because after all the level, acc_path becomes final
+- why we need to seen -> dfs -> unseen? 
+- because set -> dfs -> unset
 
 
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
