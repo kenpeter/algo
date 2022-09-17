@@ -48,6 +48,11 @@
 - beause if seen + ro.move, we physically move here, so we need to revert
 - why whether dfs or not, we need to ro.turnRight()?
 - because we need to move on another direction
+- why we need to avoid global var and local var having same name?
+- because global var and local var confuse each other
+- const new_dir = (dir + i) % 4 === new_dir and new_ind
+- because this contains dir, so new_dir
+- because this contains %4, so it is new_ind, for arr
 
 
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
