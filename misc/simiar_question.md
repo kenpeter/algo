@@ -25,6 +25,29 @@
 - https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/351-android-unlock-patterns.html (x)
 
 - https://leetcode.com/problems/robot-room-cleaner/, https://wentao-shao.gitbook.io/leetcode/graph-search/489.robot-room-cleaner (\*)
+- why no loop then dfs?
+- because we don't even know the grid, we don't know the loop
+- why start at dir=0, r=0, c=0?
+- because we don't know where we start, then dir=0, r=0, c=0 is the choice
+- why pass dir along r and c as param in dfs?
+- because in the same r and c, each dir is diff; we need to diff them
+- why no dfs check?
+- there are 2 way to check: check before pass to dfs or check on top of dfs
+- in this case, we check before pass to dfs
+- why we call ro.clean() and set visited on top of dfs?
+- because same reason, we check before pass to dfs
+- why dir + i (the 4 dir)?
+- because we keep rotating, dir + i is a way to rotate
+- why (dir + i) % 4?
+- because dir=0,1,2,3; i=0,1,2,3; dir+i=6 overflow, %4 keep in range
+- why keep in range?
+- because dir[ind], ind%4 in range
+- why !seen and ro.move (detect we can forward), then dfs?
+- because conditional dfs, we cannot just dfs
+- why we need to revert the robot?
+- beause if seen + ro.move, we physically move here, so we need to revert
+- why whether dfs or not, we need to ro.turnRight()?
+- because we need to move on another direction
 
 
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
