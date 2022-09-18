@@ -17,7 +17,24 @@
 - https://leetcode.com/problems/word-pattern-ii/ (\*)
 - https://leetcode.com/problems/flip-game-i (\*)
 - https://leetcode.com/problems/flip-game-ii (\*)
+
+
 - https://leetcode.com/problems/generalized-abbreviation (\*)
+- in the dfs boundary check / base, why there is no curr_char?
+- because end of str, there is no curr_char
+- full = prev_str (sub_path_1) + counter (sub_path_2) + curr_char(sub_path_3, no)
+- why counter === 0 or counter > 0?
+- because if counter acc, then we have abbrev the chars, then c > 0; c === 0 means we have not used
+- why we have only 2 dfs choices?
+- becuase either counter acc or we convert the counter acc to str
+- why?
+- that is how the counter abbrev used
+- why choice 1, prev_str (no change) + counter (inc) + curr_char (no change)?
+- because counter acc
+- why choice 2, prev_str (merge counter) + counter (merge to prev_str, and reset) + curr_char (merge to prev_str)?
+- because counter converted
+- why counter reset to 0?
+- because the counter converted all
 
 - https://leetcode.com/problems/android-unlock-patterns/ (x)
 - https://medium.com/@rebeccahezhang/leetcode-351-android-unlock-patterns-d9bae4a8a958 (x)
