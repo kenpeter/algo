@@ -23,6 +23,18 @@
 - because i === curr, i-1 === prev
 
 - https://leetcode.com/problems/flip-game-ii (\*)
+- why we start at i=1?
+- because i === curr, i-1 === prev, so i starts at 1
+- why we need to be care of var's scope?
+- because if we have same var, we conflict
+- because if not local var, we confuse var
+- why we have a flip before dfs?
+- because this is the player 1 flip
+- because player 1 flip, then player flip
+- why condi = dfs(curr_s) is the overall player 2 flip?
+- because dfs represent the overall outcome
+- why dfs prepresent overall outcome?
+- because it goes down to all paths
 
 
 - https://leetcode.com/problems/generalized-abbreviation (\*)
