@@ -15,7 +15,13 @@
 - https://leetcode.com/problems/palindrome-permutation-ii
 - https://leetcode.com/problems/word-pattern-i (\*)
 - https://leetcode.com/problems/word-pattern-ii/ (\*)
+
 - https://leetcode.com/problems/flip-game-i (\*)
+- why in loop, i-1 and i together?
+- because 2 consecutive chars to flip
+- why sub(0, i-1) + (--) + sub(i+1)?
+- because i === curr, i-1 === prev
+
 - https://leetcode.com/problems/flip-game-ii (\*)
 
 
