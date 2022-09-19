@@ -17,15 +17,21 @@
 - https://leetcode.com/problems/word-pattern-i (\*)
 - why pattern and match_sub_str should have the same frequency at start?
 - because all operations below, we assume pattern and match_sub_str to be same frequency, so the loop in same step
+- why set store sub_str, not pattern_char?
+- because mp(pattern_char, sub_str), map store the pattern_char
+- why map and set are together?
+- because e.g. map(a, b), map(a, c) these will never happen; beause b and c must be unique
 - why map and set are in 4 combos?
 - 1. seen in map, in set (con)
 - 2. seen in map, not in set (return false)
 - 3. not seen in map, in set (return false)
 - 4. not seen in map, not in set (set, then con)
 - because map and set together
+- why 3 factors mp(pattern), set(pattern), mp.get(pattern) === income_pattern, to prove equal?
+- mp(pattern) and set(pattern), never say sub_str equal or not
+- so we need to have mp.get(pattern) === income_pattern
 - why we return true at the end?
 - because in the loop, we try to return false
-- no way to return false in loop, then at last, we return false
 - same as in loop we try to return true, but no way
 - then last return false
 
