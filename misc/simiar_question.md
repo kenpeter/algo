@@ -36,6 +36,21 @@
 - then last return false
 
 - https://leetcode.com/problems/word-pattern-ii/ (\*)
+- why p_ind done scan pattern, why s_ind done scan string?
+- because if they are all done in same speed, so equal
+- if they are in diff speed, then non-equal
+- why 4 combo?
+- because
+- 1. seen, set
+- 2. seen, !set
+- 3. !seen, set
+- 4. !seen, !set
+- why no +1, s_ind -> s_ind + sub.len + 1?
+- because e.g. abcd, start at b, bcd === 3 len, b + 3 len === over len, so no +1
+- why we have diff dfs path?
+- because p_ind and s_ind are in diff speed
+- why set map, set -> dfs -> unset map, set?
+- because dfs is in middle
 
 - https://leetcode.com/problems/flip-game-i (\*)
 - why in loop, i-1 and i together?
