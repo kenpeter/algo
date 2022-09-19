@@ -13,7 +13,22 @@
 - https://leetcode.com/problems/factor-combinations (\*)
 - https://leetcode.com/problems/palindrome-permutation (\*)
 - https://leetcode.com/problems/palindrome-permutation-ii
+
 - https://leetcode.com/problems/word-pattern-i (\*)
+- why pattern and match_sub_str should have the same frequency at start?
+- because all operations below, we assume pattern and match_sub_str to be same frequency, so the loop in same step
+- why map and set are in 4 combos?
+- 1. seen in map, in set (con)
+- 2. seen in map, not in set (return false)
+- 3. not seen in map, in set (return false)
+- 4. not seen in map, not in set (set, then con)
+- because map and set together
+- why we return true at the end?
+- because in the loop, we try to return false
+- no way to return false in loop, then at last, we return false
+- same as in loop we try to return true, but no way
+- then last return false
+
 - https://leetcode.com/problems/word-pattern-ii/ (\*)
 
 - https://leetcode.com/problems/flip-game-i (\*)
