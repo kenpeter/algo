@@ -10,7 +10,17 @@
 - https://leetcode.com/problems/combination-sum-ii (\*)
 - https://leetcode.com/problems/palindrome-partitioning (\*)
 - https://leetcode.com/discuss/interview-question/1625460/AMAZON-OA-Find-K-maximum-Priority
+
+
 - https://leetcode.com/problems/factor-combinations (\*)
+- why dfs_n decrease, while dfs_curr increases?
+- because dfs_n is being consumed by mod
+- because dfs_curr in each dfs loop, dfs_curr inc, to pass down, to maintain inc order in result
+- why dfs_n === 1 is the base case?
+- because dfs_n is being consumed by mod
+- why for i=curr; i <= dfs_n?
+- i <= dfs_n, because dfs_n is being consumed and eventually === 1
+
 
 
 - https://leetcode.com/problems/palindrome-permutation (\*)
