@@ -8,7 +8,13 @@
 - https://leetcode.com/problems/permutations-ii (\*)
 - https://leetcode.com/problems/combination-sum (\*)
 - https://leetcode.com/problems/combination-sum-ii (\*)
+
 - https://leetcode.com/problems/palindrome-partitioning (\*)
+- for func isPal(), why ++i and --j?
+- because if i and j not move, inifinite loop
+- why substring(start_ind, end_ind) become diff dfs path?
+- because they are diff possible, diff path
+
 - https://leetcode.com/discuss/interview-question/1625460/AMAZON-OA-Find-K-maximum-Priority
 
 
