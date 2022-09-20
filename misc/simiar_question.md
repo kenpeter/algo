@@ -11,7 +11,15 @@
 - https://leetcode.com/problems/palindrome-partitioning (\*)
 - https://leetcode.com/discuss/interview-question/1625460/AMAZON-OA-Find-K-maximum-Priority
 - https://leetcode.com/problems/factor-combinations (\*)
+
+
 - https://leetcode.com/problems/palindrome-permutation (\*)
+- why aaabb, then a = 3 freq, b = 2 feq?
+- because permutation, we can move around, for all orders
+- why map.set(key), then map.delete(key)?
+- beause map.size will reduce
+- then map.size <= 1, means palindrome
+
 - https://leetcode.com/problems/palindrome-permutation-ii
 
 - https://leetcode.com/problems/word-pattern-i (\*)
