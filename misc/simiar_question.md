@@ -6,9 +6,9 @@
 - https://leetcode.com/problems/subsets-ii/ (\*)
 
 - https://leetcode.com/problems/permutations (\*)
-- why do we need to use used = new Array(ns.len) in dfs?
+- why used arr is so good in dfs
 - we can use path_arr.includes(ele) to achieve unique
-- use used[index], we can track who used / who has not used
+- if there are repeated num, we know exactly who used / who not used
 - for dfs loop, why i=0? why we re-scan from zero?
 - because if i=start_ind, we skip / miss many elements
 - we want to have all elements
@@ -18,6 +18,17 @@
 - because dfs in the middle
 
 - https://leetcode.com/problems/permutations-ii (\*)
+- why we have 2 ways to acc path?
+- 1. in base / boundary check, path.slice(0), res.push(path)
+- this is easiest, because we just copy
+- but waste mem
+- 2. we don't copy in base / boundary check, we use single path arr (global)
+- path.push() -> dfs -> path.pop()
+- save mem, but a bit confused
+- why in loop, (i=0 && ns[i-1] === ns[i] && used[i-1] === true) con, is to use LAST ELEMENT?
+- for last same ele, from 0 to last same ele, used[i-1] === false (always)
+- so we can form its own unique path
+- all prev same eles, are duplicated
 
 - https://leetcode.com/problems/combination-sum (\*)
 - why we cannot use ind >= arr.length, instead use acc_sum >= tar?
@@ -30,7 +41,7 @@
 - why not put loop(i=ind+1, i<arr.length)?
 - or why not put loop(i=ind, i<arr.length-1)?
 - because put i > start_ind in the con statement, we can use this single ele, this single ele will be pushed to path arr, it bypass the con statement
-- why in loop, if(i > ind && ns[i-1] === n[i]) continue, why i > ind is to use 1st ele?
+- why in loop, if(i > ind && ns[i-1] === n[i]) continue, why i > ind is to use FIRST ELEMENT?
 - because i=ind, is to be used; later same ele skips
 
 - https://leetcode.com/problems/palindrome-partitioning (\*)
