@@ -30,6 +30,8 @@
 - why not put loop(i=ind+1, i<arr.length)?
 - or why not put loop(i=ind, i<arr.length-1)?
 - because put i > start_ind in the con statement, we can use this single ele, this single ele will be pushed to path arr, it bypass the con statement
+- why in loop, if(i > ind && ns[i-1] === n[i]) continue, why i > ind is to use 1st ele?
+- because i=ind, is to be used; later same ele skips
 
 - https://leetcode.com/problems/palindrome-partitioning (\*)
 - for func isPal(), why ++i and --j?
