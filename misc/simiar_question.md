@@ -6,7 +6,13 @@
 - https://leetcode.com/problems/subsets-ii/ (\*)
 - https://leetcode.com/problems/permutations (\*)
 - https://leetcode.com/problems/permutations-ii (\*)
+
 - https://leetcode.com/problems/combination-sum (\*)
+- why we cannot use ind >= arr.length, instead use acc_sum >= tar?
+- because ind can be the same index, repeat again and again
+- why we use same_dfs_i?
+- because same num can be used to form sum
+
 - https://leetcode.com/problems/combination-sum-ii (\*)
 
 - https://leetcode.com/problems/palindrome-partitioning (\*)
