@@ -4,7 +4,19 @@
 
 - https://leetcode.com/problems/subsets (\*)
 - https://leetcode.com/problems/subsets-ii/ (\*)
+
 - https://leetcode.com/problems/permutations (\*)
+- why do we need to use used = new Array(ns.len) in dfs?
+- we can use path_arr.includes(ele) to achieve unique
+- use used[index], we can track who used / who has not used
+- for dfs loop, why i=0? why we re-scan from zero?
+- because if i=start_ind, we skip / miss many elements
+- we want to have all elements
+- why not dfs(i+1, path)?
+- because i+1 will skip many elements
+- why used[ind] = true -> dfs -> used[ind] = false?
+- because dfs in the middle
+
 - https://leetcode.com/problems/permutations-ii (\*)
 
 - https://leetcode.com/problems/combination-sum (\*)
