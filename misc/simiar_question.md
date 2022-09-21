@@ -14,6 +14,10 @@
 - because same num can be used to form sum
 
 - https://leetcode.com/problems/combination-sum-ii (\*)
+- in dfs loop, why we put i > start_ind in the con statement (curr and prev ele same same)?
+- why not put loop(i=ind+1, i<arr.length)?
+- or why not put loop(i=ind, i<arr.length-1)?
+- because put i > start_ind in the con statement, we can use this single ele, this single ele will be pushed to path arr, it bypass the con statement
 
 - https://leetcode.com/problems/palindrome-partitioning (\*)
 - for func isPal(), why ++i and --j?
