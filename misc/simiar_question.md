@@ -3,6 +3,11 @@
 - https://leetcode.com/problems/subsets/discuss/27281/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
 
 - https://leetcode.com/problems/subsets (\*)
+- why we don't push ele in the dfs base / boundary check?
+- why we push ele in the dfs loop?
+- because we formt the path in dfs loop
+- it is already formed, so no need to push ele in dfs base
+
 - https://leetcode.com/problems/subsets-ii/ (\*)
 
 - https://leetcode.com/problems/permutations (\*)
