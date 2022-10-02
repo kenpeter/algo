@@ -494,7 +494,7 @@
 - why there is no loop -> dfs; why directly go to dfs?
 - because there is headID, which is parent node directly.
 - why we have max(max, dfs(headID)) within edge loop?
-- because the dfs is acting submax?
+- because after the dfs, we will get submax
 - why acting submax?
 - because dfs will go down for rest
 - why dfs, at the end return informTime[local_head_id] + submax?
