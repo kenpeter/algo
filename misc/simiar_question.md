@@ -471,6 +471,20 @@
 - why not rankAtNode[child] (curr min rank) < rankAtNode[edge]?
 - because curr min rank always < rankAtNode[edge], no point
 
+- https://leetcode.com/problems/detonate-the-maximum-bombs/
+- why I canno t use global seen, but use seen = new Set in each dfs, in loop?
+- beause we are using pattern: loop -> Math.max, so use new Set in each dfs
+- why we don't use Math.max within dfs?
+- because we already used it in a outside loop
+- when travel dfs, when we cannot use i, but use e_ind = edges[i]?
+- because remember how we build the graph, single i has many edge_ind value
+- in edge loop, we need to use edge_value
+- why ++submax?
+- because this level is for this node
+- why submax = submax + dfs(e_ind, seen), why not submax = Math.max(submax, dfs(e_ind, see))?
+- because it is called submax; curr_max + future_max;
+- also because outloop has max, we don't use max here
+
 - https://leetcode.com/problems/time-needed-to-inform-all-employees/
 - why we use 2D arr, not graph_hash / map?
 - beacuse 2D arr acts like a graph
