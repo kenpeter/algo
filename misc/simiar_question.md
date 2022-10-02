@@ -427,25 +427,27 @@
 - because dfs just goes down, even seen it. ++res will inc a lot
 
 - https://leetcode.com/problems/course-schedule/ (\*)
-- in dfs, after the guard condi, if no seeing / seen, it will infinite loop
-- why need to set seeing / seen, after guard, because infinite loop
-- why seeing before edge loop?
-- because later we clear seeing (set), allow other paths
-- why only set seen after edge loop?
-- because seen === finish / completed
-- why we care about cycle / !cycle here?
-- because it is not arr that stable, that is arr ind === nod
-
+- why course dep [a, b], graph is like a->b?
+- because a->b, a->c, a->d, there are many.
+- why course dep care about cycle?
+- because question asks that if cycle immediately return false; the end return []
+- why seen.has / path.has on top of dfs?
+- because either on top of dfs or check before pass dfs; on top of dfs, natural flow.
+- why path.add, path.delete, seen.add outside of edge loop; why not inside edge loop?
+- because it is graph
+- why edges = graph[v], need to check if(edges)?
+- because some vertex does not have edges.
+- why we loop courseNum, some index does not have edges?
+- because index is from 0,1,2,..n, some vertex does not have edges
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
-- why [a, b] if want to do a, b must be done 1st?
-- why graph is like a -> b?
-- because a can be a->b, a->c, a->d
-- why course schedule care about cycle?
-- beause question asks that if cycle return []
-- why path.has / seen.has on top of dfs?
-- because it is natural flow
-- why path.add, path.delete, seen.add outside of edge loop, why not inside edge loop?
+- why course dep [a, b], graph is like a->b?
+- because a->b, a->c, a->d, there are many.
+- why course dep care about cycle?
+- beause question asks that if cycle immediately return false; the end return []
+- why seen.has / path.has on top of dfs?
+- because either on top of dfs or check before pass dfs; on top of dfs, natural flow.
+- why path.add, path.delete, seen.add outside of edge loop; why not inside edge loop?
 - because it is graph
 - why edges = graph[v], need to check if(edges)?
 - because some vertex does not have edges
