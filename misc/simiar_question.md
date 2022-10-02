@@ -438,11 +438,17 @@
 - this thing can be non-stable
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
-- similar to course schedule i above
-- the output is 1D arr; graph (map) is key/val, so no; seeing is for instant path
-- only seen is left, convert set to arr;
-- why the order in seen is the order of output arr?
-- because that is the order to add
+- why [a, b] if want to do a, b must be done 1st?
+- why graph is like a -> b?
+- because a can be a->b, a->c, a->d
+- why course schedule care about cycle?
+- beause question asks that if cycle return []
+- why path.has / seen.has on top of dfs?
+- because it is natural flow
+- why path.add, path.delete, seen.add outside of edge loop, why not inside edge loop?
+- because it is graph
+- why edges = graph[v], need to check if(edges)?
+- because some vertex does not have edges
 
 - https://leetcode.com/problems/critical-connections-in-a-network/ (\*)
 - rankAtNode = new Array(n).fill(0), why fill 0?
