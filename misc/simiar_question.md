@@ -434,8 +434,8 @@
 - why only set seen after edge loop?
 - because seen === finish / completed
 - why we care about cycle / !cycle here?
-- because it is not arr that stable, that is arr ind === node ind
-- this thing can be non-stable
+- because it is not arr that stable, that is arr ind === nod
+
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
 - why [a, b] if want to do a, b must be done 1st?
@@ -449,6 +449,8 @@
 - because it is graph
 - why edges = graph[v], need to check if(edges)?
 - because some vertex does not have edges
+- why at the end of func, return [...seen_set] is the course dep order?
+- because loop courseNum, some index does not have edges, so when they have, they are in order
 
 - https://leetcode.com/problems/critical-connections-in-a-network/ (\*)
 - rankAtNode = new Array(n).fill(0), why fill 0?
