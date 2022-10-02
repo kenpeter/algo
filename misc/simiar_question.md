@@ -471,6 +471,21 @@
 - why not rankAtNode[child] (curr min rank) < rankAtNode[edge]?
 - because curr min rank always < rankAtNode[edge], no point
 
+- https://leetcode.com/problems/time-needed-to-inform-all-employees/
+- why we use 2D arr, not graph_hash / map?
+- beacuse 2D arr acts like a graph
+- manager is row (m), employee is col (n).
+- when build graph, why we skip headID (the_manager_id)?
+- because one cannot be own manager
+- why there is no loop -> dfs; why directly go to dfs?
+- because there is headID, which is parent node directly.
+- why we have max(max, dfs(headID)) within edge loop?
+- because the dfs is acting submax?
+- why acting submax?
+- because dfs will go down for rest
+- why dfs, at the end return informTime[local_head_id] + submax?
+- because informTime[index] === local node level
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
