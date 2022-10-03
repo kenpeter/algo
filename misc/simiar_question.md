@@ -455,21 +455,38 @@
 - because loop courseNum, some index does not have edges, so when they have, they are in order
 
 - https://leetcode.com/problems/critical-connections-in-a-network/ (\*)
-- rankAtNode = new Array(n).fill(0), why fill 0?
-- because ready to assign rank 0
-- why we need a global rank?
-- becuase node goes down, rank goes down
-- why conns.len not conns?
-- because conns === arr, arr.len
-- why currRank = rank, then nodeAtRank[node] = currRank?
-- because it is at this position, we need to assign rank
-- why we seen this node, we still need to update min_node_rank and push res?
-- becuase when update nodeAtRank[node], it is async, we need to update again
-- why rankAtNode[node] = min_rank?
-- because we want node small and close each other, then it is critical nodes
-- why currRank (prev min rank) < rankAtNode[edge], need to push res?
-- why not rankAtNode[child] (curr min rank) < rankAtNode[edge]?
-- because curr min rank always < rankAtNode[edge], no point
+- why we put seen.has in outer loop?
+- because seen.has in outer loop make it faster.
+- seen.has can sit in outer loop and seen.has can sit in dfs, at the same time
+- why dfs(child_ind, parent_ind), has child_ind, parent ind?
+- because 3 ways: parent -> child -> edge
+- why 3 ways?
+- because dfs(child_id, parent_ind), then pass dfs(edge_ind, child_ind)
+- why we need to label each node with rank?
+- otherwise, how do I know which one is more important, which one is on top
+- parent -> child -> edge
+- why rankAtNode = array(n).fill(-1), why use -1 or 0?
+- because the rank starts at 1
+- why we have 2 graph assignments?
+- beacuse graph[vertex] = edge and graph[edge] = vertex
+- why rank starts at 0, not 1?
+- because in dfs, we have ++rank, which === 1
+- why on top of dfs, ++rank?
+- beacuse that is the real dfs rank
+- why on top of dfs, we do not check child === parent?
+- because we are not checking child === parent, parent (*) -> child -> edge (*)
+- we are checking parent === edge, need to skip
+- why use Array.from(set) to loop set?
+- because set is set, not arr; Array.from can help
+- why compare child rank with edge rank, after dfs?
+- because child rank and edge rank should have the latest rank
+- why assign smaller edge rank to child rank?
+- because child rank will be on top once again; parent (top) -> child (bottom 0) -> edge (bottom 1)
+- why compare curr_rank with edge rank, after dfs?
+- because edge rank should have latest rank;
+- curr_rank < edge_rank, that means edge_rank (top) -> curr_rank (bottom), so edge is imporant now -> [edge_ind, child_ind]
+- why we don't use child_rank VS edge_rank?
+- because child_rank keeps updating, it is not stable
 
 - https://leetcode.com/problems/detonate-the-maximum-bombs/
 - why I canno t use global seen, but use seen = new Set in each dfs, in loop?
