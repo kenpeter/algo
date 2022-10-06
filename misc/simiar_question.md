@@ -422,9 +422,19 @@
 - one is not enough and mix up
 
 - https://leetcode.com/problems/battleships-in-a-board/ (\*)
-- ship is 1 to k (col) or 1 to k (row)
-- why put seen check and empty path (battle ship) check in 2d loop?
-- because dfs just goes down, even seen it. ++res will inc a lot
+- why for flood-fill, we need to use standard 2D loop?
+- because it is grid; It travels in the grid to paint cell.
+- why we need to condi check if(g[i][j] === 'X'), then goes down dfs?
+- because outer loop condi check and dfs top condi check
+- because once go down dfs path, it cleans all cells in this path
+- why ++res under if(g[i][j] === 'X'), why not just ++res?
+- because we have if(g[i][j] === 'X'), then dfs, we don't want ++res, for no reason.
+- why we need to boundary check g[i][j] === '.', on top of dfs?
+- because dfs will self goes down, so it needs to check cell
+- why boundary check, we return nothing?
+- because ++res, is in outer loop; here we just goes down to the path, path done just return
+- why we need to paint / visited, after boundary check?
+- It is acting like a seen = new Set(), to avoid loop
 
 - https://leetcode.com/problems/course-schedule/ (\*)
 - why course dep [a, b], graph is like a->b?
