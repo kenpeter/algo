@@ -311,7 +311,43 @@
 
 - https://leetcode.com/problems/accounts-merge/ (\*)
 - https://leetcode.com/problems/accounts-merge/discuss/494151/JavaScript-Solution-DFS
-- 
+- for graph, why we use hash, rather than map?
+- we can use use map, but hash is mush eaiser to assign vertex and assign arr/set to the end
+- why we use global seen, in dfs travel; why not use a local seen?
+- because when we travel, we want to hit the cycle; when it is cycle
+- it means we stop and this dfs path is done, and return sub result to prev dfs
+- why we have dfs in outerloop, then within dfs we have another dfs?
+- because outerloop, we init the dfs
+- within dfs, we need to dfs need to self travel
+- within outerloop, return_email_arr = dfs(email), why return_email_arr can be []?
+- because prev dfs travel may hit this email (vertex), so we hit again, we return []
+- within outerloop, why we sort the email_arr?
+- because looks nice and question asks
+- within outerloop, why we unshift person_name to start?
+- because question asks
+- why we use first_email as vertex, then conenct rest of emails?
+- why not do N^2, each node connect with each other once
+- because we know that first_email is in the same boat as other email in arr
+- It is representative, this also avoid N^2
+- then why rest_email connects first_email only?
+- this is the same idea that first_email as vertex, connect to rest_emails
+- rest email only connects back to first_email
+- why in same_arr, we form cycle; why in diff email_arr, same vertex can appear, hence edges inc?
+- because some arr processes 1st, then other arr processes later
+- why graph like this?
+- [a]; a->x (no edge)
+- [a, b]; a->b, b->a (cycle)
+- [a, b, c]; a->(b and c); (same_arr, more set)
+- [a, b], [a, c]; a->(b and c); (diff_arr, same vertex)
+- why we need a name_hash?
+- because name_hash[email] = person_name, so diff email as key entry, will have same person_name
+- when build graph, why we check graph[curr_email] === undefined, then graph[curr_email] = new Set()?
+- because later we do graph[curr_email].add(ele), without new Set() before, this is invalid add operation
+- this allows natural operation
+- when build graph, when forming a cycle, why we don't need j === 1?
+- because j === 1, it is 1st email; it has vertex, but it has no edge
+- why for edge we use set, not arr?
+- because edge can be repeated, arr allows repeated, we don't want repeated.
 
 - https://leetcode.com/problems/number-of-islands (\*)
 - why '1' is str, '0' is str?
