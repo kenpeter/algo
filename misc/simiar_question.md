@@ -495,6 +495,9 @@
 - why compare curr_rank with edge rank, after dfs?
 - because edge rank should have latest rank;
 - curr_rank < edge_rank, that means edge_rank (top) -> curr_rank (bottom), so edge is imporant now -> [edge_ind, child_ind]
+- why not curr_rank > edge_rank, then push result? curr_rank (parent) -> edge_rank (child)
+- because the prev rankAtNode[child_ind] = min(edge_ind), we update with smaller, so it is similar
+- also because we re-arrange parent child order
 - why we don't use child_rank VS edge_rank?
 - because child_rank keeps updating, it is not stable
 
