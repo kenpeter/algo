@@ -570,7 +570,14 @@
 - why the board has the actual value?
 - because when we start to to click and dfs each cell, we need to know mine (M, acc num), empty (E, put into dfs queue), blank (B, reveal cell), digit (D, surround mine num), reveal mine (X, explode)
 - because we can acc mine num and dfs queue
-
+- why in the top of dfs, we have an empty dfs queue array; why not use a global array?
+- because each dfs will have its own click (or starting point); it will hit 8 grid directions and form new dfs queue, in this dfs level.
+- next dfs level will have own starting point
+- within dfs, why we loop the 8 dir array directly? Why we don't have other loop operation?
+- because there is no other operation; we don't need seen.has as there is no cycle hit
+- why if we click a cell, it is like a sunshine; shine 8 directions
+- because the middle is the central cell, then 8 directions are the shines
+- why we loop the 8 directions
 
 
 # read, write
