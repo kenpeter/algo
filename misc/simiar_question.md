@@ -565,7 +565,13 @@
 - because we have click (start_row, start_col), then we init dfs, then go down
 - in the init dfs, why we need to handle mine (M) or init dfs?
 - because if we don't handle mine now, it will go down to dfs, dfs will look for all future 8 directions. There is no way to handle current mine
-- 
+- why we pass 8 directions to dfs?
+- because later we have row = curr_row + row_d AND col = curr_col + col_d, for future move
+- why the board has the actual value?
+- because when we start to to click and dfs each cell, we need to know mine (M, acc num), empty (E, put into dfs queue), blank (B, reveal cell), digit (D, surround mine num), reveal mine (X, explode)
+- because we can acc mine num and dfs queue
+
+
 
 # read, write
 
