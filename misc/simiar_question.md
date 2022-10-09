@@ -577,7 +577,52 @@
 - because there is no other operation; we don't need seen.has as there is no cycle hit
 - why if we click a cell, it is like a sunshine; shine 8 directions
 - because the middle is the central cell, then 8 directions are the shines
-- why we loop the 8 directions
+- why we loop the 8 directions?
+- it can be 4 directions (e.g. flood fill) or 8 directions (mine sweep)
+- because it clicks in middle, then it explodes in all 8 directions.
+- it form row = curr_row + row_d; col = curr_col + col_d
+- why we need row = curr_row + row_d; col = curr_col + col_d?
+- because after each direction, we will form a new future move, hence we can check boundary, for future move
+- why we only check boundary, we don't have other stuff to check?
+- because the next cell will be
+- mine (M, looks like a mine)
+- empty (E, more dfs path)
+- blank (B, reveal blank cell)
+- digit (D, surround mine num)
+- explode (X, explode mine)
+- why there is no seen.has on top of dfs?
+- because there is no cycle we will hit, not graph
+-
+- in dir loop, why we need to care mine (M)?
+- because there we acc the mine num, and assign to the click point
+- it also helps to stop dfs; because hit the stop point
+- why we need to care empty square (E)?
+- because if it is empty, we can push to queue arr, then loop -> dfs
+- this allows new starting point
+- why we don't care blank (B)?
+- because aleady known AND there is no contrib to mine acc and dfs queue
+- why we don't care digit (D)?
+- because known AND there is no contribute to mine acc and dfs queue
+- why we don't care explode (X)?
+- Because it exploded, it is game over.
+- Further to M, E, B, D, X, if other dfs path done it before, current dfs path should ignore it (to avoid repeated action)
+- why we acc mine num?
+- because need to assign mine num to this starting point.
+- why we assign starting point mine num, there is no further dfs?
+- because we hit the mine (stop point), we need to stop now, no dfs
+- why we assign acc mine num to the starting point's cell?
+- because to warn user that there are mines around; it is for the UI of the game
+- so why do we assign blank to the starting point?
+- because in this dfs level, if click is used, to reveal it, to let UI know.
+- the dfs queue is below, is acting like further click (further reveal)
+- why we assign blank before next dfs?
+- because it is this dfs level, we need to finish the task here
+- why the element in queue order is the direction order?
+- because we loop in the 8 grid directions, so that is the loop order
+- queue order === direction order
+- why dfs return, it returns from the bottom?
+- because dfs travel from top to bottom, when it reaches a stop condition, it travels from bottom to top, as a whole abstract.
+- there is no way for it to travel drectly from starting point
 
 
 # read, write
