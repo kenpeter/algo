@@ -555,6 +555,18 @@
 - why dfs, at the end return informTime[local_head_id] + submax?
 - because informTime[index] === local node level
 
+- https://leetcode.com/problems/minesweeper/submissions/
+- why do we need 8 cell grid directions?
+- because 1 click in the middle, all 8 cell grid directions get exploded
+- it is like a sun shine.
+- why init click has start_row and start_col?
+- because that is where we start and we land on the grid.
+- why there is no loop then dfs?
+- because we have click (start_row, start_col), then we init dfs, then go down
+- in the init dfs, why we need to handle mine (M) or init dfs?
+- because if we don't handle mine now, it will go down to dfs, dfs will look for all future 8 directions. There is no way to handle current mine
+- 
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
