@@ -623,6 +623,16 @@
 - why dfs return, it returns from the bottom?
 - because dfs travel from top to bottom, when it reaches a stop condition, it travels from bottom to top, as a whole abstract.
 - there is no way for it to travel drectly from starting point
+- 
+- why we need to use global, local, curr, etc to diff local var and global bar?
+- if nested func, it is very easy to confused. must use
+- why only empty path (E), we push to the dfs queue?
+- because we do not want to dfs easier, must be careful dfs
+- why we use board[r][c] = string(mineNum)?
+- because all cells are string; why we need to use number
+- why above the loop dfs queue, we need to board[r][c] = 'B'?
+- because need to clean this cell, then move to next dfs;
+- if no clear, we cannot move to next cell
 
 
 # read, write
