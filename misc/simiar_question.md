@@ -541,19 +541,25 @@
 - also because outloop has max, we don't use max here
 
 - https://leetcode.com/problems/time-needed-to-inform-all-employees/
-- why we use 2D arr, not graph_hash / map?
-- beacuse 2D arr acts like a graph
-- manager is row (m), employee is col (n).
-- when build graph, why we skip headID (the_manager_id)?
-- because one cannot be own manager
-- why there is no loop -> dfs; why directly go to dfs?
-- because there is headID, which is parent node directly.
-- why we have max(max, dfs(headID)) within edge loop?
-- because after the dfs, we will get submax
-- why acting submax?
-- because dfs will go down for rest
-- why dfs, at the end return informTime[local_head_id] + submax?
-- because informTime[index] === local node level
+- why there is no loop then dfs?
+- becaus we have a single headID
+- why we don't need a 2D loop here?
+- i loop all employee index
+- j loop loop sub employee index
+- because manager_arr already have index === employee, val === manager
+- then manager_arr[employee_can_also_be_manager] = manager_id
+- then graph[manager_id] = employee_id
+- when build graph, when loop employee, why i === headID, we skip
+- because manager_arr = [-1, 2, 2, 2]
+- when i = 0, then val = -1; manager_arr[-1] === undefined, so need to skip
+- why only have 1 skip, i === headID; why not more
+- we only have 1D employee loop;
+- also we only have 1 headId
+- why we need submax = Max(submax, dfs(new_head_id)) in edge loop?
+- because we have diff dfs paths, we need to get the max
+- why timeInform[curr_head_id] + submax?
+- timeInform[curr_head_id] === this level
+- submax === another dfs level
 
 - https://leetcode.com/problems/minesweeper/submissions/
 - why do we need 8 cell grid directions?
