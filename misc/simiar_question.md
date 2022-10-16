@@ -571,7 +571,14 @@
 - here we acc each dfs path, to form acc
 - why I cannot use i in edge loop directly, why use e_ind = edges[i]?
 - i is not the real thing, it is the index; e_ind = edges[i], is what we push, when build graph
-- why 
+- why we use seen.has within edge loop, not on top of dfs?
+- 2 ways to put seen.has
+- 1. on top of dfs (for curr)
+- 2. within dfs loop (for future)
+- why in edge loop, we have ++acc?
+- beause it is for this edge iteration, so ++acc; we have other edge iteration
+- so at least we finish this edge loop iterations
+- then we have ++acc; acc = acc + dfs(edge_index), this level + its sub_level
 
 - https://leetcode.com/problems/time-needed-to-inform-all-employees/
 - why there is no loop then dfs?
