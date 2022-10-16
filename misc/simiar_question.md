@@ -527,18 +527,51 @@
 - because child_rank keeps updating, it is not stable
 
 - https://leetcode.com/problems/detonate-the-maximum-bombs/
-- why I canno t use global seen, but use seen = new Set in each dfs, in loop?
-- beause we are using pattern: loop -> Math.max, so use new Set in each dfs
-- why we don't use Math.max within dfs?
-- because we already used it in a outside loop
-- when travel dfs, when we cannot use i, but use e_ind = edges[i]?
-- because remember how we build the graph, single i has many edge_ind value
-- in edge loop, we need to use edge_value
-- why ++submax?
-- because this level is for this node
-- why submax = submax + dfs(e_ind, seen), why not submax = Math.max(submax, dfs(e_ind, see))?
-- because it is called submax; curr_max + future_max;
-- also because outloop has max, we don't use max here
+- why there are 2 ways to init dfs?
+- 1. direct dif; e.g. have an init index, then dfs all the way
+- 2. loop -> then dfs
+- which way to choose?
+- for this question, we don't have a single index, so it is likely loop -> then dfs
+- when do we use global seen? when do we use local seen?
+- if we have loop -> then dfs, then we need to use local seen.
+- (because we have multiple init dfs ways, so local seen)
+- if we have direct dfs, then we use global seen.
+- (because there is 1 dfs way, so use global seen, seen or not seen)
+- why we need to have max in outerloop?
+- because there is no submax within dfs, there is only acc.
+- there is no outerloop max and dfs submax, 
+- because each iteration in outerloop, max is enough
+- we compare each diff dfs path, and find out the max, among diff dfs paths
+- why we use 2D loop to build graph?
+- for max time to inform employee question, we use 1D array to build graph
+- because we have manager_id = manager_arr[employee_ind]
+- for this one, i=0, denote self + rest
+- i=1, denote self + rest
+- i=2
+- so use 2D array to build graph
+- for bomb array, why each element === [x, y, radius]?
+- because x, y we know the position
+- having radius, we can use c^2 = a^2 + b^2, to compare the radius
+- if raidus >= the c distance, we can denote; otherwise, we cannot
+- why we need to have i_raidus (we use to compare c distance) and j_radius (we don't use)?
+- why we need to have x_i, y_i, then x_j, y_j?
+- because i stable, then j loop;
+- use this way we can exhaust all 1 vs 1 combo
+- why we need to use this formula, c^2 = a^2 + b^2?
+- because radius_i compare with c distance
+- if radius_i >= c, we can denote, then we need to push to edges arr
+- this comes up a question, for graph, do I use new Set() or just use arr?
+- 1. use arr, we can just push element, we can loop edge loop very easy (many people use this, this question uses)
+- 2. use set, set.add(); when loop Array.from(edge_set)
+- when we build graph, why we care graph[vertex] init or not?
+- not init, graph[vertex] = [], then graph[vertex].push
+- already init, graph[vertex].push, directly
+- why on top of dfs, why we have acc here, why not submax here?
+- becuase we have max in outerloop, to compare.
+- here we acc each dfs path, to form acc
+- why I cannot use i in edge loop directly, why use e_ind = edges[i]?
+- i is not the real thing, it is the index; e_ind = edges[i], is what we push, when build graph
+- why 
 
 - https://leetcode.com/problems/time-needed-to-inform-all-employees/
 - why there is no loop then dfs?
