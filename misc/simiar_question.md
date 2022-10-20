@@ -474,6 +474,20 @@
 - because some vertex does not have edges.
 - why we loop courseNum, some index does not have edges?
 - because index is from 0,1,2,..n, some vertex does not have edges
+- why build graph can use 2D arr or hash?
+- because 2D arr === hash
+- why local_seen === detect cycle, global_seen === avoid loop (entire dfs)?
+- because local_seen is the local path; path.add -> dfs -> path.del
+- global_seen to avoid loop
+- so edges = graph[curr_ind], why we don't convert edges to arr, Array.from(edges)?
+- beause edges can be undefined; once Array.from, undefined is useless
+- why we need to use this form?
+- return_cycle_condi = dfs(curr_ind, local_seen)
+- because if dfs not return, then there is no way to tell cycle or not
+- why even local_seen, we need to local_seen.delete(curr_ind)?
+- because even it is local path, path element needs to be sync / reflected
+- in outerloop, each iteration to detect cycle, if no cycle return no_cycle_condi, why?
+- this is typical loop to detect, if no problem, last return
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
 - why course dep [a, b], graph is like a->b?
