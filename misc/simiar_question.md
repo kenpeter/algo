@@ -462,32 +462,29 @@
 - It is acting like a seen = new Set(), to avoid loop
 
 - https://leetcode.com/problems/course-schedule/ (\*)
-- why course dep [a, b], graph is like a->b?
-- because a->b, a->c, a->d, there are many.
-- why course dep care about cycle?
-- because question asks that if cycle immediately return false; the end return []
-- why seen.has / path.has on top of dfs?
-- because either on top of dfs or check before pass dfs; on top of dfs, natural flow.
-- why path.add, path.delete, seen.add outside of edge loop; why not inside edge loop?
-- because it is graph
-- why edges = graph[v], need to check if(edges)?
-- because some vertex does not have edges.
-- why we loop courseNum, some index does not have edges?
-- because index is from 0,1,2,..n, some vertex does not have edges
-- why build graph can use 2D arr or hash?
-- because 2D arr === hash
-- why local_seen === detect cycle, global_seen === avoid loop (entire dfs)?
-- because local_seen is the local path; path.add -> dfs -> path.del
-- global_seen to avoid loop
-- so edges = graph[curr_ind], why we don't convert edges to arr, Array.from(edges)?
-- beause edges can be undefined; once Array.from, undefined is useless
-- why we need to use this form?
-- return_cycle_condi = dfs(curr_ind, local_seen)
-- because if dfs not return, then there is no way to tell cycle or not
-- why even local_seen, we need to local_seen.delete(curr_ind)?
-- because even it is local path, path element needs to be sync / reflected
-- in outerloop, each iteration to detect cycle, if no cycle return no_cycle_condi, why?
-- this is typical loop to detect, if no problem, last return
+- why we detect the cycle in outerloop?
+- because if 1 iteration is cycle, then return false
+- if the outerloop does not return, we have a final return after outerloop
+- this is typical pattern
+- why we init local_seen at each iteration, in outerloop?
+- because we have an outerloop here; it manages its own dfs path
+- why I don't detect global_seen.has, local_seen.has in outerloop?
+- because we have it detect within dfs.
+- again, 1 iteration fail, return within outerloop;
+- finisih all iterations, return success at the end
+- when build graph, why we can have 2D arr or hash?
+- because there are 2 ways to build graph; 2D arr === hash
+- why the graph is 1 direction?
+- because [0, 1], if do 0 then 1 must do first, 0 -> 1
+- we cannot go 1 -> 0 in graph, that is not the question asking
+- why local_seen === cycle, global_seen === avoid_loop?
+- local_seen === cycle, because it is in own dfs path, we hit again
+- global_seen === avoid_loop, because it is in entire dfs path
+- why we do: local_seen.add -> dfs -> local_seen.del?
+- because node in local_seen, in this dfs path need to be in sync
+- each dfs is like each sub path
+- why we do: dfs -> global_seen.add?
+- because after dfs all done, global_seen can say we done visit for this node
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
 - why course dep [a, b], graph is like a->b?
