@@ -525,6 +525,9 @@
 - also because we re-arrange parent child order
 - why we don't use child_rank VS edge_rank?
 - because child_rank keeps updating, it is not stable
+- why I use local_seen (path.add -> dfs -> path.del) and global_seen here?
+- why we don't use local_seen in critical_net_work_node (leetcode) and denote_max_bomb (leet_code)?
+- because this quesion is to detect cycle; then local_seen is a good way to detect cycle
 
 - https://leetcode.com/problems/detonate-the-maximum-bombs/
 - why there are 2 ways to init dfs?
@@ -600,6 +603,8 @@
 - why timeInform[curr_head_id] + submax?
 - timeInform[curr_head_id] === this level
 - submax === another dfs level
+- why we don't have local_seen here, only global_seen?
+- because only course_scheduler (leetcode), ask to detect cycle; this does not ask to detect cycle
 
 - https://leetcode.com/problems/minesweeper/submissions/
 - why do we need 8 cell grid directions?
