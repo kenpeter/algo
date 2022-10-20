@@ -487,18 +487,30 @@
 - because after dfs all done, global_seen can say we done visit for this node
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
-- why course dep [a, b], graph is like a->b?
-- because a->b, a->c, a->d, there are many.
-- why course dep care about cycle?
-- beause question asks that if cycle immediately return false; the end return []
-- why seen.has / path.has on top of dfs?
-- because either on top of dfs or check before pass dfs; on top of dfs, natural flow.
-- why path.add, path.delete, seen.add outside of edge loop; why not inside edge loop?
-- because it is graph
-- why edges = graph[v], need to check if(edges)?
-- because some vertex does not have edges
-- why at the end of func, return [...seen_set] is the course dep order?
-- because loop courseNum, some index does not have edges, so when they have, they are in order
+- why glocal_seen's entry === course dep order?
+- e.g.
+- [0, 1] === to do 0, must do 1 first
+- graph 0 -> 1
+- dfs bottom up, 1 -> 0
+- so result === do 1 first, then do 0, which question asking
+- e.g.
+- [1, 0] === to do 1, must do 0 first
+- graph 1 -> 0
+- dfs bottom up, 0 -> 1
+- so result === do 0 first, then do 1
+- summary: course dep order === dfs travel order
+- why within dfs, why put local_seen before global_seen?
+- because local_seen === cycle; global_seen === avoid_loop
+- why return true (local_seen)?
+- return === we seen this in own dfs path
+- true === cycle, why?
+- because seen this in own dfs path, if keep going, cycle
+- why return false (global_seen)?
+- return === we seen this in global dfs paths
+- false === not a cycle, why?
+- cycle is detected by local_seen, not our task; not a cycle, because we just seen this
+- why put local_seen.del, global_seen.add after dfs?
+- because after dfs finish
 
 - https://leetcode.com/problems/critical-connections-in-a-network/ (\*)
 - why we put seen.has in outer loop?
