@@ -485,6 +485,12 @@
 - each dfs is like each sub path
 - why we do: dfs -> global_seen.add?
 - because after dfs all done, global_seen can say we done visit for this node
+- why only this question require local_seen.delete after edge loop?
+- because denote_max_bomb, max_time_to_inform_employee, critical_connection_in_network; either is using global_seen or local_seen, but none of them do local_seen.del after edge loop
+- if we are using global_seen, it does not make sense global_seen.del, why?
+- because global_seen.del is global, it needs to persist
+- local_seen can be deleted in each dfs path
+
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
 - why glocal_seen's entry === course dep order?
@@ -511,6 +517,12 @@
 - cycle is detected by local_seen, not our task; not a cycle, because we just seen this
 - why put local_seen.del, global_seen.add after dfs?
 - because after dfs finish
+- why only course_schedule require local_seen.del after edge loop?
+- because max_num_denote_bomb, max_time_inform_employee, crital_connection_in_network; either using local_seen or global_seen, but none of them need local_seen.del after edge loop
+- it does not make sense, that global_seen.del, why?
+- because it is global_seen.del === global, it needs to persistent
+- local_seen.del can be done
+
 
 - https://leetcode.com/problems/critical-connections-in-a-network/ (\*)
 - why we put seen.has in outer loop?
