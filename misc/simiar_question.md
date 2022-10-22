@@ -448,18 +448,26 @@
 
 - https://leetcode.com/problems/battleships-in-a-board/ (\*)
 - why for flood-fill, we need to use standard 2D loop?
-- because it is grid; It travels in the grid to paint cell.
-- why we need to condi check if(g[i][j] === 'X'), then goes down dfs?
-- because outer loop condi check and dfs top condi check
-- because once go down dfs path, it cleans all cells in this path
-- why ++res under if(g[i][j] === 'X'), why not just ++res?
-- because we have if(g[i][j] === 'X'), then dfs, we don't want ++res, for no reason.
-- why we need to boundary check g[i][j] === '.', on top of dfs?
-- because dfs will self goes down, so it needs to check cell
-- why boundary check, we return nothing?
-- because ++res, is in outer loop; here we just goes down to the path, path done just return
-- why we need to paint / visited, after boundary check?
-- It is acting like a seen = new Set(), to avoid loop
+- because init cell -> all connected cells paint
+- will not touch other areas
+- why in the 2D loop, we need to check empty cell?
+- because init cell -> all connected cells paint
+- will not touch other areas
+- why in the 2D loop, we ++res?
+- because init cell -> all connected cells paint
+- so that is the whole area === result
+- why we check boundary on top of dfs?
+- because future cell can travel or not
+- why we check empty cell on top of dfs?
+- because future cell can travel or not
+- in the boundary check / empty_cell check, why return nothing?
+- because we paint cell === result count
+- what u want me return, 0, '', [], none
+- why we modify the cell?
+- paint the cell, we don't want to hit again global_seen
+- why 4 directions?
+- future cell can travel or not
+
 
 - https://leetcode.com/problems/course-schedule/ (\*)
 - why we detect the cycle in outerloop?
