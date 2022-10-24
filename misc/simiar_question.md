@@ -442,9 +442,41 @@
 - origColor = img[r][c], because it wants to change all same color
 
 - https://leetcode.com/problems/pacific-atlantic-water-flow/ (\*)
-- why we cannot have just 1 seen arr?
-- because we have pacific arr and atlantic arr
-- one is not enough and mix up
+- what is pArr (pacific), aArr (atlantic)?
+- pArr === local_seen
+- why we don't modify the cell?
+- there are 2 ways for local seen
+- 1. modify cell
+- 2. a copy
+- here we make a copy, because we have pacific and atlantic, 2 diff
+- on top of dfs, why we don't return anything
+- return 0, '', [], none of them
+- because if pArr[i][j] === aArr[i][j], that means common cell, common ground, return
+- on top of dfs, why cannot flow, we need to return?
+- because we need to flow high to low
+- why flow high to low?
+- 2 ways to paint: equal cell or descending / ascending
+- here we using descending
+- I don't think we can flow low to high
+- on top of dfs, why we seen it, we return?
+- to avoid loop, either modify cell or a copy; use a copy
+- in the 4 direction pass to dfs, why pass arr into dfs?
+- that is the local_seen, pArr / aArr.
+- we are using same dfs func for pacific and atlantic, so use arr
+- why we use current cell height as max, for current dfs? why not use same maxHeight for entire flow?
+- because as we flow, we have 2 diff dfs level to flow; the height is diff in each dfs level; we cannot use same max height
+- hence each dfs level is diff
+- when paint grid, why we only go top and left?
+- because that is for pacific
+- when paint grid, why we only go right and bottom?
+- because that is for atlantic
+- why we don't do a 2D loop, then loop each cell?
+- because base on the diagram, top and left === pacific, the init cell
+- right and bottom === atlantic, the init cell
+- for the init dfs, why we use -Infinity as maxHeight?
+- because we want the first cell to flow and act like a maxHeight, no matter what
+- why we use 2D loop for each cell, pArr[i][j] === aArr[i][j], to detect commont ground?
+- because both seen it then it means both flow, hence common ground
 
 - https://leetcode.com/problems/battleships-in-a-board/ (\*)
 - why for flood-fill, we need to use standard 2D loop?
