@@ -437,9 +437,24 @@
 - why we should not do dfs within the 4 directions loop, because after 4 directions finish, we update the distnce, it has good value
 
 - https://leetcode.com/problems/flood-fill (\*)
-- img[r][c] !== startColor, stop (because other pixel)
-- img[r][c] === newColor, stop (because already fill)
-- origColor = img[r][c], because it wants to change all same color
+- why color click !== bucket fill, we take no action?
+- because there is no dfs, then we don't want to go down
+- color === bucket fill, we want to go down with dfs
+- why we need to remember the color we click?
+- the color we click is called neighbour color color
+- which all same neighbour color should be painted with new color
+- why there are 3 diff colors?
+- g[r][c] === curr_color, it may diff from neighbour_color and paint_color
+- neighbour_color === same color in the same area
+- paint_color === we want new color for this area
+- what is the color relationship?
+- g[r][c] === neighbour_color, we are in the same area, can paint new color
+- g[r][c] !== neighbour_color, not in same area, cannot paint new color
+- g[r][c] === paint_color, local_seen, return, to avoid loop
+- g[c][c] !== paint_color, so can paint
+- why pass neighbour_color into dfs func?
+- so we know the next dfs level, g[r][c] is the same neighbour
+
 
 - https://leetcode.com/problems/pacific-atlantic-water-flow/ (\*)
 - what is pArr (pacific), aArr (atlantic)?
