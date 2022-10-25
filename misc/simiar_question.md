@@ -425,12 +425,56 @@
 - because everyting in 1 place, instead of 4 dir; do it earlier
 
 - https://leetcode.com/problems/the-maze (\*)
-- so if we have a dp (set with inifinity), why we need to init it?
-- because in later code, we need to cal; curr_state = prev_state + action
-- why need to use let row = ..., not const row = ...?
-- because in the 4 dir loop, we keep updating let row
-- why not count + dist[row_start][col_start] < dist[row_start][col_start]?
-- well, it should be count + dist[r_start][c_start] < dist[r_curr][c_curr]
+- why we don't have a global_seen / local_seen here?
+- because robot will move forward / backward, so same cell may be visited again and again
+- if we put global_seen, we may ignore many paths
+- why we have a distance 2D arr?
+- this uses the same method as maze 2
+- each cell store the overall min distance, we reached so far
+- why we store overall min distance?
+- because when we reach the final destination, we have a final min distance
+- we don't have any acc min distance (like campus bike), so we have to store
+- final min distance
+- why init each cell with infinity?
+- when assign 1st value into dist array, we ca certainly assign value into it
+- if we init 9999, that is not good
+- if we assign -infinity, that means we store max distance
+- why we assign start position in dist dp array, with 0?
+- because start position has distance === 0
+- if we don't assign 0, then dist[r][c] === infinity, then dist[r][c] + x, not possible
+- on top of dfs, why there is no base check, condi check etc, why?
+- later we have forward -> future_move_loop (boundary check in loop) -> backward
+- because we check boundary + empty_block in future_move_loop
+- in the 4 dir loop, why const row = start[0] + d_row
+- because we steal a future move
+- later forward -> future_move_loop -> backward
+- why we cannot use const for row, const row = start[0] + d_row?
+- why need to sue let row = start[0] + d_row?
+- row = row + d_row, if row === const, how do we row cc
+- why before the move_future_loop, we set let count = 0?
+- count === count_step === each_block_move
+- forward (steal future move, count +1) -> future_move_loop -> backward (count -1)
+- forward / backward cancel each other, so count = 0
+- why in future_move_loop, we have boundary check and empty_block check?
+- because any thing block the movement, need to check
+- 1. boundary will block movement
+- 2. block in middle will block movement (g[r][c] === 1, block)
+- g[r][c] === 1, block; g[r][c] === 0, empty_block
+- why in future_move_loop, we have r = r + row_d?
+- because we acc the move
+- i.e. we lock 1 direction, then we keep moving that direction
+- why ++count in future_move_loop?
+- same reason, lock 1 direction, then we keep moveing that direction
+- why we don't put dfs into future_move_loop?
+- 4 dir loop -> future_move_loop, then dfs; why put dfs after future_move_loop?
+- there are 2 ways to do direction dfs
+- 1. each dir iteration -> dfs -> each dir iteration - dfs
+- 2. or each dir itration -> future_move_loop -> dfs (*)
+- why we need to backward after future_move_loop?
+- because forward (count +1) -> xxx -> backward (count -1), cancel out
+- why when count (acc) + dist[this_dfs_start_row][this_dfs_start_col] < dist[final_future_row][final_future_col], then we do assign full distance and dfs?
+- count (acc) + dist[this_dfs_start_row][this_dfs_start_col] >= dist[final_future_row][final_future_col], >=, there is no value to assign and travel again
+- as it is not min any more
 
 - https://leetcode.com/problems/the-maze-ii (\*)
 - should we use seen in the loop of 4 directions, no; visited or empty path should allow
