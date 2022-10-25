@@ -477,8 +477,7 @@
 - as it is not min any more
 
 - https://leetcode.com/problems/the-maze-ii (\*)
-- should we use seen in the loop of 4 directions, no; visited or empty path should allow
-- why we should not do dfs within the 4 directions loop, because after 4 directions finish, we update the distnce, it has good value
+- see the maze i
 
 - https://leetcode.com/problems/flood-fill (\*)
 - why color click !== bucket fill, we take no action?
