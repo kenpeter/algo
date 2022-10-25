@@ -478,6 +478,9 @@
 
 - https://leetcode.com/problems/the-maze-ii (\*)
 - see the maze i
+- if there is no init, dist[start[0]][start[1]] = 0,
+- none of the calulation will work
+- because dist[start[0]][start[1]] = infinity
 
 - https://leetcode.com/problems/flood-fill (\*)
 - why color click !== bucket fill, we take no action?
