@@ -419,10 +419,34 @@
 - because mod grid, avoid repeated; seen is like mirror
 
 - https://leetcode.com/problems/swim-in-rising-water/ (\*)
-- why use k? 
-- i, j is for dfs index; use k is for 4 dir loop
-- why put guard before 4 dir?
-- because everyting in 1 place, instead of 4 dir; do it earlier
+- why global_seen acting like a local_seen?
+- when global_seen.clear() in each loop, it is like a new seen, so local_seen
+- why convert 2D arr into 1D arr?
+- e.g. last_cell = n*n-1
+- e.g. curr_cell = row_num * i + j
+- this is very easy to do set.add(curr_cell = row * i + j)
+- on top of dfs, why we check conditions like this?
+- 1. boundary check
+- 2. seen check
+- 3. other condi check e.g. empty_block, g[r][c] > time (time is not ready to flow)
+- because we check easier condi, then more difficult condi
+- why condi -> g[r][c] > time, then return?
+- time (0, 0) -> g[r][c], it time (0, 0) flows to g[r][c], not g[r][c] -> time (0, 0)
+- g[r][c] is the prev dfs level, become this future cell. g[r][c] > time, it means time is not ready yet
+- why there a pattern: diff condi check on top of dfs -> then we block the condi?
+- e.g. seen.has ... return -> seen.add(vertex)
+- because pattern: check -> block
+- in the outer loop, why we use while loop, instead of i j loop?
+- because we need to reach last cell, we don't know when we can reach last cell
+- so we need while loop
+- in the outer loop, why global_seen.clear()?
+- because global_seen act like a local_seen
+- why dfs(0, 0) in outerloop?
+- because each time we re-start
+- why ++time in outerloop?
+- time ~= height, height inc
+- at last return, why time-1?
+- not sure, because time = 0 at start, then it should start at 1?
 
 - https://leetcode.com/problems/the-maze (\*)
 - why we don't have a global_seen / local_seen here?
