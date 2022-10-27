@@ -408,15 +408,35 @@
 - seeing.add -> loop -> seeing.delete; this is single path to avoid cycle
 
 - https://leetcode.com/problems/number-of-distinct-islands/ (\*)
-- in 2d loop, dir = 'x'?
-- why we don't put dir = 'o', same as return base?
-- because init === 'x'
-- base return (exhaust) === 'o'
-- 4 dir = u (up), r (right), down (d), left (l)
-- why shape === curr_dir + up + right + down + left?
-- because curr_dir (self) + up (future up) + right (future right) + down (future down) + left (future left)
-- why mod grid === seen, to avoid repeated?
-- because mod grid, avoid repeated; seen is like mirror
+- we have shape_seen, why we don't have a global_seen or local_seen?
+- because global_seen or local_seen, we use i + '_' + j, to avoid hit the same cell again and again
+- for this one, it is not path finding and we have a stable 2D loop
+- also the entry: dir + up + down + left + right
+- what are the condi check on top of dfs?
+- 1. boundary check
+- 2. seen check (no global_seen or local_seen, ignore)
+- 3. other check: hit block in the middle
+- 4. block it after all checks: g[r][c] = 0, to avoid loop
+- for condi check, why we return 'o'?
+- should we return '', zero, [], etc? we need to return something representation invalid
+- so all condi return 'o'
+- why I need to do dir + up + down + left + right for the island?
+- island A === island B, when !rotate and !translate
+- it is current_dfs_direction + 4_future_dfs_directions, why?
+- 4 directions, the position is fixed, why we need a dir as well?
+- because bottom of dfs return -> o + o + o + o (cannot diff) -> dir + o + o + o + o (can diff)
+- it is like we are in a cell, curr dir + 4 directions
+- why init cell -> rest of cells -> after done, this is result?
+- because this is a standard flood fill
+- why do we put an init direction in outerloop, for dfs?
+- because at start, we cannot put up, down, left, right, so put x
+- how many directions do we have?
+- 1. x + o + o + o + o
+- 2. x + up + down + o + o
+- but this is just 1 dfs level
+- multiple dfs levels -> xooooooordloo.... can be long
+- why we cannot have let res = 0 -> ++res in 2D loop -> return res?
+- because there are repeated islands, that is why we need dir + up + down + left + right, then put into set.add
 
 - https://leetcode.com/problems/swim-in-rising-water/ (\*)
 - why global_seen acting like a local_seen?
