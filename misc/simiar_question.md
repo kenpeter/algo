@@ -451,6 +451,8 @@
 - it is when we need to use entry: i + '_' + j, cell entry
 - if it is like shape of island: dir + up + down + left + right, then we 
 - don't use global_seen or local_seen, we use shape_seen
+- why we have to use seen is that, we will hit the same cell again and again
+- because it is path searching
 
 - https://leetcode.com/problems/the-maze (\*)
 - why we don't have a global_seen / local_seen here?
