@@ -401,11 +401,26 @@
 - because in single dfs, we eventually encounter maxRow, maxCol
 
 - https://leetcode.com/problems/web-crawler (\*)
-- why we need seen in web crawl?
-- because each link is like node, it is a graph.
-- travel in graph, need seen to avoid repeated
-- why no seeing here?
-- seeing.add -> loop -> seeing.delete; this is single path to avoid cycle
+- why startUrl.split(/)[2]?
+- http://abc.com -> (1) http: (2) '' empty str (3) abc.com
+- why we need a domainName at the start of entire func?
+- it is like leetcode paintColor, neighbour color (flood-fill) to be the same
+- why we need res = []?
+- res.push(url)
+- why we need a global_seen?
+- because it is a graph travel, may hit the same node again and again
+- on top of dfs, check
+- 1. has same domainName?
+- 2. global_seen?
+- 3. other condi?
+- block it after check
+- why we push result after all checks?
+- res.push(url)
+- because all condi pass, should push result
+- what is htmlParser.getUrls(url)?
+- it is like vertex -> edges
+- startUrl === start vertex
+- htmlParser.getUrls(startUrl) === edges
 
 - https://leetcode.com/problems/number-of-distinct-islands/ (\*)
 - we have shape_seen, why we don't have a global_seen or local_seen?
