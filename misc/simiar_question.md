@@ -447,6 +447,10 @@
 - time ~= height, height inc
 - at last return, why time-1?
 - not sure, because time = 0 at start, then it should start at 1?
+- when do we use global_seen or local_seen?
+- it is when we need to use entry: i + '_' + j, cell entry
+- if it is like shape of island: dir + up + down + left + right, then we 
+- don't use global_seen or local_seen, we use shape_seen
 
 - https://leetcode.com/problems/the-maze (\*)
 - why we don't have a global_seen / local_seen here?
