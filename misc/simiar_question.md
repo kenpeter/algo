@@ -393,12 +393,20 @@
 - because disconnected islands are consider 2 islands
 
 - https://leetcode.com/problems/find-all-groups-of-farmland/ (\*)
-- in the 2d loop, dfs(i, j), i, j are the smallest i, j?
-- why is that?
-- because we enter the path init
-- after single dfs, maxRow, maxCol will get
-- why?
-- because in single dfs, we eventually encounter maxRow, maxCol
+- why do I need to know maxRow, maxCol?
+- this is for a single travel in outerloop
+- because farmland is rectangular --> the up width === down width, left length === right length
+- if we know the max i and max j in dfs travel, we know max width and max length
+- when push result [start_i, start_j, max_row, max_col]
+- the top of dfs check?
+- 1. check boundary
+- 2. seen check (no need, as 2D loop, stable)
+- 3. block in middle check
+- 4. block it all check pass
+- 5. do operations, set max (*) / push result / etc
+- in outerloop, why we have to check if g[r][c] === 1 -> dfs?
+- if without g[rc][c] === 1 -> dfs, then dfs just randomly travel
+-
 
 - https://leetcode.com/problems/web-crawler (\*)
 - why startUrl.split(/)[2]?
