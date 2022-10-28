@@ -382,15 +382,28 @@
 - because it can accept r1 + r2, etc; be sepcific
 
 - https://leetcode.com/problems/count-sub-islands/ (\*)
-- g1: [[1, 0], [0, 1]]
-- g2: [[1, 1], [0, 1]]
-- g1 has 2 islands
-- g2 has 1 islands
-- if in 2d loop assign each cell individually, it will break the islands
-- why it will breaks the island?
-- because island is connected blocked
-- why connected blocked is consider an island.
-- because disconnected islands are consider 2 islands
+- what is g1 and what is g2?
+- g1 === g2 in same shape, g1 some areas include some areas in g2
+- 1. cell_1 = 0, cell_2 = 0, common empty, but no island, IGNORE
+- 2. cell_1 = 0, cell_2 = 1, cell_2 extra, 1st travel remove it, LEFT OUT IS COMMON (del init_cell, surrounding cell removed as well)
+- 3. cell_1 = 1, cell_2 = 0, no use for cell_2, IGNORE
+- 4. cell_1 = 1, cell_2 = 1, commmon island, dfs g2 will count
+- why we need to have 2 dfs travel?
+- graph: build graph (easier process) -> travel graph
+- flood-fill: paint 1st time (easier process) -> paint 2nd time
+- graph ~= flood-fill
+- why in outerloop, check g1[r][c] = 0, g2[r][c] = 1?
+- cell_2 got extra, if remove, left out is the island we need
+- for this g1[r][c] = 0, g2[r][c] = 1 init cell, once start, all surrounding cells removed
+- we don't even need to wait for the 2D loop to advance, it is clean up by surrounding
+- on top of dfs,
+- 1. check boundary
+- 2. if block in the middle
+- 3. seen (no need, as 2D loop)
+- 4. other condi (no)
+- 5. operations (no)
+- 6. block after all check
+- 7. 4 dir
 
 - https://leetcode.com/problems/find-all-groups-of-farmland/ (\*)
 - why do I need to know maxRow, maxCol?
@@ -406,7 +419,8 @@
 - 5. do operations, set max (*) / push result / etc
 - in outerloop, why we have to check if g[r][c] === 1 -> dfs?
 - if without g[rc][c] === 1 -> dfs, then dfs just randomly travel
--
+- why maxCol = 0 -> dfs -> res.push?
+- because after dfs, all things got updated, and we get result
 
 - https://leetcode.com/problems/web-crawler (\*)
 - why startUrl.split(/)[2]?
