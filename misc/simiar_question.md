@@ -374,12 +374,30 @@
 - same idea, we need to wait for the 4 island to connect
 
 - https://leetcode.com/problems/shortest-bridge/ (\*)
-- avoid variable repated as the flow down?
-- why?
-- variable starts to overwrite with each other, bad
-- Math.abs(r1 - r2)
-- Not Math.abs(r1, r2), why?
-- because it can accept r1 + r2, etc; be sepcific
+- what is r1?
+- r1 store all the 1st island i, j
+- r2 store all the 2nd island i, j
+- what is count = 0 vs count = 1?
+- init cell -> rest cells
+- 1st island, count = 0
+- 2nd island, count = 1
+- on top of dfs
+- 1. check boundary
+- 2. hit block in middle
+- 3. seen (no)
+- 4. other condi (no)
+- 5. operation
+- 6. block after all check
+- 7. 4 dir
+- why for graph: build graph -> process graph?
+- paint island -> process island
+- build graph -> process graph
+- why min = Infinity?
+- because anything assign, min is sure min
+- why dist = abs(r2-r1) + abs(c2-c1) - 1?
+- because c^2 = a^2 + b^2
+- -1 because is like time - 1
+- we have a bit more
 
 - https://leetcode.com/problems/count-sub-islands/ (\*)
 - what is g1 and what is g2?
