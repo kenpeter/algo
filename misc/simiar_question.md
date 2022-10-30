@@ -359,19 +359,45 @@
 - because they are connected
 
 - https://leetcode.com/problems/making-a-large-island/ (\*)
-- we label diff island in grid
+- why max = 0?
+- it can be -1, -2, but 0 is enough, because we don't any max area
+- later max = max(max, area)
+- why set area = 0?
+- for each area, we will label it and has area
+- eventually, we connect 2 islands, to make largest
+- why island label starts at 2?
+- because 0 empty path, 1 is island, 2 is ready to use
+- why we need a global_map?
+- map.set(island_label, area_value)
+- why we don't put a global seen here?
+- for processing, no need 2D arr
+- for travel, we have local_seen before 4 directions
 - why?
-- then we can count the area
-- then we travel the label grid
-- why?
-- because if we hit g[r][c] = 0, we can try to connect surround island
-- why connect?
-- for largest island
-- why we need to have seen = new Set() before 4 dir loop?
-- because image we are in cell = 0, if cell = 1, then it connects to 4 other islands, to form largest
-- so we put seen before 4 dir loop
-- why we put Math.max() after 4 dir loop?
-- same idea, we need to wait for the 4 island to connect
+- because after 4 directions, we need to restart area = area + mp.get(g[r][c] === label)
+- on top of dfs
+- 1. check boundary
+- 2. hit block in the middle
+- g[r][c] === 0 return, block
+- g[r][c] === 2, return, other island
+- g[r][c] === 3, return, other siland
+- etc
+- g[r][c] === 1, can label it
+- so if(g[r][c] !== 1) continue
+- 3. other condi check, no
+- 4. block it after check
+- g[r][c] = label
+- 5. operations
+- ++area;
+- 6. 4 dir
+- in the travel, in 2D loop, why g[r][c] === 0, then we init 4 directions
+- because if it is 2,3,4,etc island label, we are in the island, we need zero
+- to connect other islands
+- so g[r][c] === 0
+- in the travel, why we put seen after if(g[r][c] === 0) and before 4 dir loop?
+- because
+- 1. connect 2 islands (2 directions)
+- 2. connect 3 islands (3 directions)
+- 3. connect 4 islands (4 directions)
 
 - https://leetcode.com/problems/shortest-bridge/ (\*)
 - what is r1?
