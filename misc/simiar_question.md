@@ -354,9 +354,9 @@
 - because question asking, we are not using 1 and 0
 - on top of dfs
 - 1. bounday check
-- 2. seen?
-- 3. hit block in middle
-- 4. other condi?
+- 2. hit block in middle
+- 3. other condi?
+- 4. seen?
 - 5. block after all check
 - 6. operations
 - 7. 4 dir
@@ -368,9 +368,9 @@
 - 2D loop (flood-fill) -> g[r][c] === 1 (init cell) -> dfs (rest cells) -> max (after 1 dfs result) -> area = 0 (reset)
 - on top of dfs
 - 1. check boundary
-- 2. seen?
+- 2. block in middle
 - 3. other condi?
-- 4. block in middle
+- 4. seen?
 - 5. operations
 - 6. 4 dir
 
@@ -397,8 +397,8 @@
 - because g[r][c] === 0
 - g[r][c] === 2,3,4,5,etc
 - only when g[r][c] === 1, can connect other cells
-- 3. no seen here
-- 4. other condi, no
+- 3. other condi, no
+- 4. other condi
 - 5. operations
 - ++area
 - g[r][c] = label, why?
@@ -455,8 +455,8 @@
 - on top of dfs
 - 1. check boundary
 - 2. hit block in middle
-- 3. seen (no)
-- 4. other condi (no)
+- 3. other condi (no)
+- 4. seen?
 - 5. operation
 - 6. block after all check
 - 7. 4 dir
@@ -488,8 +488,8 @@
 - on top of dfs,
 - 1. check boundary
 - 2. if block in the middle
-- 3. seen (no need, as 2D loop)
-- 4. other condi (no)
+- 3. other condi (no)
+- 4. seen? (2D loop, stable)
 - 5. operations (no)
 - 6. block after all check
 - 7. 4 dir
@@ -502,8 +502,9 @@
 - when push result [start_i, start_j, max_row, max_col]
 - the top of dfs check?
 - 1. check boundary
-- 2. seen check (no need, as 2D loop, stable)
-- 3. block in middle check
+- 2. block in middle check
+- 3. other condi?
+- 4. seen?
 - 4. block it all check pass
 - 5. do operations, set max (*) / push result / etc
 - in outerloop, why we have to check if g[r][c] === 1 -> dfs?
@@ -540,8 +541,8 @@
 - also the entry: dir + up + down + left + right
 - what are the condi check on top of dfs?
 - 1. boundary check
-- 2. seen check (no global_seen or local_seen, ignore)
-- 3. other check: hit block in the middle
+- 2. other check: hit block in the middle
+- 3. seen check (no global_seen or local_seen, ignore)
 - 4. block it after all checks: g[r][c] = 0, to avoid loop
 - for condi check, why we return 'o'?
 - should we return '', zero, [], etc? we need to return something representation invalid
@@ -573,8 +574,8 @@
 - this is very easy to do set.add(curr_cell = row * i + j)
 - on top of dfs, why we check conditions like this?
 - 1. boundary check
-- 2. seen check
 - 3. other condi check e.g. empty_block, g[r][c] > time (time is not ready to flow)
+- 2. seen check
 - because we check easier condi, then more difficult condi
 - why condi -> g[r][c] > time, then return?
 - time (0, 0) -> g[r][c], it time (0, 0) flows to g[r][c], not g[r][c] -> time (0, 0)
