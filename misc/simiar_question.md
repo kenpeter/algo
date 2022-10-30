@@ -354,9 +354,17 @@
 - because look at the question, 1 str, 0 str
 
 - https://leetcode.com/problems/max-area-of-island (\*)
-- 1 island === 1 dfs go down
-- why?
-- because they are connected
+- why standard 2D loop?
+- because flood-fill
+- 2D loop -> g[r][c] === 1 -> dfs -> max -> area = 0, why?
+- 2D loop (flood-fill) -> g[r][c] === 1 (init cell) -> dfs (rest cells) -> max (after 1 dfs result) -> area = 0 (reset)
+- on top of dfs
+- 1. check boundary
+- 2. seen?
+- 3. other condi?
+- 4. block in middle
+- 5. operations
+- 6. 4 dir
 
 - https://leetcode.com/problems/making-a-large-island/ (\*)
 - why max = 0?
