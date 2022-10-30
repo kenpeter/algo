@@ -350,8 +350,16 @@
 - because edge can be repeated, arr allows repeated, we don't want repeated.
 
 - https://leetcode.com/problems/number-of-islands (\*)
-- why '1' is str, '0' is str?
-- because look at the question, 1 str, 0 str
+- why "1" and "0" in question?
+- because question asking, we are not using 1 and 0
+- on top of dfs
+- 1. bounday check
+- 2. seen?
+- 3. hit block in middle
+- 4. other condi?
+- 5. block after all check
+- 6. operations
+- 7. 4 dir
 
 - https://leetcode.com/problems/max-area-of-island (\*)
 - why standard 2D loop?
