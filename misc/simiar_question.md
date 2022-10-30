@@ -424,6 +424,9 @@
 - 1 empty cell can connect to 4 directions, must after dir loop
 - why at the end of entire fuc, return max ? max : m*n?
 - because there is a chance that no 0 at all, so m*n
+- how to diff same var name in same scope?
+- e.g. using i, j, k in the same scope, very easy to overwrite each other
+- so using curr_i, curr_j, curr_k
 
 - https://leetcode.com/problems/shortest-bridge/ (\*)
 - what is r1?
