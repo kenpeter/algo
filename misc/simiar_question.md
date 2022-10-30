@@ -368,36 +368,62 @@
 - why island label starts at 2?
 - because 0 empty path, 1 is island, 2 is ready to use
 - why we need a global_map?
-- map.set(island_label, area_value)
+- map.set(island_label, area_value), so each island has own label and own area
 - why we don't put a global seen here?
-- for processing, no need 2D arr
-- for travel, we have local_seen before 4 directions
-- why?
-- because after 4 directions, we need to restart area = area + mp.get(g[r][c] === label)
-- on top of dfs
+- because it is a 2D loop when processing
+- when travel, 2D loop -> new seen -> 4 dir loop
+- we don't need a global_seen, but we need a local_seen before 4 dir loop
+- 
+- process: on top of dfs
 - 1. check boundary
 - 2. hit block in the middle
-- g[r][c] === 0 return, block
-- g[r][c] === 2, return, other island
-- g[r][c] === 3, return, other siland
-- etc
-- g[r][c] === 1, can label it
-- so if(g[r][c] !== 1) continue
-- 3. other condi check, no
-- 4. block it after check
-- g[r][c] = label
+- why not use g[r][c] === 0?
+- because g[r][c] === 0
+- g[r][c] === 2,3,4,5,etc
+- only when g[r][c] === 1, can connect other cells
+- 3. no seen here
+- 4. other condi, no
 - 5. operations
-- ++area;
+- ++area
+- g[r][c] = label, why?
+- because it indicates the cell belong to this label
 - 6. 4 dir
-- in the travel, in 2D loop, why g[r][c] === 0, then we init 4 directions
-- because if it is 2,3,4,etc island label, we are in the island, we need zero
-- to connect other islands
-- so g[r][c] === 0
-- in the travel, why we put seen after if(g[r][c] === 0) and before 4 dir loop?
-- because
+- in outerloop of this dfs
+- it is a 2D standard loop
+- get in if g[r][c] === 1 -> dfs -> ++label (next island) -> area = 0 (reset)
+- 
+- travel: right inside the 2D loop
+- why we use g[r][c] === 0, connect 4 directions?
+- because g[r][c] === 0, turn g[r][c] === 1
+- or g[r][c] === 2,3,4,5,etc (there is no g[r][c] === 1 any more)
+- if g[r][c] === 0 -> new seen -> 4 dir loop (seen.add) -> reset seen, why new seen here?
 - 1. connect 2 islands (2 directions)
 - 2. connect 3 islands (3 directions)
 - 3. connect 4 islands (4 directions)
+- so we need a new seen here
+- why area = 1?
+- because we get in, g[r][c] === 0, turn g[r][c] === 1
+- why 4 dir loop, we must have row_d and col_d?
+- because we move future cell; row = curr_row + row_d; col = curr_col + col_d;
+- 1. check boundary
+- why no return here? because it is dir loop, not dfs
+- 2. hit block in the middle
+- mp.has(g[r][c]) === we have this island
+- !mp.has(g[r][c]) === we don't have this island at all ~== g[r][c] === 0
+- why?
+- because there is no g[r][c] === 1 any more, only 0, 2, 3, 4, etc
+- 3. other condi
+- seen.has(g[r][c]) === we hit same island again
+- we need to avoid, because later we have area = area + mp.get(g[r][c]);
+- 4. block after all check
+- seen.add(g[r][c]), seen this island
+- 5. operations
+- area = area + mp.get(g[r][c]), have 4 directions
+- why max after 4 dir loop?
+- because if put within 4 dir loop, we cannot
+- 1 empty cell can connect to 4 directions, must after dir loop
+- why at the end of entire fuc, return max ? max : m*n?
+- because there is a chance that no 0 at all, so m*n
 
 - https://leetcode.com/problems/shortest-bridge/ (\*)
 - what is r1?
