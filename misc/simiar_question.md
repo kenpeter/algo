@@ -303,10 +303,35 @@
 - because 2d loop to deal with combo; [a, b] vs [a1, b1]
 
 - https://leetcode.com/problems/longest-increasing-path-in-a-matrix/ (\*)
-- why we need to map.set(i_j, distance)?
-- because each 2d loop, we start from fresh.
-- why we need to start from fresh?
-- because we can get max = each time
+- why we need 2 max: outerloop max and dfs max?
+- outerloop max: max after each full single dfs path
+- dfs max: each sub dfs path (4 directions -> 4 decisions)
+- outerloop max and dfs match both need
+- why use index = i + '_' + j?
+- because if we have the cell index, mp.get(ind) === min_dist_so_far
+- on top of dfs
+- 1. check boundary
+- why return 0?
+- we return -1, 2,3,4, '', [], because min_dist so return 0
+- 2. hit block in middle
+- for this leetcode, hit block in middle ~== water flow (pacific, atlantic flow)
+- we flow backward, high to low
+- 3. other condi?
+- 4. seen?
+- we put the seen in last place, as we may hit the same cell again and again
+- why use global_seen, not local_seen?
+- because it is global path travel, we may hit the same cell again and again
+- also we need to use global_seen as cache, global_seen.get(ind) === min_dist_so_far
+- 5. block after all check?
+- no need, as we don't modify the cell
+- 6. operation?
+- 7. 4 dir
+- for the 4 dir, why we do r1, r2, r3, r4?
+- because r1 = dfs(xxx), r2 = dfs(xxx), r3 = ..., r4 = ...
+- max = 1 + max(r1, r2, r3, r4)
+- each r1, r2, r3, r4 === sub dfs max
+- why we need to have +1 here?
+- because the base dfs return 0, if no +1 here, we are not able to acc
 
 
 - https://leetcode.com/problems/accounts-merge/ (\*)
