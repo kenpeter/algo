@@ -318,7 +318,10 @@
 - we flow backward, high to low
 - 3. other condi?
 - 4. seen?
-- we put the seen in last place, as we may hit the same cell again and again
+- we put the seen in last place, why?
+- because if we put seen before descending condition check, we ignore the descending condition
+- must satisfy all necessary conditions before the seen.
+- seen just blindly return, when saw it
 - why use global_seen, not local_seen?
 - because it is global path travel, we may hit the same cell again and again
 - also we need to use global_seen as cache, global_seen.get(ind) === min_dist_so_far
