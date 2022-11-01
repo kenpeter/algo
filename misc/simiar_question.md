@@ -315,11 +315,29 @@
 - depth+1 is for next level, res = res + getInt() * depth 
 
 - https://leetcode.com/problems/nested-list-weight-sum-ii (\*)
-- why we use localArr in dfs param?
-- because arr is keep passing down and consume
-- when getting max depth, why we need to math.max in end node and go down code
-- because each code section is in the level
-
+- why max depth === 1?
+- why not max depth === 0, because [[]], this maxDepth === 0?
+- the test case so far is [1, []], 1 <= list.len <= 50, so at least 1 ele
+- so max depth === 1
+- why [1, []] this depth === 1, not 2??????
+- because e1 === 1 (depth === 1), e2 === [] (dfs will go down, we don't know the depth yet)
+- e2 === [], into the next dfs level, there is a loop, but update the depth is within loop
+- [] cannot get into loop -> cannot update depth, so depth === 1 (for e1)
+- it is a leaf (end) and branch (arr)
+- ele.isInteger() !== ele.getInteger() 
+- ele.isInteger() --> is it an int, checking
+- ele.getInteger() --> return int, actual thing
+- why maxDepth is the global, not within dfs?
+- because maxDepth needs to be stable, and maintained
+- if put maxDepth within dfs, it will overwrite
+- if ele.isInt() -> max(maxDepth, depth), why I need to compare depth, even 
+- when ele.isInt() is there, e.g. [e1, e2, e3], so we never get into the else to dfs
+- so we need max(maxDepth, depth) to update maxDepth
+- for curr_arr loop, 
+- all the ele * weight and dfs are within loop
+- curr_arr.len === 0, no loop, will not get into ele * weight / dfs, no update depth
+- why we don't do dfs(ele.getList(), depth + 1) * weight?
+- dfs(ele.getList(), depth+1) === all elements result (weight for single element), if all_elements_result * weight, nono
 
 - https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
 - why given str, then directly dfs?
