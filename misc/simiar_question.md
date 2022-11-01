@@ -288,7 +288,32 @@
 - why pt_arr.slice(0) and line_arr.slice(0)?
 - because it is double paths; It is easier for different sub tree
 
-- https://leetcode.com/problems/nested-list-weight-sum
+- https://leetcode.com/problems/nested-list-weight-sum (\*)
+- why we pass arr and depth as param in dfs?
+- because arr === branch
+- because or arr === leaf
+- arr is changed in each dfs level
+- why arr is changed, because into each dfs level, arr is diff
+- why we need depth?
+- because sum = sum + ele.getInt() * depth (here)
+- why we have a res before the arr loop?
+- e.g. [1, 1], 2, [1, 1]
+- [1, 1] === sub result
+- 2 === sub result
+- [1, 1] === sub result
+- why we loop arr?
+- e1 === [1, 1], e2 === 2, e3 === [1, 1]
+- so it can be leaf or it can be branch
+- here, we have 3 decisions
+- in arr loop, ele = arr[i], why ele can be leaf or branch?
+- [1, 1] === branch; 2 === leaf
+- why res is acc?
+- sum1 = [1, 1], sum2 = 2, sum3 = [1, 1], add up together
+- so res = res (prev sum1, sum2) + sum3
+- why pass arr and depth + 1 for next dfs level?
+- because pass arr, we can get arr === leaf or branch
+- depth+1 is for next level, res = res + getInt() * depth 
+
 - https://leetcode.com/problems/nested-list-weight-sum-ii (\*)
 - why we use localArr in dfs param?
 - because arr is keep passing down and consume
