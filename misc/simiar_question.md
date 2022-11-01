@@ -297,10 +297,51 @@
 
 
 - https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
-- why single number is the base case?
-- because res = (a) + (b), so dfs will see a and b
-- why put a into [a]?
-- because 2d loop to deal with combo; [a, b] vs [a1, b1]
+- why given str, then directly dfs?
+- given str (start dfs level), then put diff brackets (diff brackets -> diff dfs sub path)
+- why we need a global map?
+- key: str, val: [e1, e2]
+- because we cache / dfs
+- what is str param passed down?
+- e.g. 2-1-1; 2-1; 1
+- it is always full cal form, never has -2 or 2-
+- because we split +, -, *, left out === full cal form
+- why we don't have a base check?
+- res is like the base check
+- 1. res = [] -> str is num -> [str_num]
+- 2. res.len > 0 -> into_split_loop -> [e1, e2]
+- res.len === 0, we did not get into split loop
+- res.len > 0, we get into split loop
+- why res = []?
+- res = [] -> str is num -> [str_num]
+- res.len > 0 -> into_split_loop -> [e1, e2]
+- why we need to loop char by char?
+- we need to get symbol +, -, *, why?
+- so we can split and get the full cal form
+- e.g. 2-1-1 (init dfs) -> (2-1)-1 sub dfs -> 2-(1-1) sub dfs
+- so this dfs has 2 paths
+- in the split loop, what is left_res and right_res
+- left_res = [], [e1, e2]
+- right_res = [], [e1, e2]
+- why we need left_res and right_res?
+- because left_res === cache or dfs
+- because right_res === cache or dfs
+- why we don't return directly if see cache?
+- normally, if get cache, we should return, but here diff
+- left_res is for later 2D loop
+- right_res is for later 2D loop
+- why cache / dfs -> then cal result?
+- why not cal result -> cache / dfs?
+- because dfs is bottom up
+- we hold the result, hit the bottom, cal from bottom, then keep returning
+- why left_res and right_res are array?
+- because 2D loop, i stable, j loop
+- in the 2D loop, why we put res.push within the 2D loop?
+- why not after 1st inner loop, why not after outerloop?
+- beause we need each of the result
+- why the sum = e1 + e2, why we don't do sum = sum + (e1 + e2)?
+- because we are not acc.
+- if we don't ask why, then we blindly follow pattern
 
 - https://leetcode.com/problems/longest-increasing-path-in-a-matrix/ (\*)
 - why we need 2 max: outerloop max and dfs max?
