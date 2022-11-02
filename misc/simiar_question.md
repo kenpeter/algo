@@ -276,17 +276,39 @@
 - 5. out
 
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
-- 1. no pt left
-- 2. we have 1st pt, can existing lines cover 1st pt?
-- 3. we cannot cover 1st pt, if only 1 pt, then inc #, and return
-- 4. now we have 1st pt and other pts, form new lines
-- summary: we surround 1st pt to do code logic
-- why surround 1st pt to do logic?
-- because if we can cover 1st pt, rest of pt can cover
-- why we don't take out 1st pt physically?
-- because it may not be covered, so need to stay; other i can cover
-- why pt_arr.slice(0) and line_arr.slice(0)?
-- because it is double paths; It is easier for different sub tree
+- why need pt1?
+- because cal_slope(pt1, pt2)
+- why need pt2?
+- because cal_slope(pt1, pt2)
+- why we need to care point 1 === point 2?
+- pt1 === pt2, large infinity slope, not usable
+- pt1 !== pt2, we have slope to use, usable
+- on top of dfs
+- 1. have we exhausted all pt_arr?
+- pt_arr.len === 0, return line.len
+- pt_arr.len !== 0, we need to use existing line_arr to cover
+- why use line_arr to cover first pt?
+- why not cover last pt?
+- possible we can, but use 1st pt
+- yes can cover first pt -> line_arr loop -> compare_slope -> return dfs(pt_arr_1_less, line_arr)
+- no cannot cover first pt -> loop pt_arr -> form new slope -> dfs(pt_arr_i_less, line_arr_inc)
+- 2. no we have some ele in pt_arr; loop line_arr -> compare_slope -> dfs(pt_arr_1_less, line_arr)
+- why first_slope === curr_pt_slope -> return dfs(pt_arr_l_less, line_arr)?
+- why we need to return?
+- if no return, we stay in pt_arr loop; after loop finish, we enter pt_arr, which we don't want
+- line_arr cannot cover first pt
+- we have a shortcut: if pts.len === 1, return line.len + 1, why?
+- because shortcut
+- why this also an early return?
+- because same reason, we don't want to enter pt_arr loop
+- why min line to cover 1st pt?
+- because min = dfs(pt_arr_i_less, line_arr_inc)
+- each iteration of pt_ar === 1 dfs decision
+- 3. line_arr loop: line_arr cannot cover 1st pt, loop pt_arr -> form new slope -> dfs(pt_arr_i_less, line_arr_inc)
+- pt_arr_i_less === pt_arr remove i
+- line_arr_inc === line_arr.push([pt_i, pt_i_slope])
+- why line_arr.push pt_i, not first_pt?
+- because pt_arr we remove pt_i, line_arr, we inject pt_i
 
 - https://leetcode.com/problems/nested-list-weight-sum (\*)
 - why we pass arr and depth as param in dfs?
