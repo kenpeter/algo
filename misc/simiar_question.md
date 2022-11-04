@@ -274,7 +274,47 @@
 - why not use m (boy_ind) as arr_len?
 - because e.g. there are many girls, not enough boys, so there are empty girl slot
 - there are not enough girls, too many boys, so the girls are full
-- 
+- why global_match[girl_ind] = boy_ind has to be global?
+- because global_match[girl_ind] ~= global_seen, it holds the entire state of matching
+- why not use global_match[boy_ind] = girl_ind?
+- no beause local_seen[girl_ind] and global_match[girl_ind], they have consistent format
+- why use -1 for the global_match?
+- 1. global_match[girl_ind] === -1 (still in init stage)
+- 2. globa_match[girl_ind] === boy_ind (already assigned)
+- why there is no base check here, on top of dfs?
+- we have global_match and local_seen checking within girl loop
+- boy_ind cannot assigin into global_match[boy_ind], local_seen[boy_ind]
+- why loop girls in dfs?
+- because boy invites girl, in outerloop
+- now girl loop in dfs
+- boy_ind passed as param, stable, girl_ind loop
+- why girl_ind starts at 0?
+- because the dfs param, curr_boy_ind or prev_boy_ind, we loop the girl from start
+- so we can re-do all girls for boys
+- in the girl loop:
+- 1. can we invite a girl? (most obvious)
+- yes, g[boy_ind][girl_ind] === 1, next condi check
+- no, g[boy_ind][girl_ind] === 0, next iteration
+- 2. have we seen this girl? (most obvious)
+- yes, seen this girl in this dfs, next ieration
+- no, have not seen this girl in this dfs, next condi check
+- 3. can we assign this boy to this girl? (assign)
+- yes, global_match and local_seen assign, out directly, because ++res
+- no, we cannot assign global_match and local_seen, next code (switch global_match)
+- why we get out directly?
+- because we don't want to switch global_match
+- also condi === true, ++res
+- why local_seen[girl_ind] = true, before dfs?
+- because local_seen[girl_ind] = true ~= block after all checks
+- if we don't seen now, go to dfs, we will hit this girl again, in same dfs
+- 4. so current entire matching state is no good, can we change the entire matching state, 1 by 1
+- why dfs(global_match[girl_ind] === prev_boy_ind) is called switch?
+- because global_match[girl_ind] === prev_boy_ind
+- so we restart from prev_boy_ind and redo from there
+- if can_switch -> global_match assign -> local_seen assign -> return true
+- why return false should after girl loop?
+- because we put within girl loop, just return and skip many iterations
+- normally return true after girl loop
 
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
 - why need pt1?
