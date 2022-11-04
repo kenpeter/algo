@@ -248,10 +248,56 @@
 - why if(last_digit < 9) dfs(next), because next is more and more, next hit up boundary.
 
 - https://leetcode.com/problems/synonymous-sentences/ (\*)
-- queue (str) -> word arr (split single str) -> replace word (edge and graph)
-- why queue -> word arr -> replace?
-- beause we can exhaust
-- word arr (using i in ind) -> replace word (using j in edge)
+- what is connect?
+- [happy, joy]: happy -> joy
+- or [happy, joy]: joy -> happy
+- so 2 directions, forward and backward
+- why 2 directions?
+- [happy, joy]: happy -> joy, joy -> happy
+- in graph, why the entry is hash, but the val is arr?
+- because hash key === word, value === arr, allow easier to assign elements
+- why we need to check graph[w1] === undef and graph[w1] === undef?
+- 1. graph[w1] === undef, then graph[w1] === empty
+- 2. graph[w1] !== undef, then graph[w1] === arr_with_element
+- why loop sync?
+- sync === [['a', 'b'], ['c', 'd']]
+- e1 === ['a', 'b']; a, b connect
+- e2 === ['c', 'd']; c, d connect
+- why we need a queue here?
+- the init queue is not empty, the while loop can consume it
+- if the queue is empty, we cannot continue the rest of operations
+- q = [str], we can start dequeue and process
+- e.g. same 2D arr dp, with init, longest distance in 2D grid
+- why we push entire str into init_queue_arr, const q = [str]?
+- because queue_loop -> str -> word_arr -> edges
+- why we need a global_seen here?
+- because it is a graph, also it is bi-directions
+- it is very easy to get into loop, in graph
+- why we have 3 loops here?
+- 1. str_queue loop ([str])
+- 2. word loop (str -> word_arr)
+- 3. edge loop (word -> edges)
+- why we use while loop to loop queue?
+- most of the time, we use while loop to consume queue
+- because we don't know when it is finish
+- also we will push elements into it, in while loop
+- why we need to dequeue and get the str out?
+- because the queue size will change (str = q.shift()) and while loop eventually stop (while(q.len > 0))
+- in word_arr loop, graph[w] === undef, then continue, why?
+- str -> word_arr, e.g. I and am, it is not in sync at all
+- graph['I'] or graph['am'] has no entry, so graph[w1] === undef, continue
+- we have word (vertex) -> replaced words (edges), why?
+- because this what the sync for
+- after graph[w] === undef, fail condi; then we enter graph[w] !== undef
+- that means edges = graph[w], why?
+- because graph[w] === undef -> empty; graph[w] !== undef -> have edges
+- why word_arr[i] = replaced_word?
+- because [joy, happy]: joy -> happy, happy -> joy
+- also word_arr.join(' ') will form new string with replaced word
+- why !global_seen.has(new_str) -> we push to queue.push(new_str)?
+- if we seen it globally, then we must not process by adding to the queue
+- why we don't do global_seen.add(new_str), after !global_seen.has check?
+- because we follow natural flow, check on top of dfs
 
 
 - https://leetcode.com/problems/maximum-number-of-accepted-invitations/ (\*)
