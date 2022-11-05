@@ -247,34 +247,32 @@
 - because i=1 -> i=9, i is diff
 - 
 - why use curr to get last_digit?
-- last_digit = curr % 10
-- const prev = curr*10 + last_digit - 1
-- because (curr) and (curr % 10 - 1) are step number, releated
+- because (curr) and (curr % 10 - 1) are step number, desc releated
 - curr*10 === left num; last_digit-1 === right num
-- const next = curr*10 + last_digit - 1
-- because (curr) and (curr % 10 + 1) are step number, related
+- because (curr) and (curr % 10 + 1) are step number, inc related
 - curr*10 === left num; last_digit+1 === right num
 -
-- why i = 9, but last_digit < 9?
-- beause const next = curr(9)*10 + last_digit(9) + 1 -> 90 + 10 -> 100 (not step number)
-- i = 9 === curr, we are not using it directly, we gen prev and next
+- why if last_digit > 0?
+- because prev === next_curr in next dfs, it gets less and less, so last_digit > 0, keep it under control
+- why last_digit === 0, cannot use?
+- because e.g. prev = curr(0)*10 + last_digit(0) - 1 -> 0 + 0 - 1 -> -1 (not step number)
+- why not curr > 0 -> dfs(prev)?
+- because curr === 100, 99999, 1000000 very large num
+- we want last_digit under control < 0
+- similar why not curr < 9 -> dfs(next)
 -
-- why we finish dfs(prev), then go to dfs(next)?
-- because we need to exhaust prev, until last_digit <= 0, we stop, to next dfs(next)
-- beause we need to exhaust next, until last_digit >= 9, we stop, get out of entire dfs
-- why last_digit > 0?
-- prev -> next_prev in next dfs, prev is less and less, so last_digit > 0
-- why not curr < 0?
-- because curr can be -1, 10, 1000000, large number
-- why last_digit !== 0?
-- because 
+- why if last_digit < 9?
+- beause next === next_curr in next dfs, it gets more and more, so last_digit < 9, keep it under control
+- why last_digit === 0, cannot use?
+- because e.g. next = curr(9)*10 + last_digit(9) + 1 -> 90 + 10 -> 100 (not step number)
+- 
+- why we finish dfs(prev) -> dfs(next)?
+- because exhaust prev, until last_digit <=0, -> dfs(next)
+- beause exhaust next, until last_digit >= 9, -> out of this func
 -
-- why last_digit < 9?
-- next -> next_curr in next dfs, next is more and more, so last_digit < 10
-- why not curr < 9?
-- because curr can be 10, 100, 9999, large num
-- why last_digit !== 9?
-- because const next = curr(9)*10 + last_digit(10) + 1 -> 90 + 10 -> 100 (not step number)
+- why outerloop i = 1 -> i = 9?
+- why there is no i = 0?
+- because i=0, handle by res.push(0)
 -
 
 - https://leetcode.com/problems/synonymous-sentences/ (\*)
