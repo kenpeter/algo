@@ -273,7 +273,7 @@
 - why outerloop i = 1 -> i = 9?
 - why there is no i = 0?
 - because i=0, handle by res.push(0)
--
+- we don't want zero, e.g. prev = curr(0)*10 + last_digit(0) - 1 --> -1
 
 - https://leetcode.com/problems/synonymous-sentences/ (\*)
 - what is connect?
