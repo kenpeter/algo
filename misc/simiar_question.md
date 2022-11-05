@@ -250,8 +250,10 @@
 - last_digit = curr % 10
 - const prev = curr*10 + last_digit - 1
 - because (curr) and (curr % 10 - 1) are step number, releated
+- curr*10 === left num; last_digit-1 === right num
 - const next = curr*10 + last_digit - 1
 - because (curr) and (curr % 10 + 1) are step number, related
+- curr*10 === left num; last_digit+1 === right num
 -
 - why i = 9, but last_digit < 9?
 - beause const next = curr(9)*10 + last_digit(9) + 1 -> 90 + 10 -> 100 (not step number)
