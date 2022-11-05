@@ -234,18 +234,46 @@
 
 
 - https://leetcode.com/problems/stepping-numbers/ (\*)
-- why outter loop i=1 -> i=9, then dfs?
-- it is like the max path in grid or flood-fill
-- why it is like max path in grid or flood-fill?
-- because we extend from base num
-- when low_boundary = 0, why res.push(0)?
-- because last_digit = curr % 10, 0 % 10 always zero, no good
-- if(curr >= low) res.push(curr), why no return here?
-- because we can build next step number (less or more), based on this curr
-- why prev = curr * 10 + last_digit - 1? because curr(digit) and last_digit(digit), diff = 1
-- same for next
-- why if(last_digit > 0) dfs(prev), because prev is less and less, prev hit low boundary.
-- why if(last_digit < 9) dfs(next), because next is more and more, next hit up boundary.
+- if lo === 0, res.push(0), why?
+- because outerloop i=1 -> i=9, we don't want i=0
+- why we don't have if hi === 0, res.push(0)
+- lo === 0, res.push(0), enough, why need hi === 0, res.push(0)
+- 
+- on top of dfs, why curr > hi, return directly?
+- because we need hi >= curr >= lo, curr > hi, out of range
+- why hi >= curr >= lo, res.push(curr), why no return?
+- because curr can gen more prev and next
+- why res.push(curr), why curr has no repeated?
+- because i=1 -> i=9, i is diff
+- 
+- why use curr to get last_digit?
+- last_digit = curr % 10
+- const prev = curr*10 + last_digit - 1
+- because (curr) and (curr % 10 - 1) are step number, releated
+- const next = curr*10 + last_digit - 1
+- because (curr) and (curr % 10 + 1) are step number, related
+-
+- why i = 9, but last_digit < 9?
+- beause const next = curr(9)*10 + last_digit(9) + 1 -> 90 + 10 -> 100 (not step number)
+- i = 9 === curr, we are not using it directly, we gen prev and next
+-
+- why we finish dfs(prev), then go to dfs(next)?
+- because we need to exhaust prev, until last_digit <= 0, we stop, to next dfs(next)
+- beause we need to exhaust next, until last_digit >= 9, we stop, get out of entire dfs
+- why last_digit > 0?
+- prev -> next_prev in next dfs, prev is less and less, so last_digit > 0
+- why not curr < 0?
+- because curr can be -1, 10, 1000000, large number
+- why last_digit !== 0?
+- because 
+-
+- why last_digit < 9?
+- next -> next_curr in next dfs, next is more and more, so last_digit < 10
+- why not curr < 9?
+- because curr can be 10, 100, 9999, large num
+- why last_digit !== 9?
+- because const next = curr(9)*10 + last_digit(10) + 1 -> 90 + 10 -> 100 (not step number)
+-
 
 - https://leetcode.com/problems/synonymous-sentences/ (\*)
 - what is connect?
