@@ -207,20 +207,72 @@
 
 
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
-- why loop q.size (with q.len > 0) -> 4 dir?
-- because bfs we exhaust this queue level, then we exhaust next queue level.
-- because 4 dir is like future move
-- why curr_row, curr_col, curr_k is same in the 4 dir loop?
-- because we are trying, not real
-- why we ++res after exhaust this queue level?
-- because we are doing bfs.
-- why bfs?
-- because we try to exhaust each level
-- why exhaust each level?
-- because we have the ++res
-- in the 4 dir loop, next_k <= k && used[r][c][next_k], then push to queue, why we don't have g[r][c] === 0 and g[r][c] === 1?
-- because next_k is from 0 -> k, so used[r][c][next_k] is all situation
-- because used[r][c][next_k] === true, we have visisited, then no need to push to queue
+- what is 1 and 0?
+- 1 === block
+- 0 === empty_path
+- what is g?
+- g === 2D grid with 0 and 1
+- what is k?
+- k === how much we can convert block to empty_path
+- what is res?
+- we start from (0, 0) to (m-1, n-1), how many steps
+- what is this data structure?
+- [row, col, k_so_far]
+- normally is [row, col], but we have k here
+- q = [[0, 0, 0]], why we init queue with single element?
+- because while(q.len > 0), queue can start; q = [], queue cannot start
+- why we need a global_seen?
+- because we travel from (0, 0) to (m-1, n-1) in a 2D grid; k just extra
+- why we need a 3D grid?
+- because [row, col] this is normal, k extra -> [row, col, k_so_far]
+- why global_seen[r][c][k+1], why k+1?
+- because 0,1,2,3,4...; there are k+1 elements
+- why global_seen[r][c][k_so_far] === true / false?
+- because seen and !seen
+- why normnally we need to init all data structure?
+- 1. grid[r][c]
+- 2. queue[r][c][k], init
+- 3. global_seen[r][c][k], init
+- because if we don't init, the process cannot start
+- why these 3 data structure are very similar?
+- because they are origin from grid[r][c], k just extra
+- why the entire flow like this?
+- queue_check -> dequeue -> 4_dir -> push_queue -> queue_check
+- 1. queue_check === because we dequeue and push_queue, we don't know when finish; breadth level
+- 2. dequeue === q.shift(), so the queue can eventually stop
+- 3. 4_dir === (the future_row = row + row_d pattern)
+- 4. push_queue === exhaust breadth level
+- 5. queue_check === back to where we start
+- what is loop(i=0; i<q.len; ++i)?
+- loop(i=0; ...) === breadth level exhausting
+- why future_row = row + row_d is the 4_dir dedicated pattern?
+- because 
+- future_row = row + row_id; future_col = col + col_d
+- why put end check under queue_loop?
+- because this is the 1st time we have row and col
+- in the 4 dir loop,
+- 1. boundary?
+- 2. end point?
+- 3. can dfs? (use k and !seen)
+- (1) is it boundary?
+- yes: continue
+- no: next code
+- (2) is it end point?
+- yes: return res+1 (future point)
+- no: next code
+- (3) can dfs? (use k and !seen)
+- why we cannot just dfs? why we need to put more condi to dfs?
+- normally we don't travel the full dfs, we only go to certain dfs path
+- what is use the k?
+- 1. g[r][c] === 1, it is block -> next_k = curr_k + 1;
+- 2. g[r][c] === 0, empty_path -> next_k = curr_k;
+- what is seen and !seen?
+- 1. seen === global_seen[r][c][k_so_far] = true, no dfs
+- 2. !seen === global_seen[r][c][k_so_far] = false, dfs
+- why put ++res after queue_loop?
+- because queue_loop finish === breadth level scan finish, ++res
+- why put return -1 after queue_check?
+- because the overall breadth levels finish, so return -1
 
 - https://leetcode.com/problems/brace-expansion/ (\*)
 - why base check, ind >= str.len, then res.push(path)?
