@@ -223,14 +223,22 @@
 - because used[r][c][next_k] === true, we have visisited, then no need to push to queue
 
 - https://leetcode.com/problems/brace-expansion/ (\*)
-- why we don't have outter loop then put dfs into it?
-- because {a, b}c{a, b} is entire str, we have str_ind all the way
-- why res = path1 (sub_path_char + sub_path_char + ..) + path2 (sub_path_char ..) + path3?
-- because sub_path_char is the sub path dfs
-- why we have arr dfs?
-- because {a,b} -> form arr
-- why we have normal char dfs?
-- {a, b}c, c is the only char
+- why base check, ind >= str.len, then res.push(path)?
+- because ind scan from left to right, end of str, now push result
+- when res.push(path.join('')), why we need path.join('')?
+- because path === [a,b,c], path.join('') === abc; we need string, not arr
+- if(s[ind] === '{') and if(ind === '{'), why they are diff?
+- s[ind] === actual char
+- ind === the index, so diff
+- why there are 2 dfs paths?
+- e.g. a{b,c}
+- 1. path1: a
+- 2. path2: {b,c} -> it can become path2.1, b and path2.2, c
+- why we need to scan { and }?
+- because {a,b,c} -> [a, b, c] -> 3 dfs paths
+- why there are 2 ways to copy dfs path?
+- 1. path.push -> dfs -> path.pop; single path
+- 2. path.slice(0) -> path1.push -> dfs; copy path
 
 
 - https://leetcode.com/problems/stepping-numbers/ (\*)
