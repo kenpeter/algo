@@ -191,20 +191,32 @@
 
 
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
-- why we don't have a worker loop then dfs?
-- because only worker ind = 0 is useful, ind=1, 2, 3, we missing worker
-- why we have bike_seen?
-- because worker -> bike (connected), worker -> bike (connected) each level, to avoid repeated
-- why dp[worker_ind][bike_ind] need a 2D dp?
-- because workder -> bike (connected)
-- why dp[workder_ind][bike_ind] only store sub path, why not store full path?
-- because we not sure dp[worker_ind][bike_ind] = dp[worker_ind-1][bike_ind-1] + action
-- also we have acc_path = dp[w_ind][b_ind] + dp[w_ind][b_ind] + ....
-- why w_ind >= worker.len, min(min, acc_path)?
-- because after all the level, acc_path becomes final
-- why we need to seen -> dfs -> unseen? 
-- because set -> dfs -> unset
-
+- why min = +Infinity?
+- because we need to assign smaller number, +Infinity can definitely get things going
+- why I need a gobal_seen?
+- global_seen[bike].add -> dfs -> global_seen[bike].del, for worker stable, bike loop
+- why we need a 2D rem arr, init with -1?
+- actually, we don't need them
+- because there is code blow if rem[worker_ind][bike_ind] === -1, rem[worker_ind][bike_ind] = tmp_dist
+- this is the only time we update rem[worker_ind][bike_ind]
+- then dfs(this_dist + rem[worker_ind][bike_ind], worker_ind)
+- it is same as this_dist + tmp_dist
+- so we don't need rem[worker_ind][bike_ind]
+- what is manhattan distance?
+- manhattan_distnace = abs(x2-x1) + abs(y2-y1)
+- similar to c^2 = a^2 + b^2
+- on top of dfs, why tmp_dist >= min, early return?
+- because it is shortcut, tmp_dist >= min, no use
+- on top of dfs, why worker_ind >= ws.len, return min = min(min, xxx)
+- because worker_ind finish
+- why we loop bike?
+- because it is a bike stable
+- on top of dfs, why global_seen[bike_ind] === true?
+- because bike_ind always starts at 0 again.
+- why global_seen[bike_ind].add -> dfs -> global_seen[bike_ind].del?
+- because 2 ways to use global_seen?
+- 1. global_seen.add
+- 2. global_seen.add -> dfs -> global_seen.del
 
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
 - what is 1 and 0?
