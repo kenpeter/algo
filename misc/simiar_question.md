@@ -160,34 +160,48 @@
 - https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/351-android-unlock-patterns.html (x)
 
 - https://leetcode.com/problems/robot-room-cleaner/, https://wentao-shao.gitbook.io/leetcode/graph-search/489.robot-room-cleaner (\*)
-- why no loop then dfs?
-- because we don't even know the grid, we don't know the loop
-- why start at dir=0, r=0, c=0?
-- because we don't know where we start, then dir=0, r=0, c=0 is the choice
-- why pass dir along r and c as param in dfs?
-- because in the same r and c, each dir is diff; we need to diff them
-- why no dfs check?
-- there are 2 way to check: check before pass to dfs or check on top of dfs
-- in this case, we check before pass to dfs
-- why we call ro.clean() and set visited on top of dfs?
-- because same reason, we check before pass to dfs
-- why dir + i (the 4 dir)?
-- because we keep rotating, dir + i is a way to rotate
-- why (dir + i) % 4?
-- because dir=0,1,2,3; i=0,1,2,3; dir+i=6 overflow, %4 keep in range
-- why keep in range?
-- because dir[ind], ind%4 in range
-- why !seen and ro.move (detect we can forward), then dfs?
-- because conditional dfs, we cannot just dfs
-- why we need to revert the robot?
-- beause if seen + ro.move, we physically move here, so we need to revert
-- why whether dfs or not, we need to ro.turnRight()?
-- because we need to move on another direction
-- why we need to avoid global var and local var having same name?
-- because global var and local var confuse each other
-- const new_dir = (dir + i) % 4 === new_dir and new_ind
-- because this contains dir, so new_dir
-- because this contains %4, so it is new_ind, for arr
+- why 4 dir?
+- because robot movement in 4 directions
+- mine sweeper (leetcode) has 8 directions
+- why need seen for robot movement?
+- prev map.set(cell_index, true), so have visited this cell -> map.has(cell_index) === true
+- map.has(cell_index) === true -> avoid visit again, avoid loop
+- what is curr_dir?
+- curr_dir === prev_i
+- curr_dir === 0,1,2,3,4,5,etc; it is not really the direction robot heading
+- it is index to access [[0, -1], [0, 1], [1, 0], [0, -1]];
+- we can see that curr_dir overflow, so curr_dir % 4, to avoid overflow
+- in the dfs param, why we need curr_dir combo with (curr_row, curr_col)?
+- having curr_row and curr_col we know which cell we land
+- having curr_dir we know on this cell, which direction heading to, hence affect next dfs move directly
+- 1. clean cell (actual operation)
+- why clean cell on top of dfs?
+- because when code come from param, we have done all the future check
+- so now it is safe to do operation
+- 2. set seen (avoid loop)
+- why set seen on top of dfs?
+- because when code come from param, we have not seen it, but when come to this dfs level, we need to set seen, to avoid loop
+- why (curr_i + i) % 4?
+- curr_i = 0,1,2,3,4,5; not really direction, but index to access dir arr
+- curr_i + i === prev_i + curr_i
+- (curr_i + i) % 4; curr_i overfow, %4 to avoid overflow
+- why we need conditional dfs?
+- because we cannot just dfs, travel the whole trees; pick the dfs path relevant
+- map.has(cell_index) === true -> no dfs
+- map.has(cell_index) === false -> may dfs
+- ro.move() === true, can dfs
+- ro.move() === false, no dfs (hit obstacle / boundary)
+- why map.has(cell_index) && ro.move(), map.has before ro.move?
+- because ro.move() is the physical movement to detect hit obstacle / boundary
+- why r -> r -> ro.move -> r -> r?
+- because map.has(cell_index) && ro.move(), we have ro.move() in condition
+- it is a physical check, so need to revert it, so ro.move()
+- why after the dfs (or no dfs), we need to turnRight?
+- whether prev dfs (or no dfs), we still need to head to next direction
+- why there is no loop -> dfs; why direct dfs?
+- because there are loop at all
+- why start as dfs(0, 0, 0)?
+- dir = 0, row=0, col=0; that is how we start
 
 
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
