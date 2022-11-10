@@ -289,6 +289,11 @@
 - (3) can dfs? (use k and !seen)
 - why we cannot just dfs? why we need to put more condi to dfs?
 - normally we don't travel the full dfs, we only go to certain dfs path
+- why we put next_k = curr_k + 1 within the 4_dir loop?
+- why not put next_k = curr_k + 1 before 4_dir loop?
+- because put before 4_dir loop, next_k will be the same and will be updated in each iteration
+- but it within 4_dir, will always use same curr_k+1, in each iteration
+- summary, a var before loop, will keep updated; a var within loop, will stay same each iteration 
 - what is use the k?
 - 1. g[r][c] === 1, it is block -> next_k = curr_k + 1;
 - 2. g[r][c] === 0, empty_path -> next_k = curr_k;
@@ -298,7 +303,9 @@
 - why put ++res after queue_loop?
 - because queue_loop finish === breadth level scan finish, ++res
 - why put return -1 after queue_check?
-- because the overall breadth levels finish, so return -1
+- because the overall breadth levels finish within queue_check
+- if(r === m-1 && c === n-1) return res;
+- if we cannot return within queue_check, then nothing more we can do, return -1
 
 - https://leetcode.com/problems/brace-expansion/ (\*)
 - why base check, ind >= str.len, then res.push(path)?
