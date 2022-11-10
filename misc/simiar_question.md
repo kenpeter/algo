@@ -138,21 +138,36 @@
 
 
 - https://leetcode.com/problems/generalized-abbreviation (\*)
-- in the dfs boundary check / base, why there is no curr_char?
-- because end of str, there is no curr_char
-- full = prev_str (sub_path_1) + counter (sub_path_2) + curr_char(sub_path_3, no)
-- why counter === 0 or counter > 0?
-- because if counter acc, then we have abbrev the chars, then c > 0; c === 0 means we have not used
-- why we have only 2 dfs choices?
-- becuase either counter acc or we convert the counter acc to str
-- why?
-- that is how the counter abbrev used
-- why choice 1, prev_str (no change) + counter (inc) + curr_char (no change)?
-- because counter acc
-- why choice 2, prev_str (merge counter) + counter (merge to prev_str, and reset) + curr_char (merge to prev_str)?
-- because counter converted
-- why counter reset to 0?
-- because the counter converted all
+- e.g. ab, at ind = 0, we can take a or we an make counter = +1, so it represent a
+- prev = prev + counter + curr
+- what is prev?
+- prev === prev dfs level, that prev + counter + curr
+- what is counter?
+- counter === 0,1,2,3, representing each letter and acc
+- curr === str[curr_ind]
+- now image the dfs tree for ab travel
+- for state: we have these vars along it
+- 1. prev = prev + counter + curr
+- 2. counter
+- 3. curr
+- for action: we hvae these vars alongs it
+- 1. prev = prev + counter + curr
+- 2. counter
+- 3. curr
+- why state and action are same?
+- because state and action both vars are changing, we need to keep track
+- the change is prev and counter
+- what is the change of prev and counter?
+- if prev change (take), then counter need to reset
+- if counter acc (!take), then prev stay the same
+- either prev operates or counter operates, not both
+- why str_ind >= str.length, we have these state
+- 1. prev = prev + counter + curr
+- 2. counter
+- 3. curr
+- 4. prev (res) = prev + coubnter + curr; we have no.4 extra, because we are at the end now, need to return
+- why dfs bottom return is more important dfs go down?
+- because for dfs, dfs bottom return is where all operation happening
 
 - https://leetcode.com/problems/android-unlock-patterns/ (x)
 - https://medium.com/@rebeccahezhang/leetcode-351-android-unlock-patterns-d9bae4a8a958 (x)
