@@ -131,19 +131,27 @@
 - because before + '--' + after, we flip them
 
 - https://leetcode.com/problems/flip-game-ii (\*)
-- why we start at i=1?
-- because i === curr, i-1 === prev, so i starts at 1
-- why we need to be care of var's scope?
-- because if we have same var, we conflict
-- because if not local var, we confuse var
-- why we have a flip before dfs?
-- because this is the player 1 flip
-- because player 1 flip, then player flip
-- why condi = dfs(curr_s) is the overall player 2 flip?
-- because dfs represent the overall outcome
-- why dfs prepresent overall outcome?
-- because it goes down to all paths
-
+- why no base_check?
+- because curr_state from dfs func, got updated
+- we have i=0 curr_state loop to re-check everything
+- cs === overall current_state and pass from question func (cannot use in each dfs level)
+- curr_state === current state after updated (can use in each dfs level)
+- curr_ind === point to current str, we don't use as we start i=0, each dfs level
+- this dfs === this player current move
+- the curr_state loop is this player, the possible moves, that make next player false
+- next dfs === next player move
+- why this player i=0, in curr_state loop?
+- because we don't know what the prev player done, need to re-check everything
+- why before + '++' + after --> before + '--' + after?
+- because this one of the move, dfs action
+- it uses a trick:
+- prev dfs level === prev player move
+- this dfs level === this player move
+- next dfs level === next player move
+- summary it use diff dfs level to simulate diff people
+- why current player want condi = dfs(new_state) === false?
+- because if next player false, loose, then it means we will win, can return
+- after the curr_state loop, we cannot beat next player, then we loose
 
 - https://leetcode.com/problems/generalized-abbreviation (\*)
 - e.g. ab, at ind = 0, we can take a or we an make counter = +1, so it represent a
