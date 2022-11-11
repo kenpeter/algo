@@ -117,10 +117,18 @@
 - because dfs is in middle
 
 - https://leetcode.com/problems/flip-game-i (\*)
-- why in loop, i-1 and i together?
-- because 2 consecutive chars to flip
-- why sub(0, i-1) + (--) + sub(i+1)?
-- because i === curr, i-1 === prev
+- what is curr_state?
+- curr_state === '++++', e.g.
+- why in the curr_state loop, i < curr_state.len - 1?
+- because we start at ind=0, we need to flip 2 char, so i=0 and i=1
+- e.g. '++++' -> '--++'
+- why check curr_state[i] === '+' && curr_state[i+1] === '+', in curr_state loop?
+- because curr_state[i] and curr_state[i+1] are consecutive
+- e.g. '++++' -> '--++'
+- why we need to have curr_state loop to flip?
+- because each flip === diff dfs action
+- why before + '--' + after?
+- because before + '--' + after, we flip them
 
 - https://leetcode.com/problems/flip-game-ii (\*)
 - why we start at i=1?
