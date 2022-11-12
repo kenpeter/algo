@@ -154,6 +154,9 @@
 - because p_ind+1, next pattern
 - because i+1, 1 small step, next str_portion
 - all done, nothing works return -1
+- why there are 2 types global_seen.add -> dfs -> global_seen.del?
+- 1. global_seen.add -> dfs -> global_seen.del
+- 2. global_seen.add -> condi = dfs -> global_seen.del
 
 - https://leetcode.com/problems/flip-game-i (\*)
 - what is curr_state?
