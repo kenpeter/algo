@@ -100,21 +100,60 @@
 - then last return false
 
 - https://leetcode.com/problems/word-pattern-ii/ (\*)
-- why p_ind done scan pattern, why s_ind done scan string?
-- because if they are all done in same speed, so equal
-- if they are in diff speed, then non-equal
-- why 4 combo?
-- because
-- 1. seen, set
-- 2. seen, !set
-- 3. !seen, set
-- 4. !seen, !set
-- why no +1, s_ind -> s_ind + sub.len + 1?
-- because e.g. abcd, start at b, bcd === 3 len, b + 3 len === over len, so no +1
-- why we have diff dfs path?
-- because p_ind and s_ind are in diff speed
-- why set map, set -> dfs -> unset map, set?
-- because dfs is in middle
+- what is p?
+- p === entire pattern; pattern pair str_portion
+- p_ind position in entire pattern
+- what is s?
+- s === entire string; pattern pair str_portion
+- s_ind position in entire string
+- what is map?
+- map === pattern pair str_portion
+- what is seen?
+- seen === we seen this str_portion, we don't want to see this again
+- there are 2 ways to pass string into dfs?
+- 1. pass entire string, use str_ind to position (this leetcode)
+- 2. pass cut the string and pass necessary
+- what is this base_check in dfs?
+- p_ind === p.len && s_ind === s.len -> match
+- p_ind !== p.len && s_ind === s.len -> !match
+- p_ind === p.len && s_ind !== s.len -> !match
+- p_ind !== p.len && s_ind !== s.len -> next code
+- what is pattern[pattern_ind]?
+- pattern[pattern_ind] === str_portion
+- why use pattern[pattern_ind]?
+- same pattern[pattern_ind] === str_portion
+- if map has the pattern -> get str_portion
+- do the shortcut, start from s_ind, then scan the str_portion, why?
+- because shortcut
+- 1. yes shortcut good, then return next dfs (directly)
+- 2. no shortcut !good, then return false (directly)
+- there are 2 ways to dfs
+- 1. dfs === abstract
+- 2. dfs has res within, after dfs done, res filled
+- why p_ind+1?
+- because pattern moves on
+- why s_ind + tmp_sub.len? why not s_ind + tmp_sub.len+1?
+- because s_ind already a fresh start, if +1 at the end, we overflow
+- so s_ind + tmp_sub.len
+- so we have 3 return in the dfs func
+- 1. has pattern: shortcut, return
+- 2. has pattern: !shortcut, return dfs
+- 3. has !pattern: dfs === true, return true
+- why?
+- because if dfs === abstract, we must return
+- if a loop within dfs === different dfs actions
+- if 1 dfs action in the loop, success / false, return, why?
+- because this is the pattern for dfs
+- this (leetcode), diff dfs actions === s.substring(start_ind, i+1)
+- try out diff str_portion
+- why in the str_portion loop, we have if seen.has(str_portion) === true, continue?
+- 1. because if we seen str_portion, map has it, we assume it works, so shortcut
+- 2. code below map.set, seen.add, we don't want them operate
+- so pattern happens again: global_seen.add -> dfs -> global_seen.del
+- why pass to next dfs, p_ind+1, i+1?
+- because p_ind+1, next pattern
+- because i+1, 1 small step, next str_portion
+- all done, nothing works return -1
 
 - https://leetcode.com/problems/flip-game-i (\*)
 - what is curr_state?
