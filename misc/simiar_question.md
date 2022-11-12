@@ -79,25 +79,29 @@
 - https://leetcode.com/problems/palindrome-permutation-ii
 
 - https://leetcode.com/problems/word-pattern-i (\*)
-- why pattern and match_sub_str should have the same frequency at start?
-- because all operations below, we assume pattern and match_sub_str to be same frequency, so the loop in same step
-- why set store sub_str, not pattern_char?
-- because mp(pattern_char, sub_str), map store the pattern_char
-- why map and set are together?
-- because e.g. map(a, b), map(a, c) these will never happen; beause b and c must be unique
-- why map and set are in 4 combos?
-- 1. seen in map, in set (con)
-- 2. seen in map, not in set (return false)
-- 3. not seen in map, in set (return false)
-- 4. not seen in map, not in set (set, then con)
-- because map and set together
-- why 3 factors mp(pattern), set(pattern), mp.get(pattern) === income_pattern, to prove equal?
-- mp(pattern) and set(pattern), never say sub_str equal or not
-- so we need to have mp.get(pattern) === income_pattern
-- why we return true at the end?
-- because in the loop, we try to return false
-- same as in loop we try to return true, but no way
-- then last return false
+- why str.split(' ')?
+- because pattern === char by char
+- because str === str_portion
+- they are in sync match
+- similar to word pattern ii's base_check
+- pattern.len !== words.len, return false directly, shortcut
+- map and seen (set) ignore map.get(pattern) === ws[i], why?
+- because map and seen (set) only care pattern side
+- must check map.get(pattern) === ws[i]
+- word pattern 4 combos, what?
+- 1. map === true and seen === true, and map.get(x) === ws[i], next iteration
+- 2. map === true and seen === false, no sync match
+- 3. map === false and seen === true, no sync match
+- 4. map === false and seen === false, next iteration
+- why?
+- because based on word pattern ii
+- why at the end of code, return true?
+- because if nothing fails, then must be true, all match
+- motion:
+- abba vs cat dog dog cat
+- a -> cat (init set)
+- b -> dog (init set)
+- see b again, reuse
 
 - https://leetcode.com/problems/word-pattern-ii/ (\*)
 - what is p?
