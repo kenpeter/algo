@@ -201,6 +201,14 @@
 - because each flip === diff dfs action
 - why before + '--' + after?
 - because before + '--' + after, we flip them
+- motion:
+- case 1:
+- ++++ -> flip
+- i=0, i+1=1
+- i=1, i+1=2
+- i=2, i+1=3
+- i=3 (no, as i < len-1 = 3)
+- res = ['--++', '-++-', '++--']
 
 - https://leetcode.com/problems/flip-game-ii (\*)
 - why no base_check?
