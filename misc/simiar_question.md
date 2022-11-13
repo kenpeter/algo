@@ -98,10 +98,15 @@
 - why at the end of code, return true?
 - because if nothing fails, then must be true, all match
 - motion:
+- case 1:
 - abba vs cat dog dog cat
 - a -> cat (init set)
 - b -> dog (init set)
 - see b again, reuse
+- case 2:
+- abba vs cat dog dog fish
+- a and b seen first, no more sset
+- a -> fish, too late
 
 - https://leetcode.com/problems/word-pattern-ii/ (\*)
 - what is p?
