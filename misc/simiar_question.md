@@ -273,6 +273,21 @@
 - 4. prev (res) = prev + coubnter + curr; we have no.4 extra, because we are at the end now, need to return
 - why dfs bottom return is more important dfs go down?
 - because for dfs, dfs bottom return is where all operation happening
+- motion:
+- case 1
+- ab
+- tree with 2 branches; why? take or !take
+- take:
+- 1. prev = prev + counter + curr (update prev)
+- 2. counter = 0 (reset)
+- 3. curr = a
+- !take:
+- 1. prev (no change)
+- 2. counter = 0 + 1 (acc)
+- 3. curr = a
+- why 3 factors; because prev, counter, curr, 3 factors
+- take: prev update VS counter reset
+- !take: prev no change VS counter acc
 
 - https://leetcode.com/problems/android-unlock-patterns/ (x)
 - https://medium.com/@rebeccahezhang/leetcode-351-android-unlock-patterns-d9bae4a8a958 (x)
