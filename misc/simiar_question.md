@@ -232,6 +232,15 @@
 - why current player want condi = dfs(new_state) === false?
 - because if next player false, loose, then it means we will win, can return
 - after the curr_state loop, we cannot beat next player, then we loose
+- motion:
+- case 1:
+- p1 state: ++++
+- p1 action: --++, +--+, ++-- (flip loop)
+- p2 state (--++, e.g.)
+- p2 action:
+- --++, i=0, i=1, !++, con
+- --++, i=1, i=2, !++, con
+- --++, i=2, i=3, ---, good (dfs return feed back to p1)
 
 - https://leetcode.com/problems/generalized-abbreviation (\*)
 - e.g. ab, at ind = 0, we can take a or we an make counter = +1, so it represent a
