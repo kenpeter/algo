@@ -166,6 +166,27 @@
 - why there are 2 types global_seen.add -> dfs -> global_seen.del?
 - 1. global_seen.add -> dfs -> global_seen.del
 - 2. global_seen.add -> condi = dfs -> global_seen.del
+- motion:
+- case 1:
+- aa vs ab
+- a -> a pair lock
+- a -> b fail directly; because map.get(a) === a
+- case 2:
+- ab vs aa
+- a -> a pair lock
+- b -> a? seen (set) to skip a; why? because conditional dfs
+- case 3:
+- ab vs xyjk
+- a -> x pair lock
+- b -> y (no)
+- b -> yj (no)
+- b -> yjk (yes)
+- all three bs in str_portion loop, because greedy
+- case 4:
+- aa vs xyxy
+- a -> x pair lock
+- a -> y? fail directly, in 1st if statement
+- in str_portion loop, a -> xy, then shortcut a -> xy (another)
 
 - https://leetcode.com/problems/flip-game-i (\*)
 - what is curr_state?
