@@ -374,7 +374,26 @@
 - why global_seen[bike_ind].add -> dfs -> global_seen[bike_ind].del?
 - because 2 ways to use global_seen?
 - 1. global_seen.add
-- 2. global_seen.add -> dfs -> global_seen.del
+- 2. global_seen.add -> dfs -> global_seen.del (why del? for next iteration's branch)
+- why we cannot loop (worker) -> dfs (bike)?
+- because this (leetcode) is like first_player_win_flip_game (leetcode)
+- player 1 and player 2 switch ~= worker and bike swich
+- so dfs directly
+- motion:
+- case 1:
+- worker: [[0, 0], [1, 1]]
+- bike: [[2, 2], [3, 3]]
+- worker state contains:
+- 1. shortcut? >= min
+- 2. end? >= len
+- 3. woker_index
+- bike state contains:
+- 1. index: bike_index (obvious)
+- 2. seen: global_seen[bike_ind] === false
+- 3. seen: global_seen[bike_ind] = true
+- 4. op: this_dist = cal(wi, bi)
+- 5. op: tmp_dist + this_dist
+- 6. seen: global_seen[bike_ind] = false (why? for next iteration's branch)
 
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
 - what is 1 and 0?
