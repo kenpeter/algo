@@ -98,6 +98,7 @@
 - why at the end of code, return true?
 - because if nothing fails, then must be true, all match
 - motion:
+- pattern and string in sync, 1D loop
 - case 1:
 - abba vs cat dog dog cat
 - a -> cat (init set)
@@ -167,6 +168,7 @@
 - 1. global_seen.add -> dfs -> global_seen.del
 - 2. global_seen.add -> condi = dfs -> global_seen.del
 - motion:
+- tree with substring action branches
 - case 1:
 - aa vs ab
 - a -> a pair lock
@@ -202,6 +204,7 @@
 - why before + '--' + after?
 - because before + '--' + after, we flip them
 - motion:
+- diff states in 1D loop
 - case 1:
 - ++++ -> flip
 - i=0, i+1=1
@@ -233,6 +236,7 @@
 - because if next player false, loose, then it means we will win, can return
 - after the curr_state loop, we cannot beat next player, then we loose
 - motion:
+- tree with flip action branches
 - case 1:
 - p1 state: ++++
 - p1 action: --++, +--+, ++-- (flip loop)
@@ -274,6 +278,7 @@
 - why dfs bottom return is more important dfs go down?
 - because for dfs, dfs bottom return is where all operation happening
 - motion:
+- tree with 2 action branches
 - case 1
 - ab
 - tree with 2 branches; why? take or !take
@@ -338,6 +343,7 @@
 - why start as dfs(0, 0, 0)?
 - dir = 0, row=0, col=0; that is how we start
 - motion:
+- robot on 2D grid (backtrack)
 - robot (robot.move()) has move / dir, 'v-dom' (the code) has move / dir
 - robot move / dir at the end of dfs (curr), 'v-dom' move / dir on top of dfs (next)
 - for init new_dir (this dfs level), i = 0, new_dir can use directly (no effect curr_dir)
@@ -381,6 +387,7 @@
 - player 1 and player 2 switch ~= worker and bike swich
 - so dfs directly
 - motion:
+- tree with bike_0,1,2 action branches
 - case 1:
 - worker: [[0, 0], [1, 1]]
 - bike: [[2, 2], [3, 3]]
