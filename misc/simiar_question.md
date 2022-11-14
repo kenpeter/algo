@@ -351,7 +351,8 @@
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
 - why min = +Infinity?
 - because we need to assign smaller number, +Infinity can definitely get things going
-- why I need a gobal_seen?
+- why I need a global_seen?
+- because bike_ind = 0 always as start in dfs loop, so global_seen[bike_ind] === true, avoid hit again
 - global_seen[bike].add -> dfs -> global_seen[bike].del, for worker stable, bike loop
 - why we need a 2D rem arr, init with -1?
 - actually, we don't need them
