@@ -337,6 +337,15 @@
 - because there are loop at all
 - why start as dfs(0, 0, 0)?
 - dir = 0, row=0, col=0; that is how we start
+- motion:
+- robot (robot.move()) has move / dir, 'v-dom' (the code) has move / dir
+- robot move / dir at the end of dfs (curr), 'v-dom' move / dir on top of dfs (next)
+- for init new_dir (this dfs level), i = 0, new_dir can use directly (no effect curr_dir)
+- curr_dir !matter; i larger and larger, new_dir turn big
+- after dfs return, that cell pickes up what is left, continue there
+- when pick up left finish (this dfs level, 4 dir loop)
+- robot steps back to prev, will pick what is left (prev dfs level)
+- turnRight === real turn right, future turn right === no real turn right
 
 
 - https://leetcode.com/problems/campus-bikes-ii/ (\*)
