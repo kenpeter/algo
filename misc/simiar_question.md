@@ -480,24 +480,33 @@
 - if(r === m-1 && c === n-1) return res;
 - if we cannot return within queue_check, then nothing more we can do, return -1
 - simple:
-- queue (? because bfs)
-- global_seen 3D with k (? because 2D row col arr, extended)
-- init queue (? because all data structure init)
-- 4 dir (? up, right, down, left)
-- while loop q.len (? because queue check)
-- for loop q.len (? real consume queue)
-- q.shift(? because real consume, so no infinite loop)
-- end_cell_check (? because we have row and col)
-- queue loop -> 4_dir loop (? queue_check -> queue_loop -> 4_dir -> push_queue -> queue_check)
-- future_cell pattern (? because 4 dir move)
+- data struct: queue (? because bfs)
+- date struct: global_seen 3D with k (? because 2D row col arr, extended)
+- init data struct: init queue (? because all data structure init)
+- data struct: 4 dir (? up, right, down, left)
+- loop: while loop q.len (? because queue check)
+- loop: for loop q.len (? real consume queue)
+- consume loop: q.shift(? because real consume, so no infinite loop)
+- end_check: end_cell_check (? because we have row and col)
+- loop: queue loop -> 4_dir loop (? queue_check -> queue_loop -> 4_dir -> push_queue -> queue_check)
+- future: future_cell pattern (? because 4 dir move)
 - check: check boundary (? obvious)
-- check: end_cell (? shortcut early return)
-- op: use_next_k (? because if hit block, we can stil move)
+- end_check: end_cell (? shortcut early return)
+- check: use_next_k (? because if hit block, we can stil move)
 - op: conditional dfs (? can_use_k and !seen)
 - op: seen = true (? block if check seen)
 - op: push queue (? so while q.len run)
-- end_func: return -1 (? nothing can be done, re -1)
+- end_check: end_func, return -1 (? nothing can be done, re -1)
 - motion:
+- case 1:
+- queue = [[0, 0, 0]]
+- top dir -> no
+- right dir -> good -> push to next bfs queue
+- down dir -> good -> push to next bsf queue
+- left dir -> no
+- queue [[x,x,x], [x,x,x]]
+- pull out q item -> 4 dir
+- summary queue items -> single_queue_item -> 4_dir -> queue_items -> single_queue_item -> 4_dir
 
 - https://leetcode.com/problems/brace-expansion/ (\*)
 - why base check, ind >= str.len, then res.push(path)?
