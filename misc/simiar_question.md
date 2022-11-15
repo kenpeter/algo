@@ -403,24 +403,7 @@
 - 4. op: this_dist = cal(wi, bi)
 - 5. op: tmp_dist + this_dist
 - 6. seen: global_seen[bike_ind] = false (why? for next iteration's branch)
-- simple:
-- queue (? because bfs)
-- global_seen 3D with k (? because 2D row col arr, extended)
-- init queue (? because all data structure init)
-- 4 dir (? up, right, down, left)
-- while loop q.len (? because queue check)
-- for loop q.len (? real consume queue)
-- q.shift(? because real consume, so no infinite loop)
-- end_cell_check (? because we have row and col)
-- queue loop -> 4_dir loop (? queue_check -> queue_loop -> 4_dir -> push_queue -> queue_check)
-- future_cell pattern (? because 4 dir move)
-- check: check boundary (? obvious)
-- check: end_cell (? shortcut early return)
-- op: use_next_k (? because if hit block, we can stil move)
-- op: conditional dfs (? can_use_k and !seen)
-- op: seen = true (? block if check seen)
-- op: push queue (? so while q.len run)
-- motion:
+
 
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
 - what is 1 and 0?
@@ -496,6 +479,25 @@
 - because the overall breadth levels finish within queue_check
 - if(r === m-1 && c === n-1) return res;
 - if we cannot return within queue_check, then nothing more we can do, return -1
+- simple:
+- queue (? because bfs)
+- global_seen 3D with k (? because 2D row col arr, extended)
+- init queue (? because all data structure init)
+- 4 dir (? up, right, down, left)
+- while loop q.len (? because queue check)
+- for loop q.len (? real consume queue)
+- q.shift(? because real consume, so no infinite loop)
+- end_cell_check (? because we have row and col)
+- queue loop -> 4_dir loop (? queue_check -> queue_loop -> 4_dir -> push_queue -> queue_check)
+- future_cell pattern (? because 4 dir move)
+- check: check boundary (? obvious)
+- check: end_cell (? shortcut early return)
+- op: use_next_k (? because if hit block, we can stil move)
+- op: conditional dfs (? can_use_k and !seen)
+- op: seen = true (? block if check seen)
+- op: push queue (? so while q.len run)
+- end_func: return -1 (? nothing can be done, re -1)
+- motion:
 
 - https://leetcode.com/problems/brace-expansion/ (\*)
 - why base check, ind >= str.len, then res.push(path)?
