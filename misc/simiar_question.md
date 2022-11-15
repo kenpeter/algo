@@ -403,9 +403,23 @@
 - 4. op: this_dist = cal(wi, bi)
 - 5. op: tmp_dist + this_dist
 - 6. seen: global_seen[bike_ind] = false (why? for next iteration's branch)
+- simple:
+- global_var_track: min
+- data struct: global_seen_bike_1D (? because woker as param in dfs, each time)
+- help_func: cal_manhattan_distance
+- dfs_func: (below)
+- check: shortcut return (? faster)
+- check: end return and good chance to compare min (? end, must op)
+- loop: diff bike dfs action
+- check_global_seen
+- set_global_seen (? prev check_global_seen)
+- op: cal_manhattan_distance
+- op: no_condi_dfs
+- unset_global_seen (? pattern: set seen -> dfs -> unset_seen; why set -> dfs -> set? because only 1D, need to share if 2D, 3D, enough buffer, no need to share)
 
 
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
+- complex:
 - what is 1 and 0?
 - 1 === block
 - 0 === empty_path
@@ -493,8 +507,9 @@
 - check: check boundary (? obvious)
 - end_check: end_cell (? shortcut early return)
 - check: use_next_k (? because if hit block, we can stil move)
-- op: conditional dfs (? can_use_k and !seen)
-- op: seen = true (? block if check seen)
+- check_global_seen (the_3D_arr)
+- op: condi_dfs (? use_k and check_global_seen)
+- set_global_seen (? check_global_seen before; no set -> dfs -> unset pattern, because no share 1D arr buffer)
 - op: push queue (? so while q.len run)
 - end_check: end_func, return -1 (? nothing can be done, re -1)
 - motion:
