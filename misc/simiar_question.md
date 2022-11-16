@@ -350,6 +350,7 @@
 - mod: new_dir_index (? so constraint under 4_dir arr, pick 1 only)
 - future: future_cell (? future move)
 - check_future: check future (? !seen + can_move)
+- steal: ro.move (? actual move)
 - op: dfs (? after_check all good, op)
 - revert: R -> R -> move -> R -> R(? check_future, has actual move)
 - move_on: turnRight (? move on next)
