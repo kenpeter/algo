@@ -300,6 +300,7 @@
 - https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/351-android-unlock-patterns.html (x)
 
 - https://leetcode.com/problems/robot-room-cleaner/, https://wentao-shao.gitbook.io/leetcode/graph-search/489.robot-room-cleaner (\*)
+- complex:
 - why 4 dir?
 - because robot movement in 4 directions
 - mine sweeper (leetcode) has 8 directions
@@ -342,6 +343,16 @@
 - because there are loop at all
 - why start as dfs(0, 0, 0)?
 - dir = 0, row=0, col=0; that is how we start
+- simple:
+- seen: map.set (? cell cleaned, not more clean)
+- op: ro.clean (? all good, clean operation)
+- 4_dir: 4_dir (? robot needs to move)
+- mod: new_dir_index (? so constraint under 4_dir arr, pick 1 only)
+- future: future_cell (? future move)
+- check_future: check future (? !seen + can_move)
+- op: dfs (? after_check all good, op)
+- revert: R -> R -> move -> R -> R(? check_future, has actual move)
+- move_on: turnRight (? move on next)
 - motion:
 - robot on 2D grid (backtrack)
 - robot (robot.move()) has move / dir, 'v-dom' (the code) has move / dir
@@ -387,6 +398,19 @@
 - because this (leetcode) is like first_player_win_flip_game (leetcode)
 - player 1 and player 2 switch ~= worker and bike swich
 - so dfs directly
+- simple:
+- global_var_track: min
+- data struct: global_seen_bike_1D (? because woker as param in dfs, each time)
+- help_func: cal_manhattan_distance
+- dfs_func: (below)
+- check: shortcut return (? faster)
+- check: end return and good chance to compare min (? end, must op)
+- loop: diff bike dfs action
+- seen: check_global_seen
+- seen: set_global_seen (? prev check_global_seen)
+- op: cal_manhattan_distance
+- op: no_condi_dfs
+- seen: unset_global_seen (? pattern: set seen -> dfs -> unset_seen; why set -> dfs -> set? because only 1D, need to share if 2D, 3D, enough buffer, no need to share)
 - motion:
 - tree with bike_0,1,2 action branches
 - case 1:
@@ -403,19 +427,7 @@
 - 4. op: this_dist = cal(wi, bi)
 - 5. op: tmp_dist + this_dist
 - 6. seen: global_seen[bike_ind] = false (why? for next iteration's branch)
-- simple:
-- global_var_track: min
-- data struct: global_seen_bike_1D (? because woker as param in dfs, each time)
-- help_func: cal_manhattan_distance
-- dfs_func: (below)
-- check: shortcut return (? faster)
-- check: end return and good chance to compare min (? end, must op)
-- loop: diff bike dfs action
-- check_global_seen
-- set_global_seen (? prev check_global_seen)
-- op: cal_manhattan_distance
-- op: no_condi_dfs
-- unset_global_seen (? pattern: set seen -> dfs -> unset_seen; why set -> dfs -> set? because only 1D, need to share if 2D, 3D, enough buffer, no need to share)
+
 
 
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
@@ -502,14 +514,14 @@
 - loop: for loop q.len (? real consume queue)
 - consume loop: q.shift(? because real consume, so no infinite loop)
 - end_check: end_cell_check (? because we have row and col)
-- loop: queue loop -> 4_dir loop (? queue_check -> queue_loop -> 4_dir -> push_queue -> queue_check)
-- future: future_cell pattern (? because 4 dir move)
+- 4_dir: queue loop -> 4_dir loop (? queue_check -> queue_loop -> 4_dir -> push_queue -> queue_check)
+- 4_dir: future_cell pattern (? because 4 dir move)
 - check: check boundary (? obvious)
 - end_check: end_cell (? shortcut early return)
-- check: use_next_k (? because if hit block, we can stil move)
-- check_global_seen (the_3D_arr)
+- future_check: use_next_k (? because if hit block, we can stil move)
+- seen: check_global_seen (the_3D_arr)
 - op: condi_dfs (? use_k and check_global_seen)
-- set_global_seen (? check_global_seen before; no set -> dfs -> unset pattern, because no share 1D arr buffer)
+- seen: set_global_seen (? check_global_seen before; no set -> dfs -> unset pattern, because no share 1D arr buffer)
 - op: push queue (? so while q.len run)
 - end_check: end_func, return -1 (? nothing can be done, re -1)
 - motion:
