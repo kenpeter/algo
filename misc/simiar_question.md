@@ -191,6 +191,7 @@
 - in str_portion loop, a -> xy, then shortcut a -> xy (another)
 
 - https://leetcode.com/problems/flip-game-i (\*)
+- complex:
 - what is curr_state?
 - curr_state === '++++', e.g.
 - why in the curr_state loop, i < curr_state.len - 1?
@@ -203,6 +204,10 @@
 - because each flip === diff dfs action
 - why before + '--' + after?
 - because before + '--' + after, we flip them
+- simple:
+- loop: loop_str (? gen new state)
+- op: str_concat (? gen new state)
+- push_res
 - motion:
 - diff states in 1D loop
 - case 1:
