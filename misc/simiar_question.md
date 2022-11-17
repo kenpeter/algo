@@ -247,6 +247,7 @@
 - --++, i=2, i=3, ---, good (dfs return feed back to p1)
 
 - https://leetcode.com/problems/generalized-abbreviation (\*)
+- complex
 - e.g. ab, at ind = 0, we can take a or we an make counter = +1, so it represent a
 - prev = prev + counter + curr
 - what is prev?
@@ -277,6 +278,10 @@
 - 4. prev (res) = prev + coubnter + curr; we have no.4 extra, because we are at the end now, need to return
 - why dfs bottom return is more important dfs go down?
 - because for dfs, dfs bottom return is where all operation happening
+- simple:
+- end_check: push result
+- dfs_not_take_action
+- dfs_take_action
 - motion:
 - tree with 2 action branches
 - case 1
