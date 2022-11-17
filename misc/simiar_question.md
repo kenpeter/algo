@@ -110,6 +110,7 @@
 - a -> fish, too late
 
 - https://leetcode.com/problems/word-pattern-ii/ (\*)
+- complex:
 - what is p?
 - p === entire pattern; pattern pair str_portion
 - p_ind position in entire pattern
@@ -120,6 +121,10 @@
 - map === pattern pair str_portion
 - what is seen?
 - seen === we seen this str_portion, we don't want to see this again
+- what is the map set combo?
+- 1. map.set(key, val) === key and val lock down relationship
+- 2. we go through more inputs and find the same val
+- 3. set saw this and reject immediately
 - there are 2 ways to pass string into dfs?
 - 1. pass entire string, use str_ind to position (this leetcode)
 - 2. pass cut the string and pass necessary
@@ -167,6 +172,24 @@
 - why there are 2 types global_seen.add -> dfs -> global_seen.del?
 - 1. global_seen.add -> dfs -> global_seen.del
 - 2. global_seen.add -> condi = dfs -> global_seen.del
+- simple:
+- map set combo: .. (? lock key val relationship)
+- helper_func: dfs
+- end_check: return good
+- end_check: return false
+- end_check: return false
+- check g_map_seen: exist
+- check str_move_portion
+- dfs_str_move_portion_action
+- check g_map_seen: !exist
+- dfs_str_move_portion_loop
+- check g_seen (not g_map_seen, but g_seen)
+- set g_map_seen
+- set g_seen
+- dfs_str_move_portion_loop
+- unset g_map_seen
+- unset g_seen
+- end
 - motion:
 - tree with substring action branches
 - case 1:
