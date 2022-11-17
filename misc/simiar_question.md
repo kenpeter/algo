@@ -344,14 +344,14 @@
 - why start as dfs(0, 0, 0)?
 - dir = 0, row=0, col=0; that is how we start
 - simple:
-- seen: map.set (? cell cleaned, not more clean)
+- g_seen: map.set (? cell cleaned, not more clean)
 - op: ro.clean (? all good, clean operation)
 - 4_dir: 4_dir (? robot needs to move)
-- mod: new_dir_index (? so constraint under 4_dir arr, pick 1 only)
+- mod_index: new_dir_index (? so constraint under 4_dir arr, pick 1 only)
 - future: future_cell (? future move)
-- check_future: check future (? !seen + can_move)
+- future_check: check future (? !seen + can_move)
 - steal: ro.move (? actual move)
-- op: dfs (? after_check all good, op)
+- condi_dfs: dfs (? after_check all good, op)
 - revert: R -> R -> move -> R -> R(? check_future, has actual move)
 - move_on: turnRight (? move on next)
 - motion:
@@ -400,18 +400,17 @@
 - player 1 and player 2 switch ~= worker and bike swich
 - so dfs directly
 - simple:
-- var_track: min
-- data_struct: global_seen_bike_1D (? because woker as param in dfs, each time)
+- g_var_track: min
+- g_seen: global_seen_bike_1D (? because woker as param in dfs, each time)
 - help_func: cal_manhattan_distance
-- dfs_func: (below)
-- return_check: shortcut return (? faster)
-- return_check: end return and good chance to compare min (? end, must op)
+- end_check: shortcut return (? faster)
+- end_check: end return and good chance to compare min (? end, must op)
 - dfs_action_loop: diff bike dfs action
-- check_seen: check_global_seen
-- set_seen: set_global_seen (? prev check_global_seen)
+- check_g_seen: check_global_seen
+- set_g_seen: set_global_seen (? prev check_global_seen)
 - op: cal_manhattan_distance
-- dfs_func: no_condi_dfs
-- unset seen: unset_global_seen (? pattern: set seen -> dfs -> unset_seen; why set -> dfs -> set? because only 1D, need to share if 2D, 3D, enough buffer, no need to share)
+- uncondi_dfs: dfs
+- unset_g_seen: unset_global_seen (? pattern: set seen -> dfs -> unset_seen; why set -> dfs -> set? because only 1D, need to share if 2D, 3D, enough buffer, no need to share)
 - motion:
 - tree with bike_0,1,2 action branches
 - case 1:
@@ -505,23 +504,23 @@
 - if(r === m-1 && c === n-1) return res;
 - if we cannot return within queue_check, then nothing more we can do, return -1
 - simple:
-- data_struct: queue (? because bfs)
-- date_struct: global_seen 3D with k (? because 2D row col arr, extended)
+- data_struct_queue: queue (? because bfs)
+- date_struct_g_seen: global_seen 3D with k (? because 2D row col arr, extended)
 - init_data_struct: init queue (? because all data structure init)
-- data_struct: 4 dir (? up, right, down, left)
-- check_queue_loop: while loop q.len (? because queue check)
-- queue_loop: for loop q.len (? real consume queue)
+- 4_dir: 4 dir (? up, right, down, left)
+- check_queue: while loop q.len (? because queue check)
+- queue: for loop q.len (? real consume queue)
 - real_consume: q.shift(? because real consume, so no infinite loop)
 - end_check: end_cell_check (? because we have row and col)
 - 4_dir: queue loop -> 4_dir loop (? queue_check -> queue_loop -> 4_dir -> push_queue -> queue_check)
 - 4_dir: future_cell pattern (? because 4 dir move)
-- boundary_check: check boundary (? obvious)
+- bound_check: check boundary (? obvious)
 - end_check: end_cell (? shortcut early return)
 - steal: use_next_k (? because if hit block, we can stil move)
-- check_seen: check_global_seen (the_3D_arr)
+- check_g_seen: check_global_seen (the_3D_arr)
 - condi_dfs: condi_dfs (? use_k and check_global_seen)
-- set_seen: set_global_seen (? check_global_seen before; no set -> dfs -> unset pattern, because no share 1D arr buffer)
-- push_queue: push queue (? so while q.len run)
+- set_g_seen: set_global_seen (? check_global_seen before; no set -> dfs -> unset pattern, because no share 1D arr buffer)
+- queue: push queue (? so while q.len run)
 - end_check: end_func, return -1 (? nothing can be done, re -1)
 - motion:
 - case 1:
