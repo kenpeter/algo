@@ -79,6 +79,7 @@
 - https://leetcode.com/problems/palindrome-permutation-ii
 
 - https://leetcode.com/problems/word-pattern-i (\*)
+- complex:
 - why str.split(' ')?
 - because pattern === char by char
 - because str === str_portion
@@ -97,6 +98,16 @@
 - because based on word pattern ii
 - why at the end of code, return true?
 - because if nothing fails, then must be true, all match
+- simple
+- shortcut_check
+- map set combo
+- pattern_loop: loop pattern (? pattern and str_portion)
+- check g_map_seen
+- 1. set
+- 2. !set
+- check !g_map_seen
+- 1. set
+- 2. !set
 - motion:
 - pattern and string in sync, 1D loop
 - case 1:
