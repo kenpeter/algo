@@ -214,6 +214,7 @@
 - res = ['--++', '-++-', '++--']
 
 - https://leetcode.com/problems/flip-game-ii (\*)
+- complex:
 - why no base_check?
 - because curr_state from dfs func, got updated
 - we have i=0 curr_state loop to re-check everything
@@ -235,6 +236,12 @@
 - why current player want condi = dfs(new_state) === false?
 - because if next player false, loose, then it means we will win, can return
 - after the curr_state loop, we cannot beat next player, then we loose
+- simple:
+- dfs_flip_state_loop
+- check: ++ (? flip 2 chars)
+- op: new_state (? ++)
+- dfs_flip_state_iteration: condi = dfs (? dfs as abstract)
+- end
 - motion:
 - tree with flip action branches
 - case 1:
