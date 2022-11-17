@@ -400,18 +400,18 @@
 - player 1 and player 2 switch ~= worker and bike swich
 - so dfs directly
 - simple:
-- global_var_track: min
-- data struct: global_seen_bike_1D (? because woker as param in dfs, each time)
+- var_track: min
+- data_struct: global_seen_bike_1D (? because woker as param in dfs, each time)
 - help_func: cal_manhattan_distance
 - dfs_func: (below)
-- check: shortcut return (? faster)
-- check: end return and good chance to compare min (? end, must op)
-- loop: diff bike dfs action
-- seen: check_global_seen
-- seen: set_global_seen (? prev check_global_seen)
+- return_check: shortcut return (? faster)
+- return_check: end return and good chance to compare min (? end, must op)
+- dfs_action_loop: diff bike dfs action
+- check_seen: check_global_seen
+- set_seen: set_global_seen (? prev check_global_seen)
 - op: cal_manhattan_distance
-- op: no_condi_dfs
-- seen: unset_global_seen (? pattern: set seen -> dfs -> unset_seen; why set -> dfs -> set? because only 1D, need to share if 2D, 3D, enough buffer, no need to share)
+- dfs_func: no_condi_dfs
+- unset seen: unset_global_seen (? pattern: set seen -> dfs -> unset_seen; why set -> dfs -> set? because only 1D, need to share if 2D, 3D, enough buffer, no need to share)
 - motion:
 - tree with bike_0,1,2 action branches
 - case 1:
@@ -423,13 +423,11 @@
 - 3. woker_index
 - bike state contains:
 - 1. index: bike_index (obvious)
-- 2. seen: global_seen[bike_ind] === false
-- 3. seen: global_seen[bike_ind] = true
+- 2. check_seen: global_seen[bike_ind] === false
+- 3. set_seen: global_seen[bike_ind] = true
 - 4. op: this_dist = cal(wi, bi)
 - 5. op: tmp_dist + this_dist
-- 6. seen: global_seen[bike_ind] = false (why? for next iteration's branch)
-
-
+- 6. unset_seen: global_seen[bike_ind] = false (why? for next iteration's branch)
 
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
 - complex:
@@ -507,23 +505,23 @@
 - if(r === m-1 && c === n-1) return res;
 - if we cannot return within queue_check, then nothing more we can do, return -1
 - simple:
-- data struct: queue (? because bfs)
-- date struct: global_seen 3D with k (? because 2D row col arr, extended)
-- init data struct: init queue (? because all data structure init)
-- data struct: 4 dir (? up, right, down, left)
-- loop: while loop q.len (? because queue check)
-- loop: for loop q.len (? real consume queue)
-- consume loop: q.shift(? because real consume, so no infinite loop)
+- data_struct: queue (? because bfs)
+- date_struct: global_seen 3D with k (? because 2D row col arr, extended)
+- init_data_struct: init queue (? because all data structure init)
+- data_struct: 4 dir (? up, right, down, left)
+- check_queue_loop: while loop q.len (? because queue check)
+- queue_loop: for loop q.len (? real consume queue)
+- real_consume: q.shift(? because real consume, so no infinite loop)
 - end_check: end_cell_check (? because we have row and col)
 - 4_dir: queue loop -> 4_dir loop (? queue_check -> queue_loop -> 4_dir -> push_queue -> queue_check)
 - 4_dir: future_cell pattern (? because 4 dir move)
-- check: check boundary (? obvious)
+- boundary_check: check boundary (? obvious)
 - end_check: end_cell (? shortcut early return)
-- future_check: use_next_k (? because if hit block, we can stil move)
-- seen: check_global_seen (the_3D_arr)
-- op: condi_dfs (? use_k and check_global_seen)
-- seen: set_global_seen (? check_global_seen before; no set -> dfs -> unset pattern, because no share 1D arr buffer)
-- op: push queue (? so while q.len run)
+- steal: use_next_k (? because if hit block, we can stil move)
+- check_seen: check_global_seen (the_3D_arr)
+- condi_dfs: condi_dfs (? use_k and check_global_seen)
+- set_seen: set_global_seen (? check_global_seen before; no set -> dfs -> unset pattern, because no share 1D arr buffer)
+- push_queue: push queue (? so while q.len run)
 - end_check: end_func, return -1 (? nothing can be done, re -1)
 - motion:
 - case 1:
