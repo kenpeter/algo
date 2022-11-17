@@ -346,12 +346,12 @@
 - simple:
 - g_seen: map.set (? cell cleaned, not more clean)
 - op: ro.clean (? all good, clean operation)
-- 4_dir: 4_dir (? robot needs to move)
+- dfs_4_dir_loop: 4_dir (? robot needs to move)
 - mod_index: new_dir_index (? so constraint under 4_dir arr, pick 1 only)
 - future: future_cell (? future move)
 - future_check: check future (? !seen + can_move)
 - steal: ro.move (? actual move)
-- condi_dfs: dfs (? after_check all good, op)
+- dfs_4_dir_iteration: dfs (? after_check all good, op)
 - revert: R -> R -> move -> R -> R(? check_future, has actual move)
 - move_on: turnRight (? move on next)
 - motion:
@@ -405,11 +405,11 @@
 - help_func: cal_manhattan_distance
 - end_check: shortcut return (? faster)
 - end_check: end return and good chance to compare min (? end, must op)
-- dfs_action_loop: diff bike dfs action
+- dfs_bike_loop: diff bike dfs action
 - check_g_seen: check_global_seen
 - set_g_seen: set_global_seen (? prev check_global_seen)
 - op: cal_manhattan_distance
-- uncondi_dfs: dfs
+- dfs_bike_iteration: dfs
 - unset_g_seen: unset_global_seen (? pattern: set seen -> dfs -> unset_seen; why set -> dfs -> set? because only 1D, need to share if 2D, 3D, enough buffer, no need to share)
 - motion:
 - tree with bike_0,1,2 action branches
@@ -512,13 +512,13 @@
 - queue: for loop q.len (? real consume queue)
 - real_consume: q.shift(? because real consume, so no infinite loop)
 - end_check: end_cell_check (? because we have row and col)
-- 4_dir: queue loop -> 4_dir loop (? queue_check -> queue_loop -> 4_dir -> push_queue -> queue_check)
-- 4_dir: future_cell pattern (? because 4 dir move)
+- queue_4_dir: queue loop -> 4_dir loop (? queue_check -> queue_loop -> 4_dir -> push_queue -> queue_check)
+- future: future_cell pattern (? because 4 dir move)
 - bound_check: check boundary (? obvious)
 - end_check: end_cell (? shortcut early return)
 - steal: use_next_k (? because if hit block, we can stil move)
+- check_steal: use_next_k
 - check_g_seen: check_global_seen (the_3D_arr)
-- condi_dfs: condi_dfs (? use_k and check_global_seen)
 - set_g_seen: set_global_seen (? check_global_seen before; no set -> dfs -> unset pattern, because no share 1D arr buffer)
 - queue: push queue (? so while q.len run)
 - end_check: end_func, return -1 (? nothing can be done, re -1)
