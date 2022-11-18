@@ -564,14 +564,12 @@
 - end_check: end_func, return -1 (? nothing can be done, re -1)
 - motion:
 - case 1:
-- queue = [[0, 0, 0]]
-- top dir -> no
-- right dir -> good -> push to next bfs queue
-- down dir -> good -> push to next bsf queue
-- left dir -> no
-- queue [[x,x,x], [x,x,x]]
-- pull out q item -> 4 dir
-- summary queue items -> single_queue_item -> 4_dir -> queue_items -> single_queue_item -> 4_dir
+- at start -> 4_dir, push right and down
+- grid: [[0, 1], [0, 0]]
+- start as [0, 0, 0]
+- at (0, 0) -> 4-dir ; up bad no push; right good push to queue; down good push to queue; left bad no push
+- queue = [[right], [down]]
+- consume [right] -> 4_dir
 
 - https://leetcode.com/problems/brace-expansion/ (\*)
 - complex:
@@ -599,12 +597,11 @@
 - or dfs_single_char_action
 - end_sort: sort (? better looking)
 - motion:
-- scan the str char by char (? natural flow)
-- 1. dfs_diff_char_loop
-- 2. dfs_single_char_action
+- a{b,c}d -> a single path, {b,c} 2 paths, d single path
 
 
 - https://leetcode.com/problems/stepping-numbers/ (\*)
+- complex:
 - if lo === 0, res.push(0), why?
 - because outerloop i=1 -> i=9, we don't want i=0
 - why we don't have if hi === 0, res.push(0)
@@ -645,6 +642,25 @@
 - why there is no i = 0?
 - because i=0, handle by res.push(0)
 - we don't want zero, e.g. prev = curr(0)*10 + last_digit(0) - 1 --> -1
+- simple:
+-
+- motion:
+- 0 -> prev = curr(0) * 10 + last(0 % 10) - 1 -> no good
+- 0 -> next = curr(0) * 10 + last(0 % 10) + 1 -> no good
+- so 0 special handle, res.push(0)
+- natural flow loop:
+- 1, res.push(1), single digit === step num; prev = 10 and next = 12
+- 2 -> 21 and 23
+- 3 -> 32 and 34
+- 4 -> 43 and 45
+- 5 -> 54 and 56
+- 6 -> 65 and 67
+- 7 -> 76 and 78
+- 8 -> 87 and 89
+- 9 -> 98 and 90(9 cannot use, as no next num)
+- prev -> curr = 10 -> last_digit = 0 -> curr(10) * 10 + last(0) - 1 -> 100 - 1 = 99, no step num, no good -> last_digit > 0
+- next -> curr = 9 -> last_digt = 9 -> curr(9) * 10 + last(9) + 1 -> 90 + 10 -> 100, no step num, no good -> last_digit < 9
+- rest can dfs_correct_last_digit_action 
 
 - https://leetcode.com/problems/synonymous-sentences/ (\*)
 - what is connect?
