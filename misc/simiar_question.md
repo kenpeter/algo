@@ -667,6 +667,7 @@
 - rest can dfs_correct_last_digit_action 
 
 - https://leetcode.com/problems/synonymous-sentences/ (\*)
+- complex:
 - what is connect?
 - [happy, joy]: happy -> joy
 - or [happy, joy]: joy -> happy
@@ -717,6 +718,25 @@
 - if we seen it globally, then we must not process by adding to the queue
 - why we don't do global_seen.add(new_str), after !global_seen.has check?
 - because we follow natural flow, check on top of dfs
+- simple:
+- 1. data_struc_graph
+- build_graph_one_direction (init)
+- build_graph_vertex_arr (init)
+- 2. data_struct_queue (init)
+- 3. data_struct_g_seen (init?)
+- check_queue
+- consume_queue
+- set g_seen: seen this sentense (? in graph)
+- sentence_to_words
+- word_loop
+- node !in graph
+- node in graph -> get vertexs
+- vertex loop
+- replace_word_form_sentense
+- check g_seen: seen this sentense (? in graph)
+- end_return_good_looking_res
+- motion:
+- 
 
 
 - https://leetcode.com/problems/maximum-number-of-accepted-invitations/ (\*)
