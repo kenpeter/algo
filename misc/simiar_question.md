@@ -109,13 +109,14 @@
 - 1. set
 - 2. !set
 - motion:
-- pattern and string in sync, 1D loop
 - case 1:
+- prev_match, later reuse prev_match
 - abba vs cat dog dog cat
 - a -> cat (init set)
 - b -> dog (init set)
 - see b again, reuse
 - case 2:
+- prev_match, later mismatch
 - abba vs cat dog dog fish
 - a and b seen first, no more sset
 - a -> fish, too late
@@ -202,16 +203,18 @@
 - unset g_seen
 - end
 - motion:
-- tree with substring action branches
 - case 1:
+- prev_match, pattern re-appear
 - aa vs ab
 - a -> a pair lock
 - a -> b fail directly; because map.get(a) === a
 - case 2:
+- prev_match, new pattern appear
 - ab vs aa
 - a -> a pair lock
 - b -> a? seen (set) to skip a; why? because conditional dfs
 - case 3:
+- pattern far less than str_portion (random)
 - ab vs xyjk
 - a -> x pair lock
 - b -> y (no)
@@ -219,6 +222,7 @@
 - b -> yjk (yes)
 - all three bs in str_portion loop, because greedy
 - case 4:
+- pattern far less than str_portion (pattern)
 - aa vs xyxy
 - a -> x pair lock
 - a -> y? fail directly, in 1st if statement
@@ -245,6 +249,7 @@
 - motion:
 - diff states in 1D loop
 - case 1:
+- flip ++ to --, each time in str
 - ++++ -> flip
 - i=0, i+1=1
 - i=1, i+1=2
@@ -282,8 +287,8 @@
 - dfs_flip_state_iteration: condi = dfs (? dfs as abstract)
 - end
 - motion:
-- tree with flip action branches
 - case 1:
+- flip ++ to --, each time in str
 - p1 state: ++++
 - p1 action: --++, +--+, ++-- (flip loop)
 - p2 state (--++, e.g.)
@@ -329,21 +334,13 @@
 - dfs_not_take_action
 - dfs_take_action
 - motion:
-- tree with 2 action branches
-- case 1
+- case 1:
+- !take or take
 - ab
-- tree with 2 branches; why? take or !take
-- take:
-- 1. prev = prev + counter + curr (update prev)
-- 2. counter = 0 (reset)
-- 3. curr = a
-- !take:
-- 1. prev (no change)
-- 2. counter = 0 + 1 (acc)
-- 3. curr = a
-- why 3 factors; because prev, counter, curr, 3 factors
-- take: prev update VS counter reset
-- !take: prev no change VS counter acc
+- a -> 1 or a
+- b -> 1 or b
+- 1 and 1; 1 and b; a and 1; a and b
+- 2, 1b, a1, ab
 
 - https://leetcode.com/problems/android-unlock-patterns/ (x)
 - https://medium.com/@rebeccahezhang/leetcode-351-android-unlock-patterns-d9bae4a8a958 (x)
@@ -463,21 +460,13 @@
 - dfs_bike_iteration: dfs
 - unset_g_seen: unset_global_seen (? pattern: set seen -> dfs -> unset_seen; why set -> dfs -> set? because only 1D, need to share if 2D, 3D, enough buffer, no need to share)
 - motion:
-- tree with bike_0,1,2 action branches
 - case 1:
+- ele in arr, in each dfs, then repeat loop the other arr
 - worker: [[0, 0], [1, 1]]
 - bike: [[2, 2], [3, 3]]
-- worker state contains:
-- 1. shortcut? >= min
-- 2. end? >= len
-- 3. woker_index
-- bike state contains:
-- 1. index: bike_index (obvious)
-- 2. check_seen: global_seen[bike_ind] === false
-- 3. set_seen: global_seen[bike_ind] = true
-- 4. op: this_dist = cal(wi, bi)
-- 5. op: tmp_dist + this_dist
-- 6. unset_seen: global_seen[bike_ind] = false (why? for next iteration's branch)
+- [0, 0] in this dfs level, loop [2, 2], [3, 3]
+- next dfs level [1, 1], loop [2, 2], [3, 3], with g_seen
+
 
 - https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ (\*)
 - complex:
