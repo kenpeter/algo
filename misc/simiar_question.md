@@ -585,6 +585,7 @@
 - summary queue items -> single_queue_item -> 4_dir -> queue_items -> single_queue_item -> 4_dir
 
 - https://leetcode.com/problems/brace-expansion/ (\*)
+- complex:
 - why base check, ind >= str.len, then res.push(path)?
 - because ind scan from left to right, end of str, now push result
 - when res.push(path.join('')), why we need path.join('')?
@@ -601,6 +602,17 @@
 - why there are 2 ways to copy dfs path?
 - 1. path.push -> dfs -> path.pop; single path
 - 2. path.slice(0) -> path1.push -> dfs; copy path
+- simple:
+- var_track: res.push (? push a{b,c}d -> abd and cd
+- helper_func: dfs
+- end_check: ind >= str.len
+- dfs_diff_char_loop
+- or dfs_single_char_action
+- end_sort: sort (? better looking)
+- motion:
+- scan the str char by char (? natural flow)
+- 1. dfs_diff_char_loop
+- 2. dfs_single_char_action
 
 
 - https://leetcode.com/problems/stepping-numbers/ (\*)
