@@ -693,6 +693,8 @@
 - why we need a global_seen here?
 - because it is a graph, also it is bi-directions
 - it is very easy to get into loop, in graph
+- why g_seen.add has to be before loop?
+- because if the actual operation within loop and if loop is empty, then actual operation is not reachable
 - why we have 3 loops here?
 - 1. str_queue loop ([str])
 - 2. word loop (str -> word_arr)
