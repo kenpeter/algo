@@ -720,7 +720,7 @@
 - because we follow natural flow, check on top of dfs
 - simple:
 - 1. data_struc_graph
-- build_graph_one_direction (init)
+- build_graph_two_direction (? the question you can feel that it is 1 direction, but why build 2 directions? meaning same, can exchange)
 - build_graph_vertex_arr (init)
 - 2. data_struct_queue (init)
 - 3. data_struct_g_seen (init?)
