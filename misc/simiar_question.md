@@ -738,7 +738,25 @@
 - check g_seen: seen this sentense (? in graph)
 - end_return_good_looking_res
 - motion:
-- 
+- case 1:
+- 2 cycles, 1 interception
+- sync: [happy, joy], [joy, cheerful]
+- sen: I am happy .....
+- graph: happy and joy cycle; joy and cheerful cycle; 1 interception
+- I am happy -> [I am happy] -> [I, am, happy] -> [I, am, joy] -> I am joy -> [I am joy] -> [I, am, joy] -> [I, am, happy] (x, g_seen) and [I, am, cheerful] -> [I am cheerful] -> [I, am, cheerful] -> [I, am, joy] (x, g_seen)
+- int_str -> queue -> word_loop -> sync (replaced) -> str -> queue
+- case 2:
+- 2 cycles, 2 branches
+- sync: [happy, joy], [happy, cheerful]
+- sen: I am happy
+- graph: happy and joy cycle; happy and cheerful cycle; 2 branches
+- I am happy .. -> [I am happy] -> [I, am, happy] -> [I, am, joy] and [I, am, cheerful] -> [I am joy, I am cheerful] -> [I am joy] -> [I, am, joy] -> [I, am, happy], g_seen(x) -> [I am cheerful] -> [I, am, cheerful], g_seen(x)
+- case 3:
+- 2 cycles, repeated
+- sync: [happy, joy], [joy, happy]
+- sen: I am happy...
+- graph: happy and joy cylce; repeated
+- I am happy.. -> [I am happy..] -> [I, am, happy,..] -> [I, am, joy] -> I am joy .. -> [I am joy...] -> [I, am, joy..] -> g_seen(x)
 
 
 - https://leetcode.com/problems/maximum-number-of-accepted-invitations/ (\*)
