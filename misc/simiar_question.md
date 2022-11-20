@@ -760,6 +760,7 @@
 
 
 - https://leetcode.com/problems/maximum-number-of-accepted-invitations/ (\*)
+- complex:
 - why row len === boy?
 - because boy in row
 - the single boy invite girl
@@ -820,6 +821,13 @@
 - why return false should after girl loop?
 - because we put within girl loop, just return and skip many iterations
 - normally return true after girl loop
+- simple:
+- motion:
+- grid: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]]
+- local_seen: [f, f, f] (index === girl_ind, val === boy_true_false)
+- g_seen: [-1, -1, -1] (index === girl_ind, val === boy_ind
+- bi = 0, gi = 0 (*)
+- bi = 1, gi = 0 (x) -> (brother force) bi = 0, gi = 0 -> (switch) bi = 0, gi = 1 (*) ->
 
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
 - why need pt1?
