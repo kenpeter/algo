@@ -827,7 +827,8 @@
 - local_seen: [f, f, f] (index === girl_ind, val === boy_true_false)
 - g_seen: [-1, -1, -1] (index === girl_ind, val === boy_ind
 - bi = 0, gi = 0 (*)
-- bi = 1, gi = 0 (x) -> (brother force) bi = 0, gi = 0 -> (switch) bi = 0, gi = 1 (*) ->
+- bi = 1, gi = 0 (x) -> (brother force) bi = 0, gi = 0 -> (switch) bi = 0, gi = 1 (*) -> (backtrack) bi = 1, gi = 0 (*)
+- bi = 2, gi = 0 (x) -> (b-f) bi = 1, gi = 0 -> (switch) bi = 1, gi = 1 (x) -> (b-f) bi = 0, gi = 1 -> (switch) bi = 0, gi = 2 (*) -> (b-t) bi = 1, gi = 1 (*) -> bi = 2, gi = 0 (*)
 
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
 - why need pt1?
