@@ -822,6 +822,14 @@
 - because we put within girl loop, just return and skip many iterations
 - normally return true after girl loop
 - simple:
+- dfs_restart_girl_loop
+- can operate (? most obvious)
+- local_seen (? force others to select something else)
+- global_seen (? overall status, set global_seen)
+- set local_seen (? force others to select something else)
+- can_switch (? force others to select something else)
+- loop_then_dfs (? local_seen is fresh each time)
+- local_seen fresh each time (? force others to block in this dfs path)
 - motion:
 - grid: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]]
 - local_seen: [f, f, f] (index === girl_ind, val === boy_true_false)
