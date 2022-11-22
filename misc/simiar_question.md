@@ -874,6 +874,12 @@
 - why line_arr.push pt_i, not first_pt?
 - because pt_arr we remove pt_i, line_arr, we inject pt_i
 - simple:
+- var_track_min
+- helper_func: slope
+- end_check: pts.len === 0, return
+- dfs_line_loop: line cover 1st pt
+- shorcut: pts.len === 1, return
+- dfs_pt_loop: 1st_pt and i point, form line
 - motion:
 - pt: [0, 2], [-2, -2], [1,4]
 - line: []
