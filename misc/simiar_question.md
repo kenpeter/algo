@@ -839,6 +839,7 @@
 - bi = 2, gi = 0 (x) -> (b-f) bi = 1, gi = 0 -> (switch) bi = 1, gi = 1 (x) -> (b-f) bi = 0, gi = 1 -> (switch) bi = 0, gi = 2 (*) -> (b-t) bi = 1, gi = 1 (*) -> bi = 2, gi = 0 (*)
 
 - https://leetcode.com/problems/minimum-number-of-lines-to-cover-points/ (\*)
+- complex:
 - why need pt1?
 - because cal_slope(pt1, pt2)
 - why need pt2?
@@ -872,6 +873,60 @@
 - line_arr_inc === line_arr.push([pt_i, pt_i_slope])
 - why line_arr.push pt_i, not first_pt?
 - because pt_arr we remove pt_i, line_arr, we inject pt_i
+- simple:
+- motion:
+- pt: [0, 2], [-2, -2], [1,4]
+- line: []
+- end_check (x)
+- dfs_line (x)
+- shortcut (x)
+- dfs_pt (*)
+- 
+- pt: [0, 2]_1st_pt, [-2, -2], [1, 4]
+- line: []
+- (1) take [-2, -2]; [-2, -2] cover [0, 2]
+- 
+- pt: [0, 2], [1, 4]
+- line: [-2, -2], 2
+- ec (x)
+- dfs_line (*)
+- sc (x)
+- dfs_pt (x)
+- take [0, 2]; [-2, -2], 2 cover [0,2]
+- 
+- pt: [1, 4]
+- line: [-2, -2], 2
+- ec (x)
+- dfs_line (*)
+- sc (x)
+- dfs_pt (x)
+- take [1,4]; [-2, -2], 2 cover [1, 4]
+- 
+- pt: []
+- line: [-2, -2], 2
+- return line.len === 1 (min)
+- 
+- (2) take [1, 4]; [1, 4] cover [0, 2]
+- 
+- pt: [0, 2], [-2, -2]
+- line: [1, 4], 2
+- ec (x)
+- dfs_line (*)
+- sc (x)
+- dfs_pt (x)
+- take [0, 2]; [1, 4], 2 cover [0,2]
+-
+- pt: [-2, -2]
+- line: [1, 4], 2
+- ec (x)
+- dfs_line (*)
+- sc (x)
+- dfs_pt (x)
+- take [-2, -2]; [1, 4], 2 cover [-2, -2]
+- x
+- pt: []
+- line: [1, 4], 2
+- return line.len === 1 (min)
 
 - https://leetcode.com/problems/nested-list-weight-sum (\*)
 - why we pass arr and depth as param in dfs?
