@@ -980,11 +980,17 @@
 - [6]; depth = 2
 - action: 6 (int); depth = 3; end
 - backtrack: 6 * 3 (depth) = 18, etc..
+
+
 - https://leetcode.com/problems/nested-list-weight-sum-ii (\*)
+- complex:
 - why max depth === 1?; dep
 - why not max depth === 0, because [[]], this maxDepth === 0?
 - the test case so far is [1, []], 1 <= list.len <= 50, so at least 1 ele
 - so max depth === 1
+- why we cannot put max = max(max, curr_depth) outside of dfs loop?
+- beacuse [[[]]] === no_init === no_depth
+- if put outside of dfs loop, it will count the depth
 - why [1, []] this depth === 1, not 2??????
 - because e1 === 1 (depth === 1), e2 === [] (dfs will go down, we don't know the depth yet)
 - e2 === [], into the next dfs level, there is a loop, but update the depth is within loop
@@ -1004,6 +1010,11 @@
 - curr_arr.len === 0, no loop, will not get into ele * weight / dfs, no update depth
 - why we don't do dfs(ele.getList(), depth + 1) * weight?
 - dfs(ele.getList(), depth+1) === all elements result (weight for single element), if all_elements_result * weight, nono
+- simple:
+- helper_func: get_max_depth
+- dfs_init_arr_loop
+- motion:
+- dfs_init_arr_loop
 
 - https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
 - why given str, then directly dfs?
