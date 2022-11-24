@@ -935,6 +935,7 @@
 - return line.len === 1 (min)
 
 - https://leetcode.com/problems/nested-list-weight-sum (\*)
+- complex:
 - why we pass arr and depth as param in dfs?
 - because arr === branch
 - because or arr === leaf
@@ -958,10 +959,29 @@
 - so res = res (prev sum1, sum2) + sum3
 - why pass arr and depth + 1 for next dfs level?
 - because pass arr, we can get arr === leaf or branch
-- depth+1 is for next level, res = res + getInt() * depth 
-
+- depth+1 is for next level, res = res + getInt() * depth
+- simple:
+- helper_func: dfs
+- local_track_var: local_sum (? because diff dfs_int_arr_action)
+- dfs_int_arr_loop
+- dfs_int_action: check condi init
+- dfs_arr_action: check condi arr
+- dfs_int_op: ele * depth
+- dfs_arr_op: dfs_arr_action (go deeper)
+- motion:
+- case 1:
+- [1, [4, [6]]; depth = 0 (? because started)
+- depth 1:
+- action: 1 (int); depth = 1; end
+- action: [4, [6]] (arr); depth = 2
+- [4, [6]]; depth = 2
+- action: 4 (int); depth = 2; end
+- action: [6] (arr); depth = 2
+- [6]; depth = 2
+- action: 6 (int); depth = 3; end
+- backtrack: 6 * 3 (depth) = 18, etc..
 - https://leetcode.com/problems/nested-list-weight-sum-ii (\*)
-- why max depth === 1?
+- why max depth === 1?; dep
 - why not max depth === 0, because [[]], this maxDepth === 0?
 - the test case so far is [1, []], 1 <= list.len <= 50, so at least 1 ele
 - so max depth === 1
