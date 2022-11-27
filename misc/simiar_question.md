@@ -1064,6 +1064,15 @@
 - because we are not acc.
 - if we don't ask why, then we blindly follow pattern
 - simple:
+- data_struct_map (? str -> result)
+- helper_func: dfs
+- str_loop (? find cal symbol)
+- left_portion (? bracket)
+- right_portion (? bracket)
+- cache or dfs (? standard)
+- cache or dfs (? standard)
+- 2D_loop_cal (? e1 vs e2)
+- single_ele_no_loop (? single ele before loop, just push)
 - motion:
 - original_string -> many_splits -> half_split -> original_string (repeated)
 - o_s -> m_s -> h_s -> o_s (repeated)
