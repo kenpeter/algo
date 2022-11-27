@@ -1017,6 +1017,7 @@
 - dfs_init_arr_loop
 
 - https://leetcode.com/problems/different-ways-to-add-parentheses/ (\*)
+- complex:
 - why given str, then directly dfs?
 - given str (start dfs level), then put diff brackets (diff brackets -> diff dfs sub path)
 - why we need a global map?
@@ -1062,6 +1063,13 @@
 - why the sum = e1 + e2, why we don't do sum = sum + (e1 + e2)?
 - because we are not acc.
 - if we don't ask why, then we blindly follow pattern
+- simple:
+- motion:
+- original_string -> many_splits -> half_split -> original_string (repeated)
+- o_s -> m_s -> h_s -> o_s (repeated)
+- when return -> single_num -> [single_num] ->[single_num] * [single_num]
+- loop === [res1, res2, res3]
+- [res1, res2, res3] * another similar [r1, r2, r3]
 
 - https://leetcode.com/problems/longest-increasing-path-in-a-matrix/ (\*)
 - why we need 2 max: outerloop max and dfs max?
