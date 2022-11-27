@@ -1122,8 +1122,10 @@
 - check < prevItem (? desc)
 - check_cache (? everytime start from each cell, 2D)
 - dfs_4_dir_single_action
-- op_max: (? get max)
+- op_max: (? 4_dir compare max)
 - set_cache (? because dfs_4_dir done)
+- loop_2D_arr (? start from each cell)
+- op_max: (? each dfs compare max in 2D)
 - 
 - motion:
 - case 1:
