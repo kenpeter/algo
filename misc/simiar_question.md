@@ -1115,6 +1115,16 @@
 - why we need to have +1 here?
 - because the base dfs return 0, if no +1 here, we are not able to acc
 - simple:
+- data_struct_g_seen (? i_j for cell)
+- global_var_tack: max (? max_desc_path)
+- helper_func: dfs
+- check_boundary (? obvious)
+- check < prevItem (? desc)
+- check_cache (? everytime start from each cell, 2D)
+- dfs_4_dir_single_action
+- op_max: (? get max)
+- set_cache (? because dfs_4_dir done)
+- 
 - motion:
 - case 1:
 - [[9, 4], [6, 1]]
