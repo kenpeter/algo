@@ -1081,6 +1081,7 @@
 - [res1, res2, res3] * another similar [r1, r2, r3]
 
 - https://leetcode.com/problems/longest-increasing-path-in-a-matrix/ (\*)
+- complex:
 - why we need 2 max: outerloop max and dfs max?
 - outerloop max: max after each full single dfs path
 - dfs max: each sub dfs path (4 directions -> 4 decisions)
@@ -1113,6 +1114,14 @@
 - each r1, r2, r3, r4 === sub dfs max
 - why we need to have +1 here?
 - because the base dfs return 0, if no +1 here, we are not able to acc
+- simple:
+- motion:
+- case 1:
+- [[9, 4], [6, 1]]
+- 9 up (x)
+- 9 down -> 6 -> 6 up (x, >= prevItem) -> 6 down (x, edge) -> 6 left (x, edge) -> 6 right (*) -> 1 -> 1 up (x, >= prevItem) -> 1 down (x) -> 1 left (x, >= prevItem), 1 right (x, edge) -> 1 (backtrack 1 len to 6), cache (? because 4_dir done) -> 6 (backtrack 2 len to 9), cache -> 9 -> 9 left (x) -> 9 right -> 4 -> 4 up (x) -> 4 down (get from cache 1) -> 4 left (x) -> 4 right -> 4 (backtrack 1 len to 9) -> 9 (4_dir finsih, cache, len === 3)
+- in summary
+- from 9, go 4_dir, down and right will go deeper dfs, will back track later
 
 
 - https://leetcode.com/problems/accounts-merge/ (\*)
