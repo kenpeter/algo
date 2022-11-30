@@ -1138,6 +1138,7 @@
 
 - https://leetcode.com/problems/accounts-merge/ (\*)
 - https://leetcode.com/problems/accounts-merge/discuss/494151/JavaScript-Solution-DFS
+- complex:
 - for graph, why we use hash, rather than map?
 - we can use use map, but hash is mush eaiser to assign vertex and assign arr/set to the end
 - why we use global seen, in dfs travel; why not use a local seen?
@@ -1175,6 +1176,58 @@
 - because j === 1, it is 1st email; it has vertex, but it has no edge
 - why for edge we use set, not arr?
 - because edge can be repeated, arr allows repeated, we don't want repeated.
+- simple:
+- see below motion
+- motion:
+- case 1:
+- 1. john, j_s@mail, j_n
+- 1. john, j_s, j_00
+- 2. mary, m
+- 3. john, j_b
+- 
+- (1.0) build (arr form)
+- j_s -> j_n, j_n (graph 1, branches)
+- j_n -> j_s (g2, cycle)
+- j_00 -> j_s (g3, cycle)
+- m -> x
+- j_b -> x
+-
+- (1.1) build (graph form)
+- g1: j_s form cycle to j_n
+- g1: j_s form cycle to j_00
+- g2: j_n -> j_s
+- g3: j_00 -> j_s
+- m -> x
+- j_b -> x
+- 
+- (1.2) build (code form)
+- loop accounts (? name, e1, e2, e3)
+- name_hash (? obvious)
+- init graph {} (? can append)
+- cycle path
+-
+- (1.0) data struct
+- graph
+- g_seen
+- name_hash
+- 
+- (1.1) travel (graph form)
+- j_s [j_s, push] -> j_n [j_s, j_n] -> x (cycle)
+- j_s -> j_00 [j_s, j_n, j_00] -> x (cycle)
+- m -> x
+- j_b -> x
+- 
+- (1.1) travel (code form)
+- loop graph (? g1, g2, g3..)
+- return = dfs(email), -> see 1.2 <-
+- arr.len > 0 (? email_arr.len > 0)
+- append
+- 
+- (1.2)
+- check g_seen
+- set g_seen
+- before_arr_op (name_hash)
+- edges
 
 - https://leetcode.com/problems/number-of-islands (\*)
 - why "1" and "0" in question?
