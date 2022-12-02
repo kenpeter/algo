@@ -1242,6 +1242,7 @@
 - 7. 4 dir
 
 - https://leetcode.com/problems/max-area-of-island (\*)
+- complex:
 - why standard 2D loop?
 - because flood-fill
 - 2D loop -> g[r][c] === 1 -> dfs -> max -> area = 0, why?
@@ -1253,6 +1254,36 @@
 - 4. seen?
 - 5. operations
 - 6. 4 dir
+- simple:
+- data_st: grid
+- local_var_track: area
+- global_var_check: max (area)
+- dfs
+- check bound (? obvious)
+- can_use (check g_cell_seen)
+- set g_cell_seen
+- before_dfs_op: ++area
+- dfs_4_dir
+- 2D outloop (? flood-fill)
+- can_use (check_g_cell_seen)
+- max, max(maxdfs)
+- motion:
+- case 1:
+- [[1, 1, 0], [0, 0, 1]]
+- g[0][0] === 1, can get in, dfs
+- inboundary, g[0][0] === 1 (can use)
+- g[0][0] = 0 (? set, avoid loop)
+- area === 1 (? because this dfs level)
+- 4_dir; up, outbound; down, 0; left, outbound; right, 1, can go dfs
+- 
+- g[0][1], in bound and === 1
+- g[0][1] = 1
+- area === 2
+- 4_dir; up, out; down, 0; left, 0; right, 0; backtrack
+- 2D outloop, scan other cells like g[0][1], g[0][2], g[1][0], g[1][1], no use
+- 
+- until g[1][2] === 1
+- inbound, can_use, 4_dir; area === 1
 
 - https://leetcode.com/problems/making-a-large-island/ (\*)
 - why max = 0?
