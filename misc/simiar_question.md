@@ -1286,6 +1286,7 @@
 - inbound, can_use, 4_dir; area === 1
 
 - https://leetcode.com/problems/making-a-large-island/ (\*)
+- complex:
 - why max = 0?
 - it can be -1, -2, but 0 is enough, because we don't any max area
 - later max = max(max, area)
@@ -1354,6 +1355,56 @@
 - how to diff same var name in same scope?
 - e.g. using i, j, k in the same scope, very easy to overwrite each other
 - so using curr_i, curr_j, curr_k
+- simple:
+- paint (code form)
+- data_st: grid
+- data_st: map (? label -> area)
+- var_tr: area (? each island)
+- var_tr: label (? each island)
+- var_tr: max (? max area)
+- 2D loop (? flood-fill)
+- can_do (? can_make_island)
+- dfs (? area, label)
+- set map (? label -> area)
+- reset (? area)
+- reset (? label)
+- 
+- dfs
+- check_bound (? obvious)
+- can_do (? can_make_island)
+- op_before_dfs (? ++area)
+- op_before_dfs (? assign label) 
+- dfs_4_dir
+- x
+- travel (code form)
+- 2D loop (? flood-fill)
+- can_do (? cel === 0, so 0 -> 1)
+- 4_dir_loop (? future move)
+- check_boundary
+- can_do (? has label)
+- !seen (check map)
+- set_seen (set map)
+- op (? area = area + m.get)
+- max (4_dir_loop end)
+- motion:
+- case 1:
+- [[1, 0], [0, 1]]
+- paint (graph form)
+- at i=0, j=0; see 1; label = 2, ++area; up, boundary; down, zero; left, B; right, 0;
+- reset area = 0; reset label = 3
+- see 0, cannot do
+- see 0, cannot do
+- at i=1, j=1; see 1; label = 3, ++area; up, 0; down, B; left, 0; right, B;
+- reset area = 0; reset label = 4
+- x
+- travel (graph form)
+- [[2, 0], [0, 3]]
+- at i=0, j=0, skip
+- see 0; up, B; right, B; down, see_label_3; left, see_label_2
+- max = 3
+- see 0; up, see_label_2; right, see_label_3; down, B; left, B
+- max = 3
+- at i=1, j=1, skip
 
 - https://leetcode.com/problems/shortest-bridge/ (\*)
 - what is r1?
