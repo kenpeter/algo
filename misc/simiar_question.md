@@ -1433,6 +1433,26 @@
 - -1 because is like time - 1
 - we have a bit more
 - simple:
+- st: grid
+- st: r1
+- st: r2
+- tr: min
+- paint (code)
+- 2D loop (? flood-fill)
+- can_do (cell == 1)
+- dfs (? paint)
+- x
+- dfs
+- boundary (? obvious)
+- can_do (? cell === 1)
+- set !can do (? stop re-visit)
+- op_before_dfs (r1.push)
+- dfs_4_dir
+- x
+- cal (code)
+- 2D loop (? brute-force)
+- d_min = min VS |x2-x1| + |y2-y1| - 1
+- 
 - motion:
 - case 1:
 - st: grid (? obvious)
