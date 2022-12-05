@@ -1407,6 +1407,7 @@
 - at i=1, j=1, skip
 
 - https://leetcode.com/problems/shortest-bridge/ (\*)
+- complex:
 - what is r1?
 - r1 store all the 1st island i, j
 - r2 store all the 2nd island i, j
@@ -1431,7 +1432,29 @@
 - because c^2 = a^2 + b^2
 - -1 because is like time - 1
 - we have a bit more
-
+- simple:
+- motion:
+- case 1:
+- st: grid (? obvious)
+- st: r1 (? push pt)
+- st: r2 (? push pt)
+- min: (? min dist)
+- 
+- paint (graph)
+- [[0, 1], [1, 0]]
+- i=0, j=0, skip
+- see 1; up, B; down, 0; left, 0; right B
+- r1.push [0, 1]
+- finish (++count)
+- see 1; up, 0; down, B; left, B; right 0
+- r2.push [1, 0]
+- finish (++count)
+- x
+- cal (graph)
+- r1: [0, 1]
+- r2: [1, 0]
+- 2D loop brute force; d_min = min VS |x2-x1| + |y2-y1| - 1
+- 
 - https://leetcode.com/problems/count-sub-islands/ (\*)
 - what is g1 and what is g2?
 - g1 === g2 in same shape, g1 some areas include some areas in g2
