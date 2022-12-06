@@ -1230,6 +1230,7 @@
 - edges
 
 - https://leetcode.com/problems/number-of-islands (\*)
+- complex:
 - why "1" and "0" in question?
 - because question asking, we are not using 1 and 0
 - on top of dfs
@@ -1240,6 +1241,35 @@
 - 5. block after all check
 - 6. operations
 - 7. 4 dir
+- simple:
+- st: grid
+- tr: res (# island)
+- 2D loop (? flood-fill)
+- can_do (? cell == 1)
+- dfs
+- ++res (? 1 island done)
+- x
+- dfs
+- bound
+- can_do
+- set !can do
+- op? (no op)
+- dfs_4_dir
+- motion:
+- case 1:
+- st: grid (? obvious)
+- tr: res (? # island)
+- [[1, 1, 0, 0], [0, 0, 1, 1]]
+- at (0, 0), cell == 1, set cell = 0; up, B; down, 0; left, B; right, 1_good;
+- now go deep dfs at (0, 1), cell == 1, set cell = 0; up, B; down, 0; left, 0; right, 0;
+- res = 1 (island done)
+- see 0
+- see 0
+- see 0
+- see 0
+- see 1; set cell = 0; up, 0; down, B; left, 0; right, 1_good;
+- now go deep dfs at (1, 3); up, 0; down, B; left, 0; right, B;
+- res = 2 (island done)
 
 - https://leetcode.com/problems/max-area-of-island (\*)
 - complex:
