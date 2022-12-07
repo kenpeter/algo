@@ -1506,6 +1506,7 @@
 - 2D loop brute force; d_min = min VS |x2-x1| + |y2-y1| - 1
 - 
 - https://leetcode.com/problems/count-sub-islands/ (\*)
+- complex:
 - what is g1 and what is g2?
 - g1 === g2 in same shape, g1 some areas include some areas in g2
 - 1. cell_1 = 0, cell_2 = 0, common empty, but no island, IGNORE
@@ -1528,6 +1529,55 @@
 - 5. operations (no)
 - 6. block after all check
 - 7. 4 dir
+- simple:
+- st: g1 and g2
+- tr: res (? #island)
+- remove_cross (code)
+- 2D loop (flood fill)
+- can_do (g1 has not, but g2 has)
+- dfs
+- 
+- dfs
+- bound
+- can_do
+- set !can do
+- op
+- dfs_4_dir
+- 
+- paint (code)
+- 2D loop
+- can_do
+- dfs
+- x
+- dfs
+- see above
+- motion:
+- case 1:
+- remove_cross (graph)
+- st: g1 and g2
+- tr: res (? for num of island, not cross)
+- g1: [[1, 1, 0, 0], [0, 0, 0, 1]]
+- g2: [[1, 1, 1, 0], [0, 0, 0, 1]]
+- g1_pt and g2_pt move together
+- until hit i=0, j=2; g1 has 0, g2 has 1; remove_cross
+- set !can do, g2[0][2] = 0
+- up, B; down, B; left, good (dfs) ---> i=0, j=1; up, down, left, good (dfs) ----> i=0, j=0; up, down, left, right (backtrack) ---> i=0, j=1, now go right (backtrack) ----> i=0, j=2 now go right
+- rmove_cross
+- now move to i=0, j=3
+- i=1, j=0;
+- move, move until hit i=1, j=3, cell === 1 (do nothing, as that is island we need)
+- x
+- paint (graph)
+- 2D loop (?flood-fill)
+- can_do
+- dfs
+- x
+- dfs
+- bound
+- can_do
+- set !can do
+- op
+- dfs_4_dir
 
 - https://leetcode.com/problems/find-all-groups-of-farmland/ (\*)
 - why do I need to know maxRow, maxCol?
