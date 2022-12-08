@@ -1627,6 +1627,7 @@
 - res.push [x_min, y_min, x_max, y_max]
 
 - https://leetcode.com/problems/web-crawler (\*)
+- complex:
 - why startUrl.split(/)[2]?
 - http://abc.com -> (1) http: (2) '' empty str (3) abc.com
 - why we need a domainName at the start of entire func?
@@ -1647,6 +1648,36 @@
 - it is like vertex -> edges
 - startUrl === start vertex
 - htmlParser.getUrls(startUrl) === edges
+- simple:
+- st: g_seen
+- st: res.push url
+- tr: domain_name (? everything starts same domain)
+- travel (code)
+- dfs(start_url)
+- some_condi (? same domain?)
+- can_do (? seen)
+- set !can do
+- res.push url (? op)
+- get edges
+- loop edges
+- dfs()
+- motion:
+- case 1:
+- a.com -> a.com/a (branch)
+- a.com -> a.com/b (branch)
+- a.com/a -> a.com (cycle)
+- a.com/b -> a.com (cycle)
+- 
+- a.com === domain_name
+- a.com same domain; a.com !seen; set a.com seen; res.push a.com;
+- a.com has 2 edges -> a.com/a and a.com/b
+- dfs a.com/a
+- a.com/a same domain; a.com/a !seen; set a.com/a seen; res.push a.com/a
+- a.com/a get edges; no edge; backtrack to edge loop
+- 
+- a.com/b same domain; a.com/b !seen; a.com/.b seen; res.push a.com/b
+- a.com/b get deges; no edge; backtrack to edge loop
+
 
 - https://leetcode.com/problems/number-of-distinct-islands/ (\*)
 - we have shape_seen, why we don't have a global_seen or local_seen?
