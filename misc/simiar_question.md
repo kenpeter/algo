@@ -1580,6 +1580,7 @@
 - dfs_4_dir
 
 - https://leetcode.com/problems/find-all-groups-of-farmland/ (\*)
+- complex:
 - why do I need to know maxRow, maxCol?
 - this is for a single travel in outerloop
 - because farmland is rectangular --> the up width === down width, left length === right length
@@ -1596,6 +1597,34 @@
 - if without g[rc][c] === 1 -> dfs, then dfs just randomly travel
 - why maxCol = 0 -> dfs -> res.push?
 - because after dfs, all things got updated, and we get result
+- simple:
+- 2D loop (flood-fill)
+- can_do (cell = 1)
+- lo_tr: max_row, max_col
+- dfs
+- x
+- dfs
+- bound
+- can_do
+- set !can do
+- op (max_row, max_col)
+- dfs_4_dir
+- motion:
+- case 1:
+- st: grid (? obv)
+- lo_tr: max_row, max_col (? for each 2D loop entry)
+- g_tr: res_arr (? [x_min, y_min, x_max, y_max])
+- 
+- [[1, 0, 0], [0, 1, 1], [0, 1, 1]]
+- at i=0, j=0; see 1; cell = 0 (set !can do); max_row = 0, max_col = 0;
+- up, B; down, 0; left, B, right, 0; backtrack
+- see 0
+- see 0
+- see 0
+- reset max_row = 0, max_col = 0; now see 1; at i=1, j=1; cell = 0; max_row = 1, max_col = 1
+- up, 0; down -> go to cell down, cell=0, mr=2, mc=1 -> go to cell right, cell = 0, mr=2, mc=2 -> go to cell top, cell=0, mr=2, mc=2 -> backtrack -> go back down (backtrack) -> go back left (backtrack) -> go back top (backtrack, stop) 
+- within 2D loop
+- res.push [x_min, y_min, x_max, y_max]
 
 - https://leetcode.com/problems/web-crawler (\*)
 - why startUrl.split(/)[2]?
