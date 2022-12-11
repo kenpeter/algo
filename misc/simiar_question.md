@@ -1680,6 +1680,7 @@
 
 
 - https://leetcode.com/problems/number-of-distinct-islands/ (\*)
+- complex:
 - we have shape_seen, why we don't have a global_seen or local_seen?
 - because global_seen or local_seen, we use i + '_' + j, to avoid hit the same cell again and again
 - for this one, it is not path finding and we have a stable 2D loop
@@ -1709,6 +1710,32 @@
 - multiple dfs levels -> xooooooordloo.... can be long
 - why we cannot have let res = 0 -> ++res in 2D loop -> return res?
 - because there are repeated islands, that is why we need dir + up + down + left + right, then put into set.add
+- simple:
+- st: grid
+- st: g_seen
+- 2D loop (? flood-fill)
+- can_do
+- dfs
+- x
+- dfs(init_dir) (? init_dir === o, so we know it starts)
+- bound
+- can_do
+- set !can do
+- dfs_4_dir; up, U; down, D; left, L; right, R
+- g_seen set
+- motion:
+- st: grid
+- st: g_seen (? unique island)
+- case 1:
+- [[1, 0], [0, 1]]
+- hit 1 -> x (init) -> up, xo -> down, xoo -> left, xooo -> right, xoooo
+- g_seen: xooo
+- hit 0
+- hit 0
+- hit 1
+- hit 1 -> x (init) -> up, xo -> down, xoo -> left, xooo -> right, xooo
+- g_seen (already)
+- end of 2D loop, return g_seen.size
 
 - https://leetcode.com/problems/swim-in-rising-water/ (\*)
 - why global_seen acting like a local_seen?
