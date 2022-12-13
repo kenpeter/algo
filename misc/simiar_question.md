@@ -1738,6 +1738,7 @@
 - end of 2D loop, return g_seen.size
 
 - https://leetcode.com/problems/swim-in-rising-water/ (\*)
+- complex:
 - why global_seen acting like a local_seen?
 - when global_seen.clear() in each loop, it is like a new seen, so local_seen
 - why convert 2D arr into 1D arr?
@@ -1772,6 +1773,29 @@
 - don't use global_seen or local_seen, we use shape_seen
 - why we have to use seen is that, we will hit the same cell again and again
 - because it is path searching
+- simple:
+- motion:
+- case 1:
+- st: grid
+- st: lo_seen
+- tr: time
+- [[0, 2], [1, 3]]
+- new lo_seen
+- time = 0
+- see 0; up, B; down, t_bad; left, B; right, t_bad; backtrack_stop
+- 
+- new lo_seen
+- time = 1
+- see 0; up, B; down, t_good; --> see 1; up, seen; down, B; left B; right, t_bad; backtrack --> back at 0; left B; right, t_bad; backtrack_stop
+- 
+- new lo_seen
+- time = 2
+- see 0; up B; down, t_good; --> see 1; up, seen; down B; left B; right, t_bad; backtrack --> back at 0; left B; right, t_good; --> see 2; up B; down t_bad; left seen; right B; backtrack_stop --> back at 0
+- x
+- new lo_seen
+- time = 3
+- see 0; up B; down, t_good --> see 1; up seen; down B; left B; right, t_good; --> see 3; up, t_good --> see 2; up B; down seen; left seen; right B; backtrack_stop --> back at 3; left seen; down B; right B; --> back at 2; backtrack_stop; --> back at 0; backtrack_stop
+- return time - 1
 
 - https://leetcode.com/problems/the-maze (\*)
 - why we don't have a global_seen / local_seen here?
