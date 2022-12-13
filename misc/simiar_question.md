@@ -1774,6 +1774,19 @@
 - why we have to use seen is that, we will hit the same cell again and again
 - because it is path searching
 - simple:
+- st: grid
+- st: lo_seen
+- tr: time (? e.g. height)
+- while loop (? seen last_cell)
+- new_lo_seen
+- dfs
+- x
+- dfs
+- bound
+- can do
+- set !can do
+- condi (time > cell_height)
+- dfs_4_dir
 - motion:
 - case 1:
 - st: grid
