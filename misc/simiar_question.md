@@ -1811,6 +1811,7 @@
 - return time - 1
 
 - https://leetcode.com/problems/the-maze (\*)
+- complex:
 - why we don't have a global_seen / local_seen here?
 - because robot will move forward / backward, so same cell may be visited again and again
 - if we put global_seen, we may ignore many paths
@@ -1861,6 +1862,30 @@
 - why when count (acc) + dist[this_dfs_start_row][this_dfs_start_col] < dist[final_future_row][final_future_col], then we do assign full distance and dfs?
 - count (acc) + dist[this_dfs_start_row][this_dfs_start_col] >= dist[final_future_row][final_future_col], >=, there is no value to assign and travel again
 - as it is not min any more
+- simple:
+- st: grid (ob)
+- st: dist_2D_dp
+- lo_tr: count
+- dfs(init_cell)
+- 4_dir_loop (? 1 dir then all the way)
+- steal
+- op (? local_count++)
+- revert_steal
+- condi_dfs
+- - update_2D_dp
+- - dfs
+- motion:
+- st: grid
+- st: dist_2D
+- lo_tr: count
+- case 1
+- [[0, 1], [0, 0]]
+- dp: [[0, if], [if, if]]
+- at i=0, j=0; up, steal_bad, dist_same_bad; right, s_bad, d_same; down, s_good, d_good, count(1) + orig(0) < if(cell 1 0); dp: [[0, if], [1, if]]
+- at i=1, j=0 (next dfs); up, s_good, dist_big; right, s_good, d_good; dp: [[0, if], [1, 2]];
+- at i=1, j=1 (next dfs); up, s_bad, d_same; right, s_bad, d_same; down, s_bad, d_same; tracktrack;
+- at i=1, j=0; down, s_bad, d_same; right, s_bad, d_same; BT
+- at i=0, j=0; left, s_bad, d_same
 
 - https://leetcode.com/problems/the-maze-ii (\*)
 - see the maze i
