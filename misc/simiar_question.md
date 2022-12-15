@@ -1888,12 +1888,17 @@
 - at i=0, j=0; left, s_bad, d_same
 
 - https://leetcode.com/problems/the-maze-ii (\*)
+- complex:
 - see the maze i
 - if there is no init, dist[start[0]][start[1]] = 0,
 - none of the calulation will work
 - because dist[start[0]][start[1]] = infinity
+- simple:
+- motion:
+- same as above
 
 - https://leetcode.com/problems/flood-fill (\*)
+- complex:
 - why color click !== bucket fill, we take no action?
 - because there is no dfs, then we don't want to go down
 - color === bucket fill, we want to go down with dfs
@@ -1911,7 +1916,24 @@
 - g[c][c] !== paint_color, so can paint
 - why pass neighbour_color into dfs func?
 - so we know the next dfs level, g[r][c] is the same neighbour
-
+- simple:
+- st: grid (ob)
+- tr: prev_color (? color we want to change)
+- tr: new_color (? color we want to use as new)
+- dfs(init)
+- x
+- dfs
+- bound
+- !new_color (? avoid loop)
+- can_do (? prev_colorcolor we want to change)
+- set !can do
+- dfs_4_dir
+- motion:
+- case 1:
+- [[0, 0], [1, 2]]
+- see 0; 0 -> 1; [[1, 0], [1, 2]]; up, B; down, prev_color_bad; left B; right, good;
+- see 0 (new dfs level); 0 -> 1; [[1, 1], [1, 2]]; up, B; down, p_color_bad; left, p_color_bad; right B; backtrack
+- backtrack at i=0, j=0; done
 
 - https://leetcode.com/problems/pacific-atlantic-water-flow/ (\*)
 - what is pArr (pacific), aArr (atlantic)?
