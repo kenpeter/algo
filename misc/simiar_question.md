@@ -1936,6 +1936,7 @@
 - backtrack at i=0, j=0; done
 
 - https://leetcode.com/problems/pacific-atlantic-water-flow/ (\*)
+- complex:
 - what is pArr (pacific), aArr (atlantic)?
 - pArr === local_seen
 - why we don't modify the cell?
@@ -1971,6 +1972,33 @@
 - because we want the first cell to flow and act like a maxHeight, no matter what
 - why we use 2D loop for each cell, pArr[i][j] === aArr[i][j], to detect commont ground?
 - because both seen it then it means both flow, hence common ground
+- simple:
+- st: grid
+- st: p_arr and a_arr
+- paint p_arr (top and left) and a_arr (right, bottom)
+- do_common
+- motion:
+- case 1
+- [[3, 5], [4, 4]]
+- st: grid
+- st: p_seen (pacific seen)
+- [[f, f], [f, f]]
+- st: a_seen (alantic seen)
+- [[f, f], [f, f]]
+- pacific -> left and top
+- alantic -> right and bottom
+- pacific_paint, top, 3
+- see 3; [[t, f], [f, f]]; top, B; bottom, low_to_high_dist_good -> see 4; [[t, f], [t, f]]; top, seen; bottom B; left B; right, good -> see last 4; [[t, f], [t, t]]; top, good -> see 5; top, B; bottom, seen; left, seen; right B; backtrack; -> BT at last 4; bottom B; left seen; right B; -> BT at first 4; -> BT at 3; left, B; right seen; done
+- pacific_paint, top, 5; cannot move; loop stop
+- pacific_paint, left -> 3 and 4 seen
+- 
+- alantic_paint, right and bottom
+- [[f, f], [f, f]]
+- 5 paint stop; 4 and 4 paint, stop; so 3 never paint
+- end: [[f, t], [t, t]]
+- x
+- do_common
+- 2D loop p_arr and a_arr
 
 - https://leetcode.com/problems/battleships-in-a-board/ (\*)
 - why for flood-fill, we need to use standard 2D loop?
