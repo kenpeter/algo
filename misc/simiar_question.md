@@ -2093,6 +2093,7 @@
 - pt at 1; no chance to run
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
+- complex:
 - why glocal_seen's entry === course dep order?
 - e.g.
 - [0, 1] === to do 0, must do 1 first
@@ -2122,6 +2123,17 @@
 - it does not make sense, that global_seen.del, why?
 - because it is global_seen.del === global, it needs to persistent
 - local_seen.del can be done
+- simple:
+- motion:
+- please have a look at course schedule i
+- case 1:
+- [0, 1]; take course 1 then take couse 0
+- [0, 1] (preq)
+- 0 -> 1 (graph)
+- travel:
+- at 0; local_seen; g_seen; set ... edges -> dfs
+- now at 1; ..., ..., .. edges -> dfs (backtrack return); unset local_seen; set g_seen {1} (the trick is backward add)
+- now at 0; unset local_seen; set g_seen {1, 0} (the track is backward add)
 
 
 - https://leetcode.com/problems/critical-connections-in-a-network/ (\*)
