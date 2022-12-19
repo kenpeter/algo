@@ -2001,6 +2001,7 @@
 - 2D loop p_arr and a_arr
 
 - https://leetcode.com/problems/battleships-in-a-board/ (\*)
+- complex:
 - why for flood-fill, we need to use standard 2D loop?
 - because init cell -> all connected cells paint
 - will not touch other areas
@@ -2021,9 +2022,12 @@
 - paint the cell, we don't want to hit again global_seen
 - why 4 directions?
 - future cell can travel or not
-
+- simple:
+- motion:
+- simple flood-fill with ++res
 
 - https://leetcode.com/problems/course-schedule/ (\*)
+- complex:
 - why we detect the cycle in outerloop?
 - because if 1 iteration is cycle, then return false
 - if the outerloop does not return, we have a final return after outerloop
@@ -2052,7 +2056,41 @@
 - if we are using global_seen, it does not make sense global_seen.del, why?
 - because global_seen.del is global, it needs to persist
 - local_seen can be deleted in each dfs path
-
+- simple:
+- motion:
+- case 1:
+- [[1, 0]]
+- st: graph (ob)
+- st: local_seen
+- st: g_seen
+- build (graph)
+- 1 -> 0 (use preqs arr to build)
+- travel (graph)
+- loop 0:
+- 1 -> 0 (pt at 0)
+- local_seen (*); g_seen (*); set local_seen, {0}; edges (x); unset local_seen, {}; set g_seen {0}
+- loop 1:
+- 1 -> 0 (pt at 1)
+- lo (*); g(*); s lo (*), {1}; edges -> dfs; 
+- now at 0; lo(*); g_seen (x, aleady has 0); return !cycle -> backtrack
+- now back at 1; unset local_seen, {}; set g_seen {0, 1}; return !cycle -> backtrack
+- x
+- case 2:
+- [[0, 1], [1, 0]]
+- st: graph
+- st: local_seen
+- st: g_seen
+- build (graph)
+- 0 -> 1 and 1 -> 0 (cycle)
+- travel (graph)
+- loop 0:
+- pt at 0; lo (*); g (*); s lo, {0}; edges -> dfs
+- now at 1; lo(*); g(*); s lo, {0, 1}; edges -> dfs
+- now back at 0; lo(x) -> return cycle -> backtrack
+- now back at 1; return cycle -> backtrack
+- loop 1:
+- 0 -> 1 and 1 -> 0 (cycle)
+- pt at 1; no chance to run
 
 - https://leetcode.com/problems/course-schedule-ii/ (\*)
 - why glocal_seen's entry === course dep order?
