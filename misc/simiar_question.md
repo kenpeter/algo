@@ -2137,6 +2137,7 @@
 
 
 - https://leetcode.com/problems/critical-connections-in-a-network/ (\*)
+- complex:
 - why we put seen.has in outer loop?
 - because seen.has in outer loop make it faster.
 - seen.has can sit in outer loop and seen.has can sit in dfs, at the same time
@@ -2175,6 +2176,39 @@
 - why I use local_seen (path.add -> dfs -> path.del) and global_seen here?
 - why we don't use local_seen in critical_net_work_node (leetcode) and denote_max_bomb (leet_code)?
 - because this quesion is to detect cycle; then local_seen is a good way to detect cycle
+- simple:
+- motion:
+- case 1:
+- [0, 1], [0, 2]
+- st: preq, [0, 1], [0, 2]
+- st: g_seen (arr), [f, f, f]
+- st: rank (arr), [-1, -1, -1]
+- st: graph, 0 -> 1, 2; 1 -> 0; 2 -> 0
+- build (graph)
+- 0 -> 1, 2
+- 1 -> 0
+- 2 -> 0
+- travel (graph)
+- 
+- dfs(ci_0, pi_-1)
+- graph: 
+- 0 (child_ind) -> 1 (ei) and 0 (ci) -> 2 (ei)
+- code: 
+- g_seen (*); set g_seen (*), [t, f, f]; curr_rank = 1, child_rank = 1, [1, -1, -1]; 
+- edges (1, 2); edge_ind !== parent_ind (*); dfs(ci_1, pi_0)
+- x
+- dfs(ci_1, pi_0); g (*); s g (*), [t, t, f]; cr = 2, ci_r = 2, [1, 2, -1]; edges (0); ei !== pi (x), next_loop, end_func, BT
+- now back to 0; 
+- ei_rs vs ci_r -> 1(2) vs 0(1) -> 0(1);
+- ei_r vs ci_r -> 1(2) vs 0(1) -> 0(1); -> push [ei_1, ci_0];
+- x
+- now we done 1, up to 2 now
+- ei !== pi (x); dfs(ci_2, pi_0);
+- x
+- g (*), set g (*), [t, t, t]; cr = 3, ci_r = 3, [1, 2, 3]; edges(0); ei !== pi (x), next_loop, end_func, BT
+- now back at 0;
+- ei_rs vs ci_r -> 2(2) vs 0(1) -> 0(1)
+- ei_r vs ci_r -> 2(2) vs 0(1) -> 0(1); -> push [ei_2, ci_0]
 
 - https://leetcode.com/problems/detonate-the-maximum-bombs/
 - why there are 2 ways to init dfs?
