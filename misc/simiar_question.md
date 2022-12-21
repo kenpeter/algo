@@ -2211,6 +2211,7 @@
 - ei_r vs ci_r -> 2(2) vs 0(1) -> 0(1); -> push [ei_2, ci_0]
 
 - https://leetcode.com/problems/detonate-the-maximum-bombs/
+- complex:
 - why there are 2 ways to init dfs?
 - 1. direct dif; e.g. have an init index, then dfs all the way
 - 2. loop -> then dfs
@@ -2263,6 +2264,42 @@
 - beause it is for this edge iteration, so ++acc; we have other edge iteration
 - so at least we finish this edge loop iterations
 - then we have ++acc; acc = acc + dfs(edge_index), this level + its sub_level
+- simple:
+- motion:
+- case 1:
+- [[1, 1, 1], [3, 3, 5]] (2 bomobs)
+- st: bomb_arr
+- st: graph
+- st: lo_seen (set)
+- tr: max
+- tr: acc (? local acc = dfs())
+- build (g)
+- [1, 1, 1] === 0 ind
+- [3, 3, 5] === 1 ind
+- graph: 0 -> 0; 1 -> 1; 1 -> 0
+- travel (g)
+- loop -> dfs
+- i=0; new lo_seen
+- lo(*); s lo(*), lo_seen: {0}; acc = 0 (? edges); edges(0) -> dfs(0)
+- x
+- dfs
+- lo(x), re 0, BT
+- now come back at edges(0); ++acc(1); re acc(1); max = 1
+- x
+- i=1; new lo_seen
+- lo(*); s lo(*), lo: {1}; acc = 0; edges(0, 1) -> dfs(0)
+- x
+- dfs
+- lo(*), s lo(*), lo: {1, 0}; acc - 0; edges(0) -> dfs(0)
+- x
+- dfs
+- lo(x), re 0, BT
+- now come back at edges(0) -> dfs(0) BT; ++acc(1), re acc(1)
+- now back at edges(0, 1) -> dfs(1)
+- x
+- dfs
+- lo (x), re 0, BT
+- now back at edges(0, 1) -> dfs(1); end edge loop ++acc(1+1=2), re acc(2)
 
 - https://leetcode.com/problems/time-needed-to-inform-all-employees/
 - why there is no loop then dfs?
