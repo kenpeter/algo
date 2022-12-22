@@ -2302,6 +2302,7 @@
 - now back at edges(0, 1) -> dfs(1); end edge loop ++acc(1+1=2), re acc(2)
 
 - https://leetcode.com/problems/time-needed-to-inform-all-employees/
+- complex:
 - why there is no loop then dfs?
 - becaus we have a single headID
 - why we don't need a 2D loop here?
@@ -2323,6 +2324,33 @@
 - submax === another dfs level
 - why we don't have local_seen here, only global_seen?
 - because only course_scheduler (leetcode), ask to detect cycle; this does not ask to detect cycle
+- simple:
+- motion:
+- case 1:
+- st: manager <-> employee, [2, 2, -1, 2, 2, 2]
+- employee === arr ind (? order cannot change)
+- manager === val (2) (? can change)
+- st: graph
+- st: g_seen (2D arr)
+- st: time, [0, 0, 1, 0, 0, 0]
+- tr: submax = 0 (? for edges)
+- x
+- build (g)
+- 0 -> x
+- 1 -> x
+- 2 -> 0, 1, 3, 4, 5
+- 3 -> x
+- 4 -> x
+- 5 -> x
+- x
+- travel (g)
+- dfs(2); g(*); s g(*), {2}; submax = 0; edges(0, 1, 3, 4, 5) -> each_dfs;
+- dfs(0); g(*); s g(*), {2, 0}; submax = 0; edges(x); re time(0)=0 + submax=0, BT
+- dfs(1); g(*); s g(*), {2, 0, 1}; submax = 0; es(x); re time(0) + submax, BT
+- dfs(3)...
+- dfs(4)...
+- dfs(5)...
+- now back at edges(0, 1, 3, 4, 5); time(2)=1 + submax=0, BT
 
 - https://leetcode.com/problems/minesweeper/submissions/
 - why do we need 8 cell grid directions?
