@@ -2353,6 +2353,7 @@
 - now back at edges(0, 1, 3, 4, 5); time(2)=1 + submax=0, BT
 
 - https://leetcode.com/problems/minesweeper/submissions/
+- complex:
 - why do we need 8 cell grid directions?
 - because 1 click in the middle, all 8 cell grid directions get exploded
 - it is like a sun shine.
@@ -2430,6 +2431,25 @@
 - why above the loop dfs queue, we need to board[r][c] = 'B'?
 - because need to clean this cell, then move to next dfs;
 - if no clear, we cannot move to next cell
+- simple:
+- motion:
+- case 1:
+- [[E, E], [E, E]], all empty
+- st: grid (Q)
+- st: lo_path
+- st: mine_num
+- tr: 8_dir
+- click at [1, 0]
+- at [1, 0]; 8_dir_loop; check bound, Mine, Empty_push_queue; up, good, lo_path: [[0, 0]]; NE, good, [[0, 0], [0, 1]]; right, good, [[0, 0], [0, 1], [1, 1]]; all_other dir B;
+- end_loop; M# > 0, cell = M or M# <= 0, cell = Blank, loop -> dfs;
+- [[E, B], [E, E]];
+- x
+- [[0, 0], [0, 1], [1, 1]] -> [0, 0], dfs -> 8_dir_loop; lo_path: [[0, 1], [1, 1]]; rest dir B or BL; end_loop, M# <= 0, cell = BL
+- x
+- [[0, 1], [1, 1]] -> [0, 1], dfs -> 8_dir_loop; lo_path: [[1, 1]]; rest B or BL; end_loop, M# <= 0, cell = BL; [[B, B], [B, E]];
+- [[1, 1]] -> [1, 1], dfs -> 8_dir_loop; lo_path: []; rest B or BL; end_loop, cell = BL; [[B, B], [B, B]], BT
+- [[0, 1]_BT, [1, 1]] -> [1, 1]_to_finish, BT (most of time hit B or BL)
+- [[0, 0]_BT, [0, 1], [1, 1]] -> [0, 1], [1, 1]_to_finish, BT (most of time hit B or BL)
 
 
 # read, write
