@@ -59,6 +59,7 @@
 
 
 - https://leetcode.com/problems/factor-combinations (\*)
+- complex:
 - why dfs_n decrease, while dfs_curr increases?
 - because dfs_n is being consumed by mod
 - because dfs_curr in each dfs loop, dfs_curr inc, to pass down, to maintain inc order in result
@@ -66,8 +67,15 @@
 - because dfs_n is being consumed by mod
 - why for i=curr; i <= dfs_n?
 - i <= dfs_n, because dfs_n is being consumed and eventually === 1
-
-
+- simple:
+- motion:
+- case 1: 8
+- st: lo_path
+- st: res (push lo_path)
+- 8 -> 2 (s = 2<= 8_*, %_*, 4_left, p: [2]), 3 (s_*, %_x), 4 (s_*, %_*, 2_left, s_x), 5 (s_*, %_x), 6 (s_*, %_x), 7 (s_*, %_x), 8 (s_*, %_*, 1_left, p: [8], but path.len >= 2_x)
+- for 4 -> 2_* (p: [2, 2]); 3_x (%_x); 4_* ([2, 4]) 
+- for 2 -> 1_* (p: [2, 2, 2]);
+- for 1 (4_*'s, BT)
 
 - https://leetcode.com/problems/palindrome-permutation (\*)
 - complex;
