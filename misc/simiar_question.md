@@ -70,11 +70,18 @@
 
 
 - https://leetcode.com/problems/palindrome-permutation (\*)
+- complex;
 - why aaabb, then a = 3 freq, b = 2 feq?
 - because permutation, we can move around, for all orders
 - why map.set(key), then map.delete(key)?
 - beause map.size will reduce
 - then map.size <= 1, means palindrome
+- simple:
+- motion:
+- case 1:
+- bbbaaa
+- b in, b out, b in; a in, a out, a in
+- set {a, b}, not pal permutation
 
 - https://leetcode.com/problems/palindrome-permutation-ii
 
