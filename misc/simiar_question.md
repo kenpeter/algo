@@ -36,10 +36,27 @@
 - all prev same eles, are duplicated
 
 - https://leetcode.com/problems/combination-sum (\*)
+- complex:
 - why we cannot use ind >= arr.length, instead use acc_sum >= tar?
 - because ind can be the same index, repeat again and again
 - why we use same_dfs_i?
 - because same num can be used to form sum
+- simple:
+- motion:
+- case 1:
+- [2, 3, 6, 7]; tar = 7
+- sum 0 -> 2, 3, 6, 7
+- at 2 -> 4, 5, 8_x, 9_x
+- at 4 -> 6, 7_* (p: 2 2 3), 10_x, 11_x
+- at 6 -> 8_x, 9_x, 12_x, 13_x; BT
+- x
+- BT at 5 -> 5+3_x (must use min 3), 6+3_x, 7+3_x; BT
+- x
+- BT at 3 -> 3+3, 3+6_x, 3+7_x
+- at 6 -> 6+3_x
+- x
+- at 6 -> 6+6_x
+- at 7_* (p: 7) 
 
 - https://leetcode.com/problems/combination-sum-ii (\*)
 - in dfs loop, why we put i > start_ind in the con statement (curr and prev ele same same)?
