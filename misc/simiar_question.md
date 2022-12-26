@@ -50,10 +50,21 @@
 - because i=ind, is to be used; later same ele skips
 
 - https://leetcode.com/problems/palindrome-partitioning (\*)
+- complex:
 - for func isPal(), why ++i and --j?
 - because if i and j not move, inifinite loop
 - why substring(start_ind, end_ind) become diff dfs path?
 - because they are diff possible, diff path
+- simple:
+- motion:
+- case 1:
+- aba
+- st: lo_path
+- st: res (? push paths)
+- at aba -> a (a; pal_*; p: [a]) OR ab (ab; pal_x) OR aba (aba; pal_*; p: [aba]; BT)
+- at ba -> b (a; pal_*; p: [a, b] OR ba (ba; pal_x)
+- at a -> (a; pal_*; p: [a, b, a], BT)
+- 
 
 - https://leetcode.com/discuss/interview-question/1625460/AMAZON-OA-Find-K-maximum-Priority
 
