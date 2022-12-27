@@ -11,6 +11,7 @@
 - https://leetcode.com/problems/subsets-ii/ (\*)
 
 - https://leetcode.com/problems/permutations (\*)
+- complex:
 - why used arr is so good in dfs
 - we can use path_arr.includes(ele) to achieve unique
 - if there are repeated num, we know exactly who used / who not used
@@ -21,6 +22,18 @@
 - because i+1 will skip many elements
 - why used[ind] = true -> dfs -> used[ind] = false?
 - because dfs in the middle
+- simple:
+- motion:
+- case 1:
+- [0, 1]
+- st: grid: [0, 1]
+- st: lo_seen: [f, f]
+- st: lo_path: []
+- st: res: []
+- at [] (return_x) -> 0 (seen_x; set_seen, [t, f]; p: [0]; ...) OR 1 (seen_x; ss, [f, t]; p: [1]; ...)
+- at 0 (re_x) -> 0 (s_*, next_iteration) OR 1 (s_x; ss, [t, t]; p: [0, 1]; ...) -> [0, 1] (re_*; reset [t, f]; BT)
+- now back at 1 (on right, re_x) -> 0 (s_x; ss, [t, t]; p: [1, 0]; ...) OR 1 (re_*, next, end_loop; BT)
+- at 0 (bottom), [1, 0] (re_*; reset [f_the_zero, t]; BT)
 
 - https://leetcode.com/problems/permutations-ii (\*)
 - why we have 2 ways to acc path?
