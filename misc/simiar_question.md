@@ -44,7 +44,7 @@
 - simple:
 - motion:
 - case 1:
-- [2, 3, 6, 7]; tar = 7
+- [2, 3, 6, 7] (no repeated num, but repeated pick); tar = 7
 - sum 0 -> 2, 3, 6, 7
 - at 2 -> 4, 5, 8_x, 9_x
 - at 4 -> 6, 7_* (p: 2 2 3), 10_x, 11_x
@@ -59,12 +59,22 @@
 - at 7_* (p: 7) 
 
 - https://leetcode.com/problems/combination-sum-ii (\*)
+- complex:
 - in dfs loop, why we put i > start_ind in the con statement (curr and prev ele same same)?
 - why not put loop(i=ind+1, i<arr.length)?
 - or why not put loop(i=ind, i<arr.length-1)?
 - because put i > start_ind in the con statement, we can use this single ele, this single ele will be pushed to path arr, it bypass the con statement
 - why in loop, if(i > ind && ns[i-1] === n[i]) continue, why i > ind is to use FIRST ELEMENT?
 - because i=ind, is to be used; later same ele skips
+- simple:
+- motion:
+- case 1:
+- [1, 2, 2] (repeated num, but not repeat pick); tar = 3
+- sum 0 (> tar_x, == tar_x, end_loop_x); -> 1 (repeat_x, p: [1]); -> 2 (rep_x, p: [2]); -> 2 (rep_*, BT)
+- at 1 (> tar_x, == tar_x, el_x) -> 2 (rep_x, p: [1, 2]); -> 2 (rep_same_level_*, BT)
+- at 3 (> tar_x, == tar_*, BT)
+- at 2 (the original 2; > tar_x; == tar_x, el_x) -> 2 (rep_x, p: [2, 2]);
+- at 4 (> tar_*, BT)
 
 - https://leetcode.com/problems/palindrome-partitioning (\*)
 - complex:
