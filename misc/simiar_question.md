@@ -3,10 +3,21 @@
 - https://leetcode.com/problems/subsets/discuss/27281/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
 
 - https://leetcode.com/problems/subsets (\*)
+- complex:
 - why we don't push ele in the dfs base / boundary check?
 - why we push ele in the dfs loop?
 - because we formt the path in dfs loop
 - it is already formed, so no need to push ele in dfs base
+- simple:
+- motion:
+- case 1:
+- [1, 2]
+- st: arr: [1, 2]
+- st: lo_path: []
+- st: res: []
+- at [] (el_x) -> 1 OR 2
+- to 1 (i=0; 1; p: [1]) -> at 1 (el_x) -> to 2 (i=-1; 2; p: [1, 2]) -> at [1, 2], el, BT
+- to 2 (i=1; 2; p: [2]) -> at [2], el, BT
 
 - https://leetcode.com/problems/subsets-ii/ (\*)
 
