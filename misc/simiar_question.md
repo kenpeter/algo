@@ -36,6 +36,7 @@
 - at 0 (bottom), [1, 0] (re_*; reset [f_the_zero, t]; BT)
 
 - https://leetcode.com/problems/permutations-ii (\*)
+- complex:
 - why we have 2 ways to acc path?
 - 1. in base / boundary check, path.slice(0), res.push(path)
 - this is easiest, because we just copy
@@ -47,6 +48,19 @@
 - for last same ele, from 0 to last same ele, used[i-1] === false (always)
 - so we can form its own unique path
 - all prev same eles, are duplicated
+- simple:
+- motion:
+- case 1:
+- [1, 1]
+- st: arr: [1, 1]
+- st: lo_seen: [f, f]
+- st: lo_path: []
+- st: res
+- in_order -> lo_seen[i-1] === true && arr[i] === arr[i-1]
+- at [], re_x -> 1 (seen_x; in_order_*; [t, f]; p: [1]) OR 1 (seen_x; order_x; next, el, BT)
+- at 1 (re_x) -> 1 (seen_*; con) OR 1 (seen_x; order_*; [t, t]; p: [1, 1])
+- at [1, 1] (re_*, BT)
+- lo_seen: [t, f] (unset seen) and p: [1] (pop ele)
 
 - https://leetcode.com/problems/combination-sum (\*)
 - complex:
