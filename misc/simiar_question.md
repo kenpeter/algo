@@ -20,6 +20,15 @@
 - to 2 (i=1; 2; p: [2]) -> at [2], el, BT
 
 - https://leetcode.com/problems/subsets-ii/ (\*)
+- complex:
+- simple:
+- motion:
+- case 1:
+- [1, 1]
+- at [] (el_x) ->
+- to 1 (i=0; 1; rep_x; p:[1]) OR to 1 (i=1; 1; rep_*_same_dfs_level; next, el, BT)
+- at 1 (el_x) ->
+- to 1 (i=1; 1; rep_x; p:[1, 1]) -> [1, 1] (el_*; next, el, BT) 
 
 - https://leetcode.com/problems/permutations (\*)
 - complex:
