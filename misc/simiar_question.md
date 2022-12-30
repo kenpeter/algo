@@ -2551,6 +2551,33 @@
 - [[0, 1]_BT, [1, 1]] -> [1, 1]_to_finish, BT (most of time hit B or BL)
 - [[0, 0]_BT, [0, 1], [1, 1]] -> [0, 1], [1, 1]_to_finish, BT (most of time hit B or BL)
 
+- https://leetcode.com/problems/where-will-the-ball-fall (\*)
+- complex:
+- simple:
+- motion:
+- st: grid: [[1, 1], [-1, -1]] => [[\, \], [/, /]]
+- st: res: [i] (? each col)
+- dfs
+- r=0, c=0
+- hit left wall (x)
+- h_r_w (x)
+- hit v (\_1 + /_2, x)
+- hit v (\_2 + /_1, x)
+- hit bottom (x)
+- / go left (x, no /)
+- \ go right (*) -> dfs (BT)
+- x
+- dfs
+- r=1, c=1
+- h_l_w (x)
+- h_r_w (x)
+- hit_v (x)
+- hit_v (x)
+- hit bottom (*) -> re c-1; BT
+- x
+- r=0, c=1
+- h_l_w(x)
+- h_r_w(*) -> BT
 
 # read, write
 
