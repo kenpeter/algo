@@ -2579,6 +2579,28 @@
 - h_l_w(x)
 - h_r_w(*) -> BT
 
+- https://leetcode.com/problems/concatenated-words/
+- complex:
+- simple:
+- motion:
+- case 1: 
+- [a, b, ab]
+- st: arr: [a, b, ab]
+- st: set: {} (? unique for a, b, ab)
+- st: res: [] (? push)
+- (1) a
+- un-concat a -> dfs
+- dfs
+- a (end_str_x; concat_x) -> a (in_set_*; un-concat_*) -> '' (end_str_*; concat_x; re false; BT)
+- (2) b
+- un-concat b -> dfs
+- dfs
+- b (end_str_x; concat_x) -> a (in_set_*; un-concat_*) -> '' (end_str_*; concat_x; re false; BT)
+- (3) ab
+- un-concat ab -> dfs
+- dfs
+- ab (end_str_x; concat_x) -> a (in_set_*; un-concat_*) -> b (end_str_x; concat_x) -> b (in_set_*; un-concat_*) -> '' (end_str_*; concat_*; re true; BT)
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
