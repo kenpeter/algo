@@ -2601,6 +2601,20 @@
 - dfs
 - ab (end_str_x; concat_x) -> a (in_set_*; un-concat_*) -> b (end_str_x; concat_x) -> b (in_set_*; un-concat_*) -> '' (end_str_*; concat_*; re true; BT)
 
+- https://leetcode.com/problems/find-if-path-exists-in-graph
+- complex:
+- simple:
+- motion:
+- case: [[0, 1], [0, 2], [1, 2]] (each vertex connects each other)
+- st: graph: {}
+- st: g_seen: {}
+- graph: 0 <-> 1; 0 <-> 2; 1 <-> 2;
+- at dfs(0); end_x; g_seen_x; set_seen {0}; edges(1, 2) -> dfs
+- at dfs(1); end_x; g_seen_x; ss {0, 1}; edges(0, 2) -> dfs
+- at dfs(0); end_x; g_seen_*, re false, BT
+- at dfs(2); end_*, re true, BT -> dfs(0), BT
+- 
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
