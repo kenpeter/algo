@@ -2613,6 +2613,35 @@
 - at dfs(1); end_x; g_seen_x; ss {0, 1}; edges(0, 2) -> dfs
 - at dfs(0); end_x; g_seen_*, re false, BT
 - at dfs(2); end_*, re true, BT -> dfs(0), BT
+
+- https://leetcode.com/problems/keys-and-rooms
+- complex:
+- simple:
+- motion:
+- case 1:
+- [[0, 1], [0, 1, 2], [2], [3]]
+- st: graph -> set graph; OR -> 2D graph; OR -> 1D graph;
+- st: g_seen
+- b(g)
+- 0 -> 0, 1
+- 1 -> 0, 1, 2
+- 2 -> 2
+- 3 -> 3
+- t(g)
+- 0 -> 0, 1
+- 1 -> 0, 1, 2
+- 2 -> 2
+- 3 -> 3
+- at 0 (seen_x; set_seen {0}; es(1, 2)) -> to 0 OR to 1
+- at 0 (seen_*; re; BT)
+- at 1 (s_x; ss {0, 1}; es(0, 1, 2)) -> to 0 OR to 1 OR to 2
+- at 0 (re, BT)
+- at 1 (re, BT)
+- at 2 (s_x; ss {0, 1, 2}; es(2)) -> to 2
+- at 2 (re, BT)
+- now back at 1 (s_*; re; BT)
+- now back to original 0 -> final -> seen: {0, 1, 2} !== rooms: {0, 1, 2, 3}
+- 3 (never reach)
 - 
 
 # read, write
