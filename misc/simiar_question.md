@@ -2642,7 +2642,24 @@
 - now back at 1 (s_*; re; BT)
 - now back to original 0 -> final -> seen: {0, 1, 2} !== rooms: {0, 1, 2, 3}
 - 3 (never reach)
-- 
+
+- https://leetcode.com/problems/water-and-jug-problem/description/
+- complex:
+- simple:
+- motion:
+- case 1:
+- j1 = 5, j2 = 3; target_water = 4
+- physical, 5L full then pull into 3L; 2 left in 5L jug
+- put 2 into 3L jug; 5L full then push 1 into 3L jug; 4 left in 5L jug
+- st: g_seen: {water_key} (? stop loop)
+- st: j1(5), j2(3)j, water
+- 5-3=2; at 2 (tar_x; B_*; s_x; ss {2}; ...) -> (3-2=1) OR -> (3+2=5) OR -> (5-2=3) OR -> (5+3=8)
+- at 1 (tar_x; B_*; s_x; ss{2, 1}; ...) -> (3-1=2) OR -> (3+1=4) OR -> (5-1=4) OR -> (5+1=6)
+- at 2 (tar_x; B_*; s_*, re false, BT)
+- at 4 (tar_*, re true, BT)
+- back at 1, re true, BT
+- back at 2, re true, finish
+
 
 # read, write
 
