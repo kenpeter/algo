@@ -2660,6 +2660,19 @@
 - back at 1, re true, BT
 - back at 2, re true, finish
 
+- https://leetcode.com/problems/network-delay-time/description/
+- complex:
+- simple:
+- motion:
+- case 1:
+- [[1_start, 2_end, 1_time], [2, 1, 1]] (cycle)
+- st: graph: 1->2(1); 2->1(1)
+- st: dist: [+, +, +] -> init [0, 0, +]; start at k=1
+- st: queue: []
+- at 1 (D1 = 0; [1]) -> to 2 (D2 = D1_0 + t_1 < D2_+; [0, 0, 1]_*; [2]_*)
+- at 2 (D2 = 1; [2]) -> to 1 (D1 = D2_1 + t_1 < D1_0; [0, 0, 1]_x; [1]_x), end_queue
+- max [0, 0, 1] -> 1
+
 
 # read, write
 
