@@ -2673,6 +2673,18 @@
 - at 2 (D2 = 1; [2]) -> to 1 (D1 = D2_1 + t_1 < D1_0; [0, 0, 1]_x; [1]_x), end_queue
 - max [0, 0, 1] -> 1
 
+- https://leetcode.com/problems/path-sum-iii/description/
+- complex:
+- simple:
+- motion
+- case 1:
+- b(g); 4_top_root -> 4 (2 null) OR -> 4 (2 null); tar = 4
+- t(g); FOR TOP 4: at 4_top (s = 4; end_x; tar_*; c=1) -> small_step (dfs) -4 -> at 4 (s=0; end_x; tar_x) -> at null (s=-4; end_*; BT)
+- at 4 (s=0; end_x; tar_x) -> ss (dfs) -4 -> null (s=-4; end_*; BT)
+- now back to 4_top_root -> ss (dfs) -4 -> at 4 now (s=0; end_x; tar_x) -> ss (dfs) -4 -> at null (s=-4; end_*; BT) -> back at 4 (...) -> at null (s=-4; end_*; BT)
+- FOR LEFT 4 (s=4; end_x; tar_*; c=1+1=2) -> left null (s=0; end_*; BT) OR right null (s=0; end_*; BT)
+- FOR RIGHT 4 (s=4; end_x; tar_*; c=2+1) -> left null (.. )OR right null (..)
+
 
 # read, write
 
