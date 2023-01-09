@@ -2685,6 +2685,20 @@
 - FOR LEFT 4 (s=4; end_x; tar_*; c=1+1=2) -> left null (s=0; end_*; BT) OR right null (s=0; end_*; BT)
 - FOR RIGHT 4 (s=4; end_x; tar_*; c=2+1) -> left null (.. )OR right null (..)
 
+- https://leetcode.com/problems/lexicographical-numbers/description/
+- complex:
+- simple:
+- st: res: []
+- dfs
+- push_digit_build_num (? 10*curr+0, 10*curr+1, 10*curr+2, etc)
+- finish_1_thing_then_another (? lexico order; 1, 10, 100, ... | 2, 20, 200, 2000, ... | 3 ...)
+- dfs_each_time (? loop -> dfs)
+- x
+- dfs
+- bound
+- push_digit_build_num (in loop)
+- motion:
+- 
 
 # read, write
 
