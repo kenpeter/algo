@@ -2689,6 +2689,7 @@
 - complex:
 - simple:
 - st: res: []
+- st: tar = 13
 - dfs
 - push_digit_build_num (? 10*curr+0, 10*curr+1, 10*curr+2, etc)
 - finish_1_thing_then_another (? lexico order; 1, 10, 100, ... | 2, 20, 200, 2000, ... | 3 ...)
@@ -2698,7 +2699,20 @@
 - bound
 - push_digit_build_num (in loop)
 - motion:
-- 
+- st: res: []
+- st: tar = 13
+- at null -> 1 OR 2 OR 3 OR 4 OR ... 9
+- e.g. lexi order (same_scope_must_finish) === 1, 10, 100, 101, 102, 11; 2, 20, 200, 201, 202, 21...; 3, 30, 300, 31;
+- 1 (B_*; tar_*, push) -> 1*10+0 (B_*; tar_*, push) -> 100 (B_x; BT)
+- 1 (..) -> 1*10+1 (B_*; tar_*, p) -> 110 (B_x, BT)
+- 1 (..) -> 1*10+2 (B_*; tar_*, p) -> 120 (B_x, BT)
+- 1 (..) -> 1*10+3 (B_*; tar_*, p) -> 130 (B_x, BT)
+- ..
+- 1 (..) -> 1*10+9 (B_x, BT)
+- 2 (B_*; tar_*; push) -> 2*10+0 (B_x, BT)
+- 3 (B_*; tar_*; push) -> ... (BT)
+- ...
+- 9 (B_*; tar_*; push) -> ... (BT   
 
 # read, write
 
