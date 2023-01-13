@@ -2728,6 +2728,28 @@
 - motion:
 - case 1:
 - [1, 2, 3] -> root = 1, then 2, 3 are children
+- at 1 
+- 1. self_rob = self_rob(1) + left_not_rob(..0) + right_not_rob(..0)
+- x
+- 2. snr = snr(0) + lr(..2) + rr(..3) -> 5
+- 3. snr = snr(0) + lr ..2 + rnr ..0 -> 2
+- 3. snr = snr(0) + lnr ..0 + rr ..3 -> 3
+- 4. snr = snr(0) + lnr ..0 + rnr ..0 -> 0
+- 2-4 max = 5; return [1, 5] -> final max[1, 5] -> 5
+- x
+- now at 2 
+- 1. sr .. -> 2
+- 2. snr .. -> 0
+- 3. snr .. -> 0
+- 4. snr .. -> 0
+- 2-4 max 0; return [2, 0]
+- x
+- now at left null
+- return [0_rob, 0_non_rob]
+- now at right null
+- return [0, 0]
+- BT
+- now at 3 -> left and right null ...
 
 # read, write
 
