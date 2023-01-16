@@ -2688,16 +2688,16 @@
 - https://leetcode.com/problems/lexicographical-numbers/description/
 - complex:
 - simple:
-- st: res: [] (c: hold_each_level_result)
-- st: tar = 13 (c: stop_condi)
+- st: res: [] (c: during dfs travel, push tar into arr)
+- st: tar = 13 (c: make dfs stop)
 - dfs
-- push_digit_build_num (c: 10*curr+0, 10*curr+1, 10*curr+2, etc; build_num_for_same_level)
-- finish_each_level_then_another (c: lexico order; 1, 10, 100, ... | 2, 20, 200, 2000, ... | 3 ...; finish_each_level)
-- dfs_each_time (c: 1, 10, 11, 12, 13, ..100, 101, 102, .. | 2, 21, 22, 23, 24, .. 200, ... | 3 ....; finish_each_level)
+- push_digit_build_num (c: 10*curr+0, 10*curr+1; single digit, shift position, add extra digit, form new num)
+- finish_each_level_then_another (c: lexico order; 1, 10, 100, ... | 2, 20, 200, 2000, ... | 3 ...; we finish 1, then finish 2)
+- dfs_each_time (c: 1, 10, 11, 12, 13, ..100, 101, 102, .. | 2, 21, 22, 23, 24, .. 200, ... | 3 ....; we finish 1, then 2, then 3)
 - x
 - dfs
-- bound (c: start of dfs, num comes down, stop condi)
-- push_digit_build_num (in loop)
+- bound (c: make dfs stop)
+- push_digit_build_num (single digit, shift position, add extra digit, form new num)
 - motion:
 - st: res: []
 - st: tar = 13
