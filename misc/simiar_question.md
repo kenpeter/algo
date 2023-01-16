@@ -2717,7 +2717,7 @@
 - https://leetcode.com/problems/house-robber-iii/description/
 - simple:
 - dfs (c: travel the tree)
-- end_leaf (c: stop at leaf)
+- end_leaf (c: return rob and !rob 2 state)
 - end_leaf return (c: leaf returns condi or states; this returns 2 states)
 - else 
 - left_branch_return_state (c: left branch return condi or state; this returns 2 states)
