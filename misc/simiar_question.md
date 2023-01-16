@@ -2676,6 +2676,21 @@
 - https://leetcode.com/problems/path-sum-iii/description/
 - complex:
 - simple:
+- st: count (c: go through continuous nodes, form target sum, count 1)
+- dfs_continous_sum (c: from this node, continuous down, form tar sum)
+- end_leaf (c: dfs stop now)
+- == tar (c: tar found, count 1)
+- dfs_left (c: binary tree)
+- dfs_left(node.left, through_sum - node.val) (c: through_sum origin from tar; this node is used, next dfs level exclude this node)
+- x
+- dfs_right (c: binary tree)
+- dfs_right(node.right, through_sum - node.val) (c: through_sum origin from tar; this node is used, next dfs level exclude this node)
+- x
+- dfs_tree (c: start from this root node and all the way down; it is like a loop for this node)
+- end_leaf (c: dfs stop now)
+- dfs_continuous_sum (c: from this node, continuous down, form tar sum)
+- dfs_tree(left) (c: start from left_node)
+- dfs_tree(right) (c: start from right_node)
 - motion
 - case 1:
 - b(g); 4_top_root -> 4 (2 null) OR -> 4 (2 null); tar = 4
