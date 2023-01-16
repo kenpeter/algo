@@ -2688,15 +2688,15 @@
 - https://leetcode.com/problems/lexicographical-numbers/description/
 - complex:
 - simple:
-- st: res: []
-- st: tar = 13
+- st: res: [] (c: hold_each_level_result)
+- st: tar = 13 (c: stop_condi)
 - dfs
-- push_digit_build_num (? 10*curr+0, 10*curr+1, 10*curr+2, etc)
-- finish_1_thing_then_another (? lexico order; 1, 10, 100, ... | 2, 20, 200, 2000, ... | 3 ...)
-- dfs_each_time (? loop -> dfs)
+- push_digit_build_num (c: 10*curr+0, 10*curr+1, 10*curr+2, etc; build_num_for_same_level)
+- finish_each_level_then_another (c: lexico order; 1, 10, 100, ... | 2, 20, 200, 2000, ... | 3 ...; finish_each_level)
+- dfs_each_time (c: 1, 10, 11, 12, 13, ..100, 101, 102, .. | 2, 21, 22, 23, 24, .. 200, ... | 3 ....; finish_each_level)
 - x
 - dfs
-- bound
+- bound (c: start of dfs, num comes down, stop condi)
 - push_digit_build_num (in loop)
 - motion:
 - st: res: []
