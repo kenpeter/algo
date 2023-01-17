@@ -2646,6 +2646,19 @@
 - https://leetcode.com/problems/water-and-jug-problem/description/
 - complex:
 - simple:
+- st: g_seen (c: avoid loop when travel graph or tree)
+- st: max = j1+h2 (c: water < 0 not possible; water > max possible, as add up)
+- dfs
+- x
+- dfs
+- (c: all condi check for current)
+- tar? (c: tar, return)
+- bound (c: out bound, return)
+- g_seen (c: avoid loop when travel graph or tree)
+- set g_seen (c: ...)
+- (c: all condi passed, can may dfs steps)
+- j1-, j1+, j2-, j2+; j1-water, j1+w, j2-w, j2+2; (c: produce valid dfs steps)
+- dfs_init(abs(j2-j1)) (c: produce valid dfs step as start)
 - motion:
 - case 1:
 - j1 = 5, j2 = 3; target_water = 4
