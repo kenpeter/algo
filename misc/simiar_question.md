@@ -2663,6 +2663,21 @@
 - https://leetcode.com/problems/network-delay-time/description/
 - complex:
 - simple:
+- st: graph (c: hold v -> e and e -> v)
+- st: dist[ind] = + (c: each node, we store the info there; not_able_to_visit === infinite)
+- st: dist[k] = 0 (c: started, stay there dist = 0)
+- st: queue: [] (c: use queue / dfs to travel graph; pop 1 node, then many edge nodes)
+- st: queue.push(start_node) (c: q has no node, no start)
+- b(g) == build_graph (c: v -> [edge, time])
+- graph[v] === und, graph[v] = [] (c: later graph[v].push, same routine for everyone)
+- q.push(k) (c: q has no node, no start)
+- loop(q.len) (c: q has no node, no start)
+- const v = q.shift (c: take node out, so q can empty eventually)
+- graph[v] === und, con (c: not all the node will have edges)
+- loop(edges) (c: some node has edges; some node no edge)
+- dist[edge_node] VS dist[start_node] + dist(time) (c: if we come down has better outcome, will replace you)
+- dist[start_node] + dist(time) better -> push to queue (c: if worse, no waste energy, run; if better, push to queue to run)
+- max(...dist) -> max_dist or + (c: max OR some node, never reach, +; 
 - motion:
 - case 1:
 - [[1_start, 2_end, 1_time], [2, 1, 1]] (cycle)
