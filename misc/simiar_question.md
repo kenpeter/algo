@@ -2604,6 +2604,23 @@
 - https://leetcode.com/problems/find-if-path-exists-in-graph
 - complex:
 - simple:
+- st: graph (c: graph hold v -> e and e -> v)
+- st: g_seen (c: avoid loop when graph or tree)
+- st: start (c: start -> end node)
+- st: end (c: start -> end node)
+- b(g)
+- x
+- v -> e and e -> v (c: graph to hold v -> e and e -> v)
+- graph[node] = arr or set (c: und, assign arr or set, later just arr.push or set.add)
+- t(g)
+- x
+- dfs, t(g)
+- == tar (c: find what we want, return outcome at this node)
+- (c: use current dfs state, not future)
+- g_seen (c: avoid loop)
+- set g_seen (c: avoid loop)
+- e -> edges
+- condi = dfs() or dfs() return nothing (c: dfs return outcome so far)
 - motion:
 - case: [[0, 1], [0, 2], [1, 2]] (each vertex connects each other)
 - st: graph: {}
