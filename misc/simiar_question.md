@@ -2666,6 +2666,7 @@
 - st: graph (c: hold v -> e and e -> v)
 - st: dist[ind] = + (c: each node, we store the info there; not_able_to_visit === infinite)
 - st: dist[k] = 0 (c: started, stay there dist = 0)
+- st: g_seen (no need) (c: if dist[ind] no better -> no push queue, same effect as g_seen)
 - st: queue: [] (c: use queue / dfs to travel graph; pop 1 node, then many edge nodes)
 - st: queue.push(start_node) (c: q has no node, no start)
 - b(g) == build_graph (c: v -> [edge, time])
