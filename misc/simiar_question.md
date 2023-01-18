@@ -2582,6 +2582,14 @@
 - https://leetcode.com/problems/concatenated-words/
 - complex:
 - simple:
+- st: res: [] (c: to hold the correct result)
+- st: set (c: consume the word in set only)
+- dfs
+- dfs_path_loop (c: single char to entire word, form diff dfs path; each dfs has new start ponit)
+- in_set (c: we take only valid dfs path)
+- dfs return outcome (c: up to here, dfs good; this point good; all the way down good; => entire dfs path good)
+- end dfs_path_loop, return bad (c: try all dfs path, nothing work, return bad)
+- loop_each_word (c: is this word form by word in set)
 - motion:
 - case 1: 
 - [a, b, ab]
