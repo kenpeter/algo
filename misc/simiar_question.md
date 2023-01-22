@@ -2532,6 +2532,28 @@
 - because need to clean this cell, then move to next dfs;
 - if no clear, we cannot move to next cell
 - simple:
+- st: local_q, [] (c: at center, use surround to store info, queue)
+- st: local_var_num (c: at center, use surround to store infom, mine_#)
+- row (c: coordinate)
+- col (c: coordinate)
+- dir_8 (c: at center travel 8 dir; normal travel 4 dir)
+- dfs
+- x
+- dfs(click) (c: dfs has a start point)
+- local_q (c: next dfs level has own)
+- local_var_num (c: next dfs level has own mine var)
+- 8_dir_loop (c: many dfs paths)
+- bound (c: future path check bound)
+- == tar (c: tmp_var acc mine var)
+- == blank (c: tmp_var acc paths)
+- Mine, explode_mine, Empty, Blank, Digit(1-8) (c: no use, no care)
+- if mine, board[curr_r][curr_c] = mine_# (c: use surround info update board state)
+- if !mine, board[c_r][c_c] = Blank (c: use surround info update board state)
+- func_start
+- use_shortcut, if hit mine (c: shortcut for func init)
+- init dfs func (c: normal dfs func after shortcut)
+- board[future_row][future_col] = mine_# or blank (c: like g_seen, upate board state)
+- 
 - motion:
 - case 1:
 - [[E, E], [E, E]], all empty
