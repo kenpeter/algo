@@ -2444,19 +2444,16 @@
 - st: graph (or arr)
 - st: local_submax (c: this dfs level has many paths, one is significant)
 - graph and arr interchange:
-- arr,   val,      index
-- graph, vertex,   edge
--        manager,  employee
+- graph     vertex        edge
+- arr       manager (val)  employee (ind)
 - x
 - b(g)
-- b(g) avoid self -> self === t(g) use g_seen
-- avoid when b(g) or avoid when t(g)
+- avoid self -> self, either in b(g) or g_seen/local_seen when travel
 - x
 - dfs
-- local_submax (c: this dfs level has many paths, one is significant)
+- local_submax (c: this dfs level, has many future paths, 1 is significant)
 - vertex -> edges
-- submax = Max(submax, dfs(e) (c: this dfs level has many paths, one is significant)
-- dfs(e) (c: dfs represents final result or just_travel_no_return)
+- submax = Max(submax, dfs(e) (c: this dfs level has many paths, one is significant; return dfs represent outcome)
 - end_edges_loop (c: prev_dfs_outcomes + curr_outcome + future_dfs_outcomes; at this dfs level only: curr_outcome + future_dfs_outcomes)
 - outside dfs func, return dfs(start) (c: dfs must have a start point)
 - x
