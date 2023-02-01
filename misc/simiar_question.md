@@ -2564,27 +2564,26 @@
 - because need to clean this cell, then move to next dfs;
 - if no clear, we cannot move to next cell
 - simple:
-- st: local_q, [] (c: at center, use surround to store info, queue)
-- st: local_var_num (c: at center, use surround to store infom, mine_#)
-- row (c: coordinate)
-- col (c: coordinate)
-- dir_8 (c: at center travel 8 dir; normal travel 4 dir)
+- st: local_q (z: at center, store surround info)
+- st: local_mine_num (z: at center, store surround info)
+- row (z: coordinate)
+- col (z: coordinate)
+- dir_8 (z: 8 dir or 4 dir)
 - dfs
 - x
-- dfs(click) (c: dfs has a start point)
-- local_q (c: next dfs level has own)
-- local_var_num (c: next dfs level has own mine var)
-- 8_dir_loop (c: many dfs paths)
-- bound (c: future path check bound)
-- == tar (c: tmp_var acc mine var)
-- == blank (c: tmp_var acc paths)
-- Mine, explode_mine, Empty, Blank, Digit(1-8) (c: no use, no care)
-- if mine, board[curr_r][curr_c] = mine_# (c: use surround info update board state)
-- if !mine, board[c_r][c_c] = Blank (c: use surround info update board state)
+- bfs(click) (z: bfs has a start point)
+- local_q (z: at center, store surround info; info only exists in this bfs level)
+- local_var_num (z: at center, store surround info; info only exists in this bfs level)
+- 8_dir_loop (z: 8 dir or 4 dir)
+- bound (z: check bound, for future or for curr)
+- == tar (z: see target)
+- == blank (z: can push more paths)
+- Mine, explode_mine, Empty, Blank, Digit(1-8) (z: the board has many states)
+- if mine, board[curr_r][curr_c] = mine_# (z: update board state)
+- if !mine, board[c_r][c_c] = Blank (z: update board state)
 - func_start
-- use_shortcut, if hit mine (c: shortcut for func init)
-- init dfs func (c: normal dfs func after shortcut)
-- board[future_row][future_col] = mine_# or blank (c: like g_seen, upate board state)
+- use_shortcut, if hit mine (z: shortcut finish func early)
+- init dfs func (z: normal bfs)
 - 
 - motion:
 - case 1:
