@@ -2852,15 +2852,18 @@
 
 - https://leetcode.com/problems/house-robber-iii/description/
 - simple:
-- dfs (c: travel the tree)
-- end_leaf (c: return rob and !rob 2 state)
-- end_leaf return (c: leaf returns condi or states; this returns 2 states)
-- else 
-- left_branch_return_state (c: left branch return condi or state; this returns 2 states)
-- right_branch_return_state (c: right branch return condi or state; this returns 2 states)
-- parent_state + child_states (c: prev_states + curr_state + child_states)
-- final = self_rob(!self_rob) + left_rob(!left_rob) + right_rob(!right_rob) (c: short one; curr_state + child state)
-- at the end of entire func, return [rob, !rob] (c: max of states)
+- st: none
+- z: left node, state use or state !use
+- z: single node represents 2 or more states
+- z: return = dfs -> (1) no return (2) return overall (3) return states
+- z: right node, state use or state !use
+- x
+- z: combo of curr node (use/!use), left node (use/!use), right node (use/!use)
+- z: if !node, return [0, 0] (z: dfs base (1) no return (2) return overall (3) return states)
+- x
+- start func
+- dfs(root) (z: dfs have a start point)
+- return [rob, !rob] (z: return = dfs -> (1) no return (2) return overall (3) return states)
 - motion:
 - case 1:
 - [1, 2, 3] -> root = 1, then 2, 3 are children
