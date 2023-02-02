@@ -2824,16 +2824,15 @@
 - https://leetcode.com/problems/lexicographical-numbers/description/
 - complex:
 - simple:
-- st: res: [] (c: during dfs travel, push tar into arr)
-- st: tar = 13 (c: make dfs stop)
+- st: res: [] (l: need a pool to collect results)
+- st: tar = 13 (l: need a target, so we know what to achieve and when to stop)
 - dfs
-- push_digit_build_num (c: 10*curr+0, 10*curr+1; single digit, shift position, add extra digit, form new num)
-- finish_each_level_then_another (c: lexico order; 1, 10, 100, ... | 2, 20, 200, 2000, ... | 3 ...; we finish 1, then finish 2)
-- dfs_each_time (c: 1, 10, 11, 12, 13, ..100, 101, 102, .. | 2, 21, 22, 23, 24, .. 200, ... | 3 ....; we finish 1, then 2, then 3)
 - x
 - dfs
-- bound (c: make dfs stop)
-- push_digit_build_num (single digit, shift position, add extra digit, form new num)
+- if curr > tar (l: strong checks befor offering)
+- res.push(curr) (l: pass all strong checks, then offer)
+- loop(i=0; i<10...) (l: curr*10+i -> gen all num in this sector -> gen more dfs path for next travel)
+- end_dfs, loop(i=1, i<10..) (l: each iteration represents 1 sector, 1, 10, 12...; 2, 20..; finish 1 sector (dfs base return), then next sector
 - motion:
 - st: res: []
 - st: tar = 13
