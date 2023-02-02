@@ -2797,21 +2797,22 @@
 - https://leetcode.com/problems/path-sum-iii/description/
 - complex:
 - simple:
-- st: count (c: go through continuous nodes, form target sum, count 1)
-- dfs_continous_sum (c: from this node, continuous down, form tar sum)
-- end_leaf (c: dfs stop now)
-- == tar (c: tar found, count 1)
-- dfs_left (c: binary tree)
-- dfs_left(node.left, through_sum - node.val) (c: through_sum origin from tar; this node is used, next dfs level exclude this node)
+- st: count (l: life is up and down, goes on, but must have a few highlights)
+- dfs_check_single_node (l: loop -> dfs (single dfs))
+- check(node, sum) (l: as we go down, target is less and less, we are closer to the target)
+- if node -> dfs (l: life hit the bottom, bounce back)
+- == tar, ++ count (l: life is up and down, but must have highlights)
+- check(left, sum-..) (l: as we go down, target is less and less, we are closer to the target)
+- check(right, .......
 - x
-- dfs_right (c: binary tree)
-- dfs_right(node.right, through_sum - node.val) (c: through_sum origin from tar; this node is used, next dfs level exclude this node)
+- tree (l: loop -> dfs(loop), but in recur form)
+- if node -> check, tree(left), tree(right) (l: life at bottom, bounce back)
+- l: loop -> dfs(single dfs)
+- l: life is at curr state
+- l: life goes left, what will happen?
+- l: life goes right, what will happen
 - x
-- dfs_tree (c: start from this root node and all the way down; it is like a loop for this node)
-- end_leaf (c: dfs stop now)
-- dfs_continuous_sum (c: from this node, continuous down, form tar sum)
-- dfs_tree(left) (c: start from left_node)
-- dfs_tree(right) (c: start from right_node)
+- start_func (l: life start at some point, then all the way down; real life no backtrack, never)
 - motion
 - case 1:
 - b(g); 4_top_root -> 4 (2 null) OR -> 4 (2 null); tar = 4
