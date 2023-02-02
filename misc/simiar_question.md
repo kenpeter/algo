@@ -2853,17 +2853,16 @@
 - https://leetcode.com/problems/house-robber-iii/description/
 - simple:
 - st: none
-- z: left node, state use or state !use
-- z: single node represents 2 or more states
-- z: return = dfs -> (1) no return (2) return overall (3) return states
-- z: right node, state use or state !use
+- [do, !do] = dfs(left) (l: at curr state, goes left, what will happen?)
+- ... = dfs(right) (l: at curr state, goes right, what will happen?)
+- l: dfs can represent (1) nothing (2) overall (3) some states
 - x
-- z: combo of curr node (use/!use), left node (use/!use), right node (use/!use)
-- z: if !node, return [0, 0] (z: dfs base (1) no return (2) return overall (3) return states)
+- l: at curr state (do/!do), goes left (do/!do), goes right (do/!do), what will happen
+- dfs base return (l: life at the bottom, need to bounce back)
 - x
 - start func
-- dfs(root) (z: dfs have a start point)
-- return [rob, !rob] (z: return = dfs -> (1) no return (2) return overall (3) return states)
+- dfs(root) (l: life starts at certain point, all the way down)
+-
 - motion:
 - case 1:
 - [1, 2, 3] -> root = 1, then 2, 3 are children
