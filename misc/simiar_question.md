@@ -2768,22 +2768,25 @@
 - https://leetcode.com/problems/network-delay-time/description/
 - complex:
 - simple:
-- st: graph (c: hold v -> e and e -> v)
-- st: dist[ind] = + (c: each node, we store the info there; not_able_to_visit === infinite)
-- st: dist[k] = 0 (c: started, stay there dist = 0)
-- st: g_seen (no need) (c: if dist[ind] no better -> no push queue, same effect as g_seen)
-- st: queue: [] (c: use queue / dfs to travel graph; pop 1 node, then many edge nodes)
-- st: queue.push(start_node) (c: q has no node, no start)
-- b(g) == build_graph (c: v -> [edge, time])
-- graph[v] === und, graph[v] = [] (c: later graph[v].push, same routine for everyone)
-- q.push(k) (c: q has no node, no start)
-- loop(q.len) (c: q has no node, no start)
-- const v = q.shift (c: take node out, so q can empty eventually)
-- graph[v] === und, con (c: not all the node will have edges)
-- loop(edges) (c: some node has edges; some node no edge)
-- dist[edge_node] VS dist[start_node] + dist(time) (c: if we come down has better outcome, will replace you)
-- dist[start_node] + dist(time) better -> push to queue (c: if worse, no waste energy, run; if better, push to queue to run)
-- max(...dist) -> max_dist or + (c: max OR some node, never reach, +; 
+- st: graph (l: can travel or reach cycle)
+- st: dist: (l: each node reflects a dist, eventually, it is min dist; we can have multiple info layers; if a place can never reach, inf)
+- dist init (l: arr[0->n] or arr[1->n])
+- dist[k] (l: stand at start, dist = 0)
+- st: q = [] (l: travel graph use bfs or dfs, this use bfs)
+- b(g) (l: build graph, later travel)
+- l: vertex --(dist)--> edge
+- l: graph entry und, init, easier to push
+- x
+- l: q starts empty, push, ini
+- l: q.len -> q.shift -> q.push
+- l: graph: interviews -> offer -> next candidate
+- l: graph: vertex -> edges loop
+- l: curr_node_dist + travel VS future_node_dist -> bfs or not
+- l: curr_node_dist + travel VS future_node_dist -> update dist[curr] or not
+- l: q.len -> q.shift -> q.push
+- end_bfs
+- l: singal travel simulanteous, so max time cover all
+- max(...dist), if 1 is inf, can never reach
 - motion:
 - case 1:
 - [[1_start, 2_end, 1_time], [2, 1, 1]] (cycle)
