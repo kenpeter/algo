@@ -2738,19 +2738,16 @@
 - https://leetcode.com/problems/water-and-jug-problem/description/
 - complex:
 - simple:
-- st: g_seen (c: avoid loop when travel graph or tree)
-- st: max = j1+h2 (c: water < 0 not possible; water > max possible, as add up)
+- st: g_seen (l: we don't want to see the same candidate again)
+- st: max = j1+j2 (l: lower bound and upper bound)
 - dfs
 - x
-- dfs
-- (c: all condi check for current)
-- tar? (c: tar, return)
-- bound (c: out bound, return)
-- g_seen (c: avoid loop when travel graph or tree)
-- set g_seen (c: ...)
-- (c: all condi passed, can may dfs steps)
-- j1-, j1+, j2-, j2+; j1-water, j1+w, j2-w, j2+2; (c: produce valid dfs steps)
-- dfs_init(abs(j2-j1)) (c: produce valid dfs step as start)
+- check bound, check seen, set_seen (l: interviews) -> target return true (l: offer) -> j1-, j2-, j1+, j2+ (l: next candidates)
+- l: human will do water diff
+- 
+- == tar, found, stop saving energy (l: 1. retrurn nothing; 2. return overal*; 3. return states)
+- l: 1. found, stop saving energy*; 2. return bit this dfs level
+- start_func, start_pt: water diff (l: human will do water diff)
 - motion:
 - case 1:
 - j1 = 5, j2 = 3; target_water = 4
