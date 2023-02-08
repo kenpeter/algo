@@ -2679,23 +2679,20 @@
 - https://leetcode.com/problems/find-if-path-exists-in-graph
 - complex:
 - simple:
-- st: graph (c: graph hold v -> e and e -> v)
-- st: g_seen (c: avoid loop when graph or tree)
-- st: start (c: start -> end node)
-- st: end (c: start -> end node)
+- st: graph (l: node -> node or cycle)
+- st: g_seen (l: we don't want to see the same candidate again)
+- st: start (l: where we start)
+- st: end (l: where we end)
 - b(g)
-- x
-- v -> e and e -> v (c: graph to hold v -> e and e -> v)
-- graph[node] = arr or set (c: und, assign arr or set, later just arr.push or set.add)
-- t(g)
-- x
-- dfs, t(g)
-- == tar (c: find what we want, return outcome at this node)
-- (c: use current dfs state, not future)
-- g_seen (c: avoid loop)
-- set g_seen (c: avoid loop)
-- e -> edges
-- condi = dfs() or dfs() return nothing (c: dfs return outcome so far)
+- l: 1 direction or bi-direction
+- l: init first, later easy to push
+- dfs
+- l: hard interviews
+- l: offer (l: 1. re nothing; 2. re overall* (re bit or re everything*); 3. re states)
+- l: next candidate
+- in edges loop; (l: 1. re nothing 2. re overall* (re bit or re every*) 3. re states)
+- end edges loop (l: try everything, gave up)
+- end dfs (l: dfs start at 1 point)
 - motion:
 - case: [[0, 1], [0, 2], [1, 2]] (each vertex connects each other)
 - st: graph: {}
