@@ -2649,14 +2649,20 @@
 - https://leetcode.com/problems/concatenated-words/
 - complex:
 - simple:
-- st: res: [] (c: to hold the correct result)
-- st: set (c: consume the word in set only)
+- st: res: [] (l: each ele has a chance, may become result)
+- st: set (l: not all dfs paths suitable; bit to consume or self to consume)
 - dfs
-- dfs_path_loop (c: single char to entire word, form diff dfs path; each dfs has new start ponit)
-- in_set (c: we take only valid dfs path)
-- dfs return outcome (c: up to here, dfs good; this point good; all the way down good; => entire dfs path good)
-- end dfs_path_loop, return bad (c: try all dfs path, nothing work, return bad)
-- loop_each_word (c: is this word form by word in set)
+- x
+- dfs
+- dfs base (l: consume done, time to check dfs along vars)
+- l: ways to gen dfs paths: acc chars
+- l: ways to gen dfs paths: jug-water, edges, grid direction, etc
+- l: not all dfs paths suitable
+- condi = canCat(w.substring..) (l: dfs paths === our new hope)
+- condi === true, re true (l: 1. re nothing; 2. re overall* (re bit or re every*); 3. re states)
+- end_acc_chars_loop (l: try all, fail, gave up)
+- dfs -> loop (l: each ele has a chance)
+- dfs -> loop, dfs(ele) (l: consume this ele along the way)
 - motion:
 - case 1: 
 - [a, b, ab]
