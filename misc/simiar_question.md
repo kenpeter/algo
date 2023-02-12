@@ -2712,6 +2712,16 @@
 - https://leetcode.com/problems/keys-and-rooms
 - complex:
 - simple:
+- st: 2D [[1], [2], [3], []] (l: ind = where we start; vals = where we end)
+- st: 1D [1, 2, 2] (l: ind = child; val = parent; employee and manager)
+- dfs
+- x
+- dfs
+- l: interviews
+- l: offer
+- l: other candiates
+- l: 1. re nothing*; 2. re overall; 3. re states
+- dfs(0) (l: dfs has a start point; 0 + rest rooms === seen so far === rooms.len)
 - motion:
 - case 1:
 - [[0, 1], [0, 1, 2], [2], [3]]
