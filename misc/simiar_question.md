@@ -2573,9 +2573,14 @@
 - dfs
 - l: interviews (curr interview or future interview*)
 - l: go through loop, track var updated (mine #)
-- l: diff ways to gen dfs path: dir gen
+- l: diff ways to gen dfs path: dir gen (arr to store)
 - 8 dir loop (l: diff way gen dfs path: dir gen)
-- check bound (l: interviews)
+- check bound (l: interview: curr or future*)
+- l: go through loop, track var updated (mine #)
+- l: diff ways to gen dfs path: dir gen (arr to store)
+- end_dir_loop (l: update curr state, next can work; l: diff ways to gen dfs path: dir gen (arr to store))
+- end_dfs_func (l: cell (unopen/open/unexplode/explode/digit))
+- start_func (l: shortcut early return)
 - motion:
 - case 1:
 - [[E, E], [E, E]], all empty
