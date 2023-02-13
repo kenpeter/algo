@@ -2607,20 +2607,31 @@
 - https://leetcode.com/problems/where-will-the-ball-fall (\*)
 - complex:
 - simple:
-- st: res = arr[row_len] (c: need to know where each ball falls)
+- st: arr_track (l: care only where balls end, 1D arr enough)
 - dfs
+- l: interview
+- left === -1; right === +1
+- |*/
+- \*|
+- \  */
+- \*  /
+- 
+- l: offer
+- \
+-   *
+- OR
+-   /
+- *
 - x
-- dfs
-- (c: dfs var === curr dfs state var)
-- bound?
-- hit left wall (c: left weak = -1, right strong = 1; at col <= 0, slide left)
-- hit right wall (c: at col >= n-1, slide right)
-- hit v shape (c: at left, slide right v)
-- hit v (c: at right, slide left v)
-- == tar (c: at the end of row; slide left or slide right; all checks guard this tar)
-- able to slide left or right (c: all checks passed; !tar; then continue dfs travel)
+- l: next candidates
+- \
+-   *
+- OR
+-   /
+- *
 - x
-- loop -> dfs(row=0, col=i) (c: start from row = 0, at diff col)
+- start_func
+- each cell has a chance to dfs
 - motion:
 - st: grid: [[1, 1], [-1, -1]] => [[\, \], [/, /]]
 - st: res: [i] (? each col)
