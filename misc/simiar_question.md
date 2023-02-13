@@ -2564,27 +2564,18 @@
 - because need to clean this cell, then move to next dfs;
 - if no clear, we cannot move to next cell
 - simple:
-- st: local_q (z: at center, store surround info)
-- st: local_mine_num (z: at center, store surround info)
-- row (z: coordinate)
-- col (z: coordinate)
-- dir_8 (z: 8 dir or 4 dir)
+- row (l: cell position)
+- col (l: cell position)
+- l: sun light direction (4 dir or 8 dir)
+- l: dfs has a start point
 - dfs
 - x
-- bfs(click) (z: bfs has a start point)
-- local_q (z: at center, store surround info; info only exists in this bfs level)
-- local_var_num (z: at center, store surround info; info only exists in this bfs level)
-- 8_dir_loop (z: 8 dir or 4 dir)
-- bound (z: check bound, for future or for curr)
-- == tar (z: see target)
-- == blank (z: can push more paths)
-- Mine, explode_mine, Empty, Blank, Digit(1-8) (z: the board has many states)
-- if mine, board[curr_r][curr_c] = mine_# (z: update board state)
-- if !mine, board[c_r][c_c] = Blank (z: update board state)
-- func_start
-- use_shortcut, if hit mine (z: shortcut finish func early)
-- init dfs func (z: normal bfs)
-- 
+- dfs
+- l: interviews (curr interview or future interview*)
+- l: go through loop, track var updated (mine #)
+- l: diff ways to gen dfs path: dir gen
+- 8 dir loop (l: diff way gen dfs path: dir gen)
+- check bound (l: interviews)
 - motion:
 - case 1:
 - [[E, E], [E, E]], all empty
