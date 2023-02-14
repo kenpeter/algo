@@ -2441,21 +2441,14 @@
 - why we don't have local_seen here, only global_seen?
 - because only course_scheduler (leetcode), ask to detect cycle; this does not ask to detect cycle
 - simple:
-- st: graph (or arr)
-- st: local_submax (c: this dfs level has many paths, one is significant)
-- graph and arr interchange:
-- graph     vertex        edge
-- arr       manager (val)  employee (ind)
-- x
+- l: graph === 2D arr, when vertex === arr_ind, push ele === push edges
 - b(g)
-- avoid self -> self, either in b(g) or g_seen/local_seen when travel
-- x
-- dfs
-- local_submax (c: this dfs level, has many future paths, 1 is significant)
-- vertex -> edges
-- submax = Max(submax, dfs(e) (c: this dfs level has many paths, one is significant; return dfs represent outcome)
-- end_edges_loop (c: prev_dfs_outcomes + curr_outcome + future_dfs_outcomes; at this dfs level only: curr_outcome + future_dfs_outcomes)
-- outside dfs func, return dfs(start) (c: dfs must have a start point)
+- l: 1. avoid cycle in b(g); 2. avoid cycle in t(g)
+- t(g)
+- l: dfs has start point
+- track_var in edge loop (l: 1. max/min*; 2. acc)
+- l: prev_state + curr_state + future_dfs_state
+- start_func (l: dfs has start point)
 - x
 - motion:
 - case 1:
