@@ -2365,22 +2365,22 @@
 - so at least we finish this edge loop iterations
 - then we have ++acc; acc = acc + dfs(edge_index), this level + its sub_level
 - simple:
-- st: graph (c: vertex (self entry) and its edges (self + neighbours)
-- b(g):
-- c: each ele has chance to connect rest of eles -> 2D loop
-- c: touch still considered explode
-- c: graph init entry, easy for next step
-- dfs:
-- c: seen this in prev travel
-- c: dfs return prepresents path result so far
-- c: avoid see again in travel
-- acc var (c: accmulate all dfs paths or pick 1 significant)
-- acc = acc + dfs(edge, local_seen) (c: acc all dfs paths or pick 1 significant)
-- end edge loop, ++acc (c: self can explode self)
+- st: local_seen (l: dfs -> loop; each ele has a chance to dfs)
+- st: graph (l: cycle or node -> node)
+- b(g)
+- l: 1. avoid cycle in b(g); 2. do useful in b(g); 3. avoid cycle in t(g)
+- init graph, easier later push
+- dfs
 - x
-- loop all bombs (c: each ele as start, run a dfs travel)
-- local_seen (c: each ele as start, need local_seen)
-- max = max(max, dfs(i) (c: each ele as start, finish this dfs travel, 1 is significant)
+- local_seen? return 0 (l: interview; cannot denote anything)
+- l: offer
+- before_edge_loop (l: 1. max/min; 2. acc*)
+- in_edge_loop (l: 1.max/min; 2. acc*)
+- end_edge_loop (l: can denote self)
+- start_func
+- new Set() (l: each ele has a chance to dfs)
+- max = max(max, dfs) (l: each ele .....)
+- l: 1. re nothing; 2. re overall (re bit* or re everything); 3. re states
 - motion:
 - case 1:
 - [[1, 1, 1], [3, 3, 5]] (2 bomobs)
