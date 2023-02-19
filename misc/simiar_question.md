@@ -2293,8 +2293,7 @@
 - l: avoid see same candidate (global)
 - in edge loop,
 - l: 1. curr interivews; 2. future interviews; 3. curr + future interviews
-- l: parent node* -> curr_node* -> future node
-- l: seen + (curr and parent node, seen_not_enough)
+- l: seen + 3 ways connectin: parent_node* -> curr_node* -> future_node*; parent_node === future_node -> dup
 - l: use best future node, to update curr node
 - l: curr node rank < future node rank -> curr node on top -> critical
 - start_func
