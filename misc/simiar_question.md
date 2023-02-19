@@ -2277,6 +2277,28 @@
 - why we don't use local_seen in critical_net_work_node (leetcode) and denote_max_bomb (leet_code)?
 - because this quesion is to detect cycle; then local_seen is a good way to detect cycle
 - simple:
+- st: graph (l: node -> node or cycle)
+- st: g_seen_arr (l: info var along each node; init condi)
+- st: g_rank_arr (l: info var along each node, init num)
+- st: res (l: [{curr_node, parent_node}]
+- b(g)
+- l: bi-direction
+- l: graph init, later easy push
+- before_dfs, rank = 0 (l: rank = 0 among start of network)
+- l: interview -> local_seen
+- l: interview -> g_seen
+- l: offer -> ++rank
+- ++rank (l: a global var, dfs will update it, so save it for this dfs level)
+- l: avoid see same candidate (local)
+- l: avoid see same candidate (global)
+- in edge loop,
+- l: 1. curr interivews; 2. future interviews; 3. curr + future interviews
+- l: parent node* -> curr_node* -> future node
+- l: seen + (curr and parent node, seen_not_enough)
+- l: use best future node, to update curr node
+- l: curr node rank < future node rank -> curr node on top -> critical
+- start_func
+- loop -> dfs (l: each node as start, update entire network, eventually no more update)
 - motion:
 - case 1:
 - [0, 1], [0, 2]
