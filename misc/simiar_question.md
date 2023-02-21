@@ -2157,6 +2157,7 @@
 - because global_seen.del is global, it needs to persist
 - local_seen can be deleted in each dfs path
 - simple:
+- see course schedule i
 - motion:
 - case 1:
 - [[1, 0]]
