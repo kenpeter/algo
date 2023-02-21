@@ -2224,6 +2224,21 @@
 - because it is global_seen.del === global, it needs to persistent
 - local_seen.del can be done
 - simple:
+- st: graph (l: node -> node or cycle)
+- st: g_seen (l: 1. see node in order, after dfs loop; 2. everything good, then commit)
+- st: local_see (l: commit then revert)
+- b(g)
+- l: init graph, easy push later
+- dfs
+- l: interviews
+- l: offer; 
+- local_seen.add (l: commit then revert)
+- in_edge_loop (l: 1. re nothing; 2. re overall* (bit or every); 3. re states)
+- after_edge_loop (l: 1. see node in order after dfs loop; 2. everything good then commit)
+- after_edge_loop (l: try every, no cycle, re good)
+- start_func (l: no start pt, loop -> dfs)
+- start_func (l: 1. re nothing; 2. re overall....)
+- end_func (l: try every, no issue, re good)
 - motion:
 - please have a look at course schedule i
 - case 1:
