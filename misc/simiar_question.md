@@ -2073,10 +2073,37 @@
 - why we use 2D loop for each cell, pArr[i][j] === aArr[i][j], to detect commont ground?
 - because both seen it then it means both flow, hence common ground
 - simple:
-- st: grid
-- st: p_arr and a_arr
-- paint p_arr (top and left) and a_arr (right, bottom)
-- do_common
+- st: g[i][j] (l: orig board)
+- st: st; 1. modify orig; 2. modify copy*
+- st: init st; true === visit; false === !visit; 2 st -> true === true -> cross
+- x
+- st: st; 1. modify orig; 2. modify copy*
+- st: init st; true === visit; false === !visit; 2 st -> true === true -> cross
+- x
+- dfs
+- dfs(..., ..., arr) (l: info var along dfs travel)
+- l: interview (bound)
+- l: interview (g_seen)
+- l: interview (able to asc/desc flow)
+- l: offer (g_seen)
+- l: next candiate (4 dir)
+- x
+- b(g)
+- l: cascading from top
+- l: cascading from top left
+- l: cascading from top right
+- x
+- b(g)
+- l: cascading from left
+- l: cascading from left top
+- l: cascading from left bottom
+- x
+- res = [] (l: 1. min/max; 2. acc*)
+- t(g)
+- in 2D loop
+- l: 1. do dfs; 2. !do dfs
+- l: true === visit; false === !visit; 2 st -> true === true -> cross
+- in 2D loop; res.push (l: 1. min/max; 2. acc*)
 - motion:
 - case 1
 - [[3, 5], [4, 4]]
