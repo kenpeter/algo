@@ -2123,6 +2123,19 @@
 - why 4 directions?
 - future cell can travel or not
 - simple:
+- st: the board (l: state; g_seen)
+- row (l: go down)
+- col (l: go right)
+- dfs
+- l: interview (bound)
+- l: interview (g_seen)
+- dfs (l: 1. re nothing*; 2. re overall (bit or every); 3. re states)
+- g[i][j] = '.' (l: offer (g_seen); 1. modify the board*; 2. modify copy)
+- l: next candiates (4 dir)
+- before 2D loop; res = 0 (l: 1. min/max*; 2. acc*)
+- in 2D loop; (l: 2D arr -> 2D state)
+- g[i][j] = 'X' (l: 1. do dfs; 2. !do dfs)
+- in 2D loop, ++res; (l: 1. max/min; 2. acc*)
 - motion:
 - simple flood-fill with ++res
 
