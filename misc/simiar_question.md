@@ -2017,17 +2017,20 @@
 - why pass neighbour_color into dfs func?
 - so we know the next dfs level, g[r][c] is the same neighbour
 - simple:
-- st: grid (ob)
-- tr: prev_color (? color we want to change)
-- tr: new_color (? color we want to use as new)
-- dfs(init)
-- x
-- dfs
-- bound
-- !new_color (? avoid loop)
-- can_do (? prev_colorcolor we want to change)
-- set !can do
-- dfs_4_dir
+- st: grid (l: update state)
+- st: neighbour color (l: ele we want to change)
+- st: paint color (l: ele we want to change to)
+- row/col (l: go down and go right)
+- dfs (l: paint colo
+- l: interview (bound)
+- l: interview (ele we want to change)
+- l: interview (avoid see same candiate)
+- l: offer (ele we want to change to)
+- l: next candiate (4 dir)
+- end_dfs
+- start func
+- l: shortcut
+- l: dfs has start point
 - motion:
 - case 1:
 - [[0, 0], [1, 2]]
