@@ -2077,11 +2077,14 @@
 - because both seen it then it means both flow, hence common ground
 - simple:
 - st: g[i][j] (l: orig board)
+- 
 - st: st; 1. modify orig; 2. modify copy*
 - st: init st; true === visit; false === !visit; 2 st -> true === true -> cross
+- st: info var along the grid
 - x
 - st: st; 1. modify orig; 2. modify copy*
 - st: init st; true === visit; false === !visit; 2 st -> true === true -> cross
+- st: info var along the grid
 - x
 - dfs
 - dfs(..., ..., arr) (l: info var along dfs travel)
