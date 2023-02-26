@@ -1874,19 +1874,23 @@
 - why we have to use seen is that, we will hit the same cell again and again
 - because it is path searching
 - simple:
-- st: grid
-- st: lo_seen
-- tr: time (? e.g. height)
-- while loop (? seen last_cell)
-- new_lo_seen
+- l: go down, go right
+- g_seen (l: info var along grid (set))
+- l: 2D -> 1D -> ind: row*col
+- var before dfs (l: tick for loop iteration; asc/desc flow (height))
+- dir (l: 1. up down left right*; 2. x_new = dx + x_old)
 - dfs
-- x
-- dfs
-- bound
-- can do
-- set !can do
-- condi (time > cell_height)
-- dfs_4_dir
+- curr_cell (l: 1. up down left right*; 2. x_new = dx + x_old)
+- l: interview (bound)
+- l: interview (avoid same)
+- l: interview (asc/desc flow (height))
+- l: offer (avoid same)
+- l: next cadidates (4 dir)
+- l: gen path: 1. dir; 2. inc num; 3. flip game, etc
+- start_func
+- l: 1. queen loop; 2. tar loop*
+- l: g_seen.clear === local_seen
+- ++time (l: tick for loop iteration; asc/desc flow (height)
 - motion:
 - case 1:
 - st: grid
