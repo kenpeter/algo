@@ -1994,6 +1994,27 @@
 - none of the calulation will work
 - because dist[start[0]][start[1]] = infinity
 - simple:
+- st: grid (l: info var along grid; start -> dist 0; !reach -> dist inf)
+- row/col (l: go down go right)
+- l: start -> dist 0; !reach -> dist inf
+- dir (l: 1. up down left right; 2. x_new = dx + x_old)
+- dfs
+- x
+- l: dfs has start point
+- dir loop (l: gen path: 1. dir; 2. num inc; 3. flip game; 4. etc)
+- l: x_new = dx + x_old
+- count = 0 (l: single dir keep moving)
+- in_single dir loop
+- l: future interview (bound)
+- l: future interview (block)
+- l: no seen, will revisit
+- l: single dir keep moving
+- l: steal move AND revert steal move
+- l: 1. can dfs; 2. !can dfs
+- l: eventually saturate
+- end_dfs
+- l: dfs has start pt
+- l: shortcut
 - motion:
 - same as above
 
