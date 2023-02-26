@@ -1963,17 +1963,7 @@
 - count (acc) + dist[this_dfs_start_row][this_dfs_start_col] >= dist[final_future_row][final_future_col], >=, there is no value to assign and travel again
 - as it is not min any more
 - simple:
-- st: grid (ob)
-- st: dist_2D_dp
-- lo_tr: count
-- dfs(init_cell)
-- 4_dir_loop (? 1 dir then all the way)
-- steal
-- op (? local_count++)
-- revert_steal
-- condi_dfs
-- - update_2D_dp
-- - dfs
+- see maze ii
 - motion:
 - st: grid
 - st: dist_2D
