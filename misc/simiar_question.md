@@ -1811,18 +1811,25 @@
 - why we cannot have let res = 0 -> ++res in 2D loop -> return res?
 - because there are repeated islands, that is why we need dir + up + down + left + right, then put into set.add
 - simple:
-- st: grid
-- st: g_seen
-- 2D loop (? flood-fill)
-- can_do
+- st: 2D grid (l: 2D grid === big g_seen)
+- l: go down / go right
+- shape_seen (l: portion grid has area + dir; seen_this_shape)
 - dfs
+- l: interview (bound)
+- l: 1. re nothing; 2. re overall (bit* or every); 3. re states
+- l: base case, has own default dir
 - x
-- dfs(init_dir) (? init_dir === o, so we know it starts)
-- bound
-- can_do
-- set !can do
-- dfs_4_dir; up, U; down, D; left, L; right, R
-- g_seen set
+- l: interview (avoid same; board updated)
+- l: base case, has own default dir
+- g[c_row][c_col] = 0 (l: offer, avoid same, board updated)
+- l: next candiate (4 dir)
+- l: each dfs level has own dir
+- return dir + 4_dir (l: 1. re nothing; 2. re overall....; curr_dir + 4_dfs_dir)
+- start_2D_loop
+- l: 2D loop update board state
+- if g[r][c] === 1 (l: 1. dfs; 2. !dfs)
+- l: each dfs has own dir
+- 
 - motion:
 - st: grid
 - st: g_seen (? unique island)
