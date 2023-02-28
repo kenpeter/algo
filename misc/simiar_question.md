@@ -1749,18 +1749,21 @@
 - startUrl === start vertex
 - htmlParser.getUrls(startUrl) === edges
 - simple:
-- st: g_seen
-- st: res.push url
-- tr: domain_name (? everything starts same domain)
-- travel (code)
-- dfs(start_url)
-- some_condi (? same domain?)
-- can_do (? seen)
-- set !can do
-- res.push url (? op)
-- get edges
-- loop edges
-- dfs()
+- st: g_seen (l: info var along travel; avoid same)
+- st: res = [] (l: info var along travel; store res)
+- st: start_url (l: interview (1. contain*; 2. flow; 3. etc)
+- l: https:// with double slash
+- dfs
+- l: interview; 1. contain*; 2. flow; 3. etc
+- dfs return (l: re nothing*; re overall(bit or every); 3. re states)
+- l: interview (g_seen)
+- dfs return ....
+- g_seen.add (l: offer; along; avoid same)
+- res.push (l: offer; along; store res)
+- edge_loop
+- l: gen path: 1. dir; 2. inc num; 3. edges*; 4. flip games, etc
+- start_func
+- l: dfs has start point
 - motion:
 - case 1:
 - a.com -> a.com/a (branch)
