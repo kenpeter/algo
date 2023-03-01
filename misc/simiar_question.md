@@ -1698,17 +1698,21 @@
 - why maxCol = 0 -> dfs -> res.push?
 - because after dfs, all things got updated, and we get result
 - simple:
-- 2D loop (flood-fill)
-- can_do (cell = 1)
-- lo_tr: max_row, max_col
+- l: go down / go right
+- maxRow, maxCol (l: 1. global track; 2. init track*; 3. each level track)
 - dfs
-- x
-- dfs
-- bound
-- can_do
-- set !can do
-- op (max_row, max_col)
-- dfs_4_dir
+- l: interview (bound)
+- bound return (l: 1. re nothing*; 2. re overall (bit or every); 3. re states
+- l: inteview (seen / board state updated)
+- g[r][c] = 0 (l: offer / board state updated)
+- maxRow = max(..) (l: 1. global track; 2. init track*; 3. each level track / rectangle)
+- l: next candiates (4 dir)
+- after_dfs
+- res = [] (l: 1. global track*; 2. init track; 3. each level track / rectangle)
+- in 2D loop, if g[r][c] === 1 (l: board state updated)
+- maxRow = 0 ... (l: 1. global track; 2. init track*...)
+- res.push (l: 1. global track .... / rectangle)
+- 
 - motion:
 - case 1:
 - st: grid (? obv)
