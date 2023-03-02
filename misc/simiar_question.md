@@ -1630,27 +1630,21 @@
 - 6. block after all check
 - 7. 4 dir
 - simple:
-- st: g1 and g2
-- tr: res (? #island)
-- remove_cross (code)
-- 2D loop (flood fill)
-- can_do (g1 has not, but g2 has)
+- l: go down, go right
 - dfs
-- 
-- dfs
-- bound
-- can_do
-- set !can do
-- op
-- dfs_4_dir
-- 
-- paint (code)
-- 2D loop
-- can_do
-- dfs
+- l: inteview (bound)
+- l: inteview (g_seen; avoid_invalid; board_state_update)
+- l: offer (update_board_state)
+- l: board === big g_seen
+- l: next candiate (4 dir)
+- after_dfs
+- l: b(g) === make task simpler
+- g2[r][c] === 1 && g1[r][c] === 0, dfs g2 (g2 sub of g1; clean up g1)
+- l: 2 ele: 1st ele to contain; 2. 1st ele extra; 3. 1st ele sub
 - x
-- dfs
-- see above
+- res = 0 (l: 1. global track*; 2. init track; 3. level track)
+- l: t(g) === b(g) make task simpler
+- in t(g), g[r][c] === 1, dfs (l: from single cell cascading to other cells until bound; count as whole)
 - motion:
 - case 1:
 - remove_cross (graph)
