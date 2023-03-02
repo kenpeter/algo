@@ -1563,26 +1563,25 @@
 - -1 because is like time - 1
 - we have a bit more
 - simple:
-- st: grid
-- st: r1
-- st: r2
-- tr: min
-- paint (code)
-- 2D loop (? flood-fill)
-- can_do (cell == 1)
-- dfs (? paint)
+- st: 2 separate islands
+- l: go down / go right
+- count = 0; (l: start cell cascading to others until bound; count as whole)
+- count = 0; (l: 2 separate islands)
+- r1 = []; r2 = []; (l: 1. global track*; 2. init track; 3. level track)
+- l: coordiate for lines
 - x
 - dfs
-- boundary (? obvious)
-- can_do (? cell === 1)
-- set !can do (? stop re-visit)
-- op_before_dfs (r1.push)
-- dfs_4_dir
-- x
-- cal (code)
-- 2D loop (? brute-force)
-- d_min = min VS |x2-x1| + |y2-y1| - 1
-- 
+- l: interview (bound)
+- l: dfs return (1. re nothing*; 2. re overall ...; 3. re states)
+- l: interview (avoid invalid)
+- l: offer (assign; avoid invalid)
+- if(count === 0) r1.push (l: start cell cascading to other until bount..)
+- l: next cadidate (4 dir)
+- 2D loop (l: preprocess, simpler)
+- another 2D loop (l: process, actual)
+- let min = inf (l: 1. global track*; 2. init track; 3. level track*)
+- in 2D loop cal dist (l: distance among 2 groups)
+- l: 1. 2D distance cal; 2. 1D distance cal
 - motion:
 - case 1:
 - st: grid (? obvious)
