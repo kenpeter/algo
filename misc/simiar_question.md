@@ -1486,36 +1486,34 @@
 - e.g. using i, j, k in the same scope, very easy to overwrite each other
 - so using curr_i, curr_j, curr_k
 - simple:
-- paint (code form)
-- data_st: grid
-- data_st: map (? label -> area)
-- var_tr: area (? each island)
-- var_tr: label (? each island)
-- var_tr: max (? max area)
-- 2D loop (? flood-fill)
-- can_do (? can_make_island)
-- dfs (? area, label)
-- set map (? label -> area)
-- reset (? area)
-- reset (? label)
-- 
-- dfs
-- check_bound (? obvious)
-- can_do (? can_make_island)
-- op_before_dfs (? ++area)
-- op_before_dfs (? assign label) 
-- dfs_4_dir
+- l: 1. up down left right*; 2. x_new = dx + x_old
+- max = 0 (l: 1. g_track*; 2. init track; 3. level track)
+- l: go down / go right
+- area = 0 (l: 1. g_track; 2. init track* (acc); 3. level track)
+- label = 2 (l: 1. g_track; 2. init track*; 3. level track)
+- mp = new Map (l: 1. g_track;, 2. init track* (label -> area); 3. level track)
+- paint_dfs_func
+- l: preprocess, simpler
+- l: interview (bound)
+- l: interview (hit ocean / other label)
+- ++area; g[r][c] = label (l: offer; 1. .. 2. init track* 3. ...)
+- l: next candiate (4 dir)
 - x
-- travel (code form)
-- 2D loop (? flood-fill)
-- can_do (? cel === 0, so 0 -> 1)
-- 4_dir_loop (? future move)
-- check_boundary
-- can_do (? has label)
-- !seen (check map)
-- set_seen (set map)
-- op (? area = area + m.get)
-- max (4_dir_loop end)
+- preprocess, simpler; 2D loop -> if(g[r][c] === 1) paint_dfs; (l: cell = 0 and 1 and 2,3,4..)
+- l: 1. 2D loop -> dfs*; 2. 2D loop -> op
+- after paint_dfs -> area, mp, label (l: this level dfs complete, clean up)
+- x
+- process, actual; (1. 2D loop -> dfs; 2. 2D loop -> op*
+- if g[r][c] == 0 -> connect (l: cell = 0, 4 dir label, etc)
+- 4_dir_loop (l: 1. up down left right; 2. x_new = dx +x_old)
+- l: interview (bound)
+- l: interview (avoid same)
+- l: interview (hit ocean)
+- l: offer (avoid same)
+- l: offer (cal area)
+- max (l: 1. g_track*; 2. ....)
+- end_func
+- l: 1. many separated islands; 2. some separated islands; 3. no separated islands
 - motion:
 - case 1:
 - [[1, 0], [0, 1]]
