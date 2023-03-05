@@ -1277,7 +1277,26 @@
 - why for edge we use set, not arr?
 - because edge can be repeated, arr allows repeated, we don't want repeated.
 - simple:
-- see below motion
+- l: graph node -> node or cycle
+- l: single person has many emails (name_hash)
+- l: 1. local_seen revisited; 2. g_seen !revisited*
+- x
+- in b(g)
+- loop accs, loop acc (l:preprocess, simpler; b(g))
+- name_hash[email] = name (l: single person has many emails)
+- l: graph init, easy push later
+- l: 1st ele -> rest, rest -> 1st ele*; 2. bi direction (cycle); 3. single direction; self connect (cycle)
+- x
+- dfs
+- seen.has(email) (l: 1. local_seen revisited; 2. g_seen !revisited)
+- return [] (l: 1. re nothing; re overall (bit* or every); re states)
+- loop edges (l: 1. dir; 2. inc num; 3. edges*; 4 flip_game, etc)
+- x
+- process, actual
+- res = [] (l: 1. g_track*; 2. init track; 3. level track)
+- for(email of graph) (l: process === 1. travel graph*; 2. loop 0->n)
+- email_arr = dfs(email) (l: dfs has start pt; 1. re nothing*; 2. re overall ...)
+- email_arr.sort, email_arr.unshift(person) (l: better looking, name first, then emails)
 - motion:
 - case 1:
 - 1. john, j_s@mail, j_n
