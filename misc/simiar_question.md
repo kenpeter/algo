@@ -1385,18 +1385,21 @@
 - 5. operations
 - 6. 4 dir
 - simple:
-- data_st: grid
-- local_var_track: area
-- global_var_check: max (area)
+- l: go down / go right
 - dfs
-- check bound (? obvious)
-- can_use (check g_cell_seen)
-- set g_cell_seen
-- before_dfs_op: ++area
-- dfs_4_dir
-- 2D outloop (? flood-fill)
-- can_use (check_g_cell_seen)
-- max, max(maxdfs)
+- l: interview (bound)
+- l: interview (avoid ocean)
+- l: offer (assign ocean)
+- l: offer (acc)
+- l: next candidate (4 dir)
+- max = 0 (l: g_track*; 2. init track; 3. level track)
+- area = 0 (l: g_track; 2. init track*; 3. level track)
+- l: 1. 2D -> dfs*; 2. 2D -> op
+- if(g[r][c] === 1) (l: start cell cascading)
+- within 2D loop, max, area = 0
+- l: 1. g_track* ...
+- l: 1. g_track; 2. init track* ..
+- 
 - motion:
 - case 1:
 - [[1, 1, 0], [0, 0, 1]]
