@@ -1342,19 +1342,15 @@
 - 6. operations
 - 7. 4 dir
 - simple:
-- st: grid
-- tr: res (# island)
-- 2D loop (? flood-fill)
-- can_do (? cell == 1)
+- l: go down / go right
 - dfs
-- ++res (? 1 island done)
-- x
-- dfs
-- bound
-- can_do
-- set !can do
-- op? (no op)
-- dfs_4_dir
+- l: interview (bound)
+- l: interview (hit ocean)
+- l: 1. re nothing*; 2. re overall ...
+- l: offer (avoid ocean)
+- l: next candiate (4 dir)
+- res = 0 (l: 1. g_track*; 2. init track; 3. level track)
+- if(g[r][c] === 1) -> dfs (l: start cell cascading)
 - motion:
 - case 1:
 - st: grid (? obvious)
