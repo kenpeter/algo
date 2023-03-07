@@ -1215,18 +1215,23 @@
 - why we need to have +1 here?
 - because the base dfs return 0, if no +1 here, we are not able to acc
 - simple:
-- data_struct_g_seen (? i_j for cell)
-- global_var_tack: max (? max_desc_path)
-- helper_func: dfs
-- check_boundary (? obvious)
-- check < prevItem (? desc)
-- check_cache (? everytime start from each cell, 2D)
-- dfs_4_dir_single_action
-- op_max: (? 4_dir compare max)
-- set_cache (? because dfs_4_dir done)
-- loop_2D_arr (? start from each cell)
-- op_max: (? each dfs compare max in 2D)
-- 
+- l: go down / go right
+- map (l: no g_seen / local_seen, as revisit; l: after all dfs this level, is outcome)
+- max = 0 (l: 1. g_track*; 2. init track; 3. level track)
+- x
+- dfs
+- dfs(param) (l: asc/desc flow; l: info var along dfs)
+- ind = c_i + c_j (l: use map, 2D -> 1D ind)
+- l: interview (bound); l: 1. re nothing; 2. re overall (bit or every*) ...
+- l: interview (asc/desc flow); l: 1. re nothing...
+- map.has (l: after all dfs this level, is outcome)
+- l: offer (l: re nothing; 2. re overall (bit / every / cache*)
+- l: next candidate (4 dir)
+- after all dfs
+- curr_max = 1 + ma(dfs1, dfs2...) (l: after all dfs this level, is outcome; l: this level contribute 1)
+- 2D loop
+- l: 1. 2D loop -> dfs*; 2. 2D loop -> op
+- max(max, dfs(curr_pt, inf) (l: asc/desc flow; l: info var along dfs)
 - motion:
 - case 1:
 - [[9, 4], [6, 1]]
