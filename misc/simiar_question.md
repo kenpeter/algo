@@ -1164,15 +1164,26 @@
 - because we are not acc.
 - if we don't ask why, then we blindly follow pattern
 - simple:
-- data_struct_map (? str -> result)
-- helper_func: dfs
-- str_loop (? find cal symbol)
-- left_portion (? bracket)
-- right_portion (? bracket)
-- cache or dfs (? standard)
-- cache or dfs (? standard)
-- 2D_loop_cal (? e1 vs e2)
-- single_ele_no_loop (? single ele before loop, just push)
+- mp = new Map (l: 1. label -> area; 2. str -> val; 3. key -> val)
+- x
+- dfs
+- res = [] (l: 1. g_track; 2. init_track; 3. level_track*)
+- if str == '+' || str == '-' || .. (l: a + b + c + d -> a dfs + (b+c+d) dfs -> (a+b) dfs + (c+d) dfs ...
+- left_res = []; right_res = [] (l: a+b+c+d -> a dfs + (b+c+d) dfs ....
+- if mp.has(left_str), re 
+- l: all dfs was returned, is outcome (cache)
+- l: bottom up easy operation
+- x
+- if mp.has(right_str) .....
+- l: all dfs was ...
+- l: bottom up ...
+- sum = 0 (l: 1. g_track; 2. init_track; 3. level_track*)
+- after all prev dfs (l: bottom up easy operation)
+- 2D left_res right_res loop (l: a+b+c+d -> a dfs + (b+c+d) dfs -> ...
+- if res.len == 0 (l: a arr + (b+c+d) nothing arr -> [a]; all dfs was return, is outcome (cache))
+- else (l: (a+b) arr + (c+d) arr -> arr; all dfs was return, is outcome (cache))
+- start_func
+- dfs has (1. start pt; 2. str; 3. arr, etc
 - motion:
 - original_string -> many_splits -> half_split -> original_string (repeated)
 - o_s -> m_s -> h_s -> o_s (repeated)
