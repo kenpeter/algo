@@ -1061,13 +1061,7 @@
 - because pass arr, we can get arr === leaf or branch
 - depth+1 is for next level, res = res + getInt() * depth
 - simple:
-- helper_func: dfs
-- local_track_var: local_sum (? because diff dfs_int_arr_action)
-- dfs_int_arr_loop
-- dfs_int_action: check condi init
-- dfs_arr_action: check condi arr
-- dfs_int_op: ele * depth
-- dfs_arr_op: dfs_arr_action (go deeper)
+- see weight sum ii
 - motion:
 - case 1:
 - [1, [4, [6]]; depth = 0 (? because started)
