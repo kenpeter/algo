@@ -1133,6 +1133,12 @@
 - l: 1. re nothing; 2. re overall (bit or every*); 3. re states
 - loop curr_arr
 - l: life has many paths
+- l: sub problem easier
+- if int else
+- l: life reach end, change
+- l: life keeps going
+- start_func
+- l: 1. dfs has start pt; 2. dfs has str; 3. dfs has arr* ..
 - motion:
 - dfs_init_arr_loop
 
