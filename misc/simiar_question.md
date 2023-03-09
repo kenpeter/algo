@@ -1118,6 +1118,7 @@
 - loop curr_arr
 - l: life has many paths
 - l: sub problem, eaiser
+- l: gen path: 1. dir; 2. edges; 3. arr; 4. inc num, etc
 - if int else dfs_get_max_depth
 - l: life reaches end, need change
 - l: life can keep going
@@ -1134,6 +1135,7 @@
 - loop curr_arr
 - l: life has many paths
 - l: sub problem easier
+- l: gen path: 1. dir; 2. edges; 3. arr; 4. inc num
 - if int else
 - l: life reach end, change
 - l: life keeps going
