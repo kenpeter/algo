@@ -1111,8 +1111,28 @@
 - why we don't do dfs(ele.getList(), depth + 1) * weight?
 - dfs(ele.getList(), depth+1) === all elements result (weight for single element), if all_elements_result * weight, nono
 - simple:
-- helper_func: get_max_depth
-- dfs_init_arr_loop
+- maxLen = -1 (l: 1. g_track*; 2. init_track; 3. level_track)
+- x
+- dfs_get_max_depth
+- param depth (l: info var along dfs)
+- loop curr_arr
+- l: life has many paths
+- l: sub problem, eaiser
+- if int else dfs_get_max_depth
+- l: life reaches end, need change
+- l: life can keep going
+- in_loop (l: remember the best moment)
+- end (l: 1. re nothing*; 2. re overall....)
+- x
+- depth = get_max_depth (l: find the best moment)
+- x
+- dfs to cal val
+- sum = 0;
+- l: 1. g_track; 2. init track; 3. level track*
+- l: 1. acc*; 2. max/min
+- l: 1. re nothing; 2. re overall (bit or every*); 3. re states
+- loop curr_arr
+- l: life has many paths
 - motion:
 - dfs_init_arr_loop
 
