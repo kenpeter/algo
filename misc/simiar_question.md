@@ -974,12 +974,24 @@
 - why line_arr.push pt_i, not first_pt?
 - because pt_arr we remove pt_i, line_arr, we inject pt_i
 - simple:
-- var_track_min
-- helper_func: slope
-- end_check: pts.len === 0, return
-- dfs_line_loop: line cover 1st pt
-- shorcut: pts.len === 1, return
-- dfs_pt_loop: 1st_pt and i point, form line
+- cal_func
+- 1. 1D dist (manhattan); 2. 2D dist (physical)*
+- if x2 == x1, slope == inf (l: life lies down easier)
+- x
+- dfs
+- base_case, pts.len == 0 (l: task done, reduce task)
+- l: list of task: 1. do 1st*; 2. do mid; 3. do last
+- lines can cover? (l: use existing power, can solve?)
+- l: 1. [p1, p2] (harder); 2. [p1, slope] (easier)*
+- if tmp_slope == slope, pts.slice(1) (l: task done, reduce task)
+- if pts.len == 1 (l: task done, reduce task; shortcut for 1pt)
+- min = inf 
+- l: before dfs: 1. min/max*; 2. acc
+- l: diff path to solve, result diff
+- l: 1. g_track; 2. init_track; 3. level track*
+- loop pts (l: existing power not enough, ask help)
+- l: gen path: 1. dir; 2. edges; 3. arr*; 4. inc num, etc
+- start_func (l: 1. pt; 2. str; 3. str, etc)
 - motion:
 - pt: [0, 2], [-2, -2], [1,4]
 - line: []
