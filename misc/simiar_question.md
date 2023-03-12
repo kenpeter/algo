@@ -922,14 +922,26 @@
 - because we put within girl loop, just return and skip many iterations
 - normally return true after girl loop
 - simple:
-- dfs_restart_girl_loop
-- can operate (? most obvious)
-- local_seen (? force others to select something else)
-- global_seen (? overall status, set global_seen)
-- set local_seen (? force others to select something else)
-- can_switch (? force others to select something else)
-- loop_then_dfs (? local_seen is fresh each time)
-- local_seen fresh each time (? force others to block in this dfs path)
+- l: go down / go right
+- l: local_mem and g_mem
+- l: 2D -> 1D dp arr; ind for one thing, val for another thing
+- x
+- dfs
+- loop girls (l: 2D ~= brute force)
+- l: interview (something valid?)
+- l: interview (in local mem?)
+- l: offer (g_mem not use, use it)
+- re directly (l: 1. re nothing; 2. re overall bit/every*; 3. states)
+- l: offer (g_mem use, remember in local mem)
+- l: offer (g_mem use, switch g_mem)
+- l: offer (switch done? need outcome)
+- end girl loop (l: try every, fail)
+- x
+- start boy loop
+- res = 0 (l: 1. g_track*; 2. init track; ...)
+- boy_loop
+- l: local_mem, g_mem
+- info var (l: when travel, belongings)
 - motion:
 - grid: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]]
 - local_seen: [f, f, f] (index === girl_ind, val === boy_true_false)
