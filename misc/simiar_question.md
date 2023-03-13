@@ -821,22 +821,23 @@
 - why we don't do global_seen.add(new_str), after !global_seen.has check?
 - because we follow natural flow, check on top of dfs
 - simple:
-- 1. data_struc_graph
-- build_graph_two_direction (? the question you can feel that it is 1 direction, but why build 2 directions? meaning same, can exchange)
-- build_graph_vertex_arr (init)
-- 2. data_struct_queue (init)
-- 3. data_struct_g_seen (init?)
-- check_queue
-- consume_queue
-- set g_seen: seen this sentense (? in graph)
-- sentence_to_words
-- word_loop
-- node !in graph
-- node in graph -> get vertexs
-- vertex loop
-- replace_word_form_sentense
-- check g_seen: seen this sentense (? in graph)
-- end_return_good_looking_res
+- l: graph: relationship to other or relationship to self
+- l: b(g)
+- word1 -> word2, word2 -> word1 (l: word can exchange)
+- const q = [str]
+- l: 1. dfs; 2. bfs*
+- l: queue must has something to process
+- g_seen (l: avoid same)
+- while (q.len > 0) (l: queue must has something to process)
+- q.shift() (l: queue must has something to process)
+- within_queue_loop
+- g_seen.has... (l: interview (avoid same))
+- arr = sentense.split (l: sentense contains words)
+- if(graph[w] === undef) (l: some vertex has edges; some vertex no edges)
+- l: gen paths: 1. dir; 2. edges*; 3. arr; 4. inc num, etc
+- in_edge_loop, arr[i] = e (l: can physicall replace, as prev stored in queue; word multi exchange)
+- l: 1. push queue; 2. condi push queue*; 3. no push queue
+- l: 1. dfs; 2. condi dfs*; 3. no dfs
 - motion:
 - case 1:
 - 2 cycles, 1 interception
