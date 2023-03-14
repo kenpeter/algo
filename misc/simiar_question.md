@@ -748,6 +748,17 @@
 - last_num = curr % 10 (l: 1. get left nums; 2. get last nums*)
 - prev = curr*10 + last-1 (l: left # and right # have relationship)
 - next = curr*10 + last+1 (l: left # and right # has relationship)
+- if last > 0 -> dfs (l: 1. dfs; 2. condi dfs*; 3. no dfs)
+- last = 0, prev = -1 (l: ele before bound, next cannot)
+- if last < 9 -> dfs (l: 1. dfs; 2. condi dfs*; 3. no dfs)
+- if last = 9, next = 10 (l: ele before bound, next cannot)
+- start_orig_func
+- res = [] (l: 1. g_track*; 2. init track; 3. level track)
+- lo === 0 -> res.push(0) (l: num cannot start with 0)
+- loop (i=1.. i<9..) 
+- l: num cannot start with 0
+- l: 1. start small cascading big*; 2. star big cascading small
+- re res.sort (l: better looking)
 - motion:
 - 0 -> prev = curr(0) * 10 + last(0 % 10) - 1 -> no good
 - 0 -> next = curr(0) * 10 + last(0 % 10) + 1 -> no good
