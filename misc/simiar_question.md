@@ -743,11 +743,11 @@
 - because i=0, handle by res.push(0)
 - we don't want zero, e.g. prev = curr(0)*10 + last_digit(0) - 1 --> -1
 - simple:
-- bound check (!end_check, as can con)
-- prev, curr, next combo (? 1 -> 10 or 12)
-- dfs_correct_last_digit_action
-- dfs_correct_last_digit_action
-- natural flow loop
+- dfs = func(...., curr) (l: travel with belongings)
+- if curr > hi re; curr >= lo (l: result must in bound)
+- last_num = curr % 10 (l: 1. get left nums; 2. get last nums*)
+- prev = curr*10 + last-1 (l: left # and right # have relationship)
+- next = curr*10 + last+1 (l: left # and right # has relationship)
 - motion:
 - 0 -> prev = curr(0) * 10 + last(0 % 10) - 1 -> no good
 - 0 -> next = curr(0) * 10 + last(0 % 10) + 1 -> no good
