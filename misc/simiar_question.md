@@ -690,12 +690,17 @@
 - 1. path.push -> dfs -> path.pop; single path
 - 2. path.slice(0) -> path1.push -> dfs; copy path
 - simple:
-- var_track: res.push (? push a{b,c}d -> abd and cd
-- helper_func: dfs
-- end_check: ind >= str.len
-- dfs_diff_char_loop
-- or dfs_single_char_action
-- end_sort: sort (? better looking)
+- res = []; (l: 1. g_track*; 2. init track; 3. level track)
+- x
+- dfs
+- base case (l: time (ind) all the way, hit end, highlight)
+- res.push path (l: time ..., hit end, hightlight)
+- life:
+- l: 1. either hit corss road (new decision = copy orig decision + curr decision)
+- l: 2. or straight road
+- start_dfs
+- dfs([], 0) (l: dfs start: 1. arr*; 2. pt; 3. ind*; 4. str, etc)
+- l: new deci = copy + curr deci
 - motion:
 - a{b,c}d -> a single path, {b,c} 2 paths, d single path
 
