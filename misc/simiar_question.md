@@ -644,24 +644,34 @@
 - if(r === m-1 && c === n-1) return res;
 - if we cannot return within queue_check, then nothing more we can do, return -1
 - simple:
-- data_struct_queue: queue (? because bfs)
-- date_struct_g_seen: global_seen 3D with k (? because 2D row col arr, extended)
-- init_data_struct: init queue (? because all data structure init)
-- 4_dir: 4 dir (? up, right, down, left)
-- check_queue: while loop q.len (? because queue check)
-- queue: for loop q.len (? real consume queue)
-- real_consume: q.shift(? because real consume, so no infinite loop)
-- end_check: end_cell_check (? because we have row and col)
-- queue_4_dir: queue loop -> 4_dir loop (? queue_check -> queue_loop -> 4_dir -> push_queue -> queue_check)
-- future: future_cell pattern (? because 4 dir move)
-- bound_check: check boundary (? obvious)
-- end_check: end_cell (? shortcut early return)
-- steal: use_next_k (? because if hit block, we can stil move)
-- check_steal: use_next_k
-- check_g_seen: check_global_seen (the_3D_arr)
-- set_g_seen: set_global_seen (? check_global_seen before; no set -> dfs -> unset pattern, because no share 1D arr buffer)
-- queue: push queue (? so while q.len run)
-- end_check: end_func, return -1 (? nothing can be done, re -1)
+- l: go down / go right
+- g_seen (3D) (l: 2D board, extend 1 extra D, hold stuff)
+- g_seen[0][0][0] ... (l: buy a machine, warm up)
+- q = [[0, 0, 0]] (l: buy a machine, warm up)
+- dir = [..] (l: 1. 4 dir*; 2. 8 dir)
+- res = 0 
+- l: 1. g_track* (step); 2. init track; 3. level track
+- l: bfs: own range (res) -> next range
+- l: dfs: own branch (res) -> next branch
+- while(q.len > 0) (l: queue: put into box, take out, process)
+- size = q.len (l: bfs: own range (res) -> next range)
+- loop (q.size), q.shift (l: queue: put into box, take out, process)
+- loop 4 dir (l: parallel universes, effect in 1 universe, no effect in other universes)
+- within_4_dir_loop, next_k = curr_k (l: parallel universes, effect in 1, no effect in others)
+- up, down, left, right (l: interview (outbound))
+- block, then use k (l: inteview (have diffculty, use help))
+- next_k = curr_k+1 (l: parallel universes, effect in 1, no effect in others)
+- g_seen[][][] (l: interview (seen)
+- l: during long travel, found treature, go home
+- l: offer (avoid same)
+- l: offer (push queue)
+- x
+- l: 1. dfs; 2. condi dfs; 3. no dfs
+- l: 1. queue*; 2. condi queue; 3. no queue
+- end own range queue loop, ++res
+- l: bfs: own range (res) -> next range
+- l: dfs: own branch (res) -> next branch
+- end_entire_queue, re -1 (l: try everything, fail)
 - motion:
 - case 1:
 - at start -> 4_dir, push right and down
