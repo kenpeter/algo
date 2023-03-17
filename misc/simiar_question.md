@@ -566,8 +566,17 @@
 - l: worker === row (func param), bike === col (func body loop)
 - l: future interview (avoid same)
 - g_seen[x] = true
-- l: occupy* -> this branch -> unoccupy -> next branch
-- l: g_seen (reset)
+- l: future offer, occupy* -> this branch -> unoccupy -> next branch
+- l: g_seen (reset) === local_seen (no reset)
+- x
+- dfs(dist.., worker+1)
+- l: next candidate (occupy -> this branch* -> unoccupy -> next branch)
+- l: acc dist until end
+- g_seen[x] = false (l: occupy -> this branch -> unoccupy* -> next branch)
+- start_func
+- dfs(0, 0)
+- l: dfs start: 1. pt*; 2. arr; 3. str, etc
+- l: overall greedy, no matter who 1st
 - motion:
 - case 1:
 - ele in arr, in each dfs, then repeat loop the other arr
