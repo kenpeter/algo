@@ -548,17 +548,26 @@
 - player 1 and player 2 switch ~= worker and bike swich
 - so dfs directly
 - simple:
-- g_var_track: min
-- g_seen: global_seen_bike_1D (? because woker as param in dfs, each time)
-- help_func: cal_manhattan_distance
-- end_check: shortcut return (? faster)
-- end_check: end return and good chance to compare min (? end, must op)
-- dfs_bike_loop: diff bike dfs action
-- check_g_seen: check_global_seen
-- set_g_seen: set_global_seen (? prev check_global_seen)
-- op: cal_manhattan_distance
-- dfs_bike_iteration: dfs
-- unset_g_seen: unset_global_seen (? pattern: set seen -> dfs -> unset_seen; why set -> dfs -> set? because only 1D, need to share if 2D, 3D, enough buffer, no need to share)
+- min = inf (l: 1. g_track*; 2. init track; 3. level track)
+- g_seen = arr[bike.len]
+- l: occupy -> this branch -> unoccupy -> next branch
+- l: worker === row (func param), bike === col (func body loop)
+- cal = func (l: 1. 1D dist*; 2. 2D dist)
+- dfs = func(tmp_dist...) (l: acc dist in travel, until end)
+- if tmp_dist >= min 
+- l: curr interview (waste effort)
+- within re (l: 1. re nothing*; 2. re overall ....)
+- x
+- if worker >= ws.len
+- l: curr interview (outbound)
+- l: acc dist in travel, until end
+- x
+- bike loop
+- l: worker === row (func param), bike === col (func body loop)
+- l: future interview (avoid same)
+- g_seen[x] = true
+- l: occupy* -> this branch -> unoccupy -> next branch
+- l: g_seen (reset)
 - motion:
 - case 1:
 - ele in arr, in each dfs, then repeat loop the other arr
