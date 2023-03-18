@@ -430,9 +430,18 @@
 - why dfs bottom return is more important dfs go down?
 - because for dfs, dfs bottom return is where all operation happening
 - simple:
-- end_check: push result
-- dfs_not_take_action
-- dfs_take_action
+- res = [] (l: 1. g_track*; 2. init_track; 3. level_track)
+- x
+- dfs
+- dfs param (l: travel buffer: prev* + buffer* + curr* + future)
+- dfs param (l: keep track position in travel)
+- base_case (l: life reaches end, need highlight)
+- dfs (take) (l: gen paths: 1. dir; 2. edges; 3. arr; 4. do/!do*)
+- dfs (!take) (l: gen paths: 1. dir; 2. edges; 3. arr; 4. do/!do*)
+- start_func
+- dfs(acc_str_'', 0_counter, 0+w_ind)
+- l: dfs start: 1. pt; 2. str*; 3. num*; 4. arr, etc)
+- l: travel buffer: prev* + buffer* + curr* + future
 - motion:
 - case 1:
 - !take or take
