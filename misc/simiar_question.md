@@ -381,11 +381,17 @@
 - because if next player false, loose, then it means we will win, can return
 - after the curr_state loop, we cannot beat next player, then we loose
 - simple:
-- dfs_flip_state_loop
-- check: ++ (? flip 2 chars)
-- op: new_state (? ++)
-- dfs_flip_state_iteration: condi = dfs (? dfs as abstract)
-- end
+- dfs
+- dfs_param (l: single var travel*; 2. var branch vars travel)
+- loop(i=0; i<len-1...), flip 2 chars (l: 1. do 1 thing*; 2. do multi things)
+- if + and + (l: 1. do 1 thing*; 2. do multi things)
+- str + '++' + str (l: 1. do 1 thing*; 2. do multi things) 
+- next_win = dfs(curr_state) (l: 1. single var travel*; 2. var branch vars travel)
+- if next_win (l: 1. single var travel*; 2. var branch vars travel)
+- end_dfs_loop (l: try every, fail)
+- start_func
+- l: try luck, shortcut
+- l: dfs start: 1. pt; 2. str*; 3. arr, etc
 - motion:
 - case 1:
 - flip ++ to --, each time in str
