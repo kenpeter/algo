@@ -198,16 +198,11 @@
 - because based on word pattern ii
 - why at the end of code, return true?
 - because if nothing fails, then must be true, all match
-- simple
-- shortcut_check
-- map set combo
-- pattern_loop: loop pattern (? pattern and str_portion)
-- check g_map_seen
-- 1. set
-- 2. !set
-- check !g_map_seen
-- 1. set
-- 2. !set
+- simple:
+- l: try luck, shortcut
+- pattern_loop
+- l: map, set -> map; map, !set -> !possible; !map, set -> else_map; !map, !set -> remember
+- end_pattern_loop (l: try everything fail, no way, re good)
 - motion:
 - case 1:
 - prev_match, later reuse prev_match
