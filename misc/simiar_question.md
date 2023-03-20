@@ -170,6 +170,7 @@
 - beause map.size will reduce
 - then map.size <= 1, means palindrome
 - simple:
+- l: side scrolling game, kill pair enemies, until single boss or no boss
 - motion:
 - case 1:
 - bbbaaa
