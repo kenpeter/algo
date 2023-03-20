@@ -285,23 +285,34 @@
 - 1. global_seen.add -> dfs -> global_seen.del
 - 2. global_seen.add -> condi = dfs -> global_seen.del
 - simple:
-- map set combo: .. (? lock key val relationship)
-- helper_func: dfs
-- end_check: return good
-- end_check: return false
-- end_check: return false
-- check g_map_seen: exist
-- check str_move_portion
-- dfs_str_move_portion_action
-- check g_map_seen: !exist
-- dfs_str_move_portion_loop
-- check g_seen (not g_map_seen, but g_seen)
-- set g_map_seen
-- set g_seen
-- dfs_str_move_portion_loop
-- unset g_map_seen
-- unset g_seen
-- end
+- const mp = new Map()
+- l: g_seen (reset) === local_seen (no reset)
+- l: map do key*, set do val
+- l: map: separate one thing from other
+- x
+- const set = Set() (l: map do key, set do val*)
+- x
+- dfs
+- base_case
+- l: kid and adult reach end ATST
+- l: kid reach 1st
+- l: adult reach 1st
+- curr_pat_char = pat[p_ind] (l: kid)
+- if map.has pattern (l: we have mem, maybe we can do something)
+- l: kid and adult reach end, ATM -> next section
+- l: kid or adult reach 1st -> entire waste
+- x
+- if !map.has pattern (l: we have no mem, brute_try)
+- in the_substr_loop (l: gen path: 1. dir; 2. edges; 3. arr; 4. do/!do; 5. brute_try*)
+- in the_sub .. (l: map do the key, set do the val)
+- mp.set
+- set.add
+- l: context this path
+- condi = dfs (l: travel with this context)
+- l: release this context, next branch new context
+- l: 1. re nothing; 2. re overall bit*/every; re 3.states)
+- end the_substr_loop (l: try every, fail)
+- start_func (l: dfs start: 1. pt*; 2. arr; 3. str; 4. etc
 - motion:
 - case 1:
 - prev_match, pattern re-appear
