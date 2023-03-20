@@ -287,7 +287,7 @@
 - simple:
 - const mp = new Map()
 - l: g_seen (reset) === local_seen (no reset)
-- l: map do key*, set do val
+- l: map, set -> map; map, !set -> !possible; !map, set -> else map; !map, !set -> remember it
 - l: map: separate one thing from other
 - x
 - const set = Set() (l: map do key, set do val*)
@@ -298,11 +298,11 @@
 - l: kid reach 1st
 - l: adult reach 1st
 - curr_pat_char = pat[p_ind] (l: kid)
-- if map.has pattern (l: we have mem, maybe we can do something)
+- if map (l: map, set -> map*; map, !set -> !possible*; !map, set -> else_map; !map, !set -> remember)
 - l: kid and adult reach end, ATM -> next section
 - l: kid or adult reach 1st -> entire waste
 - x
-- if !map.has pattern (l: we have no mem, brute_try)
+- if !map (l: map, set -> map; map, !set -> !possible; !map, set -> else_map*; !map, !set -> remember*)
 - in the_substr_loop (l: gen path: 1. dir; 2. edges; 3. arr; 4. do/!do; 5. brute_try*)
 - in the_sub .. (l: map do the key, set do the val)
 - mp.set
