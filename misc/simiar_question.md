@@ -153,6 +153,20 @@
 - why for i=curr; i <= dfs_n?
 - i <= dfs_n, because dfs_n is being consumed and eventually === 1
 - simple:
+- res = [] (l: 1. g_track*; 2. init track; 3. level track)
+- x
+- dfs
+- base_case (l: life reaches end, need highlight)
+- path.len > 1 -> store res (l: 1. store res; 2. condi store res*; 3. no store res)
+- base_case return (l: 1. re nothing*; 2. re overall bit/every; 3. re states
+- loop num <= full_num (l: whatever sub: 1. dir; 2. edges .... 5. mod/divide (full_num inc consume)
+- if dfs_n % i == 0 -> dfs (l: 1. dfs; 2. condi dfs; 3. no dfs)
+- l: whatever can sub: 1. dir; 2. edges; 3. arr; 4. do/!do; 5. full_num inc consume
+- path1 = paht.slice(0) (l: sub path === parallel universe)
+- go dfs (l: whatever sub: ...)
+- start_func
+- dfs([], n, 2) (l: 1. whatever sub: 1. dir; 2. edges; 3. ... 5. full_num inc consume)
+- res.sort (l: better looking)
 - motion:
 - case 1: 8
 - st: lo_path
