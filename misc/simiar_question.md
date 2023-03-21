@@ -130,6 +130,16 @@
 - why substring(start_ind, end_ind) become diff dfs path?
 - because they are diff possible, diff path
 - simple:
+- helper_func, isPal (l: two persons meet each other in the middle)
+- res = [] (l: 1. g_track*; 2. init track; 3. level track)
+- x
+- dfs(ind, path) (l: sub path === parallel universe)
+- base_case (l: life reaches end, highlight)
+- base_case re (l: 1. re nothing*; 2. re overall bit/every ...)
+- the_merge_char_loop (l: horizontal has many solutions (char merge), vertical has even more solutions (new_char_start)
+- isPal -> dfs (l: 1. dfs; 2. condi dfs*; 3. no dfs)
+- start_func
+- l: dfs start: 1. pt*; 2. str; 3. arr, etc
 - motion:
 - case 1:
 - aba
