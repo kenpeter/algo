@@ -89,6 +89,8 @@
 - why we use same_dfs_i?
 - because same num can be used to form sum
 - simple:
+- see combination ii
+- l: 1. pick start; 2. pick same*; 3. pick next
 - motion:
 - case 1:
 - [2, 3, 6, 7] (no repeated num, but repeated pick); tar = 7
