@@ -114,6 +114,22 @@
 - why in loop, if(i > ind && ns[i-1] === n[i]) continue, why i > ind is to use FIRST ELEMENT?
 - because i=ind, is to be used; later same ele skips
 - simple:
+- res = [] (l: 1. g_track*; 2. init track; 3. level track)
+- x
+- dfs(ind, path)
+- ind (l: in travel, we bring compass)
+- path (l: sub path === parallel universe)
+- if tmp_sum > tar -> return (l: far away from home, time to back home)
+- if tmp_sum === tar -> .. (l: far away from home, time back home)
+- res.push(path) (l: life reaches end, highlight)
+- return (l: 1. re nothing*; 2. re overall bit/every; 3. re states)
+- the dfs level loop
+- l: 1. pick start; 2. pick same; 3. pick next*
+- l: gen paths: 1. ... 2. ...; 3. ...; 4. horizontal ele merge -> vertical next ele; 5. horizontal 1 by 1 -> vertical next ele
+- if i > ind && a[i-1] == a[i] (l: parallel universe, someone starts the path and continue; if u take path, violate his universe)
+- start_func
+- l: preprocess: 1. b(g); 2. sort
+- start_func_dfs (l: dfs start: 1. pt*; 2. str; 3. arr*, etc)
 - motion:
 - case 1:
 - [1, 2, 2] (repeated num, but not repeat pick); tar = 3
