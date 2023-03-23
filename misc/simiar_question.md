@@ -9,6 +9,7 @@
 - because we formt the path in dfs loop
 - it is already formed, so no need to push ele in dfs base
 - simple:
+- see subset ii
 - motion:
 - case 1:
 - [1, 2]
@@ -22,6 +23,17 @@
 - https://leetcode.com/problems/subsets-ii/ (\*)
 - complex:
 - simple:
+- ns.sort (l: preprocess: 1. b(g); 2. sort*)
+- x
+- dfs param, ind (l: travel, bring compass)
+- base_case (l: life reaches end, highlight)
+- loop (i=ind; i<ns.len...) (l: gen paths: 1. dir; 2. edges; 3. .. 4. sequence arr (1. pick 1st; 2. pick same; 3. pick next*)
+- if ns[i-1] === ns[i] (l: this universe, someone starts (used[i] == true), continue; u start (ns[i-1] == ns[i]) violate)
+- p1.push(path)
+- res.push(p1)
+- l: 1. subset === portion of path*; 2. permutation === full path
+- start_func (l: dfs start: 1. pt*; 2. str; 3. arr*)
+- res.unshift([]) (l: 1. special case*; 2. shortcut)
 - motion:
 - case 1:
 - [1, 1]
