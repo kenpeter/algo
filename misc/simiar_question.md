@@ -43,6 +43,20 @@
 - why used[ind] = true -> dfs -> used[ind] = false?
 - because dfs in the middle
 - simple:
+- const res = [] (l: 1. g_track*....)
+- x
+- dfs
+- base_case (l: life reaches end, highlight)
+- sequnce arr loop (l: gen paths: 1. dir; 2. edges; 3. arr; 4. do/!do; 5. sequence arr (1. pick 1st*; 2. pick same; 3. pick next)
+- if used[i] === true
+- l: interview (avoid same)
+- l: travek, mark arrive
+- start_func
+- sort (l: preprocess: 1. b(g); 2. sort)
+- used = new Arr
+- l: travel, mark arrive
+- l: arr (reset) === arr (no reset)
+- l: dfs start: 1. pt; 2. str; 3. arr (path)*
 - motion:
 - case 1:
 - [0, 1]
