@@ -83,6 +83,30 @@
 - so we can form its own unique path
 - all prev same eles, are duplicated
 - simple:
+- top of func
+- l: preprocess: 1. b(g); 2. sort*
+- const res = [] (l: 1. g_track*; 2. init track; 3. level track)
+- const path = [];
+- l: arr (reset) === arr (no reset)
+- l: sub path === parallel universe
+- const used = arr(ns.len)
+- l: arr (reset) === arr (no reset)
+- l: sub path === parallel universe
+- l: travel, mark arrive
+- x
+- dfs
+- base_case (l: life reaches end, highlight)
+- return (l: 1. re nothing*....)
+- sequence arr
+- l: gen paths: 1. dir; 2. edges; 3. arr; 4. do/!do; 5. sequence arr* (1. pick 1st*; 2. pick same; 3. pick next)
+- if used[i] === true -> con
+- l: inteview (avoid same)
+- l: travel, mark arrive
+- used[i-1] === true && ns[i-1] === ns[i]
+- l: this universe, someone starts (used[i-1] == true) path, continue; u start (ns[i-1] === ns[i], violate his path)
+- l: mark -> travel -> !mark
+- start_func
+- dfs([]) (l: dfs start: 1. pt; 2. str; 3. arr*)
 - motion:
 - case 1:
 - [1, 1]
