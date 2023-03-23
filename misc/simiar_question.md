@@ -2994,20 +2994,18 @@
 - https://leetcode.com/problems/concatenated-words/
 - complex:
 - simple:
-- st: res: [] (l: each ele has a chance, may become result)
-- st: set (l: not all dfs paths suitable; bit to consume or self to consume)
-- dfs
+- const set = new Set (l: condi dfs)
 - x
 - dfs
-- dfs base (l: consume done, time to check dfs along vars)
-- l: ways to gen dfs paths: acc chars
-- l: ways to gen dfs paths: jug-water, edges, grid direction, etc
-- l: not all dfs paths suitable
-- condi = canCat(w.substring..) (l: dfs paths === our new hope)
-- condi === true, re true (l: 1. re nothing; 2. re overall* (re bit or re every*); 3. re states)
-- end_acc_chars_loop (l: try all, fail, gave up)
-- dfs -> loop (l: each ele has a chance)
-- dfs -> loop, dfs(ele) (l: consume this ele along the way)
+- base_case (l: interview (valid?))
+- l: next candidate
+- l: gen paths: 1. dir; 2. edges; 3. arr; 4. horizontal ele merge -> vertical next ele*
+- if set.has(tmp_w) -> dfs (l: 1. dfs; 2. condi dfs*; 3. no dfs)
+- dfs(new_word, num+1) (l: info var along: 1. compass; 2. energy level*)
+- condi = true -> re true (l: re nothing*; 2. re overall bit/every; 3. states)
+- end_char_loop -> re false (l: try every, fail)
+- start_func
+- loop word arr (l: form: 1. bottm up form; 2. top bottom form (easy)*)
 - motion:
 - case 1: 
 - [a, b, ab]
