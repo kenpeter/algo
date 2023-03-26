@@ -3208,17 +3208,16 @@
 
 - https://leetcode.com/problems/house-robber-iii/description/
 - simple:
-- st: none
-- [do, !do] = dfs(left) (l: at curr state, goes left, what will happen?)
-- ... = dfs(right) (l: at curr state, goes right, what will happen?)
-- l: dfs can represent (1) nothing (2) overall (3) some states
-- x
-- l: at curr state (do/!do), goes left (do/!do), goes right (do/!do), what will happen
-- dfs base return (l: life at the bottom, need to bounce back)
-- x
-- start func
-- dfs(root) (l: life starts at certain point, all the way down)
--
+- [lnr, lr] = dfs(node.left)
+- l: bureaucracy (1) VS best of normal people (4)
+- [rnr, rr] = dfs(node.right)
+- l: .......
+- below: 1. root + left + right (x); 2. ro + !l + r (x); 3. ro + l + !r (x); 4. ro + !l + !r (*); 5. !ro + l + r (*); 6. !ro + l + !r (*); 7. !ro + !l + r(*); 8. !ro + !l + !r (*); 
+- !base_case (l: bureaucracy (1) VS ...)
+- base_case (l: bur....)
+- start_func
+- l: dfs start 1. pt*; 2. str; 3. arr
+- re = dfs(...) (l: 1. re nothing; 2. re overall bit/every; 3. re state*)
 - motion:
 - case 1:
 - [1, 2, 3] -> root = 1, then 2, 3 are children
