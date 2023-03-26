@@ -3121,25 +3121,34 @@
 - https://leetcode.com/problems/network-delay-time/description/
 - complex:
 - simple:
-- st: graph (l: can travel or reach cycle)
-- st: dist: (l: each node reflects a dist, eventually, it is min dist; we can have multiple info layers; if a place can never reach, inf)
-- dist init (l: arr[0->n] or arr[1->n])
-- dist[k] (l: stand at start, dist = 0)
-- st: q = [] (l: travel graph use bfs or dfs, this use bfs)
-- b(g) (l: build graph, later travel)
-- l: vertex --(dist)--> edge
-- l: graph entry und, init, easier to push
-- x
-- l: q starts empty, push, ini
-- l: q.len -> q.shift -> q.push
-- l: graph: interviews -> offer -> next candidate
-- l: graph: vertex -> edges loop
-- l: curr_node_dist + travel VS future_node_dist -> bfs or not
-- l: curr_node_dist + travel VS future_node_dist -> update dist[curr] or not
-- l: q.len -> q.shift -> q.push
-- end_bfs
-- l: singal travel simulanteous, so max time cover all
-- max(...dist), if 1 is inf, can never reach
+- const graph = map() (l: node -> node; cycle)
+- dist = new Arr(len+1).fill(inf)
+- l: parallel universe store infos
+- l: human starts with 1; natural starts with 0
+- l: stand there 0; never reach inf
+- dist[0] = -1;
+- l: human starts with 1; antural starts with 0
+- dist[k] = 0 (l: stand there 0; never reach inf)
+- const q = []
+- l: 1. dfs; 2. queue*
+- l: water pipe needs water to run
+- l: preprocess: 1. b(g)*; 2. sort
+- v = t[i][0]
+- e = t[i][1]
+- d = t[i][2]
+- l: between 2 pts, there is distance
+- l: between 2 pts, there are infos
+- if graph[i] === undef, assign [] (l: everyone has school bag, I don't have, buy, store books)
+- q.push(k) (l: water pipe needs water to run)
+- while q.len > 0, q.shift() (l: water pipe needs water to run)
+- if graph[i] === und, con (l: in order to know end_node, must reach beyond)
+- edge loop (l: gen paths: 1. dir; 2. edges*...)
+- l: 1. dfs; 2. condi dfs*; 3. no dfs
+- prev_dist + dist < curr_dist (l: everyone can reach this pt, but few can reach higher)
+- dist[e] = dist[nodeInd] + tmp_dist (l: between 2 pts, there are infos)
+- start_fnc
+- max = max(...res)
+- l: everyone can reach this pt, but few can reach higher
 - motion:
 - case 1:
 - [[1_start, 2_end, 1_time], [2, 1, 1]] (cycle)
