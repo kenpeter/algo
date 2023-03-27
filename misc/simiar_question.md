@@ -3094,16 +3094,19 @@
 - https://leetcode.com/problems/water-and-jug-problem/description/
 - complex:
 - simple:
-- st: g_seen (l: we don't want to see the same candidate again)
-- st: max = j1+j2 (l: lower bound and upper bound)
-- dfs
+- global seen (l: !distinct ele, no remove; distinct ele, remove)
+- max = jug1 + jug2 (l: max === everyone's max capacity)
 - x
-- check bound, check seen, set_seen (l: interviews) -> target return true (l: offer) -> j1-, j2-, j1+, j2+ (l: next candidates)
-- l: human will do water diff
-- 
-- == tar, found, stop saving energy (l: 1. retrurn nothing; 2. return overal*; 3. return states)
-- l: 1. found, stop saving energy*; 2. return bit this dfs level
-- start_func, start_pt: water diff (l: human will do water diff)
+- dfs
+- if water > max (l: inteview (bound))
+- if water < ... (l: interview (bound))
+- g_seen.has (l: interview (avoid same))
+- l: offer (tar)
+- g_seen.add (l: offer (avoid same))
+- condi = dfs(|water-j1|) || dfs(|water+j1|) || ...
+- l: gen paths: 1. dir; 2. edges; 3. arr; ... 4. ele diff VS ele merge
+- start_func
+- re dfs(|j1-j2|) (l: 1. re nothing; 2. re overall bit/every*); 3. re states)
 - motion:
 - case 1:
 - j1 = 5, j2 = 3; target_water = 4
