@@ -2941,31 +2941,32 @@
 - https://leetcode.com/problems/where-will-the-ball-fall (\*)
 - complex:
 - simple:
-- st: arr_track (l: care only where balls end, 1D arr enough)
-- dfs
-- l: interview
-- left === -1; right === +1
-- |*/
-- \*|
-- \  */
-- \*  /
-- 
-- l: offer
-- \
--   *
-- OR
--   /
-- *
+- const res = new Array(len).fill(-1)
+- l: loop -> dfs === parallel universe
+- dfc = func(row, col)
+- l: travel with compass
+- l: interview (|*/, left stuck)
+- l: there are paths, blocked
+- if g[r][c] === -1 ....
+- l: 1. re nothing ...
+- l: stop the path ...
 - x
-- l: next candidates
-- \
--   *
-- OR
--   /
-- *
+- l: interview (\*|, right stuck)
+- l: there are paths, blocked
+- if g[r][c] === 1 && c === n-1 -> re -1
+- l: 1. re nothing; 2. re overall bit/every*; 3. re states
+- l: stop the path straight away
 - x
+- l: interview (\*/, mid stuck)
+- l: there are paths, blocked
+- x
+- after all difficult interviews, offer time -> team match (which choose)
+- x
+- l: next (after this level interivew -> next level interview)
+- l: gen paths: 1. dir; 2. edges; 3. arr... 4. natural flow*
+- l: there are paths, through
 - start_func
-- each cell has a chance to dfs
+- l: loop -> dfs === parallel universe
 - motion:
 - st: grid: [[1, 1], [-1, -1]] => [[\, \], [/, /]]
 - st: res: [i] (? each col)
