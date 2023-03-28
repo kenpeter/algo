@@ -3028,20 +3028,30 @@
 - https://leetcode.com/problems/find-if-path-exists-in-graph
 - complex:
 - simple:
-- st: graph (l: node -> node or cycle)
-- st: g_seen (l: we don't want to see the same candidate again)
-- st: start (l: where we start)
-- st: end (l: where we end)
-- b(g)
-- l: 1 direction or bi-direction
-- l: init first, later easy to push
+- g_seen = new Set()
+- l: 1. single start, this universe, no interference (add before dfs loop / !remove)*
+- l: 2. multi start, multi universes, interference (add after dfs loop / remove)
+- graph = new Set()
+- l: node -> node; cycle
+- b(g) loop
+- l: preprocess: 1. b(g)*; 2. sort
+- if graph[v] == undef -> con
+- l: everyone has a school bag, I don't have, buy, put books into bag
+- x
 - dfs
-- l: hard interviews
-- l: offer (l: 1. re nothing; 2. re overall* (re bit or re everything*); 3. re states)
-- l: next candidate
-- in edges loop; (l: 1. re nothing 2. re overall* (re bit or re every*) 3. re states)
-- end edges loop (l: try everything, gave up)
-- end dfs (l: dfs start at 1 point)
+- if lo_start === tar (l: offer (tar))
+- if g_seen.has -> re false
+- l: interview (avoid same)
+- l: 1. re nothing; 2. re overall bit/every*; 3. re states
+- l: each section success === overall success
+- g_seen.add (l: offer (avoid same))
+- edge_loop
+- l: gen paths: 1. dir; 2. edges*; 3. arr;. 4. ele dff VS ele merge
+- l: each section success
+- after edge_loop
+- l: try every, fail
+- start_func
+- l: dfs has start: 1. pt*; 2. str; 3. arr
 - motion:
 - case: [[0, 1], [0, 2], [1, 2]] (each vertex connects each other)
 - st: graph: {}
