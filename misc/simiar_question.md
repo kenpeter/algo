@@ -3055,16 +3055,21 @@
 - https://leetcode.com/problems/keys-and-rooms
 - complex:
 - simple:
-- st: 2D [[1], [2], [3], []] (l: ind = where we start; vals = where we end)
-- st: 1D [1, 2, 2] (l: ind = child; val = parent; employee and manager)
-- dfs
+- g_seen = new Set()
+- l: single start, single universe, no interference, just forward (add before dfs loop / no remove)
+- l: multi start, multi universes, interference, need care (add after dfs loop / remove)
 - x
 - dfs
-- l: interviews
-- l: offer
-- l: other candiates
-- l: 1. re nothing*; 2. re overall; 3. re states
-- dfs(0) (l: dfs has a start point; 0 + rest rooms === seen so far === rooms.len)
+- l: interview (avoid same)
+- l: 1. re nothing*; 2. re overall bit/every; 3. re states;
+- g_seen.add (l: offer (avoid same))
+- edge_loop (l: gen paths: 1. dir; 2. edges*; 3. arr; 4. ...) 
+- start_func
+- dfs(0)
+- l: dfs start: 1. pt*; 2. str; 3. arr; etc
+- no need build b(g)
+- l: between groups, there are paths, can travel
+- l: can travel all eles in group, then exhaust
 - motion:
 - case 1:
 - [[0, 1], [0, 1, 2], [2], [3]]
