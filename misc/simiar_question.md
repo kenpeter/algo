@@ -2786,15 +2786,23 @@
 - why we don't have local_seen here, only global_seen?
 - because only course_scheduler (leetcode), ask to detect cycle; this does not ask to detect cycle
 - simple:
-- l: graph === 2D arr, when vertex === arr_ind, push ele === push edges
+- graph = new Array(n).fill(() => {return []})
+- l: between 2 levels, there is hieracy -> 2D graph
 - b(g)
-- l: 1. avoid cycle in b(g); 2. avoid cycle in t(g)
-- t(g)
-- l: dfs has start point
-- track_var in edge loop (l: 1. max/min*; 2. acc)
-- l: prev_state + curr_state + future_dfs_state
-- start_func (l: dfs has start point)
+- l: preprocess: 1. b(g)*; 2. sort
+- if headID == i, con (l: 1. solve before problem arising*; 2. solve the problem during)
+- graph[manager_id].push (l: between 2 levels, there is hierachy)
 - x
+- dfs_param (l: 1. single point to single point; 2. single point to branches*)
+- submax = 0 (l: before loop: 1. min/max*; 2. acc)
+- edge_loop (l: each path eventually finish, compare each)
+- submax = max(submax, dfs(i))
+- l: 1. re nothing; 2. re overall bit/every*; 3. states
+- l: each path eventually finish, compare each
+- at_of_dfs_func, return arr[curr] + submax
+- l: curr node represents this level result; other sub path represents sub level result; together they form full path result
+- start_dfs_func
+- l: dfs start: 1. pt*; 2. str; 3. arr, etc
 - motion:
 - case 1:
 - st: manager <-> employee, [2, 2, -1, 2, 2, 2]
