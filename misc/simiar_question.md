@@ -2710,22 +2710,29 @@
 - so at least we finish this edge loop iterations
 - then we have ++acc; acc = acc + dfs(edge_index), this level + its sub_level
 - simple:
-- st: local_seen (l: dfs -> loop; each ele has a chance to dfs)
-- st: graph (l: cycle or node -> node)
+- l: graph: node -> node; cycle
 - b(g)
-- l: 1. avoid cycle in b(g); 2. do useful in b(g); 3. avoid cycle in t(g)
-- init graph, easier later push
-- dfs
+- l: preprocess: 1. b(g)*; 2. sort
+- 2D loop, a^2+b^2=c^2, form node relationship
+- l: between 2 ele, there is relationship -> form graph
+- if graph[ind] == undef, init
+- l: everyone has school bag, I don't have, buy, put books
 - x
-- local_seen? return 0 (l: interview; cannot denote anything)
-- l: offer
-- before_edge_loop (l: 1. max/min; 2. acc*)
-- in_edge_loop (l: 1.max/min; 2. acc*)
-- end_edge_loop (l: can denote self)
-- start_func
-- new Set() (l: each ele has a chance to dfs)
-- max = max(max, dfs) (l: each ele .....)
-- l: 1. re nothing; 2. re overall (re bit* or re everything); 3. re states
+- dfs
+- dfs_param, curr_ind (l: travel with compass)
+- seen.has(curr_ind) re 0
+- l: interview (avoid same)
+- l: 1. re nothing; 2. re overall bit/every*; re states
+- l: base_case contributes nothing
+- seen.add (l: offer (avoid same))
+- before dfs loop, acc = 0;
+- l: 1. min/max; 2. acc*
+- l: parallel universes, acc paths, there is max
+- edge loop
+- l: gen paths: 1. dir; 2. edges; 3. arr; 4. ele diff VS ele merge
+- after edge loop, ++acc (l: this node represents, this level result; sub paths represents sub level results)
+- loop -> dfs
+- l: use arr order travel === use graph order travel
 - motion:
 - case 1:
 - [[1, 1, 1], [3, 3, 5]] (2 bomobs)
