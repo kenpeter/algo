@@ -2902,23 +2902,36 @@
 - because need to clean this cell, then move to next dfs;
 - if no clear, we cannot move to next cell
 - simple:
-- row (l: cell position)
-- col (l: cell position)
-- l: sun light direction (4 dir or 8 dir)
-- l: dfs has a start point
-- dfs
+- dir = [[-1, 0], [-1, 1], ....]
+- l: 4 dir, 8 dir, any direction
+- dfs = func(row, col)
+- l: travel with compass
+- within_dfs
+- let mineNum = 0
+- l: 1. direct dfs path go; 2. hold dfs paths, decision after sub level done*
+- const path = []
+- l: 1. direct dfs path go; 2. hold dfs paths, decision after sub level done*
+- dfs_loop
+- l: 1. dir*; 2. edges; 3. arr, etc....
+- l: future interview (bound)
+- if board[r][c] === 'M' -> ++mineNum;
+- l: 1. direct dfs path go; 2. hold dfs paths, decision after sub level done*
+- if board[r][c] === 'M' -> dfs
+- l: 1. direct dfs path go; 2. hold dfs paths, decision after sub level done*
+- after dir loop
+- if we have mine -> update board
+- l: 1. direct dfs path go; 2. hold dfs paths, decision after sub level done*
+- l: when travel, area keeps explored
+- else no mine -> dfs
+- l: 1. direct dfs path go....
+- l: when travel, area keeps explored
 - x
-- dfs
-- l: interviews (curr interview or future interview*)
-- l: go through loop, track var updated (mine #)
-- l: diff ways to gen dfs path: dir gen (straight dfs or acc dfs*)
-- 8 dir loop (l: diff way gen dfs path: dir gen)
-- check bound (l: interview: curr or future*)
-- l: go through loop, track var updated (mine #)
-- l: diff ways to gen dfs path: dir gen (straight dfs or acc dfs*)
-- end_dir_loop (l: update curr state, next can work; l: diff ways to gen dfs path: dir gen (arr to store))
-- end_dfs_func (l: cell (unopen/open/unexplode/explode/digit))
-- start_func (l: shortcut early return)
+- start_func
+- l: unopen: no one clicks it (no click)
+- l: open: someone clicks it (click)
+- l: digit: nearby there is mine (click)
+- l: unexploded_mine: mine is hidden (no click)
+- l: exploded_mine: someone clicks ift (click, game over)
 - motion:
 - case 1:
 - [[E, E], [E, E]], all empty
