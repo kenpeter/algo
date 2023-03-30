@@ -2598,30 +2598,38 @@
 - why we don't use local_seen in critical_net_work_node (leetcode) and denote_max_bomb (leet_code)?
 - because this quesion is to detect cycle; then local_seen is a good way to detect cycle
 - simple:
-- st: graph (l: node -> node or cycle)
-- st: g_seen_arr (l: info var along each node; init condi)
-- st: g_rank_arr (l: info var along each node, init num)
-- st: res (l: [{curr_node, parent_node}]
+- l: graph: node -> node; cycle
+- g_seen = new Array
+- l: 1. single start, this universe ...; 2. multi start, multi universes, interference (add after / !remove)
+- l: this node has many attr
+- rankAtNode = new Array
+- l: this node has many attr
+- const res = []; res.push([future_ind, curr_ind])
+- l: 1. min/max; 2. acc*
+- l: between 2 ele, form graph
 - b(g)
-- l: bi-direction
-- l: graph init, later easy push
-- before_dfs, rank = 0 (l: rank = 0 among start of network)
-- l: interview -> local_seen
-- l: interview -> g_seen
-- l: offer -> ++rank
-- ++rank (l: a global var, dfs will update it, so save it for this dfs level)
-- l: avoid see same candidate (local)
-- l: avoid see same candidate (global)
-- in edge loop,
-- l: 1. curr interivews; 2. future interviews; 3. curr + future interviews
-- l: seen + 3 ways connect: parent_node* -> curr_node* -> future_node*; parent_node === future_node -> dup
-- l: use best future node, to update curr node
-- l: curr node rank < future node rank -> curr node on top -> critical
-- end_edge_loop
-- fresh -> local_seen.add -> dfs_loop -> local_seen.rm (l: just commit later revert)
-- dfs_loop -> g_seen.add (l: wait for ready to commit)
+- l: preprocess: 1. b(g); 2. sort*
+- l: 1 way travel; 2. 2 way travel*
+- x
+- dfs_param 
+- l: travel, mark posi (1. curr; 2. parent, curr; 3. curr, future; 4. parent, curr, future)
+- if g_seen.has (l: interview (avoid same))
+- if local_seen.has (l: intervew (avoid same))
+- ++rank (l: offer (travel mark posi))
+- curr_rank = rank (l: global var update by diff universes, make a copy)
+- rankAtNode[curr] = curr_rank (l: this node has many attr)
+- local_seen.add before edge loop
+- (l: 1. single start..... 2. multi start*)
+- edge loop -> dfs
+- if edge_ind === parent_ind (l: travel mark posi (1. curr; 2. curr, future; 3. parent, curr; 4. parent, curr, future)
+- after single dfs -> update rank and res.push
+- l: 1. after all dfs, there is result; 2. after this dfs, there is result*
+- after edge loop, g_seen[ind] = true
+- l: 1. single start, this universe.. (add before / remove); 2. multi start, multi universe .. (add after / !remove)
 - start_func
-- loop -> dfs (l: each node as start, update entire network, eventually no more update)
+- loop -> dfs
+- l: arr order travel === graph order travel
+- 
 - motion:
 - case 1:
 - [0, 1], [0, 2]
