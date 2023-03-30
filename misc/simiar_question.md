@@ -2530,21 +2530,38 @@
 - because it is global_seen.del === global, it needs to persistent
 - local_seen.del can be done
 - simple:
-- st: graph (l: node -> node or cycle)
-- st: g_seen (l: 1. see node in order, after dfs loop; 2. everything good, then commit)
-- st: local_see (l: commit then revert)
+- const g_seen = new Set();
+- l: g_seen: multi universes (avoid program broken)
+- l: g_seen: 1. res store top down; 2. res store bottom up (subject goes down)
+- l: local_seen: single universe (avoid loop)
+- l: local_seen: csv lock (lock)
+- const graph = {}
+- l: node -> node; cycle
 - b(g)
-- l: init graph, easy push later
+- l: preprocess: 1. b(g)*; 2. sort
+- l: everyone has school bag ....
+- x
 - dfs
-- l: interviews
-- l: offer; 
-- local_seen.add (l: commit then revert)
-- in_edge_loop (l: 1. re nothing; 2. re overall* (bit or every); 3. re states)
-- after_edge_loop (l: 1. see node in order after dfs loop; 2. everything good then commit)
-- after_edge_loop (l: try every, no cycle, re good)
-- start_func (l: no start pt, loop -> dfs)
-- start_func (l: 1. re nothing; 2. re overall....)
-- end_func (l: try every, no issue, re good)
+- if local_seen.has -> return true (cycle)
+- l: local_seen: single universe (avoid loop)
+- l: local_seen: csv lock (lock)
+- l: 1. re nothing*; 2. re overall bit/every*; 3. re states
+- return cycle true (l: one vote fail)
+- if g_seen.has ...
+- l: g_seen: multi universes (...)
+- l: g_seen: 1. res store ...
+- edge_loop
+- l: gen paths: ....
+- end_edge_loop
+- local_seen.delete(curr_ind)
+- l: local_seen: single universe (avoid loop)
+- l: local_seen: csv lock (release)
+- g_seen.add(..)
+- l: g_seen: multi universes (stop program broken)
+- l: g_seen: 1. res store top down; 2. res store bottom up* (subject goes down)
+- start_func
+- loop -> dfs (l: arr order === graph order)
+- l: re nothing; 2. re overall state bit/every* (one vote fail); 3. re states
 - motion:
 - please have a look at course schedule i
 - case 1:
