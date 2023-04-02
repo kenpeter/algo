@@ -2346,6 +2346,25 @@
 - l: orig board has var ...
 - l: 1. 1D seen; 2. 2D ..
 - l: 2 g_seen corss over ...
+- x
+- dfs
+- dfs_param
+- l: 1. asc/desc*; 2. states; 3....
+- l: info var keeps updating
+- l: interview (bound)
+- l: interview (avoid same)
+- l: interview (asc/desc)
+- l: offer (avoid same)
+- l: next level (4 dir)
+- preprocess
+- l: preprocess: 1. b(g); 2. sort; 3. modify board*
+- left (top -> bottom), right (top -> bottom) (l: travel edge)
+- x
+- l: preprocess: 1.....
+- top (left -> right), bottom (left -> right) ...
+- process
+- l: procress: 1. t(g); 2. travel arr*
+- l: 2D seen cross over -> connect -> flow each other
 - motion:
 - case 1
 - [[3, 5], [4, 4]]
