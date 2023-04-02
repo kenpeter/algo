@@ -1431,23 +1431,41 @@
 - why we need to have +1 here?
 - because the base dfs return 0, if no +1 here, we are not able to acc
 - simple:
-- l: go down / go right
-- map (l: no g_seen / local_seen, as revisit; l: after all dfs this level, is outcome)
-- max = 0 (l: 1. g_track*; 2. init track; 3. level track)
+- mp = new Map()
+- l: each cell has attrs
+- l: after travel, key -> val (updated)
+- max = 0;
+- l: 1. min/max*; 2. acc
+- l: after travel, global var updated
 - x
-- dfs
-- dfs(param) (l: asc/desc flow; l: info var along dfs)
-- ind = c_i + c_j (l: use map, 2D -> 1D ind)
-- l: interview (bound); l: 1. re nothing; 2. re overall (bit or every*) ...
-- l: interview (asc/desc flow); l: 1. re nothing...
-- map.has (l: after all dfs this level, is outcome)
-- l: offer (l: re nothing; 2. re overall (bit / every / cache*)
-- l: next candidate (4 dir)
-- after all dfs
-- curr_max = 1 + ma(dfs1, dfs2...) (l: after all dfs this level, is outcome; l: this level contribute 1)
-- 2D loop
-- l: 1. 2D loop -> dfs*; 2. 2D loop -> op
-- max(max, dfs(curr_pt, inf) (l: asc/desc flow; l: info var along dfs)
+- dfs_param
+- l: 1. asc/desc*; 2. state*; 3. arr
+- ind = curr_row + '_' + curr_col
+- l: 2D -> 1D ind
+- l: map uses 1D ind
+- x
+- l: interview (bound)
+- l: 1. re nothing; 2. re overall bit/every*; 3. re states
+- l: contrib nothing
+- x
+- l: interview (asc/desc)
+- l: 1. re nothing; ...
+- l: contrib nothing
+- if mp.has(curr_ind) re cache
+- l: after all future paths return === final outcome
+- l: 1. re nothing ...
+- l: next level (4 dir)
+- after_all_dfs_paths
+- l: after all future paths return === final outcome (good time set cache)
+- re curr_max
+- l: 1. re nothing; 2. ....*
+- l: contriute something
+- x
+- start_func
+- 2D loop -> dfs
+- l: travel ways: 1. N_D loop -> dfs*; 2. direct dfs
+- max = max(max, dfs(...))
+- l: after travel, global var updated
 - motion:
 - case 1:
 - [[9, 4], [6, 1]]
