@@ -1369,26 +1369,54 @@
 - because we are not acc.
 - if we don't ask why, then we blindly follow pattern
 - simple:
-- mp = new Map (l: 1. label -> area; 2. str -> val; 3. key -> val)
+- mp = new Map()
+- l: 1. label -> area; 2. str -> num*; 3. pattern1 -> pattern2
+- l: 2 relationships
 - x
-- dfs
-- res = [] (l: 1. g_track; 2. init_track; 3. level_track*)
-- if str == '+' || str == '-' || .. (l: a + b + c + d -> a dfs + (b+c+d) dfs -> (a+b) dfs + (c+d) dfs ...
-- left_res = []; right_res = [] (l: a+b+c+d -> a dfs + (b+c+d) dfs ....
-- if mp.has(left_str), re 
-- l: all dfs was returned, is outcome (cache)
-- l: bottom up easy operation
+- dfs_param
+- l: dfs param: 1. posi; 2. state; 3. str*
+- l: this level, sub problems; all levels, whole problems
+- within_dfs
+- const res = []
+- l: 1. g_track; 2. init track; 3. level track*
+- l: 1. max/min; 2. acc*
+- l: this level, sub problems; all levels, whole problems
+- l: individual str -> single num to []; multi str -> single num to []
 - x
-- if mp.has(right_str) .....
-- l: all dfs was ...
-- l: bottom up ...
-- sum = 0 (l: 1. g_track; 2. init_track; 3. level_track*)
-- after all prev dfs (l: bottom up easy operation)
-- 2D left_res right_res loop (l: a+b+c+d -> a dfs + (b+c+d) dfs -> ...
-- if res.len == 0 (l: a arr + (b+c+d) nothing arr -> [a]; all dfs was return, is outcome (cache))
-- else (l: (a+b) arr + (c+d) arr -> arr; all dfs was return, is outcome (cache))
+- scan str loop
+- l: a+b+c -> (a) + (b+c) -> (a+b) + (c)..
+- l: gen paths: 1. dir; 2. edges; 3. arr; 4. ele merge VS ele diff*
+- if cs[i] === '+' || cs[i] === '-' -> left_str and right_str -> dfs
+- l: 1. dfs; 2. condi dfs*; 3. no dfs
+- l: some paths through; some paths blocked
+- x
+- left_res = []
+- right_res = []
+- l: a+b+c -> (a) + (b+c) -> (a+b) + (c)
+- l: gen paths: 1. dir; 2. edges; 3. arr; 4. ele merge VS ele diff*
+- x
+- if mp.get(left_str) -> re cache else dfs
+- l: offer (cache)
+- l: after all future paths === final outcome -> good time cache
+- l: or next level
+- x
+- if mp.get(right_str) ....
+- l: offer ...
+- l: after all future paths === .....
+- l: or next level
+- x
+- l: after all future paths === final outcome -> good time cache
+- l: 2 arr -> 2D loop brute force
+- end 2D loop
+- if res.len == 0 -> this num -> cache
+- l: individual str -> single num to []; multi str -> single num to [];
+- l: after all future paths === final outcome -> good time cache
+- else -> multi num -> cache
+- l: individual str .....
+- l: after all future paths .....
 - start_func
-- dfs has (1. start pt; 2. str; 3. arr, etc
+- l: dfs start: 1. posi; 2. str*; 3. arr
+- l: this level, sub problems; all levels, whole problem
 - motion:
 - original_string -> many_splits -> half_split -> original_string (repeated)
 - o_s -> m_s -> h_s -> o_s (repeated)
