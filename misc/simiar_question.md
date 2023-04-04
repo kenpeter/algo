@@ -1288,36 +1288,35 @@
 - why we don't do dfs(ele.getList(), depth + 1) * weight?
 - dfs(ele.getList(), depth+1) === all elements result (weight for single element), if all_elements_result * weight, nono
 - simple:
-- maxLen = -1 (l: 1. g_track*; 2. init_track; 3. level_track)
+- maxDepth = -1
+- l: 1. g_track*; 2. init_track; 3. level track;
+- l: 1. min/max (max depth)*; 2. acc
+- l: each travel, var can update
 - x
-- dfs_get_max_depth
-- param depth (l: info var along dfs)
-- loop curr_arr
-- l: life has many paths
-- l: sub problem, eaiser
-- l: gen path: 1. dir; 2. edges; 3. arr; 4. inc num, etc
-- if int else dfs_get_max_depth
-- l: life reaches end, need change
-- l: life can keep going
-- in_loop (l: remember the best moment)
-- end (l: 1. re nothing*; 2. re overall....)
+- dfs_param
+- l: dfs param (preproecess / get_depth): 1. posi; 2. str; 3. arr*; 4. asc/desc*
+- loop curr_arr.len
+- l: gen paths: 1. dir; 2. edges; 3. arr*; 4. ele merge VS ele diff
+- if integer -> nothing; else -> dfs
+- l: some paths through; some path blocked
+- l: some paths through; some path blocked
+- maxDepth = max(maxDepth, dfs(curr_arr, maxDepth+1))
+- l: 1. g_track*; 2. init track; 3. level track;
+- l: 1. min/max(max depth); 2. acc
+- l: each travel, var can update
 - x
-- depth = get_max_depth (l: find the best moment)
-- x
-- dfs to cal val
-- sum = 0;
-- l: 1. g_track; 2. init track; 3. level track*
-- l: 1. acc*; 2. max/min
-- l: 1. re nothing; 2. re overall (bit or every*); 3. re states
-- loop curr_arr
-- l: life has many paths
-- l: sub problem easier
-- l: gen path: 1. dir; 2. edges; 3. arr; 4. inc num
-- if int else
-- l: life reach end, change
-- l: life keeps going
+- l: dfs param (process): 1. posi; 2. str; 3. arr*; 4. asc/desc*
+- within_dfs
+- l: 1. g_track; 2. ini track; 3. level track*
+- l: 1. min/max; 2. acc* (all paths)
+- l: each travel, var can update
+- loop curr_arr.len
+- l: gen path: 1. dir; 2. edges; 3. arr*; 4. ele merge VS ele diff
+- if int -> no dfs; else -> dfs
+- l: some paths through; some paths blocked
 - start_func
-- l: 1. dfs has start pt; 2. dfs has str; 3. dfs has arr* ..
+- l: dfs start: 1. pt; 2. str; 3. arr*; 4. asc/desc*
+- l: travel arr 
 - motion:
 - dfs_init_arr_loop
 
