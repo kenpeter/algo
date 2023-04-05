@@ -1244,7 +1244,22 @@
 - because pass arr, we can get arr === leaf or branch
 - depth+1 is for next level, res = res + getInt() * depth
 - simple:
-- see weight sum ii
+- dfs_param
+- l: dfs start: 1. pt; 2. str; 3. arr*; 4. asc/desc*
+- sub arr (l: solve sub problem -> whole problem solved)
+- l: arr === arr to travel; depth === arr to travel
+- let local_sum = 0;
+- l: 1. min/max; 2. acc*
+- l: travel, var get updated
+- arr_loop
+- l: gen paths: 1. dir; 2. edges; 3. arr*; 4. ele merge VS ele diff
+- if int -> acc (l: some paths through; some paths blocked)
+- else -> dfs (l: some paths through; some paths blocked; solve sub problem -> whole problem solved)
+- start_func
+- re dfs(arr, 1)
+- l: dfs start: 1. pt; 2. str; 3. arr*; 4. asc/desc
+- sub arr (l: solve sub problem -> whole plroblem solved)
+- l: arr === arr to travel; depth === arr to travel
 - motion:
 - case 1:
 - [1, [4, [6]]; depth = 0 (? because started)
