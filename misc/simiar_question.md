@@ -1146,23 +1146,45 @@
 - because pt_arr we remove pt_i, line_arr, we inject pt_i
 - simple:
 - cal_func
-- 1. 1D dist (manhattan); 2. 2D dist (physical)*
-- if x2 == x1, slope == inf (l: life lies down easier)
+- l: 1. 1D mahattan dist; 2. 2D a^2+b^2=c^2 (physical line)*
+- x1 == x2 else x1 != x2
+- l: 2pts slope
+- l: 2pts slope
 - x
 - dfs
-- base_case, pts.len == 0 (l: task done, reduce task)
-- l: list of task: 1. do 1st*; 2. do mid; 3. do last
-- lines can cover? (l: use existing power, can solve?)
-- l: 1. [p1, p2] (harder); 2. [p1, slope] (easier)*
-- if tmp_slope == slope, pts.slice(1) (l: task done, reduce task)
-- if pts.len == 1 (l: task done, reduce task; shortcut for 1pt)
-- min = inf 
-- l: before dfs: 1. min/max*; 2. acc
-- l: diff path to solve, result diff
-- l: 1. g_track; 2. init_track; 3. level track*
-- loop pts (l: existing power not enough, ask help)
-- l: gen path: 1. dir; 2. edges; 3. arr*; 4. inc num, etc
-- start_func (l: 1. pt; 2. str; 3. str, etc)
+- if pts.len === 0
+- l: res.push idea: res.push gets more, orig arr gets less -> orig arr exhausts
+- first_pt = pts[0]
+- l: 1st item RELATIONSHIP with lines (if existing path can resolve)
+- l: 1st item RELATIONSHIP with rest of items (if existing path can !resolve, gen paths)
+- x
+- loop lines.len
+- l: 1st item RELATIONSHIP with lines (if existing path can resolve)
+- l: 1st item RELATIONSHIP with rest of items (if existing path can !resovle, gen paths)
+- x
+- l: prev pts did sit on this line
+- l: new pt may sit on this line
+- l: new pt will sit on this line
+- x
+- if tmp_slop === slope -> dfs
+- l: res.push idea: res.push gets more, orig arr gets less -> orig arr exhausts
+- l: 1. loop -> con (others needed); 2. loop -> out diretly (other !needed)*
+- x
+- if pts.len === 1 -> re lines.len + 1
+- later gen paths, start i=1 item, this guard i=0 item (l: exclude some item, then can batch process)
+- x
+- let min = inf
+- l: 1. min/max (min lines)*; 2. acc
+- l: 1. g_track* (min = overall dfs()); 2. init track; 3. level track
+- x
+- pts loop
+- l: 1st item RELATIONSHIP with lines (if existing path can resolve)
+- l: 1st item RELATIONSHIP with rest of items (if existing path can !resolve, gen paths)
+- within pts loop
+- l: 1. store 2pts; 2. store pt + slope* (pre-compute)
+- start_func
+- l: dfs_param: 1. pt*; 2. str; 3. arr* (twice, arr of pts)
+- l: res.push idea: res.push gets more, orig arr gets less -> orig arr exhaust
 - motion:
 - pt: [0, 2], [-2, -2], [1,4]
 - line: []
