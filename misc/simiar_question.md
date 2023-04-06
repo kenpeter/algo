@@ -1081,26 +1081,43 @@
 - because we put within girl loop, just return and skip many iterations
 - normally return true after girl loop
 - simple:
-- l: go down / go right
-- l: local_mem and g_mem
-- l: 2D -> 1D dp arr; ind for one thing, val for another thing
+- l: global_match = new Arr(n).fill(-1)
+- l: boy row
+- l: girl col
+- l: key === boy row; val === girl col
+- l: local_seen === cycle; global_seen === avoid same
 - x
-- dfs
-- loop girls (l: 2D ~= brute force)
-- l: interview (something valid?)
-- l: interview (in local mem?)
-- l: offer (g_mem not use, use it)
-- re directly (l: 1. re nothing; 2. re overall bit/every*; 3. states)
-- l: offer (g_mem use, remember in local mem)
-- l: offer (g_mem use, switch g_mem)
-- l: offer (switch done? need outcome)
-- end girl loop (l: try every, fail)
-- x
-- start boy loop
-- res = 0 (l: 1. g_track*; 2. init track; ...)
-- boy_loop
-- l: local_mem, g_mem
-- info var (l: when travel, belongings)
+- dfs_param
+- l: 1. pt* (each boy_row); 2. str; 3. arr; 4. seen* (cycle)
+- within dfs, girl loop
+- l: girl cols (done) -> boy row (done) -> next boy row
+- l: 2D arr get things done
+- if g[boy_ind][girl_ind] === 0 (l: interview (can do?))
+- if local_seen === true (l: interview (cycle))
+- if vacant -> assign
+- l: offer (vacant)
+- l: 1. dfs -> con (others need); 2. dfs -> re (others !need)
+- local_seen[girl_ind] = true
+- l: offer (already occupied)
+- const can_switch = dfs(g_match, local_seen)
+- l: boy row
+- l: girl col
+- l: 1. path straight down; 2. path go back* (try to vacant)
+- l: offer (l: swap good, vacant)
+- end girl_loop
+- l: try every, fail (swap !good, !vacant)
+- start_func
+- let res = 0;
+- l: 1. g_track*; 2. init track; 3. level track
+- loop -> dfs
+- l: 1. loop -> dfs (boy loop -> girl loop); 2. direct dfs
+- init_local_seen = new Array(n)....
+- l: g_seen === avoid same
+- l: local_seen === cycle
+- const condi = dfs(boy_ind, local_seen)
+- l: girl col (done) -> boy row (done) -> next boy row (l: 2D arr get things done)
+- l: dfs_param: 1. pt* (each boy_row); 2. str; 3. arr; 4. seen* (seen)
+- l: 1. re nothing; 2. re overall bit/every* (this boy row only); 3. re states
 - motion:
 - grid: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]]
 - local_seen: [f, f, f] (index === girl_ind, val === boy_true_false)
