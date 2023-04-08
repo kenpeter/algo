@@ -979,23 +979,35 @@
 - why we don't do global_seen.add(new_str), after !global_seen.has check?
 - because we follow natural flow, check on top of dfs
 - simple:
-- l: graph: relationship to other or relationship to self
-- l: b(g)
-- word1 -> word2, word2 -> word1 (l: word can exchange)
-- const q = [str]
-- l: 1. dfs; 2. bfs*
-- l: queue must has something to process
-- g_seen (l: avoid same)
-- while (q.len > 0) (l: queue must has something to process)
-- q.shift() (l: queue must has something to process)
-- within_queue_loop
-- g_seen.has... (l: interview (avoid same))
-- arr = sentense.split (l: sentense contains words)
-- if(graph[w] === undef) (l: some vertex has edges; some vertex no edges)
-- l: gen paths: 1. dir; 2. edges*; 3. arr; 4. inc num, etc
-- in_edge_loop, arr[i] = e (l: can physicall replace, as prev stored in queue; word multi exchange)
-- l: 1. push queue; 2. condi push queue*; 3. no push queue
-- l: 1. dfs; 2. condi dfs*; 3. no dfs
+- l: graph: node -> node; cycle
+- preprocess:
+- l: 1. b(g)* (word1 <=> word2, exchange bi-direction); 2. sort
+- after preprocess
+- g_seen = new Set
+- l: local_seen === cycle
+- l: g_seen === avoid same
+- x
+- dfs
+- dfs_param
+- l: 1. pt; 2. str* (whole arr; !portion of whole); 3. arr
+- l: interview (avoid same)
+- l: 1. re nothing* (global var there); 2. re overall bit/every; 3. re states
+- l: offer (avoid same)
+- arr = s.split(' ')
+- l: gen paths: 1. dir; 2. edges; 3. arr; 4. combine arr -> edges; 5. ele diff VS ele merge
+- in edge loop
+- l: arr -> edges -> new arr -> join -> sentense -> dfs
+- l: some vertexs do not have edges
+- x
+- l: arr -> edges -> ...
+- l: some vertexs do have edges
+- omit_that_word
+- l: arr -> edges -> new arr ....
+- start_func
+- l: dfs_start: 1. pt; 2. str (sentense -> words -> edges -> new arr -> join -> new sentense -> dfs); 3. arr
+- return sort res
+- l: better looking
+- l: g_seen travel visit all
 - motion:
 - case 1:
 - 2 cycles, 1 interception
