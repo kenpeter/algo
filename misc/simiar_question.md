@@ -896,7 +896,31 @@
 - if curr num >= lo -> push
 - l: interview (bound)
 - last_digit = curr % 10
-- l: next level (smaller step num / bigger step num
+- l: next level (person before you / person after you)
+- prev = last * 10 + (last-1)
+- l: next level (person before you)
+- l: gen path: 1. pt; 2. str; 3. arr; 4. do/!do (person before you / person after you); 5. ele diff VS ele merge
+- next = last * 10 + (last+1)
+- l: next level (person after you)
+- l: gen path: 1. pt; ....
+- if last > 0 -> dfs(res, hi, lo, prev)
+- l: last num === prev's last digit
+- l: last === 0, prev's last digit === 0, dfs outbound
+- l: some paths through; some paths blocked
+- x
+- if last <= 9 -> dfs(res, hi, lo, next)
+- l: last num === next's last digit
+- l: last === 9,, next ....
+- l: some paths through; some paths blocked
+- start_func
+- cont res = []
+- l: 1. g_track* (res in scope); 2. init track; 3. level track
+- if lo === 0, res.push(0)
+- l: num cannot start with 0
+- bottom up gen num (this person related to left and right persons)
+- loop i=1 -> i=9
+- l: num cannot start with 0
+- bottom u gen num (this person related to left and right persons)
 - motion:
 - 0 -> prev = curr(0) * 10 + last(0 % 10) - 1 -> no good
 - 0 -> next = curr(0) * 10 + last(0 % 10) + 1 -> no good
