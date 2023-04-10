@@ -795,6 +795,25 @@
 - queue: empty -> fill -> empty
 - if reach end cell
 - l: offer (reach goal)
+- within 4_dir loop
+- l: queue items -> 4 dir ==== vertex -> edges
+- next_k = curr_k + 1
+- always use new dir (l: 1 direction === 1 universe)
+- l: interview (real bound)
+- l: interview (hit road block, use buffer)
+- l: always use new dir (l: 1 direction === 1 universe)
+- l: interview (no more buffer)
+- l: interview (bfs -> finish this level -> g_seen avoid this level)
+- l: offer (reach goal)
+- g_seen[next_r][next_c][next_k] = true
+- l: bfs -> finish this level -> g_seen avoid this level
+- q.push([next_r, next_c, next_k])
+- l: next level
+- l: queue: empty -> fill -> empty
+- end this level dfs, ++res
+- l: bfs -> finish this level -> g_seen avoid this level
+- end_func, re -1
+- l: try eveyr, fail
 - motion:
 - case 1:
 - at start -> 4_dir, push right and down
