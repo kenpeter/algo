@@ -776,34 +776,25 @@
 - if(r === m-1 && c === n-1) return res;
 - if we cannot return within queue_check, then nothing more we can do, return -1
 - simple:
-- l: go down / go right
-- g_seen (3D) (l: 2D board, extend 1 extra D, hold stuff)
-- g_seen[0][0][0] ... (l: buy a machine, warm up)
-- q = [[0, 0, 0]] (l: buy a machine, warm up)
-- dir = [..] (l: 1. 4 dir*; 2. 8 dir)
-- res = 0 
-- l: 1. g_track* (step); 2. init track; 3. level track
-- l: bfs: own range (res) -> next range
-- l: dfs: own branch (res) -> next branch
-- while(q.len > 0) (l: queue: put into box, take out, process)
-- size = q.len (l: bfs: own range (res) -> next range)
-- loop (q.size), q.shift (l: queue: put into box, take out, process)
-- loop 4 dir (l: parallel universes, effect in 1 universe, no effect in other universes)
-- within_4_dir_loop, next_k = curr_k (l: parallel universes, effect in 1, no effect in others)
-- up, down, left, right (l: interview (outbound))
-- block, then use k (l: inteview (have diffculty, use help))
-- next_k = curr_k+1 (l: parallel universes, effect in 1, no effect in others)
-- g_seen[][][] (l: interview (seen)
-- l: during long travel, found treature, go home
-- l: offer (avoid same)
-- l: offer (push queue)
-- x
-- l: 1. dfs; 2. condi dfs; 3. no dfs
-- l: 1. queue*; 2. condi queue; 3. no queue
-- end own range queue loop, ++res
-- l: bfs: own range (res) -> next range
-- l: dfs: own branch (res) -> next branch
-- end_entire_queue, re -1 (l: try everything, fail)
+- g_seen = new Arr(new Arr(new Arr))
+- 2D extends to 3D (extend orig struct)
+- g_seen[0][0][0] = true
+- l: init struct
+- l: bfs -> finish this level -> g_seen avoid this level
+- const q = [[0, 0, 0]]
+- l: queue items -> 4 dir === vertex -> edges
+- let res = 0, before queue
+- l: 1. g_track* (bfs -> finish this level -> g_seen avoid this level); 2. init track; 3. level track
+- loop q.len -> bfs level items -> 4 dir
+- l: queue items -> 4 dir ==== vertex -> edges
+- l: dfs -> recur -> go down
+- l: bfs -> queue -> this level
+- loop bfs level items
+- l: bfs -> finish this level -> g_seen avoid this level
+- const item = q.shift()
+- queue: empty -> fill -> empty
+- if reach end cell
+- l: offer (reach goal)
 - motion:
 - case 1:
 - at start -> 4_dir, push right and down
