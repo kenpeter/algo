@@ -832,17 +832,19 @@
 - 1. path.push -> dfs -> path.pop; single path
 - 2. path.slice(0) -> path1.push -> dfs; copy path
 - simple:
-- res = []; (l: 1. g_track*; 2. init track; 3. level track)
+- const res = []
+- l: 1. g_track* (main road then branches); 2. init track; 3. level track
+- dfs_param
+- l: dfs_param: 1. pt; 2. str; 3. arr* (main road then branches); 4. posi* (scan L to R; scan R to L)
 - x
 - dfs
-- base case (l: time (ind) all the way, hit end, highlight)
-- res.push path (l: time ..., hit end, hightlight)
-- life:
-- l: 1. either hit corss road (new decision = copy orig decision + curr decision)
-- l: 2. or straight road
-- start_dfs
-- dfs([], 0) (l: dfs start: 1. arr*; 2. pt; 3. ind*; 4. str, etc)
-- l: new deci = copy + curr deci
+- if ind >= str.len -> res.push
+- l: interview (hit bound)
+- l: 1. g_track* (parallel universe); 2. ....
+- if str[ind] === '{' (l: gen paths: 1. dir; 2. edges; 3. arr* (main road then branches); 4. ele diff VS ele merge... 
+- else ... (l: gen paths: .... 3. arr* (main road then branches); 4. posi* (scan L to R; scan R to L)
+- start_func
+- l: dfs_start: 1. pt; 2. str; 3. arr (main road then branches); 4. 
 - motion:
 - a{b,c}d -> a single path, {b,c} 2 paths, d single path
 
