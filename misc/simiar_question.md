@@ -662,35 +662,33 @@
 - player 1 and player 2 switch ~= worker and bike swich
 - so dfs directly
 - simple:
-- min = inf (l: 1. g_track*; 2. init track; 3. level track)
-- g_seen = arr[bike.len]
-- l: occupy -> this branch -> unoccupy -> next branch
-- l: worker === row (func param), bike === col (func body loop)
-- cal = func (l: 1. 1D dist*; 2. 2D dist)
-- dfs = func(tmp_dist...) (l: acc dist in travel, until end)
-- if tmp_dist >= min 
-- l: curr interview (waste effort)
-- within re (l: 1. re nothing*; 2. re overall ....)
-- x
-- if worker >= ws.len
-- l: curr interview (outbound)
-- l: acc dist in travel, until end
-- x
-- bike loop
-- l: worker === row (func param), bike === col (func body loop)
-- l: future interview (avoid same)
-- g_seen[x] = true
-- l: future offer, occupy* -> this branch -> unoccupy -> next branch
-- l: g_seen (reset) === local_seen (no reset)
-- x
-- dfs(dist.., worker+1)
-- l: next candidate (occupy -> this branch* -> unoccupy -> next branch)
-- l: acc dist until end
-- g_seen[x] = false (l: occupy -> this branch -> unoccupy* -> next branch)
+- let min = inf
+- l: 1. g_track* (among paths -> shortest path); 2. init track; 3. level track;
+- g_seen = new Arr
+- l: lock -> travels -> unlock
+- cal = func(pt1, pt2)
+- l: 1. 1D dist (!physical line); 2D dist (physical line)
+- l: dfs_param: 1. pt; 2. str; 3. arr; 4. acc* (acc final min dist); 5. posi* (which up to)
+- within_dfs
+- l: interivew (> need, waste effort)
+- l: 1. re nothing* (global var there); 2. re overall; 3. re states
+- if ind >= len -> min = min(min, ...) (l: interview (time is up, final result))
+- bike_loop
+- l: gen paths: 1. dir; 2. edges; 3. arr* (2D brute force loop); 4. ele diff VS ele merge
+- l: everytime scan left to right, all blocks filled
+- if g_seen === true -> con
+- l: interview (avoid same)
+- g_seen[i] = true
+- l: lock -> travels -> unlock
+- dfs...
+- l: lock -> travels -> unlock
+- l: dfs_param: 1. pt; 2. str; 3. arr; 4. acc* (acc final min dist); 5. posi* (which up to)
+- end this dfs
+- g_seen[i] = false
+- l: lock -> travels -> unlock
 - start_func
 - dfs(0, 0)
-- l: dfs start: 1. pt*; 2. arr; 3. str, etc
-- l: overall greedy, no matter who 1st
+- l: dfs_param: 1. pt; 2. str; 3. arr; 4. acc* (acc final min dist); 5. posi* (which up to)
 - motion:
 - case 1:
 - ele in arr, in each dfs, then repeat loop the other arr
