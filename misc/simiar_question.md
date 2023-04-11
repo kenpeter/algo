@@ -535,18 +535,21 @@
 - why dfs bottom return is more important dfs go down?
 - because for dfs, dfs bottom return is where all operation happening
 - simple:
-- res = [] (l: 1. g_track*; 2. init_track; 3. level_track)
+- const res = []
+- l: 1. g_track* (parallel universe); 2. init track; 3. level track)
 - x
 - dfs
-- dfs param (l: travel buffer: prev* + buffer* + curr* + future)
-- dfs param (l: keep track position in travel)
-- base_case (l: life reaches end, need highlight)
-- dfs (take) (l: gen paths: 1. dir; 2. edges; 3. arr; 4. do/!do*)
-- dfs (!take) (l: gen paths: 1. dir; 2. edges; 3. arr; 4. do/!do*)
+- l: dfs_param: 1. pt; 2. str* (prev, buff, curr); 3. arr; 4. posi* (up to); 5...
+- if posi >= len -> result
+- l: base_case, reach end -> result
+- l: moving from the house, clean up; prev + buff + curr (2 portoin gap 1 char) + future
+- l: 1. re nothing* (global var there); 2. re overall; 3. re states;
+- below dfs param
+- l: 1. pt; 2. str* (prev, buff, curr); 3. arr; 4. posi (up to)
+- do (l: gen paths: 1. dir; 2. edges; 3. arr; 4. do/!do (covert/!convert); 5. ele diff VS ele merge
+- !do (l: gen paths: 1. dir; ......)
 - start_func
-- dfs(acc_str_'', 0_counter, 0+w_ind)
-- l: dfs start: 1. pt; 2. str*; 3. num*; 4. arr, etc)
-- l: travel buffer: prev* + buffer* + curr* + future
+- l: dfs param: 1. pt; 2. str* (prev, buff, curr); 3. arr; 4. posi* (up to)
 - motion:
 - case 1:
 - !take or take
