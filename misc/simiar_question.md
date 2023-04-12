@@ -666,32 +666,43 @@
 - so dfs directly
 - simple:
 - let min = inf
-- l: 1. g_track* (among paths -> shortest path); 2. init track; 3. level track;
-- g_seen = new Arr
-- l: lock -> travels -> unlock
-- cal = func(pt1, pt2)
-- l: 1. 1D dist (!physical line); 2D dist (physical line)
-- l: dfs_param: 1. pt; 2. str; 3. arr; 4. acc* (acc final min dist); 5. posi* (which up to)
-- within_dfs
-- l: interivew (> need, waste effort)
-- l: 1. re nothing* (global var there); 2. re overall; 3. re states
-- if ind >= len -> min = min(min, ...) (l: interview (time is up, final result))
+- t: 1. g_track* (parallel universe); 2. init track; 3. level track;
+- const g_seen = new Arr(bike.len).fill(false)
+- t: scan L to R, eventually all filled
+- t: loop As -> lock A -> dfs A -> unlock A (A, B connect at dfs)
+- t: lock B -> loop As -> unlock B (A, B disconnect)
+- const cal = () => ...
+- t: 1. 1D dist (!physical line); 2. 2D dist(physical line)
+- x
+- dfs
+- dfs_param
+- t: 1. pt; 2. str; 3. arr; 4. acc* (prev + curr + all future return); 5. posi* (up to)
+- if tmp_dist >= min
+- t: interview (>= min, waste effort)
+- if worker_ind >= len
+- t: interview (outbound -> result)
+- t: final dist min, !portion min
 - bike_loop
-- l: gen paths: 1. dir; 2. edges; 3. arr* (2D brute force loop); 4. ele diff VS ele merge
-- l: everytime scan left to right, all blocks filled
-- if g_seen === true -> con
-- l: interview (avoid same)
-- g_seen[i] = true
-- l: lock -> travels -> unlock
-- dfs...
-- l: lock -> travels -> unlock
-- l: dfs_param: 1. pt; 2. str; 3. arr; 4. acc* (acc final min dist); 5. posi* (which up to)
-- end this dfs
-- g_seen[i] = false
-- l: lock -> travels -> unlock
+- t: loop As -> lock A -> dfs A -> unlock A (A, B connect at dfs)
+- t: lock B -> loop As -> unlock B (A, B disconnect)
+- if g_seen[bike_ind] === true -> con
+- t: interview (avoid same)
+- g_seen[bike_ind] = true
+- t: loop As -> lock A -> dfs A -> unlock A (A, B connect at dfs)
+- t: lock B -> loop As -> unlock B (A, B disconnect)
+- cal 1D dist
+- dfs(tmp_dist + portion_dist, worker_ind+1)
+- t: loop As ....
+- t: lock B -> ...
+- g_seen[bike_ind] = false
+- t: loop As ...
+- t: lock B ....
+- t: final step === unlock
 - start_func
 - dfs(0, 0)
-- l: dfs_param: 1. pt; 2. str; 3. arr; 4. acc* (acc final min dist); 5. posi* (which up to)
+- t: dfs_param: 1. pt; 2. str; 3. acc* (prev + curr + all future return); 4. posi* (up to)
+- loop -> dfs incorrect (t: at start, 1st worker visits all bikes already)
+- return min
 - motion:
 - case 1:
 - ele in arr, in each dfs, then repeat loop the other arr
