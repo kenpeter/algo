@@ -480,17 +480,31 @@
 - because if next player false, loose, then it means we will win, can return
 - after the curr_state loop, we cannot beat next player, then we loose
 - simple:
+- currState in question
+- currState === arr of chars (t: multi chars scan -> effect bound)
+- within func, no data struct
+- t: currState === local_seen
+- x
 - dfs
-- dfs_param (l: single var travel*; 2. var branch vars travel)
-- loop(i=0; i<len-1...), flip 2 chars (l: 1. do 1 thing*; 2. do multi things)
-- if + and + (l: 1. do 1 thing*; 2. do multi things)
-- str + '++' + str (l: 1. do 1 thing*; 2. do multi things) 
-- next_win = dfs(curr_state) (l: 1. single var travel*; 2. var branch vars travel)
-- if next_win (l: 1. single var travel*; 2. var branch vars travel)
-- end_dfs_loop (l: try every, fail)
+- t: dfs_param: 1. pt; 2. str* (local state); 3. arr; 4. ele diff VS ele merge
+- within dfs
+- t: base_case / condi ===> loop -> dfs ===> clean up
+- t: no base_case / condi, as clean up cover
+- loop localState
+- always i=0 (t: scan L to R, blocked, pick next)
+- t: gen path: 1. dir; 2. edges; 3. arr* (local state); 4. ele diff VS ele merge
+- if c1 === '+' && c2 === '+' -> dfs
+- t: some paths through; some paths blocked
+- t: multi chars scan -> effect bound
+- if dfs(enemy) === false -> u win
+- t: 1. re nothing; 2. re overall*; 3. re states
+- t: hold until final return bottom up
+- end loop localState
+- t: try every fail
+- t: base_case / condi ===> dfs -> loop ===> clean up
 - start_func
-- l: try luck, shortcut
-- l: dfs start: 1. pt; 2. str*; 3. arr, etc
+- dfs(currState)
+- t: dfs_param: 1. pt; 2. str* (local state); 3. arr;
 - motion:
 - case 1:
 - flip ++ to --, each time in str
