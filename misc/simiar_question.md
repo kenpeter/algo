@@ -668,7 +668,7 @@
 - let min = inf
 - t: 1. g_track* (parallel universe); 2. init track; 3. level track;
 - const g_seen = new Arr(bike.len).fill(false)
-- t: scan L to R, eventually all filled
+- t: scan L to R, blocked, pick next
 - t: loop As -> lock A -> dfs A -> unlock A (A, B connect at dfs)
 - t: lock B -> loop As -> unlock B (A, B disconnect)
 - const cal = () => ...
@@ -683,11 +683,13 @@
 - t: interview (outbound -> result)
 - t: final dist min, !portion min
 - bike_loop
+- t: scan L to R, blocked, pick next
 - t: loop As -> lock A -> dfs A -> unlock A (A, B connect at dfs)
 - t: lock B -> loop As -> unlock B (A, B disconnect)
 - if g_seen[bike_ind] === true -> con
 - t: interview (avoid same)
 - g_seen[bike_ind] = true
+- t: scan L to R, blocked, pick next
 - t: loop As -> lock A -> dfs A -> unlock A (A, B connect at dfs)
 - t: lock B -> loop As -> unlock B (A, B disconnect)
 - cal 1D dist
