@@ -442,9 +442,7 @@
 - why before + '--' + after?
 - because before + '--' + after, we flip them
 - simple:
-- loop: loop_str (? gen new state)
-- op: str_concat (? gen new state)
-- push_res
+- see flip game ii
 - motion:
 - diff states in 1D loop
 - case 1:
