@@ -3508,6 +3508,22 @@
 - l: process (1. t(g); 2. modify*)
 - l: bureaucracy canot be touched, but normal people get hurt
 
+- https://leetcode.com/problems/all-paths-from-source-to-target/
+- simple:
+- question_func
+- const res = []
+- t: 1. g_track* (parallel universe); 2. init track; 3. level track
+- x
+- dfs
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (up to); 5. acc* (parallel universe)
+- if currNode === last_node -> result
+- t: base / condi -> dfs loop -> clean up
+- edge loop
+- t: gen path: 1. dir; 2. edges* (graph); 3. arr; 4. ele diff VS ele merge
+- copy curr path -> dfs path (t: parallel universe)
+- start_func
+- t: start param: 1. pt; 2. str; 3. arr; 4. posi* (start node); 5. acc* (parallel universe) 
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
