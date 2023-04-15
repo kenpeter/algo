@@ -292,10 +292,19 @@
 - why at the end of code, return true?
 - because if nothing fails, then must be true, all match
 - simple:
-- l: try luck, shortcut
-- pattern_loop
-- l: map, set -> map; map, !set -> !possible; !map, set -> else_map; !map, !set -> remember
-- end_pattern_loop (l: try everything fail, no way, re good)
+- t: shortcut
+- const map = new Map
+- const set = new Set
+- t: map: 1 to 1
+- t: set: 1 to 1, unique
+- t: map: char -> str
+- t: set: str
+- loop pattern and str at the same time
+- map.has and set.has -> con
+- map.has and set.!has -> re false
+- map.!has and set.has -> re false
+- map.!has and set.!has -> map.set & set.add
+- t: map and set -> 2x2 combo
 - motion:
 - case 1:
 - prev_match, later reuse prev_match
