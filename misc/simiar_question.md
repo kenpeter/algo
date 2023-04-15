@@ -231,20 +231,27 @@
 - why for i=curr; i <= dfs_n?
 - i <= dfs_n, because dfs_n is being consumed and eventually === 1
 - simple:
-- res = [] (l: 1. g_track*; 2. init track; 3. level track)
+- const res = [];
+- t: 1. g_track* (global var there); 2. init track; 3. level track
 - x
-- dfs
-- base_case (l: life reaches end, need highlight)
-- path.len > 1 -> store res (l: 1. store res; 2. condi store res*; 3. no store res)
-- base_case return (l: 1. re nothing*; 2. re overall bit/every; 3. re states
-- loop num <= full_num (l: whatever sub: 1. dir; 2. edges .... 5. mod/divide (full_num inc consume)
-- if dfs_n % i == 0 -> dfs (l: 1. dfs; 2. condi dfs; 3. no dfs)
-- l: whatever can sub: 1. dir; 2. edges; 3. arr; 4. do/!do; 5. full_num inc consume
-- path1 = paht.slice(0) (l: sub path === parallel universe)
-- go dfs (l: whatever sub: ...)
+- dfs(curr_n, start_num=2, [])
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (1 num reducing; 1 num inc; eventually match); 5. acc* (path, parallel universe)
+- t: base/condi ===> loop -> cache, dfs ===> clean up
+- if curr_num === 1, path.len >= 2, fill, return
+- t: 1 num reducing; 1 num inc; eventually match
+- t: 1. re nothing* (global var there); 2. re overall bit/every; 3. re states
+- num loop
+- loop i=start_nu; i<=c_num..
+- t: 1. i=0 (L to R fill); 2. i=same* (repeated); 3. i=same+1 (inc) 
+- i<=c_num (t: 1 num reducing; 1 num inc; eventual match)
+- if c_n % i === 0 -> dfs
+- t: some path through; some path block
+- t: gen path: 1. dir; 2. edges; 3. arr; 4. mod*
+- t: mod === can reduce
+- t: divide === actual reduce
 - start_func
-- dfs([], n, 2) (l: 1. whatever sub: 1. dir; 2. edges; 3. ... 5. full_num inc consume)
-- res.sort (l: better looking)
+- t: 1. pt; 2. str; 3. arr; 4. num* (orig_num, start_num; 1 num reducing, 1 num inc, eventually match); 5. acc* (path, parallel universe)
+- dfs(n, 2, [])
 - motion:
 - case 1: 8
 - st: lo_path
