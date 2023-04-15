@@ -373,34 +373,46 @@
 - 1. global_seen.add -> dfs -> global_seen.del
 - 2. global_seen.add -> condi = dfs -> global_seen.del
 - simple:
-- const mp = new Map()
-- l: g_seen (reset) === local_seen (no reset)
-- l: map, set -> map; map, !set -> !possible; !map, set -> else map; !map, !set -> remember it
-- l: map: separate one thing from other
-- x
-- const set = Set() (l: map do key, set do val*)
+- t: p === pattern
+- t: s === string
+- const map = new Map()
+- const set = new Set()
+- t: map: 1 to 1
+- t: set: 1 to 1, unique
+- map: char -> str
+- set: str
 - x
 - dfs
-- base_case
-- l: kid and adult reach end ATST
-- l: kid reach 1st
-- l: adult reach 1st
-- curr_pat_char = pat[p_ind] (l: kid)
-- if map (l: map, set -> map*; map, !set -> !possible*; !map, set -> else_map; !map, !set -> remember)
-- l: kid and adult reach end, ATM -> next section
-- l: kid or adult reach 1st -> entire waste
+- ===
+- !==
+- !==
+- t: base / condi ---> cache, loop - condi+dfs ---> clean up
+- if in_cache -> use
+- t: map.has === condi
+- t: map.get === ele
+- substring(s_ind, s_ind + len) (t: s_ind already advance)
+- if tmp_pattern_str === tmp_str_str -> dfs
+- t: some paths through; some paths blocked
+- return dfs() (t: 1. re nothing; 2. re overall bit*/every; 3. re states
 - x
-- if !map (l: map, set -> map; map, !set -> !possible; !map, set -> else_map*; !map, !set -> remember*)
-- in the_substr_loop (l: gen path: 1. dir; 2. edges; 3. arr; 4. do/!do; 5. brute_try*)
-- in the_sub .. (l: map do the key, set do the val)
-- mp.set
+- else (t: loop -> dfs)
+- t: i is based on s_ind
+- substring(s_ind, i+1) (t: s_ind didn't advance)
+- ele merge loop
+- t: interview (bound,x)
+- set.has ... (t: interview (avoid same))
+- t: lock -> dfs -> unlock
+- map.set
 - set.add
-- l: context this path
-- condi = dfs (l: travel with this context)
-- l: release this context, next branch new context
-- l: 1. re nothing; 2. re overall bit*/every; re 3.states)
-- end the_substr_loop (l: try every, fail)
-- start_func (l: dfs start: 1. pt*; 2. arr; 3. str; 4. etc
+- t: lock -> dfs -> unlock
+- t: 2pt + dfs
+- condi = dfs(...)
+- t: 2pts advance together
+- t: lock -> dfs -> unlock
+- after ele merge loop (t: try everying fail)
+- start_func
+- t: dfs_start: 1. pt; 2. str; 3. arr; 4. posi* (2pts + dfs)
+- return dfs()
 - motion:
 - case 1:
 - prev_match, pattern re-appear
