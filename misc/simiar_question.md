@@ -3523,18 +3523,8 @@
 
 - https://leetcode.com/problems/surrounded-regions/submissions/920993535/
 - simple:
-- dfs
-- base_case (l: can we travel further?)
-- l: travel, mark position
-- l: 4 dir
-- start_func (l: try luck, shortcut)
-- l: preprocess: 1. b(g); 2. sort; 3. modify*
-- 2D loop (l: 1. dfs travel; 2. brute travel*)
-- l: 1. dfs; 2. condi dfs*; 3. no dfs
-- l: country surround city
-- x
-- l: process (1. t(g); 2. modify*)
-- l: bureaucracy canot be touched, but normal people get hurt
+- see solution
+
 
 - https://leetcode.com/problems/all-paths-from-source-to-target/
 - simple:
