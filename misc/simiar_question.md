@@ -3485,16 +3485,25 @@
 
 - https://leetcode.com/problems/house-robber-iii/description/
 - simple:
-- [lnr, lr] = dfs(node.left)
-- l: bureaucracy (1) VS best of normal people (4)
-- [rnr, rr] = dfs(node.right)
-- l: .......
-- below: 1. root + left + right (x); 2. ro + !l + r (x); 3. ro + l + !r (x); 4. ro + !l + !r (*); 5. !ro + l + r (*); 6. !ro + l + !r (*); 7. !ro + !l + r(*); 8. !ro + !l + !r (*); 
-- !base_case (l: bureaucracy (1) VS ...)
-- base_case (l: bur....)
+- question root_node
+- t: node === undef
+- t: node.left, node.right, node.val
+- x
+- dfs
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (curr_node); 5. ele diff VS ele merge
+- t: base / condi ===> loop -> cache+dfs ===> clean up
+- if curr_node === undef -> re [0, 0]
+- t: 1. re nothing; 2. re overall bit/every; 3. re states* (do / !do)
+- const take = curr_node.val
+- const [take_1, non_take_1] = dfs(node.L)
+- const [take_2, non_take_2] = dfs(node.R)
+- t: non_take_1 !== 0, non_take_1 === state
+- t: non_take_2 !== 0, non_take_1 === state
+- re [take, max(combo)]
+- t: take + non_take_1 + non_take_2; 0 + take_1 + take_2; 0 + take_1 + non_take_2; 0 + non_take_1 + take_2;  0 + non_take_1 + non_take_2
 - start_func
-- l: dfs start 1. pt*; 2. str; 3. arr
-- re = dfs(...) (l: 1. re nothing; 2. re overall bit/every; 3. re state*)
+- dfs(root)
+- t: dfs_param .... 
 - motion:
 - case 1:
 - [1, 2, 3] -> root = 1, then 2, 3 are children
