@@ -3430,22 +3430,30 @@
 - https://leetcode.com/problems/path-sum-iii/description/
 - complex:
 - simple:
-- st: count (l: life is up and down, goes on, but must have a few highlights)
-- dfs_check_single_node (l: loop -> dfs (single dfs))
-- check(node, sum) (l: as we go down, target is less and less, we are closer to the target)
-- if node -> dfs (l: life hit the bottom, bounce back)
-- == tar, ++ count (l: life is up and down, but must have highlights)
-- check(left, sum-..) (l: as we go down, target is less and less, we are closer to the target)
-- check(right, .......
+- start_question
+- t: N layer dfs
+- t: bottom up: all the way down, bottom up, hard to diff which branch contrib to parent node (x)
+- t: top down: all the way down, work as we go
+- const dfs_cal_sum = (curr_node, acc) => {....}
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (curr_node); 5. acc* (acc sum)
+- if curr_node === null -> re
+- t: base / condi ====> loop -> cache+dfs ====> clean up
+- t: tree travel must have base
+- t: 1. re nothing* (global var, counter); 2. re overall bit/every; 3. re states
 - x
-- tree (l: loop -> dfs(loop), but in recur form)
-- if node -> check, tree(left), tree(right) (l: life at bottom, bounce back)
-- l: loop -> dfs(single dfs)
-- l: life is at curr state
-- l: life goes left, what will happen?
-- l: life goes right, what will happen
+- if acc + curr_node.val === tar ----> ++counter;
+- t: acc === tar ---> ++counter: multi times in dfs level
+- t: acc + curr_node.val === tar -> ++counter: 1 time in this dfs level
+- t: acc + curr_node.val: 1. steal -> verify*; 2. steal -> use -> return
+- dfs(curr_node.L, acc + curr_node.val)
+- dfs(curr_node.R, acc + curr_node.val)
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (L or R branch); 5. acc* (acc tmp sum)
 - x
-- start_func (l: life start at some point, then all the way down; real life no backtrack, never)
+- const dfs_L_R = (curr_node) => {...}
+- dfs_cal_sum -> dfs_L -> dfs_R
+- t: base / condi ===> loop -> cache+dfs ===> clean up
+- t: tree travel must have base
+- t: N layer dfs
 - motion
 - case 1:
 - b(g); 4_top_root -> 4 (2 null) OR -> 4 (2 null); tar = 4
