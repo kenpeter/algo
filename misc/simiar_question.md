@@ -3457,16 +3457,19 @@
 
 - https://leetcode.com/problems/lexicographical-numbers/description/
 - complex:
-- simple:
-- st: res: [] (l: need a pool to collect results)
-- st: tar = 13 (l: need a target, so we know what to achieve and when to stop)
-- dfs
+- start_question
+- const res = []
+- t: 1. g_track* (global var there); 2. init track; 3. level track
 - x
 - dfs
-- if curr > tar (l: strong checks befor offering)
-- res.push(curr) (l: pass all strong checks, then offer)
-- loop(i=0; i<10...) (l: curr*10+i -> gen all num in this sector -> gen more dfs path for next travel)
-- end_dfs, loop(i=1, i<10..) (l: each iteration represents 1 sector, 1, 10, 12...; 2, 20..; finish 1 sector (dfs base return), then next sector
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (curr num)
+- t: base/condi ===> loop -> cache+dfs ====> clean up
+- t: interview (bound)
+- t: offer (store)
+- loop 0 -> 9
+- t: gen path: 1. dir; 2. edges; 3. arr; 4. ele diff VS ele merge; 5. natural_num_build_up*
+- start_func
+- t: dfs_param: 1. pt; 2. str; 3. arr; posi* (curr_num)
 - motion:
 - st: res: []
 - st: tar = 13
