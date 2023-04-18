@@ -3389,34 +3389,44 @@
 - https://leetcode.com/problems/network-delay-time/description/
 - complex:
 - simple:
-- const graph = map() (l: node -> node; cycle)
-- dist = new Arr(len+1).fill(inf)
-- l: parallel universe store infos
-- l: human starts with 1; natural starts with 0
-- l: stand there 0; never reach inf
-- dist[0] = -1;
-- l: human starts with 1; antural starts with 0
-- dist[k] = 0 (l: stand there 0; never reach inf)
-- const q = []
-- l: 1. dfs; 2. queue*
-- l: water pipe needs water to run
-- l: preprocess: 1. b(g)*; 2. sort
-- v = t[i][0]
-- e = t[i][1]
-- d = t[i][2]
-- l: between 2 pts, there is distance
-- l: between 2 pts, there are infos
-- if graph[i] === undef, assign [] (l: everyone has school bag, I don't have, buy, store books)
-- q.push(k) (l: water pipe needs water to run)
-- while q.len > 0, q.shift() (l: water pipe needs water to run)
-- if graph[i] === und, con (l: in order to know end_node, must reach beyond)
-- edge loop (l: gen paths: 1. dir; 2. edges*...)
-- l: 1. dfs; 2. condi dfs*; 3. no dfs
-- prev_dist + dist < curr_dist (l: everyone can reach this pt, but few can reach higher)
-- dist[e] = dist[nodeInd] + tmp_dist (l: between 2 pts, there are infos)
-- start_fnc
-- max = max(...res)
-- l: everyone can reach this pt, but few can reach higher
+- graph = {}
+- t: node -> node; cycle
+- const g_seen = new Array(n+1).fill(Inf)
+- t: acc: simple go down
+- t: g_seen: saturate
+- x
+- t: each cell saturate
+- t: compare cells (max)
+- x
+- t: start from 0
+- t: start from 1* (1 to n)
+- x
+- g_seen[k] = 0
+- t: start dist = 0; never reach = inf
+- t: struct exists -> warm up struct
+- g_seen[0] = -1
+- end_question, max(...g_seen), g_seen[0] = inf will always return
+- t: arr of ele, some of them out
+- x
+- t: preprocess: 1. b(g); 2. sort
+- t: every has school bag, I don't have, bought, put books
+- vertex -> edges (t: edge can be obj)
+- x
+- t: process: t(g)
+- t: gen path: 1. dir; 2. edges*; 3. arr; 4. do/!do; 5. ele diff VS ele merge
+- x
+- t: base / condi ===> loop -> cache+dfs ===> clean up (x)
+- t: lock -> dfs -> unlock (x)
+- t: interview (bound, x)
+- t: interview (avoid same, x)
+- dist[curr_node] + portion_dist < dist[next_node] -> update g_seen -> dfs
+- t: path travel: curr + portion_dist === dist_reach
+- t: some path through; some path block
+- t: offer (saturate)
+- t: next level (dfs)
+- start_func
+- dfs(k) (t: dfs start: 1. pt; 2. str; 3. arr; 4. posi* (k node))
+- return . (t: start 0; never reach inf)
 - motion:
 - case 1:
 - [[1_start, 2_end, 1_time], [2, 1, 1]] (cycle)
