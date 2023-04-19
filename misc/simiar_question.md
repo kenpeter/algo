@@ -3359,19 +3359,24 @@
 - https://leetcode.com/problems/water-and-jug-problem/description/
 - complex:
 - simple:
-- global seen (l: !distinct ele, no remove; distinct ele, remove)
-- max = jug1 + jug2 (l: max === everyone's max capacity)
+- const max = j1+j2;
+- const min = 0;
+- t: interview (bound)
+- t: interview (bound)
+- const g_seen = {}
+- t: interview (avoid same)
 - x
 - dfs
-- if water > max (l: inteview (bound))
-- if water < ... (l: interview (bound))
-- g_seen.has (l: interview (avoid same))
-- l: offer (tar)
-- g_seen.add (l: offer (avoid same))
-- condi = dfs(|water-j1|) || dfs(|water+j1|) || ...
-- l: gen paths: 1. dir; 2. edges; 3. arr; ... 4. ele diff VS ele merge
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi; 5. curr_state* (jug water diff)
+- if < min || > max (t: interview (bound))
+- if g_seen === true (t: interview (avoid same))
+- t: offer (avoid same)
+- t: offer (tar)
+- return dfs(|j1-water|) || dfs(j1+water)...
+- t: gen paths: 1. dir; 2. edges; 3. arr; 4. curr_state* (water diff)
 - start_func
-- re dfs(|j1-j2|) (l: 1. re nothing; 2. re overall bit/every*); 3. re states)
+- dfs(|j1-j2|)
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. curr_state*
 - motion:
 - case 1:
 - j1 = 5, j2 = 3; target_water = 4
