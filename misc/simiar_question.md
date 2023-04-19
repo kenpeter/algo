@@ -3315,21 +3315,31 @@
 - https://leetcode.com/problems/keys-and-rooms
 - complex:
 - simple:
-- g_seen = new Set()
-- l: single start, single universe, no interference, just forward (add before dfs loop / no remove)
-- l: multi start, multi universes, interference, need care (add after dfs loop / remove)
+- start_question
+- rooms (t: preprocess: 1. b(g) (x); 2. sort; room === graph)
+- const g_seen = new Set()
+- t: condi = dfs: portion of each dfs level, single path among paths(x)
+- t: g_seen: visit all (*)
+- t: interview (avoid same, cycle)
 - x
 - dfs
-- l: interview (avoid same)
-- l: 1. re nothing*; 2. re overall bit/every; 3. re states;
-- g_seen.add (l: offer (avoid same))
-- edge_loop (l: gen paths: 1. dir; 2. edges*; 3. arr; 4. ...) 
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (curr_node); 5. curr_state 
+- t: base / condi ===> loop -> cache,dfs ===> clean up (x)
+- t: lock -> dfs -> unlock (x)
+- t: inteview (bound, x)
+- t: interview (avoid same, cycle)
+- g_seen.has(curr_node) == true (t: offer (avoid same))
+- edge loop
+- t: gen path: 1. dir; 2. edges*; 3. arr; 4. do/!do; 5. curr_state
+- within edge loop
+- t; lock -> dfs -> unlock (x)
+- dfs(curr_node)
 - start_func
 - dfs(0)
-- l: dfs start: 1. pt*; 2. str; 3. arr; etc
-- no need build b(g)
-- l: between groups, there are paths, can travel
-- l: can travel all eles in group, then exhaust
+- t: dfs param: 1. pt; 2. str; 3. arr; 4. posi* (curr_node) ...
+- if g_seen.size === rooms.len -> re true; else re false
+- t: condi = dfs: portion dfs level
+- t: g_seen: visist all
 - motion:
 - case 1:
 - [[0, 1], [0, 1, 2], [2], [3]]
