@@ -3329,14 +3329,17 @@
 - t: inteview (bound, x)
 - t: interview (avoid same, cycle)
 - g_seen.has(curr_node) == true (t: offer (avoid same))
+- t: 1. re nothing* (visit all); 2. re overall bit/every; 3. re states;
 - edge loop
 - t: gen path: 1. dir; 2. edges*; 3. arr; 4. do/!do; 5. curr_state
 - within edge loop
-- t; lock -> dfs -> unlock (x)
+- t: lock -> dfs -> unlock (x)
 - dfs(curr_node)
+- t: next level
 - start_func
 - dfs(0)
 - t: dfs param: 1. pt; 2. str; 3. arr; 4. posi* (curr_node) ...
+- t: 1. re nothing* (visit all); 2. re overall bit/every; 3. re states
 - if g_seen.size === rooms.len -> re true; else re false
 - t: condi = dfs: portion dfs level
 - t: g_seen: visist all
