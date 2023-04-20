@@ -3278,30 +3278,32 @@
 - https://leetcode.com/problems/find-if-path-exists-in-graph
 - complex:
 - simple:
-- g_seen = new Set()
-- l: 1. single start, this universe, no interference (add before dfs loop / !remove)*
-- l: 2. multi start, multi universes, interference (add after dfs loop / remove)
-- graph = new Set()
-- l: node -> node; cycle
-- b(g) loop
-- l: preprocess: 1. b(g)*; 2. sort
-- if graph[v] == undef -> con
-- l: everyone has a school bag, I don't have, buy, put books into bag
+- const graph = {}
+- t: node -> node; cycle
+- const g_seen = new Set()
+- t: interview (avoid same, cycle)
+- t: offer (avoid same)
 - x
+- t: preprocess: 1. b(g)*; 2. sort
+- t: no school bag, bought, put books
 - dfs
-- if lo_start === tar (l: offer (tar))
-- if g_seen.has -> re false
-- l: interview (avoid same)
-- l: 1. re nothing; 2. re overall bit/every*; 3. re states
-- l: each section success === overall success
-- g_seen.add (l: offer (avoid same))
-- edge_loop
-- l: gen paths: 1. dir; 2. edges*; 3. arr;. 4. ele dff VS ele merge
-- l: each section success
-- after edge_loop
-- l: try every, fail
-- start_func
-- l: dfs has start: 1. pt*; 2. str; 3. arr
+- t: process: t(g)
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (curr_node)
+- outside dfs
+- t: base ====> loop -> cache,dfs ===> clean up (x)
+- inside dfs
+- t: lock -> dfs -> unlock (x)
+- t: interview (avoid same, cycle)
+- t: interview (bound, x)
+- t: offer (avoid same)
+- edge loop
+- t: gen path: 1. dir; 2. edges*; 3. arr; 4. do/!do......
+- condi = dfs(e)
+- if condi === true -> re true
+- after edge loop
+- t: loop -> true ==== keep finding true; after loop, try everything fail (*)
+- t: loop -> false === keep finding false; after loop, no failse, then it is true (x)
+- t: if no return within loop / after loop; interview / offer not enough
 - motion:
 - case: [[0, 1], [0, 2], [1, 2]] (each vertex connects each other)
 - st: graph: {}
