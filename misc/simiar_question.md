@@ -3244,18 +3244,40 @@
 - https://leetcode.com/problems/concatenated-words/
 - complex:
 - simple:
-- const set = new Set (l: condi dfs)
+- const res = [];
+- t: 1. g_track* (push res); 2. init track; 3. level track
+- t: dfs may reach same point, no good res.push
+- t: 1. base res.push (slow); 2. after dfs res.push* (faster)
+- const set = new Set()
+- t: some path through; some path block
+- const g_seen = new Set()
+- t: interview avoid same path; dfs will reach same path
 - x
 - dfs
-- base_case (l: interview (valid?))
-- l: next candidate
-- l: gen paths: 1. dir; 2. edges; 3. arr; 4. horizontal ele merge -> vertical next ele*
-- if set.has(tmp_w) -> dfs (l: 1. dfs; 2. condi dfs*; 3. no dfs)
-- dfs(new_word, num+1) (l: info var along: 1. compass; 2. energy level*)
-- condi = true -> re true (l: re nothing*; 2. re overall bit/every; 3. states)
-- end_char_loop -> re false (l: try every, fail)
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi; 5. curr_state* (curr portion str); 6 acc* (acc # of portion)
+- within dfs
+- t: base ===> loop -> cache,dfs ===> clean up (*)
+- if portion_str === '' && acc >= 2 -> re true
+- t: at least 2 portion
+- t: 1. re nothing; 2. re overall bit*/every (this dfs level good); 3. re states
+- t: lock -> dfs -> unlock (x)
+- x
+- t: interview (bound, x)
+- t: interview (avoid same path; dfs will reach same path)
+- t: offer (avoid same path; dfs will reach same path)
+- ele diff VS ele merge loop
+- t: gen path: 1. dir; 2. edges; 3. arr; 4. ele diff VS ele merge*
+- if set.has(str_portion) -> dfs
+- t: some path through; some path block
+- condi = dfs(xx)
+- if condi == true, -> re true
+- t: inloop -> return and outloop -> return
 - start_func
-- loop word arr (l: form: 1. bottm up form; 2. top bottom form (easy)*)
+- t: loop -> dfs
+- t: atom -> universe VS universe -> atom*
+- g_seen.clear() each iteration
+- t: avoid same path; dfs will reach same path
+- t: local_seen (no reset) VS g_seen (reset)
 - motion:
 - case 1: 
 - [a, b, ab]
