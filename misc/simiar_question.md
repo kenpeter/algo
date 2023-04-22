@@ -3190,32 +3190,25 @@
 - https://leetcode.com/problems/where-will-the-ball-fall (\*)
 - complex:
 - simple:
-- const res = new Array(len).fill(-1)
-- l: loop -> dfs === parallel universe
-- dfc = func(row, col)
-- l: travel with compass
-- l: interview (|*/, left stuck)
-- l: there are paths, blocked
-- if g[r][c] === -1 ....
-- l: 1. re nothing ...
-- l: stop the path ...
+- const res = new Array(col_len).fill(-1)
+- t: 1. g_track* (global var); 2. init track; 3. level track
+- t: acc (simple go down) VS g_seen* (multi)
 - x
-- l: interview (\*|, right stuck)
-- l: there are paths, blocked
-- if g[r][c] === 1 && c === n-1 -> re -1
-- l: 1. re nothing; 2. re overall bit/every*; 3. re states
-- l: stop the path straight away
-- x
-- l: interview (\*/, mid stuck)
-- l: there are paths, blocked
-- x
-- after all difficult interviews, offer time -> team match (which choose)
-- x
-- l: next (after this level interivew -> next level interview)
-- l: gen paths: 1. dir; 2. edges; 3. arr... 4. natural flow*
-- l: there are paths, through
+- dfs
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (i, j where we are; curr which slot); 5. curr_state;
+- t: base ===> loop -> cache,dfs ===> clean up (x)
+- t: lock -> dfs -> unlock (x)
+- if i<0 || j<0 || i>=m || j>=n (t: interview (bound, untimate bound, so rest can work))
+- t: interview (bound, hit left edge)
+- t: interview (bound, hit right edge)
+- t: interview (bound, hit gap)
+- t: interview (bound, hit gap)
+- t: offer (tar)
+- t: next level
+- t: object moves; i, j all coordinates move
 - start_func
-- l: loop -> dfs === parallel universe
+- loop -> dfs
+- t: each slot has chance
 - motion:
 - st: grid: [[1, 1], [-1, -1]] => [[\, \], [/, /]]
 - st: res: [i] (? each col)
