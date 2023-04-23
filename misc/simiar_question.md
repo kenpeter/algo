@@ -3138,36 +3138,22 @@
 - because need to clean this cell, then move to next dfs;
 - if no clear, we cannot move to next cell
 - simple:
-- dir = [[-1, 0], [-1, 1], ....]
-- l: 4 dir, 8 dir, any direction
-- dfs = func(row, col)
-- l: travel with compass
-- within_dfs
-- let mineNum = 0
-- l: 1. direct dfs path go; 2. hold dfs paths, decision after sub level done*
-- const path = []
-- l: 1. direct dfs path go; 2. hold dfs paths, decision after sub level done*
-- dfs_loop
-- l: 1. dir*; 2. edges; 3. arr, etc....
-- l: future interview (bound)
-- if board[r][c] === 'M' -> ++mineNum;
-- l: 1. direct dfs path go; 2. hold dfs paths, decision after sub level done*
-- if board[r][c] === 'M' -> dfs
-- l: 1. direct dfs path go; 2. hold dfs paths, decision after sub level done*
-- after dir loop
-- if we have mine -> update board
-- l: 1. direct dfs path go; 2. hold dfs paths, decision after sub level done*
-- l: when travel, area keeps explored
-- else no mine -> dfs
-- l: 1. direct dfs path go....
-- l: when travel, area keeps explored
+- const g_seen = new Set()
+- t: 1. g_track* (visited cell); 2. init track; 3. level track;
 - x
-- start_func
-- l: unopen: no one clicks it (no click)
-- l: open: someone clicks it (click)
-- l: digit: nearby there is mine (click)
-- l: unexploded_mine: mine is hidden (no click)
-- l: exploded_mine: someone clicks ift (click, game over)
+- dfs
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (i, j which cell); 4. curr_state
+- t: interview (bound)
+- t: interview (avoid same)
+- t: base ===> loop -> cache,dfs ===> clean up
+- t: lock -> dfs -> unlock
+- dir loop
+- t: 1. 4 dir; 2. 8 dir*
+- t: interview (bound)
+- if mine -> acc
+- if click path -> buff dfs
+- t: 1. direct dfs; 2. buff dfs (there is condi that revert dfs)
+- 
 - motion:
 - case 1:
 - [[E, E], [E, E]], all empty
