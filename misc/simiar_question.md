@@ -3593,6 +3593,26 @@
 - start_func
 - t: start param: 1. pt; 2. str; 3. arr; 4. posi* (start node); 5. acc* (parallel universe) 
 
+- https://leetcode.com/problems/number-of-closed-islands/description/
+- how do we know something is enclosed?
+- t: travel inner area, hit bound === 1 -> closed; hit edge ---> not closed
+- x
+- dfs
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (curr i, j); 5. curr_state;
+- t: interview (ultimate bound) -> re false (portion bad)
+- t: interview (hit closed bound) -> re true (portion good)
+- t: interview (avoid same) -> label 2
+- t: offer (avoid same)
+- t: 4 dir
+- condi1 = dfs; condi2 = dfs ... condi4 = dfs()...
+- t: eventuall return final res
+- start_func
+- 2D loop brute force
+- if g[i][j] === 0 -> dfs
+- t: some path through; some path block
+- ++res
+- t: 1. g_track* (global var); 2. init track; 3. level track
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
