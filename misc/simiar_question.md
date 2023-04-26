@@ -3613,6 +3613,42 @@
 - ++res
 - t: 1. g_track* (global var); 2. init track; 3. level track
 
+- https://leetcode.com/problems/evaluate-division/
+- t: question asking query ===> preprocess ===> process
+- t: flip === graph cycle
+- t: A * B * C * D... ===> connected, move from 1 to another ===> graph
+- preprocess: 1. b(g)*; 2. sort
+- map.set(new Map()) ===> map.get().get()
+- t: map hash access; use 2D arr, double access ind
+- t: the school bag theory
+- x
+- dfs
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (curr_node, end_node); 5. acc* (production of eles)
+- t: dfs has many paths, only 1 path is good
+- t: base ===> loop -> cache,dfs ===> clean up (x)
+- t: lock -> dfs -> unlock (x)
+- t: inteview (bound, x)
+- local_seen (t: interview (avoid same))
+- t: offer (avoid same)
+- t: local_seen === this path; g_seen === many paths
+- t: offer (tar) -> re true
+- t: 1. re nothing; 2. re overall bit*/every; 3. re states
+- t: there are many paths; 1 path is good
+- loop map --> [k, v] of map.entries
+- edge loop
+- t: gen_path: 1. dir; 2. edges*; 3. arr; 4. do/!do; 5. ele diff VS ele merge 
+- condi = dfs(new_curr, end, local_seen, acc*val)
+- t: loop -> re true -> end_loop re false
+- t: loop -> re false -> end_loop re true
+- if ele !exist -> -1
+- if ele same same -> do ..
+- t: check bound before check anything concrete
+- loop query -> condi = dfs(....)
+- t: ele !exist VS path (arr of ele) does not exist
+- re res
+- t: store result
+
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
