@@ -3669,6 +3669,25 @@
 - return max
 - t: 1. g_track* (global var); 2. init track; 3. level track
 
+- https://leetcode.com/problems/path-sum-ii/
+- t: single path -> no dup
+- t: as long as single path branches (e.g. left and right) -> dup
+- t: steal can avoid single path branch
+- x
+- dfs
+- dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (curr_node); 5. acc* (path acc)
+- t: base ===> ...
+- t: lock -> dfs -> unlock (x)
+- t: interview (bound, null node)
+- t: interview (avoid same, x)
+- t: offer (avoid same, x)
+- t: offer (tar, x)
+- t: next level
+- t: gen_path: 1. dir; 2. edges; 3. arr; 4. do/!do* (left, right); 5. ele diff VS ele merge
+- steal
+- t: single path -> no dup
+- t: single path -> branches -> dup
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
