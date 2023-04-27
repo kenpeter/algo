@@ -3648,6 +3648,26 @@
 - re res
 - t: store result
 
+- https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/
+- t: N layer dfs
+- cal_dfs and cal_dfs
+- cal_dfs
+- t: base ===> loop->cache,dfs ===> clean up
+- t: lock -> dfs -> unlock (x)
+- cal_dfs(curr_node, ancestor)
+- t: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (2 nodes)
+- t: portion path === 2 node distance
+- t: full path === 2 node distance
+- if curr_node === null -> re
+- t: inteview (bound)
+- t: interview (avoid same, x)
+- t: offer (avoid same, x)
+- t: offer (op)
+- next level
+- t: ge_path: 1. dir; 2. edges; 3. arr; 4. do/!do (left and right branch)
+- end_func
+- return max
+- t: 1. g_track* (global var); 2. init track; 3. level track
 
 # read, write
 
