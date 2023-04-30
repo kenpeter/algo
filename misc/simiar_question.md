@@ -3703,6 +3703,9 @@
 - dfs
 - l: g_seen on top, dfs g_seen in loop check === can handle 1st node, g_seen check is for edge node only
 - l: graph === island, connected -> color -> count
+- edge_loop
+- l: gen path..
+- l: loop ind (order) VS edge_ind* (real stored)
 - start_func
 - loop arr
 - l: loop arr -> graph: all ele
