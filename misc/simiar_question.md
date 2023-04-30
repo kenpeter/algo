@@ -3688,6 +3688,29 @@
 - t: single path -> no dup
 - t: single path -> branches -> dup
 
+- https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/description/
+- l: graph === island: connected -> color -> count
+- l: preprocess: 1. b(g); 2. sort
+- l: i=0 -> j=0: dup
+- l: i=0 -> j=i+1: can exhaust (includes vertex has no edges)
+- l: there is way to connect (row, col) -> there is graph
+- l: 1. use pt; 2. use ind (able to sync others)
+- x
+- const graph = {}
+- l: node->node; cycle
+- const g_seen = new Set()
+- x
+- dfs
+- l: g_seen on top, dfs g_seen in loop check === can handle 1st node, g_seen check is for edge node only
+- l: graph === island, connected -> color -> count
+- start_func
+- loop arr
+- l: loop arr -> graph: all ele
+- l: loop graph -> not all ele
+- l: graph === island, connected -> color -> count
+- re stones.len - counter
+- l: all - able_to_connect
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
