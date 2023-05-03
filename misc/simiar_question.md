@@ -3714,6 +3714,32 @@
 - re stones.len - counter
 - l: all - able_to_connect
 
+- https://leetcode.com/problems/cheapest-flights-within-k-stops
+- l: preprocess: 1. b(g)*; 2. sort
+- l: school bag theory
+- x
+- dfs
+- l: dfs_param: 1. pt; 2. dir; 3. str; 4. posi* (curr_node); 5. acc* (k, k ~= maxDepth)
+- top_of_dfs
+- l: no mix curr_check and future_check
+- if curr_node === end -> re 0
+- l: top down -> bottom up -> acc dist, so end_dist = 0
+- if curr_k + 1 > k -> re -1
+- l: next_pt, can next+1, catch up at curr_k + 1
+- if cache -> re cache
+- l: cache template: top down -> bottom up, res = dfs, among all dfs return, there is min/max, cache
+- edge_loop
+- l: gen_path: 1. dir; 2. edges*; 3. arr; 4. do/!do
+- lock -> loop,dfs -> unlock (l: curr_node stable, future node switching)
+- loop -> lock -> dfs -> unlock (l: future node lock, but 1st node always missing)
+- g_seen.add(curr_node + '_' + curr_k)
+- l: dfs param multi param, so multi
+- res = dfs(next_node, curr_k+1)
+- if res === -1 -> con
+- if res === something, subMin = min(subMin, res)
+- l: dfs return ===> condi or res ===> -1 or res
+- l: subMin === bottom up min res so far
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
