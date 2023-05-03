@@ -3734,9 +3734,13 @@
 - loop -> lock -> dfs -> unlock (l: future node lock, but 1st node always missing)
 - g_seen.add(curr_node + '_' + curr_k)
 - l: dfs param multi param, so multi
+- l: g_seen ~= path [e1, e2, e3...]
 - res = dfs(next_node, curr_k+1)
 - if res === -1 -> con
-- if res === something, subMin = min(subMin, res)
+- if res === something, subMin = min(subMin, res + to_next_pt_dist)
+- l: to_next_pt_dist ===> dist curr_node to next_node
+- l: res ===> dist next_node to end
+- l: res + to_next_pt_dist === full path
 - l: dfs return ===> condi or res ===> -1 or res
 - l: subMin === bottom up min res so far
 
