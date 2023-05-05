@@ -3744,6 +3744,20 @@
 - l: dfs return ===> condi or res ===> -1 or res
 - l: subMin === bottom up min res so far
 
+- https://leetcode.com/problems/maximum-width-of-binary-tree/
+- l: use curr_node?.left?.left ... -> can build balance nulls tree
+- l: ind (this level) -> 2*ind (next level left) -> 2*ind+1 (next level right)
+- if many right most node, ind big -> overflow
+- l: keep in bound: 1. offset* (curr_ind - min_ind); 2. arr ind mod
+- bfs queue: [node, node, ...]
+- bfs queue: [[node, posi_ind]]
+- l: queue contains other info -> [node, posi] -> diff (distance) or add
+- there is no base; curr_node.left -> dfs or curr_node.right -> dfs
+- l: some path through, some path block
+- my thought:
+- 1. use all physical node (null or !null) to build queue
+- 2. use !null node, but with posi, posi diff
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
