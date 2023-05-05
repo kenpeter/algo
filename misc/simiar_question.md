@@ -3758,6 +3758,11 @@
 - 1. use all physical node (null or !null) to build queue
 - 2. use !null node, but with posi, posi diff
 
+- https://leetcode.com/problems/range-sum-of-bst/
+- my think:
+- bst -> acc ele in range -> sum
+- ans think:
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
