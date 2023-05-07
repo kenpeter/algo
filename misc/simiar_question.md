@@ -3763,6 +3763,26 @@
 - bst -> acc ele in range -> sum
 - ans think:
 
+- https://leetcode.com/problems/minimum-fuel-cost-to-report-to-the-capital/
+- my think:
+- l: bottm up from each end_node, to node 0
+- ans think:
+- l: top down -> bottom up, which has buff
+- sum:
+- l: each portion dfs philosopy
+- x
+- l: preprocess: 1. b(g)*; 2. sort
+- l: school bag theory
+- x
+- dfs
+- l: 1. direct top down (direct flow); 2. direct bottom up (direct flow); 3. top down -> bottom up (portion dfs philosophy)
+- l: dfs_param: 1. pt; 2. str; 3. arr; 4. posi* (curr_node); 5. ...
+- l: top of dfs, assign (current); dfs loop check_seen (future); avoid current and future conflict
+- l: gen path: 1. dir; 2. edges* ...
+- l: condi dfs -> avoid base return unknown type
+- end_edge_loop operation
+- l: 10 % 2 === 0, no +1; 10%3 !== 0, has +1
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
