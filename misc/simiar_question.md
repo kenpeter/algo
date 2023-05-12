@@ -3783,6 +3783,25 @@
 - end_edge_loop operation
 - l: 10 % 2 === 0, no +1; 10%3 !== 0, has +1
 
+- https://leetcode.com/problems/minimum-score-of-a-path-between-two-cities/
+- my think:
+- allow backward travel with g_seen.add([ind, 0]) and g_seen.add([ind, 1]);
+- ans think:
+- graph has sub graphes; other sub graph never connect, never use
+- g_seen
+- l: inteview (avoid same)
+- l: preprocess: 1. b(g)*; 2. sort
+- l: edge contains extra info
+- x
+- dfs
+- base_case (l: hit end_node half way; if return missing other paths)
+- l: 1. lock -> dfs loop -> unlock (parallel paths); 2. single path* (single entry)
+- g_seen check on top; g_seen check continue (l: avoid go in dfs and return unknown)
+- l: gen path: 1. dir; 2. edges*; 3. arr, etc
+- start_func
+- dfs with start_node -> edge; start_node always missing (l: this is take out and need handle)
+- l: question no need to provide all paths; can be null
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
