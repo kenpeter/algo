@@ -3802,6 +3802,32 @@
 - dfs with start_node -> edge; start_node always missing (l: this is take out and need handle)
 - l: question no need to provide all paths; can be null
 
+- https://leetcode.com/problems/minimum-time-to-collect-all-apples-in-a-tree/
+- l: my think:
+- l: travel entire graph, then cut off branches
+- l: ans think:
+- l: cut off branches === sub path contrib
+- l: sub path contrib === kind of travel
+- x
+- g_seen (l: avoid same)
+- l: preprocess: b(g)
+- l: process
+- x
+- dfs
+- l: offer (avoid same)
+- l: gen path: 1. dir; 2. edges*; 3. arr; 4. do/!do
+- l: interview (avoid same, skip)
+- const condi = dfs(next_node)
+- condi === false or condi === val
+- l: dfs return: 1. nothing; 2. re overall*; 3. re states
+- l: one person good, entire village good
+- end_edge loop
+- res === 0 or res === val
+- has_apple or !has_apple
+- l: one person good, entire village good
+- reach_start_node
+- l: at end_node, no travel distance; reach end_node, has travel distance;
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
