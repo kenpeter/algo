@@ -3828,6 +3828,29 @@
 - reach_start_node
 - l: at end_node, no travel distance; reach end_node, has travel distance;
 
+- https://leetcode.com/problems/sum-of-distances-in-tree/
+- l: preprocess: 1. b(g)*; 2. sort
+- l: single node: 1. t' = t_o + (t + n); 2. n' = n_o + n;
+- l: t + n === extend travel path
+- tree: [0, 0, 0, 0, 0, 0] (l: substree)
+- count:[1, 1, 1, 1, 1, 1] (l: extra travel path; also base case)
+- x
+- dfs1(0, -1)
+- l: parent -> curr_node -> child; parent !== child, no g_seen
+- dfs1(e_ind, curr_node)
+- l: tree[curr_node] = tree[curr_node] + (tree[e_ind] + count[e_ind])
+- l: count[curr_node] = count[curr_node] + count[e_ind]
+- l: t' = t_o + (t + n)
+- l: may parent === -1, cannot use
+- l: after_dfs, bottom up (build up to root node)
+- l: only node 0 has complete tree and count -> later to cal other node
+- x
+- dfs2
+- l: tree[curr_node] = (tree[curr_node] - tree[e_ind])_lost_root_node + (n - tree[e_ind])_be_root_node
+- dfs2(e_ind, curr_node)
+- l: before_dfs, top down (prev value need first)
+- l: tree[] only, no count[], as count always n-1
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
