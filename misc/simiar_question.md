@@ -3849,7 +3849,18 @@
 - l: tree[curr_node] = (tree[curr_node] - tree[e_ind])_lost_root_node + (n - tree[e_ind])_be_root_node
 - dfs2(e_ind, curr_node)
 - l: before_dfs, top down (prev value need first)
-- l: tree[] only, no count[], as count always n-1
+- l: tree[] only, no count[], as count always n
+
+- https://leetcode.com/problems/find-duplicate-subtrees/description/
+- l: my think:
+- l: bottom up but no unique str
+- l: ans think:
+- l: bottom up with unique str
+- x
+- l: 1. bottom up* (from nothing to something, unique str); 2. top to bottom
+- l: set.add([4]) -> set.add([4] -> set{[4], [4]} -> use map
+- l: 1. parent; 2. parent + L; 3. parent + R; parent + L + R
+- all node sames -> parent + L === parent + R -> no distinguish
 
 # read, write
 
