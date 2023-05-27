@@ -3875,6 +3875,13 @@
 - l: 1. cal before dfs (cal immediately); 2. cal after dfs (wait for every finish, cal)*
 - l: return = dfs: 1. re nothing; 2. re overall (re obj)*; 3. re states
 
+- https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/
+- l: preprocess -> preorder
+- l: preorder; total then substract
+- l: 1. before dfs (top down); 2. after dfs (bottom up)*
+- l: subtree 4 diff shapes
+- l: 1. re nothing; 2. re overall* (sub val); 3. re states
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
