@@ -3862,6 +3862,19 @@
 - l: 1. parent; 2. parent + L; 3. parent + R; parent + L + R
 - all node sames -> parent + L === parent + R -> no distinguish
 
+- https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/
+- my think:
+- brute force from each node, count down (top down)
+- ans think:
+- reuse mem that we went through (bottom up)
+- x
+- l: 2D graph faster > graph[] = new Set
+- l: bottom up, use global var, global var is not reset; must fresh from bottom up
+- l: preprocess: 1. b(g)*; 2. sort
+- l: process:
+- l: 1. cal before dfs (cal immediately); 2. cal after dfs (wait for every finish, cal)*
+- l: return = dfs: 1. re nothing; 2. re overall (re obj)*; 3. re states
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
