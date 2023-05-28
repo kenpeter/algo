@@ -3882,6 +3882,17 @@
 - l: subtree 4 diff shapes
 - l: 1. re nothing; 2. re overall* (sub val); 3. re states
 
+- https://leetcode.com/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/
+- l: preprocess: 1. b(g)*; 2. sort
+- l: key in graph hash can be anything, so use str
+- x
+- l: process
+- l: total_unconnected === total - total_connected (preorder)
+- l: total ---> 2D ele brute force conncted ---> (n-1) + (n-2) + (n-3) + .... + 1
+- 
+- l: conncted graphes === connected islands
+- ele in same region --> eles just connect there --> cannot reach other regions ---> total_unconnected = total - total_connected (preorder)
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
