@@ -3883,6 +3883,11 @@
 - l: 1. re nothing; 2. re overall* (sub val); 3. re states
 
 - https://leetcode.com/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/
+- my think: 
+- can think preorder, but brute force cal all connected, then substract connect, result LTE
+- ans think:
+- use connected graphes === connected islands; also use (n-1) + (n-2) + ... 1 fomular, for connected ele
+- x
 - l: preprocess: 1. b(g)*; 2. sort
 - l: key in graph hash can be anything, so use str
 - x
