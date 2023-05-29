@@ -3898,6 +3898,29 @@
 - l: conncted graphes === connected islands
 - ele in same region --> eles just connect there --> cannot reach other regions ---> total_unconnected = total - total_connected (preorder)
 
+- https://leetcode.com/problems/find-closest-node-to-given-two-nodes/description/
+- const m1 = new Map;
+- const m2 = new Map;
+- x
+- dfs1 = ... (pt we visited, hence dist)
+- dfs2 = ... (pt we visited, hence dist)
+- l: node stay in region or node to other regison
+- x
+- l: node1 to other nodes
+- l: node2 to other nodes
+- l: when cross, node1 and node2 reach same pt
+- x
+- l: n1 = edges[n0], n2 = edges[n1], n3 = edges[n2] ----> n0 -> n1 -> n2 straight line
+- x
+- loop edges
+- l: node1 to other nodes
+- l: node2 to other nodes
+- l: when cross, node1 and node2 reach same pt
+- x
+- math.max(m1[i], m2[i])
+- l: among two, pick max
+- l: among m1 and m2's pick, there is min
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
