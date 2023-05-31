@@ -3936,6 +3936,23 @@
 - rout = cal(...)
 - l: internal dfs return ---> affect external dfs return
 
+- https://leetcode.com/problems/minimum-distance-between-bst-nodes/
+- my think:
+- top node compare left subtree; top node compare right subtree
+- ans think:
+- same
+- x
+- travel_dfs -> 
+- cal(curr_node.left, this_curr_node);
+- cal(curr_node.right, this_curr_node);
+- travel(curr_node.L)
+- travel(curr_node.R)
+- l: brute force; top node compare left subtree; top node compare right substree
+- within cal_dfs
+- cal(xxx, this_curr_node)
+- this_curr_node (constant) (l: left subtree has own scope/constant; right subtree has own scope/constant)
+- l: after dfs, all res ready
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
