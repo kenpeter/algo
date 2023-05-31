@@ -3921,6 +3921,21 @@
 - l: among two, pick max
 - l: among m1 and m2's pick, there is min
 
+- https://leetcode.com/problems/validate-binary-search-tree/description/
+- my think:
+- top down -> bottom up, return [left_max, node, right_min], but return to top, left_max e.g. will be missing
+- ans think:
+- brute force: stick one node on top, then check all nodes
+- x
+- func dfs_cal
+- base return (l: can return null, condi, obj, then handle differently)
+- function dfs_travel
+- curr_compare_node, curr_side_left (l: left subtree has own scope)
+- curr_compare_node, curr_side_right (l: right subtree has own scope)
+- lout = cal(...)
+- rout = cal(...)
+- l: internal dfs return ---> affect external dfs return
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
