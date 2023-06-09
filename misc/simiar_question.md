@@ -3953,6 +3953,20 @@
 - this_curr_node (constant) (l: left subtree has own scope/constant; right subtree has own scope/constant)
 - l: after dfs, all res ready
 
+- https://leetcode.com/problems/regions-cut-by-slashes/
+- my think:
+- create only 2D arr (should create 3D arr, for more region)
+- extra D has 2 slots
+- no future hit position
+- ans think:
+- connected islands
+- slash === create sub region, 2D -> 3D
+- extra D has 4 slots
+- able to detect future hit position
+- x
+- l: connected island
+- l: more regions -> more states -> more D
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
