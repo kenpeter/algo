@@ -3967,6 +3967,16 @@
 - l: connected island
 - l: more regions -> more states -> more D
 
+- https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+- my think: 
+- I don't even know the common ancestor concept
+- ans think:
+- set a common parent node, then brute search left and right
+- x
+- l: parent node like a wildcard, can be parent or can be child of self
+- l: maintain position by swapping position
+- l: tree goes deep, level goes deep
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
