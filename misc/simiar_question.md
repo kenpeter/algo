@@ -3977,6 +3977,12 @@
 - l: maintain position by swapping position
 - l: tree goes deep, level goes deep
 
+- https://leetcode.com/problems/clone-graph/
+- my think:
+- know how to travel graph, but not sure how to clone it
+- ans think:
+- graph[vertex] = edges
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
