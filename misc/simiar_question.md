@@ -3983,6 +3983,20 @@
 - ans think:
 - graph[vertex] = edges
 
+
+- https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/
+- my think:
+- I do think of same direction regions, but we don't know is it 1 backward dir affecting the rest, or they are all backward dir
+- I do think of 2 graphs (forward and backward), but never think of merge the 2 dir; or never think of use BFS (queue) to process forward dir, then backward dir
+- I do think of from each node travel to zero; why not work? because 1 node can revert dir, then we need to update the graph state (which is hard)
+- ans think:
+- have 2 graphs (forward and backward), merge them in dfs (this level)
+- from node 0, to each node, forward only good for node 0, not for other nodes, so counter++ (simulate revert)
+- from each node, backward (to node 0) is good for each node
+- ans think:
+- have 1 graph, direct graph -> undirect graph; even better than 2 graphs at the same time; can travel normally
+- from node zero, hit forward, counter++ (bad for node zero, but good for the rest)
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
