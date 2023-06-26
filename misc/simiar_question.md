@@ -3997,6 +3997,17 @@
 - have 1 graph, direct graph -> undirect graph; even better than 2 graphs at the same time; can travel normally
 - from node zero, hit forward, counter++ (bad for node zero, but good for the rest)
 
+- https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/
+- my think:
+- tree to graph
+- top down acc, get min path
+- ans think:
+- tree to graph
+- top down...
+- x
+- l: global path_arr as global, one and unique, no pass down in func
+- l: path_arr is global, unique and one, so make a copy
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
