@@ -4008,6 +4008,14 @@
 - l: global path_arr as global, one and unique, no pass down in func
 - l: path_arr is global, unique and one, so make a copy
 
+- https://leetcode.com/problems/binary-tree-inorder-traversal/
+- my think:
+- 1. left (1st) -> right (2nd) -> parent (3rd); wait for everything finish then process
+- 2. parent (1st) -> left (2nd) -> right (3rd); follow parent order
+- x
+- ans think:
+- left (1st) -> parent (2nd) -> right (3rd); follow three order
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
