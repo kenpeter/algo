@@ -4016,6 +4016,27 @@
 - ans think:
 - left (1st) -> parent (2nd) -> right (3rd); follow three order
 
+- https://leetcode.com/problems/number-of-operations-to-make-network-connected/
+- my think:
+- unsure whether use regions, but direct travel
+- unsure how to connect 3 node, with only 2 edge
+- ans think:
+- use regions and merge them
+- use n-1 edge to connect n nodes
+- x
+- how to build regions?
+- like label islands; if already visited region, skip, next entry point
+- x
+- how to count visited node? -> g_seen
+- how to count edge? -> e_seen -> undirect edge, 2 edges -> 1 edge, in e_seen
+- x
+- arr -> ele -> ele[0] (incorrect, ele no longer arr)
+- x
+- how to merge 2 regions?
+- use recur to merge 1 by 1, only mer props
+- x
+- arr.every -> everything true -> true
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
