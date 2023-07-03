@@ -4037,6 +4037,15 @@
 - x
 - arr.every -> everything true -> true
 
+
+- https://leetcode.com/problems/number-of-provinces/
+- my think:
+- arr.push(region_set), arr.push(region_set), arr.push(region_set)
+- ans think:
+- dfs goes down level === grid move next level
+- cell to cell === graph travel
+- list all possibles this level, prepare for dfs return
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
