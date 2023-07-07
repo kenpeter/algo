@@ -4046,6 +4046,26 @@
 - cell to cell === graph travel
 - list all possibles this level, prepare for dfs return
 
+
+- https://leetcode.com/problems/delete-nodes-and-return-forest
+- my think:
+- node del ---> cannot reach ---> form own region
+- tree -> graph
+- tree node cannot use as map key, as obj not disinguish
+- node with tree order label (in graph), so we know who is the orig parent
+- assign null to left / right, to disconnect children
+- x
+- ans think:
+- bottom up: know parent and 2 children
+- bottom up: rebuild each node
+- x
+- parent !del: return orig to left or right
+- parent del: return null to left or right
+- parent del: children form own region
+- x
+- dfs return: dfs(left) deals with left, return to left
+- dfs return: dfs(right) deals with right, return to right
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
