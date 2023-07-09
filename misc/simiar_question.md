@@ -4065,6 +4065,14 @@
 - x
 - dfs return: dfs(left) deals with left, return to left
 - dfs return: dfs(right) deals with right, return to right
+- 
+
+- https://leetcode.com/problems/is-graph-bipartite/
+- my think:
+- not even sure the concept of bipartite
+- don't know the concept color_arr
+- ans think:
+- color_arr
 
 # read, write
 
