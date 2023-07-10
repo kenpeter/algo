@@ -4073,6 +4073,16 @@
 - don't know the concept color_arr
 - ans think:
 - color_arr
+- 
+
+- https://leetcode.com/problems/longest-word-with-all-prefixes/
+- my think: brute force prefix
+- x
+- ans think:
+- a <-> apple; ap <-> apple; app <-> apple; appl <-> apple; (forward and backward relationship)
+- a <-> ap; ap <-> app; app <-> appl; appl <-> apple; (upgrade to mutual relationshp)
+- a <-> ap; ap <-> app; (has potential, add to set)
+- word.slice(0, -1), get all except last latters
 
 # read, write
 
