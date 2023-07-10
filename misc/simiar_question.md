@@ -4083,6 +4083,16 @@
 - a <-> ap; ap <-> app; app <-> appl; appl <-> apple; (upgrade to mutual relationshp)
 - a <-> ap; ap <-> app; (has potential, add to set)
 - word.slice(0, -1), get all except last latters
+- 
+
+- https://leetcode.com/problems/island-perimeter/
+- my think:
+- normal island solution, but not work
+- introduce label 2, for island, indicate connected
+- edge has: bound, connect
+- each dfs level, after all dfs, acc
+- ans think:
+- did not look at ans
 
 # read, write
 
