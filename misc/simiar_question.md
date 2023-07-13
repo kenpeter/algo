@@ -4094,6 +4094,19 @@
 - ans think:
 - did not look at ans
 
+- https://leetcode.com/problems/path-with-maximum-minimum-value/
+- my think:
+- don't even understand the question
+- x
+- ans think:
+- max === the max within cadidate, maxCell = Math.min(start, end)
+- min === dfs will go through this min, all eles >= this min
+- x
+- candiate == 2D -> 1D ([].concat(...arr)), filter, sort, Set (right candidate)
+- wrap dfs into a func (own dfs func)
+- binary search, not just mid >= tar, but condi = dfs_check() (other condi can be binary search condi)
+- condi === false, no need to search right side (this one cannot, bigger even no hope)
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
