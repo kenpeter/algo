@@ -4106,6 +4106,29 @@
 - wrap dfs into a func (own dfs func)
 - binary search, not just mid >= tar, but condi = dfs_check() (other condi can be binary search condi)
 - condi === false, no need to search right side (this one cannot, bigger even no hope)
+- 
+
+- https://leetcode.com/problems/number-of-nodes-with-value-one/
+- my think:
+- brute force
+- build 2D arr tree
+- each node with node [val, label]
+- e.g. [[], [[1, 0], [2, 0], [3, 0]], [[2, 0], [4, 0], [5, 0]]]
+- dfs travel by query, flip node and decendant
+- x
+- ans think:
+- flip the tree node directly (allow in order scan)
+- x
+- for curr node === 1, if parent node === 1 (before and cascading), then curr node is forced flip
+- for curr node === 1, if parent node === 0 (no cascading), then curr node stay 1
+- for curr node === 0, if parent node === 1 (before and cascading), then curr node is forced flip
+- for curr node === 0, if parent node === 0 (no cascading), then curr node === 0
+- x
+- Math.floor(2/2) -> parent (1); Math.floor(3/2) -> parent (1);
+- 2 >> 1 (bit operation) ==> 10 >> 1 ==> parent 1;
+- 3 >> 1 (bit operation) ==> 11 >> 1 ==> parent 1;
+- x
+- sm: before and cascading
 
 # read, write
 
