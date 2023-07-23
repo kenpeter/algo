@@ -4144,6 +4144,15 @@
 - pre-order; bottom up --> top down --> pre-order sub sum
 - top down --> hit zero
 
+- https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+- my think:
+- confuse about pre-order, in-order, post-order
+- ans think:
+- use in-order
+- pre-order: parent -> left -> right
+- in-order: left -> parent -> right
+- post-order: left -> right -> parent
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
