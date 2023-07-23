@@ -4130,6 +4130,20 @@
 - x
 - sm: before and cascading
 
+- https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/
+- my think:
+- bfs, but look ahead
+- later change to this bfs level, this cal val, next move
+- ans think:
+- bfs, look current
+
+- https://leetcode.com/problems/delete-tree-nodes/
+- my think:
+- bottm up, work out zero
+- ans think:
+- pre-order; bottom up --> top down --> pre-order sub sum
+- top down --> hit zero
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
