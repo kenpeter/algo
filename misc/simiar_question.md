@@ -4152,6 +4152,16 @@
 - pre-order: parent -> left -> right
 - in-order: left -> parent -> right
 - post-order: left -> right -> parent
+- 
+
+- https://leetcode.com/problems/diameter-of-binary-tree/#
+- my think:
+- longest distance always cross root node
+- use post order
+- ans think:
+- longest distnace no need to cross root node
+- need to try each node
+- use post order
 
 # read, write
 
