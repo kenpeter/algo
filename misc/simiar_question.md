@@ -4162,6 +4162,15 @@
 - longest distnace no need to cross root node
 - need to try each node
 - use post order
+- 
+
+- https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/
+- my think:
+- brute force, double dfs (1st dfs each node; 2nd dfs all the way down)
+- LTE
+- ans think:
+- single dfs;
+- continue path count; suden stop re-count
 
 # read, write
 
