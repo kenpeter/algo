@@ -4171,6 +4171,14 @@
 - ans think:
 - single dfs;
 - continue path count; suden stop re-count
+- 
+
+- https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/
+- my think:
+- convert tree to graph
+- post order travel ---> post order label (current node -> children VS parent -> curr_node)
+- orig node need to keep passind down to form pair
+- when condi met, save those; not blocking other nodes flow
 
 # read, write
 
