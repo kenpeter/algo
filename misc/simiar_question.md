@@ -4179,6 +4179,22 @@
 - post order travel ---> post order label (current node -> children VS parent -> curr_node)
 - orig node need to keep passind down to form pair
 - when condi met, save those; not blocking other nodes flow
+- 
+
+- https://leetcode.com/problems/change-the-root-of-a-binary-tree/
+- my think:
+- a func to determine left or right used
+- create new node to replace leaf node as root node
+- use 2 level (curr node and parent)
+-
+- ans think:
+- return the leaf node
+- dfs return build up
+- use 3 level (curr, newParent, oldParent)
+- x
+- curr_node parent (down)
+- curr_node left and right (up)
+- oldParent disconnect to curr_node
 
 # read, write
 
