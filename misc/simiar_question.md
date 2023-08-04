@@ -4195,6 +4195,17 @@
 - curr_node parent (down)
 - curr_node left and right (up)
 - oldParent disconnect to curr_node
+- 
+
+- https://leetcode.com/problems/longest-absolute-file-path/
+- my think:
+- read the file to build graph
+- curr_level connect to curr_level-1
+- dfs to travel graph (key in object)
+- x
+- ans think:
+- brute force read input_str
+- depth[level] = keep_overwrite until hit file (for max)
 
 # read, write
 
