@@ -4235,6 +4235,13 @@
 - if exhaust the word, re node.end
 - x
 - child <-> char (child deplay)
+- 
+
+- https://leetcode.com/problems/implement-trie-prefix-tree/
+- my think
+- trie
+- LET keyword allow node overwirte (hence advance)
+- prefix ~= search in trie; end_loop, try all re true; in loop not found re false
 
 # read, write
 
