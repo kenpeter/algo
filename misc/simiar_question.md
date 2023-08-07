@@ -4206,6 +4206,35 @@
 - ans think:
 - brute force read input_str
 - depth[level] = keep_overwrite until hit file (for max)
+- 
+
+- https://leetcode.com/problems/design-add-and-search-words-data-structure/
+- my think:
+- I don't know the data struct trie
+- I used brute force arr and reg expression
+- x
+- ans think:
+- use trie
+- trie node: 1. key (char match); 2. parent (up); 3. children (down); 4. end (word end)
+- x
+- init: this.root
+- x
+- addWord:
+- child <-> char (child delay)
+- travel char === travel graph
+- overwrite node with child, advance in loop
+- if no char, init trie node; parent (up) connect; child (down) connect; end word
+- x
+- searchWord:
+- dfs
+- if hit dot, travel all children
+- if hit char, just single path
+- x
+- try all concept
+- if end loop, still not success, re false
+- if exhaust the word, re node.end
+- x
+- child <-> char (child deplay)
 
 # read, write
 
