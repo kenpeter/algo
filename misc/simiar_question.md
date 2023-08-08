@@ -4243,6 +4243,20 @@
 - LET keyword allow node overwirte (hence advance)
 - prefix ~= search in trie; end_loop, try all re true; in loop not found re false
 
+- https://leetcode.com/problems/longest-common-prefix/
+- my think:
+- use trie;
+- prefix func just check if prefix there
+- x
+- ans think:
+- use trie
+- use class, constructor
+- longestPrefix:
+- if === 1 key common prefix; >= 2 keys diverse
+- Object.keys(node.children) === arr
+- node = node.children !advance; node = node.children[c] advance
+-
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
