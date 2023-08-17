@@ -4257,6 +4257,23 @@
 - node = node.children !advance; node = node.children[c] advance
 -
 
+- https://leetcode.com/problems/design-file-system/
+- my think:
+- using node->children[key]
+- char -> char -> char -> char
+- x
+- ans think:
+- using node[key] directly
+- using word portion -> portion -> portion
+- x
+- trie: 1. node -> children[key]; 2. node[key] directly
+- portion: 1. char -> char; 2. word -> word; 3. portion -> portion
+- x
+- node path VS word path: 1. stop at mid; 2. fully consumed
+- node path helps word path to consume; except last one; know equal or create
+- node = isValidPath (know where in node path)
+- node = node.next (do not which path); node = node[key].next (know which path)
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
