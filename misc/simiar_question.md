@@ -4273,6 +4273,18 @@
 - node path helps word path to consume; except last one; know equal or create
 - node = isValidPath (know where in node path)
 - node = node.next (do not which path); node = node[key].next (know which path)
+- 
+
+- https://leetcode.com/problems/word-break/
+- my think:
+- init loop node path in dist; left_portion, right_portion, dfs; match char by char; cannot finish
+- init loop word path; node path is linear; TLE
+- x
+- ans think:
+- init loop the node path
+- matching a single word within the same level (word matching, node path travel within dfs)
+- whole word match as whole; if matching starts to fail, no way to continue
+- repeated; start from same point, rest matching same; repeated
 
 # read, write
 
