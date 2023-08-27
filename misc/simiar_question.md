@@ -4286,6 +4286,26 @@
 - whole word match as whole; if matching starts to fail, no way to continue
 - repeated; start from same point, rest matching same; repeated
 
+- https://leetcode.com/problems/search-suggestions-system/
+- my think:
+- tire uses curr node
+- finish word search, then finish the node path, until end
+- confuse about node, node[c], node[c].next, node[c].end
+- x
+- ans think:
+- trie can use curr node. node === hash; node[c] === single node; node[c] === hash; node[c].end === end word
+- need to use prev node in create
+- node = node[c].next, 1 hash to another hash
+- x
+- another way trie use children
+- only class TrieNode, no class Trie
+- curr_node = this within class
+- TrieNode has no key/val; it has end; it has whole word
+- advantage node = node[c].next, will see word end  
+
+  
+
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
