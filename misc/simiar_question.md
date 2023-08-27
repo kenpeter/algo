@@ -4303,7 +4303,11 @@
 - TrieNode has no key/val; it has end; it has whole word
 - advantage node = node[c].next, will see word end  
 
-  
+
+- https://leetcode.com/problems/add-bold-tag-in-string/
+- my think:
+- trie + bold_arr
+- trie helps to find the 1st full word
 
 
 # read, write
