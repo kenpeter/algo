@@ -4309,6 +4309,11 @@
 - trie + bold_arr
 - trie helps to find the 1st full word
 
+- https://leetcode.com/problems/longest-word-with-all-prefixes/
+- my think:
+- single word in arr, all prefix of this single word
+- data struct: map, each entry (same len) with sorted lexi arr
+- map[len][0] to find in trie tree
 
 # read, write
 
