@@ -4314,6 +4314,17 @@
 - single word in arr, all prefix of this single word
 - data struct: map, each entry (same len) with sorted lexi arr
 - map[len][0] to find in trie tree
+- 
+
+- https://leetcode.com/problems/number-of-matching-subsequences/
+- my think:
+- post-order, dp(ind+1) === state
+- not able to write
+- input_str: jja -> ja, ja twice; dict_words = ["a", "a"], can repeat.
+- ans think:
+- brute_force
+- axxxbxxxxc (full_version) VS abc (subsequence)
+- 
 
 # read, write
 
