@@ -4326,6 +4326,19 @@
 - axxxbxxxxc (full_version) VS abc (subsequence)
 - 
 
+- https://leetcode.com/problems/implement-magic-dictionary/
+- my think:
+- 1. normal loop travel word path and node path (no retry)
+- 2. only retry at the start (not able to retry at each level)
+- x
+- ans think:
+- retry at each dfs level
+- word starts at top level of trie node, so need to restart
+- 1. node path === word path speed; 2. node path > word path speed; 3. node path < word path speed;
+- dfs travel: 1. single path; 2 make decision path
+- dfs return, need to preserve var to enter dfs original state
+- 1. next === hash; 2. c === hash entry; 3. node.next[c] === next dfs level === next node; 4. node = node.next[c] === move to next node
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
