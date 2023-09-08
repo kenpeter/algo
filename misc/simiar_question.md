@@ -4339,6 +4339,15 @@
 - dfs return, need to preserve var to enter dfs original state
 - 1. next === hash; 2. c === hash entry; 3. node.next[c] === next dfs level === next node; 4. node = node.next[c] === move to next node
 
+
+- https://leetcode.com/problems/implement-trie-ii-prefix-tree/
+- my think:
+- normal trie implementation
+- each branch has own end word
+- create, search, prefix, full_word, are affected by delete; when modify, people will come back and check
+- prefix === normal_loop_prefix + dfs_rest
+- same word can delete and re-insert again
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
