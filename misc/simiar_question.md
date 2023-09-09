@@ -4347,6 +4347,13 @@
 - create, search, prefix, full_word, are affected by delete; when modify, people will come back and check
 - prefix === normal_loop_prefix + dfs_rest
 - same word can delete and re-insert again
+- 
+
+- https://leetcode.com/problems/remove-sub-folders-from-the-filesystem/
+- my think:
+- similar to prefix problem
+- tire class hold all the root, create, find, method, etc
+- trieNode class hold the single node (allow easy to connect node, separate methods)
 
 # read, write
 
