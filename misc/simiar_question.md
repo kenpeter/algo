@@ -4354,6 +4354,15 @@
 - similar to prefix problem
 - tire class hold all the root, create, find, method, etc
 - trieNode class hold the single node (allow easy to connect node, separate methods)
+- 
+
+- https://leetcode.com/problems/camelcase-matching/
+- my think:
+- tire;
+- word path, node path, pattern -> 3 things together
+- ans think:
+- fast pt and slow pt
+- aaaaFaaaBaaaa VS FB, if F not match a, delay
 
 # read, write
 
