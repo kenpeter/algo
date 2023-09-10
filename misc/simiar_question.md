@@ -4361,7 +4361,7 @@
 - tire;
 - word path, node path, pattern -> 3 things together
 - ans think:
-- fast pt and slow pt
+- fast pt and slow pt; both pointers need finish
 - aaaaFaaaBaaaa VS FB, if F not match a, delay
 
 # read, write
