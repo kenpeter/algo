@@ -4364,6 +4364,12 @@
 - fast pt and slow pt; both pointers need finish
 - aaaaFaaaBaaaa VS FB, if F not match a, delay
 
+- https://leetcode.com/problems/index-pairs-of-a-string/description/
+- my think:
+- brute_force
+- 2 pt; both need finish === match stirng
+- ind = str.indexOf(word, ind); ind can keep move on
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
