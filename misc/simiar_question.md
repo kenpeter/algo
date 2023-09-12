@@ -4385,6 +4385,13 @@
 - (dfs notify res)
 - (condi dfs)
 - (share, clear)
+- 
+
+- https://leetcode.com/problems/short-encoding-of-words/
+- my think:
+- trie
+- a word is substring of another word, so use trie can merge it
+- node.next === {}, will merge all prev
 
 # read, write
 
