@@ -4369,6 +4369,22 @@
 - brute_force
 - 2 pt; both need finish === match stirng
 - ind = str.indexOf(word, ind); ind can keep move on
+- 
+
+- https://leetcode.com/problems/concatenated-words/
+- my think:
+- trie and word break
+- (exhaust this dfs level)
+- (dfs notify res)
+- (condi dfs)
+- (share, clear)
+- 
+- ans think:
+- substring
+- (exhaust this dfs level)
+- (dfs notify res)
+- (condi dfs)
+- (share, clear)
 
 # read, write
 
