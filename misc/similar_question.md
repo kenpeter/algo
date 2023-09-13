@@ -4414,6 +4414,12 @@
 - all words contain prefix (exhaust prefix + all branches)
 - in exhaust prefix: 1. mismatch; 2. node path < word path
 - in all branches: 1. node path === word path; 2. node path > word path; 3. node path < word path (impossible, as exhaust prefix takes care)
+- 
+
+- https://leetcode.com/problems/replace-words/
+- my think:
+- trie
+- when matching node path and word path; if node.end === true, allow find the shortest prefix
 
 # read, write
 
