@@ -4404,6 +4404,16 @@
 - x
 - node = node.next (no specific path)
 - node = node.next[c] (specific path)
+- 
+
+- https://leetcode.com/problems/map-sum-pairs/
+- my think:
+- trie
+- 1. node.next (many path); 2. node.next[c] (single path)
+- dfs in loop, must has own state
+- all words contain prefix (exhaust prefix + all branches)
+- in exhaust prefix: 1. mismatch; 2. node path < word path
+- in all branches: 1. node path === word path; 2. node path > word path; 3. node path < word path (impossible, as exhaust prefix takes care)
 
 # read, write
 
