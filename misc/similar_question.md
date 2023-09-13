@@ -4395,7 +4395,9 @@
 
 - https://leetcode.com/problems/longest-word-in-dictionary/
 - my think:
-- 
+- len as key, each entry has arr, sorted by lexi
+- loop len -> loop arr -> loop each prefix in single word -> trie.find
+- prefix === i=0 + substr
 
 # read, write
 
