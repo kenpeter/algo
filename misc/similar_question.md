@@ -4398,6 +4398,12 @@
 - len as key, each entry has arr, sorted by lexi
 - loop len -> loop arr -> loop each prefix in single word -> trie.find
 - prefix === i=0 + substr
+- x
+- this.root = {} (node[key])
+- this.root = new TrieNode() (node.next[c])
+- x
+- node = node.next (no specific path)
+- node = node.next[c] (specific path)
 
 # read, write
 
