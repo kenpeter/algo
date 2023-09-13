@@ -4420,6 +4420,13 @@
 - my think:
 - trie
 - when matching node path and word path; if node.end === true, allow find the shortest prefix
+- 
+
+- https://leetcode.com/problems/bold-words-in-string/
+- my think:
+- substr can be found in trie
+- [false, false, true, true, ...]
+- on ele, look Left, look right, assign <b>
 
 # read, write
 
