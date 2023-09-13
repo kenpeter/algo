@@ -4393,6 +4393,10 @@
 - a word is substring of another word, so use trie can merge it
 - node.next === {}, will merge all prev
 
+- https://leetcode.com/problems/longest-word-in-dictionary/
+- my think:
+- 
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
