@@ -4445,6 +4445,15 @@
 - my think:
 - similar to unique-path, just add obstacle
 - don't forget target, as it terminate.
+- 
+
+- https://leetcode.com/discuss/interview-question/2024008/Similar-to-unique-paths-Interview-Question
+- my think:
+- island question; -1 to enclose all zeros; internal zero no path get out
+- actually, unique path question
+- instead of single start point, multiple start points to same end point
+- 2D loop -> unique_path
+- path travel will repeat, so avoid
 
 # read, write
 
