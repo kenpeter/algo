@@ -4441,6 +4441,11 @@
 - bottom up: (m-1, n-1) -> (0, 0) (no extra step)
 - dfs bound before i, j usage (cache, direction, etc)
 
+- https://leetcode.com/problems/unique-paths-ii/
+- my think:
+- similar to unique-path, just add obstacle
+- don't forget target, as it terminate.
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
