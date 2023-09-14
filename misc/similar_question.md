@@ -4428,6 +4428,19 @@
 - [false, false, true, true, ...]
 - on ele, look Left, look right, assign <b>
 
+- https://leetcode.com/problems/unique-paths/
+- my think:
+- dfs with myset
+- dfs loop, each has own state
+- timeout
+- x
+- ans think:
+- cache possible when bottom up
+- grid travel === dfs tree (draw diagram), dfs return res, return back to parent node
+- top down: (0, 0) -> (m-1, n-1) -> (0, 0) (extra step)
+- bottom up: (m-1, n-1) -> (0, 0) (no extra step)
+- dfs bound before i, j usage (cache, direction, etc)
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
