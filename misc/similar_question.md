@@ -4459,6 +4459,14 @@
 - my think:
 - unique path
 - even start at a single point, each dfs should still have own state (set, acc, cache, everything)
+- 
+
+- https://leetcode.com/problems/word-search/
+- my think:
+- multi start pt and multi end pt
+- 1. global set (save mem); 2. local set (waste mem)
+- set.add (change state) -> dfs -> set.del (revert state)
+- node path VS word path
 
 # read, write
 
