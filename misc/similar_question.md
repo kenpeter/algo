@@ -4468,6 +4468,12 @@
 - set.add (change state) -> dfs -> set.del (revert state)
 - node path VS word path
 
+
+- https://www.hackerrank.com/challenges/possible-path/problem
+- my think:
+- 1. set control visited; 2. mem control cache
+- multi start pt VS multi end pt
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
