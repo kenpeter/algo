@@ -4484,6 +4484,10 @@
 - 1. local max sub path; 2. global max path (each new entry point)
 - mem[i][j] = 1 + math.max(max, r1, r2..) (mem = curr_state + future_state)
 
+- https://leetcode.com/problems/path-with-maximum-gold/
+- my think:
+- if no need cache, then no need cache
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
