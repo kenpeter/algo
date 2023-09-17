@@ -4473,6 +4473,16 @@
 - my think:
 - 1. set control visited; 2. mem control cache
 - multi start pt VS multi end pt
+- 
+
+- https://leetcode.com/problems/longest-increasing-path-in-a-matrix/description/
+- my think:
+- 1. myset control visited; 2. mem control cache
+- similar to unique path;
+- 1. multi start pt VS end point (dynamic); 2. multi start pt VS multi end pt
+- 1. combine: mem[i][j] = a + b + c; 2. select one: mem[i][j] = a || b || c
+- 1. local max sub path; 2. global max path (each new entry point)
+- mem[i][j] = 1 + math.max(max, r1, r2..) (mem = curr_state + future_state)
 
 # read, write
 
