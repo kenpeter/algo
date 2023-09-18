@@ -4487,6 +4487,25 @@
 - https://leetcode.com/problems/path-with-maximum-gold/
 - my think:
 - if no need cache, then no need cache
+- 
+
+- https://leetcode.com/problems/shortest-path-in-binary-matrix/
+- my think:
+- 1. dfs !work
+- 2. dfs, myset !work
+- 3. dfs, myset, mem, wrong ans
+- x
+- ans:
+- 1. dfs !work
+- 2. dfs myset !work
+- 3. dfs myset, mem, wrong ans
+- 4. use bfs
+- x
+- for mark visited: 1. use myset; 2. use grid[i][j] = mark (island)
+- [x, y, dist] ~= node.word = 'word'
+- 1. dfs hit tar, continue; 2. bfs hit tar, return (each cell exhaust)
+- grid[future_x][future_y] = mark -> queue.push([fx, fy, dist+1]) (sync)
+- if start cell block, rest is useless
 
 # read, write
 
