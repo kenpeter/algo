@@ -4506,6 +4506,23 @@
 - 1. dfs hit tar, continue; 2. bfs hit tar, return (each cell exhaust)
 - grid[future_x][future_y] = mark -> queue.push([fx, fy, dist+1]) (sync)
 - if start cell block, rest is useless
+- 
+
+- https://leetcode.com/problems/out-of-boundary-paths/
+- my think:
+- bfs !work
+- use memo too complicate, need dfs
+- x
+- ans think:
+- dfs with memo
+- 1. memo[i][j], need bound, dimension fixed
+- 2. hash, no need bound ind = i + '_' + j + '_' + count, any dimension
+- 3. myset just visited or no; no able to cache value
+- x
+- memo[i][j][count], why need extra; i, j visited; path will revist the cell, hence need track
+- memo[i][j][count+1], why +1; e.g. 0, 1, 2, need max 2
+- when satisfy target, return val
+- mod res, other where mod
 
 # read, write
 
