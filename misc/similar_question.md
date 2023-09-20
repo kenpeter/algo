@@ -4523,7 +4523,13 @@
 - memo[i][j][count+1], why +1; e.g. 0, 1, 2, need max 2
 - when satisfy target, return val
 - mod res, other where mod
-- tar condi before many condis
+- tar condi before many condis, after satisfy basic
+
+- https://leetcode.com/problems/swim-in-rising-water/
+- my think:
+- unique path with extra param
+- restart dfs, every time
+- tar condi before many condis, after satisfy basic
 
 # read, write
 
