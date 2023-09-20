@@ -4523,6 +4523,7 @@
 - memo[i][j][count+1], why +1; e.g. 0, 1, 2, need max 2
 - when satisfy target, return val
 - mod res, other where mod
+- tar condi before many condis
 
 # read, write
 
