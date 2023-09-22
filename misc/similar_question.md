@@ -4530,6 +4530,22 @@
 - unique path with extra param
 - restart dfs, every time
 - tar condi before many condis, after satisfy basic
+- 
+
+- https://leetcode.com/problems/the-maze-ii/
+- my think:
+- next dir -> dfs
+- x
+- ans think:
+- 1. normal dir: next dir -> dfs (all dirs, waste energy)
+- 2. special dir: single dir -> steal -> loop same dirs -> revert -> dfs (1 direction, save energy)
+- x
+- this cell update all other cells (4 dir); other cells update this cell
+- one cell update, all surround cells updated
+- 1 F 2 -> mid cell cannot update (bouncing back and forth)
+- x
+- single cell can move 0 or move more steps
+- no myset, as we will come back to same cell
 
 # read, write
 
