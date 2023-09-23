@@ -4558,6 +4558,18 @@
 - https://leetcode.com/problems/move-zeroes (\*)
 - https://www.geeksforgeeks.org/minimum-swaps-required-group-1s-together/
 - https://poitevinpm.medium.com/leetcode-2134-minimum-swaps-to-group-all-1s-together-ii-a9a19d85d4f5
+- 
+
+- https://leetcode.com/problems/robot-room-cleaner/
+- my think:
+- cannot resolve
+- ans think:
+- sync virtual direction/move with real direction/move
+- 1. move forward === fr = r + dr; 2. turn right === dr = dir[dir_ind][0]
+- the dfs move === graph travel; when it is finish all backtracks, entire grid filled, we know all the info
+- we can put weight on this dfs level; or push weight to next dfs level
+- steal -> loop move (may stop or loop) -> revert (never afraid to try, may get surprise res)
+- forward -> (turn_right -> turn_right -> forward -> turn_right -> turn_right) -> back to 4 direction state
 
 # swap
 
