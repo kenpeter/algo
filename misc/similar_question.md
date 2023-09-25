@@ -4546,6 +4546,19 @@
 - x
 - single cell can move 0 or move more steps
 - no myset, as we will come back to same cell
+- 
+
+- https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/
+- my think:
+- dfs, but with wrong ans
+- x
+- ans think:
+- bfs directly get ans
+- bfs use seen, not using memo
+- array seen > hash (more specific)
+- each bfs/dfs branch has own same state variable
+- finish 1 bfs level, that is the move
+- when reach tar, that is the ans
 
 # read, write
 
