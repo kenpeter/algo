@@ -4559,6 +4559,15 @@
 - each bfs/dfs branch has own same state variable
 - finish 1 bfs level, that is the move
 - when reach tar, that is the ans
+- 
+
+- https://leetcode.com/problems/shortest-path-to-get-food/
+- my think:
+- I tried dfs and bfs, both timeout
+- x
+- ans think:
+- for BFS end, does not matter how many end pt, it must hit the 1st end pt, shortest
+- for bound condi, fr<=m || fr<=n (again), cause mem leak
 
 # read, write
 
