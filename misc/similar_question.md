@@ -4578,6 +4578,12 @@
 - push "0" to queue, run them, reach "1" (infinity)
 - 0 cell will have dist+1
 - infinity cell will be update by 0 cell
+- 
+
+- https://leetcode.com/problems/walls-and-gates/
+- my think:
+- similar to path to get food
+- bfs, saturate each cell + 2D seen
 
 # read, write
 
