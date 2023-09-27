@@ -4569,6 +4569,16 @@
 - for BFS end, does not matter how many end pt, it must hit the 1st end pt, shortest
 - for bound condi, fr<=m || fr<=n (again), cause mem leak
 
+- https://leetcode.com/problems/01-matrix/
+- my think:
+- brute force, bfs, almost timeout
+- x
+- ans think:
+- assign distance to cell, saturate
+- push "0" to queue, run them, reach "1" (infinity)
+- 0 cell will have dist+1
+- infinity cell will be update by 0 cell
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
