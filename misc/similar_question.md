@@ -4584,6 +4584,18 @@
 - my think:
 - similar to path to get food
 - bfs, saturate each cell + 2D seen
+- 
+
+- https://leetcode.com/problems/shortest-path-in-a-hidden-grid/
+- https://leetcode.com/problems/minimum-path-cost-in-a-hidden-grid/submissions/1069716557/
+- my think:
+- x
+- ans think:
+- shared grid; dfs fill the block (physically); bfs cal (virtuall)
+- 2*n+1 grid, start at middle; fill block
+- 2*n+1 dist, multi min path each cell, saturate
+- if question uses ++count, bfs can block single cell
+- if question uses each_cell_dist, bfs cannot block, saturate
 
 # read, write
 
