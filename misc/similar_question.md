@@ -4597,6 +4597,25 @@
 - if question uses ++count, bfs can block single cell
 - if question uses each_cell_dist, bfs cannot block, saturate
 
+- https://leetcode.com/problems/robot-return-to-origin/
+- my think:
+- brute force simulate the move
+- ans think:
+- build knowledge, then query
+- if L and R cancel out, then back to origin
+- if L and R !cancel out, !back to origin
+
+- https://leetcode.com/problems/robot-bounded-in-circle/
+- my think:
+- brute force to execute 1_cycle * 1000 (not working)
+- ans think:
+- row and col; VS x and y
+- move: x = x + dx
+- change_dir: head = (4 + head - 1) % 4
+- trap: 1. cycle back to origin; 2. 1+ cycle back to origin (not_north, after 1 cycle)
+- !trap: north after 1 cycle; parallel again infinite parallel
+
+
 # read, write
 
 - https://leetcode.com/problems/merge-sorted-array (\*)
