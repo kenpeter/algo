@@ -4649,6 +4649,9 @@
 - process and output separate; keep process
 - 2 solutions: 1. keep queue order, modify output order; 2. modify queue order, keep output order.
 
+- https://leetcode.com/problems/binary-tree-level-order-traversal-ii/ (bottom to top; keep process, but modify res)
+- similar to https://leetcode.com/problems/binary-tree-level-order-traversal-i (top to bottom bfs)
+
 # swap
 
 - https://www.geeksforgeeks.org/minimum-swaps-required-group-1s-together/ (\*)
