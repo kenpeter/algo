@@ -4647,7 +4647,7 @@
 - zigzag; left -> right -> push end; right -> left -> append start
 - level -> switching - mod 2
 - process and output separate; keep process
-- 2 solutions: 1. keep queue order, modify output order; 2. modify queue order, keep output order
+- 2 solutions: 1. keep queue order, modify output order; 2. modify queue order, keep output order.
 
 # swap
 
