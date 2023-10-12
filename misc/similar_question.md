@@ -4639,6 +4639,15 @@
 - we can put weight on this dfs level; or push weight to next dfs level
 - steal -> loop move (may stop or loop) -> revert (never afraid to try, may get surprise res)
 - forward -> (turn_right -> turn_right -> forward -> turn_right -> turn_right) -> back to 4 direction state
+- 
+
+- https://leetcode.com/problems/binary-tree-vertical-order-traversal (vertical; bfs left to right; each node left right branch -> node index)
+- https://leetcode.com/problems/binary-tree-level-order-traversal (horizontal; bfs left to right)
+- https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal (zigzag; bfs left to right; left -> right -> push end; right -> left -> append start)
+- zigzag; left -> right -> push end; right -> left -> append start
+- level -> switching - mod 2
+- process and output separate; keep process
+- 2 solutions: 1. keep queue order, modify output order; 2. modify queue order, keep output order
 
 # swap
 
