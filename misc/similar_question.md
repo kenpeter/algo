@@ -4653,6 +4653,10 @@
 - similar to https://leetcode.com/problems/binary-tree-level-order-traversal-i (top to bottom bfs)
 - https://leetcode.com/problems/binary-tree-level-order-traversal-ii (dfs ~= bfs, when depth corresponding to the node)
 - https://leetcode.com/problems/average-of-levels-in-binary-tree/ (bfs travel; each level sum / size)
+- 
+- https://leetcode.com/problems/maximum-depth-of-n-ary-tree (dfs getMaxHeight, buttom up, but with arr)
+- https://leetcode.com/problems/maximum-depth-of-binary-tree (dfs getMaxHeight, bottom up, but with left and right)
+- https://leetcode.com/problems/minimum-depth-of-binary-tree (bfs best place)
 
 # swap
 
