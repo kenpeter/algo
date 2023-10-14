@@ -4657,6 +4657,7 @@
 - https://leetcode.com/problems/maximum-depth-of-n-ary-tree (dfs getMaxHeight, buttom up, but with arr)
 - https://leetcode.com/problems/maximum-depth-of-binary-tree (dfs getMaxHeight, bottom up, but with left and right)
 - https://leetcode.com/problems/minimum-depth-of-binary-tree (bfs best place)
+- https://leetcode.com/problems/balanced-binary-tree/ dfs getMaxHeight, left and right subtree can compare)
 
 # swap
 
