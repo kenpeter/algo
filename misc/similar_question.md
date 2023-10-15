@@ -4659,6 +4659,12 @@
 - https://leetcode.com/problems/maximum-depth-of-binary-tree (dfs getMaxHeight, bottom up, but with left and right)
 - https://leetcode.com/problems/minimum-depth-of-binary-tree (bfs best place)
 - https://leetcode.com/problems/balanced-binary-tree/ dfs getMaxHeight, left and right subtree can compare)
+- x
+- https://leetcode.com/problems/diameter-of-binary-tree/description/
+- method 1: 2 dfs -> 2D loop, with dfs ~= bfs
+- method 2: 1 dfs, scan each node, update diameter
+- https://leetcode.com/problems/diameter-of-n-ary-tree/
+- similar to above, but change from left/right -> children
 
 # swap
 
