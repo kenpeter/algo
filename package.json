@@ -1,0 +1,13 @@
+{
+  "name": "algorithm-quest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Coding problems with test cases, five implementations each, and a phone-friendly GitHub Pages site",
+  "scripts": {
+    "test": "node village/solution.test.js && node refueling/solution.test.js && node subarr_sum/solution.test.js",
+    "test:village": "node village/solution.test.js",
+    "test:refueling": "node refueling/solution.test.js",
+    "test:subarr_sum": "node subarr_sum/solution.test.js",
+    "build:site": "node site/build.js"
+  }
+}
