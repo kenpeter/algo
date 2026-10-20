@@ -14,11 +14,11 @@ The site is organised as **folders → problems → problem page**:
 
 ## Problems
 
-| Folder | Problem | Function | Five solutions |
-| --- | --- | --- | --- |
-| `arrays-greedy/` | [Village](village) | `solution(A)` | greedy (copy), greedy (O(1) space), greedy mirrored, branch & bound, exhaustive |
-| `dynamic-programming/` | [Refueling](refueling) | `solution(A, X)` | interval DP, rolling DP, memoised recursion, Dijkstra over intervals, brute force |
-| `arrays-greedy/` | [Subarray sum](subarr_sum) | `solution(A)` | prefix + first/last, one pass left, one pass right, compression, brute force |
+| Repo folder | Site folder | Problem | Function | Five solutions |
+| --- | --- | --- | --- | --- |
+| [`village/`](village) | Arrays & Greedy | Village | `solution(A)` | greedy (copy), greedy (O(1) space), greedy mirrored, branch & bound, exhaustive |
+| [`refueling/`](refueling) | Dynamic Programming | Refueling | `solution(A, X)` | interval DP, rolling DP, memoised recursion, Dijkstra over intervals, brute force |
+| [`subarr_sum/`](subarr_sum) | Arrays & Greedy | Subarray sum | `solution(A)` | prefix + first/last, one pass left, one pass right, compression, brute force |
 
 Each problem folder contains:
 
