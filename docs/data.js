@@ -1,5 +1,5 @@
 window.SITE_DATA = {
-  "generatedAt": "2026-10-20T12:03:26.198Z",
+  "generatedAt": "2026-10-20T12:15:45.322Z",
   "title": "Algorithm Quest",
   "subtitle": "Problem walkthroughs, test cases and five implementations each.",
   "groups": [

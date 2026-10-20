@@ -3,7 +3,7 @@
 Solutions, tests and walkthroughs for three Codility-style problems, published
 as a phone-friendly static site.
 
-**Live site:** https://kenpeter.github.io/algorithm-quest/
+**Live site:** https://kenpeter.github.io/algo/
 
 The site is organised as **folders → problems → problem page**:
 
