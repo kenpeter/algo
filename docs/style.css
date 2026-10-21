@@ -130,6 +130,42 @@ pre code {
   background: none;
 }
 
+.solution-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.solution-head h3 {
+  margin: 20px 0 6px;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid #bbbbbb;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111111;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.copy-btn:active {
+  background: #eeeeee;
+}
+
+.copy-btn .icon {
+  width: 16px;
+  height: 16px;
+}
+
 hr {
   margin: 24px 0;
   border: 0;

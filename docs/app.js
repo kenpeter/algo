@@ -51,6 +51,43 @@
 
   var ARG_NAMES = ['A', 'X'];
 
+  var COPY_ICON =
+    '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+    '<rect x="9" y="9" width="11" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>' +
+    '<path d="M5 15V5a1 1 0 0 1 1-1h9" fill="none" stroke="currentColor" stroke-width="1.8"/>' +
+    '</svg>';
+
+  function copyText(text, done) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        function () {
+          done(true);
+        },
+        function () {
+          done(false);
+        }
+      );
+      return;
+    }
+
+    var area = document.createElement('textarea');
+    area.value = text;
+    area.setAttribute('readonly', '');
+    area.style.position = 'fixed';
+    area.style.opacity = '0';
+    document.body.appendChild(area);
+    area.select();
+
+    var ok = false;
+    try {
+      ok = document.execCommand('copy');
+    } catch (error) {
+      ok = false;
+    }
+    document.body.removeChild(area);
+    done(ok);
+  }
+
   function formatArgs(args) {
     return args
       .map(function (value, index) {
@@ -129,7 +166,14 @@
     var solutions = problem.solutions
       .map(function (solution) {
         return (
+          '<div class="solution-head">' +
           '<h3>' + escapeHtml(solution.id) + '. ' + escapeHtml(solution.name) + '</h3>' +
+          '<button type="button" class="copy-btn" ' +
+          'data-copy-problem="' + escapeHtml(problem.id) + '" ' +
+          'data-copy-solution="' + escapeHtml(solution.id) + '" ' +
+          'aria-label="Copy solution ' + escapeHtml(solution.id) + ' code">' +
+          COPY_ICON + 'Copy</button>' +
+          '</div>' +
           '<p class="muted">' + escapeHtml(solution.complexity) + '</p>' +
           '<pre><code>' + escapeHtml(solution.code) + '</code></pre>'
         );
@@ -203,5 +247,27 @@
   }
 
   window.addEventListener('hashchange', render);
+
+  document.addEventListener('click', function (event) {
+    var button = event.target.closest('.copy-btn');
+    if (!button) return;
+
+    var problem = problemsById[button.getAttribute('data-copy-problem')];
+    if (!problem) return;
+
+    var solutionId = button.getAttribute('data-copy-solution');
+    var solution = problem.solutions.filter(function (item) {
+      return item.id === solutionId;
+    })[0];
+    if (!solution) return;
+
+    copyText(solution.code, function (ok) {
+      button.innerHTML = COPY_ICON + (ok ? 'Copied' : 'Failed');
+      window.setTimeout(function () {
+        button.innerHTML = COPY_ICON + 'Copy';
+      }, 1500);
+    });
+  });
+
   render();
 })();
